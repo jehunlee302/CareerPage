@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jehun Lee — Industrial & Systems Engineer (Ph.D.), AI Strategist, Simulation Solution Consultant. Bridging academic depth and industrial execution through Systemic Excellence." />
+  <meta name="keywords" content="Jehun Lee, AI Engineer, Industrial Systems Engineer, KAIST, Digital Twin, Scheduling, Semiconductor, Simulation" />
+  <meta property="og:title" content="Jehun Lee | AI Strategist & Systems Engineer" />
+  <meta property="og:description" content="Ph.D. leader bridging academic depth and industrial execution through AI-native engineering." />
+  <meta property="og:url" content="https://jehun-lee.work" />
+  <meta property="og:type" content="website" />
+  <title>Jehun Lee | AI Strategist & Systems Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">JL</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+      <div class="hero-grid">
+        <div class="hero-content fade-in">
+          <span class="hero-badge">Ph.D. · AI Strategist · Systems Engineer</span>
+          <h1>
+            Jehun Lee
+            <span class="name-kr">이제훈</span>
+          </h1>
+          <p class="hero-title" id="hero-title-text"></p>
+          <p class="hero-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Yongin, Gyeonggi-do, South Korea
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+            <a href="https://sites.google.com/view/jehun-lee" target="_blank" rel="noopener" class="btn btn-ghost">Google Site ↗</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-inner" id="hero-stats"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══ PHILOSOPHY ═══ -->
+    <section id="philosophy">
+      <div class="container">
+        <div class="section-label">Core Philosophy</div>
+        <h2 class="philosophy-headline" id="philosophy-headline"></h2>
+        <p class="philosophy-lead" id="philosophy-lead"></p>
+        <div class="philosophy-body" id="philosophy-body"></div>
+        <div class="philosophy-pillars" id="philosophy-pillars"></div>
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT (Stats) ═══ -->
+    <section id="about">
+      <div class="container">
+        <div class="section-label">At a Glance</div>
+        <h2 class="section-title">Research &amp; Impact</h2>
+        <div class="stats-row" id="stats-row"></div>
+      </div>
+    </section>
+
+    <!-- ═══ WORK EXPERIENCE ═══ -->
+    <section id="experience" class="section-alt">
+      <div class="container">
+        <div class="section-label">Career</div>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline" id="experience-timeline"></div>
+      </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">Industry &amp; Research</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">24+ major industry-academic collaborations</p>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ PUBLICATIONS ═══ -->
+    <section id="publications" class="section-alt">
+      <div class="container">
+        <div class="section-label">Research Output</div>
+        <h2 class="section-title">Academic Works</h2>
+        <div class="pub-filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Journal">Journal</button>
+          <button class="filter-btn" data-filter="Conference">Conference</button>
+          <button class="filter-btn" data-filter="Poster">Poster</button>
+        </div>
+        <div class="pub-list" id="pub-list"></div>
+      </div>
+    </section>
+
+    <!-- ═══ EDUCATION ═══ -->
+    <section id="education">
+      <div class="container">
+        <div class="section-label">Academic Background</div>
+        <h2 class="section-title">Education</h2>
+        <div class="timeline" id="education-timeline"></div>
+      </div>
+    </section>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills" class="section-alt">
+      <div class="container">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ HONORS & AWARDS ═══ -->
+    <section id="awards">
+      <div class="container">
+        <div class="section-label">Recognition</div>
+        <h2 class="section-title">Honors &amp; Awards</h2>
+        <div class="awards-list" id="awards-list"></div>
+      </div>
+    </section>
+
+    <!-- ═══ PATENTS ═══ -->
+    <section id="patents" class="section-alt">
+      <div class="container">
+        <div class="section-label">Intellectual Property</div>
+        <h2 class="section-title">Patents</h2>
+        <div class="patents-list" id="patents-list"></div>
+      </div>
+    </section>
+
+    <!-- ═══ ACTIVITIES ═══ -->
+    <section id="activities">
+      <div class="container">
+        <div class="section-label">Leadership &amp; Service</div>
+        <h2 class="section-title">Activities &amp; Leadership</h2>
+        <div class="activities-grid" id="activities-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="section-dark">
+      <div class="container">
+        <div class="section-label light">Let's Connect</div>
+        <h2 class="section-title light">Get in Touch</h2>
+        <p class="contact-intro">Open to AI research partnerships, consulting engagements, and strategic collaborations.</p>
+        <div class="contact-cards" id="contact-cards"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Jehun Lee · 이제훈</span>
+        <span class="footer-copy">© <span id="year"></span> All rights reserved</span>
+        <span class="footer-updated">Updated: <span id="last-updated"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
