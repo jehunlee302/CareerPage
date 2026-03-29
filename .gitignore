@@ -9,6 +9,12 @@ Thumbs.db
 # bkit internal
 .bkit/
 
+# Claude Code internal
+.claude/
+
+# Reference images (not part of the site)
+GoogleSheet/
+
 # Logs
 *.log
 
