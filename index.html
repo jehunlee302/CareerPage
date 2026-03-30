@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jehun Lee — Industrial & Systems Engineer (Ph.D.), AI Strategist, Simulation Solution Consultant. Bridging academic depth and industrial execution through Systemic Excellence." />
-  <meta name="keywords" content="Jehun Lee, AI Engineer, Industrial Systems Engineer, KAIST, Digital Twin, Scheduling, Semiconductor, Simulation" />
+  <meta name="description" content="Jehun Lee — Ph.D. AI Strategist & Systems Engineer. 24+ projects, Digital Twin for SK Hynix, real-time scheduling for Micron. Bridging academic depth and industrial execution." />
+  <meta name="keywords" content="Jehun Lee, AI Engineer, Industrial Systems, KAIST, Digital Twin, Scheduling, Semiconductor, Simulation, Reinforcement Learning" />
   <meta property="og:title" content="Jehun Lee | AI Strategist & Systems Engineer" />
-  <meta property="og:description" content="Ph.D. leader bridging academic depth and industrial execution through AI-native engineering." />
+  <meta property="og:description" content="Ph.D. leader bridging academic depth and industrial execution through Systemic Excellence." />
+  <meta property="og:image" content="https://jehun-lee.work/jehun.jpg" />
   <meta property="og:url" content="https://jehun-lee.work" />
-  <meta property="og:type" content="website" />
   <title>Jehun Lee | AI Strategist & Systems Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,13 +18,12 @@
 </head>
 <body>
 
-  <!-- ═══ NAVIGATION ═══ -->
+  <!-- ═══ NAVBAR ═══ -->
   <header id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">JL</a>
       <nav>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#about">About</a></li>
           <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -44,72 +43,112 @@
 
     <!-- ═══ HERO ═══ -->
     <section id="hero">
-      <div class="hero-grid">
-        <div class="hero-content fade-in">
-          <span class="hero-badge">Ph.D. · AI Strategist · Systems Engineer</span>
-          <h1>
+      <div class="hero-inner">
+
+        <!-- Left: Text -->
+        <div class="hero-text fade-up">
+          <div class="availability-badge">
+            <span class="dot-pulse"></span>
+            Open to AI Research &amp; Consulting Collaborations
+          </div>
+          <h1 class="hero-name">
             Jehun Lee
-            <span class="name-kr">이제훈</span>
+            <span class="hero-kr">이제훈</span>
           </h1>
-          <p class="hero-title" id="hero-title-text"></p>
+          <div class="hero-title-wrap">
+            <span class="hero-title-prefix">—</span>
+            <span class="hero-title-text" id="heroTitleText"></span>
+            <span class="hero-cursor">|</span>
+          </div>
           <p class="hero-location">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Yongin, Gyeonggi-do, South Korea
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Yongin, Gyeonggi-do, South Korea · VMS Solutions Inc.
           </p>
+          <div class="hero-tags" id="heroTags"></div>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Get in Touch</a>
-            <a href="#projects" class="btn btn-outline">View Projects</a>
-            <a href="https://sites.google.com/view/jehun-lee" target="_blank" rel="noopener" class="btn btn-ghost">Google Site ↗</a>
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="https://www.linkedin.com/in/jehun-lee/" target="_blank" rel="noopener" class="btn btn-outline-white">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?user=C7ekyjEAAAAJ" target="_blank" rel="noopener" class="btn btn-outline-white">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Scholar
+            </a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-card">
-            <div class="hero-card-inner" id="hero-stats"></div>
+
+        <!-- Right: Photo -->
+        <div class="hero-photo-col fade-up-delay">
+          <div class="photo-ring-outer">
+            <div class="photo-ring-mid">
+              <div class="photo-circle">
+                <img src="jehun.jpg" alt="Jehun Lee" id="profileImg" />
+                <div class="photo-fallback" id="photoFallback">JL</div>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
-      <div class="hero-scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll">
+        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
       </div>
+    </section>
+
+    <!-- ═══ IMPACT STRIP ═══ -->
+    <section id="impact">
+      <div class="impact-inner" id="impactStrip"></div>
     </section>
 
     <!-- ═══ PHILOSOPHY ═══ -->
     <section id="philosophy">
       <div class="container">
-        <div class="section-label">Core Philosophy</div>
-        <h2 class="philosophy-headline" id="philosophy-headline"></h2>
-        <p class="philosophy-lead" id="philosophy-lead"></p>
-        <div class="philosophy-body" id="philosophy-body"></div>
-        <div class="philosophy-pillars" id="philosophy-pillars"></div>
+        <div class="section-label accent">Core Philosophy</div>
+        <h2 class="philosophy-headline" id="philosophyHeadline"></h2>
+        <p class="philosophy-lead" id="philosophyLead"></p>
+        <div class="philosophy-body" id="philosophyBody"></div>
+        <div class="philosophy-pillars" id="philosophyPillars"></div>
       </div>
     </section>
 
-    <!-- ═══ ABOUT (Stats) ═══ -->
-    <section id="about">
+    <!-- ═══ RESEARCH FOCUS ═══ -->
+    <section id="research">
       <div class="container">
-        <div class="section-label">At a Glance</div>
-        <h2 class="section-title">Research &amp; Impact</h2>
-        <div class="stats-row" id="stats-row"></div>
+        <div class="section-label">Expertise</div>
+        <h2 class="section-title">Research Focus</h2>
+        <div class="research-grid" id="researchGrid"></div>
       </div>
     </section>
 
-    <!-- ═══ WORK EXPERIENCE ═══ -->
+    <!-- ═══ EXPERIENCE ═══ -->
     <section id="experience" class="section-alt">
       <div class="container">
         <div class="section-label">Career</div>
         <h2 class="section-title">Work Experience</h2>
-        <div class="timeline" id="experience-timeline"></div>
+        <div class="timeline" id="experienceTimeline"></div>
       </div>
     </section>
 
-    <!-- ═══ PROJECTS ═══ -->
+    <!-- ═══ FEATURED PROJECTS ═══ -->
+    <section id="featured" class="section-dark">
+      <div class="container">
+        <div class="section-label accent">Highlights</div>
+        <h2 class="section-title light">Featured Projects</h2>
+        <p class="section-subtitle light">Industry-defining programs across semiconductor & smart manufacturing</p>
+        <div class="featured-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ ALL PROJECTS ═══ -->
     <section id="projects">
       <div class="container">
-        <div class="section-label">Industry &amp; Research</div>
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">24+ major industry-academic collaborations</p>
-        <div class="projects-grid" id="projects-grid"></div>
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">All Projects</h2>
+        <p class="section-subtitle" id="projectSubtitle"></p>
+        <div class="projects-grid" id="projectsGrid"></div>
       </div>
     </section>
 
@@ -124,7 +163,7 @@
           <button class="filter-btn" data-filter="Conference">Conference</button>
           <button class="filter-btn" data-filter="Poster">Poster</button>
         </div>
-        <div class="pub-list" id="pub-list"></div>
+        <div class="pub-list" id="pubList"></div>
       </div>
     </section>
 
@@ -133,7 +172,7 @@
       <div class="container">
         <div class="section-label">Academic Background</div>
         <h2 class="section-title">Education</h2>
-        <div class="timeline" id="education-timeline"></div>
+        <div class="timeline" id="educationTimeline"></div>
       </div>
     </section>
 
@@ -142,16 +181,16 @@
       <div class="container">
         <div class="section-label">Capabilities</div>
         <h2 class="section-title">Skills</h2>
-        <div class="skills-grid" id="skills-grid"></div>
+        <div class="skills-grid" id="skillsGrid"></div>
       </div>
     </section>
 
-    <!-- ═══ HONORS & AWARDS ═══ -->
+    <!-- ═══ AWARDS ═══ -->
     <section id="awards">
       <div class="container">
         <div class="section-label">Recognition</div>
         <h2 class="section-title">Honors &amp; Awards</h2>
-        <div class="awards-list" id="awards-list"></div>
+        <div class="awards-list" id="awardsList"></div>
       </div>
     </section>
 
@@ -160,7 +199,7 @@
       <div class="container">
         <div class="section-label">Intellectual Property</div>
         <h2 class="section-title">Patents</h2>
-        <div class="patents-list" id="patents-list"></div>
+        <div class="patents-list" id="patentsList"></div>
       </div>
     </section>
 
@@ -169,17 +208,17 @@
       <div class="container">
         <div class="section-label">Leadership &amp; Service</div>
         <h2 class="section-title">Activities &amp; Leadership</h2>
-        <div class="activities-grid" id="activities-grid"></div>
+        <div class="activities-grid" id="activitiesGrid"></div>
       </div>
     </section>
 
     <!-- ═══ CONTACT ═══ -->
     <section id="contact" class="section-dark">
       <div class="container">
-        <div class="section-label light">Let's Connect</div>
+        <div class="section-label accent">Let's Connect</div>
         <h2 class="section-title light">Get in Touch</h2>
-        <p class="contact-intro">Open to AI research partnerships, consulting engagements, and strategic collaborations.</p>
-        <div class="contact-cards" id="contact-cards"></div>
+        <p class="contact-intro">Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.</p>
+        <div class="contact-cards" id="contactCards"></div>
       </div>
     </section>
 
@@ -189,8 +228,8 @@
     <div class="container">
       <div class="footer-inner">
         <span class="footer-name">Jehun Lee · 이제훈</span>
-        <span class="footer-copy">© <span id="year"></span> All rights reserved</span>
-        <span class="footer-updated">Updated: <span id="last-updated"></span></span>
+        <span class="footer-copy">© <span id="footerYear"></span> All rights reserved</span>
+        <span class="footer-updated">Updated: <span id="lastUpdated"></span></span>
       </div>
     </div>
   </footer>
