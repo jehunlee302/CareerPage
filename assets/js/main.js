@@ -161,8 +161,7 @@ function renderExperience(items) {
         <span class="tl-title">${esc(item.position)}</span>
         <span class="tl-period">${esc(item.period)}</span>
       </div>
-      <div class="tl-org">${esc(item.organization)}</div>
-      ${item.division ? `<div class="tl-div">${esc(item.division)}</div>` : ''}
+      <div class="tl-org">${esc(item.organization)}${item.division ? ` · <span style="color:var(--text-muted);font-weight:400">${esc(item.division)}</span>` : ''}</div>
       <div class="tl-roles">${esc(item.roles)}</div>
       <div class="tl-region">📍 ${esc(item.region)}</div>
     </div>`).join('');
@@ -210,8 +209,11 @@ function renderProjects(items) {
   el.innerHTML = sorted.map(p => `
     <div class="project-card reveal" data-proj-index="${p.index}" data-proj-pm="${p.isPM ? '1' : '0'}">
       <div class="project-meta">
-        <span class="project-index">PROJECT #${p.index}</span>
-        <span class="project-period">${esc(p.period)}${p.duration ? ` · ${esc(p.duration)}` : ''}</span>
+        <div>
+          <span class="project-index">PROJECT #${p.index}</span>
+          <span class="project-period" style="display:block;margin-top:.15rem">${esc(p.period)}${p.duration ? ` · ${esc(p.duration)}` : ''}</span>
+        </div>
+        <span class="project-popup-hint">View Details ↗</span>
       </div>
       <div class="project-title">${esc(p.title)}</div>
       ${p.remarks ? `<div class="project-remarks">${esc(p.remarks)}</div>` : ''}
@@ -276,12 +278,17 @@ function renderEducation(items) {
       </div>
       <div class="tl-org">${esc(item.institution)}</div>
       <div class="tl-region">📍 ${esc(item.region)}</div>
-      ${item.remarks ? `<div class="tl-remarks">${
-        item.labUrl
-          ? `${esc(item.remarks.split('·')[0].trim())} · <a href="${item.labUrl}" target="_blank" rel="noopener" class="tl-link">MSS Lab ↗</a>`
-          : esc(item.remarks)
-      }</div>` : ''}
+      ${item.remarks ? `<div class="tl-remarks">${parseAdvisorRemarks(item.remarks)}</div>` : ''}
     </div>`).join('');
+}
+
+function parseAdvisorRemarks(remarks) {
+  // Pattern: "Advisor: Name, https://url"
+  const m = remarks.match(/^(Advisor:\s*[^,]+),\s*(https?:\/\/\S+)$/i);
+  if (m) {
+    return `${esc(m[1].trim())} — <a href="${m[2].trim()}" target="_blank" rel="noopener" class="tl-link">Homepage ↗</a>`;
+  }
+  return esc(remarks);
 }
 
 /* ─── Skills ─── */
