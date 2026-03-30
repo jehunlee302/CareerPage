@@ -81,7 +81,7 @@
             <div class="photo-ring-mid">
               <div class="photo-circle">
                 <img src="jehun.jpg" alt="Jehun Lee" id="profileImg" />
-                <div class="photo-fallback" id="photoFallback">JL</div>
+                <div class="photo-fallback" id="photoFallback" style="display:none">JH</div>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@
       <div class="container">
         <div class="section-label accent">Highlights</div>
         <h2 class="section-title light">Featured Projects</h2>
-        <p class="section-subtitle light">Industry-defining programs across semiconductor & smart manufacturing</p>
+        <p class="section-subtitle light">Industry-defining programs across semiconductor &amp; smart manufacturing</p>
         <div class="featured-grid" id="featuredGrid"></div>
       </div>
     </section>
@@ -145,6 +145,7 @@
         <div class="section-label">Portfolio</div>
         <h2 class="section-title">All Projects</h2>
         <p class="section-subtitle" id="projectSubtitle"></p>
+        <div class="proj-filter-bar" id="projFilterBar"></div>
         <div class="projects-grid" id="projectsGrid"></div>
       </div>
     </section>
@@ -156,8 +157,10 @@
         <h2 class="section-title">Academic Works</h2>
         <div class="pub-filter-bar">
           <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Journal">Journal</button>
-          <button class="filter-btn" data-filter="Conference">Conference</button>
+          <button class="filter-btn" data-filter="Journal-International">Intl. Journal</button>
+          <button class="filter-btn" data-filter="Journal-Domestic">Dom. Journal</button>
+          <button class="filter-btn" data-filter="Conference-International">Intl. Conference</button>
+          <button class="filter-btn" data-filter="Conference-Domestic">Dom. Conference</button>
           <button class="filter-btn" data-filter="Poster">Poster</button>
         </div>
         <div class="pub-list" id="pubList"></div>
@@ -170,15 +173,6 @@
         <div class="section-label">Academic Background</div>
         <h2 class="section-title">Education</h2>
         <div class="timeline" id="educationTimeline"></div>
-      </div>
-    </section>
-
-    <!-- ═══ SKILLS ═══ -->
-    <section id="skills" class="section-alt">
-      <div class="container">
-        <div class="section-label">Capabilities</div>
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid" id="skillsGrid"></div>
       </div>
     </section>
 
@@ -209,6 +203,15 @@
       </div>
     </section>
 
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills" class="section-alt">
+      <div class="container">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
     <!-- ═══ CONTACT ═══ -->
     <section id="contact" class="section-dark">
       <div class="container">
@@ -230,6 +233,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══ PROJECT DETAIL MODAL ═══ -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalBody">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>

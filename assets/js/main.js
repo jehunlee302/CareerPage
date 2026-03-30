@@ -1,5 +1,5 @@
 /**
- * Jehun Lee Portfolio — main.js v2.0
+ * Jehun Lee Portfolio — main.js v2.2
  */
 
 const DATA_URL = 'data/portfolio.json';
@@ -25,6 +25,8 @@ const HERO_TAGS = [
   'Semiconductor Fab', 'AI-Native Manufacturing', 'KAIST Ph.D.'
 ];
 
+let _allProjects = [];
+
 /* ─── Bootstrap ─── */
 async function init() {
   try {
@@ -34,7 +36,9 @@ async function init() {
     render(data);
     setupNav();
     setupScrollReveal();
-    setupFilterButtons();
+    setupPubFilterButtons();
+    setupProjFilterButtons();
+    setupProjectModal();
     setupPhotoFallback();
     setupTitleTypewriter(data.basic?.titles || []);
   } catch (err) {
@@ -52,17 +56,16 @@ function render(data) {
   renderProjects(data.projects);
   renderPublications(data.publications);
   renderEducation(data.education);
-  renderSkills(data.skills);
   renderAwards(data.honors);
   renderPatents(data.patents);
   renderActivities(data.activities);
+  renderSkills(data.skills);
   renderContact(data.basic);
   renderFooter(data);
 }
 
 /* ─── Hero ─── */
 function renderHero(data) {
-  // Tags
   const tagsEl = document.getElementById('heroTags');
   if (tagsEl) {
     tagsEl.innerHTML = HERO_TAGS.map(t => `<span class="hero-tag">${esc(t)}</span>`).join('');
@@ -96,7 +99,10 @@ function renderImpactStrip(data) {
   if (!el) return;
   const pmCount = (data.projects || []).filter(p => p.isPM).length;
   const intlPrizes = (data.honors || []).filter(h =>
-    (h.title || '').toLowerCase().includes('prize') || (h.title || '').toLowerCase().includes('first') || (h.title || '').toLowerCase().includes('second') || (h.title || '').toLowerCase().includes('third')
+    (h.title || '').toLowerCase().includes('prize') ||
+    (h.title || '').toLowerCase().includes('first') ||
+    (h.title || '').toLowerCase().includes('second') ||
+    (h.title || '').toLowerCase().includes('third')
   ).length;
 
   const items = [
@@ -104,7 +110,7 @@ function renderImpactStrip(data) {
     { value: `${pmCount}+`,  label: 'PM Roles' },
     { value: `${(data.publications || []).length}+`, label: 'Publications' },
     { value: intlPrizes,     label: 'Honors & Prizes' },
-    { value: `${(data.patents || []).length}`,        label: 'Patent' },
+    { value: `${(data.patents || []).length}`,  label: 'Patent' },
   ];
 
   el.innerHTML = items.map(it => `
@@ -170,13 +176,9 @@ function renderFeaturedProjects(projects) {
     .map(idx => projects.find(p => p.index === idx))
     .filter(Boolean);
 
-  el.innerHTML = featured.map(p => {
-    const isPM = p.isPM;
-    return `
+  el.innerHTML = featured.map(p => `
     <div class="featured-card reveal">
-      <div class="fc-badge">
-        ${isPM ? '👑 PM Lead · ' : ''}Project #${p.index}
-      </div>
+      <div class="fc-badge">${p.isPM ? '👑 PM Lead · ' : ''}Project #${p.index}</div>
       <div class="fc-client">${esc(p.client)}${p.affiliatedInstitution ? ` · ${esc(p.affiliatedInstitution)}` : ''}</div>
       <div class="fc-title">${esc(p.title)}</div>
       ${p.remarks ? `<div class="fc-period">${esc(p.remarks)}</div>` : ''}
@@ -184,23 +186,29 @@ function renderFeaturedProjects(projects) {
         <span class="fc-tag">${esc(p.period)}</span>
         ${p.duration ? `<span class="fc-tag">${esc(p.duration)}</span>` : ''}
       </div>
-    </div>`;
-  }).join('');
+    </div>`).join('');
 
-  // Project subtitle
   const sub = document.getElementById('projectSubtitle');
   if (sub) sub.textContent = `${projects.length} research & industry projects · ${projects.filter(p => p.isPM).length}+ as Project Manager`;
 }
 
 /* ─── All Projects ─── */
 function renderProjects(items) {
+  _allProjects = items || [];
   const el = document.getElementById('projectsGrid');
   if (!el || !items) return;
+
+  const filterBar = document.getElementById('projFilterBar');
+  if (filterBar) {
+    filterBar.innerHTML = `
+      <button class="filter-btn active" data-proj-filter="all">All</button>
+      <button class="filter-btn" data-proj-filter="pm">PM Lead</button>
+    `;
+  }
+
   const sorted = [...items].sort((a, b) => b.index - a.index);
-  el.innerHTML = sorted.map(p => {
-    const isPM = p.isPM;
-    return `
-    <div class="project-card reveal">
+  el.innerHTML = sorted.map(p => `
+    <div class="project-card reveal" data-proj-index="${p.index}" data-proj-pm="${p.isPM ? '1' : '0'}">
       <div class="project-meta">
         <span class="project-index">PROJECT #${p.index}</span>
         <span class="project-period">${esc(p.period)}${p.duration ? ` · ${esc(p.duration)}` : ''}</span>
@@ -208,12 +216,11 @@ function renderProjects(items) {
       <div class="project-title">${esc(p.title)}</div>
       ${p.remarks ? `<div class="project-remarks">${esc(p.remarks)}</div>` : ''}
       <div class="project-footer">
-        ${isPM ? '<span class="tag pm">PM Lead</span>' : ''}
+        ${p.isPM ? '<span class="tag pm">PM Lead</span>' : ''}
         ${p.client ? `<span class="tag">${esc(p.client)}</span>` : ''}
         ${p.affiliatedInstitution ? `<span class="tag org">${esc(p.affiliatedInstitution)}</span>` : ''}
       </div>
-    </div>`;
-  }).join('');
+    </div>`).join('');
 }
 
 /* ─── Publications ─── */
@@ -222,24 +229,36 @@ function renderPublications(items) {
   if (!el || !items) return;
   const sorted = [...items].sort((a, b) => b.index - a.index);
   el.innerHTML = sorted.map(pub => {
-    const typeBadge = pub.type === 'Journal'
-      ? `<span class="badge badge-journal">Journal</span>`
-      : pub.type === 'Poster'
-        ? `<span class="badge badge-poster">Poster</span>`
-        : `<span class="badge badge-conf">Conference</span>`;
-    const firstBadge  = pub.role === '1st Author' ? `<span class="badge badge-1st">1st Author</span>` : '';
-    const globalBadge = pub.global ? `<span class="badge badge-global">International</span>` : '';
+    const isIntl = pub.global;
+    let dataType, typeBadge;
+    if (pub.type === 'Poster') {
+      dataType = 'Poster';
+      typeBadge = `<span class="badge badge-poster">Poster</span>`;
+    } else if (pub.type === 'Journal') {
+      dataType = isIntl ? 'Journal-International' : 'Journal-Domestic';
+      typeBadge = isIntl
+        ? `<span class="badge badge-journal">Intl. Journal</span>`
+        : `<span class="badge badge-journal badge-domestic">Dom. Journal</span>`;
+    } else {
+      dataType = isIntl ? 'Conference-International' : 'Conference-Domestic';
+      typeBadge = isIntl
+        ? `<span class="badge badge-conf">Intl. Conference</span>`
+        : `<span class="badge badge-conf badge-domestic">Dom. Conference</span>`;
+    }
+    const firstBadge = pub.role === '1st Author' ? `<span class="badge badge-1st">1st Author</span>` : '';
     const venue = [pub.venue, pub.year, pub.remarks].filter(Boolean).join(' · ');
     const link  = pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener" class="pub-link">View Paper ↗</a>` : '';
     return `
-    <div class="pub-item reveal" data-type="${esc(pub.type)}">
+    <div class="pub-item reveal" data-type="${dataType}">
       <span class="pub-num">[${pub.index}]</span>
       <div class="pub-body">
-        <div class="pub-authors">${esc(pub.authors)}</div>
+        <div class="pub-authors-row">
+          <span class="pub-authors">${esc(pub.authors)}</span>
+          ${link}
+        </div>
         <div class="pub-title">"${esc(pub.title)}"</div>
         <div class="pub-venue">${esc(venue)}</div>
-        <div class="pub-badges">${typeBadge}${firstBadge}${globalBadge}</div>
-        ${link}
+        <div class="pub-badges">${typeBadge}${firstBadge}</div>
       </div>
     </div>`;
   }).join('');
@@ -282,7 +301,7 @@ function renderAwards(items) {
   if (!el || !items) return;
   el.innerHTML = items.map(a => `
     <div class="award-card reveal">
-      <div class="award-date">${esc(a.date)}</div>
+      <div class="award-date${a.date ? '' : ' award-date-unknown'}">${a.date ? esc(a.date) : '—'}</div>
       <div class="award-title">${esc(a.title)}</div>
       ${a.description ? `<div class="award-desc">${esc(a.description)}</div>` : ''}
       <div class="award-org">${esc(a.organization)} · ${esc(a.location)}</div>
@@ -325,7 +344,6 @@ function renderContact(basic) {
   const el = document.getElementById('contactCards');
   if (!el || !basic) return;
   const contacts = [];
-
   if (basic.email) {
     basic.email.forEach(em => contacts.push({ icon: '✉️', label: 'Email', value: em, href: `mailto:${em}` }));
   }
@@ -367,7 +385,6 @@ function setupPhotoFallback() {
   img.addEventListener('load', () => {
     fallback.style.display = 'none';
   });
-  // Check if already broken
   if (img.complete && !img.naturalWidth) {
     img.style.display = 'none';
     fallback.style.display = 'flex';
@@ -412,17 +429,82 @@ function setupScrollReveal() {
 }
 
 /* ─── Publication Filter ─── */
-function setupFilterButtons() {
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.pub-item').forEach(item => {
-        item.classList.toggle('hidden', filter !== 'all' && item.dataset.type !== filter);
-      });
+function setupPubFilterButtons() {
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.pub-filter-bar .filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.pub-filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.pub-item').forEach(item => {
+      item.classList.toggle('hidden', filter !== 'all' && item.dataset.type !== filter);
     });
   });
+}
+
+/* ─── Project Filter ─── */
+function setupProjFilterButtons() {
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('#projFilterBar .filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#projFilterBar .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.projFilter;
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.classList.toggle('hidden', filter === 'pm' && card.dataset.projPm !== '1');
+    });
+  });
+}
+
+/* ─── Project Modal ─── */
+function setupProjectModal() {
+  const grid    = document.getElementById('projectsGrid');
+  const modal   = document.getElementById('projectModal');
+  const closeBtn = document.getElementById('modalClose');
+  if (!grid || !modal) return;
+
+  grid.addEventListener('click', e => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+    const idx = parseInt(card.dataset.projIndex);
+    const p = _allProjects.find(proj => proj.index === idx);
+    if (p) openProjectModal(p);
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+}
+
+function openProjectModal(p) {
+  const body  = document.getElementById('modalBody');
+  const modal = document.getElementById('projectModal');
+  if (!body || !modal) return;
+
+  const fields = [
+    ['Period', `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
+    p.client              && ['Client', p.client],
+    p.partnerInstitution  && ['Partner Institution', p.partnerInstitution],
+    p.affiliatedInstitution && ['Affiliated Institution', p.affiliatedInstitution],
+    p.remarks             && ['Remarks', p.remarks],
+  ].filter(Boolean);
+
+  body.innerHTML = `
+    <div class="modal-badge">${p.isPM ? '👑 PM Lead · ' : ''}Project #${p.index}</div>
+    <div class="modal-title">${esc(p.title)}</div>
+    ${fields.map(([label, value]) => `
+      <div class="modal-field">
+        <span class="modal-field-label">${esc(label)}</span>
+        <span class="modal-field-value">${esc(value)}</span>
+      </div>`).join('')}
+  `;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('projectModal')?.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 /* ─── Helpers ─── */
