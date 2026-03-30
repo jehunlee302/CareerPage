@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29",
+  "lastUpdated": "2026-03-30",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -40,42 +40,52 @@
     ]
   },
   "stats": [
-    { "value": "24+", "label": "Major Projects" },
-    { "value": "26+", "label": "Publications" },
-    { "value": "4+", "label": "Years at KAIST" },
-    { "value": "1", "label": "Patent" }
+    {
+      "value": "24+",
+      "label": "Major Projects"
+    },
+    {
+      "value": "26+",
+      "label": "Publications"
+    },
+    {
+      "value": "4+",
+      "label": "Years at KAIST"
+    },
+    {
+      "value": "1",
+      "label": "Patent"
+    }
   ],
   "education": [
     {
       "degree": "Ph.D.",
       "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
-      "period": "2021.03 – 2025.02",
+      "period": "2021.03 - 2025.02",
       "major": "Industrial & Systems Engineering",
       "region": "Daejeon, South Korea",
-      "remarks": "Advisor: Hyun-Jung Kim · MSS Lab",
-      "labUrl": "https://msslab.kaist.ac.kr/Professor/professor"
+      "remarks": "Advisor: Hyun-Jung Kim, https://msslab.kaist.ac.kr/Professor/professor"
     },
     {
       "degree": "M.S.",
       "institution": "Sungkyunkwan University (SKKU)",
-      "period": "2016.09 – 2021.02",
+      "period": "2016.09 - 2021.02",
       "major": "Industrial Engineering",
       "region": "Suwon, South Korea",
-      "remarks": "Advisor: Hyun-Jung Kim · MSS Lab",
-      "labUrl": "https://msslab.kaist.ac.kr/Professor/professor"
+      "remarks": "Advisor: Hyun-Jung Kim, https://msslab.kaist.ac.kr/Professor/professor"
     },
     {
       "degree": "B.S.",
       "institution": "Sungkyunkwan University (SKKU)",
-      "period": "2013.03 – 2016.08",
+      "period": "2013.03 - 2016.08",
       "major": "Systems Management Engineering",
       "region": "Suwon, South Korea",
       "remarks": ""
     },
     {
-      "degree": "High School",
+      "degree": "HIgh School",
       "institution": "Sejong Science High School",
-      "period": "2011.03 – 2013.02",
+      "period": "2011.03 - 2013.02",
       "major": "Math & Science Track",
       "region": "Seoul, South Korea",
       "remarks": ""
@@ -86,495 +96,674 @@
       "position": "Planning & Scheduling Solution Consultant",
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Consultant Part",
-      "period": "2025.08 – Present",
+      "period": "2025.08 - Present",
       "roles": "System designer: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
+      "performance": "",
       "region": "Yongin, South Korea"
     },
     {
       "position": "Planning & Scheduling Solution Consultant",
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Micron Part",
-      "period": "2025.02 – 2025.07",
+      "period": "2025.02 - 2025.07",
       "roles": "System designer: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
+      "performance": "",
       "region": "Yongin, South Korea"
     },
     {
       "position": "Technical Research Personnel",
       "organization": "South Korea (KAIST, VMS Solutions Inc.)",
       "division": "Ministry of National Defense",
-      "period": "2023.03 – 2026.02",
-      "roles": "Industrial R&D",
+      "period": "2023.03 - 2026.02",
+      "roles": "industrial R&D",
+      "performance": "",
       "region": "Daejeon/Yongin, South Korea"
     },
     {
       "position": "Researcher",
       "organization": "KAIST",
       "division": "MSS (Manufacturing Service Systems) Lab.",
-      "period": "2021.03 – 2025.02",
-      "roles": "Scheduler designer: AI-based dynamic schedulers, optimization-based heuristics; System designer: autonomous manufacturing scheduling systems",
+      "period": "2021.03 - 2025.02",
+      "roles": "Scheduler designer: AI-based dynamic schedulers, optimization-based heuristics, System designer: autonomous manufacturing scheduling systems",
+      "performance": "",
       "region": "Daejeon, South Korea"
     },
     {
       "position": "Researcher",
       "organization": "SKKU",
       "division": "SCO (Systems Control & Optimization) Lab.",
-      "period": "2016.04 – 2021.02",
-      "roles": "Scheduling algorithm developer: meta-heuristics, optimization; System designer: digital twin for manufacturing, dynamic rescheduling systems",
+      "period": "2016.04 - 2021.02",
+      "roles": "Scheduling algorithm developer: meta-heuristics, opimization, System designer: digital twin for manufacturing, dynamic rescheduling systems",
+      "performance": "",
       "region": "Suwon, South Korea"
     }
   ],
   "projects": [
     {
       "index": 25,
-      "period": "2025.06 – 2025.12",
+      "period": "2025.06-2025.12",
       "duration": "7m",
       "title": "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab",
       "client": "SK Hynix",
-      "partnerInstitution": "VMS Solutions Inc.",
+      "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
-      "remarks": "PM: 생산-설류 통합 시뮬레이터 설계 및 사용자 시나리오 설계"
+      "remarks": ""
     },
     {
       "index": 24,
-      "period": "2025.03 – ",
+      "period": "2025.03 -",
       "duration": "",
-      "title": "Production-logistics digital twin platform development",
+      "title": "",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
-      "remarks": "사용자 시나리오 정의 및 데이터 스키마 설계"
+      "remarks": ""
     },
     {
       "index": 23,
-      "period": "2025.02 – 2025.06",
+      "period": "2025.02 - 2025.06",
       "duration": "5m (5y)",
       "title": "Simulation-based real-time scheduler for semiconductor fab",
       "client": "Micron",
-      "partnerInstitution": "VMS Solutions Inc.",
+      "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
-      "remarks": "Mozart 환경 이슈 해결 및 고객 요구사항 기반 로직 설계"
+      "remarks": ""
     },
     {
       "index": 22,
-      "period": "2024.05 – 2025.02",
+      "period": "2024.05 - 2025.02",
       "duration": "10m (10y)",
       "title": "Autonomous scheduling for swift and efficient adaptation to dynamic manufacturing environments",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "범용 Agent 구축을 위한 스케줄링 및 디스패칭 알고리즘 개발"
+      "remarks": ""
     },
     {
       "index": 21,
-      "period": "2024.03 – 2025.02",
+      "period": "2024.03 - 2025.02",
       "duration": "1y",
       "title": "AI-based algorithm for optimal operation plans for various scenarios",
       "client": "Samsung Electronics",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "반도체 제품 생산량 예측 및 생산계획 수립 알고리즘 개발"
+      "remarks": ""
     },
     {
       "index": 20,
-      "period": "2023.07 – 2024.06",
+      "period": "2023.07 - 2024.06",
       "duration": "1y",
-      "title": "Reinforcement learning for unrelated parallel machine scheduling with sequence-dependent setup times and machine eligibility",
+      "title": "Reinforcement learning for unrelated parallel machine scheduling problems with sequence-dependent setup times and machine eligibility",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "GNN 기반 강화학습 알고리즘 개발 및 성능 검토"
+      "remarks": ""
     },
     {
       "index": 19,
-      "period": "2023.07 – 2024.02",
+      "period": "2023.07 - 2024.02",
       "duration": "8m",
       "title": "Production planning with AI",
       "client": "LG Electronics",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "PM: 린장 재약 파악 및 최적 생산계획 수립 알고리즘 개발"
+      "remarks": ""
     },
     {
       "index": 18,
-      "period": "2022.05 – 2023.02",
+      "period": "2022.05 - 2023.02",
       "duration": "10m",
       "title": "Graph-based reinforcement learning algorithm for real-time job shop scheduling",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "PM: 강화학습 활용 실시간 디스패칭 Agent 개발"
+      "remarks": ""
     },
     {
       "index": 17,
-      "period": "2022.04 – 2023.03",
+      "period": "2022.04 - 2023.03",
       "duration": "1y",
       "title": "Reinforcement learning for job shop scheduling",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "PM: Job Shop 생산 시뮬레이터 고도화 및 방법론 개발"
+      "remarks": ""
     },
     {
       "index": 16,
-      "period": "2022.03 – 2022.03",
+      "period": "2022.03 - 2022.03",
       "duration": "1m (7m)",
       "title": "Development of a wiring optimization algorithm for X-DEC slim layout",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "기판 전극 배치 기반 최적 배선 도출 알고리즘 기획"
+      "remarks": ""
     },
     {
       "index": 15,
-      "period": "2022.03 – ",
+      "period": "2022.03 -",
       "duration": "3y",
       "title": "Reinforcement learning-based meta-scheduling for manufacturing systems",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "PM: 범용 Agent 구축을 위한 Meta-RL 적용 및 설계"
+      "remarks": ""
     },
     {
       "index": 14,
-      "period": "2022.03 – 2023.07",
+      "period": "2022.03 - 2023.07",
       "duration": "1y5m (2y)",
       "title": "Reinforcement learning for project scheduling",
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "직업자 부하 분산 최소화 및 리스케줄링 알고리즘 개발"
+      "remarks": ""
     },
     {
       "index": 13,
-      "period": "2021.07 – 2021.11",
+      "period": "2021.07 - 2021.11",
       "duration": "5m",
       "title": "Development of a reinforcement learning algorithm for workload balancing of ship cargo production",
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": "부하 분산 최소화 및 시뮬레이터 개발"
+      "remarks": ""
+    },
+    {
+      "index": 12,
+      "period": "2020.06 - 2021.02",
+      "duration": "9m",
+      "title": "Optimal machine assignment with machine learning algorithms",
+      "client": "VMS Solutions",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "KAIST",
+      "remarks": ""
+    },
+    {
+      "index": 11,
+      "period": "2019.06 - 2022.05",
+      "duration": "3y",
+      "title": "Cyber-physical assembly and logistics systems in global supply chains",
+      "client": "MOTIE of Korea, Yura",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "KAIST",
+      "remarks": ""
+    },
+    {
+      "index": 10,
+      "period": "2019.09 - 2020.02",
+      "duration": "6m",
+      "title": "Optimal weight sets for dispatching rules with multiple KPIs",
+      "client": "VMS Solutions",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "KAIST",
+      "remarks": ""
+    },
+    {
+      "index": 9,
+      "period": "2019.04 - 2019.12",
+      "duration": "9m (1y9m)",
+      "title": "Big data-based simulation and optimization technology for smart manufacturing",
+      "client": "MOTIE of Korea, Samsung SDI",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 8,
+      "period": "2019.03 - 2022.02",
+      "duration": "3y",
+      "title": "Development of scheduling theory and algorithms with reinforcement learning for manufacturing systems",
+      "client": "NRF of Korea",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 7,
+      "period": "2018.07 - 2018.09",
+      "duration": "3m",
+      "title": "Methodology for dispatching rules' weights",
+      "client": "SK Hynix",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 6,
+      "period": "2018.07 - 2019.02",
+      "duration": "8m",
+      "title": "Framework development for KPI analysis with various weights on dispatching rules",
+      "client": "VMS Solutions",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 5,
+      "period": "2017.07 - 2018.02",
+      "duration": "8m",
+      "title": "Analysis of KPIs according to weights on dispatching rules for LCD manufacturing",
+      "client": "VMS Solutions",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 4,
+      "period": "2017.07 - 2018.01",
+      "duration": "7m",
+      "title": "Design and analysis for operations optimizations of smart factory testbed",
+      "client": "MSIP of Korea",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 3,
+      "period": "2016.11 - 2019.10",
+      "duration": "3y",
+      "title": "Development of scheduling and rescheduling algorithms for 3D printer-based smart factory",
+      "client": "NRF of Korea",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 2,
+      "period": "2016.07 - 2017.02",
+      "duration": "8m",
+      "title": "Development of algorithms for detecting and improving inefficient schedules in LCD processes",
+      "client": "VMS Solutions",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 1,
+      "period": "2016.04 - 2018.05",
+      "duration": "2y2m (3y)",
+      "title": "Development of open FaaS IoT service platform for mass personalization",
+      "client": "MSIP of Korea",
+      "partnerInstitution": "ETRI,",
+      "affiliatedInstitution": "SKKU",
+      "remarks": ""
+    },
+    {
+      "index": 0,
+      "period": "",
+      "duration": "",
+      "title": "",
+      "client": "",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "",
+      "remarks": ""
     }
   ],
   "publications": [
     {
       "index": 26,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Graph-based imitation learning for real-time job shop dispatcher",
-      "venue": "IEEE Transactions on Automation Science and Engineering",
+      "title": "Graph-based imitation learning for real-time job shop dispatcher,",
+      "fullCitation": "J.-H. Lee and H.-J. Kim, \"Graph-based imitation learning for real-time job shop dispatcher,\" IEEE Transactions on Automation Science and Engineering, 2024.",
       "type": "Journal",
-      "year": 2024,
+      "link": "Graph-Based Imitation Learning for Real-Time Job Shop Dispatcher | IEEE Journals & Magazine | IEEE Xplore",
       "role": "1st Author",
+      "remarks": "",
+      "year": 2024,
       "global": true,
-      "link": "https://ieeexplore.ieee.org/document/10443051"
+      "venue": "IEEE Transactions on Automation Science and Engineering"
     },
     {
       "index": 25,
       "authors": "J.-H. Lee, J. Park, and H.-J. Kim",
-      "title": "Tree-based Dispatcher for Job Shop Scheduling",
-      "venue": "IEEE International Conference on Automation Science and Engineering",
+      "title": "Tree-based Dispatcher for Job Shop Scheduling,",
+      "fullCitation": "J.-H. Lee, J. Park, and H.-J. Kim, \"Tree-based Dispatcher for Job Shop Scheduling,\" IEEE International Conference on Automation Science and Engineering (CASE), Bari, Italy, 2024.",
       "type": "Conference",
-      "year": 2024,
+      "link": "",
       "role": "1st Author",
-      "global": true,
       "remarks": "Bari, Italy",
-      "link": ""
+      "year": 2024,
+      "global": true,
+      "venue": "IEEE International Conference on Automation Science and Engineering (CASE)"
     },
     {
       "index": 24,
-      "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Tree-based dispatcher for solving job shop scheduling problems",
-      "venue": "Spring Conference of Korean Institute of Industrial Engineers (KIIE)",
+      "authors": "J.-H. Leeand H.-J. Kim",
+      "title": "Tree-based dispatcher for solving job shop scheduling problems,",
+      "fullCitation": "J.-H. Leeand H.-J. Kim, \"Tree-based dispatcher for solving job shop scheduling problems,\" the Spring Conference of Korean Institute of Industrial Engineers, Yeosu, 2024.",
       "type": "Conference",
-      "year": 2024,
+      "link": "",
       "role": "1st Author",
-      "global": false,
       "remarks": "Yeosu, South Korea",
-      "link": ""
+      "year": 2024,
+      "global": false,
+      "venue": "the Spring Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 23,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Active schedule-based imitation learning for job shop scheduling",
-      "venue": "Spring Conference of KIIE",
+      "title": "Active schedule-based imitation learning for job shop scheduling,",
+      "fullCitation": "J.-H. Lee and H.-J. Kim, \"Active schedule-based imitation learning for job shop scheduling,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2023.",
       "type": "Conference",
-      "year": 2023,
+      "link": "",
       "role": "1st Author",
-      "global": false,
       "remarks": "Jeju, South Korea",
-      "link": ""
+      "year": 2023,
+      "global": false,
+      "venue": "the Spring Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 22,
-      "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Imitation learning for real-time job shop scheduling using graph-based representation",
-      "venue": "Winter Simulation Conference (WSC)",
+      "authors": "J.-H. Lee and H.-J. Kim*",
+      "title": "Imitation learning for real-time job shop scheduling using graph-based representation,",
+      "fullCitation": "J.-H. Lee and H.-J. Kim*, \"Imitation learning for real-time job shop scheduling using graph-based representation,\" Winter Simulation Conference, Singapore, 2022, pp. 3285-3296.",
       "type": "Conference",
-      "year": 2022,
+      "link": "Imitation Learning for Real-Time Job Shop Scheduling Using Graph-Based Representation | IEEE Conference Publication | IEEE Xplore",
       "role": "1st Author",
-      "global": true,
       "remarks": "Singapore",
-      "link": ""
+      "year": 2022,
+      "global": true,
+      "venue": "Winter Simulation Conference"
     },
     {
       "index": 21,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Job shop scheduling using graph-based imitation learning",
-      "venue": "INFORMS Annual Meeting",
+      "title": "Job shop scheduling using graph-based imitation learning,",
+      "fullCitation": "J.-H. Lee and H.-J. Kim, \"Job shop scheduling using graph-based imitation learning,\" INFORMS Annual Meeting, Indiana, USA, 2022.",
       "type": "Poster",
-      "year": 2022,
+      "link": "",
       "role": "1st Author",
-      "global": true,
       "remarks": "Indiana, USA",
-      "link": ""
+      "year": 2022,
+      "global": true,
+      "venue": "INFORMS Annual Meeting"
     },
     {
       "index": 20,
       "authors": "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*",
-      "title": "A multi-manned assembly line worker assignment and balancing problem",
-      "venue": "Journal of Manufacturing Systems",
+      "title": "A multi-manned assembly line worker assignment and balancing problem with positional constraints,",
+      "fullCitation": "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*, \"A multi-manned assembly line worker assignment and balancing problem with positional constraints,\" IEEE Robotics and Automation Letters, vol. 7, no. 3, pp. 7786-7793, 2022.",
       "type": "Journal",
-      "year": 2022,
+      "link": "A Multi-Manned Assembly Line Worker Assignment and Balancing Problem With Positional Constraints | IEEE Journals & Magazine | IEEE Xplore",
       "role": "Co-Author",
+      "remarks": "",
+      "year": 2022,
       "global": true,
-      "link": ""
+      "venue": "IEEE Robotics and Automation Letters"
     },
     {
       "index": 19,
       "authors": "J.-H. Lee, D.-Y. Kim, S.-H. Cho, and H.-J. Kim",
-      "title": "Reinforcement learning for resource leveling in multiple projects",
-      "venue": "Spring Conference of KIIE",
+      "title": "Reinforcement learning for resource leveling in multiple projects,",
+      "fullCitation": "J.-H. Lee, D.-Y. Kim, S.-H. Cho, and H.-J. Kim, \"Reinforcement learning for resource leveling in multiple projects,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2022.",
       "type": "Conference",
-      "year": 2022,
+      "link": "",
       "role": "1st Author",
-      "global": false,
       "remarks": "Jeju, South Korea",
-      "link": ""
+      "year": 2022,
+      "global": false,
+      "venue": "the Spring Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 18,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Dynamic job shop scheduling using graph-based imitation learning",
-      "venue": "Spring Conference of KIIE",
+      "title": "Dynamic job shop scheduling using graph-based imitation learning,",
+      "fullCitation": "J.-H. Lee and H.-J. Kim, \"Dynamic job shop scheduling using graph-based imitation learning,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2022.",
       "type": "Conference",
-      "year": 2022,
+      "link": "",
       "role": "1st Author",
-      "global": false,
       "remarks": "Jeju, South Korea",
-      "link": ""
+      "year": 2022,
+      "global": false,
+      "venue": "the Spring Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 17,
-      "authors": "J.-H. Lee, Y. Kim*, Y. B. Kim, B.-H. Kim, G.-H. Chung",
-      "title": "Machine learning-based periodic setup changes scheduling for semiconductor manufacturing",
-      "venue": "Winter Simulation Conference (WSC)",
+      "authors": "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung",
+      "title": "Machine learning-based periodic setup changes for semiconductor manufacturing machines,",
+      "fullCitation": "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung, \"Machine learning-based periodic setup changes for semiconductor manufacturing machines,\" Winter Simulation Conference, Online, 2021, pp.1-10.",
       "type": "Conference",
-      "year": 2021,
+      "link": "Machine Learning-Based Periodic Setup Changes for Semiconductor Manufacturing Machines | IEEE Conference Publication | IEEE Xplore",
       "role": "1st Author",
-      "global": true,
       "remarks": "Online",
-      "link": ""
+      "year": 2021,
+      "global": true,
+      "venue": "Winter Simulation Conference"
     },
     {
       "index": 16,
-      "authors": "D.-Y. Kim, J.-H. Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J. Kim",
-      "title": "Resource leveling in shipbuilding using reinforcement learning",
-      "venue": "Autumn Conference of KIIE",
+      "authors": "D.-Y. Kim, J.-H.Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J.Kim",
+      "title": "Resource leveling in shipyard cargo hold process through reinforcement learning,",
+      "fullCitation": "D.-Y. Kim, J.-H.Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J.Kim, \"Resource leveling in shipyard cargo hold process through reinforcement learning,\" the Autumn Conference of Korean Institute of Industrial Engineers, Seoul, Korea, 2021.",
       "type": "Conference",
-      "year": 2021,
+      "link": "",
       "role": "Co-Author",
-      "global": false,
       "remarks": "Seoul, South Korea",
-      "link": ""
+      "year": 2021,
+      "global": false,
+      "venue": "the Autumn Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 15,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim*",
-      "title": "Assembly line worker assignment and balancing problem with positional constraints",
-      "venue": "Winter Simulation Conference (WSC)",
+      "title": "Assembly line worker assignment and balancing problem with positional constraints,",
+      "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Assembly line worker assignment and balancing problem with positional constraints,\" Advances in Production Management Systems (APMS), Online, 2021, pp. 3-11.",
       "type": "Conference",
-      "year": 2021,
+      "link": "Assembly Line Worker Assignment and Balancing Problem with Positional Constraints | Springer Nature Link",
       "role": "Co-Author",
-      "global": true,
       "remarks": "Online",
-      "link": ""
+      "year": 2021,
+      "global": true,
+      "venue": "Advances in Production Management Systems (APMS)"
     },
     {
       "index": 14,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim",
-      "title": "Operation and optimization of automotive parts assembly line considering work conditions",
-      "venue": "Spring Conference of KIIE",
+      "title": "Operation and optimization of the automotive parts assembly line considering worker skill levels,",
+      "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim, \"Operation and optimization of the automotive parts assembly line considering worker skill levels,\" the Summer Conference of Korea CDE, Online, 2021.",
       "type": "Conference",
-      "year": 2021,
+      "link": "",
       "role": "Co-Author",
-      "global": false,
       "remarks": "Online",
-      "link": ""
+      "year": 2021,
+      "global": true,
+      "venue": "the Summer Conference of Korea CDE"
     },
     {
       "index": 13,
       "authors": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*",
-      "title": "A sequential search method of dispatching rules for job shop scheduling",
-      "venue": "Computers & Operations Research",
+      "title": "A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,",
+      "fullCitation": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*, \"A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,\" IEEE Transactions on Semiconductor Manufacturing, vol. 33, no. 4, pp. 496-503, 2020.",
       "type": "Journal",
-      "year": 2020,
+      "link": "A Sequential Search Method of Dispatching Rules for Scheduling of LCD Manufacturing Systems | IEEE Journals & Magazine | IEEE Xplore",
       "role": "1st Author",
+      "remarks": "",
+      "year": 2020,
       "global": true,
-      "link": ""
+      "venue": "IEEE Transactions on Semiconductor Manufacturing"
     },
     {
       "index": 12,
-      "authors": "J.-H. Lee and H.-J. Kim, G.-H. Chung",
-      "title": "A simulation-based sequential search method for job shop scheduling",
-      "venue": "Winter Simulation Conference (WSC)",
+      "authors": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*",
+      "title": "A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,",
+      "fullCitation": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*, \"A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,\" Winter Simulation Conference, Online, 2020, pp. 1943-1953.",
       "type": "Conference",
-      "year": 2020,
+      "link": "A Simulation-Based Sequential Search Method for Multi-Obejctive Scheduling Problems of Manufacturing Systems | IEEE Conference Publication | IEEE Xplore",
       "role": "1st Author",
-      "global": true,
       "remarks": "Online",
-      "link": ""
+      "year": 2020,
+      "global": true,
+      "venue": "Winter Simulation Conference"
     },
     {
       "index": 11,
-      "authors": "H. Yang, J.-H. Lee, and H.-J. Kim*",
-      "title": "Workforce assignment for automotive parts assembly lines",
-      "venue": "Winter Simulation Conference (WSC)",
+      "authors": "H. Yang, J.-H. Lee, and H.-J. Kim",
+      "title": "Workforce assignment for automotive parts assembly lines,",
+      "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim, \"Workforce assignment for automotive parts assembly lines,\" the Winter Conference of Korea CDE, Online, 2020.",
       "type": "Conference",
-      "year": 2020,
+      "link": "",
       "role": "Co-Author",
-      "global": true,
       "remarks": "Online",
-      "link": ""
+      "year": 2020,
+      "global": true,
+      "venue": "the Winter Conference of Korea CDE"
     },
     {
       "index": 10,
       "authors": "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*",
-      "title": "Digital twin-based cyber physical production system architectural framework",
-      "venue": "International Journal of Advanced Manufacturing Technology",
+      "title": "Digital twin-based cyber physical production system architectural framework for personalized production,",
+      "fullCitation": "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*, \"Digital twin-based cyber physical production system architectural framework for personalized production,\" The International Journal of Advanced Manufacturing Technology, vol. 106, no. 5, 2020, pp. 1787-1810.",
       "type": "Journal",
-      "year": 2020,
+      "link": "Digital twin-based cyber physical production system architectural framework for personalized production | The International Journal of Advanced Manufacturing Technology | Springer Nature Link",
       "role": "Co-Author",
+      "remarks": "",
+      "year": 2020,
       "global": true,
-      "link": ""
+      "venue": "The International Journal of Advanced Manufacturing Technology"
     },
     {
       "index": 9,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim*",
-      "title": "Workforce assignment with different skill levels for automotive parts assembly line",
-      "venue": "International Conference on Simulation and Modelling Methodologies",
+      "title": "Workforce assignment with a different skill level for automotive parts assembly lines,",
+      "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Workforce assignment with a different skill level for automotive parts assembly lines,\" Advances in Production Management Systems (APMS), Novi Sad, Serbia, 2020, pp. 206-212.",
       "type": "Conference",
-      "year": 2020,
+      "link": "Workforce Assignment with a Different Skill Level for Automotive Parts Assembly Lines | Springer Nature Link",
       "role": "Co-Author",
-      "global": true,
       "remarks": "Novi Sad, Serbia",
-      "link": ""
+      "year": 2020,
+      "global": true,
+      "venue": "Advances in Production Management Systems (APMS)"
     },
     {
       "index": 8,
-      "authors": "J.-H. Lee, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung",
-      "title": "A sequential search framework for selecting well-performing dispatching rules",
-      "venue": "Winter Simulation Conference (WSC)",
+      "authors": "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung",
+      "title": "A sequential search framework for selecting weights of dispatching rules in manufacturing systems,",
+      "fullCitation": "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A sequential search framework for selecting weights of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Maryland, USA, 2019, pp. 2201-2211.",
       "type": "Conference",
-      "year": 2019,
+      "link": "A Sequential Search Framework for Selecting Weights of Dispatching Rules in Manufacturing Systems | IEEE Conference Publication | IEEE Xplore",
       "role": "1st Author",
-      "global": true,
       "remarks": "Maryland, USA",
-      "link": ""
+      "year": 2019,
+      "global": true,
+      "venue": "Winter Simulation Conference"
     },
     {
       "index": 7,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages",
-      "venue": "Autumn Conference of KIIE",
+      "title": "A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages,",
+      "fullCitation": "J.-H. Lee and H.-J. Kim, \"A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages,\" the Autumn Conference of Korean Institute of Industrial Engineers, Seoul, 2019.",
       "type": "Conference",
-      "year": 2019,
+      "link": "",
       "role": "1st Author",
-      "global": false,
       "remarks": "Seoul, South Korea",
-      "link": ""
+      "year": 2019,
+      "global": false,
+      "venue": "the Autumn Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 6,
       "authors": "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*",
-      "title": "Vulnerability analysis of evacuation transportation networks",
-      "venue": "International Journal of Disaster Risk Reduction",
+      "title": "Vulnerability analysis of evacuation transportation networks,",
+      "fullCitation": "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*, \"Vulnerability analysis of evacuation transportation networks,\" International Journal of Industrial Engineering-Theory Applications and Practice, vol. 25, no. 5, 2018, pp. 663-673.",
       "type": "Journal",
-      "year": 2018,
+      "link": "https://eds.s.ebscohost.com/eds/pdfviewer/pdfviewer?vid=0&sid=aae09a75-7b12-43fb-8fb9-3cea0c5bccfd%40redis",
       "role": "Co-Author",
+      "remarks": "",
+      "year": 2018,
       "global": true,
-      "link": "https://eds.s.ebscohost.com"
+      "venue": "International Journal of Industrial Engineering-Theory Applications and Practice"
     },
     {
       "index": 5,
-      "authors": "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim, B.D. Chung*",
-      "title": "A framework for performance analysis of semiconductor manufacturing systems",
-      "venue": "Summer Simulation Conference",
+      "authors": "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung",
+      "title": "A framework for performance analysis of dispatching rules in manufacturing systems,",
+      "fullCitation": "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A framework for performance analysis of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Gothenburg, Sweden, 2018, pp. 3550-3560.",
       "type": "Conference",
-      "year": 2018,
+      "link": "A FRAMEWORK FOR PERFORMANCE ANALYSIS OF DISPATCHING RULES IN MANUFACTURING SYSTEMS | IEEE Conference Publication | IEEE Xplore",
       "role": "1st Author",
-      "global": true,
       "remarks": "Gothenburg, Sweden",
-      "link": ""
+      "year": 2018,
+      "global": true,
+      "venue": "Winter Simulation Conference"
     },
     {
       "index": 4,
-      "authors": "J.-H. Lee, S.-S. Park, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung",
-      "title": "A framework for performance analysis of 3D printer-based manufacturing systems",
-      "venue": "Summer Simulation Conference",
+      "authors": "J.-H. Lee, S.-S. Park, and H.-J. Kim",
+      "title": "Rescheduling algorithms for 3D printer-based manufacturing systems,",
+      "fullCitation": "J.-H. Lee, S.-S. Park, and H.-J. Kim, \"Rescheduling algorithms for 3D printer-based manufacturing systems,\" the Summer Conference of Korea CDE, Jeju, 2018.",
       "type": "Conference",
-      "year": 2018,
+      "link": "",
       "role": "1st Author",
-      "global": true,
-      "remarks": "Gothenburg, Sweden",
-      "link": ""
+      "remarks": "Jeju, South Korea",
+      "year": 2018,
+      "global": false,
+      "venue": "the Summer Conference of Korea CDE"
     },
     {
       "index": 3,
-      "authors": "S.-S. Park, J.H. Lee, H.-J. Kim",
-      "title": "Scheduling algorithms for 3D printer-based manufacturing systems",
-      "venue": "Spring Conference of KIIE",
+      "authors": "S.-S. Park, J.H. Lee, and H.-J. Kim",
+      "title": "Scheduling algorithms for 3D printer-based manufacturing systems,",
+      "fullCitation": "S.-S. Park, J.H. Lee, and H.-J. Kim, \"Scheduling algorithms for 3D printer-based manufacturing systems,\" the Spring Conference of Korean Institute of Industrial Engineers, Gyeongju, Korea, 2018.",
       "type": "Conference",
-      "year": 2018,
+      "link": "",
       "role": "Co-Author",
-      "global": false,
       "remarks": "Gyeongju, South Korea",
-      "link": ""
+      "year": 2018,
+      "global": false,
+      "venue": "the Spring Conference of Korean Institute of Industrial Engineers"
     },
     {
       "index": 2,
-      "authors": "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J.* Kim, B.-H. Kim, and G.-H. Chung",
-      "title": "Rescheduling of flexible manufacturing systems",
-      "venue": "Winter Simulation Conference (WSC)",
+      "authors": "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung",
+      "title": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting,",
+      "fullCitation": "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung, \"Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting,\" Winter Simulation Conference, Las Vegas, USA, 2017, pp. 3745-3755.",
       "type": "Conference",
-      "year": 2017,
+      "link": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting | IEEE Conference Publication | IEEE Xplore",
       "role": "Co-Author",
-      "global": true,
       "remarks": "Las Vegas, USA",
-      "link": ""
+      "year": 2017,
+      "global": true,
+      "venue": "Winter Simulation Conference"
     },
     {
       "index": 1,
-      "authors": "S.-S. Park, S.Y. Kim, J.H. Lee, et al.",
-      "title": "3D printer-based assembly process scheduling algorithm development",
-      "venue": "Spring Conference of KIIE",
+      "authors": "S.-S. Park, S.Y. Kim, J.H. Lee, and H.-J. Kim",
+      "title": "3D printer based assembly process scheduling algorithm development,",
+      "fullCitation": "S.-S. Park, S.Y. Kim, J.H. Lee, and H.-J. Kim, \"3D printer based assembly process scheduling algorithm development,\" the Winter Conference of Korea CDE, Pyeongchang, Korea, 2017, pp. 515-523.",
       "type": "Conference",
-      "year": 2017,
+      "link": "",
       "role": "Co-Author",
-      "global": false,
       "remarks": "Pyeongchang, South Korea",
-      "link": ""
+      "year": 2017,
+      "global": false,
+      "venue": "the Winter Conference of Korea CDE"
     }
   ],
   "skills": {
-    "Programming": ["Python", "C#", "LaTeX", "R"],
-    "Tools": ["PyTorch", "Matplotlib", "MS Office", "Photo Shop"],
-    "Languages": ["Korean (Native)", "English (Professional)"]
+    "Programming": [
+      "Python",
+      "C#",
+      "LaTeX",
+      "R"
+    ],
+    "Tools": [
+      "PyTorch",
+      "Matplotlib",
+      "MS Office",
+      "Photo Shop"
+    ],
+    "Languages": [
+      "Korean (Native)",
+      "English (Professional)"
+    ]
   },
   "honors": [
     {
       "date": "2025.11",
       "title": "Second Prize, Ph.D. Thesis Competition",
       "description": "Learning Schedulers for Job Shop Scheduling Problems",
-      "organization": "Korean Institute of Industrial Engineers",
+      "organization": "Korean Institute of Industrial Engineers (KIIE)",
       "location": "Daejeon, South Korea",
       "remarks": ""
     },
@@ -582,7 +771,7 @@
       "date": "2023.12",
       "title": "First Prize, 2023 Simulation Challenge",
       "description": "Gating Control in Semiconductor Fabrication",
-      "organization": "Winter Simulation Conference",
+      "organization": "Winter Simulation Conference (WSC), Micron",
       "location": "San Antonio, USA",
       "remarks": "$3,000"
     },
@@ -595,10 +784,10 @@
       "remarks": "$1,500"
     },
     {
-      "date": "2022.05 – 2023.04",
+      "date": "",
       "title": "Ph.D. Candidate Research Incentive Support",
       "description": "",
-      "organization": "National Research Foundation",
+      "organization": "National Research Foundation (NRF) of Korea",
       "location": "South Korea",
       "remarks": "$15,000"
     },
@@ -619,16 +808,16 @@
       "remarks": ""
     },
     {
-      "date": "2021.03 – 2025.02",
-      "title": "Full-tuition Entrance Scholarship (Ph.D.)",
-      "description": "Merit-based Entrance Scholarship",
+      "date": "",
+      "title": "Full-tuition Entrance Scholarship",
+      "description": "Merit-based Entrance Scholarship (Ph.D.)",
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "remarks": "Full Tuition"
     },
     {
       "date": "2016.07",
-      "title": "Third Prize, 2015-2016 PACE RSMS Competition: Customer Insight",
+      "title": "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Customer Insight",
       "description": "",
       "organization": "General Motors (GM)",
       "location": "Cincinnati, USA",
@@ -636,16 +825,16 @@
     },
     {
       "date": "2016.07",
-      "title": "Third Prize, 2015-2016 PACE RSMS Competition: Manufacturing Engineering",
+      "title": "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Manufacturing Engineering",
       "description": "",
       "organization": "General Motors (GM)",
       "location": "Cincinnati, USA",
       "remarks": ""
     },
     {
-      "date": "2013.03 – 2016.08",
-      "title": "Full-tuition Entrance Scholarship (B.S.)",
-      "description": "Merit-based Entrance Scholarship",
+      "date": "",
+      "title": "Full-tuition Entrance Scholarship",
+      "description": "Merit-based Entrance Scholarship (B.S.)",
       "organization": "Sungkyunkwan University (SKKU)",
       "location": "Suwon, South Korea",
       "remarks": "Full Tuition"
@@ -653,8 +842,8 @@
   ],
   "patents": [
     {
-      "title": "Optimizing method for the n-job m-machine job shop scheduling problem using neural network and reinforcement learning",
-      "description": "A real-time optimization method using neural network and reinforcement learning for job shop scheduling",
+      "title": "Optimizing method for the manufacturing process",
+      "description": "A real-time optimization method for worker allocation in semi-automated assembly processes",
       "applicationDate": "2021.05.31",
       "applicationNumber": "KR1020210070359",
       "applicant": "KAIST, Yura (entire 12 people)",
@@ -666,7 +855,7 @@
       "role": "Researcher Representative",
       "organization": "Manufacturing and Service Systems Lab. (KAIST)",
       "location": "Daejeon, South Korea",
-      "period": "2022.03 – 2023.08"
+      "period": "2022.03 - 2023.08"
     },
     {
       "role": "Technical Mentor",
@@ -678,7 +867,7 @@
       "role": "Teaching Assistant (TA)",
       "organization": "Scheduling (KAIST)",
       "location": "Daejeon, South Korea",
-      "period": "2024.03 – 2024.12"
+      "period": "2021.03 – 2024.12"
     },
     {
       "role": "Teaching Assistant (TA)",
@@ -702,7 +891,7 @@
       "role": "Teaching Assistant (TA)",
       "organization": "Gender Awareness Education (SKKU)",
       "location": "Suwon, South Korea",
-      "period": "2016.10 – 2016.12"
+      "period": "2016.10 – 2018.12"
     },
     {
       "role": "Teaching Assistant (TA)",

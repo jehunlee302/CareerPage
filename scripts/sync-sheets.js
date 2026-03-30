@@ -18,7 +18,7 @@ const path  = require('path');
 //  ★ 여기에 구글 시트 ID를 입력하세요 ★
 //  URL 예: https://docs.google.com/spreadsheets/d/[SHEET_ID]/edit
 // ════════════════════════════════════════
-const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID';
+const SHEET_ID = '1PM15NIZml_i96kSzhVbnP7i4PTiUiZkXqztDW-pzAS4';
 
 const SHEETS = {
   basic:        'basic',
