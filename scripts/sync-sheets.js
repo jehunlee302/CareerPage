@@ -173,17 +173,26 @@ function parseWork(rows) {
 }
 
 function parseProjects(rows) {
-  const lastCol = (rows[0] || []).length - 1;
-  return rows.slice(1).filter(r => r[0]).map(r => ({
-    index:               Number(r[0]) || 0,
-    period:              r[1] || '',
-    duration:            r[2] || '',
-    title:               r[3] || '',
-    client:              r[4] || '',
-    partnerInstitution:  r[5] || '',
-    affiliatedInstitution: r[6] || '',
-    remarks:             r[lastCol] || '',
-  })).sort((a, b) => b.index - a.index);
+  // Projects sheet has 3 header rows (0,1,2); data starts at row 3
+  // col8 = "Project Manager (PM)" skill column — 'O' means PM role
+  // col19 = role label ("PM") or remarks; col20 = remarks when col19 is "PM"
+  return rows.slice(3).filter(r => r[0] && !isNaN(r[0]) && Number(r[0]) > 0).map(r => {
+    const col19 = (r[19] || '').trim();
+    const col20 = (r[20] || '').trim();
+    const isPM  = (r[8] || '').toUpperCase().trim() === 'O';
+    const remarks = col19.replace(/^PM[,\s]+/i, '').trim() || col20;
+    return {
+      index:                Number(r[0]) || 0,
+      period:               r[1] || '',
+      duration:             r[2] || '',
+      title:                r[3] || '',
+      client:               r[4] || '',
+      partnerInstitution:   r[5] || '',
+      affiliatedInstitution: r[6] || '',
+      isPM,
+      remarks,
+    };
+  }).sort((a, b) => b.index - a.index);
 }
 
 function parsePublications(rows) {

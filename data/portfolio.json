@@ -147,7 +147,8 @@
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "생산-물류 통합 시뮬레이터 설계 및 사용자 시나리오 정의"
     },
     {
       "index": 24,
@@ -157,7 +158,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "사용자 시나리오 정의 및 데이터 스키마 설계"
     },
     {
       "index": 23,
@@ -167,7 +169,8 @@
       "client": "Micron",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "Mozart 환경 이슈 해결 및 고객 요구사항 기반 로직 설계"
     },
     {
       "index": 22,
@@ -177,7 +180,8 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "범용 Agent 구축을 위한 스케줄링 및 디스패칭 알고리즘 개발"
     },
     {
       "index": 21,
@@ -187,7 +191,8 @@
       "client": "Samsung Electronics",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "반도체 제품 생산량 예측 및 생산계획 수립 알고리즘 개발"
     },
     {
       "index": 20,
@@ -197,7 +202,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "GNN 기반 강화학습 알고리즘 개발 및 성능 검토"
     },
     {
       "index": 19,
@@ -207,7 +213,8 @@
       "client": "LG Electronics",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "현장 제약 파악 및 최적 생산계획 수립 알고리즘 개발"
     },
     {
       "index": 18,
@@ -217,7 +224,8 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "강화학습 활용 실시간 디스패칭 Agent 개발"
     },
     {
       "index": 17,
@@ -227,7 +235,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "Job Shop 생산 시뮬레이터 고도화 및 방법론 개발"
     },
     {
       "index": 16,
@@ -237,7 +246,8 @@
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "기판 전극 위치 기반 최적 배선 도출 알고리즘 기획"
     },
     {
       "index": 15,
@@ -247,7 +257,8 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "범용 Agent 구축을 위한 Meta-RL 적용 및 설계"
     },
     {
       "index": 14,
@@ -257,7 +268,8 @@
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "작업자 부하 분산 최소화 목적 리스케줄링 알고리즘 개발"
     },
     {
       "index": 13,
@@ -267,7 +279,8 @@
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "부하 분산 최소화 알고리즘 및 시뮬레이터 개발"
     },
     {
       "index": 12,
@@ -277,7 +290,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현"
     },
     {
       "index": 11,
@@ -287,7 +301,8 @@
       "client": "MOTIE of Korea, Yura",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "작업자 결근 대응 알고리즘 및 시뮬레이터 개발"
     },
     {
       "index": 10,
@@ -297,7 +312,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발"
     },
     {
       "index": 9,
@@ -307,7 +323,8 @@
       "client": "MOTIE of Korea, Samsung SDI",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안"
     },
     {
       "index": 8,
@@ -317,7 +334,8 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "생산 시스템용 강화학습 알고리즘 개발 및 성능 검토"
     },
     {
       "index": 7,
@@ -327,7 +345,8 @@
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "반도체 FAB 생산라인 최적 파라미터 도출 및 현장 제약 파악"
     },
     {
       "index": 6,
@@ -337,7 +356,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": true,
+      "remarks": "머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발"
     },
     {
       "index": 5,
@@ -347,7 +367,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "파라미터에 따른 성능 변화 분석 프레임워크 설계/개발"
     },
     {
       "index": 4,
@@ -357,7 +378,8 @@
       "client": "MSIP of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "가상공장 시뮬레이터 구축 및 운영 효율성 분석"
     },
     {
       "index": 3,
@@ -367,7 +389,8 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발"
     },
     {
       "index": 2,
@@ -377,7 +400,8 @@
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발"
     },
     {
       "index": 1,
@@ -387,17 +411,8 @@
       "client": "MSIP of Korea",
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
-      "remarks": ""
-    },
-    {
-      "index": 0,
-      "period": "",
-      "duration": "",
-      "title": "",
-      "client": "",
-      "partnerInstitution": "",
-      "affiliatedInstitution": "",
-      "remarks": ""
+      "isPM": false,
+      "remarks": "유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발"
     }
   ],
   "publications": [

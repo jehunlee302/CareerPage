@@ -94,7 +94,7 @@ function setupTitleTypewriter(titles) {
 function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip');
   if (!el) return;
-  const pmCount = (data.projects || []).filter(p => (p.remarks || '').startsWith('PM')).length;
+  const pmCount = (data.projects || []).filter(p => p.isPM).length;
   const intlPrizes = (data.honors || []).filter(h =>
     (h.title || '').toLowerCase().includes('prize') || (h.title || '').toLowerCase().includes('first') || (h.title || '').toLowerCase().includes('second') || (h.title || '').toLowerCase().includes('third')
   ).length;
@@ -171,7 +171,7 @@ function renderFeaturedProjects(projects) {
     .filter(Boolean);
 
   el.innerHTML = featured.map(p => {
-    const isPM = (p.remarks || '').startsWith('PM');
+    const isPM = p.isPM;
     return `
     <div class="featured-card reveal">
       <div class="fc-badge">
@@ -189,7 +189,7 @@ function renderFeaturedProjects(projects) {
 
   // Project subtitle
   const sub = document.getElementById('projectSubtitle');
-  if (sub) sub.textContent = `${projects.length} research & industry projects · ${projects.filter(p => (p.remarks||'').startsWith('PM')).length}+ as Project Manager`;
+  if (sub) sub.textContent = `${projects.length} research & industry projects · ${projects.filter(p => p.isPM).length}+ as Project Manager`;
 }
 
 /* ─── All Projects ─── */
@@ -198,7 +198,7 @@ function renderProjects(items) {
   if (!el || !items) return;
   const sorted = [...items].sort((a, b) => b.index - a.index);
   el.innerHTML = sorted.map(p => {
-    const isPM = (p.remarks || '').startsWith('PM');
+    const isPM = p.isPM;
     return `
     <div class="project-card reveal">
       <div class="project-meta">
