@@ -127,37 +127,6 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0}
 .photo-fallback{font-size:4rem;font-weight:800;color:rgba(255,255,255,.6);position:relative;z-index:1;display:none}
 
-/* Orbiting dot rings */
-.orbit-ring{position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none}
-.orbit-ring-1{
-  width:296px;height:296px;
-  margin:-148px 0 0 -148px;
-  animation:orbit-dot-spin 9s linear infinite;
-}
-.orbit-ring-1::before{
-  content:'';position:absolute;
-  width:9px;height:9px;background:var(--blue);border-radius:50%;
-  box-shadow:0 0 10px 4px rgba(0,122,255,.7),0 0 20px rgba(0,122,255,.3);
-  top:-4.5px;left:50%;transform:translateX(-50%);
-}
-.orbit-ring-1::after{
-  content:'';position:absolute;
-  width:6px;height:6px;background:var(--blue-light);border-radius:50%;
-  box-shadow:0 0 8px 3px rgba(77,163,255,.6);
-  bottom:-3px;left:50%;transform:translateX(-50%);
-}
-.orbit-ring-2{
-  width:322px;height:322px;
-  margin:-161px 0 0 -161px;
-  animation:orbit-dot-spin 15s linear infinite reverse;
-}
-.orbit-ring-2::before{
-  content:'';position:absolute;
-  width:7px;height:7px;background:rgba(255,255,255,.75);border-radius:50%;
-  box-shadow:0 0 10px 3px rgba(255,255,255,.25);
-  top:-3.5px;left:50%;transform:translateX(-50%);
-}
-@keyframes orbit-dot-spin{to{transform:rotate(360deg)}}
 
 /* ── Scroll hint ── */
 .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem}
@@ -380,8 +349,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
   .research-grid{grid-template-columns:repeat(2,1fr)}
   .featured-grid{grid-template-columns:1fr}
   .photo-ring-outer{width:200px;height:200px}
-  .orbit-ring-1{width:236px;height:236px;margin:-118px 0 0 -118px}
-  .orbit-ring-2{width:260px;height:260px;margin:-130px 0 0 -130px}
 }
 @media(max-width:768px){
   section{padding:4rem 0}
