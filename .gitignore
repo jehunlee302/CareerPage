@@ -21,3 +21,9 @@ GoogleSheet/
 # Secrets (never commit)
 .env
 *.key
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
