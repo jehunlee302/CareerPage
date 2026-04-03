@@ -32,16 +32,16 @@
 
 | Role | Font | Weight | Size |
 |------|------|--------|------|
-| Hero H1 | Space Grotesk | 800 | `clamp(2.5rem, 5vw, 4rem)` |
-| Philosophy headline | Space Grotesk | 800 | `clamp(2.5rem, 6vw, 5rem)` |
-| Section title H2 | Space Grotesk | 700 | `clamp(1.75rem, 3vw, 2.5rem)` |
-| Card title H3 | Space Grotesk | 700 | `1rem` – `1.05rem` |
-| Body | Inter | 400 | `1rem` (16px base) |
-| Small / meta | Inter | 500 | `0.75rem` – `0.85rem` |
-| Badge / label | Inter | 700 | `0.68rem` – `0.75rem`, `letter-spacing: 0.1em` |
+| Hero H1 | Pretendard | 800 | `clamp(2.8rem, 5.5vw, 4.2rem)` |
+| Philosophy headline | Pretendard | 800 | `clamp(3rem, 7vw, 5.5rem)` |
+| Section title H2 | Pretendard | 700 | `clamp(1.75rem, 3vw, 2.5rem)` |
+| Card title H3 | Pretendard | 700 | `0.9rem` – `0.97rem` |
+| Body | Pretendard | 400 | `1rem` (16px base) |
+| Small / meta | Pretendard | 500 | `0.77rem` – `0.84rem` |
+| Badge / label | Pretendard | 700 | `0.7rem` – `0.75rem`, `letter-spacing: 0.1em` |
 
 ### Rules
-- `letter-spacing: -0.02em` to `-0.04em` on display headings (Space Grotesk)
+- `letter-spacing: -0.02em` to `-0.04em` on display headings (Pretendard)
 - Line height: `1.2` for headings, `1.7` for body, `1.6` for lead text
 - No text smaller than `0.68rem`
 

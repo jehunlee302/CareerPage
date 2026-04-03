@@ -17,9 +17,10 @@ const THESIS = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems'
 const PROJ_PER_PAGE = 9;
 const PUB_PER_PAGE = 8;
 const AWARD_PER_PAGE = 6;
+const ACTIVITY_PER_PAGE = 6;
 
 let _allProjects = [];
-let _projPager, _pubPager, _awardPager;
+let _projPager, _pubPager, _awardPager, _activityPager;
 
 /* ─── Topic Classification ─── */
 function getTopics(title) {
@@ -268,14 +269,19 @@ function renderPublications(items) {
 /* ─── Awards (paged) ─── */
 function renderAwards(items) {
   const el = document.getElementById('awardsList'); if (!el || !items) return;
-  el.innerHTML = items.map(a => `
+  el.innerHTML = items.map(a => {
+    const isRange = a.date && a.date.includes(' - ');
+    const dateCls = !a.date ? 'award-date award-date-unknown' : isRange ? 'award-date-range' : 'award-date';
+    const dateText = a.date ? esc(a.date) : '—';
+    return `
     <div class="award-card reveal" data-paged>
-      <div class="award-date${a.date?'':' award-date-unknown'}">${a.date ? esc(a.date) : '—'}</div>
+      <div class="${dateCls}">${dateText}</div>
       <div class="award-title">${esc(a.title)}</div>
       ${a.description?`<div class="award-desc">${esc(a.description)}</div>`:''}
       <div class="award-org">${esc(a.organization)}</div>
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
-    </div>`).join('');
+    </div>`;
+  }).join('');
   _awardPager = createPager(el, AWARD_PER_PAGE, 'awardsPager');
 }
 
@@ -327,7 +333,8 @@ function renderPatents(items) {
 /* ─── Activities ─── */
 function renderActivities(items) {
   const el = document.getElementById('activitiesGrid'); if (!el || !items) return;
-  el.innerHTML = items.map(a => `<div class="activity-card reveal"><span class="activity-role">${esc(a.role)}</span><span class="activity-org">${esc(a.organization)}</span><span class="activity-period">${esc(a.period)}</span><span class="activity-location">📍 ${esc(a.location)}</span></div>`).join('');
+  el.innerHTML = items.map(a => `<div class="activity-card reveal" data-paged><span class="activity-role">${esc(a.role)}</span><span class="activity-org">${esc(a.organization)}</span><span class="activity-period">${esc(a.period)}</span><span class="activity-location">📍 ${esc(a.location)}</span></div>`).join('');
+  _activityPager = createPager(el, ACTIVITY_PER_PAGE, 'activitiesPager');
 }
 
 /* ─── Contact ─── */
