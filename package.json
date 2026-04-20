@@ -1,0 +1,26 @@
+{
+  "name": "careerpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jehunlee302/CareerPage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jehunlee302/CareerPage/issues"
+  },
+  "homepage": "https://github.com/jehunlee302/CareerPage#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  }
+}

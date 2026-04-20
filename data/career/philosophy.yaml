@@ -1,0 +1,59 @@
+# Philosophy & Stats
+
+headline:
+  en: Systemic Excellence
+  ko: ""
+
+lead:
+  en: AI-native engineering — not for marginal efficiency, but to liberate human potential from repetitive complexity.
+  ko: ""
+
+body:
+  en: |
+    I am a proactive Ph.D. leader and AI strategist who bridges the gap between academic depth and industrial execution. My work is fundamentally rooted in the philosophy of 'Systemic Excellence', where AI-native engineering is utilized not just for marginal efficiency, but to liberate human potential from repetitive complexity.
+    
+    As an AI Engineer and Scheduling Solution Consultant, I have led high-impact programs, including the Digital Twin platform construction for SK Hynix and real-time scheduling systems for Micron. These experiences, along with my leadership in over 24 major projects, have sharpened my ability to translate intricate industrial constraints into robust, scalable technical requirements. I possess a global perspective on the semiconductor market and a proven capacity to deliver measurable business impact through technical mastery.
+    
+    Beyond my technical background in Systems and Industrial Engineering, I am committed to a leadership style that fosters both individual growth and meaningful social contribution. My ultimate goal is to guide the industry toward an intelligent, purposeful future where technological innovation serves as a catalyst for a more advanced and human-centric industrial ecosystem.
+  ko: ""
+
+pillars:
+  - icon: ⚡
+    title:
+      en: AI-Native Engineering
+      ko: ""
+    desc:
+      en: Deploying intelligent systems that transform industrial operations from the ground up — not as a tool, but as a foundational shift.
+      ko: ""
+  - icon: 🎯
+    title:
+      en: Industrial Execution
+      ko: ""
+    desc:
+      en: Translating academic depth into measurable, scalable business impact across semiconductor, logistics, and manufacturing domains.
+      ko: ""
+  - icon: 🌐
+    title:
+      en: Human-Centric Future
+      ko: ""
+    desc:
+      en: Technology as a catalyst for a purposeful industrial ecosystem where human potential is amplified, not replaced.
+      ko: ""
+
+stats:
+  - value: "24+"
+    label:
+      en: Major Projects
+      ko: ""
+  - value: "26+"
+    label:
+      en: Publications
+      ko: ""
+  - value: "4+"
+    label:
+      en: Years at KAIST
+      ko: ""
+  - value: "1"
+    label:
+      en: Patent
+      ko: ""

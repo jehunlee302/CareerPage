@@ -1,0 +1,30 @@
+# Skills
+
+programming:
+  label:
+    en: Programming
+    ko: ""
+  items:
+    - Python
+    - "C#"
+    - LaTeX
+    - R
+
+tools:
+  label:
+    en: Tools
+    ko: ""
+  items:
+    - PyTorch
+    - Matplotlib
+    - MS Office
+    - Photo Shop
+
+languages:
+  label:
+    en: Languages
+    ko: ""
+  items:
+    - Korean (Native)
+    - English (Professional)
+

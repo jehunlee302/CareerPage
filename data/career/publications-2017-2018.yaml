@@ -1,0 +1,72 @@
+# Publications 2017-2018 (newest first)
+# Citations are in English (academic standard)
+# 6 publications
+
+- index: 6
+  year: 2018
+  type: Journal
+  global: true
+  role: Co-Author
+  authors: "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*"
+  title: Vulnerability analysis of evacuation transportation networks
+  venue: International Journal of Industrial Engineering-Theory Applications and Practice
+  full_citation: "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*, \"Vulnerability analysis of evacuation transportation networks,\" International Journal of Industrial Engineering-Theory Applications and Practice, vol. 25, no. 5, 2018, pp. 663-673."
+  link: "https://eds.s.ebscohost.com/eds/pdfviewer/pdfviewer?vid=0&sid=aae09a75-7b12-43fb-8fb9-3cea0c5bccfd%40redis"
+
+- index: 5
+  year: 2018
+  type: Conference
+  global: true
+  role: "1st Author"
+  authors: "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung"
+  title: A framework for performance analysis of dispatching rules in manufacturing systems
+  venue: Winter Simulation Conference
+  full_citation: "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A framework for performance analysis of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Gothenburg, Sweden, 2018, pp. 3550-3560."
+  link: "A FRAMEWORK FOR PERFORMANCE ANALYSIS OF DISPATCHING RULES IN MANUFACTURING SYSTEMS | IEEE Conference Publication | IEEE Xplore"
+  remarks: Gothenburg, Sweden
+
+- index: 4
+  year: 2018
+  type: Conference
+  global: false
+  role: "1st Author"
+  authors: J.-H. Lee, S.-S. Park, and H.-J. Kim
+  title: Rescheduling algorithms for 3D printer-based manufacturing systems
+  venue: the Summer Conference of Korea CDE
+  full_citation: "J.-H. Lee, S.-S. Park, and H.-J. Kim, \"Rescheduling algorithms for 3D printer-based manufacturing systems,\" the Summer Conference of Korea CDE, Jeju, 2018."
+  remarks: Jeju, South Korea
+
+- index: 3
+  year: 2018
+  type: Conference
+  global: false
+  role: Co-Author
+  authors: S.-S. Park, J.H. Lee, and H.-J. Kim
+  title: Scheduling algorithms for 3D printer-based manufacturing systems
+  venue: the Spring Conference of Korean Institute of Industrial Engineers
+  full_citation: "S.-S. Park, J.H. Lee, and H.-J. Kim, \"Scheduling algorithms for 3D printer-based manufacturing systems,\" the Spring Conference of Korean Institute of Industrial Engineers, Gyeongju, Korea, 2018."
+  remarks: Gyeongju, South Korea
+
+- index: 2
+  year: 2017
+  type: Conference
+  global: true
+  role: Co-Author
+  authors: "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung"
+  title: Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting
+  venue: Winter Simulation Conference
+  full_citation: "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung, \"Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting,\" Winter Simulation Conference, Las Vegas, USA, 2017, pp. 3745-3755."
+  link: "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting | IEEE Conference Publication | IEEE Xplore"
+  remarks: Las Vegas, USA
+
+- index: 1
+  year: 2017
+  type: Conference
+  global: false
+  role: Co-Author
+  authors: S.-S. Park, S.Y. Kim, J.H. Lee, and H.-J. Kim
+  title: "3D printer based assembly process scheduling algorithm development"
+  venue: the Winter Conference of Korea CDE
+  full_citation: "S.-S. Park, S.Y. Kim, J.H. Lee, and H.-J. Kim, \"3D printer based assembly process scheduling algorithm development,\" the Winter Conference of Korea CDE, Pyeongchang, Korea, 2017, pp. 515-523."
+  remarks: Pyeongchang, South Korea
+

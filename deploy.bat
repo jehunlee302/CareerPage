@@ -3,13 +3,13 @@ chcp 65001 > nul
 echo.
 echo ========================================
 echo  CareerPage Deploy
-echo  Sheet → portfolio.json → GitHub → Web
+echo  YAML → portfolio.json → GitHub → Web
 echo ========================================
 echo.
 
-:: Step 1: 구글 시트 동기화
-echo [1/3] 구글 시트에서 데이터 가져오는 중...
-node scripts/sync-sheets.js
+:: Step 1: YAML → JSON 변환
+echo [1/3] YAML 파일에서 portfolio.json 빌드 중...
+node scripts/yaml-to-json.js
 if %errorlevel% neq 0 (
   echo.
   echo 오류 발생. 배포를 중단합니다.
@@ -20,13 +20,13 @@ if %errorlevel% neq 0 (
 :: Step 2: Git 커밋
 echo.
 echo [2/3] GitHub에 업로드 중...
-git add data/portfolio.json
+git add data/portfolio.json assets/js/main.js assets/css/style.css
 git diff --cached --quiet
 if %errorlevel% == 0 (
-  echo 변경사항 없음 - 시트 내용이 동일합니다.
+  echo 변경사항 없음.
   goto done
 )
-git commit -m "update: portfolio data from Google Sheets"
+git commit -m "update: portfolio data from career YAML"
 git push origin main
 if %errorlevel% neq 0 (
   echo.

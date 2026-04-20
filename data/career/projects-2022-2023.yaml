@@ -1,0 +1,132 @@
+# Projects 2022-2023 (newest first, by end year)
+# 7 projects
+
+- index: 18
+  period: "2022.05 - 2023.02"
+  duration: "10m"
+  title:
+    en: Graph-based reinforcement learning algorithm for real-time job shop scheduling
+    ko: ""
+  client: NRF of Korea
+  affiliated_institution: KAIST
+  is_pm: true
+  remarks:
+    en: ""
+    ko: 강화학습 활용 실시간 디스패칭 Agent 개발
+
+- index: 17
+  period: "2022.04 - 2023.03"
+  duration: "1y"
+  title:
+    en: Reinforcement learning for job shop scheduling
+    ko: ""
+  client: VMS Solutions
+  affiliated_institution: KAIST
+  is_pm: true
+  remarks:
+    en: ""
+    ko: Job Shop 생산 시뮬레이터 고도화 및 방법론 개발
+
+- index: 16
+  period: "2022.03 - 2022.03"
+  duration: "1m (7m)"
+  title:
+    en: Development of a wiring optimization algorithm for X-DEC slim layout
+    ko: ""
+  client: SK Hynix
+  affiliated_institution: KAIST
+  is_pm: false
+  remarks:
+    en: ""
+    ko: 기판 전극 위치 기반 최적 배선 도출 알고리즘 기획
+
+- index: 15
+  period: "2022.03 -"
+  duration: "3y"
+  title:
+    en: Reinforcement learning-based meta-scheduling for manufacturing systems
+    ko: ""
+  client: NRF of Korea
+  affiliated_institution: KAIST
+  is_pm: true
+  remarks:
+    en: ""
+    ko: 범용 Agent 구축을 위한 Meta-RL 적용 및 설계
+
+- index: 14
+  period: "2022.03 - 2023.07"
+  duration: "1y5m (2y)"
+  title:
+    en: "Reinforcement learning for project scheduling"
+    ko: "프로젝트 스케줄링을 위한 강화학습"
+  client: Samsung Heavy Industries
+  affiliated_institution: KAIST
+  is_pm: false
+  details:
+    purpose:
+      en: "RL-based production planning to minimize daily worker deviation in shipbuilding"
+      ko: "강화학습 기반 작업자 편차 최소화 생산계획 수립"
+    role:
+      en: "Planning, Researcher"
+      ko: "기획, 연구원"
+    tasks:
+      - en: "Led project planning and proposal writing"
+        ko: "프로젝트 기획 주도, 제안서 작성 주도"
+      - en: "Defined problem and resolution scope (objective: minimize daily worker employment deviation)"
+        ko: "문제 정의 및 문제 해결 범위 결정 (목적함수: 일별 작업자 고용 편차 최소화)"
+      - en: "Enhanced ship production simulator"
+        ko: "선박 생산 시뮬레이터 고도화"
+      - en: "Enhanced RL-based schedule adjustment algorithm"
+        ko: "강화학습 기반 스케줄 조정 알고리즘 고도화"
+      - en: "Proposed iterative greedy algorithm"
+        ko: "Iterative greedy 알고리즘 제안"
+      - en: "Discussed spatial layout algorithm methodology"
+        ko: "공간 배치 알고리즘 방법론 논의"
+    achievements:
+      en: "Year 1 schedule adjustment: daily manpower std. dev. reduced by 41.60% (RL, 20.27s), 44.53% (greedy, 49.86s), 47.69% (greedy+RL) vs. existing 6-month schedule"
+      ko: "1차년도 스케줄 조정: daily manpower 표준편차 기준 41.60% (RL, 20.27초), 44.53% (greedy, 49.86초), 47.69% (greedy+RL) 감소 (vs 기존 6개월 스케줄)"
+
+- index: 11
+  period: "2019.06 - 2022.05"
+  duration: "3y"
+  title:
+    en: "Cyber-physical assembly and logistics systems in global supply chains"
+    ko: "글로벌 공급망 내 사이버-물리 조립 및 물류 시스템"
+  client: MOTIE of Korea, Yura
+  affiliated_institution: KAIST
+  is_pm: true
+  details:
+    purpose:
+      en: "Optimize automotive parts production in global supply chain context"
+      ko: "글로벌 과제 파트 담당, 자동차 부품 생산 최적화 (수요기업: (주)유라)"
+    role:
+      en: "Planning, PM, Researcher (global project part lead)"
+      ko: "기획, PM, 연구원 (글로벌 과제 파트 담당)"
+    tasks:
+      - en: "Identified on-site constraints through field interviews"
+        ko: "현장 인터뷰를 통한 현장 제약 파악"
+      - en: "Defined problem and resolution scope"
+        ko: "문제 및 해결 범위 정의"
+      - en: "Developed automotive parts production simulator and real-time worker allocation/reallocation algorithm"
+        ko: "자동차 부품 생산 시뮬레이터 및 작업자 실시간 할당/재할당 알고리즘 개발"
+      - en: "Developed conveyor belt speed determination algorithm for semi-automated assembly processes"
+        ko: "반자동 조립 공정을 위한 컨베이어 벨트 속도 결정 알고리즘 개발"
+      - en: "Defined user scenarios and program screen specifications"
+        ko: "사용자 시나리오 정의 및 프로그램 화면 정의"
+    achievements:
+      en: "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent registered: KR1020210070359; 1 SCI journal paper (2nd author); 2 conference papers"
+      ko: "Cycle time 감소: 5.6% (실제 현장 운영 데이터) / 2~5% (vs meta-heuristic); 특허 등록: [공정 최적화 방법] KR1020210070359; SCI 논문 1건 (2저자); 학회 2건"
+
+- index: 8
+  period: "2019.03 - 2022.02"
+  duration: "3y"
+  title:
+    en: Development of scheduling theory and algorithms with reinforcement learning for manufacturing systems
+    ko: ""
+  client: NRF of Korea
+  affiliated_institution: SKKU
+  is_pm: true
+  remarks:
+    en: ""
+    ko: 생산 시스템용 강화학습 알고리즘 개발 및 성능 검토
+

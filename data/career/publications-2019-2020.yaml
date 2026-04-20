@@ -1,0 +1,84 @@
+# Publications 2019-2020 (newest first)
+# Citations are in English (academic standard)
+# 7 publications
+
+- index: 13
+  year: 2020
+  type: Journal
+  global: true
+  role: "1st Author"
+  authors: "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*"
+  title: A sequential search method of dispatching rules for scheduling of LCD manufacturing systems
+  venue: IEEE Transactions on Semiconductor Manufacturing
+  full_citation: "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*, \"A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,\" IEEE Transactions on Semiconductor Manufacturing, vol. 33, no. 4, pp. 496-503, 2020."
+  link: "A Sequential Search Method of Dispatching Rules for Scheduling of LCD Manufacturing Systems | IEEE Journals & Magazine | IEEE Xplore"
+
+- index: 12
+  year: 2020
+  type: Conference
+  global: true
+  role: "1st Author"
+  authors: "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*"
+  title: A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems
+  venue: Winter Simulation Conference
+  full_citation: "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*, \"A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,\" Winter Simulation Conference, Online, 2020, pp. 1943-1953."
+  link: "A Simulation-Based Sequential Search Method for Multi-Obejctive Scheduling Problems of Manufacturing Systems | IEEE Conference Publication | IEEE Xplore"
+  remarks: Online
+
+- index: 11
+  year: 2020
+  type: Conference
+  global: true
+  role: Co-Author
+  authors: H. Yang, J.-H. Lee, and H.-J. Kim
+  title: Workforce assignment for automotive parts assembly lines
+  venue: the Winter Conference of Korea CDE
+  full_citation: "H. Yang, J.-H. Lee, and H.-J. Kim, \"Workforce assignment for automotive parts assembly lines,\" the Winter Conference of Korea CDE, Online, 2020."
+  remarks: Online
+
+- index: 10
+  year: 2020
+  type: Journal
+  global: true
+  role: Co-Author
+  authors: "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*"
+  title: Digital twin-based cyber physical production system architectural framework for personalized production
+  venue: The International Journal of Advanced Manufacturing Technology
+  full_citation: "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*, \"Digital twin-based cyber physical production system architectural framework for personalized production,\" The International Journal of Advanced Manufacturing Technology, vol. 106, no. 5, 2020, pp. 1787-1810."
+  link: "Digital twin-based cyber physical production system architectural framework for personalized production | The International Journal of Advanced Manufacturing Technology | Springer Nature Link"
+
+- index: 9
+  year: 2020
+  type: Conference
+  global: true
+  role: Co-Author
+  authors: "H. Yang, J.-H. Lee, and H.-J. Kim*"
+  title: Workforce assignment with a different skill level for automotive parts assembly lines
+  venue: Advances in Production Management Systems (APMS)
+  full_citation: "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Workforce assignment with a different skill level for automotive parts assembly lines,\" Advances in Production Management Systems (APMS), Novi Sad, Serbia, 2020, pp. 206-212."
+  link: "Workforce Assignment with a Different Skill Level for Automotive Parts Assembly Lines | Springer Nature Link"
+  remarks: Novi Sad, Serbia
+
+- index: 8
+  year: 2019
+  type: Conference
+  global: true
+  role: "1st Author"
+  authors: "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung"
+  title: A sequential search framework for selecting weights of dispatching rules in manufacturing systems
+  venue: Winter Simulation Conference
+  full_citation: "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A sequential search framework for selecting weights of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Maryland, USA, 2019, pp. 2201-2211."
+  link: "A Sequential Search Framework for Selecting Weights of Dispatching Rules in Manufacturing Systems | IEEE Conference Publication | IEEE Xplore"
+  remarks: Maryland, USA
+
+- index: 7
+  year: 2019
+  type: Conference
+  global: false
+  role: "1st Author"
+  authors: J.-H. Lee and H.-J. Kim
+  title: A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages
+  venue: the Autumn Conference of Korean Institute of Industrial Engineers
+  full_citation: "J.-H. Lee and H.-J. Kim, \"A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages,\" the Autumn Conference of Korean Institute of Industrial Engineers, Seoul, 2019."
+  remarks: Seoul, South Korea
+

@@ -203,7 +203,25 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .tl-roles{font-size:.84rem;color:var(--text-mid);line-height:1.5;margin-top:.2rem}
 .tl-remarks{font-size:.78rem;color:var(--text-muted);margin-top:.25rem}
 .tl-link{font-size:.78rem;color:var(--blue);text-decoration:underline}
-.edu-thesis{font-size:.8rem;color:var(--text-muted);margin-top:.15rem}
+.edu-thesis{font-size:.8rem;color:var(--text-muted);margin-top:.15rem;line-height:1.5}
+.edu-thesis-expandable{cursor:pointer;transition:color var(--t)}
+.edu-thesis-expandable:hover{color:var(--blue)}
+.edu-thesis-label{font-weight:600;color:var(--text-mid)}
+.edu-expand-hint{font-size:.72rem;color:var(--blue);margin-left:.3rem;font-weight:600}
+.edu-thesis-details{margin-top:.6rem;padding:.8rem 1rem;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--r-md);animation:fadeIn .25s ease}
+.edu-detail-section{margin-bottom:.6rem}
+.edu-detail-section:last-child{margin-bottom:0}
+.edu-detail-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.2rem}
+.edu-detail-section p{font-size:.82rem;color:var(--text-mid);line-height:1.55;margin:0}
+.edu-methodology ol{font-size:.82rem;color:var(--text-mid);line-height:1.55;padding-left:1.2rem;margin:0}
+.edu-methodology ol li{margin-bottom:.35rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+/* Work Experience Details */
+.tl-responsibilities{font-size:.82rem;color:var(--text-mid);line-height:1.55;margin:.4rem 0 0;padding-left:1.2rem;list-style:disc}
+.tl-responsibilities li{margin-bottom:.25rem}
+.tl-highlights{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
+.tl-highlight-item{font-size:.76rem;font-weight:600;color:var(--blue);background:var(--blue-dim);padding:.25rem .65rem;border-radius:4px;line-height:1.4}
 
 /* ════════════════════════════════════════
    FEATURED PROJECTS
@@ -331,6 +349,14 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .modal-field:last-child{border-bottom:none}
 .modal-field-label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.2rem}
 .modal-field-value{font-size:.9rem;color:var(--text-mid);line-height:1.55}
+
+/* Modal: Project Details Sections */
+.modal-section{padding:.7rem 0;border-top:1px solid var(--border)}
+.modal-section-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.35rem}
+.modal-section-text{font-size:.88rem;color:var(--text-mid);line-height:1.6;margin:0}
+.modal-achievement{font-weight:600;color:var(--navy)}
+.modal-task-list{font-size:.85rem;color:var(--text-mid);line-height:1.6;padding-left:1.2rem;margin:0}
+.modal-task-list li{margin-bottom:.3rem}
 
 /* ════════════════════════════════════════
    CONTACT

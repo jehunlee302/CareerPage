@@ -1,0 +1,106 @@
+# Publications 2021-2022 (newest first)
+# Citations are in English (academic standard)
+# 9 publications
+
+- index: 22
+  year: 2022
+  type: Conference
+  global: true
+  role: "1st Author"
+  authors: "J.-H. Lee and H.-J. Kim*"
+  title: Imitation learning for real-time job shop scheduling using graph-based representation
+  venue: Winter Simulation Conference
+  full_citation: "J.-H. Lee and H.-J. Kim*, \"Imitation learning for real-time job shop scheduling using graph-based representation,\" Winter Simulation Conference, Singapore, 2022, pp. 3285-3296."
+  link: "Imitation Learning for Real-Time Job Shop Scheduling Using Graph-Based Representation | IEEE Conference Publication | IEEE Xplore"
+  remarks: Singapore
+
+- index: 21
+  year: 2022
+  type: Poster
+  global: true
+  role: "1st Author"
+  authors: J.-H. Lee and H.-J. Kim
+  title: Job shop scheduling using graph-based imitation learning
+  venue: INFORMS Annual Meeting
+  full_citation: "J.-H. Lee and H.-J. Kim, \"Job shop scheduling using graph-based imitation learning,\" INFORMS Annual Meeting, Indiana, USA, 2022."
+  remarks: Indiana, USA
+
+- index: 20
+  year: 2022
+  type: Journal
+  global: true
+  role: Co-Author
+  authors: "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*"
+  title: A multi-manned assembly line worker assignment and balancing problem with positional constraints
+  venue: IEEE Robotics and Automation Letters
+  full_citation: "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*, \"A multi-manned assembly line worker assignment and balancing problem with positional constraints,\" IEEE Robotics and Automation Letters, vol. 7, no. 3, pp. 7786-7793, 2022."
+  link: "A Multi-Manned Assembly Line Worker Assignment and Balancing Problem With Positional Constraints | IEEE Journals & Magazine | IEEE Xplore"
+
+- index: 19
+  year: 2022
+  type: Conference
+  global: false
+  role: "1st Author"
+  authors: J.-H. Lee, D.-Y. Kim, S.-H. Cho, and H.-J. Kim
+  title: Reinforcement learning for resource leveling in multiple projects
+  venue: the Spring Conference of Korean Institute of Industrial Engineers
+  full_citation: "J.-H. Lee, D.-Y. Kim, S.-H. Cho, and H.-J. Kim, \"Reinforcement learning for resource leveling in multiple projects,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2022."
+  remarks: Jeju, South Korea
+
+- index: 18
+  year: 2022
+  type: Conference
+  global: false
+  role: "1st Author"
+  authors: J.-H. Lee and H.-J. Kim
+  title: Dynamic job shop scheduling using graph-based imitation learning
+  venue: the Spring Conference of Korean Institute of Industrial Engineers
+  full_citation: "J.-H. Lee and H.-J. Kim, \"Dynamic job shop scheduling using graph-based imitation learning,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2022."
+  remarks: Jeju, South Korea
+
+- index: 17
+  year: 2021
+  type: Conference
+  global: true
+  role: "1st Author"
+  authors: "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung"
+  title: Machine learning-based periodic setup changes for semiconductor manufacturing machines
+  venue: Winter Simulation Conference
+  full_citation: "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung, \"Machine learning-based periodic setup changes for semiconductor manufacturing machines,\" Winter Simulation Conference, Online, 2021, pp.1-10."
+  link: "Machine Learning-Based Periodic Setup Changes for Semiconductor Manufacturing Machines | IEEE Conference Publication | IEEE Xplore"
+  remarks: Online
+
+- index: 16
+  year: 2021
+  type: Conference
+  global: false
+  role: Co-Author
+  authors: D.-Y. Kim, J.-H.Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J.Kim
+  title: Resource leveling in shipyard cargo hold process through reinforcement learning
+  venue: the Autumn Conference of Korean Institute of Industrial Engineers
+  full_citation: "D.-Y. Kim, J.-H.Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J.Kim, \"Resource leveling in shipyard cargo hold process through reinforcement learning,\" the Autumn Conference of Korean Institute of Industrial Engineers, Seoul, Korea, 2021."
+  remarks: Seoul, South Korea
+
+- index: 15
+  year: 2021
+  type: Conference
+  global: true
+  role: Co-Author
+  authors: "H. Yang, J.-H. Lee, and H.-J. Kim*"
+  title: Assembly line worker assignment and balancing problem with positional constraints
+  venue: Advances in Production Management Systems (APMS)
+  full_citation: "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Assembly line worker assignment and balancing problem with positional constraints,\" Advances in Production Management Systems (APMS), Online, 2021, pp. 3-11."
+  link: "Assembly Line Worker Assignment and Balancing Problem with Positional Constraints | Springer Nature Link"
+  remarks: Online
+
+- index: 14
+  year: 2021
+  type: Conference
+  global: true
+  role: Co-Author
+  authors: H. Yang, J.-H. Lee, and H.-J. Kim
+  title: Operation and optimization of the automotive parts assembly line considering worker skill levels
+  venue: the Summer Conference of Korea CDE
+  full_citation: "H. Yang, J.-H. Lee, and H.-J. Kim, \"Operation and optimization of the automotive parts assembly line considering worker skill levels,\" the Summer Conference of Korea CDE, Online, 2021."
+  remarks: Online
+

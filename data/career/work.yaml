@@ -1,0 +1,118 @@
+# Work Experience (newest first)
+
+- position:
+    en: "Planning & Scheduling Solution Consultant"
+    ko: "생산계획 솔루션 컨설턴트"
+  organization: VMS Solutions Inc.
+  division: "Solution Division | Consultant Part"
+  period: "2025.08 - Present"
+  roles:
+    en: "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product"
+    ko: "시스템 설계 및 PMO: 디지털 트윈 플랫폼, 생산-물류 통합 시뮬레이터, 시뮬레이션 기반 AI 스케줄러, SaaS 제품"
+  responsibilities:
+    - en: "SK Hynix Digital Twin Platform: production-logistics simulator PM, use-case discovery, KPI definition, data consistency metrics, MES legacy data analysis & simulator integration, AI prediction model data specification"
+      ko: "SK Hynix 디지털 트윈 플랫폼 구축: 생산-물류 시뮬레이터 신규 구축 PM, use-case 발굴, KPI 정의, 정합성 지표 정의, MES legacy data 분석 및 시뮬레이터 연결, AI 예측 모델 활용 데이터 정의"
+    - en: "Production-logistics integrated simulation design"
+      ko: "생산-물류 통합 시뮬레이션 설계"
+    - en: "Production simulation engine architecture redesign & development participation"
+      ko: "생산 시뮬레이션 엔진 구조 변경안 설계 및 개발 참여"
+    - en: "Planned and authored 2 government R&D proposals on Agentic AI (manufacturing-specific Agentic AI, LLM-based production plan explanation module / with University of Toronto)"
+      ko: "Agentic AI 주제 정부과제 기획 및 제안서 2건 작성 (제조 특화 Agentic AI, LLM 기반 생산계획 설명 모듈 / with 토론토대학)"
+    - en: "AI extensibility review & design for simulation-based APS, new engine feature definition, participation in GenAI-based development"
+      ko: "시뮬레이션 기반 APS system의 AI 확장성 검토 및 설계, 신규 엔진 기능 정의 및 genAI 기반 개발 참여"
+    - en: "LLM-based schedule analysis & report generation system performance review and feedback"
+      ko: "LLM 기반 스케줄 분석 및 레포트 생성 시스템 성능 검토 및 피드백 전달"
+    - en: "2 SaaS solution consulting engagements; technical review supporting client executives' strategic decisions (general manufacturing, semiconductor back-end)"
+      ko: "SaaS 솔루션 컨설팅 2건 진행, 고객사 경영진의 전략적 의사결정 관련 기술 검토 지원 (일반 제조업, 반도체 후공정 기업 등)"
+    - en: "WEB UI design participation and feedback"
+      ko: "WEB UI 디자인 참여 및 피드백"
+  performance: ""
+  region: Yongin, South Korea
+
+- position:
+    en: "Planning & Scheduling Solution Consultant"
+    ko: "생산계획 솔루션 컨설턴트"
+  organization: VMS Solutions Inc.
+  division: "Solution Division | Micron Part"
+  period: "2025.02 - 2025.07"
+  roles:
+    en: "Solution consultant: simulation-based real-time APS maintenance, system configuration remote support"
+    ko: "솔루션 컨설턴트: 시뮬레이션 기반 실시간 APS 유지보수, 시스템 셋팅 원격 지원"
+  responsibilities:
+    - en: "Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support"
+      ko: "Micron 기업의 시뮬레이션 기반 real-time APS 로직 유지보수, 시스템 셋팅 원격 지원"
+  performance: ""
+  region: Yongin, South Korea
+
+- position:
+    en: Technical Research Personnel
+    ko: "전문연구요원"
+  organization: South Korea (KAIST, VMS Solutions Inc.)
+  division: Ministry of National Defense
+  period: "2023.03 - 2026.02"
+  roles:
+    en: "Industrial R&D (alternative military service)"
+    ko: "산업 R&D (병역 대체 복무)"
+  performance: ""
+  region: Daejeon/Yongin, South Korea
+
+- position:
+    en: Researcher
+    ko: "연구원"
+  organization: KAIST
+  division: MSS (Manufacturing Service Systems) Lab.
+  period: "2021.03 - 2025.02"
+  advisor: "Hyun-Jung Kim"
+  roles:
+    en: "Lead researcher: AI-based dynamic schedulers, optimization-based heuristics, autonomous manufacturing scheduling systems"
+    ko: "핵심 연구원: AI 기반 동적 스케줄러, 최적화 기반 휴리스틱, 자율 제조 스케줄링 시스템"
+  responsibilities:
+    - en: "Led full project lifecycle (planning-to-validation): 9 industry-academia projects (planned 5, PM 4), 4 government projects (planned 3, PM 4)"
+      ko: "프로젝트 전 주기(기획~검증) 리딩: 산학과제 9건 (기획 5건, PM 4건), 정부과제 4건 (기획 3건, PM 4건)"
+    - en: "Fundamental research on Neural Combinatorial Optimization based on GNN and RL"
+      ko: "그래프 신경망(GNN) 및 강화학습(RL) 기반 Neural Combinatorial Optimization 원천 기술 연구"
+    - en: "Designed general-purpose scheduling agent and Meta-RL methodology for flexible adaptation to manufacturing environment changes"
+      ko: "제조 환경 변화에 유연하게 대응 가능한 범용 스케줄링 에이전트 및 Meta-RL 방법론 기획 및 설계"
+    - en: "Designed AI-based demand forecasting, production planning, and job scheduling optimization algorithms; validated business impact using real production data (Samsung Electronics, LG Electronics, Samsung Heavy Industries, etc.)"
+      ko: "AI 기반 수요예측·생산계획·작업계획 최적화 알고리즘 설계 및 실제 공정 데이터를 활용한 비즈니스 임팩트 검토 (삼성전자, LG전자, 삼성중공업 등)"
+    - en: "Provided technical review supporting client executives' strategic decisions and delivered system design proposals"
+      ko: "과제 수행 결과를 바탕으로 고객사 경영진의 전략적 의사결정 관련 기술 검토 지원 및 시스템 설계안 전달"
+    - en: "Introduced structured project management processes (OneDrive & Notion-based) to the lab for the first time"
+      ko: "연구실에 OneDrive 및 Notion 기반의 체계적 과제 관리 프로세스 처음 도입"
+  highlights:
+    - en: "First Ph.D. graduate of the lab; led project planning, proposal writing, and research beyond typical researcher scope"
+      ko: "연구실 첫 번째 박사 졸업생으로서 과제 기획부터 제안서 작성, 연구 주도까지 일반적 연구자 이상의 주도적 역할 수행"
+    - en: "Won 10-year NRF 'Hanwoomul' long-term project after analyzing rejection feedback and reinforcing proposal logic"
+      ko: "정부 과제 탈락 경험을 발판 삼아 심사 피드백을 철저히 분석하고 논리를 보강하여 10년 장기 프로젝트인 연구재단 한우물 과제 쟁취"
+    - en: "2 first-author IEEE journal papers, 7 international conference presentations"
+      ko: "IEEE 국제학술지 1저자 논문 2편 게재, 국제 학회 발표 7건"
+  performance: ""
+  region: Daejeon, South Korea
+
+- position:
+    en: Researcher
+    ko: "연구원"
+  organization: SKKU
+  division: "SCO (Systems Control & Optimization) Lab."
+  period: "2016.04 - 2021.02"
+  advisor: "Hyun-Jung Kim"
+  roles:
+    en: "Scheduling algorithm developer: meta-heuristics, optimization; System designer: digital twin for manufacturing, dynamic rescheduling systems"
+    ko: "스케줄링 알고리즘 개발: 메타휴리스틱, 최적화; 시스템 설계: 제조 디지털 트윈, 동적 리스케줄링 시스템"
+  responsibilities:
+    - en: "5 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)"
+      ko: "산학과제 5건 (기획 2건, PM 2건), 정부과제 4건 (기획 2건, PM 1건)"
+    - en: "Led foundational design and operations optimization research for 3D printer-based smart factory digital twin systems"
+      ko: "3D 프린터 기반 스마트 팩토리 디지털 트윈 시스템 기초 설계 및 운영 최적화 연구 주도"
+    - en: "Developed rescheduling algorithms for handling disruptions (machine failures, order cancellations) in flexible manufacturing systems (FMS)"
+      ko: "유연 생산 시스템(FMS) 내 이상 상황(설비 고장, 주문 취소 등) 대응 리스케줄링 알고리즘 개발"
+    - en: "Translated physical manufacturing constraints into mathematical models and validated in virtual environments"
+      ko: "제조 현장의 물리적 제약 조건을 수리적 모델로 치환하고 가상 환경에서 검증"
+    - en: "Defined virtual factory operation scenarios and conducted simulation-based operational efficiency reviews"
+      ko: "생산 관점의 가상 공장 운영 시나리오 정의 및 시뮬레이션 기반 운영 효율성 검토"
+    - en: "Designed and verified real-time scheduling methodologies using genetic algorithms and heuristics"
+      ko: "유전 알고리즘 및 휴리스틱을 활용한 실시간 스케줄 도출 방법론 설계 및 성능 검증"
+    - en: "Participated in multiple government projects including FaaS IoT service platform for personalized production; managed deliverables"
+      ko: "개인맞춤형 생산을 위한 FaaS IoT 서비스 플랫폼 등 다수의 정부 과제 실무 참여 및 산출물 관리"
+  performance: ""
+  region: Suwon, South Korea

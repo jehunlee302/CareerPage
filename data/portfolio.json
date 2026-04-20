@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30",
+  "lastUpdated": "2026-04-20",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -20,7 +20,7 @@
   "philosophy": {
     "headline": "Systemic Excellence",
     "lead": "AI-native engineering — not for marginal efficiency, but to liberate human potential from repetitive complexity.",
-    "body": "I am a proactive Ph.D. leader and AI strategist who bridges the gap between academic depth and industrial execution. My work is fundamentally rooted in the philosophy of 'Systemic Excellence', where AI-native engineering is utilized not just for marginal efficiency, but to liberate human potential from repetitive complexity.\n\nAs an AI Engineer and Scheduling Solution Consultant, I have led high-impact programs, including the Digital Twin platform construction for SK Hynix and real-time scheduling systems for Micron. These experiences, along with my leadership in over 24 major projects, have sharpened my ability to translate intricate industrial constraints into robust, scalable technical requirements. I possess a global perspective on the semiconductor market and a proven capacity to deliver measurable business impact through technical mastery.\n\nBeyond my technical background in Systems and Industrial Engineering, I am committed to a leadership style that fosters both individual growth and meaningful social contribution. My ultimate goal is to guide the industry toward an intelligent, purposeful future where technological innovation serves as a catalyst for a more advanced and human-centric industrial ecosystem.",
+    "body": "I am a proactive Ph.D. leader and AI strategist who bridges the gap between academic depth and industrial execution. My work is fundamentally rooted in the philosophy of 'Systemic Excellence', where AI-native engineering is utilized not just for marginal efficiency, but to liberate human potential from repetitive complexity.\n\nAs an AI Engineer and Scheduling Solution Consultant, I have led high-impact programs, including the Digital Twin platform construction for SK Hynix and real-time scheduling systems for Micron. These experiences, along with my leadership in over 24 major projects, have sharpened my ability to translate intricate industrial constraints into robust, scalable technical requirements. I possess a global perspective on the semiconductor market and a proven capacity to deliver measurable business impact through technical mastery.\n\nBeyond my technical background in Systems and Industrial Engineering, I am committed to a leadership style that fosters both individual growth and meaningful social contribution. My ultimate goal is to guide the industry toward an intelligent, purposeful future where technological innovation serves as a catalyst for a more advanced and human-centric industrial ecosystem.\n",
     "pillars": [
       {
         "icon": "⚡",
@@ -64,7 +64,15 @@
       "period": "2021.03 - 2025.02",
       "major": "Industrial & Systems Engineering",
       "region": "Daejeon, South Korea",
-      "remarks": "Advisor: Hyun-Jung Kim, https://msslab.kaist.ac.kr/Professor/professor"
+      "remarks": "",
+      "advisor": "Hyun-Jung Kim (https://msslab.kaist.ac.kr/Professor/professor)",
+      "thesis": {
+        "title": "Learning Schedulers for Job Shop Scheduling Problems",
+        "topic": "Proposes three learning-based schedulers to minimize makespan in job shop scheduling problems (JSSP) where each product has a distinct operation sequence. Designed for flexible selection under varying decision-time constraints, all methods generalize to arbitrary problem sizes regardless of training instances.",
+        "methodology": "Three methods proposed:\n1. Learning-based real-time dispatcher: Redesigned state/action/transition using only currently observable information; applied imitation learning instead of RL, achieving superior performance over existing GNN dispatchers.\n2. Learning-based local search: Established makespan improvement conditions based on JSSP characteristics (critical blocks, N5 neighborhood), reflected in policy network trained via RL.\n3. Depth-limited tree search (SBBS): Combined branch-and-bound with beam search in a lookahead manner, using dispatching strategies as rollout policies for graceful degradation under extreme time constraints.\n",
+        "performance": "SBBS mathematically proven to always produce schedules equal to or better than dispatching-only solutions in static environments. All three methods evaluated on JSSP benchmarks with comparisons to existing approaches; adaptability verified under dynamic event scenarios.",
+        "priorLimitations": "GNN-based dispatchers lacked analysis on whether sufficient information was provided for learning optimal strategies. Learning-based local search methods did not fully reflect JSSP-specific characteristics in neighbor selection. Tree-based search could not produce complete solutions under very tight time constraints."
+      }
     },
     {
       "degree": "M.S.",
@@ -72,7 +80,15 @@
       "period": "2016.09 - 2021.02",
       "major": "Industrial Engineering",
       "region": "Suwon, South Korea",
-      "remarks": "Advisor: Hyun-Jung Kim, https://msslab.kaist.ac.kr/Professor/professor"
+      "remarks": "",
+      "advisor": "Hyun-Jung Kim (https://msslab.kaist.ac.kr/Professor/professor)",
+      "thesis": {
+        "title": "A Genetic Algorithm for Hybrid Flow Shop Scheduling Problems with Multiple Assembly Stages",
+        "topic": "Addresses makespan minimization in hybrid flow shop with multiple assembly stages (MA-HFS), where each product consists of multiple parts processed through parallel-machine stages with possible stage-skipping.",
+        "methodology": "Proposed a hybrid genetic algorithm (HGA) with three key contributions:\n1. Extended Johnson's algorithm with novel 'operational ready time' and 'operational remaining time' variables for initial solution generation (IGA).\n2. Designed crossover and mutation operators reflecting assembly structure.\n3. Combined local search on offspring with a lower bound calculation method for MA-HFSSP.\n",
+        "performance": "Achieved superior makespan performance over prior algorithms; outperformed time-limited MIP solver (CPLEX) on large-scale instances.",
+        "priorLimitations": "Prior works (Bhongade & Khodke 2014, Nejati et al. 2016) assumed assembly stages only at the end of the layout or ignored parallel machines, limiting applicability. Simple swap-based neighborhood search failed to exploit assembly-stage structure."
+      }
     },
     {
       "degree": "B.S.",
@@ -97,25 +113,38 @@
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Consultant Part",
       "period": "2025.08 - Present",
-      "roles": "System designer: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
+      "roles": "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
       "performance": "",
-      "region": "Yongin, South Korea"
+      "region": "Yongin, South Korea",
+      "responsibilities": [
+        "SK Hynix Digital Twin Platform: production-logistics simulator PM, use-case discovery, KPI definition, data consistency metrics, MES legacy data analysis & simulator integration, AI prediction model data specification",
+        "Production-logistics integrated simulation design",
+        "Production simulation engine architecture redesign & development participation",
+        "Planned and authored 2 government R&D proposals on Agentic AI (manufacturing-specific Agentic AI, LLM-based production plan explanation module / with University of Toronto)",
+        "AI extensibility review & design for simulation-based APS, new engine feature definition, participation in GenAI-based development",
+        "LLM-based schedule analysis & report generation system performance review and feedback",
+        "2 SaaS solution consulting engagements; technical review supporting client executives' strategic decisions (general manufacturing, semiconductor back-end)",
+        "WEB UI design participation and feedback"
+      ]
     },
     {
       "position": "Planning & Scheduling Solution Consultant",
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Micron Part",
       "period": "2025.02 - 2025.07",
-      "roles": "System designer: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
+      "roles": "Solution consultant: simulation-based real-time APS maintenance, system configuration remote support",
       "performance": "",
-      "region": "Yongin, South Korea"
+      "region": "Yongin, South Korea",
+      "responsibilities": [
+        "Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support"
+      ]
     },
     {
       "position": "Technical Research Personnel",
       "organization": "South Korea (KAIST, VMS Solutions Inc.)",
       "division": "Ministry of National Defense",
       "period": "2023.03 - 2026.02",
-      "roles": "industrial R&D",
+      "roles": "Industrial R&D (alternative military service)",
       "performance": "",
       "region": "Daejeon/Yongin, South Korea"
     },
@@ -124,31 +153,72 @@
       "organization": "KAIST",
       "division": "MSS (Manufacturing Service Systems) Lab.",
       "period": "2021.03 - 2025.02",
-      "roles": "Scheduler designer: AI-based dynamic schedulers, optimization-based heuristics, System designer: autonomous manufacturing scheduling systems",
+      "roles": "Lead researcher: AI-based dynamic schedulers, optimization-based heuristics, autonomous manufacturing scheduling systems",
       "performance": "",
-      "region": "Daejeon, South Korea"
+      "region": "Daejeon, South Korea",
+      "responsibilities": [
+        "Led full project lifecycle (planning-to-validation): 9 industry-academia projects (planned 5, PM 4), 4 government projects (planned 3, PM 4)",
+        "Fundamental research on Neural Combinatorial Optimization based on GNN and RL",
+        "Designed general-purpose scheduling agent and Meta-RL methodology for flexible adaptation to manufacturing environment changes",
+        "Designed AI-based demand forecasting, production planning, and job scheduling optimization algorithms; validated business impact using real production data (Samsung Electronics, LG Electronics, Samsung Heavy Industries, etc.)",
+        "Provided technical review supporting client executives' strategic decisions and delivered system design proposals",
+        "Introduced structured project management processes (OneDrive & Notion-based) to the lab for the first time"
+      ],
+      "highlights": [
+        "First Ph.D. graduate of the lab; led project planning, proposal writing, and research beyond typical researcher scope",
+        "Won 10-year NRF 'Hanwoomul' long-term project after analyzing rejection feedback and reinforcing proposal logic",
+        "2 first-author IEEE journal papers, 7 international conference presentations"
+      ],
+      "advisor": "Hyun-Jung Kim"
     },
     {
       "position": "Researcher",
       "organization": "SKKU",
       "division": "SCO (Systems Control & Optimization) Lab.",
       "period": "2016.04 - 2021.02",
-      "roles": "Scheduling algorithm developer: meta-heuristics, opimization, System designer: digital twin for manufacturing, dynamic rescheduling systems",
+      "roles": "Scheduling algorithm developer: meta-heuristics, optimization; System designer: digital twin for manufacturing, dynamic rescheduling systems",
       "performance": "",
-      "region": "Suwon, South Korea"
+      "region": "Suwon, South Korea",
+      "responsibilities": [
+        "5 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)",
+        "Led foundational design and operations optimization research for 3D printer-based smart factory digital twin systems",
+        "Developed rescheduling algorithms for handling disruptions (machine failures, order cancellations) in flexible manufacturing systems (FMS)",
+        "Translated physical manufacturing constraints into mathematical models and validated in virtual environments",
+        "Defined virtual factory operation scenarios and conducted simulation-based operational efficiency reviews",
+        "Designed and verified real-time scheduling methodologies using genetic algorithms and heuristics",
+        "Participated in multiple government projects including FaaS IoT service platform for personalized production; managed deliverables"
+      ],
+      "advisor": "Hyun-Jung Kim"
     }
   ],
   "projects": [
     {
       "index": 25,
-      "period": "2025.06-2025.12",
+      "period": "2025.06 - 2025.12",
       "duration": "7m",
       "title": "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": true,
-      "remarks": "생산-물류 통합 시뮬레이터 설계 및 사용자 시나리오 정의"
+      "remarks": "",
+      "partners": [
+        "SKT",
+        "SK AX",
+        "Calro"
+      ],
+      "details": {
+        "purpose": "Define the need for a process twin to realize an autonomous fab; build a production-logistics integrated simulator",
+        "role": "Production engine development PM",
+        "tasks": [
+          "Discovered real operation use-cases for the process twin",
+          "Planned and designed production-logistics integrated simulator: unified modeling of process flows and material movement",
+          "Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)",
+          "Defined simulation result consistency metrics and designed/developed automated computation pipeline",
+          "WEB UI design participation and feedback"
+        ],
+        "achievements": "Use-case discovery, KPI definition, consistency metrics definition, automated validation pipeline"
+      }
     },
     {
       "index": 24,
@@ -159,7 +229,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
-      "remarks": "사용자 시나리오 정의 및 데이터 스키마 설계"
+      "remarks": ""
     },
     {
       "index": 23,
@@ -170,7 +240,17 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
-      "remarks": "Mozart 환경 이슈 해결 및 고객 요구사항 기반 로직 설계"
+      "remarks": "",
+      "details": {
+        "purpose": "Logic design and review for new real-time scheduler implementation; abstract semiconductor process-specific constraints for product generality",
+        "role": "Solution consultant",
+        "tasks": [
+          "Logic design and review for new real-time scheduler: equipment state changes, priority recalculation, and other core algorithm specification",
+          "Abstracted semiconductor process-specific constraints (machine eligibility, batching rules) for improved product generality",
+          "Remote solution environment configuration support"
+        ],
+        "achievements": "Resolved Mozart environment issues; designed logic based on customer requirements"
+      }
     },
     {
       "index": 22,
@@ -181,7 +261,17 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "범용 Agent 구축을 위한 스케줄링 및 디스패칭 알고리즘 개발"
+      "remarks": "",
+      "details": {
+        "purpose": "10-year project planning and execution (~2034.04); target autonomous scheduling in real manufacturing settings with progressive extension to process constraints and multi-objective functions",
+        "role": "Planning, PM, Researcher",
+        "tasks": [
+          "Led 10-year project planning and execution",
+          "Defined progressive extension cases with process constraints and multi-objective functions",
+          "Year 1: Developed GNN-based imitation learning methodology for multi-process mixed-flow production that adapts to varying problem sizes"
+        ],
+        "achievements": "Makespan optimal gap improved by 42.0% (vs. previous SOTA AI); 1 SCI journal paper (1st author)"
+      }
     },
     {
       "index": 21,
@@ -192,7 +282,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "반도체 제품 생산량 예측 및 생산계획 수립 알고리즘 개발"
+      "remarks": "",
+      "details": {
+        "purpose": "Demand forecasting for semiconductor products",
+        "role": "Problem definition, Researcher",
+        "tasks": [
+          "Identified decision-making processes through on-site engineer interviews",
+          "Defined problem scope and resolution boundaries",
+          "Data preprocessing and calibration",
+          "Forecasting model conceptualization, discussion, and refinement",
+          "Data segmentation"
+        ],
+        "achievements": "Demand forecasting model accuracy: 89.3% / 80% / 80%"
+      }
     },
     {
       "index": 20,
@@ -203,7 +305,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "GNN 기반 강화학습 알고리즘 개발 및 성능 검토"
+      "remarks": ""
     },
     {
       "index": 19,
@@ -214,7 +316,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "현장 제약 파악 및 최적 생산계획 수립 알고리즘 개발"
+      "remarks": "",
+      "details": {
+        "purpose": "Optimal production planning algorithm for LG Electronics refrigerator body assembly line",
+        "role": "Planning, PM, Researcher",
+        "tasks": [
+          "Identified on-site constraints and defined problem through engineer interviews (objective: minimize setup count, maximize on-time production and equipment utilization)",
+          "Data analysis and calibration (Excel -> Python)",
+          "Developed optimal production planning algorithm (optimization engine-based heuristic)",
+          "Defined algorithm-based production planning process"
+        ],
+        "achievements": "7-day plan with 20min runtime limit: setup reduced 5.1%, on-time production improved 25.8%, idle time reduced 37.6% (vs. on-site manual plan)",
+        "notes": "Achieved better results using optimization engine alone without deep learning"
+      }
     },
     {
       "index": 18,
@@ -225,7 +339,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "강화학습 활용 실시간 디스패칭 Agent 개발"
+      "remarks": ""
     },
     {
       "index": 17,
@@ -236,7 +350,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "Job Shop 생산 시뮬레이터 고도화 및 방법론 개발"
+      "remarks": ""
     },
     {
       "index": 16,
@@ -247,7 +361,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "기판 전극 위치 기반 최적 배선 도출 알고리즘 기획"
+      "remarks": ""
     },
     {
       "index": 15,
@@ -258,7 +372,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "범용 Agent 구축을 위한 Meta-RL 적용 및 설계"
+      "remarks": ""
     },
     {
       "index": 14,
@@ -269,7 +383,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "작업자 부하 분산 최소화 목적 리스케줄링 알고리즘 개발"
+      "remarks": "",
+      "details": {
+        "purpose": "RL-based production planning to minimize daily worker deviation in shipbuilding",
+        "role": "Planning, Researcher",
+        "tasks": [
+          "Led project planning and proposal writing",
+          "Defined problem and resolution scope (objective: minimize daily worker employment deviation)",
+          "Enhanced ship production simulator",
+          "Enhanced RL-based schedule adjustment algorithm",
+          "Proposed iterative greedy algorithm",
+          "Discussed spatial layout algorithm methodology"
+        ],
+        "achievements": "Year 1 schedule adjustment: daily manpower std. dev. reduced by 41.60% (RL, 20.27s), 44.53% (greedy, 49.86s), 47.69% (greedy+RL) vs. existing 6-month schedule"
+      }
     },
     {
       "index": 13,
@@ -280,7 +407,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "부하 분산 최소화 알고리즘 및 시뮬레이터 개발"
+      "remarks": ""
     },
     {
       "index": 12,
@@ -291,7 +418,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현"
+      "remarks": ""
     },
     {
       "index": 11,
@@ -302,7 +429,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "작업자 결근 대응 알고리즘 및 시뮬레이터 개발"
+      "remarks": "",
+      "details": {
+        "purpose": "Optimize automotive parts production in global supply chain context",
+        "role": "Planning, PM, Researcher (global project part lead)",
+        "tasks": [
+          "Identified on-site constraints through field interviews",
+          "Defined problem and resolution scope",
+          "Developed automotive parts production simulator and real-time worker allocation/reallocation algorithm",
+          "Developed conveyor belt speed determination algorithm for semi-automated assembly processes",
+          "Defined user scenarios and program screen specifications"
+        ],
+        "achievements": "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent registered: KR1020210070359; 1 SCI journal paper (2nd author); 2 conference papers"
+      }
     },
     {
       "index": 10,
@@ -313,7 +452,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발"
+      "remarks": ""
     },
     {
       "index": 9,
@@ -324,7 +463,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안"
+      "remarks": ""
     },
     {
       "index": 8,
@@ -335,7 +474,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "생산 시스템용 강화학습 알고리즘 개발 및 성능 검토"
+      "remarks": ""
     },
     {
       "index": 7,
@@ -346,7 +485,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "반도체 FAB 생산라인 최적 파라미터 도출 및 현장 제약 파악"
+      "remarks": ""
     },
     {
       "index": 6,
@@ -357,7 +496,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발"
+      "remarks": ""
     },
     {
       "index": 5,
@@ -368,7 +507,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "파라미터에 따른 성능 변화 분석 프레임워크 설계/개발"
+      "remarks": ""
     },
     {
       "index": 4,
@@ -379,7 +518,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "가상공장 시뮬레이터 구축 및 운영 효율성 분석"
+      "remarks": ""
     },
     {
       "index": 3,
@@ -390,7 +529,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발"
+      "remarks": ""
     },
     {
       "index": 2,
@@ -401,7 +540,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발"
+      "remarks": ""
     },
     {
       "index": 1,
@@ -412,14 +551,14 @@
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발"
+      "remarks": ""
     }
   ],
   "publications": [
     {
       "index": 26,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Graph-based imitation learning for real-time job shop dispatcher,",
+      "title": "Graph-based imitation learning for real-time job shop dispatcher",
       "fullCitation": "J.-H. Lee and H.-J. Kim, \"Graph-based imitation learning for real-time job shop dispatcher,\" IEEE Transactions on Automation Science and Engineering, 2024.",
       "type": "Journal",
       "link": "Graph-Based Imitation Learning for Real-Time Job Shop Dispatcher | IEEE Journals & Magazine | IEEE Xplore",
@@ -432,7 +571,7 @@
     {
       "index": 25,
       "authors": "J.-H. Lee, J. Park, and H.-J. Kim",
-      "title": "Tree-based Dispatcher for Job Shop Scheduling,",
+      "title": "Tree-based Dispatcher for Job Shop Scheduling",
       "fullCitation": "J.-H. Lee, J. Park, and H.-J. Kim, \"Tree-based Dispatcher for Job Shop Scheduling,\" IEEE International Conference on Automation Science and Engineering (CASE), Bari, Italy, 2024.",
       "type": "Conference",
       "link": "",
@@ -445,7 +584,7 @@
     {
       "index": 24,
       "authors": "J.-H. Leeand H.-J. Kim",
-      "title": "Tree-based dispatcher for solving job shop scheduling problems,",
+      "title": "Tree-based dispatcher for solving job shop scheduling problems",
       "fullCitation": "J.-H. Leeand H.-J. Kim, \"Tree-based dispatcher for solving job shop scheduling problems,\" the Spring Conference of Korean Institute of Industrial Engineers, Yeosu, 2024.",
       "type": "Conference",
       "link": "",
@@ -458,7 +597,7 @@
     {
       "index": 23,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Active schedule-based imitation learning for job shop scheduling,",
+      "title": "Active schedule-based imitation learning for job shop scheduling",
       "fullCitation": "J.-H. Lee and H.-J. Kim, \"Active schedule-based imitation learning for job shop scheduling,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2023.",
       "type": "Conference",
       "link": "",
@@ -471,7 +610,7 @@
     {
       "index": 22,
       "authors": "J.-H. Lee and H.-J. Kim*",
-      "title": "Imitation learning for real-time job shop scheduling using graph-based representation,",
+      "title": "Imitation learning for real-time job shop scheduling using graph-based representation",
       "fullCitation": "J.-H. Lee and H.-J. Kim*, \"Imitation learning for real-time job shop scheduling using graph-based representation,\" Winter Simulation Conference, Singapore, 2022, pp. 3285-3296.",
       "type": "Conference",
       "link": "Imitation Learning for Real-Time Job Shop Scheduling Using Graph-Based Representation | IEEE Conference Publication | IEEE Xplore",
@@ -484,7 +623,7 @@
     {
       "index": 21,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Job shop scheduling using graph-based imitation learning,",
+      "title": "Job shop scheduling using graph-based imitation learning",
       "fullCitation": "J.-H. Lee and H.-J. Kim, \"Job shop scheduling using graph-based imitation learning,\" INFORMS Annual Meeting, Indiana, USA, 2022.",
       "type": "Poster",
       "link": "",
@@ -497,7 +636,7 @@
     {
       "index": 20,
       "authors": "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*",
-      "title": "A multi-manned assembly line worker assignment and balancing problem with positional constraints,",
+      "title": "A multi-manned assembly line worker assignment and balancing problem with positional constraints",
       "fullCitation": "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*, \"A multi-manned assembly line worker assignment and balancing problem with positional constraints,\" IEEE Robotics and Automation Letters, vol. 7, no. 3, pp. 7786-7793, 2022.",
       "type": "Journal",
       "link": "A Multi-Manned Assembly Line Worker Assignment and Balancing Problem With Positional Constraints | IEEE Journals & Magazine | IEEE Xplore",
@@ -510,7 +649,7 @@
     {
       "index": 19,
       "authors": "J.-H. Lee, D.-Y. Kim, S.-H. Cho, and H.-J. Kim",
-      "title": "Reinforcement learning for resource leveling in multiple projects,",
+      "title": "Reinforcement learning for resource leveling in multiple projects",
       "fullCitation": "J.-H. Lee, D.-Y. Kim, S.-H. Cho, and H.-J. Kim, \"Reinforcement learning for resource leveling in multiple projects,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2022.",
       "type": "Conference",
       "link": "",
@@ -523,7 +662,7 @@
     {
       "index": 18,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "Dynamic job shop scheduling using graph-based imitation learning,",
+      "title": "Dynamic job shop scheduling using graph-based imitation learning",
       "fullCitation": "J.-H. Lee and H.-J. Kim, \"Dynamic job shop scheduling using graph-based imitation learning,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2022.",
       "type": "Conference",
       "link": "",
@@ -536,7 +675,7 @@
     {
       "index": 17,
       "authors": "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung",
-      "title": "Machine learning-based periodic setup changes for semiconductor manufacturing machines,",
+      "title": "Machine learning-based periodic setup changes for semiconductor manufacturing machines",
       "fullCitation": "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung, \"Machine learning-based periodic setup changes for semiconductor manufacturing machines,\" Winter Simulation Conference, Online, 2021, pp.1-10.",
       "type": "Conference",
       "link": "Machine Learning-Based Periodic Setup Changes for Semiconductor Manufacturing Machines | IEEE Conference Publication | IEEE Xplore",
@@ -549,7 +688,7 @@
     {
       "index": 16,
       "authors": "D.-Y. Kim, J.-H.Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J.Kim",
-      "title": "Resource leveling in shipyard cargo hold process through reinforcement learning,",
+      "title": "Resource leveling in shipyard cargo hold process through reinforcement learning",
       "fullCitation": "D.-Y. Kim, J.-H.Lee, S.-H. Min, S.-H. Cho, J.-H. Park, H.-S. Min, G.-W. Kim, M.-S. Kim, and H.-J.Kim, \"Resource leveling in shipyard cargo hold process through reinforcement learning,\" the Autumn Conference of Korean Institute of Industrial Engineers, Seoul, Korea, 2021.",
       "type": "Conference",
       "link": "",
@@ -562,7 +701,7 @@
     {
       "index": 15,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim*",
-      "title": "Assembly line worker assignment and balancing problem with positional constraints,",
+      "title": "Assembly line worker assignment and balancing problem with positional constraints",
       "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Assembly line worker assignment and balancing problem with positional constraints,\" Advances in Production Management Systems (APMS), Online, 2021, pp. 3-11.",
       "type": "Conference",
       "link": "Assembly Line Worker Assignment and Balancing Problem with Positional Constraints | Springer Nature Link",
@@ -575,7 +714,7 @@
     {
       "index": 14,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim",
-      "title": "Operation and optimization of the automotive parts assembly line considering worker skill levels,",
+      "title": "Operation and optimization of the automotive parts assembly line considering worker skill levels",
       "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim, \"Operation and optimization of the automotive parts assembly line considering worker skill levels,\" the Summer Conference of Korea CDE, Online, 2021.",
       "type": "Conference",
       "link": "",
@@ -588,7 +727,7 @@
     {
       "index": 13,
       "authors": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*",
-      "title": "A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,",
+      "title": "A sequential search method of dispatching rules for scheduling of LCD manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*, \"A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,\" IEEE Transactions on Semiconductor Manufacturing, vol. 33, no. 4, pp. 496-503, 2020.",
       "type": "Journal",
       "link": "A Sequential Search Method of Dispatching Rules for Scheduling of LCD Manufacturing Systems | IEEE Journals & Magazine | IEEE Xplore",
@@ -601,7 +740,7 @@
     {
       "index": 12,
       "authors": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*",
-      "title": "A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,",
+      "title": "A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*, \"A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,\" Winter Simulation Conference, Online, 2020, pp. 1943-1953.",
       "type": "Conference",
       "link": "A Simulation-Based Sequential Search Method for Multi-Obejctive Scheduling Problems of Manufacturing Systems | IEEE Conference Publication | IEEE Xplore",
@@ -614,7 +753,7 @@
     {
       "index": 11,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim",
-      "title": "Workforce assignment for automotive parts assembly lines,",
+      "title": "Workforce assignment for automotive parts assembly lines",
       "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim, \"Workforce assignment for automotive parts assembly lines,\" the Winter Conference of Korea CDE, Online, 2020.",
       "type": "Conference",
       "link": "",
@@ -627,7 +766,7 @@
     {
       "index": 10,
       "authors": "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*",
-      "title": "Digital twin-based cyber physical production system architectural framework for personalized production,",
+      "title": "Digital twin-based cyber physical production system architectural framework for personalized production",
       "fullCitation": "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*, \"Digital twin-based cyber physical production system architectural framework for personalized production,\" The International Journal of Advanced Manufacturing Technology, vol. 106, no. 5, 2020, pp. 1787-1810.",
       "type": "Journal",
       "link": "Digital twin-based cyber physical production system architectural framework for personalized production | The International Journal of Advanced Manufacturing Technology | Springer Nature Link",
@@ -640,7 +779,7 @@
     {
       "index": 9,
       "authors": "H. Yang, J.-H. Lee, and H.-J. Kim*",
-      "title": "Workforce assignment with a different skill level for automotive parts assembly lines,",
+      "title": "Workforce assignment with a different skill level for automotive parts assembly lines",
       "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Workforce assignment with a different skill level for automotive parts assembly lines,\" Advances in Production Management Systems (APMS), Novi Sad, Serbia, 2020, pp. 206-212.",
       "type": "Conference",
       "link": "Workforce Assignment with a Different Skill Level for Automotive Parts Assembly Lines | Springer Nature Link",
@@ -653,7 +792,7 @@
     {
       "index": 8,
       "authors": "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung",
-      "title": "A sequential search framework for selecting weights of dispatching rules in manufacturing systems,",
+      "title": "A sequential search framework for selecting weights of dispatching rules in manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A sequential search framework for selecting weights of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Maryland, USA, 2019, pp. 2201-2211.",
       "type": "Conference",
       "link": "A Sequential Search Framework for Selecting Weights of Dispatching Rules in Manufacturing Systems | IEEE Conference Publication | IEEE Xplore",
@@ -666,7 +805,7 @@
     {
       "index": 7,
       "authors": "J.-H. Lee and H.-J. Kim",
-      "title": "A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages,",
+      "title": "A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages",
       "fullCitation": "J.-H. Lee and H.-J. Kim, \"A genetic algorithm for hybrid flow shop scheduling with multiple assembly stages,\" the Autumn Conference of Korean Institute of Industrial Engineers, Seoul, 2019.",
       "type": "Conference",
       "link": "",
@@ -679,7 +818,7 @@
     {
       "index": 6,
       "authors": "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*",
-      "title": "Vulnerability analysis of evacuation transportation networks,",
+      "title": "Vulnerability analysis of evacuation transportation networks",
       "fullCitation": "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*, \"Vulnerability analysis of evacuation transportation networks,\" International Journal of Industrial Engineering-Theory Applications and Practice, vol. 25, no. 5, 2018, pp. 663-673.",
       "type": "Journal",
       "link": "https://eds.s.ebscohost.com/eds/pdfviewer/pdfviewer?vid=0&sid=aae09a75-7b12-43fb-8fb9-3cea0c5bccfd%40redis",
@@ -692,7 +831,7 @@
     {
       "index": 5,
       "authors": "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung",
-      "title": "A framework for performance analysis of dispatching rules in manufacturing systems,",
+      "title": "A framework for performance analysis of dispatching rules in manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A framework for performance analysis of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Gothenburg, Sweden, 2018, pp. 3550-3560.",
       "type": "Conference",
       "link": "A FRAMEWORK FOR PERFORMANCE ANALYSIS OF DISPATCHING RULES IN MANUFACTURING SYSTEMS | IEEE Conference Publication | IEEE Xplore",
@@ -705,7 +844,7 @@
     {
       "index": 4,
       "authors": "J.-H. Lee, S.-S. Park, and H.-J. Kim",
-      "title": "Rescheduling algorithms for 3D printer-based manufacturing systems,",
+      "title": "Rescheduling algorithms for 3D printer-based manufacturing systems",
       "fullCitation": "J.-H. Lee, S.-S. Park, and H.-J. Kim, \"Rescheduling algorithms for 3D printer-based manufacturing systems,\" the Summer Conference of Korea CDE, Jeju, 2018.",
       "type": "Conference",
       "link": "",
@@ -718,7 +857,7 @@
     {
       "index": 3,
       "authors": "S.-S. Park, J.H. Lee, and H.-J. Kim",
-      "title": "Scheduling algorithms for 3D printer-based manufacturing systems,",
+      "title": "Scheduling algorithms for 3D printer-based manufacturing systems",
       "fullCitation": "S.-S. Park, J.H. Lee, and H.-J. Kim, \"Scheduling algorithms for 3D printer-based manufacturing systems,\" the Spring Conference of Korean Institute of Industrial Engineers, Gyeongju, Korea, 2018.",
       "type": "Conference",
       "link": "",
@@ -731,7 +870,7 @@
     {
       "index": 2,
       "authors": "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung",
-      "title": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting,",
+      "title": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting",
       "fullCitation": "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung, \"Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting,\" Winter Simulation Conference, Las Vegas, USA, 2017, pp. 3745-3755.",
       "type": "Conference",
       "link": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting | IEEE Conference Publication | IEEE Xplore",
@@ -744,7 +883,7 @@
     {
       "index": 1,
       "authors": "S.-S. Park, S.Y. Kim, J.H. Lee, and H.-J. Kim",
-      "title": "3D printer based assembly process scheduling algorithm development,",
+      "title": "3D printer based assembly process scheduling algorithm development",
       "fullCitation": "S.-S. Park, S.Y. Kim, J.H. Lee, and H.-J. Kim, \"3D printer based assembly process scheduling algorithm development,\" the Winter Conference of Korea CDE, Pyeongchang, Korea, 2017, pp. 515-523.",
       "type": "Conference",
       "link": "",
@@ -799,7 +938,7 @@
       "remarks": "$1,500"
     },
     {
-      "date": "2021.03 - 2025.02",
+      "date": "",
       "title": "Ph.D. Candidate Research Incentive Support",
       "description": "",
       "organization": "National Research Foundation (NRF) of Korea",
@@ -823,7 +962,7 @@
       "remarks": ""
     },
     {
-      "date": "2021.03 - 2025.02",
+      "date": "",
       "title": "Full-tuition Entrance Scholarship",
       "description": "Merit-based Entrance Scholarship (Ph.D.)",
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
@@ -847,7 +986,7 @@
       "remarks": ""
     },
     {
-      "date": "2013.03 - 2016.08",
+      "date": "",
       "title": "Full-tuition Entrance Scholarship",
       "description": "Merit-based Entrance Scholarship (B.S.)",
       "organization": "Sungkyunkwan University (SKKU)",

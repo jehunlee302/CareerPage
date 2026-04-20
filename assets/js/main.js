@@ -13,7 +13,7 @@ const RESEARCH_INTERESTS = [
 const FEATURED_PROJECT_INDICES = [25, 23, 21];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
 const HERO_TAGS = ['Autonomous Scheduling','Digital Twin','Reinforcement Learning','Semiconductor Fab','AI-Native Manufacturing','KAIST Ph.D.'];
-const THESIS = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
+const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
 const PROJ_PER_PAGE = 9;
 const PUB_PER_PAGE = 8;
 const AWARD_PER_PAGE = 6;
@@ -108,14 +108,44 @@ function renderResearchFocus() {
 function renderEducation(items) {
   const el = document.getElementById('educationTimeline'); if (!el || !items) return;
   el.innerHTML = items.map(item => {
-    const thesis = THESIS[item.degree] || '';
+    const thesisTitle = item.thesis?.title || THESIS_FALLBACK[item.degree] || '';
+    const hasDetails = item.thesis?.topic || item.thesis?.methodology || item.thesis?.performance;
+    const advisorHtml = item.advisor ? parseAdvisor(item.advisor) : (item.remarks ? parseAdvisor(item.remarks) : '');
     return `<div class="timeline-item reveal">
       <div class="tl-header"><span class="tl-title">${esc(item.degree)} — ${esc(item.major)}</span><span class="tl-period">${esc(item.period)}</span></div>
       <div class="tl-org">${esc(item.institution)}</div>
-      ${thesis ? `<div class="edu-thesis">${esc(thesis)}</div>` : ''}
-      ${item.remarks ? `<div class="tl-remarks">${parseAdvisor(item.remarks)}</div>` : ''}
+      ${advisorHtml ? `<div class="tl-remarks">${advisorHtml}</div>` : ''}
+      ${thesisTitle ? `<div class="edu-thesis${hasDetails ? ' edu-thesis-expandable' : ''}"${hasDetails ? ' tabindex="0" role="button"' : ''}>
+        <span class="edu-thesis-label">Thesis:</span> ${esc(thesisTitle)}${hasDetails ? ' <span class="edu-expand-hint">▸ Details</span>' : ''}
+      </div>` : ''}
+      ${hasDetails ? `<div class="edu-thesis-details" style="display:none">
+        ${item.thesis.topic ? `<div class="edu-detail-section"><span class="edu-detail-label">Topic</span><p>${esc(item.thesis.topic)}</p></div>` : ''}
+        ${item.thesis.priorLimitations ? `<div class="edu-detail-section"><span class="edu-detail-label">Prior Limitations</span><p>${esc(item.thesis.priorLimitations)}</p></div>` : ''}
+        ${item.thesis.methodology ? `<div class="edu-detail-section"><span class="edu-detail-label">Methodology</span><div class="edu-methodology">${formatMethodology(item.thesis.methodology)}</div></div>` : ''}
+        ${item.thesis.performance ? `<div class="edu-detail-section"><span class="edu-detail-label">Performance</span><p>${esc(item.thesis.performance)}</p></div>` : ''}
+      </div>` : ''}
     </div>`;
   }).join('');
+
+  /* Thesis expand/collapse */
+  el.querySelectorAll('.edu-thesis-expandable').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const details = btn.nextElementSibling;
+      const hint = btn.querySelector('.edu-expand-hint');
+      if (!details) return;
+      const open = details.style.display !== 'none';
+      details.style.display = open ? 'none' : 'block';
+      if (hint) hint.textContent = open ? '▸ Details' : '▾ Collapse';
+    });
+  });
+}
+function formatMethodology(text) {
+  if (!text) return '';
+  const lines = text.split('\n').filter(l => l.trim());
+  if (lines.some(l => /^\d+\./.test(l.trim()))) {
+    return `<ol>${lines.filter(l => /^\d+\./.test(l.trim())).map(l => `<li>${esc(l.replace(/^\d+\.\s*/, ''))}</li>`).join('')}</ol>`;
+  }
+  return lines.map(l => `<p>${esc(l)}</p>`).join('');
 }
 function parseAdvisor(r) {
   const m = r.match(/^(Advisor:\s*[^,]+),\s*(https?:\/\/\S+)$/i);
@@ -125,7 +155,10 @@ function parseAdvisor(r) {
 /* ─── Experience ─── */
 function renderExperience(items) {
   const el = document.getElementById('experienceTimeline'); if (!el || !items) return;
-  el.innerHTML = items.map(item => `
+  el.innerHTML = items.map(item => {
+    const hasResp = item.responsibilities && item.responsibilities.length > 0;
+    const hasHighlights = item.highlights && item.highlights.length > 0;
+    return `
     <div class="timeline-item reveal">
       <div class="tl-header">
         <div class="tl-header-left">
@@ -138,7 +171,10 @@ function renderExperience(items) {
         </div>
       </div>
       <div class="tl-roles">${esc(item.roles)}</div>
-    </div>`).join('');
+      ${hasResp ? `<ul class="tl-responsibilities">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
+      ${hasHighlights ? `<div class="tl-highlights">${item.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : ''}
+    </div>`;
+  }).join('');
 }
 
 /* ─── Featured Projects ─── */
@@ -385,12 +421,28 @@ function openProjectModal(p) {
   const body = document.getElementById('modalBody'), modal = document.getElementById('projectModal');
   if (!body || !modal) return;
   const topics = getTopics(p.title);
-  const fields = [['Period',`${p.period}${p.duration?' · '+p.duration:''}`],p.client&&['Client',p.client],p.partnerInstitution&&['Partner',p.partnerInstitution],p.affiliatedInstitution&&['Affiliated',p.affiliatedInstitution],p.remarks&&['Remarks',p.remarks]].filter(Boolean);
+  const d = p.details || {};
+
+  /* Basic fields */
+  const fields = [
+    ['Period', `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
+    d.role && ['Role', d.role],
+    p.client && ['Client', p.client],
+    p.partners && p.partners.length && ['Partners', p.partners.join(', ')],
+    p.partnerInstitution && ['Partner', p.partnerInstitution],
+    p.affiliatedInstitution && ['Affiliated', p.affiliatedInstitution],
+  ].filter(Boolean);
+
   body.innerHTML = `
-    <div class="modal-badge">${p.isPM?'👑 PM · ':''}Project #${p.index}${isGov(p.client)?' · Gov\'t':''}</div>
+    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}Project #${p.index}${isGov(p.client) ? ' · Gov\'t' : ''}</div>
     <div class="modal-title">${esc(p.title)}</div>
-    ${topics.length?`<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${topics.map(t=>`<span class="tag topic">${t}</span>`).join('')}</div>`:''}
-    ${fields.map(([l,v])=>`<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}`;
+    ${topics.length ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${topics.map(t => `<span class="tag topic">${t}</span>`).join('')}</div>` : ''}
+    ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}
+    ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">Purpose</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
+    ${d.tasks && d.tasks.length ? `<div class="modal-section"><div class="modal-section-label">Key Tasks</div><ul class="modal-task-list">${d.tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}
+    ${d.achievements ? `<div class="modal-section"><div class="modal-section-label">Achievements</div><p class="modal-section-text modal-achievement">${esc(d.achievements)}</p></div>` : ''}
+    ${d.notes ? `<div class="modal-section"><div class="modal-section-label">Notes</div><p class="modal-section-text">${esc(d.notes)}</p></div>` : ''}
+    ${!d.purpose && p.remarks ? `<div class="modal-field"><span class="modal-field-label">Remarks</span><span class="modal-field-value">${esc(p.remarks)}</span></div>` : ''}`;
   modal.classList.add('open'); document.body.style.overflow = 'hidden';
 }
 function closeModal() { document.getElementById('projectModal')?.classList.remove('open'); document.body.style.overflow=''; }

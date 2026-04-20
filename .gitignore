@@ -15,6 +15,9 @@ Thumbs.db
 # Reference images (not part of the site)
 GoogleSheet/
 
+# Node
+node_modules/
+
 # Logs
 *.log
 

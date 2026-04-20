@@ -1,0 +1,48 @@
+# Publications 2023-2024 (newest first)
+# Citations are in English (academic standard)
+# 4 publications
+
+- index: 26
+  year: 2024
+  type: Journal
+  global: true
+  role: "1st Author"
+  authors: J.-H. Lee and H.-J. Kim
+  title: Graph-based imitation learning for real-time job shop dispatcher
+  venue: IEEE Transactions on Automation Science and Engineering
+  full_citation: "J.-H. Lee and H.-J. Kim, \"Graph-based imitation learning for real-time job shop dispatcher,\" IEEE Transactions on Automation Science and Engineering, 2024."
+  link: "Graph-Based Imitation Learning for Real-Time Job Shop Dispatcher | IEEE Journals & Magazine | IEEE Xplore"
+
+- index: 25
+  year: 2024
+  type: Conference
+  global: true
+  role: "1st Author"
+  authors: J.-H. Lee, J. Park, and H.-J. Kim
+  title: Tree-based Dispatcher for Job Shop Scheduling
+  venue: IEEE International Conference on Automation Science and Engineering (CASE)
+  full_citation: "J.-H. Lee, J. Park, and H.-J. Kim, \"Tree-based Dispatcher for Job Shop Scheduling,\" IEEE International Conference on Automation Science and Engineering (CASE), Bari, Italy, 2024."
+  remarks: Bari, Italy
+
+- index: 24
+  year: 2024
+  type: Conference
+  global: false
+  role: "1st Author"
+  authors: J.-H. Leeand H.-J. Kim
+  title: Tree-based dispatcher for solving job shop scheduling problems
+  venue: the Spring Conference of Korean Institute of Industrial Engineers
+  full_citation: "J.-H. Leeand H.-J. Kim, \"Tree-based dispatcher for solving job shop scheduling problems,\" the Spring Conference of Korean Institute of Industrial Engineers, Yeosu, 2024."
+  remarks: Yeosu, South Korea
+
+- index: 23
+  year: 2023
+  type: Conference
+  global: false
+  role: "1st Author"
+  authors: J.-H. Lee and H.-J. Kim
+  title: Active schedule-based imitation learning for job shop scheduling
+  venue: the Spring Conference of Korean Institute of Industrial Engineers
+  full_citation: "J.-H. Lee and H.-J. Kim, \"Active schedule-based imitation learning for job shop scheduling,\" the Spring Conference of Korean Institute of Industrial Engineers, Jeju, Korea, 2023."
+  remarks: Jeju, South Korea
+
