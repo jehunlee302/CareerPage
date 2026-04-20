@@ -143,9 +143,11 @@ function render(data) {
 /* ─── Hero ─── */
 function renderHero(data) {
   const el = document.getElementById('heroTags');
-  if (el) el.innerHTML = (HERO_TAGS[LANG]||HERO_TAGS.en).map(t => `<span class="hero-tag">${esc(t)}</span>`).join('');
+  if (el) el.innerHTML = (HERO_TAGS[LANG]||HERO_TAGS.en).map(tag => `<span class="hero-tag">${esc(tag)}</span>`).join('');
   const heroBtn = document.getElementById('heroContactBtn');
   if (heroBtn) heroBtn.textContent = t('ui.contactMe');
+  const locEl = document.getElementById('heroLocationText');
+  if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
 }
 
 /* ─── Typewriter ─── */

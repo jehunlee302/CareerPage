@@ -20,8 +20,11 @@
   --text-mid:   #334155;
   --text-muted: #64748B;
   --border:     #E2E8F0;
+  --r-sm:       6px;
   --r:          10px;
+  --r-md:       12px;
   --r-lg:       16px;
+  --card-bg:    #FFFFFF;
   --ease:       cubic-bezier(.4,0,.2,1);
   --t:          .3s;
 }
@@ -404,6 +407,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
   .lang-toggle{padding:.25rem .5rem;font-size:.72rem}
   #hero{padding:6rem 1.5rem 4rem}
   .hero-scroll{display:none}
+  .philosophy-pillars{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
   .awards-list{grid-template-columns:1fr}
   .pub-body{flex-direction:column}
