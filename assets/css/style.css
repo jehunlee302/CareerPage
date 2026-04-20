@@ -91,7 +91,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 /* ════════════════════════════════════════
    HERO
    ════════════════════════════════════════ */
-#hero{min-height:100vh;background:linear-gradient(rgba(8,20,42,.82),rgba(8,20,42,.90)),url('../../background.jpg') center/cover no-repeat var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem 3rem;position:relative;overflow:hidden}
+#hero{min-height:100vh;background:linear-gradient(rgba(8,20,42,.82),rgba(8,20,42,.90)),url('../img/background.jpg') center/cover no-repeat var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem 3rem;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(0,122,255,.1) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
 #hero::after{content:'';position:absolute;top:-40%;right:-10%;width:600px;height:600px;background:radial-gradient(ellipse,rgba(0,122,255,.07) 0%,transparent 65%);pointer-events:none}
 
