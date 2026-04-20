@@ -34,13 +34,13 @@ const I18N = {
   en: {
     nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
     label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
-    ui: { contactMe:'Contact Me', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', purpose:'Purpose', keyTasks:'Key Tasks', achievements:'Achievements', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:' },
+    ui: { contactMe:'Contact Me', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', purpose:'Purpose', keyTasks:'Key Tasks', achievements:'Achievements', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author' },
     impact: { projects:'Major Projects', pm:'PM Roles', pubs:'Publications', honors:'Honors & Prizes', patent:'Patent' },
   },
   ko: {
     nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
     label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
-    ui: { contactMe:'연락하기', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', purpose:'목적', keyTasks:'주요 업무', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:' },
+    ui: { contactMe:'연락하기', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', purpose:'목적', keyTasks:'주요 업무', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자' },
     impact: { projects:'주요 프로젝트', pm:'PM 수행', pubs:'논문', honors:'수상', patent:'특허' },
   },
 };
@@ -52,19 +52,20 @@ const ACTIVITY_PER_PAGE = 6;
 
 let _allProjects = [];
 let _projPager, _pubPager, _awardPager, _activityPager;
+let _typewriterTimer = null;
 
 /* ─── Topic Classification ─── */
 function getTopics(title) {
-  const t = (title || '').toLowerCase();
+  const s = (title || '').toLowerCase();
   const tags = [];
-  if (/schedul|dispatch/.test(t)) tags.push('Scheduling');
-  if (/digital twin|simulat/.test(t)) tags.push('Simulation');
-  if (/plann/.test(t)) tags.push('Planning');
-  if (/reinforcement|machine learning|ai[\s-]|learning/.test(t)) tags.push('AI/RL');
-  if (/optim/.test(t)) tags.push('Optimization');
-  if (/forecast|demand/.test(t)) tags.push('Forecast');
-  if (/manufactur|factory|fab|assembly|logistic/.test(t)) tags.push('Manufacturing');
-  if (/platform|saas|iot/.test(t)) tags.push('Platform');
+  if (/schedul|dispatch|스케줄|디스패칭/.test(s)) tags.push('Scheduling');
+  if (/digital twin|simulat|디지털 트윈|시뮬레이션/.test(s)) tags.push('Simulation');
+  if (/plann|계획/.test(s)) tags.push('Planning');
+  if (/reinforcement|machine learning|ai[\s-]|learning|강화학습|모방학습/.test(s)) tags.push('AI/RL');
+  if (/optim|최적화/.test(s)) tags.push('Optimization');
+  if (/forecast|demand|예측|수요/.test(s)) tags.push('Forecast');
+  if (/manufactur|factory|fab|assembly|logistic|제조|팩토리|팹|조립|물류/.test(s)) tags.push('Manufacturing');
+  if (/platform|saas|iot|플랫폼/.test(s)) tags.push('Platform');
   return tags;
 }
 function isGov(client) { return /NRF|MOTIE|MSIP|Ministry/i.test(client || ''); }
@@ -108,6 +109,7 @@ function applyLangUI() {
   /* Toggle button label */
   const btn = document.getElementById('langToggle');
   if (btn) {
+    btn.querySelector('.lang-current').textContent = LANG.toUpperCase();
     btn.querySelector('.lang-label').textContent = LANG === 'en' ? 'KO' : 'EN';
     btn.setAttribute('aria-label', LANG === 'en' ? 'Switch to Korean' : 'Switch to English');
   }
@@ -140,16 +142,18 @@ function renderHero(data) {
 
 /* ─── Typewriter ─── */
 function setupTitleTypewriter(titles) {
+  if (_typewriterTimer) clearTimeout(_typewriterTimer);
   if (!titles.length) return;
   const el = document.getElementById('heroTitleText'); if (!el) return;
+  el.textContent = '';
   let ti = 0, ci = 0, del = false;
   function tick() {
     const c = titles[ti];
-    if (!del) { el.textContent = c.slice(0, ++ci); if (ci === c.length) { del = true; return setTimeout(tick, 2200); } }
-    else { el.textContent = c.slice(0, --ci); if (ci === 0) { del = false; ti = (ti + 1) % titles.length; return setTimeout(tick, 350); } }
-    setTimeout(tick, del ? 40 : 65);
+    if (!del) { el.textContent = c.slice(0, ++ci); if (ci === c.length) { del = true; _typewriterTimer = setTimeout(tick, 2200); return; } }
+    else { el.textContent = c.slice(0, --ci); if (ci === 0) { del = false; ti = (ti + 1) % titles.length; _typewriterTimer = setTimeout(tick, 350); return; } }
+    _typewriterTimer = setTimeout(tick, del ? 40 : 65);
   }
-  setTimeout(tick, 800);
+  _typewriterTimer = setTimeout(tick, 800);
 }
 
 /* ─── Impact Strip ─── */
@@ -194,10 +198,10 @@ function renderEducation(items) {
         <span class="edu-thesis-label">${t('ui.thesis')}</span> ${esc(thesisTitle)}${hasDetails ? ` <span class="edu-expand-hint">${t('ui.details')}</span>` : ''}
       </div>` : ''}
       ${hasDetails ? `<div class="edu-thesis-details" style="display:none">
-        ${item.thesis.topic ? `<div class="edu-detail-section"><span class="edu-detail-label">Topic</span><p>${esc(item.thesis.topic)}</p></div>` : ''}
-        ${item.thesis.priorLimitations ? `<div class="edu-detail-section"><span class="edu-detail-label">Prior Limitations</span><p>${esc(item.thesis.priorLimitations)}</p></div>` : ''}
-        ${item.thesis.methodology ? `<div class="edu-detail-section"><span class="edu-detail-label">Methodology</span><div class="edu-methodology">${formatMethodology(item.thesis.methodology)}</div></div>` : ''}
-        ${item.thesis.performance ? `<div class="edu-detail-section"><span class="edu-detail-label">Performance</span><p>${esc(item.thesis.performance)}</p></div>` : ''}
+        ${item.thesis.topic ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.topic')}</span><p>${esc(item.thesis.topic)}</p></div>` : ''}
+        ${item.thesis.priorLimitations ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.priorLimitations')}</span><p>${esc(item.thesis.priorLimitations)}</p></div>` : ''}
+        ${item.thesis.methodology ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.methodology')}</span><div class="edu-methodology">${formatMethodology(item.thesis.methodology)}</div></div>` : ''}
+        ${item.thesis.performance ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.performance')}</span><p>${esc(item.thesis.performance)}</p></div>` : ''}
       </div>` : ''}
     </div>`;
   }).join('');
@@ -268,13 +272,13 @@ function renderFeaturedProjects(projects) {
   const sub = document.getElementById('projectSubtitle');
   if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건+` : `${projects.length} projects · ${projects.filter(p => p.isPM).length}+ PM roles`;
 
-  /* featured click → modal */
-  el.addEventListener('click', e => {
+  /* featured click → modal (delegated, safe to rebind) */
+  el.onclick = e => {
     const card = e.target.closest('.featured-card');
     if (!card) return;
     const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
     if (p) openProjectModal(p);
-  });
+  };
 }
 
 /* ─── All Projects (paged + topic filter) ─── */
@@ -336,7 +340,8 @@ function renderProjects(items) {
     });
     _projPager.reset();
   };
-  document.getElementById('projFilterBar')?.addEventListener('click', handler);
+  const filterBar = document.getElementById('projFilterBar');
+  if (filterBar) filterBar.onclick = handler;
 }
 
 /* ─── Publications (paged) ─── */
@@ -346,10 +351,10 @@ function renderPublications(items) {
   el.innerHTML = sorted.map(pub => {
     const isIntl = pub.global;
     let dt, tb;
-    if (pub.type === 'Poster') { dt='Poster'; tb=`<span class="badge badge-poster">Poster</span>`; }
-    else if (pub.type === 'Journal') { dt=isIntl?'Journal-International':'Journal-Domestic'; tb=isIntl?`<span class="badge badge-journal">Intl. Journal</span>`:`<span class="badge badge-journal badge-domestic">Dom. Journal</span>`; }
-    else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">Intl. Conf.</span>`:`<span class="badge badge-conf badge-domestic">Dom. Conf.</span>`; }
-    const fb = pub.role==='1st Author'?`<span class="badge badge-1st">1st Author</span>`:'';
+    if (pub.type === 'Poster') { dt='Poster'; tb=`<span class="badge badge-poster">${t('ui.poster')}</span>`; }
+    else if (pub.type === 'Journal') { dt=isIntl?'Journal-International':'Journal-Domestic'; tb=isIntl?`<span class="badge badge-journal">${t('ui.intlJournalBadge')}</span>`:`<span class="badge badge-journal badge-domestic">${t('ui.domJournalBadge')}</span>`; }
+    else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">${t('ui.intlConfBadge')}</span>`:`<span class="badge badge-conf badge-domestic">${t('ui.domConfBadge')}</span>`; }
+    const fb = pub.role==='1st Author'?`<span class="badge badge-1st">${t('ui.firstAuthor')}</span>`:'';
     const venue = [pub.venue,pub.year,pub.remarks].filter(Boolean).join(' · ');
     const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener" class="pub-link">${t('ui.viewPaper')}</a>`:'';
     return `<div class="pub-item reveal" data-paged data-type="${dt}">
@@ -367,14 +372,15 @@ function renderPublications(items) {
 
   _pubPager = createPager(el, PUB_PER_PAGE, 'pubPager');
 
-  document.querySelector('.pub-filter-bar')?.addEventListener('click', e => {
+  const pubFilterBar = document.querySelector('.pub-filter-bar');
+  if (pubFilterBar) pubFilterBar.onclick = e => {
     const btn = e.target.closest('.filter-btn'); if (!btn) return;
     document.querySelectorAll('.pub-filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.filter;
     el.querySelectorAll('[data-paged]').forEach(item => { item.dataset.filtered = (f!=='all' && item.dataset.type!==f) ? '1' : ''; });
     _pubPager.reset();
-  });
+  };
 }
 
 /* ─── Awards (paged) ─── */
@@ -438,7 +444,7 @@ function renderSkills(skills) {
 /* ─── Patents ─── */
 function renderPatents(items) {
   const el = document.getElementById('patentsList'); if (!el || !items) return;
-  el.innerHTML = items.map(p => `<div class="patent-card reveal"><div class="patent-title">${esc(p.title)}</div><div class="patent-desc">${esc(p.description)}</div><div class="patent-meta"><span><strong>No.</strong> ${esc(p.applicationNumber)}</span><span><strong>Filed</strong> ${esc(p.applicationDate)}</span><span><strong>Applicant</strong> ${esc(p.applicant)}</span><span><strong>Authority</strong> ${esc(p.authority)}</span></div></div>`).join('');
+  el.innerHTML = items.map(p => `<div class="patent-card reveal"><div class="patent-title">${esc(p.title)}</div><div class="patent-desc">${esc(p.description)}</div><div class="patent-meta"><span><strong>${t('ui.patNo')}</strong> ${esc(p.applicationNumber)}</span><span><strong>${t('ui.patFiled')}</strong> ${esc(p.applicationDate)}</span><span><strong>${t('ui.patApplicant')}</strong> ${esc(p.applicant)}</span><span><strong>${t('ui.patAuthority')}</strong> ${esc(p.authority)}</span></div></div>`).join('');
 }
 
 /* ─── Activities ─── */
@@ -452,11 +458,11 @@ function renderActivities(items) {
 function renderContact(basic) {
   const el = document.getElementById('contactCards'); if (!el || !basic) return;
   const cs = [];
-  if (basic.email) basic.email.forEach(em => cs.push({i:'✉️',l:'Email',v:em,h:`mailto:${em}`}));
+  if (basic.email) basic.email.forEach(em => cs.push({i:'✉️',l:t('ui.email'),v:em,h:`mailto:${em}`}));
   cs.push({i:'💼',l:'LinkedIn',v:'linkedin.com/in/jehun-lee',h:SOCIAL.linkedin});
   cs.push({i:'📚',l:'Google Scholar',v:'scholar.google.com',h:SOCIAL.scholar});
   if (basic.googleSite) cs.push({i:'🌐',l:'Google Site',v:'sites.google.com/view/jehun-lee',h:basic.googleSite});
-  if (basic.location) cs.push({i:'📍',l:'Location',v:basic.location,h:null});
+  if (basic.location) cs.push({i:'📍',l:t('ui.location'),v:basic.location,h:null});
   el.innerHTML = cs.map(c => {
     const inn = `<div class="contact-icon">${c.i}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
     return c.h ? `<a href="${c.h}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
@@ -482,16 +488,19 @@ function setupPhotoFallback() {
 /* ─── Project Modal ─── */
 function setupProjectModal() {
   const grid = document.getElementById('projectsGrid'), modal = document.getElementById('projectModal');
-  if (!grid || !modal || grid.dataset.modalReady) return;
-  grid.dataset.modalReady = '1';
-  grid.addEventListener('click', e => {
+  if (!grid || !modal) return;
+  /* Use onclick to prevent listener accumulation on re-renders */
+  grid.onclick = e => {
     const card = e.target.closest('.project-card'); if (!card) return;
     const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
     if (p) openProjectModal(p);
-  });
-  document.getElementById('modalClose')?.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  };
+  if (!modal.dataset.ready) {
+    modal.dataset.ready = '1';
+    document.getElementById('modalClose')?.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  }
 }
 function openProjectModal(p) {
   const body = document.getElementById('modalBody'), modal = document.getElementById('projectModal');
