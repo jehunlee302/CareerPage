@@ -85,11 +85,15 @@ async function init() {
 }
 
 /* ─── Language Toggle ─── */
+let _switching = false;
 function setupLangToggle() {
   const btn = document.getElementById('langToggle');
   if (!btn || btn.dataset.ready) return;
   btn.dataset.ready = '1';
   btn.addEventListener('click', async () => {
+    if (_switching) return;
+    _switching = true;
+    const prevLang = LANG;
     LANG = LANG === 'en' ? 'ko' : 'en';
     localStorage.setItem('lang', LANG);
     applyLangUI();
@@ -100,8 +104,12 @@ function setupLangToggle() {
       render(data);
       setupTitleTypewriter(data.basic?.titles || []);
       setupScrollReveal();
-      setupProjectModal();
-    } catch (err) { console.error('Language switch error:', err); }
+    } catch (err) {
+      console.error('Language switch error:', err);
+      LANG = prevLang;
+      localStorage.setItem('lang', LANG);
+      applyLangUI();
+    } finally { _switching = false; }
   });
 }
 
@@ -289,7 +297,7 @@ function renderProjects(items) {
 
   /* Collect all topics */
   const topicSet = new Set();
-  sorted.forEach(p => getTopics(p.title).forEach(t => topicSet.add(t)));
+  sorted.forEach(p => getTopics(p.title).forEach(tp => topicSet.add(tp)));
 
   /* Filter bar */
   const fb = document.getElementById('projFilterBar');
@@ -297,7 +305,7 @@ function renderProjects(items) {
     `<button class="filter-btn active" data-proj-filter="all">${t('ui.all')}</button>`,
     `<button class="filter-btn" data-proj-filter="pm">${t('ui.pmLead')}</button>`,
     `<button class="filter-btn" data-proj-filter="gov">${t('ui.govt')}</button>`,
-    ...[...topicSet].sort().map(t => `<button class="filter-btn" data-proj-filter="topic:${t}">${t}</button>`)
+    ...[...topicSet].sort().map(tp => `<button class="filter-btn" data-proj-filter="topic:${tp}">${tp}</button>`)
   ].join('');
 
   /* Cards */
@@ -315,7 +323,7 @@ function renderProjects(items) {
       <div class="project-footer">
         ${p.isPM?'<span class="tag pm">PM</span>':''}
         ${gov?'<span class="tag gov">Gov\'t</span>':''}
-        ${topics.map(t=>`<span class="tag topic">${t}</span>`).join('')}
+        ${topics.map(tp=>`<span class="tag topic">${tp}</span>`).join('')}
         ${p.client?`<span class="tag">${esc(p.client)}</span>`:''}
       </div>
     </div>`;
@@ -438,7 +446,7 @@ function reReveal(container) {
 /* ─── Skills ─── */
 function renderSkills(skills) {
   const el = document.getElementById('skillsGrid'); if (!el || !skills) return;
-  el.innerHTML = Object.entries(skills).map(([c,t]) => `<div class="skill-card reveal"><div class="skill-category">${esc(c)}</div><div class="skill-tags">${t.map(x=>`<span class="skill-tag">${esc(x)}</span>`).join('')}</div></div>`).join('');
+  el.innerHTML = Object.entries(skills).map(([c,items]) => `<div class="skill-card reveal"><div class="skill-category">${esc(c)}</div><div class="skill-tags">${items.map(x=>`<span class="skill-tag">${esc(x)}</span>`).join('')}</div></div>`).join('');
 }
 
 /* ─── Patents ─── */
@@ -519,9 +527,9 @@ function openProjectModal(p) {
   ].filter(Boolean);
 
   body.innerHTML = `
-    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}Project #${p.index}${isGov(p.client) ? ' · Gov\'t' : ''}</div>
+    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${LANG === 'ko' ? `프로젝트 #${p.index}` : `Project #${p.index}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
     <div class="modal-title">${esc(p.title)}</div>
-    ${topics.length ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${topics.map(t => `<span class="tag topic">${t}</span>`).join('')}</div>` : ''}
+    ${topics.length ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${topics.map(tp => `<span class="tag topic">${tp}</span>`).join('')}</div>` : ''}
     ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}
     ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">${t('ui.purpose')}</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
     ${d.tasks && d.tasks.length ? `<div class="modal-section"><div class="modal-section-label">${t('ui.keyTasks')}</div><ul class="modal-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul></div>` : ''}
@@ -555,7 +563,7 @@ function setupScrollReveal() {
 }
 
 /* ─── Helpers ─── */
-function setText(id, t) { const e = document.getElementById(id); if (e) e.textContent = t || ''; }
+function setText(id, val) { const e = document.getElementById(id); if (e) e.textContent = val || ''; }
 function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 document.addEventListener('DOMContentLoaded', init);

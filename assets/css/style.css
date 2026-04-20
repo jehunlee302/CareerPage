@@ -2,7 +2,7 @@
    Jehun Lee Portfolio — style.css v2.2
    #0A192F · #007AFF · #F8FAFC
    ═══════════════════════════════════════════════ */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+/* Font loaded via <link> in index.html — no @import needed */
 
 /* ── Variables ── */
 :root {
@@ -401,6 +401,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
   .nav-links.open{display:flex}
   .nav-links a{padding:.7rem 1rem;font-size:.92rem;border-radius:8px}
   .nav-toggle{display:flex}
+  .lang-toggle{padding:.25rem .5rem;font-size:.72rem}
   #hero{padding:6rem 1.5rem 4rem}
   .hero-scroll{display:none}
   .projects-grid{grid-template-columns:1fr}
