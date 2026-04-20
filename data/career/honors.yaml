@@ -1,107 +1,95 @@
-# Honors & Awards (newest first)
-
 - date: "2025.11"
   title:
     en: Second Prize, Ph.D. Thesis Competition
-    ko: ""
+    ko: 2등상, 박사논문경진대회
   description:
     en: Learning Schedulers for Job Shop Scheduling Problems
-    ko: ""
+    ko: 잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러
   organization: Korean Institute of Industrial Engineers (KIIE)
   location: Daejeon, South Korea
-
 - date: "2023.12"
   title:
     en: First Prize, 2023 Simulation Challenge
-    ko: ""
+    ko: 1등상, 2023 Simulation Challenge
   description:
     en: Gating Control in Semiconductor Fabrication
-    ko: ""
+    ko: 반도체 팹 게이팅 제어
   organization: Winter Simulation Conference (WSC), Micron
   location: San Antonio, USA
   remarks: $3,000
-
 - date: "2023.09"
   title:
     en: "Third Prize, 2023 AI Competition: Solving Real-world Problems"
-    ko: ""
+    ko: "3등상, 2023 AI Competition: 실제 문제 해결"
   description:
     en: Integrated Planning Module using AI
-    ko: ""
-  organization: "Hankook & Company"
+    ko: AI를 활용한 통합 계획 모듈
+  organization: Hankook & Company
   location: Daejeon, South Korea
   remarks: $1,500
-
 - date: ""
   title:
     en: Ph.D. Candidate Research Incentive Support
-    ko: ""
+    ko: 박사과정생 연구장려 지원사업
   description:
     en: ""
     ko: ""
   organization: National Research Foundation (NRF) of Korea
   location: South Korea
   remarks: $15,000
-
 - date: "2022.09"
   title:
     en: "Second Prize, 2022 Poster Competition: Industry/Social Problems"
-    ko: ""
+    ko: "2등상, 2022 포스터경진대회: 산업/사회문제"
   description:
     en: RL for Resource Leveling in Shipbuilding
-    ko: ""
+    ko: 선박건조 자원 평활화를 위한 강화학습
   organization: Korea Advanced Institute of Science and Technology (KAIST)
   location: Daejeon, South Korea
-
 - date: "2022.05"
   title:
     en: "Certificate of Appreciation: Successful Project"
-    ko: ""
+    ko: "감사장: 우수 프로젝트"
   description:
     en: Workload Balancing of Ship Cargo Production
-    ko: ""
+    ko: 선박 화물 생산 부하 분산
   organization: Samsung Heavy Industries
   location: South Korea
-
 - date: ""
   title:
     en: Full-tuition Entrance Scholarship
-    ko: ""
+    ko: 전액 입학 장학금
   description:
     en: Merit-based Entrance Scholarship (Ph.D.)
-    ko: ""
+    ko: 성적 우수 입학 장학금 (박사)
   organization: Korea Advanced Institute of Science and Technology (KAIST)
   location: Daejeon, South Korea
   remarks: Full Tuition
-
 - date: "2016.07"
   title:
     en: "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Customer Insight"
-    ko: ""
+    ko: "3등상, 2015-2016 PACE RSMS Competition (2차): Customer Insight"
   description:
     en: ""
     ko: ""
   organization: General Motors (GM)
   location: Cincinnati, USA
-
 - date: "2016.07"
   title:
     en: "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Manufacturing Engineering"
-    ko: ""
+    ko: "3등상, 2015-2016 PACE RSMS Competition (2차): Manufacturing Engineering"
   description:
     en: ""
     ko: ""
   organization: General Motors (GM)
   location: Cincinnati, USA
-
 - date: ""
   title:
     en: Full-tuition Entrance Scholarship
-    ko: ""
+    ko: 전액 입학 장학금
   description:
     en: Merit-based Entrance Scholarship (B.S.)
-    ko: ""
+    ko: 성적 우수 입학 장학금 (학사)
   organization: Sungkyunkwan University (SKKU)
   location: Suwon, South Korea
   remarks: Full Tuition
-

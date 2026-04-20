@@ -1,19 +1,50 @@
 /**
- * Jehun Lee Portfolio — main.js v3.1
+ * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
-const DATA_URL = 'data/portfolio.json';
-const RESEARCH_INTERESTS = [
-  { icon: '🤖', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
-  { icon: '🧠', title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
-  { icon: '🏭', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
-  { icon: '💾', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
-  { icon: '📐', title: 'Meta-Scheduling Architecture', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
-  { icon: '🔗', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
-];
+let LANG = localStorage.getItem('lang') || 'en';
+const DATA_URLS = { en: 'data/portfolio.json', ko: 'data/portfolio.ko.json' };
+const RESEARCH_INTERESTS = {
+  en: [
+    { icon: '🤖', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
+    { icon: '🧠', title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
+    { icon: '🏭', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
+    { icon: '💾', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
+    { icon: '📐', title: 'Meta-Scheduling Architecture', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
+    { icon: '🔗', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
+  ],
+  ko: [
+    { icon: '🤖', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
+    { icon: '🧠', title: '강화학습 & 모방학습', desc: '실시간 산업 의사결정을 위한 그래프 기반 RL/IL 알고리즘' },
+    { icon: '🏭', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
+    { icon: '💾', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
+    { icon: '📐', title: '메타 스케줄링 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
+    { icon: '🔗', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
+  ],
+};
 const FEATURED_PROJECT_INDICES = [25, 23, 21];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
-const HERO_TAGS = ['Autonomous Scheduling','Digital Twin','Reinforcement Learning','Semiconductor Fab','AI-Native Manufacturing','KAIST Ph.D.'];
+const HERO_TAGS = {
+  en: ['Autonomous Scheduling','Digital Twin','Reinforcement Learning','Semiconductor Fab','AI-Native Manufacturing','KAIST Ph.D.'],
+  ko: ['자율 스케줄링','디지털 트윈','강화학습','반도체 팹','AI 네이티브 제조','KAIST 박사'],
+};
 const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
+
+/* ─── i18n UI Strings ─── */
+const I18N = {
+  en: {
+    nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
+    label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
+    ui: { contactMe:'Contact Me', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', purpose:'Purpose', keyTasks:'Key Tasks', achievements:'Achievements', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:' },
+    impact: { projects:'Major Projects', pm:'PM Roles', pubs:'Publications', honors:'Honors & Prizes', patent:'Patent' },
+  },
+  ko: {
+    nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
+    label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
+    ui: { contactMe:'연락하기', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', purpose:'목적', keyTasks:'주요 업무', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:' },
+    impact: { projects:'주요 프로젝트', pm:'PM 수행', pubs:'논문', honors:'수상', patent:'특허' },
+  },
+};
+function t(key) { const parts = key.split('.'); let obj = I18N[LANG]; for (const p of parts) { obj = obj?.[p]; } return obj || key; }
 const PROJ_PER_PAGE = 9;
 const PUB_PER_PAGE = 8;
 const AWARD_PER_PAGE = 6;
@@ -41,13 +72,53 @@ function isGov(client) { return /NRF|MOTIE|MSIP|Ministry/i.test(client || ''); }
 /* ─── Bootstrap ─── */
 async function init() {
   try {
-    const res = await fetch(DATA_URL);
+    applyLangUI();
+    const res = await fetch(DATA_URLS[LANG] || DATA_URLS.en);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     render(data);
     setupNav(); setupScrollReveal(); setupPhotoFallback();
     setupTitleTypewriter(data.basic?.titles || []);
+    setupLangToggle();
   } catch (err) { console.error('Portfolio load error:', err); }
+}
+
+/* ─── Language Toggle ─── */
+function setupLangToggle() {
+  const btn = document.getElementById('langToggle');
+  if (!btn || btn.dataset.ready) return;
+  btn.dataset.ready = '1';
+  btn.addEventListener('click', async () => {
+    LANG = LANG === 'en' ? 'ko' : 'en';
+    localStorage.setItem('lang', LANG);
+    applyLangUI();
+    try {
+      const res = await fetch(DATA_URLS[LANG]);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      render(data);
+      setupTitleTypewriter(data.basic?.titles || []);
+      setupScrollReveal();
+      setupProjectModal();
+    } catch (err) { console.error('Language switch error:', err); }
+  });
+}
+
+function applyLangUI() {
+  /* Toggle button label */
+  const btn = document.getElementById('langToggle');
+  if (btn) {
+    btn.querySelector('.lang-label').textContent = LANG === 'en' ? 'KO' : 'EN';
+    btn.setAttribute('aria-label', LANG === 'en' ? 'Switch to Korean' : 'Switch to English');
+  }
+  /* Nav links */
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const val = t(key);
+    if (val && val !== key) el.textContent = val;
+  });
+  /* HTML lang attribute */
+  document.documentElement.lang = LANG;
 }
 
 function render(data) {
@@ -62,7 +133,9 @@ function render(data) {
 /* ─── Hero ─── */
 function renderHero(data) {
   const el = document.getElementById('heroTags');
-  if (el) el.innerHTML = HERO_TAGS.map(t => `<span class="hero-tag">${esc(t)}</span>`).join('');
+  if (el) el.innerHTML = (HERO_TAGS[LANG]||HERO_TAGS.en).map(t => `<span class="hero-tag">${esc(t)}</span>`).join('');
+  const heroBtn = document.getElementById('heroContactBtn');
+  if (heroBtn) heroBtn.textContent = t('ui.contactMe');
 }
 
 /* ─── Typewriter ─── */
@@ -82,9 +155,10 @@ function setupTitleTypewriter(titles) {
 /* ─── Impact Strip ─── */
 function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip'); if (!el) return;
+  el.innerHTML = '';
   const pm = (data.projects||[]).filter(p => p.isPM).length;
-  const prizes = (data.honors||[]).filter(h => /prize|first|second|third/i.test(h.title||'')).length;
-  [{v:`${(data.projects||[]).length}+`,l:'Major Projects'},{v:`${pm}+`,l:'PM Roles'},{v:`${(data.publications||[]).length}+`,l:'Publications'},{v:prizes,l:'Honors & Prizes'},{v:`${(data.patents||[]).length}`,l:'Patent'}]
+  const prizes = (data.honors||[]).filter(h => /prize|first|second|third|등상/i.test(h.title||'')).length;
+  [{v:`${(data.projects||[]).length}+`,l:t('impact.projects')},{v:`${pm}+`,l:t('impact.pm')},{v:`${(data.publications||[]).length}+`,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:`${(data.patents||[]).length}`,l:t('impact.patent')}]
     .forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
 }
 
@@ -101,7 +175,8 @@ function renderPhilosophy(p) {
 /* ─── Research ─── */
 function renderResearchFocus() {
   const el = document.getElementById('researchGrid'); if (!el) return;
-  el.innerHTML = RESEARCH_INTERESTS.map(r => `<div class="research-card reveal"><div class="rc-icon">${r.icon}</div><div class="rc-title">${esc(r.title)}</div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
+  const items = RESEARCH_INTERESTS[LANG] || RESEARCH_INTERESTS.en;
+  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-icon">${r.icon}</div><div class="rc-title">${esc(r.title)}</div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
 }
 
 /* ─── Education ─── */
@@ -116,7 +191,7 @@ function renderEducation(items) {
       <div class="tl-org">${esc(item.institution)}</div>
       ${advisorHtml ? `<div class="tl-remarks">${advisorHtml}</div>` : ''}
       ${thesisTitle ? `<div class="edu-thesis${hasDetails ? ' edu-thesis-expandable' : ''}"${hasDetails ? ' tabindex="0" role="button"' : ''}>
-        <span class="edu-thesis-label">Thesis:</span> ${esc(thesisTitle)}${hasDetails ? ' <span class="edu-expand-hint">▸ Details</span>' : ''}
+        <span class="edu-thesis-label">${t('ui.thesis')}</span> ${esc(thesisTitle)}${hasDetails ? ` <span class="edu-expand-hint">${t('ui.details')}</span>` : ''}
       </div>` : ''}
       ${hasDetails ? `<div class="edu-thesis-details" style="display:none">
         ${item.thesis.topic ? `<div class="edu-detail-section"><span class="edu-detail-label">Topic</span><p>${esc(item.thesis.topic)}</p></div>` : ''}
@@ -135,7 +210,7 @@ function renderEducation(items) {
       if (!details) return;
       const open = details.style.display !== 'none';
       details.style.display = open ? 'none' : 'block';
-      if (hint) hint.textContent = open ? '▸ Details' : '▾ Collapse';
+      if (hint) hint.textContent = open ? t('ui.details') : t('ui.collapse');
     });
   });
 }
@@ -191,7 +266,7 @@ function renderFeaturedProjects(projects) {
     </div>`).join('');
 
   const sub = document.getElementById('projectSubtitle');
-  if (sub) sub.textContent = `${projects.length} projects · ${projects.filter(p => p.isPM).length}+ PM roles`;
+  if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건+` : `${projects.length} projects · ${projects.filter(p => p.isPM).length}+ PM roles`;
 
   /* featured click → modal */
   el.addEventListener('click', e => {
@@ -215,9 +290,9 @@ function renderProjects(items) {
   /* Filter bar */
   const fb = document.getElementById('projFilterBar');
   if (fb) fb.innerHTML = [
-    '<button class="filter-btn active" data-proj-filter="all">All</button>',
-    '<button class="filter-btn" data-proj-filter="pm">PM Lead</button>',
-    '<button class="filter-btn" data-proj-filter="gov">Gov\'t</button>',
+    `<button class="filter-btn active" data-proj-filter="all">${t('ui.all')}</button>`,
+    `<button class="filter-btn" data-proj-filter="pm">${t('ui.pmLead')}</button>`,
+    `<button class="filter-btn" data-proj-filter="gov">${t('ui.govt')}</button>`,
     ...[...topicSet].sort().map(t => `<button class="filter-btn" data-proj-filter="topic:${t}">${t}</button>`)
   ].join('');
 
@@ -230,7 +305,7 @@ function renderProjects(items) {
       <div class="project-meta">
         <div><span class="project-index">#${p.index}</span>
         <span class="project-period">${esc(p.period)}${p.duration?` · ${esc(p.duration)}`:''}</span></div>
-        <span class="project-popup-hint">Details ↗</span>
+        <span class="project-popup-hint">${t('ui.detailsHint')}</span>
       </div>
       <div class="project-title">${esc(p.title)}</div>
       <div class="project-footer">
@@ -276,7 +351,7 @@ function renderPublications(items) {
     else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">Intl. Conf.</span>`:`<span class="badge badge-conf badge-domestic">Dom. Conf.</span>`; }
     const fb = pub.role==='1st Author'?`<span class="badge badge-1st">1st Author</span>`:'';
     const venue = [pub.venue,pub.year,pub.remarks].filter(Boolean).join(' · ');
-    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener" class="pub-link">View Paper ↗</a>`:'';
+    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener" class="pub-link">${t('ui.viewPaper')}</a>`:'';
     return `<div class="pub-item reveal" data-paged data-type="${dt}">
       <span class="pub-num">[${pub.index}]</span>
       <div class="pub-body">
@@ -392,6 +467,7 @@ function renderContact(basic) {
 function renderFooter(data) {
   const y = document.getElementById('footerYear'); if (y) y.textContent = new Date().getFullYear();
   const u = document.getElementById('lastUpdated'); if (u && data.lastUpdated) u.textContent = data.lastUpdated;
+  const ul = document.getElementById('updatedLabel'); if (ul) ul.textContent = t('ui.updated');
 }
 
 /* ─── Photo Fallback ─── */
@@ -425,12 +501,12 @@ function openProjectModal(p) {
 
   /* Basic fields */
   const fields = [
-    ['Period', `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
-    d.role && ['Role', d.role],
-    p.client && ['Client', p.client],
-    p.partners && p.partners.length && ['Partners', p.partners.join(', ')],
-    p.partnerInstitution && ['Partner', p.partnerInstitution],
-    p.affiliatedInstitution && ['Affiliated', p.affiliatedInstitution],
+    [t('ui.period'), `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
+    d.role && [t('ui.role'), d.role],
+    p.client && [t('ui.client'), p.client],
+    p.partners && p.partners.length && [t('ui.partners'), p.partners.join(', ')],
+    p.partnerInstitution && [t('ui.partner'), p.partnerInstitution],
+    p.affiliatedInstitution && [t('ui.affiliated'), p.affiliatedInstitution],
   ].filter(Boolean);
 
   body.innerHTML = `
@@ -438,11 +514,11 @@ function openProjectModal(p) {
     <div class="modal-title">${esc(p.title)}</div>
     ${topics.length ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${topics.map(t => `<span class="tag topic">${t}</span>`).join('')}</div>` : ''}
     ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}
-    ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">Purpose</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
-    ${d.tasks && d.tasks.length ? `<div class="modal-section"><div class="modal-section-label">Key Tasks</div><ul class="modal-task-list">${d.tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}
-    ${d.achievements ? `<div class="modal-section"><div class="modal-section-label">Achievements</div><p class="modal-section-text modal-achievement">${esc(d.achievements)}</p></div>` : ''}
-    ${d.notes ? `<div class="modal-section"><div class="modal-section-label">Notes</div><p class="modal-section-text">${esc(d.notes)}</p></div>` : ''}
-    ${!d.purpose && p.remarks ? `<div class="modal-field"><span class="modal-field-label">Remarks</span><span class="modal-field-value">${esc(p.remarks)}</span></div>` : ''}`;
+    ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">${t('ui.purpose')}</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
+    ${d.tasks && d.tasks.length ? `<div class="modal-section"><div class="modal-section-label">${t('ui.keyTasks')}</div><ul class="modal-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul></div>` : ''}
+    ${d.achievements ? `<div class="modal-section"><div class="modal-section-label">${t('ui.achievements')}</div><p class="modal-section-text modal-achievement">${esc(d.achievements)}</p></div>` : ''}
+    ${d.notes ? `<div class="modal-section"><div class="modal-section-label">${t('ui.notes')}</div><p class="modal-section-text">${esc(d.notes)}</p></div>` : ''}
+    ${!d.purpose && p.remarks ? `<div class="modal-field"><span class="modal-field-label">${t('ui.remarks')}</span><span class="modal-field-value">${esc(p.remarks)}</span></div>` : ''}`;
   modal.classList.add('open'); document.body.style.overflow = 'hidden';
 }
 function closeModal() { document.getElementById('projectModal')?.classList.remove('open'); document.body.style.overflow=''; }

@@ -22,15 +22,18 @@
       <a href="#hero" class="nav-logo">JH</a>
       <nav>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#awards">Awards</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#philosophy" data-i18n="nav.philosophy">Philosophy</a></li>
+          <li><a href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+          <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch to Korean">
+        <span class="lang-current">EN</span><span class="lang-divider">/</span><span class="lang-label">KO</span>
+      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -60,7 +63,7 @@
           </p>
           <div class="hero-tags" id="heroTags"></div>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="#contact" class="btn btn-primary" id="heroContactBtn">Contact Me</a>
             <a href="https://www.linkedin.com/in/jehun-lee/" target="_blank" rel="noopener" class="btn btn-outline-white">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
@@ -102,7 +105,7 @@
     <!-- ═══ PHILOSOPHY ═══ -->
     <section id="philosophy">
       <div class="container">
-        <div class="section-label accent">Core Philosophy</div>
+        <div class="section-label accent" data-i18n="label.corePhilosophy">Core Philosophy</div>
         <h2 class="philosophy-headline" id="philosophyHeadline"></h2>
         <p class="philosophy-lead" id="philosophyLead"></p>
         <div class="philosophy-body" id="philosophyBody"></div>
@@ -113,8 +116,8 @@
     <!-- ═══ RESEARCH FOCUS ═══ -->
     <section id="research">
       <div class="container">
-        <div class="section-label">Expertise</div>
-        <h2 class="section-title">Research Focus</h2>
+        <div class="section-label" data-i18n="label.expertise">Expertise</div>
+        <h2 class="section-title" data-i18n="label.researchFocus">Research Focus</h2>
         <div class="research-grid" id="researchGrid"></div>
       </div>
     </section>
@@ -122,8 +125,8 @@
     <!-- ═══ EDUCATION ═══ -->
     <section id="education">
       <div class="container">
-        <div class="section-label">Academic Background</div>
-        <h2 class="section-title">Education</h2>
+        <div class="section-label" data-i18n="label.academicBg">Academic Background</div>
+        <h2 class="section-title" data-i18n="label.education">Education</h2>
         <div class="timeline" id="educationTimeline"></div>
       </div>
     </section>
@@ -131,8 +134,8 @@
     <!-- ═══ EXPERIENCE ═══ -->
     <section id="experience" class="section-alt">
       <div class="container">
-        <div class="section-label">Career</div>
-        <h2 class="section-title">Work Experience</h2>
+        <div class="section-label" data-i18n="label.career">Career</div>
+        <h2 class="section-title" data-i18n="label.workExp">Work Experience</h2>
         <div class="timeline" id="experienceTimeline"></div>
       </div>
     </section>
@@ -140,9 +143,9 @@
     <!-- ═══ FEATURED PROJECTS ═══ -->
     <section id="featured" class="section-dark">
       <div class="container">
-        <div class="section-label accent">Highlights</div>
-        <h2 class="section-title light">Featured Projects</h2>
-        <p class="section-subtitle light">Industry-defining programs across semiconductor &amp; smart manufacturing</p>
+        <div class="section-label accent" data-i18n="label.highlights">Highlights</div>
+        <h2 class="section-title light" data-i18n="label.featuredProj">Featured Projects</h2>
+        <p class="section-subtitle light" data-i18n="label.featuredSub">Industry-defining programs across semiconductor &amp; smart manufacturing</p>
         <div class="featured-grid" id="featuredGrid"></div>
       </div>
     </section>
@@ -151,7 +154,7 @@
     <section id="projects">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label">Portfolio</div><h2 class="section-title">All Projects</h2></div>
+          <div><div class="section-label" data-i18n="label.portfolio">Portfolio</div><h2 class="section-title" data-i18n="label.allProjects">All Projects</h2></div>
           <div id="projectsPager"></div>
         </div>
         <p class="section-subtitle" id="projectSubtitle"></p>
@@ -164,16 +167,16 @@
     <section id="publications" class="section-alt">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label">Research Output</div><h2 class="section-title">Academic Works</h2></div>
+          <div><div class="section-label" data-i18n="label.researchOutput">Research Output</div><h2 class="section-title" data-i18n="label.academicWorks">Academic Works</h2></div>
           <div id="pubPager"></div>
         </div>
         <div class="pub-filter-bar">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Journal-International">Intl. Journal</button>
-          <button class="filter-btn" data-filter="Journal-Domestic">Dom. Journal</button>
-          <button class="filter-btn" data-filter="Conference-International">Intl. Conference</button>
-          <button class="filter-btn" data-filter="Conference-Domestic">Dom. Conference</button>
-          <button class="filter-btn" data-filter="Poster">Poster</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="ui.all">All</button>
+          <button class="filter-btn" data-filter="Journal-International" data-i18n="ui.intlJournal">Intl. Journal</button>
+          <button class="filter-btn" data-filter="Journal-Domestic" data-i18n="ui.domJournal">Dom. Journal</button>
+          <button class="filter-btn" data-filter="Conference-International" data-i18n="ui.intlConf">Intl. Conference</button>
+          <button class="filter-btn" data-filter="Conference-Domestic" data-i18n="ui.domConf">Dom. Conference</button>
+          <button class="filter-btn" data-filter="Poster" data-i18n="ui.poster">Poster</button>
         </div>
         <div class="pub-list" id="pubList"></div>
       </div>
@@ -183,7 +186,7 @@
     <section id="awards">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label">Recognition</div><h2 class="section-title">Honors &amp; Awards</h2></div>
+          <div><div class="section-label" data-i18n="label.recognition">Recognition</div><h2 class="section-title" data-i18n="label.honorsAwards">Honors &amp; Awards</h2></div>
           <div id="awardsPager"></div>
         </div>
         <div class="awards-list" id="awardsList"></div>
@@ -193,8 +196,8 @@
     <!-- ═══ PATENTS ═══ -->
     <section id="patents" class="section-alt">
       <div class="container">
-        <div class="section-label">Intellectual Property</div>
-        <h2 class="section-title">Patents</h2>
+        <div class="section-label" data-i18n="label.ip">Intellectual Property</div>
+        <h2 class="section-title" data-i18n="label.patents">Patents</h2>
         <div class="patents-list" id="patentsList"></div>
       </div>
     </section>
@@ -203,7 +206,7 @@
     <section id="activities">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label">Leadership &amp; Service</div><h2 class="section-title">Activities &amp; Leadership</h2></div>
+          <div><div class="section-label" data-i18n="label.leadership">Leadership &amp; Service</div><h2 class="section-title" data-i18n="label.activities">Activities &amp; Leadership</h2></div>
           <div id="activitiesPager"></div>
         </div>
         <div class="activities-grid" id="activitiesGrid"></div>
@@ -213,8 +216,8 @@
     <!-- ═══ SKILLS ═══ -->
     <section id="skills" class="section-alt">
       <div class="container">
-        <div class="section-label">Capabilities</div>
-        <h2 class="section-title">Skills</h2>
+        <div class="section-label" data-i18n="label.capabilities">Capabilities</div>
+        <h2 class="section-title" data-i18n="label.skills">Skills</h2>
         <div class="skills-grid" id="skillsGrid"></div>
       </div>
     </section>
@@ -222,9 +225,9 @@
     <!-- ═══ CONTACT ═══ -->
     <section id="contact" class="section-dark">
       <div class="container">
-        <div class="section-label accent">Let's Connect</div>
-        <h2 class="section-title light">Get in Touch</h2>
-        <p class="contact-intro">Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.</p>
+        <div class="section-label accent" data-i18n="label.connect">Let's Connect</div>
+        <h2 class="section-title light" data-i18n="label.getInTouch">Get in Touch</h2>
+        <p class="contact-intro" data-i18n="label.contactIntro">Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.</p>
         <div class="contact-cards" id="contactCards"></div>
       </div>
     </section>
@@ -236,7 +239,7 @@
       <div class="footer-inner">
         <span class="footer-name">Jehun Lee · 이제훈</span>
         <span class="footer-copy">© <span id="footerYear"></span> All rights reserved</span>
-        <span class="footer-updated">Updated: <span id="lastUpdated"></span></span>
+        <span class="footer-updated"><span id="updatedLabel">Updated:</span> <span id="lastUpdated"></span></span>
       </div>
     </div>
   </footer>

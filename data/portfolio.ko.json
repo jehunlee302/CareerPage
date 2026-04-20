@@ -1,12 +1,12 @@
 {
   "lastUpdated": "2026-04-20",
   "basic": {
-    "name": "Jehun Lee",
+    "name": "이제훈",
     "nameKr": "이제훈",
     "titles": [
-      "Industrial & Systems Engineer (Ph.D.)",
-      "Simulation Solution Consultant",
-      "AI Solution Architect"
+      "산업및시스템공학 박사",
+      "시뮬레이션 솔루션 컨설턴트",
+      "AI 솔루션 아키텍트"
     ],
     "email": [
       "jehun.lee302@gmail.com",
@@ -14,179 +14,179 @@
       "jehun.lee@kaist.ac.kr"
     ],
     "website": "jehun-lee.work",
-    "location": "Yongin, Gyeonggi-do, South Korea",
+    "location": "경기도 용인시",
     "googleSite": "https://sites.google.com/view/jehun-lee"
   },
   "philosophy": {
-    "headline": "Systemic Excellence",
-    "lead": "AI-native engineering — not for marginal efficiency, but to liberate human potential from repetitive complexity.",
+    "headline": "체계적 탁월함",
+    "lead": "AI 네이티브 엔지니어링 — 한계적 효율이 아닌, 반복적 복잡성으로부터 인간의 잠재력을 해방하기 위해.",
     "body": "I am a proactive Ph.D. leader and AI strategist who bridges the gap between academic depth and industrial execution. My work is fundamentally rooted in the philosophy of 'Systemic Excellence', where AI-native engineering is utilized not just for marginal efficiency, but to liberate human potential from repetitive complexity.\n\nAs an AI Engineer and Scheduling Solution Consultant, I have led high-impact programs, including the Digital Twin platform construction for SK Hynix and real-time scheduling systems for Micron. These experiences, along with my leadership in over 24 major projects, have sharpened my ability to translate intricate industrial constraints into robust, scalable technical requirements. I possess a global perspective on the semiconductor market and a proven capacity to deliver measurable business impact through technical mastery.\n\nBeyond my technical background in Systems and Industrial Engineering, I am committed to a leadership style that fosters both individual growth and meaningful social contribution. My ultimate goal is to guide the industry toward an intelligent, purposeful future where technological innovation serves as a catalyst for a more advanced and human-centric industrial ecosystem.\n",
     "pillars": [
       {
         "icon": "⚡",
-        "title": "AI-Native Engineering",
-        "desc": "Deploying intelligent systems that transform industrial operations from the ground up — not as a tool, but as a foundational shift."
+        "title": "AI 네이티브 엔지니어링",
+        "desc": "산업 운영을 근본부터 변혁하는 지능형 시스템 — 도구가 아닌, 패러다임의 전환으로."
       },
       {
         "icon": "🎯",
-        "title": "Industrial Execution",
-        "desc": "Translating academic depth into measurable, scalable business impact across semiconductor, logistics, and manufacturing domains."
+        "title": "산업 실행력",
+        "desc": "학문적 깊이를 반도체, 물류, 제조 영역에서 측정 가능하고 확장 가능한 비즈니스 임팩트로 전환."
       },
       {
         "icon": "🌐",
-        "title": "Human-Centric Future",
-        "desc": "Technology as a catalyst for a purposeful industrial ecosystem where human potential is amplified, not replaced."
+        "title": "인간 중심 미래",
+        "desc": "인간의 잠재력이 대체되는 것이 아닌 증폭되는, 목적 지향적 산업 생태계를 위한 촉매로서의 기술."
       }
     ]
   },
   "stats": [
     {
       "value": "24+",
-      "label": "Major Projects"
+      "label": "주요 프로젝트"
     },
     {
       "value": "26+",
-      "label": "Publications"
+      "label": "논문"
     },
     {
       "value": "4+",
-      "label": "Years at KAIST"
+      "label": "KAIST 재학"
     },
     {
       "value": "1",
-      "label": "Patent"
+      "label": "특허"
     }
   ],
   "education": [
     {
       "degree": "Ph.D.",
-      "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "institution": "한국과학기술원",
       "period": "2021.03 - 2025.02",
-      "major": "Industrial & Systems Engineering",
+      "major": "산업및시스템공학과",
       "region": "Daejeon, South Korea",
       "remarks": "",
       "advisor": "Hyun-Jung Kim (https://msslab.kaist.ac.kr/Professor/professor)",
       "thesis": {
-        "title": "Learning Schedulers for Job Shop Scheduling Problems",
-        "topic": "Proposes three learning-based schedulers to minimize makespan in job shop scheduling problems (JSSP) where each product has a distinct operation sequence. Designed for flexible selection under varying decision-time constraints, all methods generalize to arbitrary problem sizes regardless of training instances.",
-        "methodology": "Three methods proposed:\n1. Learning-based real-time dispatcher: Redesigned state/action/transition using only currently observable information; applied imitation learning instead of RL, achieving superior performance over existing GNN dispatchers.\n2. Learning-based local search: Established makespan improvement conditions based on JSSP characteristics (critical blocks, N5 neighborhood), reflected in policy network trained via RL.\n3. Depth-limited tree search (SBBS): Combined branch-and-bound with beam search in a lookahead manner, using dispatching strategies as rollout policies for graceful degradation under extreme time constraints.\n",
-        "performance": "SBBS mathematically proven to always produce schedules equal to or better than dispatching-only solutions in static environments. All three methods evaluated on JSSP benchmarks with comparisons to existing approaches; adaptability verified under dynamic event scenarios.",
-        "priorLimitations": "GNN-based dispatchers lacked analysis on whether sufficient information was provided for learning optimal strategies. Learning-based local search methods did not fully reflect JSSP-specific characteristics in neighbor selection. Tree-based search could not produce complete solutions under very tight time constraints."
+        "title": "잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러",
+        "topic": "제품마다 공정 순서가 상이한 잡 샵 스케줄링 문제(JSSP)에서 makespan을 최소화하는 세 가지 학습 기반 스케줄러를 제안한다. 의사결정 시간 제약에 따라 유연하게 선택 가능하도록 설계되었으며, 모든 방법론은 훈련 인스턴스와 무관하게 다양한 문제 크기에 확장 적용 가능하다.",
+        "methodology": "세 가지 방법론 제안:\n1. 학습 기반 실시간 디스패처: 현재 시점 관측 가능 정보만 활용, 완료 공정 정보 제외하도록 상태/행동/전이 재설계. 강화학습 대신 모방학습(IL) 활용하여 기존 GNN 디스패처 대비 우수한 성능 달성.\n2. 학습 기반 지역해 탐색: 크리티컬 블록, N5 이웃 구조 바탕으로 makespan 개선 조건 정립, 정책 네트워크에 반영하여 RL로 훈련.\n3. 깊이 제한 트리 탐색(SBBS): 분기한정법과 빔 서치를 선행탐색으로 결합, 디스패칭 전략을 롤아웃 정책으로 활용하여 시간 제약이 극도로 짧은 경우에도 자연스럽게 대체 가능하도록 설계.\n",
+        "performance": "정적 환경에서 SBBS는 기존 디스패칭 전략 대비 항상 같거나 더 나은 성능을 수학적으로 증명. 세 방법론 모두 JSSP 벤치마크에서 평가, 동적 이벤트 시나리오에서도 적응성 검증.",
+        "priorLimitations": "GNN 기반 디스패처 연구들은 최적 전략 학습에 충분한 정보가 제공되는지 분석이 부족했다. 학습 기반 지역해 탐색은 잡 샵 고유 특성을 이웃해 선택에 충분히 반영하지 못했다. 트리 기반 탐색은 극도로 짧은 시간 제약에서 완전한 해를 탐색하지 못했다."
       }
     },
     {
       "degree": "M.S.",
-      "institution": "Sungkyunkwan University (SKKU)",
+      "institution": "성균관대학교",
       "period": "2016.09 - 2021.02",
-      "major": "Industrial Engineering",
+      "major": "산업공학과",
       "region": "Suwon, South Korea",
       "remarks": "",
       "advisor": "Hyun-Jung Kim (https://msslab.kaist.ac.kr/Professor/professor)",
       "thesis": {
-        "title": "A Genetic Algorithm for Hybrid Flow Shop Scheduling Problems with Multiple Assembly Stages",
-        "topic": "Addresses makespan minimization in hybrid flow shop with multiple assembly stages (MA-HFS), where each product consists of multiple parts processed through parallel-machine stages with possible stage-skipping.",
-        "methodology": "Proposed a hybrid genetic algorithm (HGA) with three key contributions:\n1. Extended Johnson's algorithm with novel 'operational ready time' and 'operational remaining time' variables for initial solution generation (IGA).\n2. Designed crossover and mutation operators reflecting assembly structure.\n3. Combined local search on offspring with a lower bound calculation method for MA-HFSSP.\n",
-        "performance": "Achieved superior makespan performance over prior algorithms; outperformed time-limited MIP solver (CPLEX) on large-scale instances.",
-        "priorLimitations": "Prior works (Bhongade & Khodke 2014, Nejati et al. 2016) assumed assembly stages only at the end of the layout or ignored parallel machines, limiting applicability. Simple swap-based neighborhood search failed to exploit assembly-stage structure."
+        "title": "다중 조립 단계를 포함한 하이브리드 플로우 샵 스케줄링을 위한 유전 알고리즘",
+        "topic": "3D 프린터와 다중 조립 단계를 포함한 하이브리드 플로우 샵(MA-HFS) 환경에서 전체 공정 시간(makespan)을 최소화하는 문제를 다룬다. 각 제품은 여러 부품으로 구성되며, 부품들은 병렬 기계의 다수 공정 단계를 순서에 따라 거치되 일부 단계는 건너뛸 수 있다.",
+        "methodology": "다중 조립 단계 특성을 반영한 하이브리드 유전 알고리즘(HGA) 제안:\n1. Johnson's algorithm을 확장하여 'operational ready time'과 'operational remaining time' 변수 정의, 초기해 생성 알고리즘(IGA) 개발.\n2. 조립 구조를 고려한 교차(crossover) 및 돌연변이(mutation) 연산자 설계.\n3. 오프스프링에 로컬 서치 적용 + MA-HFSSP 하한값(lower bound) 계산 방법 제시.\n",
+        "performance": "기존 알고리즘 대비 우수한 makespan 성능 달성. 대규모 인스턴스에서 시간 제한 MIP 솔버(CPLEX)보다 뛰어난 결과.",
+        "priorLimitations": "기존 연구들은 조립 단계가 레이아웃 후반부에만 위치하는 경우를 가정하거나 단계별 병렬 기계를 고려하지 않는 등 특정 구조에만 적용 가능했다. 조립 단계 특성을 반영하지 않은 단순 swap 기반 이웃 탐색 사용."
       }
     },
     {
       "degree": "B.S.",
-      "institution": "Sungkyunkwan University (SKKU)",
+      "institution": "성균관대학교",
       "period": "2013.03 - 2016.08",
-      "major": "Systems Management Engineering",
+      "major": "시스템경영공학과",
       "region": "Suwon, South Korea",
       "remarks": ""
     },
     {
       "degree": "High School",
-      "institution": "Sejong Science High School",
+      "institution": "세종과학고등학교",
       "period": "2011.03 - 2013.02",
-      "major": "Math & Science Track",
+      "major": "수학·과학 과정",
       "region": "Seoul, South Korea",
       "remarks": ""
     }
   ],
   "workExperience": [
     {
-      "position": "Planning & Scheduling Solution Consultant",
+      "position": "생산계획 솔루션 컨설턴트",
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Consultant Part",
       "period": "2025.08 - Present",
-      "roles": "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
+      "roles": "시스템 설계 및 PMO: 디지털 트윈 플랫폼, 생산-물류 통합 시뮬레이터, 시뮬레이션 기반 AI 스케줄러, SaaS 제품",
       "performance": "",
       "region": "Yongin, South Korea",
       "responsibilities": [
-        "SK Hynix Digital Twin Platform: production-logistics simulator PM, use-case discovery, KPI definition, data consistency metrics, MES legacy data analysis & simulator integration, AI prediction model data specification",
-        "Production-logistics integrated simulation design",
-        "Production simulation engine architecture redesign & development participation",
-        "Planned and authored 2 government R&D proposals on Agentic AI (manufacturing-specific Agentic AI, LLM-based production plan explanation module / with University of Toronto)",
-        "AI extensibility review & design for simulation-based APS, new engine feature definition, participation in GenAI-based development",
-        "LLM-based schedule analysis & report generation system performance review and feedback",
-        "2 SaaS solution consulting engagements; technical review supporting client executives' strategic decisions (general manufacturing, semiconductor back-end)",
-        "WEB UI design participation and feedback"
+        "SK Hynix 디지털 트윈 플랫폼 구축: 생산-물류 시뮬레이터 신규 구축 PM, use-case 발굴, KPI 정의, 정합성 지표 정의, MES legacy data 분석 및 시뮬레이터 연결, AI 예측 모델 활용 데이터 정의",
+        "생산-물류 통합 시뮬레이션 설계",
+        "생산 시뮬레이션 엔진 구조 변경안 설계 및 개발 참여",
+        "Agentic AI 주제 정부과제 기획 및 제안서 2건 작성 (제조 특화 Agentic AI, LLM 기반 생산계획 설명 모듈 / with 토론토대학)",
+        "시뮬레이션 기반 APS system의 AI 확장성 검토 및 설계, 신규 엔진 기능 정의 및 genAI 기반 개발 참여",
+        "LLM 기반 스케줄 분석 및 레포트 생성 시스템 성능 검토 및 피드백 전달",
+        "SaaS 솔루션 컨설팅 2건 진행, 고객사 경영진의 전략적 의사결정 관련 기술 검토 지원 (일반 제조업, 반도체 후공정 기업 등)",
+        "WEB UI 디자인 참여 및 피드백"
       ]
     },
     {
-      "position": "Planning & Scheduling Solution Consultant",
+      "position": "생산계획 솔루션 컨설턴트",
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Micron Part",
       "period": "2025.02 - 2025.07",
-      "roles": "Solution consultant: simulation-based real-time APS maintenance, system configuration remote support",
+      "roles": "솔루션 컨설턴트: 시뮬레이션 기반 실시간 APS 유지보수, 시스템 셋팅 원격 지원",
       "performance": "",
       "region": "Yongin, South Korea",
       "responsibilities": [
-        "Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support"
+        "Micron 기업의 시뮬레이션 기반 real-time APS 로직 유지보수, 시스템 셋팅 원격 지원"
       ]
     },
     {
-      "position": "Technical Research Personnel",
+      "position": "전문연구요원",
       "organization": "South Korea (KAIST, VMS Solutions Inc.)",
       "division": "Ministry of National Defense",
       "period": "2023.03 - 2026.02",
-      "roles": "Industrial R&D (alternative military service)",
+      "roles": "산업 R&D (병역 대체 복무)",
       "performance": "",
       "region": "Daejeon/Yongin, South Korea"
     },
     {
-      "position": "Researcher",
+      "position": "연구원",
       "organization": "KAIST",
       "division": "MSS (Manufacturing Service Systems) Lab.",
       "period": "2021.03 - 2025.02",
-      "roles": "Lead researcher: AI-based dynamic schedulers, optimization-based heuristics, autonomous manufacturing scheduling systems",
+      "roles": "핵심 연구원: AI 기반 동적 스케줄러, 최적화 기반 휴리스틱, 자율 제조 스케줄링 시스템",
       "performance": "",
       "region": "Daejeon, South Korea",
       "responsibilities": [
-        "Led full project lifecycle (planning-to-validation): 9 industry-academia projects (planned 5, PM 4), 4 government projects (planned 3, PM 4)",
-        "Fundamental research on Neural Combinatorial Optimization based on GNN and RL",
-        "Designed general-purpose scheduling agent and Meta-RL methodology for flexible adaptation to manufacturing environment changes",
-        "Designed AI-based demand forecasting, production planning, and job scheduling optimization algorithms; validated business impact using real production data (Samsung Electronics, LG Electronics, Samsung Heavy Industries, etc.)",
-        "Provided technical review supporting client executives' strategic decisions and delivered system design proposals",
-        "Introduced structured project management processes (OneDrive & Notion-based) to the lab for the first time"
+        "프로젝트 전 주기(기획~검증) 리딩: 산학과제 9건 (기획 5건, PM 4건), 정부과제 4건 (기획 3건, PM 4건)",
+        "그래프 신경망(GNN) 및 강화학습(RL) 기반 Neural Combinatorial Optimization 원천 기술 연구",
+        "제조 환경 변화에 유연하게 대응 가능한 범용 스케줄링 에이전트 및 Meta-RL 방법론 기획 및 설계",
+        "AI 기반 수요예측·생산계획·작업계획 최적화 알고리즘 설계 및 실제 공정 데이터를 활용한 비즈니스 임팩트 검토 (삼성전자, LG전자, 삼성중공업 등)",
+        "과제 수행 결과를 바탕으로 고객사 경영진의 전략적 의사결정 관련 기술 검토 지원 및 시스템 설계안 전달",
+        "연구실에 OneDrive 및 Notion 기반의 체계적 과제 관리 프로세스 처음 도입"
       ],
       "highlights": [
-        "First Ph.D. graduate of the lab; led project planning, proposal writing, and research beyond typical researcher scope",
-        "Won 10-year NRF 'Hanwoomul' long-term project after analyzing rejection feedback and reinforcing proposal logic",
-        "2 first-author IEEE journal papers, 7 international conference presentations"
+        "연구실 첫 번째 박사 졸업생으로서 과제 기획부터 제안서 작성, 연구 주도까지 일반적 연구자 이상의 주도적 역할 수행",
+        "정부 과제 탈락 경험을 발판 삼아 심사 피드백을 철저히 분석하고 논리를 보강하여 10년 장기 프로젝트인 연구재단 한우물 과제 쟁취",
+        "IEEE 국제학술지 1저자 논문 2편 게재, 국제 학회 발표 7건"
       ],
       "advisor": "Hyun-Jung Kim"
     },
     {
-      "position": "Researcher",
+      "position": "연구원",
       "organization": "SKKU",
       "division": "SCO (Systems Control & Optimization) Lab.",
       "period": "2016.04 - 2021.02",
-      "roles": "Scheduling algorithm developer: meta-heuristics, optimization; System designer: digital twin for manufacturing, dynamic rescheduling systems",
+      "roles": "스케줄링 알고리즘 개발: 메타휴리스틱, 최적화; 시스템 설계: 제조 디지털 트윈, 동적 리스케줄링 시스템",
       "performance": "",
       "region": "Suwon, South Korea",
       "responsibilities": [
-        "5 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)",
-        "Led foundational design and operations optimization research for 3D printer-based smart factory digital twin systems",
-        "Developed rescheduling algorithms for handling disruptions (machine failures, order cancellations) in flexible manufacturing systems (FMS)",
-        "Translated physical manufacturing constraints into mathematical models and validated in virtual environments",
-        "Defined virtual factory operation scenarios and conducted simulation-based operational efficiency reviews",
-        "Designed and verified real-time scheduling methodologies using genetic algorithms and heuristics",
-        "Participated in multiple government projects including FaaS IoT service platform for personalized production; managed deliverables"
+        "산학과제 5건 (기획 2건, PM 2건), 정부과제 4건 (기획 2건, PM 1건)",
+        "3D 프린터 기반 스마트 팩토리 디지털 트윈 시스템 기초 설계 및 운영 최적화 연구 주도",
+        "유연 생산 시스템(FMS) 내 이상 상황(설비 고장, 주문 취소 등) 대응 리스케줄링 알고리즘 개발",
+        "제조 현장의 물리적 제약 조건을 수리적 모델로 치환하고 가상 환경에서 검증",
+        "생산 관점의 가상 공장 운영 시나리오 정의 및 시뮬레이션 기반 운영 효율성 검토",
+        "유전 알고리즘 및 휴리스틱을 활용한 실시간 스케줄 도출 방법론 설계 및 성능 검증",
+        "개인맞춤형 생산을 위한 FaaS IoT 서비스 플랫폼 등 다수의 정부 과제 실무 참여 및 산출물 관리"
       ],
       "advisor": "Hyun-Jung Kim"
     }
@@ -196,7 +196,7 @@
       "index": 25,
       "period": "2025.06 - 2025.12",
       "duration": "7m",
-      "title": "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab",
+      "title": "디지털 트윈 플랫폼 구축: 반도체 팹 생산-물류 시뮬레이션 기반 운영 트윈",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
@@ -208,16 +208,16 @@
         "Calro"
       ],
       "details": {
-        "purpose": "Define the need for a process twin to realize an autonomous fab; build a production-logistics integrated simulator",
-        "role": "Production engine development PM",
+        "purpose": "자율 팹(Autonomous Fab) 실현을 위한 프로세스 트윈의 필요성 정의 및 생산-물류 통합 시뮬레이터 구축",
+        "role": "생산 엔진 개발 PM",
         "tasks": [
-          "Discovered real operation use-cases for the process twin",
-          "Planned and designed production-logistics integrated simulator: unified modeling of process flows and material movement",
-          "Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)",
-          "Defined simulation result consistency metrics and designed/developed automated computation pipeline",
-          "WEB UI design participation and feedback"
+          "실제 운영 환경에서의 활용 시나리오(Use-case) 발굴",
+          "생산-물류 통합 시뮬레이터 기획 및 설계: 공정 흐름과 자재 이동을 통합 모델링 구조 설계",
+          "실 반도체 팹의 운영 데이터를 통합하여 프로세스 트윈의 일관성 검증 수행 (MES 데이터 분석, SQL 활용)",
+          "시뮬레이션 결과 정합성 지표 정의 및 자동 연산 파이프라인 설계 및 개발",
+          "WEB UI 디자인 참여 및 피드백"
         ],
-        "achievements": "Use-case discovery, KPI definition, consistency metrics definition, automated validation pipeline"
+        "achievements": "Use-case 발굴, KPI 정의, 정합성 지표 정의, 자동 연산 파이프라인 구축"
       }
     },
     {
@@ -229,329 +229,329 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
-      "remarks": ""
+      "remarks": "사용자 시나리오 정의 및 데이터 스키마 설계"
     },
     {
       "index": 23,
       "period": "2025.02 - 2025.06",
       "duration": "5m (5y)",
-      "title": "Simulation-based real-time scheduler for semiconductor fab",
+      "title": "반도체 팹 시뮬레이션 기반 실시간 스케줄러 유지보수",
       "client": "Micron",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
       "remarks": "",
       "details": {
-        "purpose": "Logic design and review for new real-time scheduler implementation; abstract semiconductor process-specific constraints for product generality",
-        "role": "Solution consultant",
+        "purpose": "실시간 스케줄러 신규 구현을 위한 로직 설계 및 검토; 반도체 공정 특화 제약을 추상화하여 제품 범용성 향상",
+        "role": "솔루션 컨설턴트",
         "tasks": [
-          "Logic design and review for new real-time scheduler: equipment state changes, priority recalculation, and other core algorithm specification",
-          "Abstracted semiconductor process-specific constraints (machine eligibility, batching rules) for improved product generality",
-          "Remote solution environment configuration support"
+          "실시간 스케줄러 신규 구현을 위한 로직 설계 및 검토: 설비 상태 변화, 우선순위 재산정 등 핵심 알고리즘 구체화",
+          "반도체 공정 특화 제약(설비 자격, 배치 룰 등)을 추상화하여 제품 범용성 향상 기획",
+          "솔루션 환경 설정 원격 지원"
         ],
-        "achievements": "Resolved Mozart environment issues; designed logic based on customer requirements"
+        "achievements": "Mozart 환경 이슈 해결 및 고객 요구사항 기반 로직 설계"
       }
     },
     {
       "index": 22,
       "period": "2024.05 - 2025.02",
       "duration": "10m (10y)",
-      "title": "Autonomous scheduling for swift and efficient adaptation to dynamic manufacturing environments",
+      "title": "동적 제조 환경에서의 신속하고 효율적인 적응을 위한 자율 스케줄링",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
       "remarks": "",
       "details": {
-        "purpose": "10-year project planning and execution (~2034.04); target autonomous scheduling in real manufacturing settings with progressive extension to process constraints and multi-objective functions",
-        "role": "Planning, PM, Researcher",
+        "purpose": "10개년 과제 기획/수행 주도 (~2034.04); 실제 제조 현장에서 autonomous scheduling 목표, 공정 제약 및 다중 목적 함수 등으로 점진적 확장",
+        "role": "기획, PM, 연구원",
         "tasks": [
-          "Led 10-year project planning and execution",
-          "Defined progressive extension cases with process constraints and multi-objective functions",
-          "Year 1: Developed GNN-based imitation learning methodology for multi-process mixed-flow production that adapts to varying problem sizes"
+          "10개년 과제 기획/수행 주도",
+          "공정 제약, 다중 목적 함수 등으로 점진적인 확장 사례 정의",
+          "1차년도: 다중 공정 혼류 생산 공정에서 문제 사이즈가 변하는 상황에서도 대응 가능한 GNN 기반 imitation learning 방법론 개발"
         ],
-        "achievements": "Makespan optimal gap improved by 42.0% (vs. previous SOTA AI); 1 SCI journal paper (1st author)"
+        "achievements": "Job shop 스케줄링 문제별 최적해 대비 makespan 차이(optimal gap) 개선: 42.0% (vs 과거 SOTA AI); SCI 논문 1건 (1저자)"
       }
     },
     {
       "index": 21,
       "period": "2024.03 - 2025.02",
       "duration": "1y",
-      "title": "AI-based algorithm for optimal operation plans for various scenarios",
+      "title": "다양한 시나리오에 대한 최적 운영 계획을 위한 AI 기반 알고리즘",
       "client": "Samsung Electronics",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
       "remarks": "",
       "details": {
-        "purpose": "Demand forecasting for semiconductor products",
-        "role": "Problem definition, Researcher",
+        "purpose": "반도체 제품 수요 예측",
+        "role": "문제 정의, 연구원",
         "tasks": [
-          "Identified decision-making processes through on-site engineer interviews",
-          "Defined problem scope and resolution boundaries",
-          "Data preprocessing and calibration",
-          "Forecasting model conceptualization, discussion, and refinement",
-          "Data segmentation"
+          "현장 엔지니어 인터뷰 기반 의사결정 프로세스 파악",
+          "문제 정의 및 문제 해결 범위 결정",
+          "데이터 전처리 및 보정",
+          "예측 모델 구상, 논의, 고도화",
+          "데이터 구분"
         ],
-        "achievements": "Demand forecasting model accuracy: 89.3% / 80% / 80%"
+        "achievements": "수요 예측 모델 성능: 89.3% / 80% / 80%"
       }
     },
     {
       "index": 20,
       "period": "2023.07 - 2024.06",
       "duration": "1y",
-      "title": "Reinforcement learning for unrelated parallel machine scheduling problems with sequence-dependent setup times and machine eligibility",
+      "title": "순서 의존 셋업 시간 및 설비 자격을 고려한 비관련 병렬 기계 스케줄링을 위한 강화학습",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": ""
+      "remarks": "GNN 기반 강화학습 알고리즘 개발 및 성능 검토"
     },
     {
       "index": 19,
       "period": "2023.07 - 2024.02",
       "duration": "8m",
-      "title": "Production planning with AI",
+      "title": "AI를 활용한 생산계획 수립",
       "client": "LG Electronics",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
       "remarks": "",
       "details": {
-        "purpose": "Optimal production planning algorithm for LG Electronics refrigerator body assembly line",
-        "role": "Planning, PM, Researcher",
+        "purpose": "LG 전자 냉장고 몸체 조립라인 생산계획 최적 수립 알고리즘 개발",
+        "role": "기획, PM, 연구원",
         "tasks": [
-          "Identified on-site constraints and defined problem through engineer interviews (objective: minimize setup count, maximize on-time production and equipment utilization)",
-          "Data analysis and calibration (Excel -> Python)",
-          "Developed optimal production planning algorithm (optimization engine-based heuristic)",
-          "Defined algorithm-based production planning process"
+          "현장 엔지니어 인터뷰 기반 제약 파악 및 문제 정의 (objective: setup 횟수 최소화, 정시 생산 및 장비 가동률 최대화)",
+          "데이터 분석 및 보정 (Excel -> Python)",
+          "생산계획 최적 수립 알고리즘 개발 (최적화 엔진 기반 휴리스틱 알고리즘)",
+          "알고리즘 기반 생산계획 수립 프로세스 정의"
         ],
-        "achievements": "7-day plan with 20min runtime limit: setup reduced 5.1%, on-time production improved 25.8%, idle time reduced 37.6% (vs. on-site manual plan)",
-        "notes": "Achieved better results using optimization engine alone without deep learning"
+        "achievements": "7일 생산계획, 20분 run time 제한 시: setup 5.1%, 정시 생산 25.8%, idle time 37.6% 향상 (vs 현장 생산계획)",
+        "notes": "딥러닝 없이 최적화 엔진만으로 더 나은 결과 달성"
       }
     },
     {
       "index": 18,
       "period": "2022.05 - 2023.02",
       "duration": "10m",
-      "title": "Graph-based reinforcement learning algorithm for real-time job shop scheduling",
+      "title": "실시간 잡 샵 스케줄링을 위한 그래프 기반 강화학습 알고리즘",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "강화학습 활용 실시간 디스패칭 Agent 개발"
     },
     {
       "index": 17,
       "period": "2022.04 - 2023.03",
       "duration": "1y",
-      "title": "Reinforcement learning for job shop scheduling",
+      "title": "잡 샵 스케줄링을 위한 강화학습",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "Job Shop 생산 시뮬레이터 고도화 및 방법론 개발"
     },
     {
       "index": 16,
       "period": "2022.03 - 2022.03",
       "duration": "1m (7m)",
-      "title": "Development of a wiring optimization algorithm for X-DEC slim layout",
+      "title": "X-DEC 슬림 레이아웃 배선 최적화 알고리즘 개발",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": ""
+      "remarks": "기판 전극 위치 기반 최적 배선 도출 알고리즘 기획"
     },
     {
       "index": 15,
       "period": "2022.03 -",
       "duration": "3y",
-      "title": "Reinforcement learning-based meta-scheduling for manufacturing systems",
+      "title": "제조 시스템을 위한 강화학습 기반 메타 스케줄링",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "범용 Agent 구축을 위한 Meta-RL 적용 및 설계"
     },
     {
       "index": 14,
       "period": "2022.03 - 2023.07",
       "duration": "1y5m (2y)",
-      "title": "Reinforcement learning for project scheduling",
+      "title": "프로젝트 스케줄링을 위한 강화학습",
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
       "remarks": "",
       "details": {
-        "purpose": "RL-based production planning to minimize daily worker deviation in shipbuilding",
-        "role": "Planning, Researcher",
+        "purpose": "강화학습 기반 작업자 편차 최소화 생산계획 수립",
+        "role": "기획, 연구원",
         "tasks": [
-          "Led project planning and proposal writing",
-          "Defined problem and resolution scope (objective: minimize daily worker employment deviation)",
-          "Enhanced ship production simulator",
-          "Enhanced RL-based schedule adjustment algorithm",
-          "Proposed iterative greedy algorithm",
-          "Discussed spatial layout algorithm methodology"
+          "프로젝트 기획 주도, 제안서 작성 주도",
+          "문제 정의 및 문제 해결 범위 결정 (목적함수: 일별 작업자 고용 편차 최소화)",
+          "선박 생산 시뮬레이터 고도화",
+          "강화학습 기반 스케줄 조정 알고리즘 고도화",
+          "Iterative greedy 알고리즘 제안",
+          "공간 배치 알고리즘 방법론 논의"
         ],
-        "achievements": "Year 1 schedule adjustment: daily manpower std. dev. reduced by 41.60% (RL, 20.27s), 44.53% (greedy, 49.86s), 47.69% (greedy+RL) vs. existing 6-month schedule"
+        "achievements": "1차년도 스케줄 조정: daily manpower 표준편차 기준 41.60% (RL, 20.27초), 44.53% (greedy, 49.86초), 47.69% (greedy+RL) 감소 (vs 기존 6개월 스케줄)"
       }
     },
     {
       "index": 13,
       "period": "2021.07 - 2021.11",
       "duration": "5m",
-      "title": "Development of a reinforcement learning algorithm for workload balancing of ship cargo production",
+      "title": "선박 화물 생산 부하 분산을 위한 강화학습 알고리즘 개발",
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": ""
+      "remarks": "부하 분산 최소화 알고리즘 및 시뮬레이터 개발"
     },
     {
       "index": 12,
       "period": "2020.06 - 2021.02",
       "duration": "9m",
-      "title": "Optimal machine assignment with machine learning algorithms",
+      "title": "머신러닝 알고리즘을 활용한 최적 설비 할당",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현"
     },
     {
       "index": 11,
       "period": "2019.06 - 2022.05",
       "duration": "3y",
-      "title": "Cyber-physical assembly and logistics systems in global supply chains",
+      "title": "글로벌 공급망 내 사이버-물리 조립 및 물류 시스템",
       "client": "MOTIE of Korea, Yura",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
       "remarks": "",
       "details": {
-        "purpose": "Optimize automotive parts production in global supply chain context",
-        "role": "Planning, PM, Researcher (global project part lead)",
+        "purpose": "글로벌 과제 파트 담당, 자동차 부품 생산 최적화 (수요기업: (주)유라)",
+        "role": "기획, PM, 연구원 (글로벌 과제 파트 담당)",
         "tasks": [
-          "Identified on-site constraints through field interviews",
-          "Defined problem and resolution scope",
-          "Developed automotive parts production simulator and real-time worker allocation/reallocation algorithm",
-          "Developed conveyor belt speed determination algorithm for semi-automated assembly processes",
-          "Defined user scenarios and program screen specifications"
+          "현장 인터뷰를 통한 현장 제약 파악",
+          "문제 및 해결 범위 정의",
+          "자동차 부품 생산 시뮬레이터 및 작업자 실시간 할당/재할당 알고리즘 개발",
+          "반자동 조립 공정을 위한 컨베이어 벨트 속도 결정 알고리즘 개발",
+          "사용자 시나리오 정의 및 프로그램 화면 정의"
         ],
-        "achievements": "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent registered: KR1020210070359; 1 SCI journal paper (2nd author); 2 conference papers"
+        "achievements": "Cycle time 감소: 5.6% (실제 현장 운영 데이터) / 2~5% (vs meta-heuristic); 특허 등록: [공정 최적화 방법] KR1020210070359; SCI 논문 1건 (2저자); 학회 2건"
       }
     },
     {
       "index": 10,
       "period": "2019.09 - 2020.02",
       "duration": "6m",
-      "title": "Optimal weight sets for dispatching rules with multiple KPIs",
+      "title": "다중 KPI를 고려한 디스패칭 룰 최적 가중치 도출",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발"
     },
     {
       "index": 9,
       "period": "2019.04 - 2019.12",
       "duration": "9m (1y9m)",
-      "title": "Big data-based simulation and optimization technology for smart manufacturing",
+      "title": "스마트 제조를 위한 빅데이터 기반 시뮬레이션 및 최적화 기술",
       "client": "MOTIE of Korea, Samsung SDI",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안"
     },
     {
       "index": 8,
       "period": "2019.03 - 2022.02",
       "duration": "3y",
-      "title": "Development of scheduling theory and algorithms with reinforcement learning for manufacturing systems",
+      "title": "제조 시스템을 위한 강화학습 기반 스케줄링 이론 및 알고리즘 개발",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "생산 시스템용 강화학습 알고리즘 개발 및 성능 검토"
     },
     {
       "index": 7,
       "period": "2018.07 - 2018.09",
       "duration": "3m",
-      "title": "Methodology for dispatching rules' weights",
+      "title": "디스패칭 룰 가중치 방법론",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "반도체 FAB 생산라인 최적 파라미터 도출 및 현장 제약 파악"
     },
     {
       "index": 6,
       "period": "2018.07 - 2019.02",
       "duration": "8m",
-      "title": "Framework development for KPI analysis with various weights on dispatching rules",
+      "title": "디스패칭 룰 가중치에 따른 KPI 분석 프레임워크 개발",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발"
     },
     {
       "index": 5,
       "period": "2017.07 - 2018.02",
       "duration": "8m",
-      "title": "Analysis of KPIs according to weights on dispatching rules for LCD manufacturing",
+      "title": "LCD 제조 디스패칭 룰 가중치에 따른 KPI 분석",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "파라미터에 따른 성능 변화 분석 프레임워크 설계/개발"
     },
     {
       "index": 4,
       "period": "2017.07 - 2018.01",
       "duration": "7m",
-      "title": "Design and analysis for operations optimizations of smart factory testbed",
+      "title": "스마트 팩토리 테스트베드 운영 최적화 설계 및 분석",
       "client": "MSIP of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "가상공장 시뮬레이터 구축 및 운영 효율성 분석"
     },
     {
       "index": 3,
       "period": "2016.11 - 2019.10",
       "duration": "3y",
-      "title": "Development of scheduling and rescheduling algorithms for 3D printer-based smart factory",
+      "title": "3D 프린터 기반 스마트 팩토리 스케줄링/리스케줄링 알고리즘 개발",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발"
     },
     {
       "index": 2,
       "period": "2016.07 - 2017.02",
       "duration": "8m",
-      "title": "Development of algorithms for detecting and improving inefficient schedules in LCD processes",
+      "title": "LCD 공정 비효율 스케줄 탐지 및 개선 알고리즘 개발",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발"
     },
     {
       "index": 1,
       "period": "2016.04 - 2018.05",
       "duration": "2y2m (3y)",
-      "title": "Development of open FaaS IoT service platform for mass personalization",
+      "title": "대량 개인맞춤을 위한 개방형 FaaS IoT 서비스 플랫폼 개발",
       "client": "MSIP of Korea",
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발"
     }
   ],
   "publications": [
@@ -895,19 +895,19 @@
     }
   ],
   "skills": {
-    "Programming": [
+    "프로그래밍": [
       "Python",
       "C#",
       "LaTeX",
       "R"
     ],
-    "Tools": [
+    "도구": [
       "PyTorch",
       "Matplotlib",
       "MS Office",
       "Photo Shop"
     ],
-    "Languages": [
+    "언어": [
       "Korean (Native)",
       "English (Professional)"
     ]
@@ -915,31 +915,31 @@
   "honors": [
     {
       "date": "2025.11",
-      "title": "Second Prize, Ph.D. Thesis Competition",
-      "description": "Learning Schedulers for Job Shop Scheduling Problems",
+      "title": "2등상, 박사논문경진대회",
+      "description": "잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러",
       "organization": "Korean Institute of Industrial Engineers (KIIE)",
       "location": "Daejeon, South Korea",
       "remarks": ""
     },
     {
       "date": "2023.12",
-      "title": "First Prize, 2023 Simulation Challenge",
-      "description": "Gating Control in Semiconductor Fabrication",
+      "title": "1등상, 2023 Simulation Challenge",
+      "description": "반도체 팹 게이팅 제어",
       "organization": "Winter Simulation Conference (WSC), Micron",
       "location": "San Antonio, USA",
       "remarks": "$3,000"
     },
     {
       "date": "2023.09",
-      "title": "Third Prize, 2023 AI Competition: Solving Real-world Problems",
-      "description": "Integrated Planning Module using AI",
+      "title": "3등상, 2023 AI Competition: 실제 문제 해결",
+      "description": "AI를 활용한 통합 계획 모듈",
       "organization": "Hankook & Company",
       "location": "Daejeon, South Korea",
       "remarks": "$1,500"
     },
     {
       "date": "",
-      "title": "Ph.D. Candidate Research Incentive Support",
+      "title": "박사과정생 연구장려 지원사업",
       "description": "",
       "organization": "National Research Foundation (NRF) of Korea",
       "location": "South Korea",
@@ -947,31 +947,31 @@
     },
     {
       "date": "2022.09",
-      "title": "Second Prize, 2022 Poster Competition: Industry/Social Problems",
-      "description": "RL for Resource Leveling in Shipbuilding",
+      "title": "2등상, 2022 포스터경진대회: 산업/사회문제",
+      "description": "선박건조 자원 평활화를 위한 강화학습",
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "remarks": ""
     },
     {
       "date": "2022.05",
-      "title": "Certificate of Appreciation: Successful Project",
-      "description": "Workload Balancing of Ship Cargo Production",
+      "title": "감사장: 우수 프로젝트",
+      "description": "선박 화물 생산 부하 분산",
       "organization": "Samsung Heavy Industries",
       "location": "South Korea",
       "remarks": ""
     },
     {
       "date": "",
-      "title": "Full-tuition Entrance Scholarship",
-      "description": "Merit-based Entrance Scholarship (Ph.D.)",
+      "title": "전액 입학 장학금",
+      "description": "성적 우수 입학 장학금 (박사)",
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "remarks": "Full Tuition"
     },
     {
       "date": "2016.07",
-      "title": "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Customer Insight",
+      "title": "3등상, 2015-2016 PACE RSMS Competition (2차): Customer Insight",
       "description": "",
       "organization": "General Motors (GM)",
       "location": "Cincinnati, USA",
@@ -979,7 +979,7 @@
     },
     {
       "date": "2016.07",
-      "title": "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Manufacturing Engineering",
+      "title": "3등상, 2015-2016 PACE RSMS Competition (2차): Manufacturing Engineering",
       "description": "",
       "organization": "General Motors (GM)",
       "location": "Cincinnati, USA",
@@ -987,8 +987,8 @@
     },
     {
       "date": "",
-      "title": "Full-tuition Entrance Scholarship",
-      "description": "Merit-based Entrance Scholarship (B.S.)",
+      "title": "전액 입학 장학금",
+      "description": "성적 우수 입학 장학금 (학사)",
       "organization": "Sungkyunkwan University (SKKU)",
       "location": "Suwon, South Korea",
       "remarks": "Full Tuition"
@@ -996,8 +996,8 @@
   ],
   "patents": [
     {
-      "title": "Optimizing method for the manufacturing process",
-      "description": "A real-time optimization method for worker allocation in semi-automated assembly processes",
+      "title": "공정 최적화 방법",
+      "description": "반자동 조립 공정에서의 실시간 작업자 할당 최적화 방법",
       "applicationDate": "2021.05.31",
       "applicationNumber": "KR1020210070359",
       "applicant": "KAIST, Yura (entire 12 people)",
@@ -1006,86 +1006,86 @@
   ],
   "activities": [
     {
-      "role": "Researcher Representative",
-      "organization": "Manufacturing and Service Systems Lab. (KAIST)",
+      "role": "연구실 대표",
+      "organization": "MSS (Manufacturing Service Systems) 연구실 (KAIST)",
       "location": "Daejeon, South Korea",
       "period": "2022.03 - 2023.08"
     },
     {
-      "role": "Technical Mentor",
-      "organization": "Public Data Internship Program (Korea National Information Society Agency)",
+      "role": "기술 멘토",
+      "organization": "공공데이터 인턴십 프로그램 (한국정보화진흥원)",
       "location": "Online",
       "period": "2021.10 – 2021.12"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Scheduling (KAIST)",
+      "role": "조교",
+      "organization": "Scheduling 수업 (KAIST)",
       "location": "Daejeon, South Korea",
       "period": "2021.03 – 2024.12"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Supply Chain Management (SKKU)",
+      "role": "조교",
+      "organization": "공급사슬관리 수업 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2018.09 – 2019.06"
     },
     {
-      "role": "President",
-      "organization": "Industrial Engineering Graduate Student Council (SKKU)",
+      "role": "회장",
+      "organization": "산업공학과 대학원 학생회 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2018.03 – 2019.02"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Operations Management (SKKU)",
+      "role": "조교",
+      "organization": "생산관리 수업 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2018.03 – 2018.06"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Gender Awareness Education (SKKU)",
+      "role": "조교",
+      "organization": "양성평등교육 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2016.10 – 2018.12"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Engineering Economy (SKKU)",
+      "role": "조교",
+      "organization": "공학경제 수업 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2017.09 – 2017.12"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Operations Research and Practice 1 (SKKU)",
+      "role": "조교",
+      "organization": "경영과학 및 실습 1 수업 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2017.03 – 2017.06"
     },
     {
-      "role": "Teaching Assistant (TA)",
-      "organization": "Engineering Economy (SKKU)",
+      "role": "조교",
+      "organization": "공학경제 수업 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2016.09 – 2016.12"
     },
     {
-      "role": "Working Group Member",
-      "organization": "Systems Management Engineering Student Council (SKKU)",
+      "role": "운영위원",
+      "organization": "시스템경영공학과 학생회 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2015.03 – 2016.08"
     },
     {
-      "role": "President",
-      "organization": "Turbo: Basketball Club (SKKU)",
+      "role": "회장",
+      "organization": "Turbo: 농구 동아리 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2015.03 – 2016.08"
     },
     {
-      "role": "Working Group Member",
-      "organization": "Turbo: Basketball Club (SKKU)",
+      "role": "운영위원",
+      "organization": "Turbo: 농구 동아리 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2014.08 – 2020.02"
     },
     {
-      "role": "Working Group Member",
-      "organization": "College of Engineering Student Council (SKKU)",
+      "role": "운영위원",
+      "organization": "공과대학 학생회 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2013.03 – 2015.02"
     }

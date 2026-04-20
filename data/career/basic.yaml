@@ -1,27 +1,19 @@
-# Basic Information
-# Last synced from Google Sheets: 2026-04-19
-
 name:
   en: Jehun Lee
   ko: 이제훈
-
 titles:
-  - en: "Industrial & Systems Engineer (Ph.D.)"
-    ko: ""
+  - en: Industrial & Systems Engineer (Ph.D.)
+    ko: 산업및시스템공학 박사
   - en: Simulation Solution Consultant
-    ko: ""
+    ko: 시뮬레이션 솔루션 컨설턴트
   - en: AI Solution Architect
-    ko: ""
-
+    ko: AI 솔루션 아키텍트
 email:
-  - "jehun.lee302@gmail.com"
-  - "jehun.lee@vms-solutions.com"
-  - "jehun.lee@kaist.ac.kr"
-
+  - jehun.lee302@gmail.com
+  - jehun.lee@vms-solutions.com
+  - jehun.lee@kaist.ac.kr
 website: jehun-lee.work
-
 location:
   en: Yongin, Gyeonggi-do, South Korea
-  ko: "경기도 용인시"
-
-google_site: "https://sites.google.com/view/jehun-lee"
+  ko: 경기도 용인시
+google_site: https://sites.google.com/view/jehun-lee

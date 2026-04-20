@@ -29,10 +29,10 @@
   type: Conference
   global: false
   role: "1st Author"
-  authors: J.-H. Leeand H.-J. Kim
+  authors: J.-H. Lee and H.-J. Kim
   title: Tree-based dispatcher for solving job shop scheduling problems
   venue: the Spring Conference of Korean Institute of Industrial Engineers
-  full_citation: "J.-H. Leeand H.-J. Kim, \"Tree-based dispatcher for solving job shop scheduling problems,\" the Spring Conference of Korean Institute of Industrial Engineers, Yeosu, 2024."
+  full_citation: "J.-H. Lee and H.-J. Kim, \"Tree-based dispatcher for solving job shop scheduling problems,\" the Spring Conference of Korean Institute of Industrial Engineers, Yeosu, 2024."
   remarks: Yeosu, South Korea
 
 - index: 23

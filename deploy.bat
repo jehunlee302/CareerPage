@@ -3,24 +3,33 @@ chcp 65001 > nul
 echo.
 echo ========================================
 echo  CareerPage Deploy
-echo  YAML → portfolio.json → GitHub → Web
+echo  YAML → JSON (en+ko) → GitHub → Web
 echo ========================================
 echo.
 
-:: Step 1: YAML → JSON 변환
+:: Step 1: YAML → JSON 변환 (English + Korean)
 echo [1/3] YAML 파일에서 portfolio.json 빌드 중...
 node scripts/yaml-to-json.js
 if %errorlevel% neq 0 (
-  echo.
   echo 오류 발생. 배포를 중단합니다.
   pause
   exit /b 1
 )
+copy /Y data\portfolio.json data\portfolio.en.json > nul
+node scripts/yaml-to-json.js --lang ko
+if %errorlevel% neq 0 (
+  echo 오류 발생. 배포를 중단합니다.
+  pause
+  exit /b 1
+)
+copy /Y data\portfolio.json data\portfolio.ko.json > nul
+copy /Y data\portfolio.en.json data\portfolio.json > nul
+echo 빌드 완료: portfolio.json (en) + portfolio.ko.json
 
 :: Step 2: Git 커밋
 echo.
 echo [2/3] GitHub에 업로드 중...
-git add data/portfolio.json assets/js/main.js assets/css/style.css
+git add data/portfolio.json data/portfolio.ko.json assets/js/main.js assets/css/style.css index.html
 git diff --cached --quiet
 if %errorlevel% == 0 (
   echo 변경사항 없음.
@@ -38,7 +47,7 @@ if %errorlevel% neq 0 (
 :done
 echo.
 echo [3/3] 완료!
-echo Cloudflare가 약 30초 후 자동 배포합니다.
+echo 약 30초 후 자동 배포됩니다.
 echo 사이트: https://jehun-lee.work
 echo.
 pause

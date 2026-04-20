@@ -1,42 +1,36 @@
-# Projects 2020-2021 (newest first, by end year)
-# 3 projects
-
 - index: 13
-  period: "2021.07 - 2021.11"
-  duration: "5m"
+  period: 2021.07 - 2021.11
+  duration: 5m
   title:
     en: Development of a reinforcement learning algorithm for workload balancing of ship cargo production
-    ko: ""
+    ko: 선박 화물 생산 부하 분산을 위한 강화학습 알고리즘 개발
   client: Samsung Heavy Industries
   affiliated_institution: KAIST
   is_pm: false
   remarks:
     en: ""
     ko: 부하 분산 최소화 알고리즘 및 시뮬레이터 개발
-
 - index: 12
-  period: "2020.06 - 2021.02"
-  duration: "9m"
+  period: 2020.06 - 2021.02
+  duration: 9m
   title:
     en: Optimal machine assignment with machine learning algorithms
-    ko: ""
+    ko: 머신러닝 알고리즘을 활용한 최적 설비 할당
   client: VMS Solutions
   affiliated_institution: KAIST
   is_pm: true
   remarks:
     en: ""
     ko: AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현
-
 - index: 10
-  period: "2019.09 - 2020.02"
-  duration: "6m"
+  period: 2019.09 - 2020.02
+  duration: 6m
   title:
     en: Optimal weight sets for dispatching rules with multiple KPIs
-    ko: ""
+    ko: 다중 KPI를 고려한 디스패칭 룰 최적 가중치 도출
   client: VMS Solutions
   affiliated_institution: KAIST
   is_pm: true
   remarks:
     en: ""
     ko: 다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발
-
