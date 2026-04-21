@@ -1,25 +1,54 @@
 programming:
   label:
     en: Programming
-    ko: 프로그래밍
+    ko: "프로그래밍"
   items:
     - Python
     - C#
+    - SQL
     - LaTeX
     - R
-tools:
+    - HTML/CSS/JS
+
+frameworks_and_libraries:
   label:
-    en: Tools
-    ko: 도구
+    en: "Frameworks & Libraries"
+    ko: "프레임워크 & 라이브러리"
   items:
     - PyTorch
     - Matplotlib
+    - Pandas
+    - NumPy
+    - Gurobi
+    - CPLEX
+
+simulation_and_tools:
+  label:
+    en: "Simulation & Tools"
+    ko: "시뮬레이션 & 도구"
+  items:
+    - VMS Mozart (APS)
+    - Arena Simulation
+    - AutoMod
     - MS Office
-    - Photo Shop
+    - Photoshop
+
+devops_and_productivity:
+  label:
+    en: "DevOps & Productivity"
+    ko: "개발 환경 & 생산성"
+  items:
+    - Git / GitHub
+    - Docker
+    - Claude Code
+    - n8n
+    - Notion
+    - Jira / Confluence
+
 languages:
   label:
     en: Languages
-    ko: 언어
+    ko: "언어"
   items:
-    - Korean (Native)
-    - English (Professional)
+    - "Korean (Native)"
+    - "English (Professional)"

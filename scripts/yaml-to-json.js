@@ -82,6 +82,8 @@ function buildBasic(raw) {
     website:    raw.website || '',
     location:   typeof raw.location === 'object' ? (raw.location[LANG] || raw.location.en) : (raw.location || ''),
     googleSite: raw.google_site || '',
+    resume:     raw.resume || '',
+    summary:    extractLang(raw.summary),
   };
 }
 

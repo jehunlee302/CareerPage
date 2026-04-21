@@ -119,6 +119,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .hero-location{display:flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.48);font-size:.82rem;margin-bottom:1rem}
 
 /* Research tags */
+.hero-summary{font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.65;max-width:540px;margin-bottom:1.2rem}
 .hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
 .hero-tag{font-size:.72rem;font-weight:600;padding:.28rem .7rem;border-radius:20px;background:rgba(0,122,255,.1);border:1px solid rgba(0,122,255,.22);color:var(--blue-light);letter-spacing:.03em}
 

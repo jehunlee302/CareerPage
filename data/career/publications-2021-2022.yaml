@@ -11,7 +11,7 @@
   title: Imitation learning for real-time job shop scheduling using graph-based representation
   venue: Winter Simulation Conference
   full_citation: "J.-H. Lee and H.-J. Kim*, \"Imitation learning for real-time job shop scheduling using graph-based representation,\" Winter Simulation Conference, Singapore, 2022, pp. 3285-3296."
-  link: "Imitation Learning for Real-Time Job Shop Scheduling Using Graph-Based Representation | IEEE Conference Publication | IEEE Xplore"
+  link: https://ieeexplore.ieee.org/document/10015423
   remarks: Singapore
 
 - index: 21
@@ -34,7 +34,7 @@
   title: A multi-manned assembly line worker assignment and balancing problem with positional constraints
   venue: IEEE Robotics and Automation Letters
   full_citation: "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*, \"A multi-manned assembly line worker assignment and balancing problem with positional constraints,\" IEEE Robotics and Automation Letters, vol. 7, no. 3, pp. 7786-7793, 2022."
-  link: "A Multi-Manned Assembly Line Worker Assignment and Balancing Problem With Positional Constraints | IEEE Journals & Magazine | IEEE Xplore"
+  link: https://ieeexplore.ieee.org/document/9804801
 
 - index: 19
   year: 2022
@@ -67,7 +67,7 @@
   title: Machine learning-based periodic setup changes for semiconductor manufacturing machines
   venue: Winter Simulation Conference
   full_citation: "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung, \"Machine learning-based periodic setup changes for semiconductor manufacturing machines,\" Winter Simulation Conference, Online, 2021, pp.1-10."
-  link: "Machine Learning-Based Periodic Setup Changes for Semiconductor Manufacturing Machines | IEEE Conference Publication | IEEE Xplore"
+  link: https://ieeexplore.ieee.org/document/9715360
   remarks: Online
 
 - index: 16
@@ -90,7 +90,7 @@
   title: Assembly line worker assignment and balancing problem with positional constraints
   venue: Advances in Production Management Systems (APMS)
   full_citation: "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Assembly line worker assignment and balancing problem with positional constraints,\" Advances in Production Management Systems (APMS), Online, 2021, pp. 3-11."
-  link: "Assembly Line Worker Assignment and Balancing Problem with Positional Constraints | Springer Nature Link"
+  link: https://doi.org/10.1007/978-3-030-85874-2_1
   remarks: Online
 
 - index: 14

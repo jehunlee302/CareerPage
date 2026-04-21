@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-20",
+  "lastUpdated": "2026-04-21",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -15,7 +15,9 @@
     ],
     "website": "jehun-lee.work",
     "location": "Yongin, Gyeonggi-do, South Korea",
-    "googleSite": "https://sites.google.com/view/jehun-lee"
+    "googleSite": "https://sites.google.com/view/jehun-lee",
+    "resume": "data/resume.pdf",
+    "summary": "Ph.D. from KAIST with 10+ years of R&D experience spanning 25+ projects for SK Hynix, Micron, Samsung, and LG. Specializes in AI-driven scheduling systems, digital twin platforms, and simulation-based optimization for semiconductor manufacturing. Currently serving as a Planning & Scheduling Solution Consultant at VMS Solutions."
   },
   "philosophy": {
     "headline": "Systemic Excellence",
@@ -561,7 +563,7 @@
       "title": "Graph-based imitation learning for real-time job shop dispatcher",
       "fullCitation": "J.-H. Lee and H.-J. Kim, \"Graph-based imitation learning for real-time job shop dispatcher,\" IEEE Transactions on Automation Science and Engineering, 2024.",
       "type": "Journal",
-      "link": "Graph-Based Imitation Learning for Real-Time Job Shop Dispatcher | IEEE Journals & Magazine | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/10812755",
       "role": "1st Author",
       "remarks": "",
       "year": 2024,
@@ -613,7 +615,7 @@
       "title": "Imitation learning for real-time job shop scheduling using graph-based representation",
       "fullCitation": "J.-H. Lee and H.-J. Kim*, \"Imitation learning for real-time job shop scheduling using graph-based representation,\" Winter Simulation Conference, Singapore, 2022, pp. 3285-3296.",
       "type": "Conference",
-      "link": "Imitation Learning for Real-Time Job Shop Scheduling Using Graph-Based Representation | IEEE Conference Publication | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/10015423",
       "role": "1st Author",
       "remarks": "Singapore",
       "year": 2022,
@@ -639,7 +641,7 @@
       "title": "A multi-manned assembly line worker assignment and balancing problem with positional constraints",
       "fullCitation": "H. Yang, J.-H. Lee, S. H. Lee, S. G. Lee, H. R. Kim, and H.-J. Kim*, \"A multi-manned assembly line worker assignment and balancing problem with positional constraints,\" IEEE Robotics and Automation Letters, vol. 7, no. 3, pp. 7786-7793, 2022.",
       "type": "Journal",
-      "link": "A Multi-Manned Assembly Line Worker Assignment and Balancing Problem With Positional Constraints | IEEE Journals & Magazine | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/9804801",
       "role": "Co-Author",
       "remarks": "",
       "year": 2022,
@@ -678,7 +680,7 @@
       "title": "Machine learning-based periodic setup changes for semiconductor manufacturing machines",
       "fullCitation": "J.-H. Lee, H.-J. Kim*, Y. Kim, Y. B. Kim, B.-H. Kim, and G.-H. Chung, \"Machine learning-based periodic setup changes for semiconductor manufacturing machines,\" Winter Simulation Conference, Online, 2021, pp.1-10.",
       "type": "Conference",
-      "link": "Machine Learning-Based Periodic Setup Changes for Semiconductor Manufacturing Machines | IEEE Conference Publication | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/9715360",
       "role": "1st Author",
       "remarks": "Online",
       "year": 2021,
@@ -704,7 +706,7 @@
       "title": "Assembly line worker assignment and balancing problem with positional constraints",
       "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Assembly line worker assignment and balancing problem with positional constraints,\" Advances in Production Management Systems (APMS), Online, 2021, pp. 3-11.",
       "type": "Conference",
-      "link": "Assembly Line Worker Assignment and Balancing Problem with Positional Constraints | Springer Nature Link",
+      "link": "https://doi.org/10.1007/978-3-030-85874-2_1",
       "role": "Co-Author",
       "remarks": "Online",
       "year": 2021,
@@ -730,7 +732,7 @@
       "title": "A sequential search method of dispatching rules for scheduling of LCD manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*, \"A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,\" IEEE Transactions on Semiconductor Manufacturing, vol. 33, no. 4, pp. 496-503, 2020.",
       "type": "Journal",
-      "link": "A Sequential Search Method of Dispatching Rules for Scheduling of LCD Manufacturing Systems | IEEE Journals & Magazine | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/9186648",
       "role": "1st Author",
       "remarks": "",
       "year": 2020,
@@ -743,7 +745,7 @@
       "title": "A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*, \"A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,\" Winter Simulation Conference, Online, 2020, pp. 1943-1953.",
       "type": "Conference",
-      "link": "A Simulation-Based Sequential Search Method for Multi-Obejctive Scheduling Problems of Manufacturing Systems | IEEE Conference Publication | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/9384046",
       "role": "1st Author",
       "remarks": "Online",
       "year": 2020,
@@ -769,7 +771,7 @@
       "title": "Digital twin-based cyber physical production system architectural framework for personalized production",
       "fullCitation": "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*, \"Digital twin-based cyber physical production system architectural framework for personalized production,\" The International Journal of Advanced Manufacturing Technology, vol. 106, no. 5, 2020, pp. 1787-1810.",
       "type": "Journal",
-      "link": "Digital twin-based cyber physical production system architectural framework for personalized production | The International Journal of Advanced Manufacturing Technology | Springer Nature Link",
+      "link": "https://doi.org/10.1007/s00170-019-04326-x",
       "role": "Co-Author",
       "remarks": "",
       "year": 2020,
@@ -782,7 +784,7 @@
       "title": "Workforce assignment with a different skill level for automotive parts assembly lines",
       "fullCitation": "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Workforce assignment with a different skill level for automotive parts assembly lines,\" Advances in Production Management Systems (APMS), Novi Sad, Serbia, 2020, pp. 206-212.",
       "type": "Conference",
-      "link": "Workforce Assignment with a Different Skill Level for Automotive Parts Assembly Lines | Springer Nature Link",
+      "link": "https://doi.org/10.1007/978-3-030-57993-7_24",
       "role": "Co-Author",
       "remarks": "Novi Sad, Serbia",
       "year": 2020,
@@ -795,7 +797,7 @@
       "title": "A sequential search framework for selecting weights of dispatching rules in manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A sequential search framework for selecting weights of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Maryland, USA, 2019, pp. 2201-2211.",
       "type": "Conference",
-      "link": "A Sequential Search Framework for Selecting Weights of Dispatching Rules in Manufacturing Systems | IEEE Conference Publication | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/9004897",
       "role": "1st Author",
       "remarks": "Maryland, USA",
       "year": 2019,
@@ -834,7 +836,7 @@
       "title": "A framework for performance analysis of dispatching rules in manufacturing systems",
       "fullCitation": "J.-H. Lee, Y. Kim, J. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A framework for performance analysis of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Gothenburg, Sweden, 2018, pp. 3550-3560.",
       "type": "Conference",
-      "link": "A FRAMEWORK FOR PERFORMANCE ANALYSIS OF DISPATCHING RULES IN MANUFACTURING SYSTEMS | IEEE Conference Publication | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/8632443",
       "role": "1st Author",
       "remarks": "Gothenburg, Sweden",
       "year": 2018,
@@ -873,7 +875,7 @@
       "title": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting",
       "fullCitation": "J. Kim, J.-H. Lee, S.-L. Choi, H.-J. Jung, Y.-B. Kim, H.-J*. Kim, B.-H. Kim, and G.-H. Chung, \"Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting,\" Winter Simulation Conference, Las Vegas, USA, 2017, pp. 3745-3755.",
       "type": "Conference",
-      "link": "Rescheduling of flexible flow shop with sequence-dependent setup times and job splitting | IEEE Conference Publication | IEEE Xplore",
+      "link": "https://ieeexplore.ieee.org/document/8248090",
       "role": "Co-Author",
       "remarks": "Las Vegas, USA",
       "year": 2017,
@@ -898,14 +900,33 @@
     "Programming": [
       "Python",
       "C#",
+      "SQL",
       "LaTeX",
-      "R"
+      "R",
+      "HTML/CSS/JS"
     ],
-    "Tools": [
+    "Frameworks & Libraries": [
       "PyTorch",
       "Matplotlib",
+      "Pandas",
+      "NumPy",
+      "Gurobi",
+      "CPLEX"
+    ],
+    "Simulation & Tools": [
+      "VMS Mozart (APS)",
+      "Arena Simulation",
+      "AutoMod",
       "MS Office",
-      "Photo Shop"
+      "Photoshop"
+    ],
+    "DevOps & Productivity": [
+      "Git / GitHub",
+      "Docker",
+      "Claude Code",
+      "n8n",
+      "Notion",
+      "Jira / Confluence"
     ],
     "Languages": [
       "Korean (Native)",

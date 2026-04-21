@@ -148,6 +148,14 @@ function renderHero(data) {
   if (heroBtn) heroBtn.textContent = t('ui.contactMe');
   const locEl = document.getElementById('heroLocationText');
   if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
+  const sumEl = document.getElementById('heroSummary');
+  if (sumEl) sumEl.textContent = data.basic?.summary || '';
+  const resBtn = document.getElementById('heroResumeBtn');
+  if (resBtn && data.basic?.resume) {
+    resBtn.href = data.basic.resume;
+    resBtn.style.display = '';
+    resBtn.lastChild.textContent = LANG === 'ko' ? ' Resume' : ' Resume';
+  }
 }
 
 /* ─── Typewriter ─── */
