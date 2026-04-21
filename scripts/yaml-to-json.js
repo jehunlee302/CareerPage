@@ -246,7 +246,7 @@ function buildPatents(raw) {
     applicationDate:   p.application_date || '',
     applicationNumber: p.application_number || '',
     applicant:         p.applicant || '',
-    authority:         p.authority || '',
+    authority:         extractLang(p.authority) || '',
   }));
 }
 

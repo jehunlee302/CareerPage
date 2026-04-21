@@ -902,8 +902,7 @@
       "C#",
       "SQL",
       "LaTeX",
-      "R",
-      "HTML/CSS/JS"
+      "R"
     ],
     "Frameworks & Libraries": [
       "PyTorch",
@@ -925,8 +924,7 @@
       "Docker",
       "Claude Code",
       "n8n",
-      "Notion",
-      "Jira / Confluence"
+      "Notion"
     ],
     "Languages": [
       "Korean (Native)",

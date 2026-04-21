@@ -330,11 +330,11 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
    PATENTS
    ════════════════════════════════════════ */
 .patents-list{margin-top:2rem;display:flex;flex-direction:column;gap:.9rem}
-.patent-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.65rem;transition:border-color var(--t)}
+.patent-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.2rem 1.5rem;transition:border-color var(--t)}
 .patent-card:hover{border-color:var(--blue)}
-.patent-title{font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:.45rem}
-.patent-desc{font-size:.87rem;color:var(--text-mid);margin-bottom:.7rem;line-height:1.65}
-.patent-meta{display:flex;flex-wrap:wrap;gap:.9rem;font-size:.8rem;color:var(--text-muted)}
+.patent-title{font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:.25rem}
+.patent-desc{font-size:.84rem;color:var(--text-mid);margin-bottom:.4rem;line-height:1.5}
+.patent-meta{display:flex;flex-wrap:wrap;gap:.6rem;font-size:.78rem;color:var(--text-muted)}
 .patent-meta span strong{color:var(--text-mid);font-weight:600}
 
 /* ════════════════════════════════════════

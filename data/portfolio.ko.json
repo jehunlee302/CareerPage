@@ -902,8 +902,7 @@
       "C#",
       "SQL",
       "LaTeX",
-      "R",
-      "HTML/CSS/JS"
+      "R"
     ],
     "프레임워크 & 라이브러리": [
       "PyTorch",
@@ -925,8 +924,7 @@
       "Docker",
       "Claude Code",
       "n8n",
-      "Notion",
-      "Jira / Confluence"
+      "Notion"
     ],
     "언어": [
       "Korean (Native)",
@@ -1022,7 +1020,7 @@
       "applicationDate": "2021.05.31",
       "applicationNumber": "KR1020210070359",
       "applicant": "KAIST, Yura (entire 12 people)",
-      "authority": "South Korea"
+      "authority": "대한민국"
     }
   ],
   "activities": [

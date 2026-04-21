@@ -8,7 +8,6 @@ programming:
     - SQL
     - LaTeX
     - R
-    - HTML/CSS/JS
 
 frameworks_and_libraries:
   label:
@@ -43,7 +42,6 @@ devops_and_productivity:
     - Claude Code
     - n8n
     - Notion
-    - Jira / Confluence
 
 languages:
   label:

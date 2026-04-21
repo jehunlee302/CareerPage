@@ -7,4 +7,6 @@
   application_date: 2021.05.31
   application_number: KR1020210070359
   applicant: KAIST, Yura (entire 12 people)
-  authority: South Korea
+  authority:
+    en: South Korea
+    ko: 대한민국
