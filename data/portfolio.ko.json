@@ -67,7 +67,7 @@
       "major": "산업및시스템공학과",
       "region": "Daejeon, South Korea",
       "remarks": "",
-      "advisor": "Hyun-Jung Kim (https://msslab.kaist.ac.kr/Professor/professor)",
+      "advisor": "김현정 (https://msslab.kaist.ac.kr/Professor/professor)",
       "thesis": {
         "title": "잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러",
         "topic": "제품마다 공정 순서가 상이한 잡 샵 스케줄링 문제(JSSP)에서 makespan을 최소화하는 세 가지 학습 기반 스케줄러를 제안한다. 의사결정 시간 제약에 따라 유연하게 선택 가능하도록 설계되었으며, 모든 방법론은 훈련 인스턴스와 무관하게 다양한 문제 크기에 확장 적용 가능하다.",
@@ -83,7 +83,7 @@
       "major": "산업공학과",
       "region": "Suwon, South Korea",
       "remarks": "",
-      "advisor": "Hyun-Jung Kim (https://msslab.kaist.ac.kr/Professor/professor)",
+      "advisor": "김현정 (https://msslab.kaist.ac.kr/Professor/professor)",
       "thesis": {
         "title": "다중 조립 단계를 포함한 하이브리드 플로우 샵 스케줄링을 위한 유전 알고리즘",
         "topic": "3D 프린터와 다중 조립 단계를 포함한 하이브리드 플로우 샵(MA-HFS) 환경에서 전체 공정 시간(makespan)을 최소화하는 문제를 다룬다. 각 제품은 여러 부품으로 구성되며, 부품들은 병렬 기계의 다수 공정 단계를 순서에 따라 거치되 일부 단계는 건너뛸 수 있다.",

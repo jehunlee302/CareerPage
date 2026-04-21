@@ -120,7 +120,7 @@ function buildEducation(raw) {
       region:      e.region || '',
       remarks:     e.remarks || '',
     };
-    if (e.advisor) item.advisor = e.advisor;
+    if (e.advisor) item.advisor = extractLang(e.advisor);
     if (e.thesis) {
       item.thesis = {
         title:       extractLang(e.thesis.title),

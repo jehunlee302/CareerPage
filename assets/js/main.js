@@ -247,7 +247,11 @@ function formatMethodology(text) {
 function parseAdvisor(r) {
   const m = r.match(/^(Advisor:\s*[^,]+),\s*(https?:\/\/\S+)$/i)
          || r.match(/^(.+?)\s*\(\s*(https?:\/\/\S+?)\s*\)$/);
-  return m ? `Advisor: ${esc(m[1].trim())} — <a href="${m[2].trim()}" target="_blank" rel="noopener" class="tl-link">Homepage ↗</a>` : esc(r);
+  if (!m) return esc(r);
+  const name = m[1].trim();
+  const label = LANG === 'ko' ? '지도교수' : 'Advisor';
+  const prof = name.startsWith('Prof.') ? name : `Prof. ${name}`;
+  return `${label}: ${esc(prof)} — <a href="${m[2].trim()}" target="_blank" rel="noopener" class="tl-link">Homepage ↗</a>`;
 }
 
 /* ─── Experience ─── */
