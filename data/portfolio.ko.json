@@ -112,8 +112,8 @@
   "workExperience": [
     {
       "position": "생산계획 솔루션 컨설턴트",
-      "organization": "VMS Solutions Inc.",
-      "division": "Solution Division | Consultant Part",
+      "organization": "VMS 솔루션스",
+      "division": "솔루션사업부 | 솔루션 컨설턴트 파트",
       "period": "2025.08 - Present",
       "roles": "시스템 설계 및 PMO: 디지털 트윈 플랫폼, 생산-물류 통합 시뮬레이터, 시뮬레이션 기반 AI 스케줄러, SaaS 제품",
       "performance": "",
@@ -131,8 +131,8 @@
     },
     {
       "position": "생산계획 솔루션 컨설턴트",
-      "organization": "VMS Solutions Inc.",
-      "division": "Solution Division | Micron Part",
+      "organization": "VMS 솔루션스",
+      "division": "솔루션사업부 | Micron 유지보수",
       "period": "2025.02 - 2025.07",
       "roles": "솔루션 컨설턴트: 시뮬레이션 기반 실시간 APS 유지보수, 시스템 셋팅 원격 지원",
       "performance": "",
@@ -143,8 +143,8 @@
     },
     {
       "position": "전문연구요원",
-      "organization": "South Korea (KAIST, VMS Solutions Inc.)",
-      "division": "Ministry of National Defense",
+      "organization": "대한민국 (KAIST, VMS 솔루션스)",
+      "division": "국방부",
       "period": "2023.03 - 2026.02",
       "roles": "산업 R&D (병역 대체 복무)",
       "performance": "",
@@ -153,7 +153,7 @@
     {
       "position": "연구원",
       "organization": "KAIST",
-      "division": "MSS (Manufacturing Service Systems) Lab.",
+      "division": "MSS (Manufacturing Service Systems) 연구실",
       "period": "2021.03 - 2025.02",
       "roles": "핵심 연구원: AI 기반 동적 스케줄러, 최적화 기반 휴리스틱, 자율 제조 스케줄링 시스템",
       "performance": "",
@@ -176,7 +176,7 @@
     {
       "position": "연구원",
       "organization": "SKKU",
-      "division": "SCO (Systems Control & Optimization) Lab.",
+      "division": "SCO (Systems Control & Optimization) 연구실",
       "period": "2016.04 - 2021.02",
       "roles": "스케줄링 알고리즘 개발: 메타휴리스틱, 최적화; 시스템 설계: 제조 디지털 트윈, 동적 리스케줄링 시스템",
       "performance": "",

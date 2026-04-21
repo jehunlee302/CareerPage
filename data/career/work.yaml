@@ -1,8 +1,12 @@
 - position:
     en: Planning & Scheduling Solution Consultant
     ko: 생산계획 솔루션 컨설턴트
-  organization: VMS Solutions Inc.
-  division: Solution Division | Consultant Part
+  organization:
+    en: VMS Solutions Inc.
+    ko: VMS 솔루션스
+  division:
+    en: Solution Division | Consultant Part
+    ko: 솔루션사업부 | 솔루션 컨설턴트 파트
   period: 2025.08 - Present
   roles:
     en: "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product"
@@ -29,8 +33,12 @@
 - position:
     en: Planning & Scheduling Solution Consultant
     ko: 생산계획 솔루션 컨설턴트
-  organization: VMS Solutions Inc.
-  division: Solution Division | Micron Part
+  organization:
+    en: VMS Solutions Inc.
+    ko: VMS 솔루션스
+  division:
+    en: Solution Division | Micron Part
+    ko: 솔루션사업부 | Micron 유지보수
   period: 2025.02 - 2025.07
   roles:
     en: "Solution consultant: simulation-based real-time APS maintenance, system configuration remote support"
@@ -43,8 +51,12 @@
 - position:
     en: Technical Research Personnel
     ko: 전문연구요원
-  organization: South Korea (KAIST, VMS Solutions Inc.)
-  division: Ministry of National Defense
+  organization:
+    en: South Korea (KAIST, VMS Solutions Inc.)
+    ko: 대한민국 (KAIST, VMS 솔루션스)
+  division:
+    en: Ministry of National Defense
+    ko: 국방부
   period: 2023.03 - 2026.02
   roles:
     en: Industrial R&D (alternative military service)
@@ -55,7 +67,9 @@
     en: Researcher
     ko: 연구원
   organization: KAIST
-  division: MSS (Manufacturing Service Systems) Lab.
+  division:
+    en: MSS (Manufacturing Service Systems) Lab.
+    ko: MSS (Manufacturing Service Systems) 연구실
   period: 2021.03 - 2025.02
   advisor: Hyun-Jung Kim
   roles:
@@ -87,7 +101,9 @@
     en: Researcher
     ko: 연구원
   organization: SKKU
-  division: SCO (Systems Control & Optimization) Lab.
+  division:
+    en: SCO (Systems Control & Optimization) Lab.
+    ko: SCO (Systems Control & Optimization) 연구실
   period: 2016.04 - 2021.02
   advisor: Hyun-Jung Kim
   roles:

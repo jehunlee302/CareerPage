@@ -260,6 +260,7 @@ function renderExperience(items) {
   el.innerHTML = items.map(item => {
     const hasResp = item.responsibilities && item.responsibilities.length > 0;
     const hasHighlights = item.highlights && item.highlights.length > 0;
+    const hasDetails = hasResp || hasHighlights;
     return `
     <div class="timeline-item reveal">
       <div class="tl-header">
@@ -273,10 +274,25 @@ function renderExperience(items) {
         </div>
       </div>
       <div class="tl-roles">${esc(item.roles)}</div>
-      ${hasResp ? `<ul class="tl-responsibilities">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
-      ${hasHighlights ? `<div class="tl-highlights">${item.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : ''}
+      ${hasDetails ? `<div class="exp-expand-btn" tabindex="0" role="button"><span class="exp-expand-hint">${t('ui.details')}</span></div>` : ''}
+      ${hasDetails ? `<div class="exp-details" style="display:none">
+        ${hasResp ? `<ul class="tl-responsibilities">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
+        ${hasHighlights ? `<div class="tl-highlights">${item.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : ''}
+      </div>` : ''}
     </div>`;
   }).join('');
+
+  /* Expand/collapse */
+  el.querySelectorAll('.exp-expand-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const details = btn.nextElementSibling;
+      const hint = btn.querySelector('.exp-expand-hint');
+      if (!details) return;
+      const open = details.style.display !== 'none';
+      details.style.display = open ? 'none' : 'block';
+      if (hint) hint.textContent = open ? t('ui.details') : t('ui.collapse');
+    });
+  });
 }
 
 /* ─── Featured Projects ─── */

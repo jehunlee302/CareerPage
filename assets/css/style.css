@@ -228,7 +228,11 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 
 /* Work Experience Details */
-.tl-responsibilities{font-size:.82rem;color:var(--text-mid);line-height:1.55;margin:.4rem 0 0;padding-left:1.2rem;list-style:disc}
+.exp-expand-btn{cursor:pointer;margin-top:.3rem;transition:color var(--t)}
+.exp-expand-btn:hover{color:var(--blue)}
+.exp-expand-hint{font-size:.78rem;color:var(--blue);font-weight:600}
+.exp-details{margin-top:.5rem;padding:.7rem 1rem;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--r-md);animation:fadeIn .25s ease}
+.tl-responsibilities{font-size:.82rem;color:var(--text-mid);line-height:1.55;margin:0;padding-left:1.2rem;list-style:disc}
 .tl-responsibilities li{margin-bottom:.25rem}
 .tl-highlights{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
 .tl-highlight-item{font-size:.76rem;font-weight:600;color:var(--blue);background:var(--blue-dim);padding:.25rem .65rem;border-radius:4px;line-height:1.4}

@@ -141,8 +141,8 @@ function buildWork(raw) {
   return raw.map(w => {
     const item = {
       position:     extractLang(w.position),
-      organization: w.organization,
-      division:     w.division || '',
+      organization: extractLang(w.organization),
+      division:     extractLang(w.division) || '',
       period:       w.period,
       roles:        extractLang(w.roles),
       performance:  w.performance || '',
