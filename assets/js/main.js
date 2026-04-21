@@ -46,7 +46,7 @@ const I18N = {
 };
 function t(key) { const parts = key.split('.'); let obj = I18N[LANG]; for (const p of parts) { obj = obj?.[p]; } return obj || key; }
 const PROJ_PER_PAGE = 9;
-const PUB_PER_PAGE = 8;
+const PUB_PER_PAGE = 6;
 const AWARD_PER_PAGE = 6;
 const ACTIVITY_PER_PAGE = 6;
 
@@ -404,7 +404,7 @@ function renderPublications(items) {
           <div class="pub-title">"${esc(pub.title)}"</div>
           <div class="pub-venue">${esc(venue)}</div>
         </div>
-        <div class="pub-side">${link}<div class="pub-badges">${tb}${fb}</div></div>
+        <div class="pub-side">${link}<div class="pub-badges">${fb}${tb}</div></div>
       </div>
     </div>`;
   }).join('');
@@ -441,16 +441,32 @@ function renderAwards(items) {
   _awardPager = createPager(el, AWARD_PER_PAGE, 'awardsPager');
 }
 
-/* ─── Reusable Pager ─── */
+/* ─── Reusable Pager (top + bottom) ─── */
 function createPager(gridEl, perPage, navId) {
   let page = 0;
   const nav = document.getElementById(navId);
   if (!nav) return { show(){}, reset(){} };
+
+  const pagerHtml = `<button class="paged-btn paged-prev" disabled>←</button><span class="paged-info"></span><button class="paged-btn paged-next">→</button>`;
   nav.className = 'paged-nav-inline';
-  nav.innerHTML = `<button class="paged-btn paged-prev" disabled>←</button><span class="paged-info"></span><button class="paged-btn paged-next">→</button>`;
-  const prev = nav.querySelector('.paged-prev'), next = nav.querySelector('.paged-next'), info = nav.querySelector('.paged-info');
-  prev.addEventListener('click', () => { page--; show(); });
-  next.addEventListener('click', () => { page++; show(); });
+  nav.innerHTML = pagerHtml;
+
+  /* Bottom pager */
+  let navBot = document.getElementById(navId + 'Bot');
+  if (!navBot) {
+    navBot = document.createElement('div');
+    navBot.id = navId + 'Bot';
+    gridEl.parentNode.insertBefore(navBot, gridEl.nextSibling);
+  }
+  navBot.className = 'paged-nav-inline paged-nav-bottom';
+  navBot.innerHTML = pagerHtml;
+
+  const navs = [nav, navBot];
+
+  navs.forEach(n => {
+    n.querySelector('.paged-prev').addEventListener('click', () => { page--; show(); });
+    n.querySelector('.paged-next').addEventListener('click', () => { page++; show(); });
+  });
 
   function show() {
     const all = [...gridEl.querySelectorAll('[data-paged]')];
@@ -459,8 +475,11 @@ function createPager(gridEl, perPage, navId) {
     page = Math.max(0, Math.min(page, total - 1));
     all.forEach(el => el.style.display = 'none');
     vis.slice(page * perPage, (page + 1) * perPage).forEach(el => el.style.display = '');
-    info.textContent = `${page+1} / ${total}`;
-    prev.disabled = page === 0; next.disabled = page >= total - 1;
+    navs.forEach(n => {
+      n.querySelector('.paged-info').textContent = `${page+1} / ${total}`;
+      n.querySelector('.paged-prev').disabled = page === 0;
+      n.querySelector('.paged-next').disabled = page >= total - 1;
+    });
     reReveal(gridEl);
   }
   show();

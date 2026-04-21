@@ -61,6 +61,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .paged-nav-inline .paged-btn:hover:not(:disabled){border-color:var(--blue)}
 .paged-nav-inline .paged-btn:disabled{opacity:.25;cursor:default}
 .paged-nav-inline .paged-info{font-size:.75rem;color:var(--text-muted);font-weight:600;min-width:2.5rem;text-align:center}
+.paged-nav-bottom{margin-top:1rem;justify-content:center}
 
 /* ── Buttons ── */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.35rem;border-radius:7px;font-size:.875rem;font-weight:600;transition:all var(--t) var(--ease);white-space:nowrap}
@@ -291,7 +292,7 @@ h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em}
 .pub-link{font-size:.73rem;color:#000;text-decoration:underline;white-space:nowrap;font-weight:500}
 .pub-title{font-size:.9rem;font-weight:600;color:var(--navy);line-height:1.35;margin-bottom:.15rem}
 .pub-venue{font-size:.82rem;color:var(--text-mid);line-height:1.4}
-.pub-badges{display:flex;gap:.25rem;flex-wrap:wrap}
+.pub-badges{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem}
 .badge{font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;letter-spacing:.03em}
 .badge-journal{background:rgba(0,122,255,.12);color:var(--blue)}
 .badge-conf{background:rgba(10,25,47,.08);color:var(--navy)}
