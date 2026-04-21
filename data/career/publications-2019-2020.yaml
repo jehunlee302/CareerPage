@@ -11,7 +11,7 @@
   title: A sequential search method of dispatching rules for scheduling of LCD manufacturing systems
   venue: IEEE Transactions on Semiconductor Manufacturing
   full_citation: "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Jung, and H.-J. Kim*, \"A sequential search method of dispatching rules for scheduling of LCD manufacturing systems,\" IEEE Transactions on Semiconductor Manufacturing, vol. 33, no. 4, pp. 496-503, 2020."
-  link: https://ieeexplore.ieee.org/document/9186648
+  link: https://ieeexplore.ieee.org/document/9215002
 
 - index: 12
   year: 2020
@@ -22,7 +22,7 @@
   title: A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems
   venue: Winter Simulation Conference
   full_citation: "J.-H. Lee, Y. Kim, Y. B. Kim, B.-H. Kim, G.-H. Chung, and H.-J. Kim*, \"A simulation-based sequential search method for multi-objective scheduling problems of manufacturing systems,\" Winter Simulation Conference, Online, 2020, pp. 1943-1953."
-  link: https://ieeexplore.ieee.org/document/9384046
+  link: ""
   remarks: Online
 
 - index: 11
@@ -45,7 +45,7 @@
   title: Digital twin-based cyber physical production system architectural framework for personalized production
   venue: The International Journal of Advanced Manufacturing Technology
   full_citation: "K. T. Park, J. Lee, H. J. Kim, and S. D. Noh*, \"Digital twin-based cyber physical production system architectural framework for personalized production,\" The International Journal of Advanced Manufacturing Technology, vol. 106, no. 5, 2020, pp. 1787-1810."
-  link: https://doi.org/10.1007/s00170-019-04326-x
+  link: https://link.springer.com/article/10.1007/s00170-019-04653-7
 
 - index: 9
   year: 2020
@@ -56,7 +56,7 @@
   title: Workforce assignment with a different skill level for automotive parts assembly lines
   venue: Advances in Production Management Systems (APMS)
   full_citation: "H. Yang, J.-H. Lee, and H.-J. Kim*, \"Workforce assignment with a different skill level for automotive parts assembly lines,\" Advances in Production Management Systems (APMS), Novi Sad, Serbia, 2020, pp. 206-212."
-  link: https://doi.org/10.1007/978-3-030-57993-7_24
+  link: https://link.springer.com/chapter/10.1007/978-3-030-57997-5_24
   remarks: Novi Sad, Serbia
 
 - index: 8
@@ -68,7 +68,7 @@
   title: A sequential search framework for selecting weights of dispatching rules in manufacturing systems
   venue: Winter Simulation Conference
   full_citation: "J.-H. Lee, Y. Kim, Y.-B. Kim, H.-J. Kim*, B.-H. Kim, and G.-H. Chung, \"A sequential search framework for selecting weights of dispatching rules in manufacturing systems,\" Winter Simulation Conference, Maryland, USA, 2019, pp. 2201-2211."
-  link: https://ieeexplore.ieee.org/document/9004897
+  link: https://ieeexplore.ieee.org/document/9004693
   remarks: Maryland, USA
 
 - index: 7

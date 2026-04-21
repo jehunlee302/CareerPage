@@ -1,5 +1,25 @@
 # Deployment
 
+## Pre-Deploy Checklist
+
+Before pushing to production, verify:
+
+- [ ] `node scripts/yaml-to-json.js` runs without errors (both en and ko)
+- [ ] **Hyperlink verification**: All publication links point to correct papers
+  - Open each `View Paper` link and confirm the paper title matches
+  - Check IEEE Xplore links (`ieeexplore.ieee.org/document/XXXXXXX`)
+  - Check Springer links (`link.springer.com/...`)
+  - Check for any remaining page-title-as-URL values (not actual URLs)
+- [ ] **EN/KO toggle**: Switch language and verify all sections render correctly
+  - Section labels, nav, filter buttons switch language
+  - Data content (projects, experience, education) switches language
+  - No mixed-language content (English data with Korean labels or vice versa)
+- [ ] **Modal links**: Click featured projects and project cards, verify modal opens with correct data
+- [ ] **Pagination**: Navigate through project/publication/award/activity pages
+- [ ] **Mobile**: Test on mobile viewport (hamburger nav, single-column grids, lang toggle)
+- [ ] **Images**: Profile photo and background load correctly from `assets/img/`
+- [ ] **Resume PDF**: If `data/resume.pdf` exists, download button works
+
 ## Pipeline
 
 ```
