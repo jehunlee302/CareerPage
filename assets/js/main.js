@@ -149,7 +149,7 @@ function renderHero(data) {
   const locEl = document.getElementById('heroLocationText');
   if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
   const sumEl = document.getElementById('heroSummary');
-  if (sumEl) sumEl.textContent = data.basic?.summary || '';
+  if (sumEl) sumEl.innerHTML = esc(data.basic?.summary || '').replace(/\n/g, '<br>');
   const resBtn = document.getElementById('heroResumeBtn');
   if (resBtn && data.basic?.resume) {
     resBtn.href = data.basic.resume;
