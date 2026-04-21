@@ -245,8 +245,9 @@ function formatMethodology(text) {
   return lines.map(l => `<p>${esc(l)}</p>`).join('');
 }
 function parseAdvisor(r) {
-  const m = r.match(/^(Advisor:\s*[^,]+),\s*(https?:\/\/\S+)$/i);
-  return m ? `${esc(m[1].trim())} — <a href="${m[2].trim()}" target="_blank" rel="noopener" class="tl-link">Homepage ↗</a>` : esc(r);
+  const m = r.match(/^(Advisor:\s*[^,]+),\s*(https?:\/\/\S+)$/i)
+         || r.match(/^(.+?)\s*\(\s*(https?:\/\/\S+?)\s*\)$/);
+  return m ? `Advisor: ${esc(m[1].trim())} — <a href="${m[2].trim()}" target="_blank" rel="noopener" class="tl-link">Homepage ↗</a>` : esc(r);
 }
 
 /* ─── Experience ─── */
