@@ -220,6 +220,8 @@ ${entries}
 `;
 }
 
+const MAX_RESP_LINES = 6;
+
 function generateExperience(work) {
   if (!Array.isArray(work) || !work.length) return '';
   const entries = work.map(w => {
@@ -230,18 +232,20 @@ function generateExperience(work) {
     const inst = div ? `${tex(org)} | ${tex(div)}` : tex(org);
     const roles = tex(extractLang(w.roles));
 
-    // Responsibilities
+    // Responsibilities (capped for readability)
     const resps = (w.responsibilities || []).map(r => {
       const text = typeof r === 'object' ? (r[LANG] || r.en || '') : r;
       return tex(text);
     });
-    // Highlights
+    // Highlights (always include — these are key achievements)
     const highlights = (w.highlights || []).map(h => {
       const text = typeof h === 'object' ? (h[LANG] || h.en || '') : h;
       return tex(text);
     });
 
-    const extra = [...resps, ...highlights].join('\n    \\\\ ');
+    // Cap responsibilities, then append highlights
+    const cappedResps = resps.slice(0, MAX_RESP_LINES);
+    const extra = [...cappedResps, ...highlights].join('\n    \\\\ ');
 
     return `%---------------------------------------------------------
   \\cventry
@@ -280,27 +284,35 @@ function generateProjects(projects) {
     const partners = p.partners || [];
     const affiliated = p.affiliated_institution || '';
 
-    // Build institution line
-    const parts = [];
-    if (affiliated) parts.push(tex(affiliated));
+    // Build institution line (avoid repeating same name)
+    const instParts = [];
+    if (affiliated) instParts.push(tex(affiliated));
     const withParts = [];
-    if (client) withParts.push(tex(client));
+    if (client && client !== affiliated?.replace(/ Inc\.$/, '')) withParts.push(tex(client));
     partners.forEach(pr => withParts.push(tex(pr)));
-    if (withParts.length) parts.push(`with ${withParts.join(', ')}`);
-    const instLine = parts.length ? parts.join(' (') + (parts.length > 1 ? ')' : '') : '';
+    if (withParts.length) {
+      if (instParts.length) instParts[0] += ` (with ${withParts.join(', ')})`;
+      else instParts.push(`with ${withParts.join(', ')}`);
+    }
+    const instLine = instParts.join('');
 
-    // Build task lines
+    // Build task lines: details.tasks > details.purpose > remarks
     let tasks = [];
-    if (p.details && p.details.tasks) {
-      tasks = (Array.isArray(p.details.tasks) ? p.details.tasks : []).map(t => {
+    if (p.details && p.details.tasks && p.details.tasks.length) {
+      tasks = p.details.tasks.map(t => {
         const text = typeof t === 'object' ? (t[LANG] || t.en || '') : t;
         return tex(text);
-      });
+      }).filter(Boolean);
     } else if (p.details && p.details.purpose) {
       const purpose = typeof p.details.purpose === 'object'
         ? (p.details.purpose[LANG] || p.details.purpose.en || '')
         : (p.details.purpose || '');
       if (purpose) tasks.push(tex(purpose));
+    }
+    // Fallback to remarks if no tasks
+    if (!tasks.length) {
+      const rem = typeof p.remarks === 'object' ? (p.remarks[LANG] || p.remarks.en || '') : (p.remarks || '');
+      if (rem) tasks.push(tex(rem));
     }
 
     // Achievements line
@@ -346,7 +358,9 @@ function generatePublications(pubs) {
     const year = String(p.year || '');
     const title = tex(p.title || '');
     const venue = tex(p.venue || '');
-    const role = p.role || '';
+    // Normalize role: "1st Author" stays, everything else → "Co-Author"
+    const rawRole = p.role || '';
+    const role = /1st/i.test(rawRole) ? '1st Author' : (rawRole ? 'Co-Author' : '');
     const link = p.link || '';
 
     let yearComment = '';
