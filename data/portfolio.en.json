@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21",
+  "lastUpdated": "2026-04-22",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -16,7 +16,7 @@
     "website": "jehun-lee.work",
     "location": "Yongin, Gyeonggi-do, South Korea",
     "googleSite": "https://sites.google.com/view/jehun-lee",
-    "resume": "https://drive.google.com/file/d/13nM4jAtQQDLXZK1114uZt8g08bC7stCA/view",
+    "resume": "data/resume-en.pdf",
     "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25+ projects\nSCI journals 5 (1st author 2) · Intl. conferences 11 · Domestic conferences 9\nAI scheduler · AI agent · Digital twin · Simulation-based optimization · Autonomous manufacturing"
   },
   "philosophy": {
@@ -226,12 +226,19 @@
       "index": 24,
       "period": "2025.03 -",
       "duration": "",
-      "title": "",
+      "title": "Software product design/development: simulation-based scheduling for semiconductor manufacturing",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
-      "remarks": ""
+      "remarks": "",
+      "details": {
+        "purpose": "Design and develop simulation-based scheduling product for semiconductor manufacturing",
+        "role": "Solution consultant",
+        "tasks": [
+          "User scenario definition and data schema design"
+        ]
+      }
     },
     {
       "index": 23,
@@ -823,7 +830,7 @@
       "title": "Vulnerability analysis of evacuation transportation networks",
       "fullCitation": "J. Kim, J.-H. Lee, H.-J. Kim, and B. D. Chung*, \"Vulnerability analysis of evacuation transportation networks,\" International Journal of Industrial Engineering-Theory Applications and Practice, vol. 25, no. 5, 2018, pp. 663-673.",
       "type": "Journal",
-      "link": "https://eds.s.ebscohost.com/eds/pdfviewer/pdfviewer?vid=0&sid=aae09a75-7b12-43fb-8fb9-3cea0c5bccfd%40redis",
+      "link": "",
       "role": "Co-Author",
       "remarks": "",
       "year": 2018,

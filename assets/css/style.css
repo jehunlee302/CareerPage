@@ -38,6 +38,10 @@ ul{list-style:none}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 img{max-width:100%;display:block}
 
+/* ── Focus (Accessibility) ── */
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:var(--r-sm)}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
 /* ── Layout ── */
 .container{max-width:1120px;margin:0 auto;padding:0 2rem}
 section{padding:4.5rem 0}

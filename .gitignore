@@ -22,6 +22,17 @@ node_modules/
 # Logs
 *.log
 
+# LaTeX (generated files + build artifacts)
+latex/resume.tex
+latex/sections/
+latex/*.aux
+latex/*.fdb_latexmk
+latex/*.fls
+latex/*.log
+latex/*.out
+latex/*.synctex.gz
+latex/*.pdf
+
 # Secrets (never commit)
 .env
 *.key

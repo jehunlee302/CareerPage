@@ -10,6 +10,7 @@ Vanilla HTML/CSS/JS, GitHub Pages, no build step, no framework.
 
 ```
 data/career/*.yaml → scripts/yaml-to-json.js → data/portfolio.json → assets/js/main.js → index.html
+data/career/*.yaml → scripts/yaml-to-latex.js → latex/sections/*.tex → xelatex → data/resume-{en,ko}.pdf
 ```
 
 ## Key Commands
@@ -17,7 +18,10 @@ data/career/*.yaml → scripts/yaml-to-json.js → data/portfolio.json → asset
 ```bash
 node scripts/yaml-to-json.js            # Build JSON from YAML (English)
 node scripts/yaml-to-json.js --lang ko  # Build JSON (Korean)
-deploy.bat                               # Build + commit + push
+node scripts/yaml-to-latex.js           # Build LaTeX from YAML (English)
+node scripts/yaml-to-latex.js --lang ko # Build LaTeX (Korean)
+scripts/build-resume.bat                 # Build resume PDFs (en + ko)
+deploy.bat                               # Build all + commit + push
 ```
 
 ## File Map
@@ -26,6 +30,11 @@ deploy.bat                               # Build + commit + push
 |------|---------|
 | `data/career/` | Source of truth (YAML, bilingual en/ko) |
 | `data/portfolio.json` | Generated — do not edit directly |
+| `data/resume-en.pdf` | Generated EN resume PDF |
+| `data/resume-ko.pdf` | Generated KO resume PDF |
+| `latex/resume.cls` | LaTeX resume template class |
+| `latex/fonts/` | Pretendard font files for PDF |
+| `latex/sections/*.tex` | Generated LaTeX sections — do not edit directly |
 | `assets/js/main.js` | All rendering logic |
 | `assets/css/style.css` | All styles |
 | `index.html` | Shell (no hardcoded content) |

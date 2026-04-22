@@ -1,0 +1,101 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      # ── JSON Build ──
+      - name: Build portfolio JSON (EN + KO)
+        run: |
+          node scripts/yaml-to-json.js
+          cp data/portfolio.json data/portfolio.en.json
+          node scripts/yaml-to-json.js --lang ko
+          cp data/portfolio.json data/portfolio.ko.json
+          cp data/portfolio.en.json data/portfolio.json
+
+      # ── Resume PDF Build (EN) ──
+      - name: Generate LaTeX (EN)
+        run: node scripts/yaml-to-latex.js --lang en
+
+      - name: Compile PDF (EN)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: latex
+          root_file: resume.tex
+          latexmk_use_xelatex: true
+
+      - name: Save EN PDF
+        run: cp latex/resume.pdf data/resume-en.pdf
+
+      # ── Resume PDF Build (KO) ──
+      - name: Generate LaTeX (KO)
+        run: node scripts/yaml-to-latex.js --lang ko
+
+      - name: Compile PDF (KO)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: latex
+          root_file: resume.tex
+          latexmk_use_xelatex: true
+
+      - name: Save KO PDF
+        run: cp latex/resume.pdf data/resume-ko.pdf
+
+      # ── Commit PDFs back to repo ──
+      - name: Commit generated PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/resume-en.pdf data/resume-ko.pdf data/portfolio.json data/portfolio.en.json data/portfolio.ko.json
+          git diff --cached --quiet || git commit -m "build: auto-generate resume PDFs and portfolio JSON"
+          git push
+
+      # ── Assemble Site ──
+      - name: Prepare site directory
+        run: |
+          mkdir -p _site/assets/css _site/assets/js _site/assets/img _site/data
+          cp index.html CNAME .nojekyll _site/
+          cp assets/css/style.css _site/assets/css/
+          cp assets/js/main.js _site/assets/js/
+          cp -r assets/img/* _site/assets/img/
+          cp data/portfolio.json data/portfolio.en.json data/portfolio.ko.json _site/data/
+          cp data/resume-en.pdf data/resume-ko.pdf _site/data/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

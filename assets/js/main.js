@@ -23,6 +23,7 @@ const RESEARCH_INTERESTS = {
 };
 const FEATURED_PROJECT_INDICES = [25, 23, 21];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
+const RESUME_URLS = { en: 'data/resume-en.pdf', ko: 'data/resume-ko.pdf' };
 const HERO_TAGS = {
   en: ['Autonomous Scheduling','Digital Twin','Reinforcement Learning','Semiconductor Fab','AI-Native Manufacturing','KAIST Ph.D.'],
   ko: ['자율 스케줄링','디지털 트윈','강화학습','반도체 팹','AI 네이티브 제조','KAIST 박사'],
@@ -34,13 +35,13 @@ const I18N = {
   en: {
     nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
     label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
-    ui: { contactMe:'Contact Me', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', purpose:'Purpose', keyTasks:'Key Tasks', achievements:'Achievements', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author' },
+    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', purpose:'Purpose', keyTasks:'Key Tasks', achievements:'Achievements', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author' },
     impact: { projects:'Major Projects', pm:'PM Roles', pubs:'Publications', honors:'Honors & Prizes', patent:'Patent' },
   },
   ko: {
     nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
     label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
-    ui: { contactMe:'연락하기', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', purpose:'목적', keyTasks:'주요 업무', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자' },
+    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', purpose:'목적', keyTasks:'주요 업무', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자' },
     impact: { projects:'주요 프로젝트', pm:'PM 수행', pubs:'논문', honors:'수상', patent:'특허' },
   },
 };
@@ -150,12 +151,10 @@ function renderHero(data) {
   if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
   const sumEl = document.getElementById('heroSummary');
   if (sumEl) sumEl.innerHTML = esc(data.basic?.summary || '').replace(/\n/g, '<br>');
-  const resBtn = document.getElementById('heroResumeBtn');
-  if (resBtn && data.basic?.resume) {
-    resBtn.href = data.basic.resume;
-    resBtn.style.display = '';
-    resBtn.lastChild.textContent = LANG === 'ko' ? ' Resume' : ' Resume';
-  }
+  const resBtnEn = document.getElementById('heroResumeBtnEn');
+  const resBtnKo = document.getElementById('heroResumeBtnKo');
+  if (resBtnEn) { resBtnEn.href = RESUME_URLS.en; resBtnEn.querySelector('span').textContent = t('ui.resumeEn'); }
+  if (resBtnKo) { resBtnKo.href = RESUME_URLS.ko; resBtnKo.querySelector('span').textContent = t('ui.resumeKo'); }
 }
 
 /* ─── Typewriter ─── */
@@ -226,6 +225,7 @@ function renderEducation(items) {
 
   /* Thesis expand/collapse */
   el.querySelectorAll('.edu-thesis-expandable').forEach(btn => {
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
     btn.addEventListener('click', () => {
       const details = btn.nextElementSibling;
       const hint = btn.querySelector('.edu-expand-hint');
@@ -251,7 +251,7 @@ function parseAdvisor(r) {
   const name = m[1].trim();
   const label = LANG === 'ko' ? '지도교수' : 'Advisor';
   const prof = name.startsWith('Prof.') ? name : `Prof. ${name}`;
-  return `${label}: ${esc(prof)} — <a href="${m[2].trim()}" target="_blank" rel="noopener" class="tl-link">Homepage ↗</a>`;
+  return `${label}: ${esc(prof)} — <a href="${m[2].trim()}" target="_blank" rel="noopener noreferrer" class="tl-link">Homepage ↗</a>`;
 }
 
 /* ─── Experience ─── */
@@ -284,6 +284,7 @@ function renderExperience(items) {
 
   /* Expand/collapse */
   el.querySelectorAll('.exp-expand-btn').forEach(btn => {
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
     btn.addEventListener('click', () => {
       const details = btn.nextElementSibling;
       const hint = btn.querySelector('.exp-expand-hint');
@@ -395,7 +396,7 @@ function renderPublications(items) {
     else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">${t('ui.intlConfBadge')}</span>`:`<span class="badge badge-conf badge-domestic">${t('ui.domConfBadge')}</span>`; }
     const fb = pub.role==='1st Author'?`<span class="badge badge-1st">${t('ui.firstAuthor')}</span>`:'';
     const venue = [pub.venue,pub.year,pub.remarks].filter(Boolean).join(' · ');
-    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener" class="pub-link">${t('ui.viewPaper')}</a>`:'';
+    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-link">${t('ui.viewPaper')}</a>`:'';
     return `<div class="pub-item reveal" data-paged data-type="${dt}">
       <span class="pub-num">[${pub.index}]</span>
       <div class="pub-body">
@@ -523,7 +524,7 @@ function renderContact(basic) {
   if (basic.location) cs.push({i:'📍',l:t('ui.location'),v:basic.location,h:null});
   el.innerHTML = cs.map(c => {
     const inn = `<div class="contact-icon">${c.i}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
-    return c.h ? `<a href="${c.h}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
+    return c.h ? `<a href="${c.h}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
   }).join('');
 }
 

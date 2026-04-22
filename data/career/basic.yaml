@@ -17,7 +17,9 @@ location:
   en: Yongin, Gyeonggi-do, South Korea
   ko: 경기도 용인시
 google_site: https://sites.google.com/view/jehun-lee
-resume: https://drive.google.com/file/d/13nM4jAtQQDLXZK1114uZt8g08bC7stCA/view
+resume:
+  en: data/resume-en.pdf
+  ko: data/resume-ko.pdf
 
 summary:
   en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25+ projects\nSCI journals 5 (1st author 2) · Intl. conferences 11 · Domestic conferences 9\nAI scheduler · AI agent · Digital twin · Simulation-based optimization · Autonomous manufacturing"

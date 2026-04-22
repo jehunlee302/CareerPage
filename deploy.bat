@@ -26,10 +26,34 @@ copy /Y data\portfolio.json data\portfolio.ko.json > nul
 copy /Y data\portfolio.en.json data\portfolio.json > nul
 echo 빌드 완료: portfolio.json (en) + portfolio.ko.json
 
+:: Step 1b: Resume PDF 빌드 (xelatex가 있는 경우만)
+where xelatex >nul 2>&1
+if %errorlevel% == 0 (
+  echo.
+  echo [1b/3] Resume PDF 빌드 중...
+  node scripts/yaml-to-latex.js --lang en
+  pushd latex
+  xelatex -interaction=nonstopmode resume.tex > nul 2>&1
+  xelatex -interaction=nonstopmode resume.tex > nul 2>&1
+  popd
+  if exist latex\resume.pdf copy /Y latex\resume.pdf data\resume-en.pdf > nul
+  node scripts/yaml-to-latex.js --lang ko
+  pushd latex
+  xelatex -interaction=nonstopmode resume.tex > nul 2>&1
+  xelatex -interaction=nonstopmode resume.tex > nul 2>&1
+  popd
+  if exist latex\resume.pdf copy /Y latex\resume.pdf data\resume-ko.pdf > nul
+  node scripts/yaml-to-latex.js --lang en > nul 2>&1
+  del /q latex\*.aux latex\*.log latex\*.out 2>nul
+  echo   ✓ data\resume-en.pdf + data\resume-ko.pdf
+) else (
+  echo [1b/3] xelatex 미설치 — Resume PDF 빌드 건너뜀
+)
+
 :: Step 2: Git 커밋
 echo.
 echo [2/3] GitHub에 업로드 중...
-git add data/portfolio.json data/portfolio.ko.json assets/js/main.js assets/css/style.css index.html
+git add data/portfolio.json data/portfolio.ko.json data/resume-en.pdf data/resume-ko.pdf assets/js/main.js assets/css/style.css index.html
 git diff --cached --quiet
 if %errorlevel% == 0 (
   echo 변경사항 없음.

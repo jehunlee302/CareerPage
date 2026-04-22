@@ -52,8 +52,7 @@ function extractLang(obj) {
 
   // Bilingual object: { en: ..., ko: ... }
   if (typeof obj === 'object' && !Array.isArray(obj) && ('en' in obj || 'ko' in obj)) {
-    const val = obj[LANG] || obj['en'] || '';
-    return typeof val === 'string' ? val : val;
+    return obj[LANG] || obj['en'] || '';
   }
 
   // Array
@@ -82,7 +81,7 @@ function buildBasic(raw) {
     website:    raw.website || '',
     location:   typeof raw.location === 'object' ? (raw.location[LANG] || raw.location.en) : (raw.location || ''),
     googleSite: raw.google_site || '',
-    resume:     raw.resume || '',
+    resume:     typeof raw.resume === 'object' ? (raw.resume[LANG] || raw.resume.en || '') : (raw.resume || ''),
     summary:    extractLang(raw.summary),
   };
 }
