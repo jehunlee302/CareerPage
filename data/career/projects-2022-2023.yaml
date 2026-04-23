@@ -56,9 +56,12 @@
   affiliated_institution: KAIST
   is_pm: false
   details:
+    situation:
+      en: "Samsung Heavy Industries' 6-month shipbuilding schedule suffered from severe daily manpower fluctuations, causing inefficient resource utilization and increased labor costs"
+      ko: "삼성중공업의 6개월 선박건조 스케줄에서 일별 인력 편차가 심해 자원 활용 비효율과 인건비 증가 문제 발생"
     purpose:
-      en: RL-based production planning to minimize daily worker deviation in shipbuilding
-      ko: 강화학습 기반 작업자 편차 최소화 생산계획 수립
+      en: "Minimize daily worker employment deviation using RL-based schedule adjustment (objective: min std. dev. of daily manpower)"
+      ko: "강화학습 기반 스케줄 조정으로 일별 작업자 고용 편차 최소화 (목적함수: 일별 인력 표준편차 최소화)"
     role:
       en: Planning, Researcher
       ko: 기획, 연구원
@@ -88,9 +91,12 @@
   affiliated_institution: KAIST
   is_pm: true
   details:
+    situation:
+      en: "In a EUREKA international collaboration (Korea-Sweden), automotive parts assembly required real-time worker allocation optimization to reduce cycle time in semi-automated production lines with varying worker skill levels"
+      ko: "EUREKA 국제 공동연구(한국-스웨덴)에서 반자동 조립라인의 작업자 숙련도 차이로 인한 사이클 타임 비효율을 해결하기 위해 실시간 작업자 할당 최적화가 필요"
     purpose:
-      en: Optimize automotive parts production in global supply chain context
-      ko: "글로벌 과제 파트 담당, 자동차 부품 생산 최적화 (수요기업: (주)유라)"
+      en: "Minimize cycle time through real-time worker allocation and conveyor speed optimization in automotive assembly"
+      ko: "자동차 조립 라인의 실시간 작업자 할당 및 컨베이어 속도 최적화를 통한 사이클 타임 최소화"
     role:
       en: Planning, PM, Researcher (global project part lead)
       ko: 기획, PM, 연구원 (글로벌 과제 파트 담당)

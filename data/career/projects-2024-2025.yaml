@@ -12,15 +12,18 @@
   affiliated_institution: VMS Solutions Inc.
   is_pm: true
   details:
+    situation:
+      en: "SK Hynix required an operation twin for autonomous fab realization, but lacked a unified production-logistics simulation framework to validate process twin consistency with real fab data"
+      ko: "SK Hynix의 자율 팹(Autonomous Fab) 실현을 위해 운영 트윈이 필요했으나, 실제 팹 데이터와의 프로세스 트윈 정합성을 검증할 수 있는 생산-물류 통합 시뮬레이션 프레임워크가 부재"
     purpose:
-      en: Define the need for a process twin to realize an autonomous fab; build a production-logistics integrated simulator
-      ko: 자율 팹(Autonomous Fab) 실현을 위한 프로세스 트윈의 필요성 정의 및 생산-물류 통합 시뮬레이터 구축
+      en: Build a production-logistics integrated simulator and define process twin consistency validation framework
+      ko: 생산-물류 통합 시뮬레이터 구축 및 프로세스 트윈 정합성 검증 프레임워크 정의
     role:
       en: Production engine development PM
       ko: 생산 엔진 개발 PM
     tasks:
-      - en: Discovered real operation use-cases for the process twin
-        ko: 실제 운영 환경에서의 활용 시나리오(Use-case) 발굴
+      - en: Discovered real operation use-cases for the process twin through stakeholder interviews
+        ko: 이해관계자 인터뷰를 통한 프로세스 트윈 실제 운영 Use-case 발굴
       - en: "Planned and designed production-logistics integrated simulator: unified modeling of process flows and material movement"
         ko: "생산-물류 통합 시뮬레이터 기획 및 설계: 공정 흐름과 자재 이동을 통합 모델링 구조 설계"
       - en: Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)
@@ -61,9 +64,12 @@
   affiliated_institution: VMS Solutions Inc.
   is_pm: false
   details:
+    situation:
+      en: "Micron's global semiconductor fabs required a next-generation real-time APS scheduler, but existing logic was tightly coupled to specific process constraints, limiting product generality across different fab configurations"
+      ko: "Micron 글로벌 반도체 팹에 차세대 실시간 APS 스케줄러가 필요했으나, 기존 로직이 특정 공정 제약에 밀결합되어 다양한 팹 구성에 대한 제품 범용성이 제한됨"
     purpose:
-      en: Logic design and review for new real-time scheduler implementation; abstract semiconductor process-specific constraints for product generality
-      ko: 실시간 스케줄러 신규 구현을 위한 로직 설계 및 검토; 반도체 공정 특화 제약을 추상화하여 제품 범용성 향상
+      en: Design generalizable real-time scheduler logic by abstracting semiconductor process-specific constraints
+      ko: 반도체 공정 특화 제약을 추상화하여 범용 실시간 스케줄러 로직 설계
     role:
       en: Solution consultant
       ko: 솔루션 컨설턴트
@@ -87,9 +93,12 @@
   affiliated_institution: KAIST
   is_pm: true
   details:
+    situation:
+      en: "Existing AI-based schedulers required retraining for each new manufacturing environment. A 10-year NRF initiative was needed to develop autonomous scheduling that adapts to dynamic environments without environment-specific retraining"
+      ko: "기존 AI 기반 스케줄러는 새로운 제조 환경마다 재학습이 필요했음. 환경 변화에 자율 적응하는 스케줄링 기술 개발을 위해 10개년 NRF 한우물 과제가 기획됨"
     purpose:
-      en: 10-year project planning and execution (~2034.04); target autonomous scheduling in real manufacturing settings with progressive extension to process constraints and multi-objective functions
-      ko: 10개년 과제 기획/수행 주도 (~2034.04); 실제 제조 현장에서 autonomous scheduling 목표, 공정 제약 및 다중 목적 함수 등으로 점진적 확장
+      en: "Develop autonomous scheduling agents adaptable to diverse manufacturing environments; minimize makespan through GNN-based imitation learning for multi-process mixed-flow production"
+      ko: "다양한 제조 환경에 적응 가능한 자율 스케줄링 에이전트 개발; GNN 기반 모방학습으로 다중 공정 혼류 생산에서 makespan 최소화"
     role:
       en: Planning, PM, Researcher
       ko: 기획, PM, 연구원
@@ -113,9 +122,12 @@
   affiliated_institution: KAIST
   is_pm: false
   details:
+    situation:
+      en: "Samsung Electronics needed accurate demand forecasts for semiconductor products to optimize production planning, but existing methods lacked precision across diverse product categories"
+      ko: "삼성전자는 생산계획 최적화를 위해 반도체 제품의 정확한 수요 예측이 필요했으나, 기존 방법은 다양한 제품 카테고리에서 정밀도가 부족했음"
     purpose:
-      en: Demand forecasting for semiconductor products
-      ko: 반도체 제품 수요 예측
+      en: "Develop AI-based demand forecasting model achieving >80% accuracy across product segments"
+      ko: "제품군별 80% 이상 정확도의 AI 기반 수요 예측 모델 개발"
     role:
       en: Problem definition, Researcher
       ko: 문제 정의, 연구원
@@ -155,9 +167,12 @@
   affiliated_institution: KAIST
   is_pm: true
   details:
+    situation:
+      en: "LG Electronics' refrigerator body assembly line suffered from excessive setup changes and low on-time production rates due to manual planning based on planner experience"
+      ko: "LG전자 냉장고 몸체 조립라인에서 수작업 기반 생산계획으로 인한 과도한 셋업 변경과 낮은 정시 생산율 문제 발생"
     purpose:
-      en: Optimal production planning algorithm for LG Electronics refrigerator body assembly line
-      ko: LG 전자 냉장고 몸체 조립라인 생산계획 최적 수립 알고리즘 개발
+      en: "Minimize setup count, maximize on-time production rate, and maximize equipment utilization through optimization-based production planning"
+      ko: "최적화 기반 생산계획으로 셋업 횟수 최소화, 정시 생산율 최대화, 장비 가동률 최대화"
     role:
       en: Planning, PM, Researcher
       ko: 기획, PM, 연구원

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22",
+  "lastUpdated": "2026-04-23",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -210,10 +210,11 @@
         "Calro"
       ],
       "details": {
-        "purpose": "Define the need for a process twin to realize an autonomous fab; build a production-logistics integrated simulator",
+        "situation": "SK Hynix required an operation twin for autonomous fab realization, but lacked a unified production-logistics simulation framework to validate process twin consistency with real fab data",
+        "purpose": "Build a production-logistics integrated simulator and define process twin consistency validation framework",
         "role": "Production engine development PM",
         "tasks": [
-          "Discovered real operation use-cases for the process twin",
+          "Discovered real operation use-cases for the process twin through stakeholder interviews",
           "Planned and designed production-logistics integrated simulator: unified modeling of process flows and material movement",
           "Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)",
           "Defined simulation result consistency metrics and designed/developed automated computation pipeline",
@@ -233,6 +234,7 @@
       "isPM": false,
       "remarks": "",
       "details": {
+        "situation": "",
         "purpose": "Design and develop simulation-based scheduling product for semiconductor manufacturing",
         "role": "Solution consultant",
         "tasks": [
@@ -251,7 +253,8 @@
       "isPM": false,
       "remarks": "",
       "details": {
-        "purpose": "Logic design and review for new real-time scheduler implementation; abstract semiconductor process-specific constraints for product generality",
+        "situation": "Micron's global semiconductor fabs required a next-generation real-time APS scheduler, but existing logic was tightly coupled to specific process constraints, limiting product generality across different fab configurations",
+        "purpose": "Design generalizable real-time scheduler logic by abstracting semiconductor process-specific constraints",
         "role": "Solution consultant",
         "tasks": [
           "Logic design and review for new real-time scheduler: equipment state changes, priority recalculation, and other core algorithm specification",
@@ -272,7 +275,8 @@
       "isPM": true,
       "remarks": "",
       "details": {
-        "purpose": "10-year project planning and execution (~2034.04); target autonomous scheduling in real manufacturing settings with progressive extension to process constraints and multi-objective functions",
+        "situation": "Existing AI-based schedulers required retraining for each new manufacturing environment. A 10-year NRF initiative was needed to develop autonomous scheduling that adapts to dynamic environments without environment-specific retraining",
+        "purpose": "Develop autonomous scheduling agents adaptable to diverse manufacturing environments; minimize makespan through GNN-based imitation learning for multi-process mixed-flow production",
         "role": "Planning, PM, Researcher",
         "tasks": [
           "Led 10-year project planning and execution",
@@ -293,7 +297,8 @@
       "isPM": false,
       "remarks": "",
       "details": {
-        "purpose": "Demand forecasting for semiconductor products",
+        "situation": "Samsung Electronics needed accurate demand forecasts for semiconductor products to optimize production planning, but existing methods lacked precision across diverse product categories",
+        "purpose": "Develop AI-based demand forecasting model achieving >80% accuracy across product segments",
         "role": "Problem definition, Researcher",
         "tasks": [
           "Identified decision-making processes through on-site engineer interviews",
@@ -327,7 +332,8 @@
       "isPM": true,
       "remarks": "",
       "details": {
-        "purpose": "Optimal production planning algorithm for LG Electronics refrigerator body assembly line",
+        "situation": "LG Electronics' refrigerator body assembly line suffered from excessive setup changes and low on-time production rates due to manual planning based on planner experience",
+        "purpose": "Minimize setup count, maximize on-time production rate, and maximize equipment utilization through optimization-based production planning",
         "role": "Planning, PM, Researcher",
         "tasks": [
           "Identified on-site constraints and defined problem through engineer interviews (objective: minimize setup count, maximize on-time production and equipment utilization)",
@@ -394,7 +400,8 @@
       "isPM": false,
       "remarks": "",
       "details": {
-        "purpose": "RL-based production planning to minimize daily worker deviation in shipbuilding",
+        "situation": "Samsung Heavy Industries' 6-month shipbuilding schedule suffered from severe daily manpower fluctuations, causing inefficient resource utilization and increased labor costs",
+        "purpose": "Minimize daily worker employment deviation using RL-based schedule adjustment (objective: min std. dev. of daily manpower)",
         "role": "Planning, Researcher",
         "tasks": [
           "Led project planning and proposal writing",
@@ -440,7 +447,8 @@
       "isPM": true,
       "remarks": "",
       "details": {
-        "purpose": "Optimize automotive parts production in global supply chain context",
+        "situation": "In a EUREKA international collaboration (Korea-Sweden), automotive parts assembly required real-time worker allocation optimization to reduce cycle time in semi-automated production lines with varying worker skill levels",
+        "purpose": "Minimize cycle time through real-time worker allocation and conveyor speed optimization in automotive assembly",
         "role": "Planning, PM, Researcher (global project part lead)",
         "tasks": [
           "Identified on-site constraints through field interviews",

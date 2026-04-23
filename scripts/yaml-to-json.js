@@ -179,6 +179,7 @@ function buildProjects(raw) {
     if (p.partners) item.partners = p.partners;
     if (p.details) {
       item.details = {
+        situation:    extractLang(p.details.situation),
         purpose:      extractLang(p.details.purpose),
         role:         extractLang(p.details.role),
       };
