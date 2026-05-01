@@ -7,13 +7,14 @@
     ko: 잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러
   organization: Korean Institute of Industrial Engineers (KIIE)
   location: Daejeon, South Korea
+  remarks: $200
 - date: "2023.12"
   title:
     en: First Prize, 2023 Simulation Challenge
     ko: 1등상, 2023 Simulation Challenge
   description:
-    en: Gating Control in Semiconductor Fabrication
-    ko: 반도체 팹 게이팅 제어
+    en: Q-time-based Step Gating Control in Semiconductor Fabrication
+    ko: 반도체 팹 Q-time 기반 공정 게이팅 제어
   organization: Winter Simulation Conference (WSC), Micron
   location: San Antonio, USA
   remarks: $3,000
@@ -27,7 +28,7 @@
   organization: Hankook & Company
   location: Daejeon, South Korea
   remarks: $1,500
-- date: ""
+- date: "2022.06 - 2023.02"
   title:
     en: Ph.D. Candidate Research Incentive Support
     ko: 박사과정생 연구장려 지원사업
@@ -55,7 +56,7 @@
     ko: 선박 화물 생산 부하 분산
   organization: Samsung Heavy Industries
   location: South Korea
-- date: ""
+- date: "2021.03 - 2025.02"
   title:
     en: Full-tuition Entrance Scholarship
     ko: 전액 입학 장학금
@@ -83,7 +84,7 @@
     ko: ""
   organization: General Motors (GM)
   location: Cincinnati, USA
-- date: ""
+- date: "2013.03 - 2016.08"
   title:
     en: Full-tuition Entrance Scholarship
     ko: 전액 입학 장학금

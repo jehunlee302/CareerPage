@@ -2,23 +2,24 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_URLS = { en: 'data/portfolio.json', ko: 'data/portfolio.ko.json' };
+const DATA_VER = '20260502q';
+const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
     { icon: '🤖', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
     { icon: '🧠', title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
-    { icon: '🏭', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
-    { icon: '💾', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
-    { icon: '📐', title: 'Meta-Scheduling Architecture', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
-    { icon: '🔗', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
+    { icon: '🧬', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
+    { icon: '🪙', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
+    { icon: '🧩', title: 'Meta-Scheduling Architecture', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
+    { icon: '🏗️', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
   ],
   ko: [
     { icon: '🤖', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
     { icon: '🧠', title: '강화학습 & 모방학습', desc: '실시간 산업 의사결정을 위한 그래프 기반 RL/IL 알고리즘' },
-    { icon: '🏭', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
-    { icon: '💾', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
-    { icon: '📐', title: '메타 스케줄링 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
-    { icon: '🔗', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
+    { icon: '🪞', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
+    { icon: '🔬', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
+    { icon: '🧩', title: '메타 스케줄링 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
+    { icon: '🏭', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
   ],
 };
 const FEATURED_PROJECT_INDICES = [25, 23, 21];
@@ -82,8 +83,27 @@ async function init() {
     setupNav(); setupScrollReveal(); setupPhotoFallback();
     setupTitleTypewriter(data.basic?.titles || []);
     setupLangToggle();
+    setupThemeToggle();
   } catch (err) { console.error('Portfolio load error:', err); }
 }
+
+/* ─── Theme Toggle ─── */
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+}
+function setupThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn || btn.dataset.ready) return;
+  btn.dataset.ready = '1';
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+}
+applyTheme(localStorage.getItem('theme') || 'light');
 
 /* ─── Language Toggle ─── */
 let _switching = false;
@@ -150,7 +170,13 @@ function renderHero(data) {
   const locEl = document.getElementById('heroLocationText');
   if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
   const sumEl = document.getElementById('heroSummary');
-  if (sumEl) sumEl.innerHTML = esc(data.basic?.summary || '').replace(/\n/g, '<br>');
+  if (sumEl) {
+    const lines = (data.basic?.summary || '').split('\n').filter(Boolean);
+    sumEl.innerHTML = lines.map((line, i) => {
+      const body = esc(line).replace(/(\d+\+?)(?![a-zA-Z])/g, '<strong>$1</strong>');
+      return `<span class="hero-summary-line" style="--i:${i}"><span class="hero-summary-bullet">●</span>${body}</span>`;
+    }).join('');
+  }
   const resBtnEn = document.getElementById('heroResumeBtnEn');
   const resBtnKo = document.getElementById('heroResumeBtnKo');
   if (resBtnEn) { resBtnEn.href = RESUME_URLS.en; resBtnEn.querySelector('span').textContent = t('ui.resumeEn'); }
@@ -179,7 +205,8 @@ function renderImpactStrip(data) {
   el.innerHTML = '';
   const pm = (data.projects||[]).filter(p => p.isPM).length;
   const prizes = (data.honors||[]).filter(h => /prize|first|second|third|등상/i.test(h.title||'')).length;
-  [{v:`${(data.projects||[]).length}+`,l:t('impact.projects')},{v:`${pm}+`,l:t('impact.pm')},{v:`${(data.publications||[]).length}+`,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:`${(data.patents||[]).length}`,l:t('impact.patent')}]
+  const verifiablePubs = (data.publications||[]).filter(p => p.link && /^https?:\/\//.test(p.link)).length;
+  [{v:(data.projects||[]).length,l:t('impact.projects')},{v:pm,l:t('impact.pm')},{v:verifiablePubs,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:(data.patents||[]).length,l:t('impact.patent')}]
     .forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
 }
 
@@ -190,14 +217,14 @@ function renderPhilosophy(p) {
   const b = document.getElementById('philosophyBody');
   if (b) b.innerHTML = p.body.split('\n\n').map(para => `<p>${esc(para)}</p>`).join('');
   const pl = document.getElementById('philosophyPillars');
-  if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-icon">${x.icon}</div><h3>${esc(x.title)}</h3><p>${esc(x.desc)}</p></div>`).join('');
+  if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-head"><div class="pillar-icon">${x.icon}</div><h3>${esc(x.title)}</h3></div><p>${esc(x.desc)}</p></div>`).join('');
 }
 
 /* ─── Research ─── */
 function renderResearchFocus() {
   const el = document.getElementById('researchGrid'); if (!el) return;
   const items = RESEARCH_INTERESTS[LANG] || RESEARCH_INTERESTS.en;
-  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-icon">${r.icon}</div><div class="rc-title">${esc(r.title)}</div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
+  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-head"><div class="rc-icon">${r.icon}</div><div class="rc-title">${esc(r.title)}</div></div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
 }
 
 /* ─── Education ─── */
@@ -310,7 +337,7 @@ function renderFeaturedProjects(projects) {
     </div>`).join('');
 
   const sub = document.getElementById('projectSubtitle');
-  if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건+` : `${projects.length} projects · ${projects.filter(p => p.isPM).length}+ PM roles`;
+  if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건` : `${projects.length} projects · ${projects.filter(p => p.isPM).length} PM roles`;
 
   /* featured click → modal (delegated, safe to rebind) */
   el.onclick = e => {
@@ -507,9 +534,27 @@ function renderPatents(items) {
 }
 
 /* ─── Activities ─── */
+function activityIcons(role, org) {
+  const r = (role || '').toLowerCase();
+  const o = (org || '').toLowerCase();
+  const icons = [];
+  // Primary by role
+  if (/teaching assistant|\bta\b|조교|mentor|멘토/.test(r)) icons.push('🎓');
+  else if (/president|회장|부회장|representative|대표|working group|운영위원|member/.test(r)) icons.push('👥');
+  else icons.push('⭐');
+  // Secondary by context (role/org keywords)
+  if (/researcher representative|연구실 대표/.test(r)) icons.push('🔬');
+  if (/teaching assistant|\bta\b|조교/.test(r)) icons.push('🏫');
+  if (/student council|학생회/.test(o)) icons.push('🏫');
+  if (/basketball|농구/.test(o)) icons.push('🏀');
+  return icons;
+}
 function renderActivities(items) {
   const el = document.getElementById('activitiesGrid'); if (!el || !items) return;
-  el.innerHTML = items.map(a => `<div class="activity-card reveal" data-paged><span class="activity-role">${esc(a.role)}</span><span class="activity-org">${esc(a.organization)}</span><span class="activity-period">${esc(a.period)}</span><span class="activity-location">📍 ${esc(a.location)}</span></div>`).join('');
+  el.innerHTML = items.map(a => {
+    const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
+    return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${esc(a.organization)}</span><span class="activity-period">${esc(a.period)}</span><span class="activity-location">📍 ${esc(a.location)}</span></div>`;
+  }).join('');
   _activityPager = createPager(el, ACTIVITY_PER_PAGE, 'activitiesPager');
 }
 

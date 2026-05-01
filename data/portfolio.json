@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-23",
+  "lastUpdated": "2026-05-01",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -15,29 +15,29 @@
     ],
     "website": "jehun-lee.work",
     "location": "Yongin, Gyeonggi-do, South Korea",
-    "googleSite": "https://sites.google.com/view/jehun-lee",
+    "googleSite": "",
     "resume": "data/resume-en.pdf",
-    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25+ projects\nSCI journals 5 (1st author 2) · Intl. conferences 11 · Domestic conferences 9\nAI scheduler · AI agent · Digital twin · Simulation-based optimization · Autonomous manufacturing"
+    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25 projects (PM 12)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
   },
   "philosophy": {
     "headline": "Systemic Excellence",
-    "lead": "AI-native engineering — not for marginal efficiency, but to liberate human potential from repetitive complexity.",
-    "body": "I am a proactive Ph.D. leader and AI strategist who bridges the gap between academic depth and industrial execution. My work is fundamentally rooted in the philosophy of 'Systemic Excellence', where AI-native engineering is utilized not just for marginal efficiency, but to liberate human potential from repetitive complexity.\n\nAs an AI Engineer and Scheduling Solution Consultant, I have led high-impact programs, including the Digital Twin platform construction for SK Hynix and real-time scheduling systems for Micron. These experiences, along with my leadership in over 24 major projects, have sharpened my ability to translate intricate industrial constraints into robust, scalable technical requirements. I possess a global perspective on the semiconductor market and a proven capacity to deliver measurable business impact through technical mastery.\n\nBeyond my technical background in Systems and Industrial Engineering, I am committed to a leadership style that fosters both individual growth and meaningful social contribution. My ultimate goal is to guide the industry toward an intelligent, purposeful future where technological innovation serves as a catalyst for a more advanced and human-centric industrial ecosystem.\n",
+    "lead": "In the AI era, problem definition shaped by human will and necessity matters more than any algorithm — and the keyman who sees the whole system is the one who sets that direction.",
+    "body": "In the AI era, the most important question is not which model to use, but what problem is worth solving — defined through human will and necessity. Algorithms don't choose direction; people do.\n\nMy direction is to be a keyman: someone who sees the entire system, maps stakeholders, sets priorities, and deeply understands the problems that need solving so that direction can be defined. The growth that lasts is the growth where the organization grows together — not where individuals optimize alone.\n\nSystemic Excellence, to me, means environments that remove inefficiency so people can do more meaningful work. Chores, basic reviews, missing numbers — these are systemic problems with systemic solutions. Pipeline automation and systematization, aligned with organizational purpose, free human attention for the work only humans can do: judgment, strategy, meaning.\n",
     "pillars": [
       {
-        "icon": "⚡",
-        "title": "AI-Native Engineering",
-        "desc": "Deploying intelligent systems that transform industrial operations from the ground up — not as a tool, but as a foundational shift."
-      },
-      {
         "icon": "🎯",
-        "title": "Industrial Execution",
-        "desc": "Translating academic depth into measurable, scalable business impact across semiconductor, logistics, and manufacturing domains."
+        "title": "Problem Definition",
+        "desc": "AI is a tool. The keystone is defining problems shaped by human will and necessity."
       },
       {
-        "icon": "🌐",
-        "title": "Human-Centric Future",
-        "desc": "Technology as a catalyst for a purposeful industrial ecosystem where human potential is amplified, not replaced."
+        "icon": "🧭",
+        "title": "Whole-System Direction",
+        "desc": "Mapping stakeholders and priorities to set the direction the organization grows together."
+      },
+      {
+        "icon": "⚙️",
+        "title": "Automated Foundation",
+        "desc": "Pipelines absorb chores and reviews. Humans focus on judgment, strategy, meaning."
       }
     ]
   },
@@ -929,7 +929,7 @@
     ],
     "Simulation & Tools": [
       "VMS Mozart (APS)",
-      "Arena Simulation",
+      "Plant Sim",
       "AutoMod",
       "MS Office",
       "Photoshop"
@@ -953,12 +953,12 @@
       "description": "Learning Schedulers for Job Shop Scheduling Problems",
       "organization": "Korean Institute of Industrial Engineers (KIIE)",
       "location": "Daejeon, South Korea",
-      "remarks": ""
+      "remarks": "$200"
     },
     {
       "date": "2023.12",
       "title": "First Prize, 2023 Simulation Challenge",
-      "description": "Gating Control in Semiconductor Fabrication",
+      "description": "Q-time-based Step Gating Control in Semiconductor Fabrication",
       "organization": "Winter Simulation Conference (WSC), Micron",
       "location": "San Antonio, USA",
       "remarks": "$3,000"
@@ -972,7 +972,7 @@
       "remarks": "$1,500"
     },
     {
-      "date": "",
+      "date": "2022.06 - 2023.02",
       "title": "Ph.D. Candidate Research Incentive Support",
       "description": "",
       "organization": "National Research Foundation (NRF) of Korea",
@@ -996,7 +996,7 @@
       "remarks": ""
     },
     {
-      "date": "",
+      "date": "2021.03 - 2025.02",
       "title": "Full-tuition Entrance Scholarship",
       "description": "Merit-based Entrance Scholarship (Ph.D.)",
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
@@ -1020,7 +1020,7 @@
       "remarks": ""
     },
     {
-      "date": "",
+      "date": "2013.03 - 2016.08",
       "title": "Full-tuition Entrance Scholarship",
       "description": "Merit-based Entrance Scholarship (B.S.)",
       "organization": "Sungkyunkwan University (SKKU)",
@@ -1122,6 +1122,18 @@
       "organization": "College of Engineering Student Council (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2013.03 – 2015.02"
+    },
+    {
+      "role": "President",
+      "organization": "Student Council (High School, 11th Grade)",
+      "location": "Seoul, South Korea",
+      "period": "2012.03 - 2013.02"
+    },
+    {
+      "role": "Vice President",
+      "organization": "Student Council (Middle School, 9th Grade)",
+      "location": "South Korea",
+      "period": "2010.03 - 2011.02"
     }
   ]
 }

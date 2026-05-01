@@ -115,6 +115,7 @@
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 \newcommand*{\scholar}[1]{\def\@scholar{#1}}
+\newcommand*{\compensation}[1]{\def\@compensation{#1}}
 
 \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 
@@ -149,6 +150,7 @@
       \ifthenelse{\isundefined{\@email}}{}{\textbf{Email:} \@email \\}
       \ifthenelse{\isundefined{\@linkedin}}{}{\textbf{Linkedin:} \href{\@linkedin}{\@linkedin} \\}
       \ifthenelse{\isundefined{\@scholar}}{}{\textbf{Scholar:} \href{\@scholar}{\@scholar} \\}
+      \ifthenelse{\isundefined{\@compensation}}{}{\@compensation \\}
     \endgroup
   \end{minipage} \vspace{0.5cm}
 }

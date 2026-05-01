@@ -16,11 +16,22 @@ website: jehun-lee.work
 location:
   en: Yongin, Gyeonggi-do, South Korea
   ko: 경기도 용인시
-google_site: https://sites.google.com/view/jehun-lee
 resume:
   en: data/resume-en.pdf
   ko: data/resume-ko.pdf
 
+# === Optional: Compensation (resume only, not website) ===
+# Comment out the entire `compensation:` block to hide from resume.
+# Comment out individual `current:` or `desired:` (with their en/ko children) to hide that single value.
+# Values can be plain strings or {en, ko} pairs for bilingual resumes.
+# compensation:
+#   current:
+#     en: "$80,000"
+#     ko: "8,000만원"
+#   desired:
+#     en: "$100,000"
+#     ko: "1억원"
+
 summary:
-  en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25+ projects\nSCI journals 5 (1st author 2) · Intl. conferences 11 · Domestic conferences 9\nAI scheduler · AI agent · Digital twin · Simulation-based optimization · Autonomous manufacturing"
-  ko: "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 25건+ 프로젝트 수행\nSCI 저널 5편 (1저자 2편) · 국제 학회 11건 · 국내 학회 9건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
+  en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25 projects (PM 12)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
+  ko: "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 25건 프로젝트 (PM 12건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"

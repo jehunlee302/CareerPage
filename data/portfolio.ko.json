@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-23",
+  "lastUpdated": "2026-05-01",
   "basic": {
     "name": "이제훈",
     "nameKr": "이제훈",
@@ -15,29 +15,29 @@
     ],
     "website": "jehun-lee.work",
     "location": "경기도 용인시",
-    "googleSite": "https://sites.google.com/view/jehun-lee",
+    "googleSite": "",
     "resume": "data/resume-ko.pdf",
-    "summary": "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 25건+ 프로젝트 수행\nSCI 저널 5편 (1저자 2편) · 국제 학회 11건 · 국내 학회 9건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
+    "summary": "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 25건 프로젝트 (PM 12건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
   },
   "philosophy": {
-    "headline": "체계적 탁월함",
-    "lead": "AI 네이티브 엔지니어링 — 한계적 효율이 아닌, 반복적 복잡성으로부터 인간의 잠재력을 해방하기 위해.",
-    "body": "저는 학문적 깊이와 산업 실행력 사이의 간극을 연결하는 AI 전략가이자 주도적 리더입니다. '체계적 탁월함(Systemic Excellence)'이라는 철학을 바탕으로, AI 네이티브 엔지니어링을 단순한 한계적 효율 향상이 아닌, 반복적 복잡성으로부터 인간의 잠재력을 해방하는 데 활용합니다.\n\nAI 엔지니어이자 스케줄링 솔루션 컨설턴트로서, SK하이닉스 디지털 트윈 플랫폼 구축과 Micron 실시간 스케줄링 시스템 등 고영향(high-impact) 프로그램을 이끌어 왔습니다. 25건 이상의 주요 프로젝트 리더십 경험을 통해, 복잡한 산업 제약 조건을 견고하고 확장 가능한 기술 요구사항으로 변환하는 역량을 갖추었습니다. 반도체 시장에 대한 글로벌 시각과 기술 전문성을 통한 측정 가능한 비즈니스 임팩트 창출 역량을 보유하고 있습니다.\n\n시스템 및 산업공학 분야의 기술적 배경을 넘어, 개인의 성장과 의미 있는 사회적 기여를 함께 도모하는 리더십을 지향합니다. 궁극적으로 기술 혁신이 보다 진보적이고 인간 중심적인 산업 생태계를 위한 촉매제가 되는, 지능적이고 목적 지향적인 미래를 향해 산업을 이끌어 가는 것이 목표입니다.\n",
+    "headline": "시스템적 완벽성",
+    "lead": "AI 시대일수록, 사람의 의지와 필요성을 담은 문제 정의가 어떤 알고리즘보다 중요합니다. 그리고 시스템 전체를 보며 그 방향을 정하는 keyman이 필요합니다.",
+    "body": "AI 시대에서 가장 중요한 질문은 '어떤 모델을 쓸까'가 아니라 '무엇을 풀 것인가'입니다. 사람의 의지와 필요성에서 출발하는 문제 정의 — 알고리즘은 방향을 정하지 않습니다, 사람이 정합니다.\n\n제가 지향하는 방향은 keyman입니다. 시스템 전체를 조망하고, 이해관계를 파악하고, 우선순위를 정하고, 해결해야 할 문제를 심도 있게 이해하여 방향성을 설정하는 사람. 진정한 성장은 개인의 최적화가 아닌, 조직이 함께 성장할 때 일어난다고 믿습니다.\n\n제가 추구하는 시스템적 완벽성은 비효율을 제거해 사람이 더 의미 있는 일에 집중할 수 있는 환경입니다. 잡무, 기본 검토, 숫자 누락 — 시스템으로 해결할 수 있는 문제들입니다. 조직과 시스템의 목적성에 맞춘 파이프라인 자동화와 체계화 위에서, 사람은 판단·전략·의미에 집중합니다.\n",
     "pillars": [
       {
-        "icon": "⚡",
-        "title": "AI 네이티브 엔지니어링",
-        "desc": "산업 운영을 근본부터 변혁하는 지능형 시스템 — 도구가 아닌, 패러다임의 전환으로."
-      },
-      {
         "icon": "🎯",
-        "title": "산업 실행력",
-        "desc": "학문적 깊이를 반도체, 물류, 제조 영역에서 측정 가능하고 확장 가능한 비즈니스 임팩트로 전환."
+        "title": "문제 정의",
+        "desc": "AI는 도구. 사람의 의지와 필요성에서 풀 가치 있는 문제를 정의합니다."
       },
       {
-        "icon": "🌐",
-        "title": "인간 중심 미래",
-        "desc": "인간의 잠재력이 대체되는 것이 아닌 증폭되는, 목적 지향적 산업 생태계를 위한 촉매로서의 기술."
+        "icon": "🧭",
+        "title": "전체 조망 · 방향 설정",
+        "desc": "이해관계와 우선순위를 파악해, 조직이 함께 성장할 방향을 설정합니다."
+      },
+      {
+        "icon": "⚙️",
+        "title": "자동화된 기반",
+        "desc": "잡무·검토·누락은 파이프라인이. 사람은 판단·전략·의미에 집중합니다."
       }
     ]
   },
@@ -929,7 +929,7 @@
     ],
     "시뮬레이션 & 도구": [
       "VMS Mozart (APS)",
-      "Arena Simulation",
+      "Plant Sim",
       "AutoMod",
       "MS Office",
       "Photoshop"
@@ -953,12 +953,12 @@
       "description": "잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러",
       "organization": "Korean Institute of Industrial Engineers (KIIE)",
       "location": "Daejeon, South Korea",
-      "remarks": ""
+      "remarks": "$200"
     },
     {
       "date": "2023.12",
       "title": "1등상, 2023 Simulation Challenge",
-      "description": "반도체 팹 게이팅 제어",
+      "description": "반도체 팹 Q-time 기반 공정 게이팅 제어",
       "organization": "Winter Simulation Conference (WSC), Micron",
       "location": "San Antonio, USA",
       "remarks": "$3,000"
@@ -972,7 +972,7 @@
       "remarks": "$1,500"
     },
     {
-      "date": "",
+      "date": "2022.06 - 2023.02",
       "title": "박사과정생 연구장려 지원사업",
       "description": "",
       "organization": "National Research Foundation (NRF) of Korea",
@@ -996,7 +996,7 @@
       "remarks": ""
     },
     {
-      "date": "",
+      "date": "2021.03 - 2025.02",
       "title": "전액 입학 장학금",
       "description": "성적 우수 입학 장학금 (박사)",
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
@@ -1020,7 +1020,7 @@
       "remarks": ""
     },
     {
-      "date": "",
+      "date": "2013.03 - 2016.08",
       "title": "전액 입학 장학금",
       "description": "성적 우수 입학 장학금 (학사)",
       "organization": "Sungkyunkwan University (SKKU)",
@@ -1122,6 +1122,18 @@
       "organization": "공과대학 학생회 (SKKU)",
       "location": "Suwon, South Korea",
       "period": "2013.03 – 2015.02"
+    },
+    {
+      "role": "학생 자치회장",
+      "organization": "전교 학생회 (고등학교 2학년)",
+      "location": "Seoul, South Korea",
+      "period": "2012.03 - 2013.02"
+    },
+    {
+      "role": "전교 부회장",
+      "organization": "전교 학생회 (중학교 3학년)",
+      "location": "South Korea",
+      "period": "2010.03 - 2011.02"
     }
   ]
 }

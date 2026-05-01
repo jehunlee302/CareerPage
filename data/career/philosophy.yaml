@@ -1,44 +1,44 @@
 headline:
   en: Systemic Excellence
-  ko: 체계적 탁월함
+  ko: 시스템적 완벽성
 lead:
-  en: AI-native engineering — not for marginal efficiency, but to liberate human potential from repetitive complexity.
-  ko: AI 네이티브 엔지니어링 — 한계적 효율이 아닌, 반복적 복잡성으로부터 인간의 잠재력을 해방하기 위해.
+  en: In the AI era, problem definition shaped by human will and necessity matters more than any algorithm — and the keyman who sees the whole system is the one who sets that direction.
+  ko: AI 시대일수록, 사람의 의지와 필요성을 담은 문제 정의가 어떤 알고리즘보다 중요합니다. 그리고 시스템 전체를 보며 그 방향을 정하는 keyman이 필요합니다.
 body:
   en: |
-    I am a proactive Ph.D. leader and AI strategist who bridges the gap between academic depth and industrial execution. My work is fundamentally rooted in the philosophy of 'Systemic Excellence', where AI-native engineering is utilized not just for marginal efficiency, but to liberate human potential from repetitive complexity.
+    In the AI era, the most important question is not which model to use, but what problem is worth solving — defined through human will and necessity. Algorithms don't choose direction; people do.
 
-    As an AI Engineer and Scheduling Solution Consultant, I have led high-impact programs, including the Digital Twin platform construction for SK Hynix and real-time scheduling systems for Micron. These experiences, along with my leadership in over 24 major projects, have sharpened my ability to translate intricate industrial constraints into robust, scalable technical requirements. I possess a global perspective on the semiconductor market and a proven capacity to deliver measurable business impact through technical mastery.
+    My direction is to be a keyman: someone who sees the entire system, maps stakeholders, sets priorities, and deeply understands the problems that need solving so that direction can be defined. The growth that lasts is the growth where the organization grows together — not where individuals optimize alone.
 
-    Beyond my technical background in Systems and Industrial Engineering, I am committed to a leadership style that fosters both individual growth and meaningful social contribution. My ultimate goal is to guide the industry toward an intelligent, purposeful future where technological innovation serves as a catalyst for a more advanced and human-centric industrial ecosystem.
+    Systemic Excellence, to me, means environments that remove inefficiency so people can do more meaningful work. Chores, basic reviews, missing numbers — these are systemic problems with systemic solutions. Pipeline automation and systematization, aligned with organizational purpose, free human attention for the work only humans can do: judgment, strategy, meaning.
   ko: |
-    저는 학문적 깊이와 산업 실행력 사이의 간극을 연결하는 AI 전략가이자 주도적 리더입니다. '체계적 탁월함(Systemic Excellence)'이라는 철학을 바탕으로, AI 네이티브 엔지니어링을 단순한 한계적 효율 향상이 아닌, 반복적 복잡성으로부터 인간의 잠재력을 해방하는 데 활용합니다.
+    AI 시대에서 가장 중요한 질문은 '어떤 모델을 쓸까'가 아니라 '무엇을 풀 것인가'입니다. 사람의 의지와 필요성에서 출발하는 문제 정의 — 알고리즘은 방향을 정하지 않습니다, 사람이 정합니다.
 
-    AI 엔지니어이자 스케줄링 솔루션 컨설턴트로서, SK하이닉스 디지털 트윈 플랫폼 구축과 Micron 실시간 스케줄링 시스템 등 고영향(high-impact) 프로그램을 이끌어 왔습니다. 25건 이상의 주요 프로젝트 리더십 경험을 통해, 복잡한 산업 제약 조건을 견고하고 확장 가능한 기술 요구사항으로 변환하는 역량을 갖추었습니다. 반도체 시장에 대한 글로벌 시각과 기술 전문성을 통한 측정 가능한 비즈니스 임팩트 창출 역량을 보유하고 있습니다.
+    제가 지향하는 방향은 keyman입니다. 시스템 전체를 조망하고, 이해관계를 파악하고, 우선순위를 정하고, 해결해야 할 문제를 심도 있게 이해하여 방향성을 설정하는 사람. 진정한 성장은 개인의 최적화가 아닌, 조직이 함께 성장할 때 일어난다고 믿습니다.
 
-    시스템 및 산업공학 분야의 기술적 배경을 넘어, 개인의 성장과 의미 있는 사회적 기여를 함께 도모하는 리더십을 지향합니다. 궁극적으로 기술 혁신이 보다 진보적이고 인간 중심적인 산업 생태계를 위한 촉매제가 되는, 지능적이고 목적 지향적인 미래를 향해 산업을 이끌어 가는 것이 목표입니다.
+    제가 추구하는 시스템적 완벽성은 비효율을 제거해 사람이 더 의미 있는 일에 집중할 수 있는 환경입니다. 잡무, 기본 검토, 숫자 누락 — 시스템으로 해결할 수 있는 문제들입니다. 조직과 시스템의 목적성에 맞춘 파이프라인 자동화와 체계화 위에서, 사람은 판단·전략·의미에 집중합니다.
 pillars:
-  - icon: ⚡
-    title:
-      en: AI-Native Engineering
-      ko: AI 네이티브 엔지니어링
-    desc:
-      en: Deploying intelligent systems that transform industrial operations from the ground up — not as a tool, but as a foundational shift.
-      ko: 산업 운영을 근본부터 변혁하는 지능형 시스템 — 도구가 아닌, 패러다임의 전환으로.
   - icon: 🎯
     title:
-      en: Industrial Execution
-      ko: 산업 실행력
+      en: Problem Definition
+      ko: 문제 정의
     desc:
-      en: Translating academic depth into measurable, scalable business impact across semiconductor, logistics, and manufacturing domains.
-      ko: 학문적 깊이를 반도체, 물류, 제조 영역에서 측정 가능하고 확장 가능한 비즈니스 임팩트로 전환.
-  - icon: 🌐
+      en: AI is a tool. The keystone is defining problems shaped by human will and necessity.
+      ko: AI는 도구. 사람의 의지와 필요성에서 풀 가치 있는 문제를 정의합니다.
+  - icon: 🧭
     title:
-      en: Human-Centric Future
-      ko: 인간 중심 미래
+      en: Whole-System Direction
+      ko: 전체 조망 · 방향 설정
     desc:
-      en: Technology as a catalyst for a purposeful industrial ecosystem where human potential is amplified, not replaced.
-      ko: 인간의 잠재력이 대체되는 것이 아닌 증폭되는, 목적 지향적 산업 생태계를 위한 촉매로서의 기술.
+      en: Mapping stakeholders and priorities to set the direction the organization grows together.
+      ko: 이해관계와 우선순위를 파악해, 조직이 함께 성장할 방향을 설정합니다.
+  - icon: ⚙️
+    title:
+      en: Automated Foundation
+      ko: 자동화된 기반
+    desc:
+      en: Pipelines absorb chores and reviews. Humans focus on judgment, strategy, meaning.
+      ko: 잡무·검토·누락은 파이프라인이. 사람은 판단·전략·의미에 집중합니다.
 stats:
   - value: 24+
     label:
