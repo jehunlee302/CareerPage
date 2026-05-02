@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-01",
+  "lastUpdated": "2026-05-02",
   "basic": {
     "name": "이제훈",
     "nameKr": "이제훈",
@@ -958,7 +958,7 @@
     {
       "date": "2023.12",
       "title": "1등상, 2023 Simulation Challenge",
-      "description": "반도체 팹 Q-time 기반 공정 게이팅 제어",
+      "description": "반도체 팹의 Q-time 기반 공정 게이팅 제어",
       "organization": "Winter Simulation Conference (WSC), Micron",
       "location": "San Antonio, USA",
       "remarks": "$3,000"
@@ -1002,6 +1002,38 @@
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "remarks": "Full Tuition"
+    },
+    {
+      "date": "2019.03, 2019.09",
+      "title": "조교학비감면",
+      "description": "학비지원 (석박통합과정)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
+    },
+    {
+      "date": "2018.03, 2019.03",
+      "title": "심산 장학금",
+      "description": "장학금 (석박통합과정)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
+    },
+    {
+      "date": "2018.03",
+      "title": "시스템경영공학과장학기금 장학금",
+      "description": "장학금 (석박통합과정)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
+    },
+    {
+      "date": "2017.03",
+      "title": "산업공학과 동창회 장학금",
+      "description": "장학금 (석박통합과정)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
     },
     {
       "date": "2016.07",

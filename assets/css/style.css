@@ -1659,10 +1659,15 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .pub-link {
    font-size: .73rem;
-   color: #000;
+   color: var(--blue);
    text-decoration: underline;
    white-space: nowrap;
-   font-weight: 500
+   font-weight: 600;
+   transition: color var(--t)
+}
+
+.pub-link:hover {
+   color: var(--blue-light)
 }
 
 .pub-title {

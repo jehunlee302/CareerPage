@@ -137,17 +137,39 @@ function generateMain(basic) {
   const position = titles.map(t => tex(t)).join('\\enskip|\\enskip ');
 
   // Optional: compensation line (current/desired). Comment out fields in basic.yaml to hide.
+  // current can be a plain string OR {base, bonus, total?} for split format.
   let compensationCmd = '';
   const comp = raw.compensation;
   if (comp) {
-    const pickLang = v => (typeof v === 'object' && v !== null) ? (v[LANG] || v.en || v.ko || '') : (v || '');
-    const currentVal = pickLang(comp.current).toString().trim();
-    const desiredVal = pickLang(comp.desired).toString().trim();
+    const pickLang = v => (typeof v === 'object' && v !== null && !('base' in v) && !('bonus' in v) && !('total' in v))
+      ? (v[LANG] || v.en || v.ko || '')
+      : (typeof v === 'string' ? v : '');
     const labelCurrent = LANG === 'ko' ? '현재' : 'Current';
     const labelDesired = LANG === 'ko' ? '희망' : 'Desired';
+    const labelBase    = LANG === 'ko' ? '기본급' : 'Base';
+    const labelBonus   = LANG === 'ko' ? '성과급' : 'Bonus';
+
+    // Format current — supports {base, bonus, total} split or plain string
+    let currentRendered = '';
+    const cur = comp.current;
+    if (cur && typeof cur === 'object' && (cur.base || cur.bonus || cur.total)) {
+      const totalVal = cur.total ? pickLang(cur.total).toString().trim() : '';
+      const baseVal  = cur.base  ? pickLang(cur.base).toString().trim()  : '';
+      const bonusVal = cur.bonus ? pickLang(cur.bonus).toString().trim() : '';
+      const inner = [];
+      if (baseVal)  inner.push(`${labelBase} ${tex(baseVal)}`);
+      if (bonusVal) inner.push(`${labelBonus} ${tex(bonusVal)}`);
+      if (totalVal && inner.length > 0) currentRendered = `${tex(totalVal)} (${inner.join(' + ')})`;
+      else if (totalVal) currentRendered = tex(totalVal);
+      else if (inner.length > 0) currentRendered = `(${inner.join(' + ')})`;
+    } else {
+      currentRendered = tex(pickLang(cur).toString().trim());
+    }
+    const desiredRendered = tex(pickLang(comp.desired).toString().trim());
+
     const parts = [];
-    if (currentVal) parts.push(`\\textbf{${labelCurrent}:} ${tex(currentVal)}`);
-    if (desiredVal) parts.push(`\\textbf{${labelDesired}:} ${tex(desiredVal)}`);
+    if (currentRendered) parts.push(`\\textbf{${labelCurrent}:} ${currentRendered}`);
+    if (desiredRendered) parts.push(`\\textbf{${labelDesired}:} ${desiredRendered}`);
     if (parts.length > 0) compensationCmd = `\\compensation{${parts.join(' \\quad ')}}`;
   }
 

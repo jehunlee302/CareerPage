@@ -22,12 +22,22 @@ resume:
 
 # === Optional: Compensation (resume only, not website) ===
 # Comment out the entire `compensation:` block to hide from resume.
-# Comment out individual `current:` or `desired:` (with their en/ko children) to hide that single value.
-# Values can be plain strings or {en, ko} pairs for bilingual resumes.
+# Comment out individual `current:` or `desired:` (with children) to hide that single value.
+# `current` can be a single value, OR split into base/bonus/total (any subset).
+#   - {base, bonus}        → "(기본급 X + 성과급 Y)"
+#   - {total, base, bonus} → "Total (기본급 X + 성과급 Y)"
+#   - plain {en, ko}       → just the value
 # compensation:
 #   current:
-#     en: "$80,000"
-#     ko: "8,000만원"
+#     base:
+#       en: "$60,000"
+#       ko: "6,000만원"
+#     bonus:
+#       en: "$20,000"
+#       ko: "2,000만원"
+#     # total:           # optional — if omitted, only the breakdown shows
+#     #   en: "$80,000"
+#     #   ko: "8,000만원"
 #   desired:
 #     en: "$100,000"
 #     ko: "1억원"

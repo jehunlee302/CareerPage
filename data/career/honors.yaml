@@ -1,3 +1,4 @@
+# Ph.D. ---
 - date: "2025.11"
   title:
     en: Second Prize, Ph.D. Thesis Competition
@@ -13,8 +14,8 @@
     en: First Prize, 2023 Simulation Challenge
     ko: 1등상, 2023 Simulation Challenge
   description:
-    en: Q-time-based Step Gating Control in Semiconductor Fabrication
-    ko: 반도체 팹 Q-time 기반 공정 게이팅 제어
+    en: Q-time-based Gating Control in Semiconductor Fabrication
+    ko: 반도체 팹의 Q-time 기반 공정 게이팅 제어
   organization: Winter Simulation Conference (WSC), Micron
   location: San Antonio, USA
   remarks: $3,000
@@ -66,6 +67,50 @@
   organization: Korea Advanced Institute of Science and Technology (KAIST)
   location: Daejeon, South Korea
   remarks: Full Tuition
+
+# M.S. ---
+- date: "2019.03, 2019.09"
+  title:
+    en: Graduate Assistant Tuition Waiver
+    ko: 조교학비감면
+  description:
+    en: Tuition Waiver (M.S. & Ph.D Integrated Program)
+    ko: 학비지원 (석박통합과정)
+  organization: Sungkyunkwan University (SKKU)
+  location: Suwon, South Korea
+  remarks: Half Tuition
+- date: "2018.03, 2019.03"
+  title:
+    en: Simsan Scholarship
+    ko: 심산 장학금
+  description:
+    en: Scholarship (M.S. & Ph.D Integrated Program)
+    ko: 장학금 (석박통합과정)
+  organization: Sungkyunkwan University (SKKU)
+  location: Suwon, South Korea
+  remarks: Half Tuition
+- date: "2018.03"
+  title:
+    en: Systems & Management Engineering Scholarship
+    ko: 시스템경영공학과장학기금 장학금
+  description:
+    en: Scholarship (M.S. & Ph.D Integrated Program)
+    ko: 장학금 (석박통합과정)
+  organization: Sungkyunkwan University (SKKU)
+  location: Suwon, South Korea
+  remarks: Half Tuition
+- date: "2017.03"
+  title:
+    en: Industrial Engineering Alumni Association Scholarship
+    ko: 산업공학과 동창회 장학금
+  description:
+    en: Scholarship (M.S. & Ph.D Integrated Program)
+    ko: 장학금 (석박통합과정)
+  organization: Sungkyunkwan University (SKKU)
+  location: Suwon, South Korea
+  remarks: Half Tuition
+
+# B.S. ---
 - date: "2016.07"
   title:
     en: "Third Prize, 2015-2016 PACE RSMS Competition (Second Year): Customer Insight"

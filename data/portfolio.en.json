@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-01",
+  "lastUpdated": "2026-05-02",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -958,7 +958,7 @@
     {
       "date": "2023.12",
       "title": "First Prize, 2023 Simulation Challenge",
-      "description": "Q-time-based Step Gating Control in Semiconductor Fabrication",
+      "description": "Q-time-based Gating Control in Semiconductor Fabrication",
       "organization": "Winter Simulation Conference (WSC), Micron",
       "location": "San Antonio, USA",
       "remarks": "$3,000"
@@ -1002,6 +1002,38 @@
       "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "remarks": "Full Tuition"
+    },
+    {
+      "date": "2019.03, 2019.09",
+      "title": "Graduate Assistant Tuition Waiver",
+      "description": "Tuition Waiver (M.S. & Ph.D Integrated Program)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
+    },
+    {
+      "date": "2018.03, 2019.03",
+      "title": "Simsan Scholarship",
+      "description": "Scholarship (M.S. & Ph.D Integrated Program)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
+    },
+    {
+      "date": "2018.03",
+      "title": "Systems & Management Engineering Scholarship",
+      "description": "Scholarship (M.S. & Ph.D Integrated Program)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
+    },
+    {
+      "date": "2017.03",
+      "title": "Industrial Engineering Alumni Association Scholarship",
+      "description": "Scholarship (M.S. & Ph.D Integrated Program)",
+      "organization": "Sungkyunkwan University (SKKU)",
+      "location": "Suwon, South Korea",
+      "remarks": "Half Tuition"
     },
     {
       "date": "2016.07",
