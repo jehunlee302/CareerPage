@@ -14,9 +14,9 @@
    --blue-dim: rgba(0, 122, 255, .12);
    --blue-glow: rgba(0, 122, 255, .25);
    --bg: #F8FAFC;
-   --bg-alt: #EEF2F7;
+   --bg-alt: #E5EBF4;
    --white: #FFFFFF;
-   --text: #0A192F;
+   --text: #1E293B;
    --text-mid: #334155;
    --text-muted: #64748B;
    --border: #E2E8F0;
@@ -39,7 +39,7 @@ html[data-theme="dark"] {
    --card-alt: #0F2A52;          /* ← 다크 모드 4 section-alt 카드 배경 */
    --text: #E2E8F0;
    --text-mid: #B0BCCC;
-   --text-muted: #8A99AD;
+   --text-muted: #A0B0C5;
    --border: rgba(255, 255, 255, .08);
    --blue-dim: rgba(0, 122, 255, .18);
 }
@@ -50,6 +50,21 @@ html[data-theme="dark"] {
 #skills .skill-card,
 #patents .patent-card {
    background: var(--card-alt)
+}
+
+/* Card elevation — subtle drop shadow (visible mainly in light mode) */
+.research-card,
+.pillar,
+.timeline-item,
+.featured-card,
+.project-card,
+.pub-item,
+.skill-card,
+.award-card,
+.patent-card,
+.activity-card,
+.contact-card {
+   box-shadow: 0 1px 3px rgba(15, 23, 42, .04), 0 1px 2px rgba(15, 23, 42, .03)
 }
 
 /* ── Reset ── */
@@ -1345,7 +1360,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    display: flex;
    flex-direction: column;
    gap: .6rem;
-   transition: border-color var(--t), transform var(--t), background var(--t);
+   transition: border-color var(--t), transform var(--t), background var(--t), box-shadow var(--t);
    cursor: pointer
 }
 
@@ -1433,7 +1448,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    padding: 1.4rem;
    display: flex;
    flex-direction: column;
-   transition: border-color var(--t), transform var(--t);
+   transition: border-color var(--t), transform var(--t), box-shadow var(--t);
    cursor: pointer
 }
 
@@ -1765,7 +1780,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    border: 1px solid var(--border);
    border-radius: var(--r-lg);
    padding: 1.4rem;
-   transition: border-color var(--t), transform var(--t)
+   transition: border-color var(--t), transform var(--t), box-shadow var(--t)
 }
 
 .award-card:hover {
@@ -1905,7 +1920,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    display: flex;
    flex-direction: column;
    gap: .25rem;
-   transition: border-color var(--t)
+   transition: border-color var(--t), transform var(--t), box-shadow var(--t)
 }
 
 .activity-card:hover {
