@@ -2,24 +2,24 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20260502r';
+const DATA_VER = '20260504d';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
-    { icon: '🤖', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
+    { icon: '🚦', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
     { icon: '🧠', title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
-    { icon: '🧬', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
-    { icon: '🪙', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
-    { icon: '🧩', title: 'Meta-Scheduling Architecture', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
-    { icon: '🏗️', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
+    { icon: '📈', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
+    { icon: '🖥️', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
+    { icon: '🏛️', title: 'Meta-Architecture for Scheduling', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
+    { icon: '🤖', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
   ],
   ko: [
-    { icon: '🤖', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
+    { icon: '🚦', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
     { icon: '🧠', title: '강화학습 & 모방학습', desc: '실시간 산업 의사결정을 위한 그래프 기반 RL/IL 알고리즘' },
-    { icon: '🪞', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
-    { icon: '🔬', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
-    { icon: '🧩', title: '메타 스케줄링 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
-    { icon: '🏭', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
+    { icon: '📈', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
+    { icon: '🖥️', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
+    { icon: '🏛️', title: '스케줄링 메타 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
+    { icon: '🤖', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
   ],
 };
 const FEATURED_PROJECT_INDICES = [25, 23, 21];

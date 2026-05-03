@@ -25,6 +25,7 @@
    --r-md: 12px;
    --r-lg: 16px;
    --card-bg: #FFFFFF;
+   --card-alt: #F4F8FD;          /* ← 4 section-alt 카드 배경 (Experience/Publications/Patents/Skills). 색 바꾸려면 여기만 수정. */
    --ease: cubic-bezier(.4, 0, .2, 1);
    --t: .3s;
 }
@@ -35,11 +36,20 @@ html[data-theme="dark"] {
    --bg-alt: #0E1F38;
    --white: #112240;
    --card-bg: #112240;
+   --card-alt: #0F2A52;          /* ← 다크 모드 4 section-alt 카드 배경 */
    --text: #E2E8F0;
    --text-mid: #B0BCCC;
    --text-muted: #8A99AD;
    --border: rgba(255, 255, 255, .08);
    --blue-dim: rgba(0, 122, 255, .18);
+}
+
+/* Apply --card-alt to cards in 4 alternate sections */
+#experience .timeline-item,
+#publications .pub-item,
+#skills .skill-card,
+#patents .patent-card {
+   background: var(--card-alt)
 }
 
 /* ── Reset ── */
@@ -108,7 +118,7 @@ a:focus-visible,
 }
 
 section {
-   padding: 4.5rem 0
+   padding: 3.5rem 0
 }
 
 .section-alt {
@@ -815,38 +825,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    PHILOSOPHY
    ════════════════════════════════════════ */
 #philosophy {
-   background: var(--navy);
-   position: relative;
-   overflow: hidden
-}
-
-#philosophy::before {
-   content: '';
-   position: absolute;
-   top: -20%;
-   right: -10%;
-   width: 560px;
-   height: 560px;
-   background: radial-gradient(ellipse, rgba(0, 122, 255, .09) 0%, transparent 60%);
-   pointer-events: none;
-   z-index: 0
-}
-
-#philosophy::after {
-   content: '';
-   position: absolute;
-   bottom: -15%;
-   left: -8%;
-   width: 440px;
-   height: 440px;
-   background: radial-gradient(ellipse, rgba(77, 163, 255, .06) 0%, transparent 70%);
-   pointer-events: none;
-   z-index: 0
-}
-
-#philosophy .container {
-   position: relative;
-   z-index: 1
+   background: var(--navy)
 }
 
 .philosophy-headline {
@@ -855,24 +834,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    line-height: 1;
    margin-bottom: 1.5rem;
    letter-spacing: -.04em;
-   background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 45%, #7BB6FF 100%);
-   -webkit-background-clip: text;
-   background-clip: text;
-   color: transparent;
-   background-size: 200% 100%;
-   animation: headline-shimmer 9s ease-in-out infinite
-}
-
-@keyframes headline-shimmer {
-
-   0%,
-   100% {
-      background-position: 0% 50%
-   }
-
-   50% {
-      background-position: 100% 50%
-   }
+   color: var(--blue)
 }
 
 .philosophy-lead {
@@ -968,10 +930,9 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 }
 
 .pillar:hover {
-   border-color: rgba(0, 122, 255, .45);
-   transform: translateY(-6px);
-   box-shadow: 0 22px 44px -22px rgba(0, 122, 255, .4), 0 0 0 1px rgba(0, 122, 255, .12);
-   background: linear-gradient(145deg, rgba(0, 122, 255, .06) 0%, rgba(0, 122, 255, .02) 100%)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .pillar:hover::before {
@@ -1113,7 +1074,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    background: var(--white);
    border: 1px solid var(--border);
    border-radius: var(--r-lg);
-   transition: border-color var(--t), box-shadow var(--t)
+   transition: border-color var(--t), box-shadow var(--t), transform var(--t)
 }
 
 .section-alt .timeline-item {
@@ -1122,7 +1083,8 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .timeline-item:hover {
    border-color: var(--blue);
-   box-shadow: 0 4px 16px rgba(0, 0, 0, .07)
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .timeline-item::before {
@@ -1388,9 +1350,9 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 }
 
 .featured-card:hover {
-   border-color: rgba(0, 122, 255, .45);
-   background: rgba(0, 122, 255, .06);
-   transform: translateY(-4px)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .fc-badge {
@@ -1477,7 +1439,8 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .project-card:hover {
    border-color: var(--blue);
-   transform: translateY(-2px)
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .project-card.hidden {
@@ -1611,11 +1574,13 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    display: flex;
    gap: 1rem;
    align-items: flex-start;
-   transition: border-color var(--t)
+   transition: border-color var(--t), box-shadow var(--t), transform var(--t)
 }
 
 .pub-item:hover {
-   border-color: var(--blue)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .pub-item.hidden {
@@ -1739,11 +1704,13 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    border: 1px solid var(--border);
    border-radius: var(--r-lg);
    padding: 1.4rem;
-   transition: border-color var(--t)
+   transition: border-color var(--t), box-shadow var(--t), transform var(--t)
 }
 
 .skill-card:hover {
-   border-color: var(--blue)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .skill-category {
@@ -1803,7 +1770,8 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .award-card:hover {
    border-color: var(--blue);
-   transform: translateY(-2px)
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .award-date {
@@ -1879,11 +1847,13 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    border: 1px solid var(--border);
    border-radius: var(--r-lg);
    padding: 1.2rem 1.5rem;
-   transition: border-color var(--t)
+   transition: border-color var(--t), box-shadow var(--t), transform var(--t)
 }
 
 .patent-card:hover {
-   border-color: var(--blue)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .patent-title {
@@ -1939,7 +1909,9 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 }
 
 .activity-card:hover {
-   border-color: var(--blue)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .activity-head {
@@ -2166,9 +2138,9 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 }
 
 .contact-card:hover {
-   border-color: rgba(0, 122, 255, .45);
-   background: rgba(0, 122, 255, .07);
-   transform: translateY(-2px)
+   border-color: var(--blue);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 28px rgba(0, 122, 255, .1)
 }
 
 .contact-icon {
@@ -2278,7 +2250,7 @@ footer {
 
 @media(max-width:768px) {
    section {
-      padding: 4rem 0
+      padding: 3rem 0
    }
 
    .nav-links {
