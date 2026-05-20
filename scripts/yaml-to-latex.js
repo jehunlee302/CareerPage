@@ -393,8 +393,9 @@ function generateProjects(projects) {
       if (ach) tasks.push(tex(ach));
     }
 
-    const BULLET = '\\textendash{}~';
-    const taskStr = BRIEF ? '' : tasks.map(s => BULLET + s).join('\n    \\\\ ');
+    // Projects in resume: compact list — only show institution info (affiliated + partners + client).
+    // Full task details live in the Narrative section (full version) or are omitted (brief).
+    const taskStr = '';
 
     // Year comment
     const year = period.slice(0, 4);
