@@ -1159,13 +1159,26 @@
       "LaTeX",
       "R"
     ],
+    "방법론": [
+      "Reinforcement Learning (RL)",
+      "Imitation Learning (IL)",
+      "Behavior Cloning (BC)",
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Meta-heuristics",
+      "Graph Neural Networks (GNN)",
+      "Combinatorial Optimization"
+    ],
     "프레임워크 & 라이브러리": [
       "PyTorch",
       "Matplotlib",
       "Pandas",
-      "NumPy",
+      "NumPy"
+    ],
+    "최적화 솔버": [
       "Gurobi",
-      "CPLEX"
+      "CPLEX",
+      "OR-Tools"
     ],
     "시뮬레이션 & 도구": [
       "VMS Mozart (APS)",

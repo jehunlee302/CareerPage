@@ -9,6 +9,20 @@ programming:
     - LaTeX
     - R
 
+methodologies:
+  label:
+    en: "Methodologies"
+    ko: "방법론"
+  items:
+    - "Reinforcement Learning (RL)"
+    - "Imitation Learning (IL)"
+    - "Behavior Cloning (BC)"
+    - "Supervised Learning"
+    - "Unsupervised Learning"
+    - "Meta-heuristics"
+    - "Graph Neural Networks (GNN)"
+    - "Combinatorial Optimization"
+
 frameworks_and_libraries:
   label:
     en: "Frameworks & Libraries"
@@ -18,8 +32,15 @@ frameworks_and_libraries:
     - Matplotlib
     - Pandas
     - NumPy
+
+optimization_solvers:
+  label:
+    en: "Optimization Solvers"
+    ko: "최적화 솔버"
+  items:
     - Gurobi
     - CPLEX
+    - OR-Tools
 
 simulation_and_tools:
   label:

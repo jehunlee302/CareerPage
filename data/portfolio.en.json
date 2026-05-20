@@ -1159,13 +1159,26 @@
       "LaTeX",
       "R"
     ],
+    "Methodologies": [
+      "Reinforcement Learning (RL)",
+      "Imitation Learning (IL)",
+      "Behavior Cloning (BC)",
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Meta-heuristics",
+      "Graph Neural Networks (GNN)",
+      "Combinatorial Optimization"
+    ],
     "Frameworks & Libraries": [
       "PyTorch",
       "Matplotlib",
       "Pandas",
-      "NumPy",
+      "NumPy"
+    ],
+    "Optimization Solvers": [
       "Gurobi",
-      "CPLEX"
+      "CPLEX",
+      "OR-Tools"
     ],
     "Simulation & Tools": [
       "VMS Mozart (APS)",
