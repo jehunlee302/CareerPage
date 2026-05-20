@@ -32,6 +32,7 @@ const TITLES = {
     honors:       'Honors \\& Awards',
     activities:   'Activities \\& Leadership',
     skills:       'Skills',
+    narrative:    'Career Narrative',
   },
   ko: {
     summary:      '전문 프로필',
@@ -42,7 +43,13 @@ const TITLES = {
     honors:       '수상 내역',
     activities:   '활동 및 리더십',
     skills:       '기술',
+    narrative:    '경력기술서',
   },
+};
+
+const NV_LABELS = {
+  en: { background: 'Background', objective: 'Objective', role: 'Role', activities: 'Key Activities', outcomes: 'Outcomes', notes: 'Notes', series: 'Continuous Series', phase: 'Phase' },
+  ko: { background: '배경', objective: '목표', role: '역할', activities: '수행 내용', outcomes: '성과', notes: '비고', series: '연속 과제', phase: '단계' },
 };
 
 const ALT_SERVICE_LABEL = {
@@ -224,7 +231,8 @@ ${compensationCmd}
 \\input{sections/publication.tex}
 \\input{sections/honors.tex}
 \\input{sections/leadership.tex}
-\\input{sections/skills.tex}
+\\input{sections/skills.tex}${BRIEF ? '' : `
+\\input{sections/narrative.tex}`}
 
 \\end{document}
 `;
@@ -511,6 +519,102 @@ ${entries}
 `;
 }
 
+/* ─── Narrative (Career Narrative — Project Deep Dives, full version only) ─── */
+function nvParseStart(period) {
+  const m = String(period || '').match(/(\d{4})\.(\d{1,2})/);
+  return m ? new Date(parseInt(m[1]), parseInt(m[2]) - 1, 1) : null;
+}
+function nvParseEnd(period) {
+  const all = String(period || '').match(/(\d{4})\.(\d{1,2})/g);
+  if (!all || all.length === 0) return null;
+  const last = all[all.length - 1].split('.');
+  return new Date(parseInt(last[0]), parseInt(last[1]) - 1, 1);
+}
+function generateNarrative(projects) {
+  if (!Array.isArray(projects) || !projects.length) return '';
+  const L = NV_LABELS[LANG] || NV_LABELS.en;
+
+  const withDetails = projects.filter(p => p.details && (p.details.situation || p.details.purpose || (p.details.tasks && p.details.tasks.length) || p.details.achievements));
+  if (!withDetails.length) return '';
+
+  // Sort ascending by start date for grouping
+  const sorted = [...withDetails].sort((a, b) => {
+    const aD = nvParseStart(a.period); const bD = nvParseStart(b.period);
+    return (aD?.getTime() || 0) - (bD?.getTime() || 0);
+  });
+
+  // Group continuous projects: same client + affiliated_institution + period gap < 6 months
+  const groups = [];
+  for (const p of sorted) {
+    const prev = groups.length ? groups[groups.length - 1] : null;
+    const prevLast = prev?.projects[prev.projects.length - 1];
+    const prevEnd = prevLast ? nvParseEnd(prevLast.period) : null;
+    const thisStart = nvParseStart(p.period);
+    const gapMo = (prevEnd && thisStart) ? (thisStart - prevEnd) / (1000 * 60 * 60 * 24 * 30) : Infinity;
+    if (prev && prev.client === p.client && prev.affiliated === p.affiliated_institution && gapMo < 6) {
+      prev.projects.push(p);
+    } else {
+      groups.push({ client: p.client, affiliated: p.affiliated_institution, projects: [p] });
+    }
+  }
+  groups.reverse(); // newest first
+
+  function renderProject(p, phaseIdx, totalPhases) {
+    const d = p.details || {};
+    const title = tex(extractLang(p.title));
+    const period = locPeriod(p.period || '');
+    const duration = p.duration || '';
+    const client = tex(p.client || '');
+    const affiliated = tex(p.affiliated_institution || '');
+    const partners = (p.partners || []).map(s => tex(s)).join(' · ');
+    const isMulti = totalPhases > 1;
+    const phaseTag = isMulti ? `\\textbf{\\small[${L.phase} ${phaseIdx}]}~` : '';
+    const pmTag = p.is_pm ? `\\textbf{\\footnotesize\\color{awesome}~PM}` : '';
+
+    const metaParts = [];
+    if (period) metaParts.push(tex(period) + (duration ? `~(${tex(duration)})` : ''));
+    if (client) metaParts.push(client);
+    if (affiliated && affiliated !== client) metaParts.push(`\\textit{${affiliated}}`);
+    if (partners) metaParts.push(`{\\footnotesize with ${partners}}`);
+    const metaLine = metaParts.join(' \\enspace|\\enspace ');
+
+    const fieldLines = [];
+    const fmt = (label, content) => fieldLines.push(`{\\small\\textbf{${tex(label)}.}~${content}}`);
+    if (d.situation)    fmt(L.background, tex(extractLang(d.situation)));
+    if (d.purpose)      fmt(L.objective,  tex(extractLang(d.purpose)));
+    if (d.role)         fmt(L.role,       tex(extractLang(d.role)));
+    if (d.tasks && d.tasks.length) {
+      const tasksLine = d.tasks.map(t => `\\textendash{}~${tex(typeof t === 'object' ? (t[LANG] || t.en || '') : t)}`).join(' \\\\ ~~');
+      fieldLines.push(`{\\small\\textbf{${tex(L.activities)}.}\\\\ ~~${tasksLine}}`);
+    }
+    if (d.achievements) fmt(L.outcomes,   tex(extractLang(d.achievements)));
+    if (d.notes)        fieldLines.push(`{\\footnotesize\\itshape\\color{gray}\\textbf{${tex(L.notes)}.}~${tex(extractLang(d.notes))}}`);
+
+    return `\\noindent ${phaseTag}\\textbf{\\normalsize ${title}}${pmTag} \\hfill {\\footnotesize ${metaLine}}\\par\\vspace{0.5mm}
+${fieldLines.join('\\par\\vspace{0.4mm}\n')}
+\\par\\vspace{2.5mm}`;
+  }
+
+  const sections = groups.map(g => {
+    const isMulti = g.projects.length > 1;
+    let block = '';
+    if (isMulti) {
+      const startP = g.projects[0]; const endP = g.projects[g.projects.length - 1];
+      const startStr = (startP.period || '').split(/[-~]/)[0].trim();
+      const endParts = (endP.period || '').split(/[-~]/);
+      const endStr = (endParts[1] || endParts[0] || '').trim();
+      block += `\\noindent\\textbf{\\small\\textcolor{awesome}{[${tex(L.series)}]}~~${tex(g.client || '')}${g.affiliated ? ` $\\cdot$ ${tex(g.affiliated)}` : ''} \\hfill {\\footnotesize ${tex(startStr)} -- ${tex(endStr)}}}\\par\\vspace{1mm}\\hrule\\vspace{1.5mm}\n`;
+    }
+    block += g.projects.map((p, i) => renderProject(p, i + 1, g.projects.length)).join('\n');
+    if (isMulti) block += `\\vspace{1mm}\n`;
+    return block;
+  }).join('\n\n');
+
+  return `${sectionHeader('narrative')}
+${sections}
+`;
+}
+
 /* ─── Main ─── */
 
 function main() {
@@ -540,6 +644,9 @@ function main() {
   writeFile(path.join(SECTIONS, 'honors.tex'), generateHonors(honors));
   writeFile(path.join(SECTIONS, 'leadership.tex'), generateLeadership(activities));
   writeFile(path.join(SECTIONS, 'skills.tex'), generateSkills(skills));
+  if (!BRIEF) {
+    writeFile(path.join(SECTIONS, 'narrative.tex'), generateNarrative(projects));
+  }
 
   console.log(`\n✅ LaTeX files generated (lang=${LANG}${BRIEF ? ', brief' : ''})`);
   console.log(`   Next: cd latex && xelatex resume.tex && xelatex resume.tex\n`);

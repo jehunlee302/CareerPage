@@ -15,8 +15,6 @@
   responsibilities:
     - en: "SK Hynix Digital Twin Platform: production-logistics simulator PM, use-case discovery, KPI definition, data consistency metrics, MES legacy data analysis & simulator integration, AI prediction model data specification"
       ko: "SK Hynix 디지털 트윈 플랫폼 구축: 생산-물류 시뮬레이터 신규 구축 PM, use-case 발굴, KPI 정의, 정합성 지표 정의, MES legacy data 분석 및 시뮬레이터 연결, AI 예측 모델 활용 데이터 정의"
-    - en: Production-logistics integrated simulation design
-      ko: 생산-물류 통합 시뮬레이션 설계
     - en: Production simulation engine architecture redesign & development participation
       ko: 생산 시뮬레이션 엔진 구조 변경안 설계 및 개발 참여
     - en: Planned and authored 2 government R&D proposals on Agentic AI (manufacturing-specific Agentic AI, LLM-based production plan explanation module / with University of Toronto)
@@ -48,6 +46,8 @@
   responsibilities:
     - en: Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support
       ko: Micron 기업의 시뮬레이션 기반 real-time APS 로직 유지보수, 시스템 셋팅 원격 지원
+    - en: Production-logistics integrated simulation design
+      ko: 생산-물류 통합 시뮬레이션 설계
   performance: ""
   region: Yongin, South Korea
 - position:
@@ -64,8 +64,10 @@
     en: "Lead researcher: AI-based dynamic schedulers, optimization-based heuristics, autonomous manufacturing scheduling systems"
     ko: "핵심 연구원: AI 기반 동적 스케줄러, 최적화 기반 휴리스틱, 자율 제조 스케줄링 시스템"
   responsibilities:
-    - en: "Led full project lifecycle (planning-to-validation): 9 industry-academia projects (planned 5, PM 4), 4 government projects (planned 3, PM 4)"
-      ko: "프로젝트 전 주기(기획~검증) 리딩: 산학과제 9건 (기획 5건, PM 4건), 정부과제 4건 (기획 3건, PM 4건)"
+    - en: 9 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)
+      ko: 산학과제 9건 (기획 5건, PM 4건), 정부과제 4건 (기획 3건, PM 4건)
+    - en: 2 SCI journal papers (1 first-author, 1 co-author), 11 international conference presentations (8 first-author, 3 co-author)
+      ko: SCI 논문 2편 게재 (1저자 1편, 공저자 1편), 국제 학회 발표 11건 (1저자 8편, 공저자 3편)
     - en: Fundamental research on Neural Combinatorial Optimization based on GNN and RL
       ko: 그래프 신경망(GNN) 및 강화학습(RL) 기반 Neural Combinatorial Optimization 원천 기술 연구
     - en: Designed general-purpose scheduling agent and Meta-RL methodology for flexible adaptation to manufacturing environment changes
@@ -74,15 +76,12 @@
       ko: AI 기반 수요예측·생산계획·작업계획 최적화 알고리즘 설계 및 실제 공정 데이터를 활용한 비즈니스 임팩트 검토 (삼성전자, LG전자, 삼성중공업 등)
     - en: Provided technical review supporting client executives' strategic decisions and delivered system design proposals
       ko: 과제 수행 결과를 바탕으로 고객사 경영진의 전략적 의사결정 관련 기술 검토 지원 및 시스템 설계안 전달
-    - en: Introduced structured project management processes (OneDrive & Notion-based) to the lab for the first time
-      ko: 연구실에 OneDrive 및 Notion 기반의 체계적 과제 관리 프로세스 처음 도입
-  highlights:
+    - en: Introduced structured project management processes (OneDrive & Notion-based) to the lab
+      ko: 연구실에 OneDrive 및 Notion 기반의 체계적 과제 관리 프로세스 도입
     - en: First Ph.D. graduate of the lab; led project planning, proposal writing, and research beyond typical researcher scope
       ko: 연구실 첫 번째 박사 졸업생으로서 과제 기획부터 제안서 작성, 연구 주도까지 일반적 연구자 이상의 주도적 역할 수행
-    - en: Won 10-year NRF 'Hanwoomul' long-term project after analyzing rejection feedback and reinforcing proposal logic
-      ko: 정부 과제 탈락 경험을 발판 삼아 심사 피드백을 철저히 분석하고 논리를 보강하여 10년 장기 프로젝트인 연구재단 한우물 과제 쟁취
-    - en: 2 first-author IEEE journal papers, 7 international conference presentations
-      ko: IEEE 국제학술지 1저자 논문 2편 게재, 국제 학회 발표 7건
+    - en: Won 10-year NRF 'Hanwoomul' long-term project
+      ko: 10년 장기 프로젝트인 연구재단 한우물 과제 수주
   performance: ""
   region: Daejeon, South Korea
 - position:
@@ -100,6 +99,8 @@
   responsibilities:
     - en: 5 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)
       ko: 산학과제 5건 (기획 2건, PM 2건), 정부과제 4건 (기획 2건, PM 1건)
+    - en: 3 SCI journal papers (1 first-author, 2 co-author), 10 international conference presentations (5 first-author, 5 co-author)
+      ko: SCI 논문 3편 게재 (1저자 1편, 공저자 2편), 국제 학회 발표 10건 (1저자 5편, 공저자 5편)
     - en: Led foundational design and operations optimization research for 3D printer-based smart factory digital twin systems
       ko: 3D 프린터 기반 스마트 팩토리 디지털 트윈 시스템 기초 설계 및 운영 최적화 연구 주도
     - en: Developed rescheduling algorithms for handling disruptions (machine failures, order cancellations) in flexible manufacturing systems (FMS)

@@ -2,7 +2,7 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20260520b';
+const DATA_VER = '20260520c';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
@@ -186,7 +186,6 @@ function render(data) {
   renderFeaturedProjects(data.projects); renderProjects(data.projects);
   renderPublications(data.publications); renderAwards(data.honors);
   renderPatents(data.patents); renderActivities(data.activities); renderSkills(data.skills);
-  renderNarrative(data.projects);
   renderContact(data.basic); renderFooter(data);
 }
 
