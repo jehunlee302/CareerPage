@@ -204,6 +204,7 @@ function generateMain(basic) {
 \\documentclass[11pt, a4paper]{resume}
 \\fontdir[fonts/]
 \\definecolor{awesome}{HTML}{000000}
+\\tcbuselibrary{breakable}
 
 \\photo[rectangle,noedge]{../assets/img/jehun.jpg}
 
@@ -568,8 +569,8 @@ function generateNarrative(projects) {
     const affiliated = tex(p.affiliated_institution || '');
     const partners = (p.partners || []).map(s => tex(s)).join(' · ');
     const isMulti = totalPhases > 1;
-    const phaseTag = isMulti ? `\\textbf{\\small[${L.phase} ${phaseIdx}]}~` : '';
-    const pmTag = p.is_pm ? `\\textbf{\\footnotesize\\color{awesome}~PM}` : '';
+    const phaseTag = isMulti ? `{\\small\\textbf{\\color{awesome}[${tex(L.phase)} ${phaseIdx}]}}~` : '';
+    const pmTag = p.is_pm ? `~{\\footnotesize\\textbf{\\color{awesome}\\faStar~PM}}` : '';
 
     const metaParts = [];
     if (period) metaParts.push(tex(period) + (duration ? `~(${tex(duration)})` : ''));
@@ -579,20 +580,28 @@ function generateNarrative(projects) {
     const metaLine = metaParts.join(' \\enspace|\\enspace ');
 
     const fieldLines = [];
-    const fmt = (label, content) => fieldLines.push(`{\\small\\textbf{${tex(label)}.}~${content}}`);
-    if (d.situation)    fmt(L.background, tex(extractLang(d.situation)));
-    if (d.purpose)      fmt(L.objective,  tex(extractLang(d.purpose)));
-    if (d.role)         fmt(L.role,       tex(extractLang(d.role)));
+    const fmt = (label, content) => fieldLines.push(`\\textbf{\\small\\color{awesome}${tex(label)}}~~${content}`);
+    if (d.situation)    fmt(L.background, `{\\small ${tex(extractLang(d.situation))}}`);
+    if (d.purpose)      fmt(L.objective,  `{\\small ${tex(extractLang(d.purpose))}}`);
+    if (d.role)         fmt(L.role,       `{\\small ${tex(extractLang(d.role))}}`);
     if (d.tasks && d.tasks.length) {
-      const tasksLine = d.tasks.map(t => `\\textendash{}~${tex(typeof t === 'object' ? (t[LANG] || t.en || '') : t)}`).join(' \\\\ ~~');
-      fieldLines.push(`{\\small\\textbf{${tex(L.activities)}.}\\\\ ~~${tasksLine}}`);
+      const tasksLine = d.tasks.map(t => `\\textendash{}~${tex(typeof t === 'object' ? (t[LANG] || t.en || '') : t)}`).join(' \\\\\n~~~~');
+      fieldLines.push(`\\textbf{\\small\\color{awesome}${tex(L.activities)}}\\\\\n~~~~{\\small ${tasksLine}}`);
     }
-    if (d.achievements) fmt(L.outcomes,   tex(extractLang(d.achievements)));
-    if (d.notes)        fieldLines.push(`{\\footnotesize\\itshape\\color{gray}\\textbf{${tex(L.notes)}.}~${tex(extractLang(d.notes))}}`);
+    if (d.achievements) fmt(L.outcomes,   `{\\small ${tex(extractLang(d.achievements))}}`);
+    if (d.notes)        fieldLines.push(`\\textbf{\\footnotesize\\color{gray}${tex(L.notes)}}~~{\\footnotesize\\itshape\\color{gray}${tex(extractLang(d.notes))}}`);
 
-    return `\\noindent ${phaseTag}\\textbf{\\normalsize ${title}}${pmTag} \\hfill {\\footnotesize ${metaLine}}\\par\\vspace{0.5mm}
-${fieldLines.join('\\par\\vspace{0.4mm}\n')}
-\\par\\vspace{2.5mm}`;
+    return `\\begin{tcolorbox}[
+  breakable, enhanced, sharp corners=northeast,
+  colback=white, colframe=gray!35, boxrule=0.4pt, arc=1.2mm,
+  left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
+  before skip=1.5mm, after skip=2.5mm,
+]
+\\noindent ${phaseTag}\\textbf{\\normalsize ${title}}${pmTag}\\par
+{\\footnotesize\\color{gray!130} ${metaLine}}\\par
+\\vspace{0.5mm}{\\color{gray!50}\\hrule}\\vspace{1.2mm}
+${fieldLines.join('\\par\\vspace{0.8mm}\n')}
+\\end{tcolorbox}`;
   }
 
   const sections = groups.map(g => {
@@ -603,14 +612,17 @@ ${fieldLines.join('\\par\\vspace{0.4mm}\n')}
       const startStr = (startP.period || '').split(/[-~]/)[0].trim();
       const endParts = (endP.period || '').split(/[-~]/);
       const endStr = (endParts[1] || endParts[0] || '').trim();
-      block += `\\noindent\\textbf{\\small\\textcolor{awesome}{[${tex(L.series)}]}~~${tex(g.client || '')}${g.affiliated ? ` $\\cdot$ ${tex(g.affiliated)}` : ''} \\hfill {\\footnotesize ${tex(startStr)} -- ${tex(endStr)}}}\\par\\vspace{1mm}\\hrule\\vspace{1.5mm}\n`;
+      block += `\\noindent\\colorbox{awesome!8}{\\parbox{\\dimexpr\\linewidth-2\\fboxsep\\relax}{%
+\\textbf{\\small\\color{awesome}[${tex(L.series)}]}~~\\textbf{\\small ${tex(g.client || '')}}${g.affiliated ? `~~{\\small\\itshape\\color{gray!130}· ${tex(g.affiliated)}}` : ''}\\hfill{\\footnotesize\\color{gray!130} ${tex(startStr)} \\textendash{} ${tex(endStr)}}%
+}}\\par\\vspace{1mm}\n`;
     }
     block += g.projects.map((p, i) => renderProject(p, i + 1, g.projects.length)).join('\n');
-    if (isMulti) block += `\\vspace{1mm}\n`;
+    if (isMulti) block += `\\vspace{2mm}\n`;
     return block;
   }).join('\n\n');
 
-  return `${sectionHeader('narrative')}
+  return `\\clearpage
+${sectionHeader('narrative')}
 ${sections}
 `;
 }

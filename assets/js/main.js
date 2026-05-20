@@ -2,7 +2,7 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20260520c';
+const DATA_VER = '20260520d';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
