@@ -152,7 +152,7 @@
       "performance": "",
       "region": "Daejeon, South Korea",
       "responsibilities": [
-        "9 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)",
+        "9 industry-academia projects (planned 5, PM 4), 4 government projects (planned 3, PM 4)",
         "2 SCI journal papers (1 first-author, 1 co-author), 11 international conference presentations (8 first-author, 3 co-author)",
         "Fundamental research on Neural Combinatorial Optimization based on GNN and RL",
         "Designed general-purpose scheduling agent and Meta-RL methodology for flexible adaptation to manufacturing environment changes",
@@ -1140,7 +1140,6 @@
     "Simulation & Tools": [
       "VMS Mozart (APS)",
       "Plant Sim",
-      "AutoMod",
       "MS Office",
       "Photoshop"
     ],
@@ -1185,7 +1184,7 @@
       "date": "2022.06 - 2023.02",
       "title": "Ph.D. Candidate Research Incentive Support",
       "description": "",
-      "organization": "National Research Foundation (NRF) of Korea",
+      "organization": "NRF of Korea",
       "location": "South Korea",
       "remarks": "$15,000"
     },
