@@ -52,6 +52,15 @@ const NV_LABELS = {
   ko: { background: '배경', objective: '목표', role: '역할', activities: '수행 내용', outcomes: '성과', notes: '비고', series: '연속 과제', phase: '단계' },
 };
 
+// Canonical affiliation periods — used in Career Narrative group headers.
+// Mirrors work.yaml timeline. Update here if affiliation changes.
+// {{PRESENT}} is replaced with locale-appropriate "Present" / "현재".
+const INST_PERIODS = {
+  'SKKU':                '2016.04 - 2021.02',
+  'KAIST':               '2021.03 - 2025.02',
+  'VMS Solutions Inc.':  '2025.02 - {{PRESENT}}',
+};
+
 const ALT_SERVICE_LABEL = {
   en: { label: 'Alternative Military Service - Technical Research Personnel', mod: 'concurrent affiliation with Ministry of National Defense' },
   ko: { label: '병역 대체 복무 - 전문연구요원', mod: '국방부 동시 소속' },
@@ -532,51 +541,59 @@ function nvParseEnd(period) {
   const last = all[all.length - 1].split('.');
   return new Date(parseInt(last[0]), parseInt(last[1]) - 1, 1);
 }
+function nvHasOpenEnd(period) {
+  const s = String(period || '');
+  const matches = s.match(/(\d{4})\.(\d{1,2})/g) || [];
+  if (matches.length === 1 && /[-~]\s*$/.test(s)) return true;
+  if (/Present|현재/i.test(s)) return true;
+  return false;
+}
+function nvFmtYM(d) {
+  if (!d) return '';
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+}
 function generateNarrative(projects) {
   if (!Array.isArray(projects) || !projects.length) return '';
   const L = NV_LABELS[LANG] || NV_LABELS.en;
+  const PRESENT = LANG === 'ko' ? '현재' : 'present';
 
   const withDetails = projects.filter(p => p.details && (p.details.situation || p.details.purpose || (p.details.tasks && p.details.tasks.length) || p.details.achievements));
   if (!withDetails.length) return '';
 
-  // Sort ascending by start date for grouping
-  const sorted = [...withDetails].sort((a, b) => {
-    const aD = nvParseStart(a.period); const bD = nvParseStart(b.period);
-    return (aD?.getTime() || 0) - (bD?.getTime() || 0);
+  // Group by affiliated_institution
+  const byInst = new Map();
+  for (const p of withDetails) {
+    const key = p.affiliated_institution || (LANG === 'ko' ? '기타' : 'Other');
+    if (!byInst.has(key)) byInst.set(key, []);
+    byInst.get(key).push(p);
+  }
+
+  // Build group meta — period range, projects sorted newest-first within group
+  const groups = [...byInst.entries()].map(([inst, projs]) => {
+    const starts = projs.map(p => nvParseStart(p.period)).filter(Boolean);
+    const ends = projs.map(p => nvParseEnd(p.period)).filter(Boolean);
+    const open = projs.some(p => nvHasOpenEnd(p.period));
+    const minStart = starts.length ? new Date(Math.min(...starts.map(d => d.getTime()))) : null;
+    const maxEnd = ends.length ? new Date(Math.max(...ends.map(d => d.getTime()))) : null;
+    projs.sort((a, b) => (nvParseStart(b.period)?.getTime() || 0) - (nvParseStart(a.period)?.getTime() || 0));
+    return { inst, projects: projs, start: minStart, end: open ? null : maxEnd, open };
   });
 
-  // Group continuous projects: same client + affiliated_institution + period gap < 6 months
-  const groups = [];
-  for (const p of sorted) {
-    const prev = groups.length ? groups[groups.length - 1] : null;
-    const prevLast = prev?.projects[prev.projects.length - 1];
-    const prevEnd = prevLast ? nvParseEnd(prevLast.period) : null;
-    const thisStart = nvParseStart(p.period);
-    const gapMo = (prevEnd && thisStart) ? (thisStart - prevEnd) / (1000 * 60 * 60 * 24 * 30) : Infinity;
-    if (prev && prev.client === p.client && prev.affiliated === p.affiliated_institution && gapMo < 6) {
-      prev.projects.push(p);
-    } else {
-      groups.push({ client: p.client, affiliated: p.affiliated_institution, projects: [p] });
-    }
-  }
-  groups.reverse(); // newest first
+  // Most recent affiliation first
+  groups.sort((a, b) => (b.start?.getTime() || 0) - (a.start?.getTime() || 0));
 
-  function renderProject(p, phaseIdx, totalPhases) {
+  function renderProject(p) {
     const d = p.details || {};
     const title = tex(extractLang(p.title));
     const period = locPeriod(p.period || '');
     const duration = p.duration || '';
     const client = tex(p.client || '');
-    const affiliated = tex(p.affiliated_institution || '');
     const partners = (p.partners || []).map(s => tex(s)).join(' · ');
-    const isMulti = totalPhases > 1;
-    const phaseTag = isMulti ? `{\\small\\textbf{\\color{awesome}[${tex(L.phase)} ${phaseIdx}]}}~` : '';
     const pmTag = p.is_pm ? `~{\\footnotesize\\textbf{\\color{awesome}\\faStar~PM}}` : '';
 
     const metaParts = [];
     if (period) metaParts.push(tex(period) + (duration ? `~(${tex(duration)})` : ''));
     if (client) metaParts.push(client);
-    if (affiliated && affiliated !== client) metaParts.push(`\\textit{${affiliated}}`);
     if (partners) metaParts.push(`{\\footnotesize with ${partners}}`);
     const metaLine = metaParts.join(' \\enspace|\\enspace ');
 
@@ -598,32 +615,34 @@ function generateNarrative(projects) {
   left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
   before skip=1.5mm, after skip=2.5mm,
 ]
-\\noindent ${phaseTag}\\textbf{\\normalsize ${title}}${pmTag}\\par
+\\noindent \\textbf{\\normalsize ${title}}${pmTag}\\par
 {\\footnotesize\\color{gray!130} ${metaLine}}\\par
 \\vspace{0.5mm}{\\color{gray!50}\\hrule}\\vspace{1.2mm}
 ${fieldLines.join('\\par\\vspace{0.8mm}\n')}
 \\end{tcolorbox}`;
   }
 
-  const sections = groups.map(g => {
-    const isMulti = g.projects.length > 1;
-    let block = '';
-    if (isMulti) {
-      const startP = g.projects[0]; const endP = g.projects[g.projects.length - 1];
-      const startStr = (startP.period || '').split(/[-~]/)[0].trim();
-      const endParts = (endP.period || '').split(/[-~]/);
-      const endStr = (endParts[1] || endParts[0] || '').trim();
-      block += `\\noindent\\colorbox{awesome!8}{\\parbox{\\dimexpr\\linewidth-2\\fboxsep\\relax}{%
-\\textbf{\\small\\color{awesome}[${tex(L.series)}]}~~\\textbf{\\small ${tex(g.client || '')}}${g.affiliated ? `~~{\\small\\itshape\\color{gray!130}· ${tex(g.affiliated)}}` : ''}\\hfill{\\footnotesize\\color{gray!130} ${tex(startStr)} \\textendash{} ${tex(endStr)}}%
-}}\\par\\vspace{1mm}\n`;
+  const sections = groups.map((g, idx) => {
+    // Prefer canonical affiliation period mapping; fall back to data-derived range.
+    let periodStr;
+    if (INST_PERIODS[g.inst]) {
+      periodStr = INST_PERIODS[g.inst].replace(/\{\{PRESENT\}\}/g, PRESENT);
+    } else {
+      const startStr = nvFmtYM(g.start);
+      const endStr = g.open ? PRESENT : nvFmtYM(g.end);
+      periodStr = startStr && endStr ? `${startStr} - ${endStr}` : (startStr || endStr || '');
     }
-    block += g.projects.map((p, i) => renderProject(p, i + 1, g.projects.length)).join('\n');
-    if (isMulti) block += `\\vspace{2mm}\n`;
-    return block;
+    const header = `\\noindent\\textbf{\\Large\\color{awesome}${tex(g.inst)}}~~{\\small\\color{gray!130}(${tex(periodStr)})}\\par
+\\vspace{1mm}{\\color{awesome!60}\\hrule height 0.6pt}\\vspace{3mm}
+`;
+    const projectsBody = g.projects.map(renderProject).join('\n');
+    const pagebreak = idx === 0 ? '' : '\\newpage\n';
+    return pagebreak + header + projectsBody;
   }).join('\n\n');
 
   return `\\clearpage
 ${sectionHeader('narrative')}
+\\vspace{4mm}
 ${sections}
 `;
 }
