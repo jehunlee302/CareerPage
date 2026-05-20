@@ -7,8 +7,33 @@
   client: MOTIE of Korea, Samsung SDI
   affiliated_institution: SKKU
   is_pm: false
+  details:
+    situation:
+      en: Samsung SDI battery production generated large volumes of noisy operational data, but lacked a simulation-based framework for real-time scheduling decisions.
+      ko: 삼성SDI 배터리 생산 공정은 대용량의 노이즈 섞인 운영 데이터를 생성하였으나, 실시간 스케줄링 의사결정을 지원할 시뮬레이션 기반 프레임워크가 부재하였다.
+    purpose:
+      en: Build a battery-production simulator and design a real-time scheduling framework that reflects process-specific constraints.
+      ko: 배터리 공정 특성을 반영한 시뮬레이터를 구축하고, 실시간 스케줄링 프레임워크를 설계한다.
+    role:
+      en: Researcher — responsible for battery process simulator and scheduling algorithm design.
+      ko: 연구원 — 배터리 공정 시뮬레이터 개발 및 스케줄링 알고리즘 설계를 담당하였다.
+    tasks:
+      - en: Identified battery production constraints through on-site engineer interviews
+        ko: 현장 엔지니어 인터뷰를 통해 배터리 생산 공정 제약을 파악하였다
+      - en: Built a battery production simulator and defined the resolution scope
+        ko: 배터리 생산 시뮬레이터를 개발하고 문제 해결 범위를 결정하였다
+      - en: Designed scheduling algorithms reflecting process-specific characteristics
+        ko: 공정 특성을 반영한 스케줄링 알고리즘을 개발하였다
+      - en: Defined MES-integration data schema for the production operations system
+        ko: 생산 운영 시스템(MES 연동용)을 위한 데이터 스키마를 정의하였다
+    achievements:
+      en: Established a simulation-based framework that supports real-time decision-making under large, noisy production data. Built collaborative experience with Micube Solution, Samsung SDI, and KITECH.
+      ko: 대용량·Noisy 생산 데이터를 입력으로 실시간 의사결정을 지원하는 시뮬레이션 기반 프레임워크를 구축하였다. Micube Solution, 삼성SDI, 한국생산기술연구원(KITECH)과의 협업 경험을 축적하였다.
+    notes:
+      en: "MOTIE government project — partners: Micube Solution, Samsung SDI, KITECH."
+      ko: "산업통상자원부 정부 과제 — 협력기관: Micube Solution, 삼성SDI, 한국생산기술연구원(KITECH)."
   remarks:
-    en: ""
+    en: Battery process anomaly prediction and scheduling framework
     ko: 배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안
 - index: 7
   period: 2018.07 - 2018.09
@@ -19,9 +44,34 @@
   client: SK Hynix
   affiliated_institution: SKKU
   is_pm: true
+  details:
+    situation:
+      en: SK Hynix's semiconductor FAB lines operate with multiple dispatching rules acting in combination, making single-KPI optimization of weights impractical in field conditions.
+      ko: SK Hynix 반도체 FAB 생산라인은 다수의 디스패칭 룰이 복합적으로 작용하여, 단일 KPI 기준 최적 파라미터 도출이 현장 운영에서는 비실용적인 구조였다.
+    purpose:
+      en: Apply the sequential-search dispatching-weight methodology to a real semiconductor FAB and validate operational gains.
+      ko: SK Hynix FAB 환경에 Sequential Search 디스패칭 가중치 방법론을 적용하여 운영 효율 개선 가능성을 검증한다.
+    role:
+      en: PM and lead researcher — drove on-site constraint analysis, algorithm application, and validation.
+      ko: PM·주연구원 — 현장 제약 파악, 알고리즘 적용 및 검증을 주도하였다.
+    tasks:
+      - en: Identified FAB-line constraints through on-site engineer interviews
+        ko: SK Hynix FAB 현장 엔지니어 인터뷰를 통해 공정 제약을 파악하였다
+      - en: Analyzed correlations among multiple dispatching rules
+        ko: 다수 디스패칭 룰 간 상관관계를 분석하였다
+      - en: Applied the Sequential Search framework to the SK Hynix FAB environment
+        ko: Sequential Search 프레임워크를 SK Hynix FAB 환경에 적용하였다
+      - en: Consolidated validation results and identified follow-up research directions
+        ko: 검증 결과를 정리하고 차기 과제 방향성을 도출하였다
+    achievements:
+      en: Demonstrated that the Sequential Search methodology — developed in the VMS Solutions × SKKU research thread — applies to real semiconductor FAB environments, culminating in the IEEE TSM (2020) first-author publication.
+      ko: VMS Solutions·SKKU 연구 흐름에서 도출된 Sequential Search 방법론의 실제 반도체 FAB 적용 가능성을 검증하였으며, IEEE TSM 1저자 논문(2020)으로 결실되었다.
+    notes:
+      en: Part of the VMS × SK Hynix multi-year dispatching-rule research thread (2017.07 – 2020.02).
+      ko: VMS·SK Hynix 디스패칭 룰 다년 산학 연구 흐름(2017.07 - 2020.02)의 일환이다.
   remarks:
-    en: ""
-    ko: 반도체 FAB 생산라인 최적 파라미터 도출 및 현장 제약 파악
+    en: Validation of dispatching-weight methodology on a real semiconductor FAB
+    ko: 반도체 FAB 생산라인 최적 파라미터 도출 방법론 적용 및 현장 검증
 - index: 6
   period: 2018.07 - 2019.02
   duration: 8m
@@ -31,8 +81,33 @@
   client: VMS Solutions
   affiliated_institution: SKKU
   is_pm: true
+  details:
+    situation:
+      en: Dispatching-rule-based scheduling was typically evaluated against a single KPI, making it hard to optimize across multiple operational indicators simultaneously.
+      ko: 기존 디스패칭 룰 기반 스케줄링은 단일 KPI 중심으로 평가되어, 다양한 운영 지표를 균형 있게 고려한 최적화가 어려웠다.
+    purpose:
+      en: Develop a framework that quantitatively analyzes KPI changes across dispatching-rule weight configurations.
+      ko: 디스패칭 룰 가중치별 KPI 변화를 정량적으로 분석하는 프레임워크를 개발한다.
+    role:
+      en: PM and lead researcher — drove framework design and ML-based weight optimization.
+      ko: PM·주연구원 — 프레임워크 설계와 머신러닝 기반 파라미터 도출 알고리즘 개발을 주도하였다.
+    tasks:
+      - en: Designed a KPI-change analysis framework keyed on dispatching-rule weight perturbations
+        ko: 디스패칭 룰 가중치 변화에 따른 KPI 분석 프레임워크를 설계하였다
+      - en: Built an ML-based algorithm for deriving optimal weight configurations
+        ko: 머신러닝 기반 최적 파라미터 도출 알고리즘을 개발하였다
+      - en: Built a simulation-based validation environment for repeatable benchmarking
+        ko: 시뮬레이션 기반 검증 환경을 구축하였다
+      - en: Documented results for VMS Solutions product integration
+        ko: VMS Solutions 제품 적용을 위한 인터페이스를 정리하였다
+    achievements:
+      en: Established a framework that quantitatively evaluates and derives dispatching-rule weights. Foundation for the WSC 2019 first-author paper.
+      ko: 디스패칭 룰 가중치를 정량적으로 평가·도출하는 프레임워크를 정립하였으며, WSC 1저자 논문(2019)의 기반이 되었다.
+    notes:
+      en: Part of the VMS Solutions multi-year industrial research series — later evolved into the Sequential Search methodology.
+      ko: VMS Solutions와의 다년 산학과제 시리즈 일환으로, 이후 Sequential Search 방법론으로 발전하였다.
   remarks:
-    en: ""
+    en: ML-based optimal parameter derivation algorithm
     ko: 머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발
 - index: 5
   period: 2017.07 - 2018.02
@@ -43,8 +118,31 @@
   client: VMS Solutions
   affiliated_institution: SKKU
   is_pm: false
+  details:
+    situation:
+      en: LCD manufacturing applied multiple dispatching rules in combination, yet no quantitative analysis existed on how weight changes propagated into KPIs.
+      ko: LCD 제조 공정은 디스패칭 룰이 복합적으로 적용되었으나, 가중치 변화가 KPI에 미치는 영향에 대한 정량적 분석이 부족했다.
+    purpose:
+      en: Build a framework that analyzes performance changes induced by dispatching-rule weight configurations in LCD processes.
+      ko: LCD 공정에서 디스패칭 룰 가중치에 따른 성능 변화를 분석하는 프레임워크를 구축한다.
+    role:
+      en: Researcher — designed and implemented the simulation-based performance analysis framework.
+      ko: 연구원 — 시뮬레이션 기반 성능 분석 프레임워크 설계·구현을 담당하였다.
+    tasks:
+      - en: Analyzed LCD process characteristics and organized the dispatching-rule matrix
+        ko: LCD 공정 특성을 분석하고 디스패칭 룰 매트릭스를 정리하였다
+      - en: Built a simulation-based performance-comparison environment
+        ko: 시뮬레이션 기반 성능 비교 환경을 구축하였다
+      - en: Analyzed and visualized weight-KPI correlations
+        ko: 가중치-KPI 상관관계를 분석하고 시각화하였다
+    achievements:
+      en: Established a performance-analysis framework keyed on dispatching-rule weight changes. Foundation for the WSC 2018 first-author paper "A Framework for Performance Analysis of Dispatching Rules".
+      ko: 디스패칭 룰 가중치 변화에 따른 성능 분석 프레임워크를 정립하였으며, WSC 1저자 논문(2018) "A Framework for Performance Analysis of Dispatching Rules"의 토대를 형성하였다.
+    notes:
+      en: Starting point of the VMS Solutions × SK Hynix multi-year industrial research series (2017.07 – 2020.02).
+      ko: VMS Solutions·SK Hynix 다년 산학과제 시리즈(2017.07 - 2020.02)의 출발점이다.
   remarks:
-    en: ""
+    en: Performance analysis framework for parameter-induced KPI changes
     ko: 파라미터에 따른 성능 변화 분석 프레임워크 설계/개발
 - index: 4
   period: 2017.07 - 2018.01
@@ -55,8 +153,31 @@
   client: MSIP of Korea
   affiliated_institution: SKKU
   is_pm: false
+  details:
+    situation:
+      en: A government-funded smart factory testbed had been built, but lacked a simulation environment to quantitatively validate operational efficiency under varying scenarios.
+      ko: MSIP 정부 과제의 일환으로 스마트 팩토리 테스트베드가 구축되었으나, 운영 효율성을 정량적으로 검증할 시뮬레이션 환경이 부재하였다.
+    purpose:
+      en: Build a virtual factory simulator and analyze operational efficiency across scenarios.
+      ko: 가상 공장 시뮬레이터를 구축하여 운영 시나리오별 효율성을 분석한다.
+    role:
+      en: Researcher — responsible for simulator construction and scenario analysis.
+      ko: 연구원 — 시뮬레이터 구축 및 운영 시나리오 분석을 담당하였다.
+    tasks:
+      - en: Defined virtual-factory operation scenarios and built the simulator
+        ko: 가상 공장 운영 시나리오를 정의하고 시뮬레이터를 구축하였다
+      - en: Conducted simulation-based operational efficiency analysis
+        ko: 시뮬레이션 기반 운영 효율성을 분석하였다
+      - en: Consolidated findings and identified follow-up research directions
+        ko: 결과를 정리하고 후속 과제 방향성을 도출하였다
+    achievements:
+      en: Established a methodology for validating operational efficiency through simulation.
+      ko: 시뮬레이션 기반 운영 효율성 검증 방법론을 정립하였다.
+    notes:
+      en: Part of the MSIP / MSIT smart factory research line — linked to #1 (FaaS IoT platform) and #3 (3D-printer scheduling).
+      ko: MSIP/MSIT 정부 과제 흐름의 일환 — #1(FaaS IoT 플랫폼), #3(3D 프린터 스케줄링)과 연계된 스마트 팩토리 연구이다.
   remarks:
-    en: ""
+    en: Virtual factory simulator construction and operational efficiency analysis
     ko: 가상공장 시뮬레이터 구축 및 운영 효율성 분석
 - index: 3
   period: 2016.11 - 2019.10
@@ -67,8 +188,33 @@
   client: NRF of Korea
   affiliated_institution: SKKU
   is_pm: false
+  details:
+    situation:
+      en: 3D-printer-based flexible manufacturing systems (FMS) are central to mass personalization, yet lacked real-time rescheduling mechanisms to handle disruptions like machine failure, order cancellation, and rush orders.
+      ko: 3D 프린터 기반 유연 생산 시스템(FMS)은 개인맞춤형 생산의 핵심 인프라이지만, 설비 고장·주문 취소·긴급 주문 등 이상 상황에 실시간으로 대응할 리스케줄링 메커니즘이 부재하였다.
+    purpose:
+      en: Develop scheduling and rescheduling algorithms tailored to 3D-printer-based FMS characteristics.
+      ko: 3D 프린터 기반 FMS의 특성을 반영한 스케줄링·리스케줄링 알고리즘을 개발한다.
+    role:
+      en: Researcher — analyzed FMS characteristics and built the rescheduling algorithms.
+      ko: 연구원 — FMS 특성 분석 및 이상 대응 리스케줄링 알고리즘 개발을 담당하였다.
+    tasks:
+      - en: Analyzed characteristics of 3D-printer-based flexible manufacturing systems
+        ko: 3D 프린터 기반 FMS 특성을 분석하였다
+      - en: Defined disruption scenarios — machine failure, order cancellation, rush orders
+        ko: 이상 상황 시나리오 및 케이스를 정의하였다 (설비 고장·주문 취소·긴급 주문)
+      - en: Developed rescheduling algorithms for disruption response
+        ko: 이상 대응 리스케줄링 알고리즘을 개발하였다
+      - en: Designed real-time schedule derivation using genetic algorithms and heuristics, and validated performance
+        ko: 유전 알고리즘·휴리스틱 기반 실시간 스케줄 도출 방법론을 설계하고 성능을 검증하였다
+    achievements:
+      en: Built a rescheduling mechanism that responds in real time to machine state and order changes. Resulted in a 2nd-author publication in Int. Journal of Advanced Manufacturing Technology (2020).
+      ko: 설비 상태·주문 변화에 실시간으로 대응하는 리스케줄링 메커니즘을 설계하였다. International Journal of Advanced Manufacturing Technology 2저자 논문(2020)으로 결실되었다.
+    notes:
+      en: Mass Personalization research line — connected to the MSIP FaaS IoT platform project (#1).
+      ko: 개인맞춤형 생산(Mass Personalization) 연구 흐름 — MSIP FaaS IoT 플랫폼(#1)과 연계된 NRF 과제이다.
   remarks:
-    en: ""
+    en: Disruption-response algorithms for flexible production automation
     ko: 유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발
 - index: 2
   period: 2016.07 - 2017.02
@@ -79,8 +225,31 @@
   client: VMS Solutions
   affiliated_institution: SKKU
   is_pm: false
+  details:
+    situation:
+      en: Inefficient schedule patterns were accumulating in VMS Solutions' LCD operational data, yet no automated detection or improvement mechanism existed.
+      ko: VMS Solutions의 LCD 공정 운영 데이터에서 비효율적인 스케줄 패턴이 누적되고 있었으나, 자동화된 탐지·개선 메커니즘이 부재하였다.
+    purpose:
+      en: Design heuristic algorithms that detect inefficient LCD schedules and improve them.
+      ko: LCD 공정 운영 데이터에서 비효율 스케줄을 탐지하고 개선하는 휴리스틱 알고리즘을 설계한다.
+    role:
+      en: Researcher — responsible for pattern analysis and heuristic algorithm design and implementation.
+      ko: 연구원 — 비효율 패턴 분석과 휴리스틱 알고리즘 설계·구현을 담당하였다.
+    tasks:
+      - en: Identified inefficient schedule patterns through LCD operational data analysis
+        ko: LCD 공정 운영 데이터 분석을 통해 비효율 스케줄 패턴을 식별하였다
+      - en: Defined inefficiency-detection metrics and automated their validation
+        ko: 비효율 탐지 지표를 정의하고 자동화 검증을 수행하였다
+      - en: Designed and implemented heuristic improvement algorithms
+        ko: 개선 방향성 기반 휴리스틱 알고리즘을 설계·구현하였다
+    achievements:
+      en: First industrial research engagement with VMS Solutions — established the starting point of the multi-year dispatching-rule research line.
+      ko: VMS Solutions와의 첫 산학과제로서 디스패칭 룰 연구 라인의 출발점이 되었다.
+    notes:
+      en: First step of the VMS Solutions × SK Hynix multi-year industrial research series — extended into weight analysis (#5, #6) and Sequential Search (#10).
+      ko: VMS Solutions·SK Hynix 다년 산학과제 시리즈의 첫 단계 — 후속 가중치 분석(#5, #6)·Sequential Search(#10) 연구로 발전하였다.
   remarks:
-    en: ""
+    en: Heuristic algorithm for improving existing schedules
     ko: 기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발
 - index: 1
   period: 2016.04 - 2018.05
@@ -92,6 +261,31 @@
   partner_institution: ETRI,
   affiliated_institution: SKKU
   is_pm: false
+  details:
+    situation:
+      en: Mass-personalization production requires integrated control of distributed, heterogeneous equipment — 3D printers, robotic handlers, IoT sensors — but no unified platform existed for such an environment.
+      ko: 개인맞춤형 생산(Mass Personalization) 환경에서는 3D 프린터·로봇 핸들러·IoT 센서로 구성된 분산 이기종 설비를 통합 제어할 수 있는 플랫폼이 필요했다.
+    purpose:
+      en: Build an IoT service platform that integrates heterogeneous equipment under the Factory-as-a-Service (FaaS) concept.
+      ko: FaaS(Factory-as-a-Service) 관점에서 이기종 설비를 통합 제어하는 IoT 서비스 플랫폼을 구축한다.
+    role:
+      en: Researcher — responsible for the 3D-printer Urban Factory scheduling simulator and algorithm development.
+      ko: 연구원 — 3D 프린터 도시 공장(Urban Factory) 스케줄링 시뮬레이터 구축 및 알고리즘 개발을 담당하였다.
+    tasks:
+      - en: Built the 3D-printer Urban Factory scheduling simulator and the initial scheduling algorithm
+        ko: 3D 프린터 도시 공장 스케줄링 시뮬레이터를 구축하고 초기 스케줄링 알고리즘을 개발하였다
+      - en: Developed rescheduling algorithms for disruption response
+        ko: 이상 상황 대응 리스케줄링 알고리즘을 개발하였다
+      - en: Reviewed robot-handler operation algorithms
+        ko: 로봇 핸들러 운영 알고리즘을 검토하였다
+      - en: Defined data schema and supported integration of the scheduling algorithm into the product
+        ko: 데이터 스키마를 정의하고 스케줄링 알고리즘의 제품 이식을 지원하였다
+    achievements:
+      en: Accumulated experience operating a large multi-institution government project that integrated distributed heterogeneous equipment under FaaS principles.
+      ko: 이기종 설비(3D 프린터·로봇 핸들러·IoT 센서)로 구성된 분산 생산 시스템을 FaaS 관점에서 통합 제어한 대형 다기관 정부 과제 수행 경험을 축적하였다.
+    notes:
+      en: "Partners: SKKU, ETRI, Yonsei University, HyVISIONsystem, CoeverI&T, PartDB, LatisGlobal Communications."
+      ko: "협력기관: 성균관대학교, ETRI(한국전자통신연구원), 연세대학교, HyVISIONsystem, CoeverI&T, PartDB, LatisGlobal Communications."
   remarks:
-    en: ""
+    en: Scheduling/rescheduling algorithms for flexible production automation
     ko: 유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발

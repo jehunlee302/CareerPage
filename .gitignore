@@ -16,6 +16,15 @@ Thumbs.db
 # Reference images (not part of the site)
 GoogleSheet/
 
+# Stray files (not part of the site)
+korea-economy-dashboard.html
+RESUME_JEHUN_260414.pdf
+data/RESUME_JEHUN_260414.pdf
+
+# Personal reference materials (not for public repo)
+reference/
+*.docx
+
 # Node
 node_modules/
 

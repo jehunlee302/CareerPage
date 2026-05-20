@@ -18,13 +18,24 @@
 - Experience: responsibilities as bullet list, highlights as tags
 - Project modal: purpose, key tasks, achievements sections
 
-### Docs Restructure
+### Docs Restructure (2026-04-20)
 - Created structured `docs/` following docs-sample format
-- Migrated FRONTEND_RULES.md → docs/rules/coding.md
+- Migrated FRONTEND_RULES.md → docs/coding.md
 - Migrated WEBUI_RULES.md → docs/ui/design-system.md
-- Migrated BACKEND_RULES.md → docs/deploy/deploy.md
+- Migrated BACKEND_RULES.md → docs/deploy.md
 - Added: index.md, prod.md, pipeline.md, backlog.md
 - Added: ui/components.md, ui/sections.md
-- Added: engine/schema.md, engine/converter.md
+- Added: data/schema.md, data/converter.md
 - Moved images to assets/img/
 - Created minimal CLAUDE.md
+
+### Docs & Structure Audit (2026-04-24)
+- Renamed `docs/engine/` → `docs/data/` (intuitive naming)
+- Renamed `docs/dev_his/` → `docs/history/` (no abbreviation)
+- Flattened `docs/deploy/deploy.md` → `docs/deploy.md` (remove single-file folder)
+- Flattened `docs/rules/coding.md` → `docs/coding.md` (remove single-file folder)
+- Strengthened design-system.md: spacing scale, grid system, chart rules, responsive rules
+- Added performance optimization rules to coding.md
+- Enhanced pipeline.md: data update rules, YAML editing rules, rollback procedure
+- Improved CSS: 3-col → 2-col at 768px tablet breakpoint (progressive collapse)
+- Updated all cross-references across docs

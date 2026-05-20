@@ -1,6 +1,6 @@
 # Converter Architecture
 
-## scripts/yaml-to-json.js
+## scripts/yaml-to-json.js (Active)
 
 Reads `data/career/*.yaml` → writes `data/portfolio.json`.
 
@@ -46,3 +46,18 @@ Fallback: if `ko` is empty, falls back to `en` value.
 
 - `js-yaml` (npm) — YAML parsing
 - Node.js built-ins: `fs`, `path`
+
+---
+
+## scripts/yaml-to-latex.js (Active)
+
+Reads `data/career/*.yaml` → writes `latex/sections/*.tex` + `latex/resume.tex`.
+
+### Usage
+```bash
+node scripts/yaml-to-latex.js            # English (default)
+node scripts/yaml-to-latex.js --lang ko  # Korean
+```
+
+Uses the same bilingual extraction as yaml-to-json.js.
+Output is compiled by `xelatex` via `scripts/build-resume.bat`.

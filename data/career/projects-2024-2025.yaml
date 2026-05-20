@@ -154,9 +154,34 @@
   client: VMS Solutions
   affiliated_institution: KAIST
   is_pm: false
+  details:
+    situation:
+      en: Real semiconductor manufacturing rarely matches clean academic scheduling assumptions — machines have eligibility restrictions, and setup times depend on operation order. Existing RL-based research had not directly tackled both constraints together on unrelated parallel machines (UPM).
+      ko: 실제 반도체 공정은 설비별 공정 자격(Machine Eligibility)과 순서 종속 셋업 시간이 동시에 존재한다. 기존 RL 기반 스케줄링 연구는 비관련 병렬 기계(UPM) 환경에서 두 제약을 함께 다룬 사례가 부족하였다.
+    purpose:
+      en: Design a GNN-based RL methodology for UPM scheduling that encodes machine eligibility and sequence-dependent setups directly in the state representation, and validate performance against established baselines.
+      ko: 설비 자격과 순서 종속 셋업 제약을 상태 표현에 직접 반영한 GNN 기반 RL 방법론을 설계하고, 기존 베이스라인 대비 성능을 검증한다.
+    role:
+      en: Project planner and lead researcher — participated in proposal planning; designed the GNN-based RL methodology and performance evaluation framework.
+      ko: 과제 기획 참여 및 주연구원 — GNN 기반 RL 방법론과 성능 평가 프레임워크를 설계하였다.
+    tasks:
+      - en: Formalized complex manufacturing constraints (eligibility, sequence-dependent setups, batching) into an RL-tractable form
+        ko: 복잡한 제조 제약(설비 자격, 순서 종속 setup, 배치 제약)을 RL 학습 가능한 형태로 수학적으로 정형화하였다
+      - en: Designed a GNN state representation encoding both machine-operation eligibility and setup-time dependencies
+        ko: 설비-공정 자격과 셋업 시간 종속성을 동시에 인코딩하는 GNN 상태 표현을 설계하였다
+      - en: Trained and evaluated the RL agent across diverse instances; built the benchmark framework vs classical heuristics
+        ko: 다양한 문제 인스턴스에서 RL 에이전트를 학습·평가하고, 전통 휴리스틱 대비 벤치마크 프레임워크를 구축하였다
+      - en: Consolidated findings into deliverables for VMS Solutions' semiconductor APS roadmap
+        ko: 연구 결과를 VMS Solutions의 반도체 APS 로드맵 산출물로 정리·전달하였다
+    achievements:
+      en: Delivered a GNN-RL methodology that natively handles machine eligibility and sequence-dependent setups — the first such direct treatment in this problem class. Results fed into VMS Solutions' simulation-based semiconductor scheduling product roadmap.
+      ko: 설비 자격과 순서 종속 셋업을 직접 다루는 GNN-RL 방법론을 도출하여 해당 문제 클래스에서 직접적 접근의 선례를 마련하였다. 연구 결과는 VMS Solutions의 시뮬레이션 기반 반도체 스케줄링 제품 로드맵에 반영되었다.
+    notes:
+      en: Phase 2 of a two-year continuous VMS Solutions × KAIST research line. Phase 1 (project #17, 2022.04 – 2023.03) covered Job Shop RL; this phase extended to UPM with semiconductor-specific constraints.
+      ko: VMS Solutions와의 2년 연속 산학과제 중 2단계이다. 1단계(#17, 2022.04 - 2023.03)는 Job Shop RL 방법론을 다루었고, 본 단계에서 반도체 공정 특화 제약의 UPM 환경으로 확장하였다.
   remarks:
-    en: ""
-    ko: GNN 기반 강화학습 알고리즘 개발 및 성능 검토
+    en: Phase 2 — UPM with semiconductor-specific constraints
+    ko: 2단계 — 반도체 공정 특화 제약 UPM 환경
 - index: 19
   period: 2023.07 - 2024.02
   duration: 8m

@@ -44,14 +44,6 @@ https://jehun-lee.work (GitHub Pages + GoDaddy CNAME)
 
 ## Data Architecture
 
-```
-data/career/*.yaml   (Single Source of Truth, bilingual en/ko)
-       │
-       ▼  node scripts/yaml-to-json.js [--lang en|ko]
-       │
-data/portfolio.json  (Generated, consumed by main.js)
-       │
-       ▼  git push → GitHub Pages
-       │
-https://jehun-lee.work
-```
+See [pipeline.md](pipeline.md) for full pipeline details, scripts, and data update rules.
+
+**Summary:** `data/career/*.yaml` → `yaml-to-json.js` → `portfolio.json` → `git push` → GitHub Pages

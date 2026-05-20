@@ -158,6 +158,7 @@ function buildWork(raw) {
       );
     }
     if (w.advisor) item.advisor = w.advisor;
+    if (w.alt_service) item.alt_service = w.alt_service;
     return item;
   });
 }
@@ -232,8 +233,8 @@ function buildHonors(raw) {
     date:         h.date || '',
     title:        extractLang(h.title),
     description:  extractLang(h.description),
-    organization: h.organization || '',
-    location:     h.location || '',
+    organization: extractLang(h.organization),
+    location:     extractLang(h.location),
     remarks:      h.remarks || '',
   }));
 }

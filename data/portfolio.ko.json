@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-03",
+  "lastUpdated": "2026-05-20",
   "basic": {
     "name": "이제훈",
     "nameKr": "이제훈",
@@ -112,7 +112,7 @@
   "workExperience": [
     {
       "position": "생산계획 솔루션 컨설턴트",
-      "organization": "VMS 솔루션스",
+      "organization": "브이엠에스솔루션스",
       "division": "솔루션사업부 | 솔루션 컨설턴트 파트",
       "period": "2025.08 - Present",
       "roles": "시스템 설계 및 PMO: 디지털 트윈 플랫폼, 생산-물류 통합 시뮬레이터, 시뮬레이션 기반 AI 스케줄러, SaaS 제품",
@@ -127,7 +127,8 @@
         "LLM 기반 스케줄 분석 및 레포트 생성 시스템 성능 검토 및 피드백 전달",
         "SaaS 솔루션 컨설팅 2건 진행, 고객사 경영진의 전략적 의사결정 관련 기술 검토 지원 (일반 제조업, 반도체 후공정 기업 등)",
         "WEB UI 디자인 참여 및 피드백"
-      ]
+      ],
+      "alt_service": "2025.08 - 2026.02"
     },
     {
       "position": "생산계획 솔루션 컨설턴트",
@@ -139,16 +140,8 @@
       "region": "Yongin, South Korea",
       "responsibilities": [
         "Micron 기업의 시뮬레이션 기반 real-time APS 로직 유지보수, 시스템 셋팅 원격 지원"
-      ]
-    },
-    {
-      "position": "전문연구요원",
-      "organization": "대한민국 (KAIST, VMS 솔루션스)",
-      "division": "국방부",
-      "period": "2023.03 - 2026.02",
-      "roles": "산업 R&D (병역 대체 복무)",
-      "performance": "",
-      "region": "Daejeon/Yongin, South Korea"
+      ],
+      "alt_service": "2025.02 - 2025.07"
     },
     {
       "position": "연구원",
@@ -171,7 +164,8 @@
         "정부 과제 탈락 경험을 발판 삼아 심사 피드백을 철저히 분석하고 논리를 보강하여 10년 장기 프로젝트인 연구재단 한우물 과제 쟁취",
         "IEEE 국제학술지 1저자 논문 2편 게재, 국제 학회 발표 7건"
       ],
-      "advisor": "Hyun-Jung Kim"
+      "advisor": "Hyun-Jung Kim",
+      "alt_service": "2023.03 - 2025.02"
     },
     {
       "position": "연구원",
@@ -319,7 +313,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "GNN 기반 강화학습 알고리즘 개발 및 성능 검토"
+      "remarks": "2단계 — 반도체 공정 특화 제약 UPM 환경",
+      "details": {
+        "situation": "실제 반도체 공정은 설비별 공정 자격(Machine Eligibility)과 순서 종속 셋업 시간이 동시에 존재한다. 기존 RL 기반 스케줄링 연구는 비관련 병렬 기계(UPM) 환경에서 두 제약을 함께 다룬 사례가 부족하였다.",
+        "purpose": "설비 자격과 순서 종속 셋업 제약을 상태 표현에 직접 반영한 GNN 기반 RL 방법론을 설계하고, 기존 베이스라인 대비 성능을 검증한다.",
+        "role": "과제 기획 참여 및 주연구원 — GNN 기반 RL 방법론과 성능 평가 프레임워크를 설계하였다.",
+        "tasks": [
+          "복잡한 제조 제약(설비 자격, 순서 종속 setup, 배치 제약)을 RL 학습 가능한 형태로 수학적으로 정형화하였다",
+          "설비-공정 자격과 셋업 시간 종속성을 동시에 인코딩하는 GNN 상태 표현을 설계하였다",
+          "다양한 문제 인스턴스에서 RL 에이전트를 학습·평가하고, 전통 휴리스틱 대비 벤치마크 프레임워크를 구축하였다",
+          "연구 결과를 VMS Solutions의 반도체 APS 로드맵 산출물로 정리·전달하였다"
+        ],
+        "achievements": "설비 자격과 순서 종속 셋업을 직접 다루는 GNN-RL 방법론을 도출하여 해당 문제 클래스에서 직접적 접근의 선례를 마련하였다. 연구 결과는 VMS Solutions의 시뮬레이션 기반 반도체 스케줄링 제품 로드맵에 반영되었다.",
+        "notes": "VMS Solutions와의 2년 연속 산학과제 중 2단계이다. 1단계(#17, 2022.04 - 2023.03)는 Job Shop RL 방법론을 다루었고, 본 단계에서 반도체 공정 특화 제약의 UPM 환경으로 확장하였다."
+      }
     },
     {
       "index": 19,
@@ -354,7 +361,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "강화학습 활용 실시간 디스패칭 Agent 개발"
+      "remarks": "강화학습 활용 실시간 디스패칭 Agent 개발",
+      "details": {
+        "situation": "실시간 Job Shop 스케줄링에서는 변화하는 공정 상태를 그래프 형태로 표현하고, 짧은 의사결정 시간 안에 행동을 결정할 수 있는 RL 방법론이 필요하였다.",
+        "purpose": "그래프 신경망(GNN) 기반 실시간 Job Shop 스케줄링 RL 알고리즘을 개발한다.",
+        "role": "PM·주연구원 — 과제 기획을 주도하였고, GNN 기반 RL 방법론 설계와 학습 프레임워크를 구축하였다.",
+        "tasks": [
+          "Job Shop 환경을 위한 고충실도 시뮬레이터를 구축하였다",
+          "GNN 기반 상태 표현을 설계하였다",
+          "모방학습 기반 RL 디스패처를 학습·평가하였다",
+          "다양한 제조 환경(배터리·자동차·선박 등)으로의 응용성을 논의하였다"
+        ],
+        "achievements": "GNN 기반 모방학습 디스패처 방법론을 정립하였다. IEEE Transactions on Automation Science and Engineering 1저자 논문(2024)의 토대가 되었다.",
+        "notes": "NRF Meta-Scheduling(#15)과 한우물 과제(#22)의 핵심 방법론 형성에 기여하였다."
+      }
     },
     {
       "index": 17,
@@ -365,7 +385,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "Job Shop 생산 시뮬레이터 고도화 및 방법론 개발"
+      "remarks": "Job Shop 생산 시뮬레이터 고도화 및 방법론 개발",
+      "details": {
+        "situation": "기존 Job Shop 스케줄링 연구는 시뮬레이터 기반 평가가 단편적이었고, AI 기반 디스패칭의 응용성도 제한적이었다.",
+        "purpose": "Job Shop 시뮬레이터를 고도화하고, AI 기반 디스패칭 방법론을 개발하여 모방학습 응용 가능성을 검증한다.",
+        "role": "PM·주연구원 — 과제 기획·제안서 작성과 Job Shop 시뮬레이터 고도화, AI 디스패칭 방법론 개발을 주도하였다.",
+        "tasks": [
+          "Job Shop 시뮬레이터를 고도화하여 다양한 제약을 반영하였다",
+          "AI 기반 디스패칭 방법론을 설계·구현하였다",
+          "모방학습(Imitation Learning) 응용성을 검토하였다",
+          "VMS Solutions 제품 로드맵에 결과를 환류하였다"
+        ],
+        "achievements": "AI 기반 Job Shop 디스패칭 방법론을 정립하였고, WSC 1저자 논문(2022) \"Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation\"으로 결실되었다.",
+        "notes": "VMS Solutions와의 2단계 연속 산학과제 중 1단계이다. 2단계(#20, 2023.07 - 2024.06)에서 반도체 공정 특화 제약을 갖는 UPM 환경으로 확장되었다."
+      }
     },
     {
       "index": 16,
@@ -376,18 +409,43 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": "기판 전극 위치 기반 최적 배선 도출 알고리즘 기획"
+      "remarks": "기판 전극 위치 기반 최적 배선 도출 알고리즘 기획",
+      "details": {
+        "situation": "반도체 메모리 셀 설계 단계의 X-DEC Slim Layout 와이어링은 조합 최적화 관점에서 복잡한 제약을 안고 있었으나, 정형화된 분석 방법론이 부재하였다.",
+        "purpose": "X-DEC Slim Layout 와이어링 최적화 문제를 조합 최적화 관점에서 분석하고 방법론을 도출한다.",
+        "role": "연구원 — 와이어링 최적화 제약 분석 및 방법론 논의를 담당하였다.",
+        "tasks": [
+          "현장 엔지니어 인터뷰를 통해 X-DEC Slim Layout 와이어링 제약을 파악하였다",
+          "문제 정의 및 해결 범위를 결정하였다",
+          "조합 최적화 관점에서 방법론을 논의하고 기술 검토 결과를 전달하였다"
+        ],
+        "achievements": "반도체 메모리 셀 설계 단계의 레이아웃 최적화 문제를 조합 최적화 관점에서 분석한 경험을 축적하였다.",
+        "notes": "단기(1개월) Feasibility study 성격의 과제 — SK Hynix와의 향후 협업 방향성을 도출하였다."
+      }
     },
     {
       "index": 15,
-      "period": "2022.03 -",
+      "period": "2022.03 - 2025.02",
       "duration": "3y",
       "title": "제조 시스템을 위한 강화학습 기반 메타 스케줄링",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": "범용 Agent 구축을 위한 Meta-RL 적용 및 설계"
+      "remarks": "박사학위 논문의 이론적 토대 — 메타 스케줄링 방법론",
+      "details": {
+        "situation": "기존 RL 기반 스케줄링 연구는 단일 문제 세팅(고정된 규모·제약·목적함수)에 종속되었다. 환경이 바뀔 때마다 재학습이 필요한 구조가 범용 스케줄링 에이전트 구현의 근본 장벽이었다.",
+        "purpose": "공정 규모·제약·목적함수가 동적으로 변하는 제조 환경에서도 재학습 없이 대응 가능한 메타 스케줄링 방법론 체계를 정립한다.",
+        "role": "PM·주연구원 — 메타학습 방법론을 설계하고, 디스패칭·Look-ahead Tree 탐색을 통합한 단일 스케줄링 프레임워크를 구축하였다.",
+        "tasks": [
+          "그래프 기반 상태 표현 위에 Meta-RL 프레임워크를 설계하여 문제 규모와 공정 순서 변화에 일반화 가능하도록 하였다",
+          "Beam search와 branch-and-bound를 결합한 트리 기반 look-ahead 탐색(SBBS)을 설계하였다",
+          "Active schedule 기반 RL 학습 기법을 도입하여 지배해 탐색 낭비를 줄였다",
+          "고정 환경 RL 베이스라인 및 전통 디스패칭 룰 대비 환경 변화 시나리오에서 벤치마크하였다"
+        ],
+        "achievements": "SBBS가 정적 환경에서 디스패칭 전용 해 대비 항상 동등하거나 더 나은 스케줄을 생성함을 수학적으로 증명하였다. 재학습 없이 문제 규모 일반화가 가능하였으며, 박사학위 논문의 이론적 토대가 되어 대한산업공학회 박사논문 경진대회 2등상(2025.11)을 수상하였다.",
+        "notes": "본 NRF 과제 흐름은 2024.05 출범한 10개년 한우물 과제(#22)의 기초가 되어 실제 제조 현장의 자율 스케줄링 방향으로 확장되었다."
+      }
     },
     {
       "index": 14,
@@ -422,8 +480,21 @@
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "isPM": false,
-      "remarks": "부하 분산 최소화 알고리즘 및 시뮬레이터 개발"
+      "isPM": true,
+      "remarks": "1단계 — 선박 화물창(Cargo Hold) 부하 균등화",
+      "details": {
+        "situation": "삼성중공업의 선박 화물창(Cargo Hold) 생산은 정량적 균등화 로직 없이 수기로 일정을 확정해 왔다. 이로 인해 일별 manpower 부하가 특정 일자에 몰리거나 비는 불균형이 누적되었다.",
+        "purpose": "실제 야드 제약을 반영한 선박 생산 시뮬레이터를 구축하고, 일별 manpower 표준편차를 최소화하는 강화학습 알고리즘을 설계한다.",
+        "role": "과제 기획·PM·주연구원 — 제안서 작성, 문제 정의, 알고리즘 개발 전 주기를 주도하였다.",
+        "tasks": [
+          "현장 엔지니어 인터뷰를 통해 선박 화물창 생산 제약을 모델링하였다",
+          "실제 야드 운영을 반영한 프로젝트 기반 선박 생산 시뮬레이터를 설계·구축하였다",
+          "순수 RL, 순수 Greedy, Greedy+RL 하이브리드 세 가지 알고리즘을 비교 설계하였다",
+          "기존 6개월 스케줄 대비 성능을 벤치마크하고 수렴 속도를 분석하였다"
+        ],
+        "achievements": "기존 스케줄 대비 일별 manpower 표준편차가 RL 41.60% (20.27초), Greedy 44.53% (49.86초), Greedy+RL 47.69% 감소하였다. RL이 반복적 휴리스틱 대비 약 2.4배 빠른 수렴 속도를 달성하였다. 삼성중공업 감사장(2022.05), KAIST 포스터 경진대회 2등상(2022.09)을 수상하였다.",
+        "notes": "삼성중공업 2단계 연속 산학과제의 1단계이다. 2단계(#14)에서 일별 작업자 고용 편차 최소화 목적함수로 확장되었다."
+      }
     },
     {
       "index": 12,
@@ -432,9 +503,22 @@
       "title": "머신러닝 알고리즘을 활용한 최적 설비 할당",
       "client": "VMS Solutions",
       "partnerInstitution": "",
-      "affiliatedInstitution": "KAIST",
+      "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현"
+      "remarks": "AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현",
+      "details": {
+        "situation": "디스패칭 룰 기반 스케줄링이 한계에 다다랐고, 특히 설비 setup change 패턴 예측을 머신러닝으로 보완할 필요성이 제기되었다.",
+        "purpose": "머신러닝 기반 예측 모델로 최적 설비를 할당하는 알고리즘을 개발한다.",
+        "role": "PM·주연구원 — AI 기반 예측 모델 설계와 설비 할당 알고리즘 구현을 주도하였다.",
+        "tasks": [
+          "반도체 설비 setup change 패턴을 분석하였다",
+          "머신러닝 기반 setup change 예측 모델을 설계·학습하였다",
+          "예측 결과를 활용한 설비 할당 알고리즘을 구현하였다",
+          "시뮬레이션 기반 성능 검증을 수행하였다"
+        ],
+        "achievements": "AI 예측 모델 기반 최적 설비 할당 알고리즘을 구현하였다. WSC 1저자 논문(2021) \"Machine Learning-based Periodic Setup Changes for Semiconductor Manufacturing Machines\"의 토대가 되었다.",
+        "notes": "디스패칭 룰 기반 연구에서 머신러닝 기반 의사결정으로 전환한 첫 시도였다."
+      }
     },
     {
       "index": 11,
@@ -467,9 +551,22 @@
       "title": "다중 KPI를 고려한 디스패칭 룰 최적 가중치 도출",
       "client": "VMS Solutions",
       "partnerInstitution": "",
-      "affiliatedInstitution": "KAIST",
+      "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발"
+      "remarks": "다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발",
+      "details": {
+        "situation": "디스패칭 룰 기반 스케줄링은 단일 KPI 중심 평가가 일반적이었지만, 실제 운영에서는 makespan·tardiness·setup 횟수 등 다중 KPI를 동시에 고려해야 했다.",
+        "purpose": "다중 KPI를 동시에 고려하는 디스패칭 룰 최적 가중치 도출 Sequential Search 프레임워크를 설계한다.",
+        "role": "PM·주연구원 — 다목적 최적화 확장 방법론 설계·구현을 주도하였다.",
+        "tasks": [
+          "다중 KPI 정의 및 우선순위 체계를 수립하였다",
+          "Sequential Search 프레임워크를 다목적으로 확장하였다",
+          "다양한 가중치 시나리오를 시뮬레이션하고 결과를 분석하였다",
+          "VMS Solutions 제품 적용을 위한 결과를 정리하였다"
+        ],
+        "achievements": "다목적 KPI 환경의 디스패칭 룰 최적 가중치 도출 프레임워크를 완성하였다. WSC 1저자 논문(2020) \"A Simulation-based Sequential Search Method for Multi-objective Scheduling Problems\"으로 결실되었으며, IEEE TSM 1저자(2020)로 디스패칭 룰 연구 흐름을 종결지었다.",
+        "notes": "VMS Solutions 디스패칭 룰 연구 흐름(2016.07 - 2020.02)의 최종 단계이다."
+      }
     },
     {
       "index": 9,
@@ -480,7 +577,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안"
+      "remarks": "배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안",
+      "details": {
+        "situation": "삼성SDI 배터리 생산 공정은 대용량의 노이즈 섞인 운영 데이터를 생성하였으나, 실시간 스케줄링 의사결정을 지원할 시뮬레이션 기반 프레임워크가 부재하였다.",
+        "purpose": "배터리 공정 특성을 반영한 시뮬레이터를 구축하고, 실시간 스케줄링 프레임워크를 설계한다.",
+        "role": "연구원 — 배터리 공정 시뮬레이터 개발 및 스케줄링 알고리즘 설계를 담당하였다.",
+        "tasks": [
+          "현장 엔지니어 인터뷰를 통해 배터리 생산 공정 제약을 파악하였다",
+          "배터리 생산 시뮬레이터를 개발하고 문제 해결 범위를 결정하였다",
+          "공정 특성을 반영한 스케줄링 알고리즘을 개발하였다",
+          "생산 운영 시스템(MES 연동용)을 위한 데이터 스키마를 정의하였다"
+        ],
+        "achievements": "대용량·Noisy 생산 데이터를 입력으로 실시간 의사결정을 지원하는 시뮬레이션 기반 프레임워크를 구축하였다. Micube Solution, 삼성SDI, 한국생산기술연구원(KITECH)과의 협업 경험을 축적하였다.",
+        "notes": "산업통상자원부 정부 과제 — 협력기관: Micube Solution, 삼성SDI, 한국생산기술연구원(KITECH)."
+      }
     },
     {
       "index": 8,
@@ -490,8 +600,21 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "isPM": true,
-      "remarks": "생산 시스템용 강화학습 알고리즘 개발 및 성능 검토"
+      "isPM": false,
+      "remarks": "생산 시스템용 강화학습 알고리즘 개발 및 성능 검토",
+      "details": {
+        "situation": "제조 시스템 스케줄링에 RL을 적용하는 연구가 활발해지고 있었으나, Job Shop 환경을 충실히 반영한 고충실도 시뮬레이터와 체계적 학습 프레임워크는 부족하였다.",
+        "purpose": "제조 시스템을 위한 RL 기반 스케줄링 이론·알고리즘의 원천 기술을 확보한다.",
+        "role": "연구원 — 과제 기획에 참여하였고, Job Shop 시뮬레이터 개발과 RL 기반 스케줄링 방법론 설계를 담당하였다.",
+        "tasks": [
+          "Job Shop 환경을 위한 고충실도 시뮬레이터를 구축하였다",
+          "RL 기반 스케줄링 방법론을 설계·구현하였다",
+          "다양한 제조 환경(배터리·자동차·선박 등)으로의 응용성을 논의하였다",
+          "학술 논문을 작성하고 국내외 학회에서 발표하였다"
+        ],
+        "achievements": "RL 기반 스케줄링 이론의 원천 기술을 확보하였다. WSC 1저자 논문(2022) \"Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation\"으로 결실되었다.",
+        "notes": "박사 주연구의 시발점 — 이후 NRF Meta-Scheduling(#15)과 한우물 과제(#22)로 이어지는 흐름을 형성하였다."
+      }
     },
     {
       "index": 7,
@@ -502,7 +625,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "반도체 FAB 생산라인 최적 파라미터 도출 및 현장 제약 파악"
+      "remarks": "반도체 FAB 생산라인 최적 파라미터 도출 방법론 적용 및 현장 검증",
+      "details": {
+        "situation": "SK Hynix 반도체 FAB 생산라인은 다수의 디스패칭 룰이 복합적으로 작용하여, 단일 KPI 기준 최적 파라미터 도출이 현장 운영에서는 비실용적인 구조였다.",
+        "purpose": "SK Hynix FAB 환경에 Sequential Search 디스패칭 가중치 방법론을 적용하여 운영 효율 개선 가능성을 검증한다.",
+        "role": "PM·주연구원 — 현장 제약 파악, 알고리즘 적용 및 검증을 주도하였다.",
+        "tasks": [
+          "SK Hynix FAB 현장 엔지니어 인터뷰를 통해 공정 제약을 파악하였다",
+          "다수 디스패칭 룰 간 상관관계를 분석하였다",
+          "Sequential Search 프레임워크를 SK Hynix FAB 환경에 적용하였다",
+          "검증 결과를 정리하고 차기 과제 방향성을 도출하였다"
+        ],
+        "achievements": "VMS Solutions·SKKU 연구 흐름에서 도출된 Sequential Search 방법론의 실제 반도체 FAB 적용 가능성을 검증하였으며, IEEE TSM 1저자 논문(2020)으로 결실되었다.",
+        "notes": "VMS·SK Hynix 디스패칭 룰 다년 산학 연구 흐름(2017.07 - 2020.02)의 일환이다."
+      }
     },
     {
       "index": 6,
@@ -513,7 +649,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": "머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발"
+      "remarks": "머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발",
+      "details": {
+        "situation": "기존 디스패칭 룰 기반 스케줄링은 단일 KPI 중심으로 평가되어, 다양한 운영 지표를 균형 있게 고려한 최적화가 어려웠다.",
+        "purpose": "디스패칭 룰 가중치별 KPI 변화를 정량적으로 분석하는 프레임워크를 개발한다.",
+        "role": "PM·주연구원 — 프레임워크 설계와 머신러닝 기반 파라미터 도출 알고리즘 개발을 주도하였다.",
+        "tasks": [
+          "디스패칭 룰 가중치 변화에 따른 KPI 분석 프레임워크를 설계하였다",
+          "머신러닝 기반 최적 파라미터 도출 알고리즘을 개발하였다",
+          "시뮬레이션 기반 검증 환경을 구축하였다",
+          "VMS Solutions 제품 적용을 위한 인터페이스를 정리하였다"
+        ],
+        "achievements": "디스패칭 룰 가중치를 정량적으로 평가·도출하는 프레임워크를 정립하였으며, WSC 1저자 논문(2019)의 기반이 되었다.",
+        "notes": "VMS Solutions와의 다년 산학과제 시리즈 일환으로, 이후 Sequential Search 방법론으로 발전하였다."
+      }
     },
     {
       "index": 5,
@@ -524,7 +673,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "파라미터에 따른 성능 변화 분석 프레임워크 설계/개발"
+      "remarks": "파라미터에 따른 성능 변화 분석 프레임워크 설계/개발",
+      "details": {
+        "situation": "LCD 제조 공정은 디스패칭 룰이 복합적으로 적용되었으나, 가중치 변화가 KPI에 미치는 영향에 대한 정량적 분석이 부족했다.",
+        "purpose": "LCD 공정에서 디스패칭 룰 가중치에 따른 성능 변화를 분석하는 프레임워크를 구축한다.",
+        "role": "연구원 — 시뮬레이션 기반 성능 분석 프레임워크 설계·구현을 담당하였다.",
+        "tasks": [
+          "LCD 공정 특성을 분석하고 디스패칭 룰 매트릭스를 정리하였다",
+          "시뮬레이션 기반 성능 비교 환경을 구축하였다",
+          "가중치-KPI 상관관계를 분석하고 시각화하였다"
+        ],
+        "achievements": "디스패칭 룰 가중치 변화에 따른 성능 분석 프레임워크를 정립하였으며, WSC 1저자 논문(2018) \"A Framework for Performance Analysis of Dispatching Rules\"의 토대를 형성하였다.",
+        "notes": "VMS Solutions·SK Hynix 다년 산학과제 시리즈(2017.07 - 2020.02)의 출발점이다."
+      }
     },
     {
       "index": 4,
@@ -535,7 +696,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "가상공장 시뮬레이터 구축 및 운영 효율성 분석"
+      "remarks": "가상공장 시뮬레이터 구축 및 운영 효율성 분석",
+      "details": {
+        "situation": "MSIP 정부 과제의 일환으로 스마트 팩토리 테스트베드가 구축되었으나, 운영 효율성을 정량적으로 검증할 시뮬레이션 환경이 부재하였다.",
+        "purpose": "가상 공장 시뮬레이터를 구축하여 운영 시나리오별 효율성을 분석한다.",
+        "role": "연구원 — 시뮬레이터 구축 및 운영 시나리오 분석을 담당하였다.",
+        "tasks": [
+          "가상 공장 운영 시나리오를 정의하고 시뮬레이터를 구축하였다",
+          "시뮬레이션 기반 운영 효율성을 분석하였다",
+          "결과를 정리하고 후속 과제 방향성을 도출하였다"
+        ],
+        "achievements": "시뮬레이션 기반 운영 효율성 검증 방법론을 정립하였다.",
+        "notes": "MSIP/MSIT 정부 과제 흐름의 일환 —"
+      }
     },
     {
       "index": 3,
@@ -546,7 +719,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발"
+      "remarks": "유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발",
+      "details": {
+        "situation": "3D 프린터 기반 유연 생산 시스템(FMS)은 개인맞춤형 생산의 핵심 인프라이지만, 설비 고장·주문 취소·긴급 주문 등 이상 상황에 실시간으로 대응할 리스케줄링 메커니즘이 부재하였다.",
+        "purpose": "3D 프린터 기반 FMS의 특성을 반영한 스케줄링·리스케줄링 알고리즘을 개발한다.",
+        "role": "연구원 — FMS 특성 분석 및 이상 대응 리스케줄링 알고리즘 개발을 담당하였다.",
+        "tasks": [
+          "3D 프린터 기반 FMS 특성을 분석하였다",
+          "이상 상황 시나리오 및 케이스를 정의하였다 (설비 고장·주문 취소·긴급 주문)",
+          "이상 대응 리스케줄링 알고리즘을 개발하였다",
+          "유전 알고리즘·휴리스틱 기반 실시간 스케줄 도출 방법론을 설계하고 성능을 검증하였다"
+        ],
+        "achievements": "설비 상태·주문 변화에 실시간으로 대응하는 리스케줄링 메커니즘을 설계하였다. International Journal of Advanced Manufacturing Technology 2저자 논문(2020)으로 결실되었다.",
+        "notes": "개인맞춤형 생산(Mass Personalization) 연구 흐름 — MSIP FaaS IoT 플랫폼(#1)과 연계된 NRF 과제이다."
+      }
     },
     {
       "index": 2,
@@ -557,7 +743,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발"
+      "remarks": "기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발",
+      "details": {
+        "situation": "VMS Solutions의 LCD 공정 운영 데이터에서 비효율적인 스케줄 패턴이 누적되고 있었으나, 자동화된 탐지·개선 메커니즘이 부재하였다.",
+        "purpose": "LCD 공정 운영 데이터에서 비효율 스케줄을 탐지하고 개선하는 휴리스틱 알고리즘을 설계한다.",
+        "role": "연구원 — 비효율 패턴 분석과 휴리스틱 알고리즘 설계·구현을 담당하였다.",
+        "tasks": [
+          "LCD 공정 운영 데이터 분석을 통해 비효율 스케줄 패턴을 식별하였다",
+          "비효율 탐지 지표를 정의하고 자동화 검증을 수행하였다",
+          "개선 방향성 기반 휴리스틱 알고리즘을 설계·구현하였다"
+        ],
+        "achievements": "VMS Solutions와의 첫 산학과제로서 디스패칭 룰 연구 라인의 출발점이 되었다.",
+        "notes": "VMS Solutions·SK Hynix 다년 산학과제 시리즈의 첫 단계 — 후속 가중치 분석(#5,"
+      }
     },
     {
       "index": 1,
@@ -568,7 +766,20 @@
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발"
+      "remarks": "유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발",
+      "details": {
+        "situation": "개인맞춤형 생산(Mass Personalization) 환경에서는 3D 프린터·로봇 핸들러·IoT 센서로 구성된 분산 이기종 설비를 통합 제어할 수 있는 플랫폼이 필요했다.",
+        "purpose": "FaaS(Factory-as-a-Service) 관점에서 이기종 설비를 통합 제어하는 IoT 서비스 플랫폼을 구축한다.",
+        "role": "연구원 — 3D 프린터 도시 공장(Urban Factory) 스케줄링 시뮬레이터 구축 및 알고리즘 개발을 담당하였다.",
+        "tasks": [
+          "3D 프린터 도시 공장 스케줄링 시뮬레이터를 구축하고 초기 스케줄링 알고리즘을 개발하였다",
+          "이상 상황 대응 리스케줄링 알고리즘을 개발하였다",
+          "로봇 핸들러 운영 알고리즘을 검토하였다",
+          "데이터 스키마를 정의하고 스케줄링 알고리즘의 제품 이식을 지원하였다"
+        ],
+        "achievements": "이기종 설비(3D 프린터·로봇 핸들러·IoT 센서)로 구성된 분산 생산 시스템을 FaaS 관점에서 통합 제어한 대형 다기관 정부 과제 수행 경험을 축적하였다.",
+        "notes": "협력기관: 성균관대학교, ETRI(한국전자통신연구원), 연세대학교, HyVISIONsystem, CoeverI&T, PartDB, LatisGlobal Communications."
+      }
     }
   ],
   "publications": [
@@ -951,112 +1162,112 @@
       "date": "2025.11",
       "title": "2등상, 박사논문경진대회",
       "description": "잡 샵 스케줄링 문제를 위한 학습 기반 스케줄러",
-      "organization": "Korean Institute of Industrial Engineers (KIIE)",
-      "location": "Daejeon, South Korea",
+      "organization": "대한산업공학회",
+      "location": "대전, 대한민국",
       "remarks": "$200"
     },
     {
       "date": "2023.12",
       "title": "1등상, 2023 Simulation Challenge",
       "description": "반도체 팹의 Q-time 기반 공정 게이팅 제어",
-      "organization": "Winter Simulation Conference (WSC), Micron",
-      "location": "San Antonio, USA",
+      "organization": "동계 시뮬레이션 컨퍼런스 (WSC), 마이크론",
+      "location": "샌안토니오, 미국",
       "remarks": "$3,000"
     },
     {
       "date": "2023.09",
       "title": "3등상, 2023 AI Competition: 실제 문제 해결",
       "description": "AI를 활용한 통합 계획 모듈",
-      "organization": "Hankook & Company",
-      "location": "Daejeon, South Korea",
+      "organization": "한국타이어앤테크놀로지",
+      "location": "대전, 대한민국",
       "remarks": "$1,500"
     },
     {
       "date": "2022.06 - 2023.02",
       "title": "박사과정생 연구장려 지원사업",
       "description": "",
-      "organization": "National Research Foundation (NRF) of Korea",
-      "location": "South Korea",
+      "organization": "한국연구재단",
+      "location": "대한민국",
       "remarks": "$15,000"
     },
     {
       "date": "2022.09",
       "title": "2등상, 2022 포스터경진대회: 산업/사회문제",
       "description": "선박건조 자원 평활화를 위한 강화학습",
-      "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
-      "location": "Daejeon, South Korea",
+      "organization": "한국과학기술원",
+      "location": "대전, 대한민국",
       "remarks": ""
     },
     {
       "date": "2022.05",
       "title": "감사장: 우수 프로젝트",
       "description": "선박 화물 생산 부하 분산",
-      "organization": "Samsung Heavy Industries",
-      "location": "South Korea",
+      "organization": "삼성중공업",
+      "location": "대한민국",
       "remarks": ""
     },
     {
       "date": "2021.03 - 2025.02",
       "title": "전액 입학 장학금",
       "description": "성적 우수 입학 장학금 (박사)",
-      "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
-      "location": "Daejeon, South Korea",
+      "organization": "한국과학기술원",
+      "location": "대전, 대한민국",
       "remarks": "Full Tuition"
     },
     {
       "date": "2019.03, 2019.09",
       "title": "조교학비감면",
       "description": "학비지원 (석박통합과정)",
-      "organization": "Sungkyunkwan University (SKKU)",
-      "location": "Suwon, South Korea",
+      "organization": "성균관대학교",
+      "location": "수원, 대한민국",
       "remarks": "Half Tuition"
     },
     {
       "date": "2018.03, 2019.03",
       "title": "심산 장학금",
       "description": "장학금 (석박통합과정)",
-      "organization": "Sungkyunkwan University (SKKU)",
-      "location": "Suwon, South Korea",
+      "organization": "성균관대학교",
+      "location": "수원, 대한민국",
       "remarks": "Half Tuition"
     },
     {
       "date": "2018.03",
       "title": "시스템경영공학과장학기금 장학금",
       "description": "장학금 (석박통합과정)",
-      "organization": "Sungkyunkwan University (SKKU)",
-      "location": "Suwon, South Korea",
+      "organization": "성균관대학교",
+      "location": "수원, 대한민국",
       "remarks": "Half Tuition"
     },
     {
       "date": "2017.03",
       "title": "산업공학과 동창회 장학금",
       "description": "장학금 (석박통합과정)",
-      "organization": "Sungkyunkwan University (SKKU)",
-      "location": "Suwon, South Korea",
+      "organization": "성균관대학교",
+      "location": "수원, 대한민국",
       "remarks": "Half Tuition"
     },
     {
       "date": "2016.07",
       "title": "3등상, 2015-2016 PACE RSMS Competition (2차): Customer Insight",
       "description": "",
-      "organization": "General Motors (GM)",
-      "location": "Cincinnati, USA",
+      "organization": "제너럴모터스 (GM)",
+      "location": "미국, 신시내티",
       "remarks": ""
     },
     {
       "date": "2016.07",
       "title": "3등상, 2015-2016 PACE RSMS Competition (2차): Manufacturing Engineering",
       "description": "",
-      "organization": "General Motors (GM)",
-      "location": "Cincinnati, USA",
+      "organization": "제너럴모터스 (GM)",
+      "location": "미국, 신시내티",
       "remarks": ""
     },
     {
       "date": "2013.03 - 2016.08",
       "title": "전액 입학 장학금",
       "description": "성적 우수 입학 장학금 (학사)",
-      "organization": "Sungkyunkwan University (SKKU)",
-      "location": "Suwon, South Korea",
+      "organization": "성균관대학교",
+      "location": "수원, 대한민국",
       "remarks": "Full Tuition"
     }
   ],

@@ -6,45 +6,61 @@ Jehun Lee's professional portfolio. https://jehun-lee.work
 
 Vanilla HTML/CSS/JS, GitHub Pages, no build step, no framework.
 
+## Quick Start
+
+```bash
+npm install                              # First time only (js-yaml)
+node scripts/yaml-to-json.js            # Build JSON (English)
+node scripts/yaml-to-json.js --lang ko  # Build JSON (Korean)
+deploy.bat                               # Full build + commit + push
+```
+
 ## Data Flow
 
 ```
-data/career/*.yaml → scripts/yaml-to-json.js → data/portfolio.json → assets/js/main.js → index.html
-data/career/*.yaml → scripts/yaml-to-latex.js → latex/sections/*.tex → xelatex → data/resume-{en,ko}.pdf
-```
-
-## Key Commands
-
-```bash
-node scripts/yaml-to-json.js            # Build JSON from YAML (English)
-node scripts/yaml-to-json.js --lang ko  # Build JSON (Korean)
-node scripts/yaml-to-latex.js           # Build LaTeX from YAML (English)
-node scripts/yaml-to-latex.js --lang ko # Build LaTeX (Korean)
-scripts/build-resume.bat                 # Build resume PDFs (en + ko)
-deploy.bat                               # Build all + commit + push
+data/career/*.yaml  →  yaml-to-json.js  →  portfolio.json  →  main.js  →  index.html
+data/career/*.yaml  →  yaml-to-latex.js  →  latex/sections/*.tex  →  xelatex  →  resume-{en,ko}.pdf
 ```
 
 ## File Map
 
-| Path | Purpose |
-|------|---------|
-| `data/career/` | Source of truth (YAML, bilingual en/ko) |
-| `data/portfolio.json` | Generated — do not edit directly |
-| `data/resume-en.pdf` | Generated EN resume PDF |
-| `data/resume-ko.pdf` | Generated KO resume PDF |
-| `latex/resume.cls` | LaTeX resume template class |
-| `latex/fonts/` | Pretendard font files for PDF |
-| `latex/sections/*.tex` | Generated LaTeX sections — do not edit directly |
-| `assets/js/main.js` | All rendering logic |
-| `assets/css/style.css` | All styles |
-| `index.html` | Shell (no hardcoded content) |
-| `docs/` | Full documentation |
-| `docs/index.md` | Docs file map |
+| Path | Purpose | Editable? |
+|------|---------|-----------|
+| `data/career/*.yaml` | Source of truth (bilingual en/ko) | Yes |
+| `data/portfolio.json` | Generated JSON for website | No (generated) |
+| `data/resume-{en,ko}.pdf` | Generated resume PDFs | No (generated) |
+| `assets/js/main.js` | All rendering logic | Yes |
+| `assets/css/style.css` | All styles | Yes |
+| `index.html` | Shell (no hardcoded content) | Yes |
+| `scripts/yaml-to-json.js` | YAML → JSON pipeline | Yes |
+| `scripts/yaml-to-latex.js` | YAML → LaTeX pipeline | Yes |
 
-## Rules
+## Rules (Must Read Before Editing)
 
-- Read `docs/rules/coding.md` before editing JS/HTML/CSS
-- Read `docs/ui/design-system.md` before changing visual design
-- Read `docs/engine/schema.md` before modifying YAML structure
+| What you're doing | Read first |
+|-------------------|------------|
+| **Any contribution** | [docs/contributing.md](docs/contributing.md) |
+| JS / HTML / CSS | [docs/coding.md](docs/coding.md) |
+| Visual design | [docs/ui/design-system.md](docs/ui/design-system.md) |
+| Components | [docs/ui/components.md](docs/ui/components.md) |
+| YAML data structure | [docs/data/schema.md](docs/data/schema.md) |
+| Deploy process | [docs/deploy.md](docs/deploy.md) |
+| Data pipeline | [docs/pipeline.md](docs/pipeline.md) |
+
+## Critical Constraints
+
 - All user strings must pass through `esc()` sanitizer
 - No external JS/CSS libraries (Google Fonts only)
+- Never edit `data/portfolio.json` directly — edit YAML, then build
+- Never edit `latex/sections/*.tex` directly — edit YAML, then build
+
+## Git Conventions
+
+- Branch naming: `feat/`, `fix/`, `docs/`, `refactor/`
+- Commit message: `type: short description` (e.g., `feat: add search filter`)
+- Types: `feat`, `fix`, `refactor`, `docs`, `build`, `style`
+- Always run `deploy.bat` or `node scripts/yaml-to-json.js` before committing data changes
+
+## Documentation
+
+Full docs at [docs/index.md](docs/index.md).

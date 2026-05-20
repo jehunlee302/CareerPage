@@ -7,8 +7,33 @@
   client: NRF of Korea
   affiliated_institution: KAIST
   is_pm: true
+  details:
+    situation:
+      en: Real-time Job Shop scheduling requires graph-form representations of the changing process state and an RL methodology capable of making decisions under tight time budgets.
+      ko: 실시간 Job Shop 스케줄링에서는 변화하는 공정 상태를 그래프 형태로 표현하고, 짧은 의사결정 시간 안에 행동을 결정할 수 있는 RL 방법론이 필요하였다.
+    purpose:
+      en: Develop a graph-neural-network-based real-time Job Shop scheduling RL algorithm.
+      ko: 그래프 신경망(GNN) 기반 실시간 Job Shop 스케줄링 RL 알고리즘을 개발한다.
+    role:
+      en: PM and lead researcher — drove proposal planning, GNN-based RL design, and the training framework.
+      ko: PM·주연구원 — 과제 기획을 주도하였고, GNN 기반 RL 방법론 설계와 학습 프레임워크를 구축하였다.
+    tasks:
+      - en: Built a high-fidelity simulator for Job Shop environments
+        ko: Job Shop 환경을 위한 고충실도 시뮬레이터를 구축하였다
+      - en: Designed the GNN-based state representation
+        ko: GNN 기반 상태 표현을 설계하였다
+      - en: Trained and evaluated the imitation-learning-based RL dispatcher
+        ko: 모방학습 기반 RL 디스패처를 학습·평가하였다
+      - en: Discussed applicability to other manufacturing environments (battery, automotive, shipbuilding)
+        ko: 다양한 제조 환경(배터리·자동차·선박 등)으로의 응용성을 논의하였다
+    achievements:
+      en: Established the GNN-based imitation-learning dispatcher methodology. Foundation for the IEEE Transactions on Automation Science and Engineering first-author paper (2024).
+      ko: GNN 기반 모방학습 디스패처 방법론을 정립하였다. IEEE Transactions on Automation Science and Engineering 1저자 논문(2024)의 토대가 되었다.
+    notes:
+      en: Core methodological building block for NRF Meta-Scheduling (#15) and the Hanwoomul project (#22).
+      ko: NRF Meta-Scheduling(#15)과 한우물 과제(#22)의 핵심 방법론 형성에 기여하였다.
   remarks:
-    en: ""
+    en: Real-time dispatching agent based on RL
     ko: 강화학습 활용 실시간 디스패칭 Agent 개발
 - index: 17
   period: 2022.04 - 2023.03
@@ -19,8 +44,33 @@
   client: VMS Solutions
   affiliated_institution: KAIST
   is_pm: true
+  details:
+    situation:
+      en: Existing Job Shop scheduling research used fragmented simulator-based evaluation, and the applicability of AI-based dispatching was limited.
+      ko: 기존 Job Shop 스케줄링 연구는 시뮬레이터 기반 평가가 단편적이었고, AI 기반 디스패칭의 응용성도 제한적이었다.
+    purpose:
+      en: Enhance the Job Shop simulator, develop an AI-based dispatching methodology, and validate the applicability of imitation learning.
+      ko: Job Shop 시뮬레이터를 고도화하고, AI 기반 디스패칭 방법론을 개발하여 모방학습 응용 가능성을 검증한다.
+    role:
+      en: PM and lead researcher — drove proposal writing, simulator enhancement, and the AI-dispatching methodology.
+      ko: PM·주연구원 — 과제 기획·제안서 작성과 Job Shop 시뮬레이터 고도화, AI 디스패칭 방법론 개발을 주도하였다.
+    tasks:
+      - en: Enhanced the Job Shop simulator to reflect diverse constraints
+        ko: Job Shop 시뮬레이터를 고도화하여 다양한 제약을 반영하였다
+      - en: Designed and implemented an AI-based dispatching methodology
+        ko: AI 기반 디스패칭 방법론을 설계·구현하였다
+      - en: Reviewed the applicability of imitation learning
+        ko: 모방학습(Imitation Learning) 응용성을 검토하였다
+      - en: Fed findings back into the VMS Solutions product roadmap
+        ko: VMS Solutions 제품 로드맵에 결과를 환류하였다
+    achievements:
+      en: Established an AI-based Job Shop dispatching methodology. Resulted in the WSC 2022 first-author paper "Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation".
+      ko: AI 기반 Job Shop 디스패칭 방법론을 정립하였고, WSC 1저자 논문(2022) "Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation"으로 결실되었다.
+    notes:
+      en: Phase 1 of a two-stage VMS Solutions × KAIST continuous research line. Phase 2 (#20, 2023.07 – 2024.06) extended to UPM with semiconductor-specific constraints.
+      ko: VMS Solutions와의 2단계 연속 산학과제 중 1단계이다. 2단계(#20, 2023.07 - 2024.06)에서 반도체 공정 특화 제약을 갖는 UPM 환경으로 확장되었다.
   remarks:
-    en: ""
+    en: Job Shop simulator enhancement and methodology development
     ko: Job Shop 생산 시뮬레이터 고도화 및 방법론 개발
 - index: 16
   period: 2022.03 - 2022.03
@@ -31,11 +81,34 @@
   client: SK Hynix
   affiliated_institution: KAIST
   is_pm: false
+  details:
+    situation:
+      en: Wiring at the X-DEC Slim Layout stage of semiconductor memory cell design involves complex combinatorial constraints, but no formalized analytical methodology existed.
+      ko: 반도체 메모리 셀 설계 단계의 X-DEC Slim Layout 와이어링은 조합 최적화 관점에서 복잡한 제약을 안고 있었으나, 정형화된 분석 방법론이 부재하였다.
+    purpose:
+      en: Analyze the X-DEC Slim Layout wiring optimization problem from a combinatorial-optimization perspective and propose a methodology.
+      ko: X-DEC Slim Layout 와이어링 최적화 문제를 조합 최적화 관점에서 분석하고 방법론을 도출한다.
+    role:
+      en: Researcher — responsible for constraint analysis and methodology discussion.
+      ko: 연구원 — 와이어링 최적화 제약 분석 및 방법론 논의를 담당하였다.
+    tasks:
+      - en: Identified X-DEC Slim Layout wiring constraints through on-site engineer interviews
+        ko: 현장 엔지니어 인터뷰를 통해 X-DEC Slim Layout 와이어링 제약을 파악하였다
+      - en: Defined the problem and resolution scope
+        ko: 문제 정의 및 해결 범위를 결정하였다
+      - en: Reviewed combinatorial-optimization-based methodologies and delivered technical recommendations
+        ko: 조합 최적화 관점에서 방법론을 논의하고 기술 검토 결과를 전달하였다
+    achievements:
+      en: Accumulated experience analyzing semiconductor memory-cell layout optimization through a combinatorial-optimization lens.
+      ko: 반도체 메모리 셀 설계 단계의 레이아웃 최적화 문제를 조합 최적화 관점에서 분석한 경험을 축적하였다.
+    notes:
+      en: Short (1-month) feasibility study — established future collaboration directions with SK Hynix.
+      ko: 단기(1개월) Feasibility study 성격의 과제 — SK Hynix와의 향후 협업 방향성을 도출하였다.
   remarks:
-    en: ""
+    en: Algorithm planning for optimal wiring based on substrate electrode positions
     ko: 기판 전극 위치 기반 최적 배선 도출 알고리즘 기획
 - index: 15
-  period: 2022.03 -
+  period: 2022.03 - 2025.02
   duration: 3y
   title:
     en: Reinforcement learning-based meta-scheduling for manufacturing systems
@@ -43,9 +116,34 @@
   client: NRF of Korea
   affiliated_institution: KAIST
   is_pm: true
+  details:
+    situation:
+      en: Prior RL-based scheduling research locked each agent to a single problem setting — fixed plant size, fixed constraints, fixed objective. Reusing it under changing manufacturing environments required retraining from scratch.
+      ko: 기존 RL 기반 스케줄링 연구는 단일 문제 세팅(고정된 규모·제약·목적함수)에 종속되었다. 환경이 바뀔 때마다 재학습이 필요한 구조가 범용 스케줄링 에이전트 구현의 근본 장벽이었다.
+    purpose:
+      en: Establish a meta-scheduling methodology so a single agent adapts to manufacturing environments with dynamic problem sizes, constraints, and objectives — without retraining.
+      ko: 공정 규모·제약·목적함수가 동적으로 변하는 제조 환경에서도 재학습 없이 대응 가능한 메타 스케줄링 방법론 체계를 정립한다.
+    role:
+      en: PM and principal investigator — designed the meta-learning methodology and unified dispatcher + look-ahead tree search into a single scheduling framework.
+      ko: PM·주연구원 — 메타학습 방법론을 설계하고, 디스패칭·Look-ahead Tree 탐색을 통합한 단일 스케줄링 프레임워크를 구축하였다.
+    tasks:
+      - en: Designed a Meta-RL framework on graph-based state representations that generalizes across varying problem sizes and operation sequences
+        ko: 그래프 기반 상태 표현 위에 Meta-RL 프레임워크를 설계하여 문제 규모와 공정 순서 변화에 일반화 가능하도록 하였다
+      - en: Built a tree-based look-ahead search (SBBS) combining beam search with branch-and-bound for tight decision-time budgets
+        ko: Beam search와 branch-and-bound를 결합한 트리 기반 look-ahead 탐색(SBBS)을 설계하였다
+      - en: Adopted an active-schedule-based RL training scheme to cut wasted search over dominated solutions
+        ko: Active schedule 기반 RL 학습 기법을 도입하여 지배해 탐색 낭비를 줄였다
+      - en: Benchmarked against fixed-environment RL baselines and classical dispatching rules under environment-change scenarios
+        ko: 고정 환경 RL 베이스라인 및 전통 디스패칭 룰 대비 환경 변화 시나리오에서 벤치마크하였다
+    achievements:
+      en: SBBS was proved mathematically to always produce schedules equal to or better than dispatching-only solutions in static environments. The methodology generalized across problem sizes without retraining and formed the theoretical core of the doctoral thesis, awarded 2nd Prize at the KIIE Ph.D. Thesis Competition (2025.11).
+      ko: SBBS가 정적 환경에서 디스패칭 전용 해 대비 항상 동등하거나 더 나은 스케줄을 생성함을 수학적으로 증명하였다. 재학습 없이 문제 규모 일반화가 가능하였으며, 박사학위 논문의 이론적 토대가 되어 대한산업공학회 박사논문 경진대회 2등상(2025.11)을 수상하였다.
+    notes:
+      en: This NRF stream became the foundation for the 10-year "Hanwoomul" NRF project (#22), launched 2024.05, which extends the methodology toward autonomous scheduling in real factories.
+      ko: 본 NRF 과제 흐름은 2024.05 출범한 10개년 한우물 과제(#22)의 기초가 되어 실제 제조 현장의 자율 스케줄링 방향으로 확장되었다.
   remarks:
-    en: ""
-    ko: 범용 Agent 구축을 위한 Meta-RL 적용 및 설계
+    en: Foundation of doctoral thesis — meta-scheduling methodology
+    ko: 박사학위 논문의 이론적 토대 — 메타 스케줄링 방법론
 - index: 14
   period: 2022.03 - 2023.07
   duration: 1y5m (2y)
@@ -122,7 +220,32 @@
     ko: 제조 시스템을 위한 강화학습 기반 스케줄링 이론 및 알고리즘 개발
   client: NRF of Korea
   affiliated_institution: SKKU
-  is_pm: true
+  is_pm: false
+  details:
+    situation:
+      en: Research on applying RL to manufacturing scheduling was growing, but the field lacked a high-fidelity Job Shop simulator and a systematic training framework.
+      ko: 제조 시스템 스케줄링에 RL을 적용하는 연구가 활발해지고 있었으나, Job Shop 환경을 충실히 반영한 고충실도 시뮬레이터와 체계적 학습 프레임워크는 부족하였다.
+    purpose:
+      en: Establish foundational research on RL-based scheduling theory and algorithms for manufacturing systems.
+      ko: 제조 시스템을 위한 RL 기반 스케줄링 이론·알고리즘의 원천 기술을 확보한다.
+    role:
+      en: Researcher — participated in proposal planning; built the Job Shop simulator and designed the RL-based scheduling methodology.
+      ko: 연구원 — 과제 기획에 참여하였고, Job Shop 시뮬레이터 개발과 RL 기반 스케줄링 방법론 설계를 담당하였다.
+    tasks:
+      - en: Built a high-fidelity simulator for Job Shop environments
+        ko: Job Shop 환경을 위한 고충실도 시뮬레이터를 구축하였다
+      - en: Designed and implemented an RL-based scheduling methodology
+        ko: RL 기반 스케줄링 방법론을 설계·구현하였다
+      - en: Discussed applicability to other manufacturing environments (battery, automotive, shipbuilding)
+        ko: 다양한 제조 환경(배터리·자동차·선박 등)으로의 응용성을 논의하였다
+      - en: Wrote academic papers and presented at domestic and international conferences
+        ko: 학술 논문을 작성하고 국내외 학회에서 발표하였다
+    achievements:
+      en: Secured foundational know-how on RL-based scheduling. Foundation for the WSC 2022 first-author paper "Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation".
+      ko: RL 기반 스케줄링 이론의 원천 기술을 확보하였다. WSC 1저자 논문(2022) "Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation"으로 결실되었다.
+    notes:
+      en: Starting point of the doctoral research thread that later led to NRF Meta-Scheduling (#15) and the Hanwoomul project (#22).
+      ko: 박사 주연구의 시발점 — 이후 NRF Meta-Scheduling(#15)과 한우물 과제(#22)로 이어지는 흐름을 형성하였다.
   remarks:
-    en: ""
+    en: RL algorithm development and performance review for production systems
     ko: 생산 시스템용 강화학습 알고리즘 개발 및 성능 검토

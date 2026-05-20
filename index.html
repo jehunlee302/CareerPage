@@ -16,7 +16,7 @@
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
   </script>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260504l" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260520b" />
 </head>
 <body>
 
@@ -32,6 +32,7 @@
           <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
           <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
           <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+          <li><a href="#narrative" data-i18n="nav.narrative">Narrative</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
@@ -121,7 +122,6 @@
     <!-- ═══ PHILOSOPHY ═══ -->
     <section id="philosophy">
       <div class="container">
-        <div class="section-label accent" data-i18n="label.corePhilosophy">Core Philosophy</div>
         <h2 class="philosophy-headline" id="philosophyHeadline"></h2>
         <p class="philosophy-lead" id="philosophyLead"></p>
         <div class="philosophy-body" id="philosophyBody"></div>
@@ -132,7 +132,6 @@
     <!-- ═══ RESEARCH FOCUS ═══ -->
     <section id="research">
       <div class="container">
-        <div class="section-label" data-i18n="label.expertise">Expertise</div>
         <h2 class="section-title" data-i18n="label.researchFocus">Research Focus</h2>
         <div class="research-grid" id="researchGrid"></div>
       </div>
@@ -141,7 +140,6 @@
     <!-- ═══ EDUCATION ═══ -->
     <section id="education">
       <div class="container">
-        <div class="section-label" data-i18n="label.academicBg">Academic Background</div>
         <h2 class="section-title" data-i18n="label.education">Education</h2>
         <div class="timeline" id="educationTimeline"></div>
       </div>
@@ -150,7 +148,6 @@
     <!-- ═══ EXPERIENCE ═══ -->
     <section id="experience" class="section-alt">
       <div class="container">
-        <div class="section-label" data-i18n="label.career">Career</div>
         <h2 class="section-title" data-i18n="label.workExp">Work Experience</h2>
         <div class="timeline" id="experienceTimeline"></div>
       </div>
@@ -159,7 +156,6 @@
     <!-- ═══ FEATURED PROJECTS ═══ -->
     <section id="featured" class="section-dark">
       <div class="container">
-        <div class="section-label accent" data-i18n="label.highlights">Highlights</div>
         <h2 class="section-title light" data-i18n="label.featuredProj">Featured Projects</h2>
         <p class="section-subtitle light" data-i18n="label.featuredSub">Industry-defining programs across semiconductor &amp; smart manufacturing</p>
         <div class="featured-grid" id="featuredGrid"></div>
@@ -170,7 +166,7 @@
     <section id="projects">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label" data-i18n="label.portfolio">Portfolio</div><h2 class="section-title" data-i18n="label.allProjects">All Projects</h2></div>
+          <div><h2 class="section-title" data-i18n="label.allProjects">All Projects</h2></div>
           <div id="projectsPager"></div>
         </div>
         <p class="section-subtitle" id="projectSubtitle"></p>
@@ -183,7 +179,7 @@
     <section id="publications" class="section-alt">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label" data-i18n="label.researchOutput">Research Output</div><h2 class="section-title" data-i18n="label.academicWorks">Academic Works</h2></div>
+          <div><h2 class="section-title" data-i18n="label.academicWorks">Academic Works</h2></div>
           <div id="pubPager"></div>
         </div>
         <div class="pub-filter-bar">
@@ -202,7 +198,7 @@
     <section id="awards">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label" data-i18n="label.recognition">Recognition</div><h2 class="section-title" data-i18n="label.honorsAwards">Honors &amp; Awards</h2></div>
+          <div><h2 class="section-title" data-i18n="label.honorsAwards">Honors &amp; Awards</h2></div>
           <div id="awardsPager"></div>
         </div>
         <div class="awards-list" id="awardsList"></div>
@@ -212,7 +208,6 @@
     <!-- ═══ PATENTS ═══ -->
     <section id="patents" class="section-alt">
       <div class="container">
-        <div class="section-label" data-i18n="label.ip">Intellectual Property</div>
         <h2 class="section-title" data-i18n="label.patents">Patents</h2>
         <div class="patents-list" id="patentsList"></div>
       </div>
@@ -222,7 +217,7 @@
     <section id="activities">
       <div class="container">
         <div class="section-head">
-          <div><div class="section-label" data-i18n="label.leadership">Leadership &amp; Service</div><h2 class="section-title" data-i18n="label.activities">Activities &amp; Leadership</h2></div>
+          <div><h2 class="section-title" data-i18n="label.activities">Activities &amp; Leadership</h2></div>
           <div id="activitiesPager"></div>
         </div>
         <div class="activities-grid" id="activitiesGrid"></div>
@@ -232,16 +227,27 @@
     <!-- ═══ SKILLS ═══ -->
     <section id="skills" class="section-alt">
       <div class="container">
-        <div class="section-label" data-i18n="label.capabilities">Capabilities</div>
         <h2 class="section-title" data-i18n="label.skills">Skills</h2>
         <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ CAREER NARRATIVE (Project Deep Dives) ═══ -->
+    <section id="narrative">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" data-i18n="label.narrative">Career Narrative</h2>
+            <p class="section-subtitle" data-i18n="label.narrativeSub">Detailed view of major projects — background, role, key activities, and outcomes.</p>
+          </div>
+        </div>
+        <div class="narrative-list" id="narrativeList"></div>
       </div>
     </section>
 
     <!-- ═══ CONTACT ═══ -->
     <section id="contact" class="section-dark">
       <div class="container">
-        <div class="section-label accent" data-i18n="label.connect">Let's Connect</div>
         <h2 class="section-title light" data-i18n="label.getInTouch">Get in Touch</h2>
         <p class="contact-intro" data-i18n="label.contactIntro">Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.</p>
         <div class="contact-cards" id="contactCards"></div>
@@ -268,6 +274,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20260504l"></script>
+  <script src="assets/js/main.js?v=20260520b"></script>
 </body>
 </html>

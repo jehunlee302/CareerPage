@@ -2,12 +2,13 @@
     en: Planning & Scheduling Solution Consultant
     ko: 생산계획 솔루션 컨설턴트
   organization:
-    en: VMS Solutions Inc.
-    ko: VMS 솔루션스
+    en: VMS Solutions Inc. 
+    ko: 브이엠에스솔루션스
   division:
     en: Solution Division | Consultant Part
     ko: 솔루션사업부 | 솔루션 컨설턴트 파트
   period: 2025.08 - Present
+  alt_service: 2025.08 - 2026.02
   roles:
     en: "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product"
     ko: "시스템 설계 및 PMO: 디지털 트윈 플랫폼, 생산-물류 통합 시뮬레이터, 시뮬레이션 기반 AI 스케줄러, SaaS 제품"
@@ -40,6 +41,7 @@
     en: Solution Division | Micron Part
     ko: 솔루션사업부 | Micron 유지보수
   period: 2025.02 - 2025.07
+  alt_service: 2025.02 - 2025.07
   roles:
     en: "Solution consultant: simulation-based real-time APS maintenance, system configuration remote support"
     ko: "솔루션 컨설턴트: 시뮬레이션 기반 실시간 APS 유지보수, 시스템 셋팅 원격 지원"
@@ -49,21 +51,6 @@
   performance: ""
   region: Yongin, South Korea
 - position:
-    en: Technical Research Personnel
-    ko: 전문연구요원
-  organization:
-    en: South Korea (KAIST, VMS Solutions Inc.)
-    ko: 대한민국 (KAIST, VMS 솔루션스)
-  division:
-    en: Ministry of National Defense
-    ko: 국방부
-  period: 2023.03 - 2026.02
-  roles:
-    en: Industrial R&D (alternative military service)
-    ko: 산업 R&D (병역 대체 복무)
-  performance: ""
-  region: Daejeon/Yongin, South Korea
-- position:
     en: Researcher
     ko: 연구원
   organization: KAIST
@@ -71,6 +58,7 @@
     en: MSS (Manufacturing Service Systems) Lab.
     ko: MSS (Manufacturing Service Systems) 연구실
   period: 2021.03 - 2025.02
+  alt_service: 2023.03 - 2025.02
   advisor: Hyun-Jung Kim
   roles:
     en: "Lead researcher: AI-based dynamic schedulers, optimization-based heuristics, autonomous manufacturing scheduling systems"

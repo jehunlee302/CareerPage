@@ -19,6 +19,7 @@ const RESUME_DIR = path.join(__dirname, '..', 'latex');
 const SECTIONS   = path.join(RESUME_DIR, 'sections');
 const LANG       = process.argv.includes('--lang')
   ? process.argv[process.argv.indexOf('--lang') + 1] : 'en';
+const BRIEF      = process.argv.includes('--brief');
 
 /* ─── i18n Section Titles ─── */
 const TITLES = {
@@ -43,6 +44,22 @@ const TITLES = {
     skills:       '기술',
   },
 };
+
+const ALT_SERVICE_LABEL = {
+  en: { label: 'Alternative Military Service - Technical Research Personnel', mod: 'concurrent affiliation with Ministry of National Defense' },
+  ko: { label: '병역 대체 복무 - 전문연구요원', mod: '국방부 동시 소속' },
+};
+
+const DEGREE_KO = { 'Ph.D.': '공학박사 (Ph.D.)', 'M.S.': '석사', 'B.S.': '학사', 'High School': '고등학교' };
+const REGION_KO = {
+  'Yongin, South Korea': '경기 용인',
+  'Daejeon, South Korea': '대전',
+  'Suwon, South Korea': '경기 수원',
+  'Seoul, South Korea': '서울',
+};
+function locDegree(d) { return LANG === 'ko' ? (DEGREE_KO[d] || d) : d; }
+function locRegion(r) { return LANG === 'ko' ? (REGION_KO[r] || r) : r; }
+function locPeriod(p) { return (LANG === 'ko' && typeof p === 'string') ? p.replace(/\bPresent\b/i, '현재') : (p || ''); }
 
 /* ─── Helpers ─── */
 
@@ -237,15 +254,15 @@ ${formatted}
 function generateEducation(education) {
   if (!Array.isArray(education) || !education.length) return '';
   const entries = education.map(e => {
-    const degree = e.degree || '';
+    const degree = locDegree(e.degree || '');
     const major = extractLang(e.major);
     const inst = extractLang(e.institution);
-    const title = major ? `${degree} in ${tex(major)}` : tex(degree);
+    const title = major ? (LANG === 'ko' ? `${tex(degree)} | ${tex(major)}` : `${tex(degree)} in ${tex(major)}`) : tex(degree);
     return `  \\cveducation
     {${title}}
     {${tex(inst)}}
     {}
-    {${e.period || ''}}
+    {${locPeriod(e.period)}}
     {} {}`;
   }).join('\n\n');
 
@@ -263,11 +280,16 @@ const MAX_RESP_LINES = 6;
 function generateExperience(work) {
   if (!Array.isArray(work) || !work.length) return '';
   const entries = work.map(w => {
-    const period = w.period || '';
+    const period = locPeriod(w.period);
     const position = tex(extractLang(w.position));
     const org = extractLang(w.organization);
     const div = extractLang(w.division);
-    const inst = div ? `${tex(org)} | ${tex(div)}` : tex(org);
+    let inst = div ? `${tex(org)} | ${tex(div)}` : tex(org);
+    if (w.alt_service) {
+      const mnd = LANG === 'ko' ? '국방부' : 'Ministry of National Defense';
+      const role = LANG === 'ko' ? '전문연구요원' : 'Tech. Research Personnel';
+      inst += ` \\\\[0.4mm] \\textit{\\small ${tex(mnd)} | ${tex(role)} [${tex(w.alt_service)}]}`;
+    }
     const roles = tex(extractLang(w.roles));
 
     // Responsibilities (capped for readability)
@@ -283,7 +305,8 @@ function generateExperience(work) {
 
     // Cap responsibilities, then append highlights
     const cappedResps = resps.slice(0, MAX_RESP_LINES);
-    const extra = [...cappedResps, ...highlights].join('\n    \\\\ ');
+    const BULLET = '\\textendash{}~';
+    const extra = [...cappedResps, ...highlights].map(s => BULLET + s).join('\n    \\\\ ');
 
     return `%---------------------------------------------------------
   \\cventry
@@ -361,7 +384,8 @@ function generateProjects(projects) {
       if (ach) tasks.push(tex(ach));
     }
 
-    const taskStr = tasks.join('\n    \\\\ ');
+    const BULLET = '\\textendash{}~';
+    const taskStr = BRIEF ? '' : tasks.map(s => BULLET + s).join('\n    \\\\ ');
 
     // Year comment
     const year = period.slice(0, 4);
@@ -429,7 +453,7 @@ function generateHonors(honors) {
   const entries = honors.map(h => {
     const title = tex(extractLang(h.title));
     const desc = tex(extractLang(h.description));
-    const org = tex(h.organization || '');
+    const org = tex(extractLang(h.organization));
     const date = h.date || '';
     return `  \\cvhonor
     {${title}}
@@ -490,7 +514,7 @@ ${entries}
 /* ─── Main ─── */
 
 function main() {
-  console.log(`\n📄 Generating LaTeX resume (lang=${LANG}) from data/career/*.yaml\n`);
+  console.log(`\n📄 Generating LaTeX resume (lang=${LANG}${BRIEF ? ', brief' : ''}) from data/career/*.yaml\n`);
 
   // Ensure output directories exist
   if (!fs.existsSync(SECTIONS)) fs.mkdirSync(SECTIONS, { recursive: true });
@@ -517,7 +541,7 @@ function main() {
   writeFile(path.join(SECTIONS, 'leadership.tex'), generateLeadership(activities));
   writeFile(path.join(SECTIONS, 'skills.tex'), generateSkills(skills));
 
-  console.log(`\n✅ LaTeX files generated (lang=${LANG})`);
+  console.log(`\n✅ LaTeX files generated (lang=${LANG}${BRIEF ? ', brief' : ''})`);
   console.log(`   Next: cd latex && xelatex resume.tex && xelatex resume.tex\n`);
 }
 

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-03",
+  "lastUpdated": "2026-05-20",
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -127,7 +127,8 @@
         "LLM-based schedule analysis & report generation system performance review and feedback",
         "2 SaaS solution consulting engagements; technical review supporting client executives' strategic decisions (general manufacturing, semiconductor back-end)",
         "WEB UI design participation and feedback"
-      ]
+      ],
+      "alt_service": "2025.08 - 2026.02"
     },
     {
       "position": "Planning & Scheduling Solution Consultant",
@@ -139,16 +140,8 @@
       "region": "Yongin, South Korea",
       "responsibilities": [
         "Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support"
-      ]
-    },
-    {
-      "position": "Technical Research Personnel",
-      "organization": "South Korea (KAIST, VMS Solutions Inc.)",
-      "division": "Ministry of National Defense",
-      "period": "2023.03 - 2026.02",
-      "roles": "Industrial R&D (alternative military service)",
-      "performance": "",
-      "region": "Daejeon/Yongin, South Korea"
+      ],
+      "alt_service": "2025.02 - 2025.07"
     },
     {
       "position": "Researcher",
@@ -171,7 +164,8 @@
         "Won 10-year NRF 'Hanwoomul' long-term project after analyzing rejection feedback and reinforcing proposal logic",
         "2 first-author IEEE journal papers, 7 international conference presentations"
       ],
-      "advisor": "Hyun-Jung Kim"
+      "advisor": "Hyun-Jung Kim",
+      "alt_service": "2023.03 - 2025.02"
     },
     {
       "position": "Researcher",
@@ -319,7 +313,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Phase 2 — UPM with semiconductor-specific constraints",
+      "details": {
+        "situation": "Real semiconductor manufacturing rarely matches clean academic scheduling assumptions — machines have eligibility restrictions, and setup times depend on operation order. Existing RL-based research had not directly tackled both constraints together on unrelated parallel machines (UPM).",
+        "purpose": "Design a GNN-based RL methodology for UPM scheduling that encodes machine eligibility and sequence-dependent setups directly in the state representation, and validate performance against established baselines.",
+        "role": "Project planner and lead researcher — participated in proposal planning; designed the GNN-based RL methodology and performance evaluation framework.",
+        "tasks": [
+          "Formalized complex manufacturing constraints (eligibility, sequence-dependent setups, batching) into an RL-tractable form",
+          "Designed a GNN state representation encoding both machine-operation eligibility and setup-time dependencies",
+          "Trained and evaluated the RL agent across diverse instances; built the benchmark framework vs classical heuristics",
+          "Consolidated findings into deliverables for VMS Solutions' semiconductor APS roadmap"
+        ],
+        "achievements": "Delivered a GNN-RL methodology that natively handles machine eligibility and sequence-dependent setups — the first such direct treatment in this problem class. Results fed into VMS Solutions' simulation-based semiconductor scheduling product roadmap.",
+        "notes": "Phase 2 of a two-year continuous VMS Solutions × KAIST research line. Phase 1 (project"
+      }
     },
     {
       "index": 19,
@@ -354,7 +361,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "Real-time dispatching agent based on RL",
+      "details": {
+        "situation": "Real-time Job Shop scheduling requires graph-form representations of the changing process state and an RL methodology capable of making decisions under tight time budgets.",
+        "purpose": "Develop a graph-neural-network-based real-time Job Shop scheduling RL algorithm.",
+        "role": "PM and lead researcher — drove proposal planning, GNN-based RL design, and the training framework.",
+        "tasks": [
+          "Built a high-fidelity simulator for Job Shop environments",
+          "Designed the GNN-based state representation",
+          "Trained and evaluated the imitation-learning-based RL dispatcher",
+          "Discussed applicability to other manufacturing environments (battery, automotive, shipbuilding)"
+        ],
+        "achievements": "Established the GNN-based imitation-learning dispatcher methodology. Foundation for the IEEE Transactions on Automation Science and Engineering first-author paper (2024).",
+        "notes": "Core methodological building block for NRF Meta-Scheduling (#15) and the Hanwoomul project (#22)."
+      }
     },
     {
       "index": 17,
@@ -365,7 +385,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "Job Shop simulator enhancement and methodology development",
+      "details": {
+        "situation": "Existing Job Shop scheduling research used fragmented simulator-based evaluation, and the applicability of AI-based dispatching was limited.",
+        "purpose": "Enhance the Job Shop simulator, develop an AI-based dispatching methodology, and validate the applicability of imitation learning.",
+        "role": "PM and lead researcher — drove proposal writing, simulator enhancement, and the AI-dispatching methodology.",
+        "tasks": [
+          "Enhanced the Job Shop simulator to reflect diverse constraints",
+          "Designed and implemented an AI-based dispatching methodology",
+          "Reviewed the applicability of imitation learning",
+          "Fed findings back into the VMS Solutions product roadmap"
+        ],
+        "achievements": "Established an AI-based Job Shop dispatching methodology. Resulted in the WSC 2022 first-author paper \"Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation\".",
+        "notes": "Phase 1 of a two-stage VMS Solutions × KAIST continuous research line. Phase 2 (#20, 2023.07 – 2024.06) extended to UPM with semiconductor-specific constraints."
+      }
     },
     {
       "index": 16,
@@ -376,18 +409,43 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Algorithm planning for optimal wiring based on substrate electrode positions",
+      "details": {
+        "situation": "Wiring at the X-DEC Slim Layout stage of semiconductor memory cell design involves complex combinatorial constraints, but no formalized analytical methodology existed.",
+        "purpose": "Analyze the X-DEC Slim Layout wiring optimization problem from a combinatorial-optimization perspective and propose a methodology.",
+        "role": "Researcher — responsible for constraint analysis and methodology discussion.",
+        "tasks": [
+          "Identified X-DEC Slim Layout wiring constraints through on-site engineer interviews",
+          "Defined the problem and resolution scope",
+          "Reviewed combinatorial-optimization-based methodologies and delivered technical recommendations"
+        ],
+        "achievements": "Accumulated experience analyzing semiconductor memory-cell layout optimization through a combinatorial-optimization lens.",
+        "notes": "Short (1-month) feasibility study — established future collaboration directions with SK Hynix."
+      }
     },
     {
       "index": 15,
-      "period": "2022.03 -",
+      "period": "2022.03 - 2025.02",
       "duration": "3y",
       "title": "Reinforcement learning-based meta-scheduling for manufacturing systems",
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
-      "remarks": ""
+      "remarks": "Foundation of doctoral thesis — meta-scheduling methodology",
+      "details": {
+        "situation": "Prior RL-based scheduling research locked each agent to a single problem setting — fixed plant size, fixed constraints, fixed objective. Reusing it under changing manufacturing environments required retraining from scratch.",
+        "purpose": "Establish a meta-scheduling methodology so a single agent adapts to manufacturing environments with dynamic problem sizes, constraints, and objectives — without retraining.",
+        "role": "PM and principal investigator — designed the meta-learning methodology and unified dispatcher + look-ahead tree search into a single scheduling framework.",
+        "tasks": [
+          "Designed a Meta-RL framework on graph-based state representations that generalizes across varying problem sizes and operation sequences",
+          "Built a tree-based look-ahead search (SBBS) combining beam search with branch-and-bound for tight decision-time budgets",
+          "Adopted an active-schedule-based RL training scheme to cut wasted search over dominated solutions",
+          "Benchmarked against fixed-environment RL baselines and classical dispatching rules under environment-change scenarios"
+        ],
+        "achievements": "SBBS was proved mathematically to always produce schedules equal to or better than dispatching-only solutions in static environments. The methodology generalized across problem sizes without retraining and formed the theoretical core of the doctoral thesis, awarded 2nd Prize at the KIIE Ph.D. Thesis Competition (2025.11).",
+        "notes": "This NRF stream became the foundation for the 10-year \"Hanwoomul\" NRF project (#22), launched 2024.05, which extends the methodology toward autonomous scheduling in real factories."
+      }
     },
     {
       "index": 14,
@@ -422,8 +480,21 @@
       "client": "Samsung Heavy Industries",
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
-      "isPM": false,
-      "remarks": ""
+      "isPM": true,
+      "remarks": "Phase 1 — Cargo Hold workload balancing",
+      "details": {
+        "situation": "Samsung Heavy Industries' ship cargo-hold production was scheduled manually by yard planners, with no quantitative load-balancing logic. Daily manpower demand swung between overloaded and idle days as a result.",
+        "purpose": "Build a ship-production simulator reflecting real yard constraints and design a reinforcement-learning algorithm that minimizes the standard deviation of daily manpower demand.",
+        "role": "Project planner, PM, and lead researcher — drove proposal writing, problem definition, and algorithm development end-to-end.",
+        "tasks": [
+          "Modeled cargo-hold production constraints through shipyard engineer interviews",
+          "Designed a project-based ship-production simulator reflecting real yard operations",
+          "Compared three algorithms — pure RL, pure Greedy, and a Greedy+RL hybrid",
+          "Benchmarked performance against the baseline 6-month schedule and analyzed convergence speed"
+        ],
+        "achievements": "Daily manpower standard deviation dropped vs the baseline schedule — RL 41.60% (20.27 s), Greedy 44.53% (49.86 s), Greedy+RL 47.69%. RL converged ~2.4× faster than iterative heuristics. Won Samsung Heavy Industries Certificate of Appreciation (2022.05) and 2nd Prize at the KAIST IE Poster Competition (2022.09).",
+        "notes": "Phase 1 of a two-stage Samsung Heavy Industries research line. Phase 2 (project"
+      }
     },
     {
       "index": 12,
@@ -432,9 +503,22 @@
       "title": "Optimal machine assignment with machine learning algorithms",
       "client": "VMS Solutions",
       "partnerInstitution": "",
-      "affiliatedInstitution": "KAIST",
+      "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "AI-prediction-based optimal machine assignment algorithm",
+      "details": {
+        "situation": "Pure dispatching-rule-based scheduling reached a ceiling — machine-learning-based prediction was needed to supplement decision quality, particularly around setup-change behavior.",
+        "purpose": "Develop an ML-based machine-assignment algorithm that uses prediction models to optimize equipment allocation decisions.",
+        "role": "PM and lead researcher — drove design of the AI prediction model and the machine-assignment algorithm.",
+        "tasks": [
+          "Analyzed setup-change patterns in semiconductor equipment",
+          "Designed and trained an ML-based setup-change prediction model",
+          "Built a machine-assignment algorithm that consumes the prediction output",
+          "Validated performance via simulation-based benchmarking"
+        ],
+        "achievements": "Implemented an AI-prediction-driven optimal machine-assignment algorithm. Foundation of the WSC 2021 first-author paper \"Machine Learning-based Periodic Setup Changes for Semiconductor Manufacturing Machines\".",
+        "notes": "First transition from rule-based scheduling to ML-driven decision-making in this research line."
+      }
     },
     {
       "index": 11,
@@ -467,9 +551,22 @@
       "title": "Optimal weight sets for dispatching rules with multiple KPIs",
       "client": "VMS Solutions",
       "partnerInstitution": "",
-      "affiliatedInstitution": "KAIST",
+      "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "Multi-KPI parameter-derivation framework for FAB automation",
+      "details": {
+        "situation": "Dispatching-rule-based scheduling was typically evaluated against a single KPI, yet real operations demand simultaneous consideration of makespan, tardiness, and setup count.",
+        "purpose": "Design a Sequential Search framework that derives optimal dispatching-rule weights while considering multiple KPIs simultaneously.",
+        "role": "PM and lead researcher — drove the multi-objective extension methodology.",
+        "tasks": [
+          "Defined the multi-KPI hierarchy and priority structure",
+          "Extended the Sequential Search framework to multi-objective settings",
+          "Ran simulations across diverse weight scenarios and analyzed results",
+          "Consolidated outputs for VMS Solutions product integration"
+        ],
+        "achievements": "Completed the multi-objective Sequential Search framework. Resulted in the WSC 2020 first-author paper \"A Simulation-based Sequential Search Method for Multi-objective Scheduling Problems\" — culminating the dispatching-rule research line with the IEEE TSM 2020 first-author publication.",
+        "notes": "Final stage of the VMS Solutions dispatching-rule research line (2016.07 – 2020.02)."
+      }
     },
     {
       "index": 9,
@@ -480,7 +577,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Battery process anomaly prediction and scheduling framework",
+      "details": {
+        "situation": "Samsung SDI battery production generated large volumes of noisy operational data, but lacked a simulation-based framework for real-time scheduling decisions.",
+        "purpose": "Build a battery-production simulator and design a real-time scheduling framework that reflects process-specific constraints.",
+        "role": "Researcher — responsible for battery process simulator and scheduling algorithm design.",
+        "tasks": [
+          "Identified battery production constraints through on-site engineer interviews",
+          "Built a battery production simulator and defined the resolution scope",
+          "Designed scheduling algorithms reflecting process-specific characteristics",
+          "Defined MES-integration data schema for the production operations system"
+        ],
+        "achievements": "Established a simulation-based framework that supports real-time decision-making under large, noisy production data. Built collaborative experience with Micube Solution, Samsung SDI, and KITECH.",
+        "notes": "MOTIE government project — partners: Micube Solution, Samsung SDI, KITECH."
+      }
     },
     {
       "index": 8,
@@ -490,8 +600,21 @@
       "client": "NRF of Korea",
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
-      "isPM": true,
-      "remarks": ""
+      "isPM": false,
+      "remarks": "RL algorithm development and performance review for production systems",
+      "details": {
+        "situation": "Research on applying RL to manufacturing scheduling was growing, but the field lacked a high-fidelity Job Shop simulator and a systematic training framework.",
+        "purpose": "Establish foundational research on RL-based scheduling theory and algorithms for manufacturing systems.",
+        "role": "Researcher — participated in proposal planning; built the Job Shop simulator and designed the RL-based scheduling methodology.",
+        "tasks": [
+          "Built a high-fidelity simulator for Job Shop environments",
+          "Designed and implemented an RL-based scheduling methodology",
+          "Discussed applicability to other manufacturing environments (battery, automotive, shipbuilding)",
+          "Wrote academic papers and presented at domestic and international conferences"
+        ],
+        "achievements": "Secured foundational know-how on RL-based scheduling. Foundation for the WSC 2022 first-author paper \"Imitation Learning for Real-Time Job Shop Scheduling using Graph-based Representation\".",
+        "notes": "Starting point of the doctoral research thread that later led to NRF Meta-Scheduling (#15) and the Hanwoomul project (#22)."
+      }
     },
     {
       "index": 7,
@@ -502,7 +625,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "Validation of dispatching-weight methodology on a real semiconductor FAB",
+      "details": {
+        "situation": "SK Hynix's semiconductor FAB lines operate with multiple dispatching rules acting in combination, making single-KPI optimization of weights impractical in field conditions.",
+        "purpose": "Apply the sequential-search dispatching-weight methodology to a real semiconductor FAB and validate operational gains.",
+        "role": "PM and lead researcher — drove on-site constraint analysis, algorithm application, and validation.",
+        "tasks": [
+          "Identified FAB-line constraints through on-site engineer interviews",
+          "Analyzed correlations among multiple dispatching rules",
+          "Applied the Sequential Search framework to the SK Hynix FAB environment",
+          "Consolidated validation results and identified follow-up research directions"
+        ],
+        "achievements": "Demonstrated that the Sequential Search methodology — developed in the VMS Solutions × SKKU research thread — applies to real semiconductor FAB environments, culminating in the IEEE TSM (2020) first-author publication.",
+        "notes": "Part of the VMS × SK Hynix multi-year dispatching-rule research thread (2017.07 – 2020.02)."
+      }
     },
     {
       "index": 6,
@@ -513,7 +649,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
-      "remarks": ""
+      "remarks": "ML-based optimal parameter derivation algorithm",
+      "details": {
+        "situation": "Dispatching-rule-based scheduling was typically evaluated against a single KPI, making it hard to optimize across multiple operational indicators simultaneously.",
+        "purpose": "Develop a framework that quantitatively analyzes KPI changes across dispatching-rule weight configurations.",
+        "role": "PM and lead researcher — drove framework design and ML-based weight optimization.",
+        "tasks": [
+          "Designed a KPI-change analysis framework keyed on dispatching-rule weight perturbations",
+          "Built an ML-based algorithm for deriving optimal weight configurations",
+          "Built a simulation-based validation environment for repeatable benchmarking",
+          "Documented results for VMS Solutions product integration"
+        ],
+        "achievements": "Established a framework that quantitatively evaluates and derives dispatching-rule weights. Foundation for the WSC 2019 first-author paper.",
+        "notes": "Part of the VMS Solutions multi-year industrial research series — later evolved into the Sequential Search methodology."
+      }
     },
     {
       "index": 5,
@@ -524,7 +673,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Performance analysis framework for parameter-induced KPI changes",
+      "details": {
+        "situation": "LCD manufacturing applied multiple dispatching rules in combination, yet no quantitative analysis existed on how weight changes propagated into KPIs.",
+        "purpose": "Build a framework that analyzes performance changes induced by dispatching-rule weight configurations in LCD processes.",
+        "role": "Researcher — designed and implemented the simulation-based performance analysis framework.",
+        "tasks": [
+          "Analyzed LCD process characteristics and organized the dispatching-rule matrix",
+          "Built a simulation-based performance-comparison environment",
+          "Analyzed and visualized weight-KPI correlations"
+        ],
+        "achievements": "Established a performance-analysis framework keyed on dispatching-rule weight changes. Foundation for the WSC 2018 first-author paper \"A Framework for Performance Analysis of Dispatching Rules\".",
+        "notes": "Starting point of the VMS Solutions × SK Hynix multi-year industrial research series (2017.07 – 2020.02)."
+      }
     },
     {
       "index": 4,
@@ -535,7 +696,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Virtual factory simulator construction and operational efficiency analysis",
+      "details": {
+        "situation": "A government-funded smart factory testbed had been built, but lacked a simulation environment to quantitatively validate operational efficiency under varying scenarios.",
+        "purpose": "Build a virtual factory simulator and analyze operational efficiency across scenarios.",
+        "role": "Researcher — responsible for simulator construction and scenario analysis.",
+        "tasks": [
+          "Defined virtual-factory operation scenarios and built the simulator",
+          "Conducted simulation-based operational efficiency analysis",
+          "Consolidated findings and identified follow-up research directions"
+        ],
+        "achievements": "Established a methodology for validating operational efficiency through simulation.",
+        "notes": "Part of the MSIP / MSIT smart factory research line — linked to"
+      }
     },
     {
       "index": 3,
@@ -546,7 +719,20 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Disruption-response algorithms for flexible production automation",
+      "details": {
+        "situation": "3D-printer-based flexible manufacturing systems (FMS) are central to mass personalization, yet lacked real-time rescheduling mechanisms to handle disruptions like machine failure, order cancellation, and rush orders.",
+        "purpose": "Develop scheduling and rescheduling algorithms tailored to 3D-printer-based FMS characteristics.",
+        "role": "Researcher — analyzed FMS characteristics and built the rescheduling algorithms.",
+        "tasks": [
+          "Analyzed characteristics of 3D-printer-based flexible manufacturing systems",
+          "Defined disruption scenarios — machine failure, order cancellation, rush orders",
+          "Developed rescheduling algorithms for disruption response",
+          "Designed real-time schedule derivation using genetic algorithms and heuristics, and validated performance"
+        ],
+        "achievements": "Built a rescheduling mechanism that responds in real time to machine state and order changes. Resulted in a 2nd-author publication in Int. Journal of Advanced Manufacturing Technology (2020).",
+        "notes": "Mass Personalization research line — connected to the MSIP FaaS IoT platform project (#1)."
+      }
     },
     {
       "index": 2,
@@ -557,7 +743,19 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Heuristic algorithm for improving existing schedules",
+      "details": {
+        "situation": "Inefficient schedule patterns were accumulating in VMS Solutions' LCD operational data, yet no automated detection or improvement mechanism existed.",
+        "purpose": "Design heuristic algorithms that detect inefficient LCD schedules and improve them.",
+        "role": "Researcher — responsible for pattern analysis and heuristic algorithm design and implementation.",
+        "tasks": [
+          "Identified inefficient schedule patterns through LCD operational data analysis",
+          "Defined inefficiency-detection metrics and automated their validation",
+          "Designed and implemented heuristic improvement algorithms"
+        ],
+        "achievements": "First industrial research engagement with VMS Solutions — established the starting point of the multi-year dispatching-rule research line.",
+        "notes": "First step of the VMS Solutions × SK Hynix multi-year industrial research series — extended into weight analysis (#5,"
+      }
     },
     {
       "index": 1,
@@ -568,7 +766,20 @@
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": ""
+      "remarks": "Scheduling/rescheduling algorithms for flexible production automation",
+      "details": {
+        "situation": "Mass-personalization production requires integrated control of distributed, heterogeneous equipment — 3D printers, robotic handlers, IoT sensors — but no unified platform existed for such an environment.",
+        "purpose": "Build an IoT service platform that integrates heterogeneous equipment under the Factory-as-a-Service (FaaS) concept.",
+        "role": "Researcher — responsible for the 3D-printer Urban Factory scheduling simulator and algorithm development.",
+        "tasks": [
+          "Built the 3D-printer Urban Factory scheduling simulator and the initial scheduling algorithm",
+          "Developed rescheduling algorithms for disruption response",
+          "Reviewed robot-handler operation algorithms",
+          "Defined data schema and supported integration of the scheduling algorithm into the product"
+        ],
+        "achievements": "Accumulated experience operating a large multi-institution government project that integrated distributed heterogeneous equipment under FaaS principles.",
+        "notes": "Partners: SKKU, ETRI, Yonsei University, HyVISIONsystem, CoeverI&T, PartDB, LatisGlobal Communications."
+      }
     }
   ],
   "publications": [
@@ -983,7 +1194,7 @@
       "date": "2022.09",
       "title": "Second Prize, 2022 Poster Competition: Industry/Social Problems",
       "description": "RL for Resource Leveling in Shipbuilding",
-      "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "organization": "KAIST",
       "location": "Daejeon, South Korea",
       "remarks": ""
     },
@@ -999,7 +1210,7 @@
       "date": "2021.03 - 2025.02",
       "title": "Full-tuition Entrance Scholarship",
       "description": "Merit-based Entrance Scholarship (Ph.D.)",
-      "organization": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "organization": "KAIST",
       "location": "Daejeon, South Korea",
       "remarks": "Full Tuition"
     },
@@ -1007,7 +1218,7 @@
       "date": "2019.03, 2019.09",
       "title": "Graduate Assistant Tuition Waiver",
       "description": "Tuition Waiver (M.S. & Ph.D Integrated Program)",
-      "organization": "Sungkyunkwan University (SKKU)",
+      "organization": "SKKU",
       "location": "Suwon, South Korea",
       "remarks": "Half Tuition"
     },
@@ -1015,7 +1226,7 @@
       "date": "2018.03, 2019.03",
       "title": "Simsan Scholarship",
       "description": "Scholarship (M.S. & Ph.D Integrated Program)",
-      "organization": "Sungkyunkwan University (SKKU)",
+      "organization": "SKKU",
       "location": "Suwon, South Korea",
       "remarks": "Half Tuition"
     },
@@ -1023,7 +1234,7 @@
       "date": "2018.03",
       "title": "Systems & Management Engineering Scholarship",
       "description": "Scholarship (M.S. & Ph.D Integrated Program)",
-      "organization": "Sungkyunkwan University (SKKU)",
+      "organization": "SKKU",
       "location": "Suwon, South Korea",
       "remarks": "Half Tuition"
     },
@@ -1031,7 +1242,7 @@
       "date": "2017.03",
       "title": "Industrial Engineering Alumni Association Scholarship",
       "description": "Scholarship (M.S. & Ph.D Integrated Program)",
-      "organization": "Sungkyunkwan University (SKKU)",
+      "organization": "SKKU",
       "location": "Suwon, South Korea",
       "remarks": "Half Tuition"
     },
@@ -1055,7 +1266,7 @@
       "date": "2013.03 - 2016.08",
       "title": "Full-tuition Entrance Scholarship",
       "description": "Merit-based Entrance Scholarship (B.S.)",
-      "organization": "Sungkyunkwan University (SKKU)",
+      "organization": "SKKU",
       "location": "Suwon, South Korea",
       "remarks": "Full Tuition"
     }

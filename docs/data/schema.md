@@ -52,6 +52,7 @@ google_site: string
   organization: string
   division: string
   period: string
+  alt_service: string (optional)        # overlap period when entry coincides with alternative military service (전문연구요원)
   roles: { en, ko }
   responsibilities: [{ en, ko }] (optional)
   highlights: [{ en, ko }] (optional)

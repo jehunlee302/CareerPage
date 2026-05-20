@@ -6,10 +6,35 @@
     ko: 선박 화물 생산 부하 분산을 위한 강화학습 알고리즘 개발
   client: Samsung Heavy Industries
   affiliated_institution: KAIST
-  is_pm: false
+  is_pm: true
+  details:
+    situation:
+      en: Samsung Heavy Industries' ship cargo-hold production was scheduled manually by yard planners, with no quantitative load-balancing logic. Daily manpower demand swung between overloaded and idle days as a result.
+      ko: 삼성중공업의 선박 화물창(Cargo Hold) 생산은 정량적 균등화 로직 없이 수기로 일정을 확정해 왔다. 이로 인해 일별 manpower 부하가 특정 일자에 몰리거나 비는 불균형이 누적되었다.
+    purpose:
+      en: Build a ship-production simulator reflecting real yard constraints and design a reinforcement-learning algorithm that minimizes the standard deviation of daily manpower demand.
+      ko: 실제 야드 제약을 반영한 선박 생산 시뮬레이터를 구축하고, 일별 manpower 표준편차를 최소화하는 강화학습 알고리즘을 설계한다.
+    role:
+      en: Project planner, PM, and lead researcher — drove proposal writing, problem definition, and algorithm development end-to-end.
+      ko: 과제 기획·PM·주연구원 — 제안서 작성, 문제 정의, 알고리즘 개발 전 주기를 주도하였다.
+    tasks:
+      - en: Modeled cargo-hold production constraints through shipyard engineer interviews
+        ko: 현장 엔지니어 인터뷰를 통해 선박 화물창 생산 제약을 모델링하였다
+      - en: Designed a project-based ship-production simulator reflecting real yard operations
+        ko: 실제 야드 운영을 반영한 프로젝트 기반 선박 생산 시뮬레이터를 설계·구축하였다
+      - en: Compared three algorithms — pure RL, pure Greedy, and a Greedy+RL hybrid
+        ko: 순수 RL, 순수 Greedy, Greedy+RL 하이브리드 세 가지 알고리즘을 비교 설계하였다
+      - en: Benchmarked performance against the baseline 6-month schedule and analyzed convergence speed
+        ko: 기존 6개월 스케줄 대비 성능을 벤치마크하고 수렴 속도를 분석하였다
+    achievements:
+      en: "Daily manpower standard deviation dropped vs the baseline schedule — RL 41.60% (20.27 s), Greedy 44.53% (49.86 s), Greedy+RL 47.69%. RL converged ~2.4× faster than iterative heuristics. Won Samsung Heavy Industries Certificate of Appreciation (2022.05) and 2nd Prize at the KAIST IE Poster Competition (2022.09)."
+      ko: "기존 스케줄 대비 일별 manpower 표준편차가 RL 41.60% (20.27초), Greedy 44.53% (49.86초), Greedy+RL 47.69% 감소하였다. RL이 반복적 휴리스틱 대비 약 2.4배 빠른 수렴 속도를 달성하였다. 삼성중공업 감사장(2022.05), KAIST 포스터 경진대회 2등상(2022.09)을 수상하였다."
+    notes:
+      en: Phase 1 of a two-stage Samsung Heavy Industries research line. Phase 2 (project #14) extended this toward project-level scheduling with daily-employment variance as the objective.
+      ko: 삼성중공업 2단계 연속 산학과제의 1단계이다. 2단계(#14)에서 일별 작업자 고용 편차 최소화 목적함수로 확장되었다.
   remarks:
-    en: ""
-    ko: 부하 분산 최소화 알고리즘 및 시뮬레이터 개발
+    en: Phase 1 — Cargo Hold workload balancing
+    ko: 1단계 — 선박 화물창(Cargo Hold) 부하 균등화
 - index: 12
   period: 2020.06 - 2021.02
   duration: 9m
@@ -17,10 +42,35 @@
     en: Optimal machine assignment with machine learning algorithms
     ko: 머신러닝 알고리즘을 활용한 최적 설비 할당
   client: VMS Solutions
-  affiliated_institution: KAIST
+  affiliated_institution: SKKU
   is_pm: true
+  details:
+    situation:
+      en: Pure dispatching-rule-based scheduling reached a ceiling — machine-learning-based prediction was needed to supplement decision quality, particularly around setup-change behavior.
+      ko: 디스패칭 룰 기반 스케줄링이 한계에 다다랐고, 특히 설비 setup change 패턴 예측을 머신러닝으로 보완할 필요성이 제기되었다.
+    purpose:
+      en: Develop an ML-based machine-assignment algorithm that uses prediction models to optimize equipment allocation decisions.
+      ko: 머신러닝 기반 예측 모델로 최적 설비를 할당하는 알고리즘을 개발한다.
+    role:
+      en: PM and lead researcher — drove design of the AI prediction model and the machine-assignment algorithm.
+      ko: PM·주연구원 — AI 기반 예측 모델 설계와 설비 할당 알고리즘 구현을 주도하였다.
+    tasks:
+      - en: Analyzed setup-change patterns in semiconductor equipment
+        ko: 반도체 설비 setup change 패턴을 분석하였다
+      - en: Designed and trained an ML-based setup-change prediction model
+        ko: 머신러닝 기반 setup change 예측 모델을 설계·학습하였다
+      - en: Built a machine-assignment algorithm that consumes the prediction output
+        ko: 예측 결과를 활용한 설비 할당 알고리즘을 구현하였다
+      - en: Validated performance via simulation-based benchmarking
+        ko: 시뮬레이션 기반 성능 검증을 수행하였다
+    achievements:
+      en: Implemented an AI-prediction-driven optimal machine-assignment algorithm. Foundation of the WSC 2021 first-author paper "Machine Learning-based Periodic Setup Changes for Semiconductor Manufacturing Machines".
+      ko: AI 예측 모델 기반 최적 설비 할당 알고리즘을 구현하였다. WSC 1저자 논문(2021) "Machine Learning-based Periodic Setup Changes for Semiconductor Manufacturing Machines"의 토대가 되었다.
+    notes:
+      en: First transition from rule-based scheduling to ML-driven decision-making in this research line.
+      ko: 디스패칭 룰 기반 연구에서 머신러닝 기반 의사결정으로 전환한 첫 시도였다.
   remarks:
-    en: ""
+    en: AI-prediction-based optimal machine assignment algorithm
     ko: AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현
 - index: 10
   period: 2019.09 - 2020.02
@@ -29,8 +79,33 @@
     en: Optimal weight sets for dispatching rules with multiple KPIs
     ko: 다중 KPI를 고려한 디스패칭 룰 최적 가중치 도출
   client: VMS Solutions
-  affiliated_institution: KAIST
+  affiliated_institution: SKKU
   is_pm: true
+  details:
+    situation:
+      en: Dispatching-rule-based scheduling was typically evaluated against a single KPI, yet real operations demand simultaneous consideration of makespan, tardiness, and setup count.
+      ko: 디스패칭 룰 기반 스케줄링은 단일 KPI 중심 평가가 일반적이었지만, 실제 운영에서는 makespan·tardiness·setup 횟수 등 다중 KPI를 동시에 고려해야 했다.
+    purpose:
+      en: Design a Sequential Search framework that derives optimal dispatching-rule weights while considering multiple KPIs simultaneously.
+      ko: 다중 KPI를 동시에 고려하는 디스패칭 룰 최적 가중치 도출 Sequential Search 프레임워크를 설계한다.
+    role:
+      en: PM and lead researcher — drove the multi-objective extension methodology.
+      ko: PM·주연구원 — 다목적 최적화 확장 방법론 설계·구현을 주도하였다.
+    tasks:
+      - en: Defined the multi-KPI hierarchy and priority structure
+        ko: 다중 KPI 정의 및 우선순위 체계를 수립하였다
+      - en: Extended the Sequential Search framework to multi-objective settings
+        ko: Sequential Search 프레임워크를 다목적으로 확장하였다
+      - en: Ran simulations across diverse weight scenarios and analyzed results
+        ko: 다양한 가중치 시나리오를 시뮬레이션하고 결과를 분석하였다
+      - en: Consolidated outputs for VMS Solutions product integration
+        ko: VMS Solutions 제품 적용을 위한 결과를 정리하였다
+    achievements:
+      en: "Completed the multi-objective Sequential Search framework. Resulted in the WSC 2020 first-author paper \"A Simulation-based Sequential Search Method for Multi-objective Scheduling Problems\" — culminating the dispatching-rule research line with the IEEE TSM 2020 first-author publication."
+      ko: "다목적 KPI 환경의 디스패칭 룰 최적 가중치 도출 프레임워크를 완성하였다. WSC 1저자 논문(2020) \"A Simulation-based Sequential Search Method for Multi-objective Scheduling Problems\"으로 결실되었으며, IEEE TSM 1저자(2020)로 디스패칭 룰 연구 흐름을 종결지었다."
+    notes:
+      en: Final stage of the VMS Solutions dispatching-rule research line (2016.07 – 2020.02).
+      ko: VMS Solutions 디스패칭 룰 연구 흐름(2016.07 - 2020.02)의 최종 단계이다.
   remarks:
-    en: ""
+    en: Multi-KPI parameter-derivation framework for FAB automation
     ko: 다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발
