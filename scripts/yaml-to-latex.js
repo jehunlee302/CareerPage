@@ -61,6 +61,13 @@ const INST_PERIODS = {
   'VMS Solutions Inc.':  '2025.02 - {{PRESENT}}',
 };
 
+// Alternative Military Service (전문연구요원) periods per affiliation.
+// Appended as a small note next to the affiliation period in narrative group headers.
+const INST_ALT_SERVICE = {
+  'KAIST':               '2023.03 - 2025.02',
+  'VMS Solutions Inc.':  '2025.02 - 2026.02',
+};
+
 const ALT_SERVICE_LABEL = {
   en: { label: 'Alternative Military Service - Technical Research Personnel', mod: 'concurrent affiliation with Ministry of National Defense' },
   ko: { label: '병역 대체 복무 - 전문연구요원', mod: '국방부 동시 소속' },
@@ -632,7 +639,10 @@ ${fieldLines.join('\\par\\vspace{0.8mm}\n')}
       const endStr = g.open ? PRESENT : nvFmtYM(g.end);
       periodStr = startStr && endStr ? `${startStr} - ${endStr}` : (startStr || endStr || '');
     }
-    const header = `\\noindent\\textbf{\\Large\\color{awesome}${tex(g.inst)}}~~{\\small\\color{gray!130}(${tex(periodStr)})}\\par
+    const altSvc = INST_ALT_SERVICE[g.inst];
+    const altLabel = LANG === 'ko' ? '전문연구요원' : 'Tech. Research Personnel';
+    const altNote = altSvc ? `\\enspace{\\footnotesize\\itshape\\color{gray!140}~~· ${tex(altLabel)} ${tex(altSvc)}}` : '';
+    const header = `\\noindent\\textbf{\\Large\\color{awesome}${tex(g.inst)}}~~{\\small\\color{gray!130}(${tex(periodStr)})}${altNote}\\par
 \\vspace{1mm}{\\color{awesome!60}\\hrule height 0.6pt}\\vspace{3mm}
 `;
     const projectsBody = g.projects.map(renderProject).join('\n');
