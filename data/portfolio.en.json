@@ -120,7 +120,6 @@
       "region": "Yongin, South Korea",
       "responsibilities": [
         "SK Hynix Digital Twin Platform: production-logistics simulator PM, use-case discovery, KPI definition, data consistency metrics, MES legacy data analysis & simulator integration, AI prediction model data specification",
-        "Production-logistics integrated simulation design",
         "Production simulation engine architecture redesign & development participation",
         "Planned and authored 2 government R&D proposals on Agentic AI (manufacturing-specific Agentic AI, LLM-based production plan explanation module / with University of Toronto)",
         "AI extensibility review & design for simulation-based APS, new engine feature definition, participation in GenAI-based development",
@@ -139,7 +138,8 @@
       "performance": "",
       "region": "Yongin, South Korea",
       "responsibilities": [
-        "Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support"
+        "Micron global fab simulation-based real-time APS (advanced production and scheduling) system logic maintenance and remote system configuration support",
+        "Production-logistics integrated simulation design"
       ],
       "alt_service": "2025.02 - 2025.07"
     },
@@ -152,17 +152,15 @@
       "performance": "",
       "region": "Daejeon, South Korea",
       "responsibilities": [
-        "Led full project lifecycle (planning-to-validation): 9 industry-academia projects (planned 5, PM 4), 4 government projects (planned 3, PM 4)",
+        "9 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)",
+        "2 SCI journal papers (1 first-author, 1 co-author), 11 international conference presentations (8 first-author, 3 co-author)",
         "Fundamental research on Neural Combinatorial Optimization based on GNN and RL",
         "Designed general-purpose scheduling agent and Meta-RL methodology for flexible adaptation to manufacturing environment changes",
         "Designed AI-based demand forecasting, production planning, and job scheduling optimization algorithms; validated business impact using real production data (Samsung Electronics, LG Electronics, Samsung Heavy Industries, etc.)",
         "Provided technical review supporting client executives' strategic decisions and delivered system design proposals",
-        "Introduced structured project management processes (OneDrive & Notion-based) to the lab for the first time"
-      ],
-      "highlights": [
+        "Introduced structured project management processes (OneDrive & Notion-based) to the lab",
         "First Ph.D. graduate of the lab; led project planning, proposal writing, and research beyond typical researcher scope",
-        "Won 10-year NRF 'Hanwoomul' long-term project after analyzing rejection feedback and reinforcing proposal logic",
-        "2 first-author IEEE journal papers, 7 international conference presentations"
+        "Won 10-year NRF 'Hanwoomul' long-term project"
       ],
       "advisor": "Hyun-Jung Kim",
       "alt_service": "2023.03 - 2025.02"
@@ -177,6 +175,7 @@
       "region": "Suwon, South Korea",
       "responsibilities": [
         "5 industry-academia projects (planned 2, PM 2), 4 government projects (planned 2, PM 1)",
+        "3 SCI journal papers (1 first-author, 2 co-author), 10 international conference presentations (5 first-author, 5 co-author)",
         "Led foundational design and operations optimization research for 3D printer-based smart factory digital twin systems",
         "Developed rescheduling algorithms for handling disruptions (machine failures, order cancellations) in flexible manufacturing systems (FMS)",
         "Translated physical manufacturing constraints into mathematical models and validated in virtual environments",
