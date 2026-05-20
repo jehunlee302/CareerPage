@@ -188,9 +188,9 @@
   ],
   "projects": [
     {
-      "index": 25,
-      "period": "2025.06 - 2025.12",
-      "duration": "7m",
+      "index": 26,
+      "period": "2026.02 - Present",
+      "duration": "4m",
       "title": "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab",
       "client": "SK Hynix",
       "partnerInstitution": "",
@@ -208,7 +208,8 @@
         "role": "Production engine development PM",
         "tasks": [
           "Discovered real operation use-cases for the process twin through stakeholder interviews",
-          "Planned and designed production-logistics integrated simulator: unified modeling of process flows and material movement",
+          "Production-logistics integrated simulator construction: modeling of process flows and material movement based on physical location on fab floor",
+          "Operation log analysis and modeling for operation twin",
           "Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)",
           "Defined simulation result consistency metrics and designed/developed automated computation pipeline",
           "WEB UI design participation and feedback"
@@ -217,8 +218,37 @@
       }
     },
     {
+      "index": 25,
+      "period": "2025.06 - 2025.12",
+      "duration": "7m",
+      "title": "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab (PoC)",
+      "client": "SK Hynix",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "VMS Solutions Inc.",
+      "isPM": true,
+      "remarks": "",
+      "partners": [
+        "SKT",
+        "SK AX",
+        "Calro"
+      ],
+      "details": {
+        "situation": "SK Hynix required an operation twin for autonomous fab realization, but lacked a unified production-logistics simulation framework to validate process twin consistency with real fab data",
+        "purpose": "Build a production-logistics integrated simulator and define process twin consistency validation framework",
+        "role": "Production engine development PM",
+        "tasks": [
+          "Discovered and refined real operation use-cases for the process twin through stakeholder interviews",
+          "Production-logistics collaborated simulator construction: modeling of process flows and material movement",
+          "Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)",
+          "Defined simulation result consistency metrics",
+          "WEB UI design participation and feedback"
+        ],
+        "achievements": "Use-case discovery, KPI definition, consistency metrics definition, automated validation pipeline"
+      }
+    },
+    {
       "index": 24,
-      "period": "2025.03 -",
+      "period": "2025.03 - Present",
       "duration": "",
       "title": "Software product design/development: simulation-based scheduling for semiconductor manufacturing",
       "client": "VMS Solutions",
@@ -231,7 +261,8 @@
         "purpose": "Design and develop simulation-based scheduling product for semiconductor manufacturing",
         "role": "Solution consultant",
         "tasks": [
-          "User scenario definition and data schema design"
+          "User scenario definition and data schema design",
+          "AI dispatcher and optimization module integration design"
         ]
       }
     },

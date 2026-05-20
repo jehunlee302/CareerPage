@@ -1,6 +1,6 @@
-- index: 25
-  period: 2025.06 - 2025.12
-  duration: 7m
+- index: 26
+  period: 2026.02 - Present
+  duration: 4m
   title:
     en: "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab"
     ko: "디지털 트윈 플랫폼 구축: 반도체 팹 생산-물류 시뮬레이션 기반 운영 트윈"
@@ -24,8 +24,10 @@
     tasks:
       - en: Discovered real operation use-cases for the process twin through stakeholder interviews
         ko: 이해관계자 인터뷰를 통한 프로세스 트윈 실제 운영 Use-case 발굴
-      - en: "Planned and designed production-logistics integrated simulator: unified modeling of process flows and material movement"
-        ko: "생산-물류 통합 시뮬레이터 기획 및 설계: 공정 흐름과 자재 이동을 통합 모델링 구조 설계"
+      - en: "Production-logistics integrated simulator construction: modeling of process flows and material movement based on physical location on fab floor"
+        ko: "생산-물류 통합 시뮬레이터 구축: 제품의 공정 흐름 및 물리적 위치 변화 반영 통합 모델링"
+      - en: Operation log analysis and modeling for operation twin
+        ko: 운영 트윈을 위한 실 반도체 팹의 운영 로그 및 운영 로직 분석 및 모델링
       - en: Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)
         ko: 실 반도체 팹의 운영 데이터를 통합하여 프로세스 트윈의 일관성 검증 수행 (MES 데이터 분석, SQL 활용)
       - en: Defined simulation result consistency metrics and designed/developed automated computation pipeline
@@ -35,8 +37,46 @@
     achievements:
       en: Use-case discovery, KPI definition, consistency metrics definition, automated validation pipeline
       ko: Use-case 발굴, KPI 정의, 정합성 지표 정의, 자동 연산 파이프라인 구축
+
+- index: 25
+  period: 2025.06 - 2025.12
+  duration: 7m
+  title:
+    en: "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab (PoC)"
+    ko: "디지털 트윈 플랫폼 구축: 반도체 팹 생산-물류 시뮬레이션 기반 운영 트윈"
+  client: SK Hynix
+  partners:
+    - SKT
+    - SK AX
+    - Calro
+  affiliated_institution: VMS Solutions Inc.
+  is_pm: true
+  details:
+    situation:
+      en: "SK Hynix required an operation twin for autonomous fab realization, but lacked a unified production-logistics simulation framework to validate process twin consistency with real fab data"
+      ko: "SK Hynix의 자율 팹(Autonomous Fab) 실현을 위해 운영 트윈이 필요했으나, 실제 팹 데이터와의 프로세스 트윈 정합성을 검증할 수 있는 생산-물류 통합 시뮬레이션 프레임워크가 부재"
+    purpose:
+      en: Build a production-logistics integrated simulator and define process twin consistency validation framework
+      ko: 생산-물류 통합 시뮬레이터 구축 및 프로세스 트윈 정합성 검증 프레임워크 정의
+    role:
+      en: Production engine development PM
+      ko: 생산 엔진 개발 PM
+    tasks:
+      - en: Discovered and refined real operation use-cases for the process twin through stakeholder interviews
+        ko: 이해관계자 인터뷰를 통한 프로세스 트윈 실제 운영 Use-case 발굴 및 고도화
+      - en: "Production-logistics collaborated simulator construction: modeling of process flows and material movement"
+        ko: "생산-물류 연계 시뮬레이터 구축: 제품의 공정 흐름 및 자원 이동 모델링"
+      - en: Integrated real semiconductor fab operational data and performed process twin consistency validation (MES data analysis, SQL)
+        ko: 실 반도체 팹의 운영 데이터를 통합하여 프로세스 트윈의 일관성 검증 수행 (MES 데이터 분석, SQL 활용)
+      - en: Defined simulation result consistency metrics
+        ko: 시뮬레이션 결과 정합성 지표 정의
+      - en: WEB UI design participation and feedback
+        ko: WEB UI 디자인 참여 및 피드백
+    achievements:
+      en: Use-case discovery, KPI definition, consistency metrics definition, automated validation pipeline
+      ko: Use-case 발굴, KPI 정의, 정합성 지표 정의, 자동 연산 파이프라인 구축
 - index: 24
-  period: 2025.03 -
+  period: 2025.03 - Present
   duration: ""
   title:
     en: "Software product design/development: simulation-based scheduling for semiconductor manufacturing"
@@ -54,6 +94,8 @@
     tasks:
       - en: User scenario definition and data schema design
         ko: 사용자 시나리오 정의 및 데이터 스키마 설계
+      - en: AI dispatcher and optimization module integration design
+        ko: AI 디스패처 및 최적화 모듈 연동 방안 설계
 - index: 23
   period: 2025.02 - 2025.06
   duration: 5m (5y)
@@ -157,28 +199,28 @@
   details:
     situation:
       en: Real semiconductor manufacturing rarely matches clean academic scheduling assumptions — machines have eligibility restrictions, and setup times depend on operation order. Existing RL-based research had not directly tackled both constraints together on unrelated parallel machines (UPM).
-      ko: 실제 반도체 공정은 설비별 공정 자격(Machine Eligibility)과 순서 종속 셋업 시간이 동시에 존재한다. 기존 RL 기반 스케줄링 연구는 비관련 병렬 기계(UPM) 환경에서 두 제약을 함께 다룬 사례가 부족하였다.
+      ko: 실제 반도체 공정의 설비별 공정 자격(Machine Eligibility) 및 순서 종속 셋업 시간 동시 존재; 기존 RL 기반 스케줄링 연구의 비관련 병렬 기계(UPM) 환경에서 두 제약 동시 처리 사례 부족
     purpose:
       en: Design a GNN-based RL methodology for UPM scheduling that encodes machine eligibility and sequence-dependent setups directly in the state representation, and validate performance against established baselines.
-      ko: 설비 자격과 순서 종속 셋업 제약을 상태 표현에 직접 반영한 GNN 기반 RL 방법론을 설계하고, 기존 베이스라인 대비 성능을 검증한다.
+      ko: 설비 자격과 순서 종속 셋업 제약을 상태 표현에 직접 반영한 GNN 기반 RL 방법론 설계 및 기존 베이스라인 대비 성능 검증
     role:
       en: Project planner and lead researcher — participated in proposal planning; designed the GNN-based RL methodology and performance evaluation framework.
-      ko: 과제 기획 참여 및 주연구원 — GNN 기반 RL 방법론과 성능 평가 프레임워크를 설계하였다.
+      ko: 과제 기획 참여 및 주연구원 — GNN 기반 RL 방법론 및 성능 평가 프레임워크 설계
     tasks:
       - en: Formalized complex manufacturing constraints (eligibility, sequence-dependent setups, batching) into an RL-tractable form
-        ko: 복잡한 제조 제약(설비 자격, 순서 종속 setup, 배치 제약)을 RL 학습 가능한 형태로 수학적으로 정형화하였다
+        ko: 복잡한 제조 제약(설비 자격, 순서 종속 setup, 배치 제약)의 RL 학습 가능 형태로의 수학적 정형화
       - en: Designed a GNN state representation encoding both machine-operation eligibility and setup-time dependencies
-        ko: 설비-공정 자격과 셋업 시간 종속성을 동시에 인코딩하는 GNN 상태 표현을 설계하였다
+        ko: 설비-공정 자격과 셋업 시간 종속성을 동시에 인코딩하는 GNN 상태 표현 설계
       - en: Trained and evaluated the RL agent across diverse instances; built the benchmark framework vs classical heuristics
-        ko: 다양한 문제 인스턴스에서 RL 에이전트를 학습·평가하고, 전통 휴리스틱 대비 벤치마크 프레임워크를 구축하였다
+        ko: 다양한 문제 인스턴스에서 RL 에이전트 학습·평가; 전통 휴리스틱 대비 벤치마크 프레임워크 구축
       - en: Consolidated findings into deliverables for VMS Solutions' semiconductor APS roadmap
-        ko: 연구 결과를 VMS Solutions의 반도체 APS 로드맵 산출물로 정리·전달하였다
+        ko: VMS Solutions 반도체 APS 로드맵 산출물로 연구 결과 정리·전달
     achievements:
       en: Delivered a GNN-RL methodology that natively handles machine eligibility and sequence-dependent setups — the first such direct treatment in this problem class. Results fed into VMS Solutions' simulation-based semiconductor scheduling product roadmap.
-      ko: 설비 자격과 순서 종속 셋업을 직접 다루는 GNN-RL 방법론을 도출하여 해당 문제 클래스에서 직접적 접근의 선례를 마련하였다. 연구 결과는 VMS Solutions의 시뮬레이션 기반 반도체 스케줄링 제품 로드맵에 반영되었다.
+      ko: 설비 자격과 순서 종속 셋업을 직접 다루는 GNN-RL 방법론 도출; 해당 문제 클래스의 직접적 접근 선례 마련; VMS Solutions 시뮬레이션 기반 반도체 스케줄링 제품 로드맵에 반영
     notes:
       en: Phase 2 of a two-year continuous VMS Solutions × KAIST research line. Phase 1 (project #17, 2022.04 – 2023.03) covered Job Shop RL; this phase extended to UPM with semiconductor-specific constraints.
-      ko: VMS Solutions와의 2년 연속 산학과제 중 2단계이다. 1단계(#17, 2022.04 - 2023.03)는 Job Shop RL 방법론을 다루었고, 본 단계에서 반도체 공정 특화 제약의 UPM 환경으로 확장하였다.
+      ko: VMS Solutions와의 2년 연속 산학과제 중 2단계 — 1단계(#17, 2022.04 - 2023.03) Job Shop RL 방법론에 이어, 본 단계에서 반도체 공정 특화 제약의 UPM 환경으로 확장
   remarks:
     en: Phase 2 — UPM with semiconductor-specific constraints
     ko: 2단계 — 반도체 공정 특화 제약 UPM 환경
