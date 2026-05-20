@@ -25,7 +25,7 @@
       - en: Designed scheduling algorithms reflecting process-specific characteristics
         ko: 공정 특성을 반영한 스케줄링 알고리즘 개발
       - en: Defined MES-integration data schema for the production operations system
-        ko: 생산 운영 시스템(MES 연동용) 데이터 스키마 정의
+        ko: 생산 운영 시스템 (MES 연동 목적) 데이터 스키마 정의
     achievements:
       en: Established a simulation-based framework that supports real-time decision-making under large, noisy production data. Built collaborative experience with Micube Solution, Samsung SDI, and KITECH.
       ko: 대용량·Noisy 생산 데이터 기반 실시간 의사결정 지원 시뮬레이션 프레임워크 구축; Micube Solution, 삼성SDI, 한국생산기술연구원(KITECH)과의 협업 경험 축적
@@ -35,6 +35,7 @@
   remarks:
     en: Battery process anomaly prediction and scheduling framework
     ko: 배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안
+    
 - index: 7
   period: 2018.07 - 2018.09
   duration: 3m
@@ -64,14 +65,15 @@
       - en: Consolidated validation results and identified follow-up research directions
         ko: 검증 결과 정리 및 차기 과제 방향성 도출
     achievements:
-      en: Demonstrated that the Sequential Search methodology — developed in the VMS Solutions × SKKU research thread — applies to real semiconductor FAB environments, culminating in the IEEE TSM (2020) first-author publication.
-      ko: VMS Solutions·SKKU 연구 흐름의 Sequential Search 방법론의 실제 반도체 FAB 적용 가능성 검증; IEEE TSM 1저자 논문(2020)으로 결실
+      en: Demonstrated that the Sequential Search methodology — developed in the VMS Solutions × SKKU research thread — applies to real semiconductor FAB environments.
+      ko: VMS Solutions·SKKU 연구 흐름의 Sequential Search 방법론의 실제 반도체 FAB 적용 가능성 검증
     notes:
-      en: Part of the VMS × SK Hynix multi-year dispatching-rule research thread (2017.07 – 2020.02).
-      ko: VMS·SK Hynix 디스패칭 룰 다년 산학 연구 흐름(2017.07 - 2020.02)의 일환
+      en: Linked to #6 (KPI analysis with various weights on dispatching rules)
+      ko: #6(디스패칭 룰 가중치 기반 KPI 분석)과 연계된 실증 연구
   remarks:
     en: Validation of dispatching-weight methodology on a real semiconductor FAB
     ko: 반도체 FAB 생산라인 최적 파라미터 도출 방법론 적용 및 현장 검증
+
 - index: 6
   period: 2018.07 - 2019.02
   duration: 8m
@@ -98,8 +100,8 @@
         ko: 머신러닝 기반 최적 파라미터 도출 알고리즘 개발
       - en: Built a simulation-based validation environment for repeatable benchmarking
         ko: 시뮬레이션 기반 검증 환경 구축
-      - en: Documented results for VMS Solutions product integration
-        ko: VMS Solutions 제품 적용을 위한 인터페이스 정리
+      - en: Implemented demo application (C#, WinForm) for product integration
+        ko: 제품 적용을 위한 시연용 프로그램 (C#, WinForm) 구현
     achievements:
       en: Established a framework that quantitatively evaluates and derives dispatching-rule weights. Foundation for the WSC 2019 first-author paper.
       ko: 디스패칭 룰 가중치 정량 평가·도출 프레임워크 정립; WSC 1저자 논문(2019)의 기반
@@ -109,6 +111,7 @@
   remarks:
     en: ML-based optimal parameter derivation algorithm
     ko: 머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발
+
 - index: 5
   period: 2017.07 - 2018.02
   duration: 8m
@@ -138,12 +141,10 @@
     achievements:
       en: Established a performance-analysis framework keyed on dispatching-rule weight changes. Foundation for the WSC 2018 first-author paper "A Framework for Performance Analysis of Dispatching Rules".
       ko: 디스패칭 룰 가중치 변화에 따른 성능 분석 프레임워크 정립; WSC 1저자 논문(2018) "A Framework for Performance Analysis of Dispatching Rules"의 토대
-    notes:
-      en: Starting point of the VMS Solutions × SK Hynix multi-year industrial research series (2017.07 – 2020.02).
-      ko: VMS Solutions·SK Hynix 다년 산학과제 시리즈(2017.07 - 2020.02)의 출발점
   remarks:
-    en: Performance analysis framework for parameter-induced KPI changes
-    ko: 파라미터에 따른 성능 변화 분석 프레임워크 설계/개발
+    en: Performance analysis framework for parameter-induced KPI changes and WSC 2018 1st-author paper.
+    ko: 파라미터에 따른 성능 변화 분석 프레임워크 설계/개발 및 WSC 2018 1저자 논문
+
 - index: 4
   period: 2017.07 - 2018.01
   duration: 7m
@@ -174,11 +175,12 @@
       en: Established a methodology for validating operational efficiency through simulation.
       ko: 시뮬레이션 기반 운영 효율성 검증 방법론 정립
     notes:
-      en: Part of the MSIP / MSIT smart factory research line — linked to #1 (FaaS IoT platform) and #3 (3D-printer scheduling).
-      ko: MSIP/MSIT 정부 과제 흐름의 일환 — #1(FaaS IoT 플랫폼), #3(3D 프린터 스케줄링)과 연계된 스마트 팩토리 연구
+      en: Linked to #1 (FaaS IoT platform)
+      ko: #1(FaaS IoT 플랫폼)과 연계된 스마트 팩토리 실증 연구
   remarks:
     en: Virtual factory simulator construction and operational efficiency analysis
     ko: 가상공장 시뮬레이터 구축 및 운영 효율성 분석
+
 - index: 3
   period: 2016.11 - 2019.10
   duration: 3y
@@ -216,6 +218,7 @@
   remarks:
     en: Disruption-response algorithms for flexible production automation
     ko: 유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발
+
 - index: 2
   period: 2016.07 - 2017.02
   duration: 8m
@@ -245,12 +248,10 @@
     achievements:
       en: First industrial research engagement with VMS Solutions — established the starting point of the multi-year dispatching-rule research line.
       ko: VMS Solutions와의 첫 산학과제 — 디스패칭 룰 연구 라인의 출발점 형성
-    notes:
-      en: First step of the VMS Solutions × SK Hynix multi-year industrial research series — extended into weight analysis (#5, #6) and Sequential Search (#10).
-      ko: VMS Solutions·SK Hynix 다년 산학과제 시리즈의 첫 단계 — 후속 가중치 분석(#5, #6)·Sequential Search(#10) 연구로 발전
   remarks:
     en: Heuristic algorithm for improving existing schedules
     ko: 기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발
+
 - index: 1
   period: 2016.04 - 2018.05
   duration: 2y2m (3y)

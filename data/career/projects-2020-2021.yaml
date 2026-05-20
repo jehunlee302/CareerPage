@@ -35,6 +35,7 @@
   remarks:
     en: Phase 1 — Cargo Hold workload balancing
     ko: 1단계 — 선박 화물창(Cargo Hold) 부하 균등화
+
 - index: 12
   period: 2020.06 - 2021.02
   duration: 9m
@@ -72,6 +73,7 @@
   remarks:
     en: AI-prediction-based optimal machine assignment algorithm
     ko: AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현
+
 - index: 10
   period: 2019.09 - 2020.02
   duration: 6m

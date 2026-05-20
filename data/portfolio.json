@@ -249,7 +249,7 @@
     {
       "index": 24,
       "period": "2025.03 - Present",
-      "duration": "",
+      "duration": "16m",
       "title": "Software product design/development: simulation-based scheduling for semiconductor manufacturing",
       "client": "VMS Solutions",
       "partnerInstitution": "",
@@ -262,7 +262,8 @@
         "role": "Solution consultant",
         "tasks": [
           "User scenario definition and data schema design",
-          "AI dispatcher and optimization module integration design"
+          "AI dispatcher and optimization module integration design",
+          "Production-logistics integrated scheduler logic design for semiconductor manufacturing, abstraction and generalization"
         ]
       }
     },
@@ -666,8 +667,8 @@
           "Applied the Sequential Search framework to the SK Hynix FAB environment",
           "Consolidated validation results and identified follow-up research directions"
         ],
-        "achievements": "Demonstrated that the Sequential Search methodology — developed in the VMS Solutions × SKKU research thread — applies to real semiconductor FAB environments, culminating in the IEEE TSM (2020) first-author publication.",
-        "notes": "Part of the VMS × SK Hynix multi-year dispatching-rule research thread (2017.07 – 2020.02)."
+        "achievements": "Demonstrated that the Sequential Search methodology — developed in the VMS Solutions × SKKU research thread — applies to real semiconductor FAB environments.",
+        "notes": "Linked to"
       }
     },
     {
@@ -688,7 +689,7 @@
           "Designed a KPI-change analysis framework keyed on dispatching-rule weight perturbations",
           "Built an ML-based algorithm for deriving optimal weight configurations",
           "Built a simulation-based validation environment for repeatable benchmarking",
-          "Documented results for VMS Solutions product integration"
+          "Implemented demo application (C#, WinForm) for product integration"
         ],
         "achievements": "Established a framework that quantitatively evaluates and derives dispatching-rule weights. Foundation for the WSC 2019 first-author paper.",
         "notes": "Part of the VMS Solutions multi-year industrial research series — later evolved into the Sequential Search methodology."
@@ -703,7 +704,7 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
-      "remarks": "Performance analysis framework for parameter-induced KPI changes",
+      "remarks": "Performance analysis framework for parameter-induced KPI changes and WSC 2018 1st-author paper.",
       "details": {
         "situation": "LCD manufacturing applied multiple dispatching rules in combination, yet no quantitative analysis existed on how weight changes propagated into KPIs.",
         "purpose": "Build a framework that analyzes performance changes induced by dispatching-rule weight configurations in LCD processes.",
@@ -713,8 +714,7 @@
           "Built a simulation-based performance-comparison environment",
           "Analyzed and visualized weight-KPI correlations"
         ],
-        "achievements": "Established a performance-analysis framework keyed on dispatching-rule weight changes. Foundation for the WSC 2018 first-author paper \"A Framework for Performance Analysis of Dispatching Rules\".",
-        "notes": "Starting point of the VMS Solutions × SK Hynix multi-year industrial research series (2017.07 – 2020.02)."
+        "achievements": "Established a performance-analysis framework keyed on dispatching-rule weight changes. Foundation for the WSC 2018 first-author paper \"A Framework for Performance Analysis of Dispatching Rules\"."
       }
     },
     {
@@ -737,7 +737,7 @@
           "Consolidated findings and identified follow-up research directions"
         ],
         "achievements": "Established a methodology for validating operational efficiency through simulation.",
-        "notes": "Part of the MSIP / MSIT smart factory research line — linked to"
+        "notes": "Linked to"
       }
     },
     {
@@ -783,8 +783,7 @@
           "Defined inefficiency-detection metrics and automated their validation",
           "Designed and implemented heuristic improvement algorithms"
         ],
-        "achievements": "First industrial research engagement with VMS Solutions — established the starting point of the multi-year dispatching-rule research line.",
-        "notes": "First step of the VMS Solutions × SK Hynix multi-year industrial research series — extended into weight analysis (#5,"
+        "achievements": "First industrial research engagement with VMS Solutions — established the starting point of the multi-year dispatching-rule research line."
       }
     },
     {

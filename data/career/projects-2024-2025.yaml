@@ -75,9 +75,10 @@
     achievements:
       en: Use-case discovery, KPI definition, consistency metrics definition, automated validation pipeline
       ko: Use-case 발굴, KPI 정의, 정합성 지표 정의, 자동 연산 파이프라인 구축
+
 - index: 24
   period: 2025.03 - Present
-  duration: ""
+  duration: "16m"
   title:
     en: "Software product design/development: simulation-based scheduling for semiconductor manufacturing"
     ko: "소프트웨어 제품 기획/개발: 반도체 제조 시뮬레이션 기반 스케줄링"
@@ -96,6 +97,9 @@
         ko: 사용자 시나리오 정의 및 데이터 스키마 설계
       - en: AI dispatcher and optimization module integration design
         ko: AI 디스패처 및 최적화 모듈 연동 방안 설계
+      - en: Production-logistics integrated scheduler logic design for semiconductor manufacturing, abstraction and generalization
+        ko: 반도체 제조 특화 생산-물류 통합 스케줄러 로직 설계 및 일반화 검토
+
 - index: 23
   period: 2025.02 - 2025.06
   duration: 5m (5y)
@@ -125,6 +129,7 @@
     achievements:
       en: Resolved Mozart environment issues; designed logic based on customer requirements
       ko: Mozart 환경 이슈 해결 및 고객 요구사항 기반 로직 설계
+
 - index: 22
   period: 2024.05 - 2025.02
   duration: 10m (10y)
@@ -154,6 +159,7 @@
     achievements:
       en: Makespan optimal gap improved by 42.0% (vs. previous SOTA AI); 1 SCI journal paper (1st author)
       ko: "Job shop 스케줄링 문제별 최적해 대비 makespan 차이(optimal gap) 개선: 42.0% (vs 과거 SOTA AI); SCI 논문 1건 (1저자)"
+
 - index: 21
   period: 2024.03 - 2025.02
   duration: 1y
@@ -187,6 +193,7 @@
     achievements:
       en: "Demand forecasting model accuracy: 89.3% / 80% / 80%"
       ko: "수요 예측 모델 성능: 89.3% / 80% / 80%"
+
 - index: 20
   period: 2023.07 - 2024.06
   duration: 1y
@@ -224,6 +231,7 @@
   remarks:
     en: Phase 2 — UPM with semiconductor-specific constraints
     ko: 2단계 — 반도체 공정 특화 제약 UPM 환경
+
 - index: 19
   period: 2023.07 - 2024.02
   duration: 8m
