@@ -30,6 +30,7 @@ const TITLES = {
     projects:     'Projects',
     publications: 'Academic Works',
     honors:       'Honors \\& Awards',
+    patents:      'Patents',
     activities:   'Activities \\& Leadership',
     skills:       'Skills',
     narrative:    'Career Narrative',
@@ -41,6 +42,7 @@ const TITLES = {
     projects:     '프로젝트',
     publications: '학술 논문',
     honors:       '수상 내역',
+    patents:      '특허',
     activities:   '활동 및 리더십',
     skills:       '기술',
     narrative:    '경력기술서',
@@ -247,6 +249,7 @@ ${compensationCmd}
 \\input{sections/projects.tex}
 \\input{sections/publication.tex}
 \\input{sections/honors.tex}
+\\input{sections/patents.tex}
 \\input{sections/leadership.tex}
 \\input{sections/skills.tex}${BRIEF ? '' : `
 \\input{sections/narrative.tex}`}
@@ -497,6 +500,35 @@ ${entries}
 `;
 }
 
+function generatePatents(patents) {
+  if (!Array.isArray(patents) || !patents.length) return '';
+  const applicantLabel = LANG === 'ko' ? '출원인' : 'Applicants';
+  const entries = patents.map(p => {
+    const title = tex(extractLang(p.title));
+    const desc = tex(extractLang(p.description));
+    const authority = tex(extractLang(p.authority));
+    const num = tex(p.application_number || '');
+    const applicant = tex(p.applicant || '');
+    const date = p.application_date || '';
+    // desc + applicant on the middle column; authority + No. on right column
+    const descLine = [desc, applicant ? `{\\footnotesize\\itshape ${tex(applicantLabel)}: ${applicant}}` : ''].filter(Boolean).join(' \\\\[0.2mm] ');
+    const orgLine = [authority, num].filter(Boolean).join(' \\\\[0.2mm] ');
+    return `  \\cvhonor
+    {${title}}
+    {${descLine}}
+    {${orgLine}}
+    {${date}}`;
+  }).join('\n\n');
+
+  return `${sectionHeader('patents')}
+\\begin{cventries}
+
+${entries}
+
+\\end{cventries}
+`;
+}
+
 function generateLeadership(activities) {
   if (!Array.isArray(activities) || !activities.length) return '';
   const entries = activities.map(a => {
@@ -674,6 +706,7 @@ function main() {
   const pubs       = loadMerged('publications-', 'index');
   const skills     = load('skills.yaml');
   const honors     = load('honors.yaml');
+  const patents    = load('patents.yaml');
   const activities = load('activities.yaml');
 
   // Generate and write files
@@ -684,6 +717,7 @@ function main() {
   writeFile(path.join(SECTIONS, 'projects.tex'), generateProjects(projects));
   writeFile(path.join(SECTIONS, 'publication.tex'), generatePublications(pubs));
   writeFile(path.join(SECTIONS, 'honors.tex'), generateHonors(honors));
+  writeFile(path.join(SECTIONS, 'patents.tex'), generatePatents(patents));
   writeFile(path.join(SECTIONS, 'leadership.tex'), generateLeadership(activities));
   writeFile(path.join(SECTIONS, 'skills.tex'), generateSkills(skills));
   if (!BRIEF) {
