@@ -254,16 +254,16 @@
   \par \vspace{2.5mm}
 }
 
-% [Honors]
+% [Honors] - title (with inline prize) + desc on new line
 \newcommand*{\cvhonor}[4]{
-  \begin{minipage}[t]{2.8cm}                            % [수정] 1.6 -> 2.8cm (기간 표시 가능)
+  \begin{minipage}[t]{2.8cm}                            % 날짜/기간 열 (기간 표시 가능)
     \raggedright \datestyle{#4}
   \end{minipage}%
   \hspace{0.2cm}%
-  \begin{minipage}[t]{\dimexpr\textwidth-6.2cm\relax}   % [수정] textwidth - (2.8+0.2+0.2+3.0) = 6.2cm
+  \begin{minipage}[t]{\dimexpr\textwidth-6.2cm\relax}
     \raggedright
     \entrytitlestyle{#1}
-    \ifempty{#2}{}{, \entrysubstyle {#2}}
+    \ifempty{#2}{}{ \\[0.4mm] \entrysubstyle{#2}}
   \end{minipage}%
   \hspace{0.2cm}%
   \begin{minipage}[t]{3.0cm}
@@ -273,13 +273,13 @@
   \par \vspace{2.5mm}
 }
 
-% [Patents] - cvhonor와 유사하지만 desc를 ", " 대신 줄 바꿈으로 분리
+% [Patents] - cvhonor와 유사. 날짜 열 좁게 (단일 날짜만 표시).
 \newcommand*{\cvpatent}[4]{
-  \begin{minipage}[t]{2.8cm}
+  \begin{minipage}[t]{1.7cm}                            % 날짜 열 좁게
     \raggedright \datestyle{#4}
   \end{minipage}%
   \hspace{0.2cm}%
-  \begin{minipage}[t]{\dimexpr\textwidth-6.2cm\relax}
+  \begin{minipage}[t]{\dimexpr\textwidth-5.1cm\relax}   % textwidth - (1.7+0.2+0.2+3.0) = 5.1cm
     \raggedright
     \entrytitlestyle{#1}
     \ifempty{#2}{}{ \\[0.4mm] \entrysubstyle{#2}}

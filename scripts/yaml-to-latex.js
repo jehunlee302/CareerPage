@@ -249,8 +249,8 @@ ${compensationCmd}
 \\input{sections/experience.tex}
 \\input{sections/projects.tex}
 \\input{sections/publication.tex}
-\\input{sections/honors.tex}
 \\input{sections/patents.tex}
+\\input{sections/honors.tex}
 \\input{sections/leadership.tex}
 \\input{sections/skills.tex}${BRIEF ? '' : `
 \\input{sections/narrative.tex}`}
@@ -486,16 +486,13 @@ function generateHonors(honors) {
     const org = tex(extractLang(h.organization));
     const date = h.date || '';
     const remarks = h.remarks ? tex(String(h.remarks)) : '';
-    // Append prize money / remarks in light blue on a new line after description
-    let descLine = desc;
-    if (remarks) {
-      descLine = desc
-        ? `${desc} \\\\[0.3mm] {\\color{prizeblue}${remarks}}`
-        : `{\\color{prizeblue}${remarks}}`;
-    }
+    // Prize money inline next to title in light blue; description on new line below
+    const titleLine = remarks
+      ? `${title}~~{\\normalfont\\small\\color{prizeblue}${remarks}}`
+      : title;
     return `  \\cvhonor
-    {${title}}
-    {${descLine}}
+    {${titleLine}}
+    {${desc}}
     {${org}}
     {${date}}`;
   }).join('\n\n');
