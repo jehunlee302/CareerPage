@@ -222,6 +222,7 @@ function generateMain(basic) {
 \\documentclass[11pt, a4paper]{resume}
 \\fontdir[fonts/]
 \\definecolor{awesome}{HTML}{000000}
+\\definecolor{prizeblue}{HTML}{4A90D9}
 \\tcbuselibrary{breakable}
 
 \\photo[rectangle,noedge]{../assets/img/jehun.jpg}
@@ -484,9 +485,17 @@ function generateHonors(honors) {
     const desc = tex(extractLang(h.description));
     const org = tex(extractLang(h.organization));
     const date = h.date || '';
+    const remarks = h.remarks ? tex(String(h.remarks)) : '';
+    // Append prize money / remarks in light blue on a new line after description
+    let descLine = desc;
+    if (remarks) {
+      descLine = desc
+        ? `${desc} \\\\[0.3mm] {\\color{prizeblue}${remarks}}`
+        : `{\\color{prizeblue}${remarks}}`;
+    }
     return `  \\cvhonor
     {${title}}
-    {${desc}}
+    {${descLine}}
     {${org}}
     {${date}}`;
   }).join('\n\n');
@@ -513,7 +522,7 @@ function generatePatents(patents) {
     // desc + applicant on the middle column; authority + No. on right column
     const descLine = [desc, applicant ? `{\\footnotesize\\itshape ${tex(applicantLabel)}: ${applicant}}` : ''].filter(Boolean).join(' \\\\[0.2mm] ');
     const orgLine = [authority, num].filter(Boolean).join(' \\\\[0.2mm] ');
-    return `  \\cvhonor
+    return `  \\cvpatent
     {${title}}
     {${descLine}}
     {${orgLine}}

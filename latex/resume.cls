@@ -256,13 +256,13 @@
 
 % [Honors]
 \newcommand*{\cvhonor}[4]{
-  \begin{minipage}[t]{1.6cm}
+  \begin{minipage}[t]{2.8cm}                            % [수정] 1.6 -> 2.8cm (기간 표시 가능)
     \raggedright \datestyle{#4}
   \end{minipage}%
   \hspace{0.2cm}%
-  \begin{minipage}[t]{\dimexpr\textwidth-5.0cm\relax} % [수정] 4.9cm (1.5 + 3.0 + 0.4)
+  \begin{minipage}[t]{\dimexpr\textwidth-6.2cm\relax}   % [수정] textwidth - (2.8+0.2+0.2+3.0) = 6.2cm
     \raggedright
-    \entrytitlestyle{#1} 
+    \entrytitlestyle{#1}
     \ifempty{#2}{}{, \entrysubstyle {#2}}
   \end{minipage}%
   \hspace{0.2cm}%
@@ -270,7 +270,26 @@
     \raggedleft
     \substyle{#3}
   \end{minipage}%
-  \par \vspace{2.5mm} % [수정] 3.0mm -> 2.0mm
+  \par \vspace{2.5mm}
+}
+
+% [Patents] - cvhonor와 유사하지만 desc를 ", " 대신 줄 바꿈으로 분리
+\newcommand*{\cvpatent}[4]{
+  \begin{minipage}[t]{2.8cm}
+    \raggedright \datestyle{#4}
+  \end{minipage}%
+  \hspace{0.2cm}%
+  \begin{minipage}[t]{\dimexpr\textwidth-6.2cm\relax}
+    \raggedright
+    \entrytitlestyle{#1}
+    \ifempty{#2}{}{ \\[0.4mm] \entrysubstyle{#2}}
+  \end{minipage}%
+  \hspace{0.2cm}%
+  \begin{minipage}[t]{3.0cm}
+    \raggedleft
+    \substyle{#3}
+  \end{minipage}%
+  \par \vspace{2.5mm}
 }
 
 % [Skills]
