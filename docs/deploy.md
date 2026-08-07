@@ -13,25 +13,9 @@ Before pushing to production, verify:
 - [ ] **Images**: Profile photo and background load correctly from `assets/img/`
 - [ ] **Resume PDF**: Both EN and KO PDFs download correctly
 
-## Pipeline
+## Pipeline & Commands
 
-```
-data/career/*.yaml  →  yaml-to-json.js  →  portfolio.json  →  git push  →  GitHub Pages
-```
-
-## Deploy Commands
-
-```bash
-# Windows: deploy.bat (recommended — handles en+ko build + resume PDF + git push)
-deploy.bat
-
-# Manual
-node scripts/yaml-to-json.js
-node scripts/yaml-to-json.js --lang ko
-git add data/portfolio.json data/portfolio.ko.json
-git commit -m "build: update portfolio data"
-git push origin main
-```
+Pipeline diagram and deploy commands (deploy.bat / manual) are in [pipeline.md](pipeline.md) (SSOT). This file covers the deploy-side config only: checklist above, GitHub Pages, DNS, security.
 
 ## GitHub Pages
 

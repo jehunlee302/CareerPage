@@ -7,6 +7,7 @@ Start at `CLAUDE.md` for quick start, then drill into specific topics below.
 
 | File | Content | Audience |
 |------|---------|----------|
+| [stack.md](common/stack.md) | Tech stack: runtime, build tooling, dependencies, SSOT | All |
 | [prod.md](prod.md) | Product spec, site sections, target audience | All |
 | [pipeline.md](pipeline.md) | Data pipeline: YAML → JSON → Web, update rules | Engine, Deploy |
 | [backlog.md](backlog.md) | Pending items | All |
@@ -15,8 +16,8 @@ Start at `CLAUDE.md` for quick start, then drill into specific topics below.
 
 | File | Content | Audience |
 |------|---------|----------|
-| [contributing.md](contributing.md) | Folder/file/doc structure rules, naming, sync obligations | All |
-| [coding.md](coding.md) | JS/HTML/CSS conventions, sanitization, performance | Frontend |
+| [contributing.md](contributing.md) | Static-site file map, source-file rules, YAML split (doc governance inherits global doc.md) | All |
+| [coding.md](common/coding.md) | Vanilla JS/HTML/CSS specifics: esc(), no external JS, performance (general rules inherit global code.md) | Frontend |
 
 ## UI & Design
 
@@ -41,20 +42,18 @@ Start at `CLAUDE.md` for quick start, then drill into specific topics below.
 
 ## History
 
-| File | Content |
-|------|---------|
-| [history/summary-2026-03.md](history/summary-2026-03.md) | v1.0-v3.2: Initial launch through style polish |
-| [history/summary-2026-04.md](history/summary-2026-04.md) | YAML migration, bilingual pipeline, docs restructure |
+Changelog and analysis logs. Browse `ls docs/dev-history/` (monthly summaries `summary-YYYY-MM.md` + dated detail notes). Not hand-listed here — the folder is the index.
 
 ## Document Hierarchy
 
 ```
 CLAUDE.md (entry point: quick start + file map + rules links)
   └── docs/index.md (this file: full doc map)
-        ├── contributing.md (structure rules, naming, sync obligations)
+        └── common/stack.md (tech stack + dependencies)
+        ├── contributing.md (static-site file map + source/YAML rules)
         ├── prod.md (what the site does)
         ├── pipeline.md (how data flows + update rules)
-        ├── coding.md (how to write code)
+        └── common/coding.md (how to write code)
         ├── ui/
         │     ├── design-system.md (visual rules: colors, spacing, fonts)
         │     ├── components.md (component patterns + CSS)
@@ -63,5 +62,5 @@ CLAUDE.md (entry point: quick start + file map + rules links)
         │     ├── schema.md (YAML schema + JSON contract)
         │     └── converter.md (pipeline script internals)
         ├── deploy.md (deploy process + DNS)
-        └── history/ (changelog)
+        └── dev-history/ (changelog)
 ```

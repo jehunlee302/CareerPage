@@ -1,6 +1,6 @@
 # Backlog
 
-Pending items. Move to history/ on completion.
+Pending items. Move to dev-history/ on completion.
 
 ## High Priority
 

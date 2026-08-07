@@ -122,29 +122,4 @@ Manually verify after each build:
 
 ## File Organization
 
-### data/career/ (Source YAML)
-
-```
-basic.yaml              Personal info
-philosophy.yaml         Philosophy + stats
-education.yaml          Education (4 records)
-work.yaml               Work experience (5 records)
-projects-2024-2025.yaml Projects by end year (7)
-projects-2022-2023.yaml (7)
-projects-2020-2021.yaml (3)
-projects-2017-2019.yaml (8)
-publications-2023-2024.yaml Publications by year (4)
-publications-2021-2022.yaml (9)
-publications-2019-2020.yaml (7)
-publications-2017-2018.yaml (6)
-skills.yaml             Skills (3 categories)
-honors.yaml             Honors & Awards (10)
-patents.yaml            Patents (1)
-activities.yaml         Activities (14)
-```
-
-### Ordering Convention
-
-- **Newest first** (top of file)
-- New entries: insert at the **top** of the list
-- New year range: create new file (e.g., `projects-2026-2027.yaml`)
+Source YAML lives in `data/career/` (`ls data/career/` for the current file list). One file per section; projects/publications split by 2-year range — split rule and file-naming pattern are in [contributing.md](contributing.md). Per-section schemas are in [data/schema.md](data/schema.md). Ordering rule (newest first, new year range = new file) is in the YAML Editing Rules above.
