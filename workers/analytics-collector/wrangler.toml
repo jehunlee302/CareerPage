@@ -1,0 +1,12 @@
+# CareerPage 체류 분석 수집 Worker.
+# 배포: cd workers/analytics-collector && npx wrangler deploy
+# 배포 후 나오는 URL(https://cp-analytics.<계정>.workers.dev)을
+#   assets/js/analytics.js 의 WORKER_URL 에 채운다.
+name = "cp-analytics"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+# 체류 데이터 저장소(무료 티어). 조회는 CF 대시보드 GraphQL/Analytics Engine.
+[[analytics_engine_datasets]]
+binding = "AE"
+dataset = "careerpage_dwell"

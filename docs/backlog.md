@@ -53,4 +53,5 @@
 - **dev-history 카테고리 재편** (flat → {ui}/) — ✅ 이관 완료 2026-07-18, summary는 root 정위치 확인 (docs/dev-history/ — 카테고리 폴더 완비, 루트 flat은 README+월별 summary뿐).
 
 ## 유저분석·성장 계측 (출처 analytics-2026-08 · 전역 rules/analytics.md)
-- **해당 없음** (사용자 결정 2026-08-14): CareerPage는 **개인 포트폴리오**로 목적이 제품이 아니다 → 자생 생태계(feedback 루프·유저 분석·events·retention) **일절 도입 안 함**. 방문 지표조차 자생 환경 목적으론 안 만든다. (필요 시 사용자가 별도 요청.)
+- **자생 생태계(feedback 루프·events·retention·로그인) = 해당 없음**(포트폴리오, 제품 아님).
+- ✅ **방문 분석 도입 (2026-08-15, 사용자 요청 — 방문수 + 페이지별 체류)**: 2계층 — ① Cloudflare Web Analytics(방문·페이지·referrer, 쿠키리스, 코드 0) ② 자체 체류 비콘 `assets/js/analytics.js`(같은-출처 로컬 스크립트=규칙 준수, 체류시간·스크롤깊이 → `sendBeacon` → CF Worker `workers/analytics-collector/` → Analytics Engine). 쿠키·PII 없음 → 동의 불필요. **OFF 안전**(WORKER_URL 미설정=no-op). 상세 `docs/common/analytics.md`. 🚨 **배포(도메인 CF 프론팅·Web Analytics 활성화·Worker deploy·WORKER_URL 기입)는 사람** → `docs/inbox/user-actions.md`.
