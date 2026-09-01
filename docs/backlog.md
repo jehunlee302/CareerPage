@@ -55,3 +55,10 @@
 ## 유저분석·성장 계측 (출처 analytics-2026-08 · 전역 rules/analytics.md)
 - **자생 생태계(feedback 루프·events·retention·로그인) = 해당 없음**(포트폴리오, 제품 아님).
 - ✅ **방문 분석 도입 (2026-08-15, 사용자 요청 — 방문수 + 페이지별 체류)**: 2계층 — ① Cloudflare Web Analytics(방문·페이지·referrer, 쿠키리스, 코드 0) ② 자체 체류 비콘 `assets/js/analytics.js`(같은-출처 로컬 스크립트=규칙 준수, 체류시간·스크롤깊이 → `sendBeacon` → CF Worker `workers/analytics-collector/` → Analytics Engine). 쿠키·PII 없음 → 동의 불필요. **OFF 안전**(WORKER_URL 미설정=no-op). 상세 `docs/common/analytics.md`. 🚨 **배포(도메인 CF 프론팅·Web Analytics 활성화·Worker deploy·WORKER_URL 기입)는 사람** → `docs/inbox/user-actions.md`.
+
+## 개발 기본 루프 (dev-loop — loop-patterns §7 · 실행 스킬 `/dev-loop CareerPage`)
+> 사이클: 페르소나 리뷰(3렌즈→종합) → 시나리오 자동검증(표면별 러너)+자체 검토 → 갭→백로그 → 저위험 묶음 우선 개발 → 재검증 반복 → HTML 리포트. 상태는 이 절이 저장.
+
+| 회전 | 상태 | 다음 액션 |
+|---|---|---|
+| — | 미착수 | `/dev-loop CareerPage` — 표면=정적(링크체커+렌더 스모크). 경량 회전(P2·P5)만으로 충분 |
