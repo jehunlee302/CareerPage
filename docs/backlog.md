@@ -61,4 +61,7 @@
 
 | 회전 | 상태 | 다음 액션 |
 |---|---|---|
-| — | 미착수 | `/dev-loop CareerPage` — 표면=정적(링크체커+렌더 스모크). 경량 회전(P2·P5)만으로 충분 |
+| 1 | **P2 완료(2026-09-03)** — verdict **PASS**: 링크 404 0·콘솔 에러 0·모바일 375px 정상·전 섹션 렌더 OK | 경미 4건만 등록(하단) |
+
+- 경미(데이터 수치 불일치 — `data/career/basic.yaml` 수정 후 `node scripts/yaml-to-json.js` 재빌드, generated 직접 수정 금지): ①hero summary "25 projects(PM 12)"→실제 26(PM 13) ②meta description·stats "24+"→26 ③"Intl. conf 6" vs 실제 11 — 의도적 선별인지 사용자 확인.
+- 권고: 핵심 인터랙션(언어 전환·논문 필터·모달) user-scenarios 경량 기록(회귀 방지).
