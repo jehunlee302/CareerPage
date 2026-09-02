@@ -43,5 +43,6 @@ resume:
 #     ko: "1억원"
 
 summary:
-  en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25 projects (PM 12)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
-  ko: "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 25건 프로젝트 (PM 12건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
+  # Intl. conferences 6=주요 indexed 학회 선별 여부 사용자 확인 대기
+  en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 26 projects (PM 13)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
+  ko: "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 26건 프로젝트 (PM 13건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
