@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-27",
+  "lastUpdated": "2026-09-03",
   "basic": {
     "name": "이제훈",
     "nameKr": "이제훈",
@@ -17,7 +17,7 @@
     "location": "경기도 용인시",
     "googleSite": "",
     "resume": "data/resume-ko.pdf",
-    "summary": "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 25건 프로젝트 (PM 12건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
+    "summary": "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 26건 프로젝트 (PM 13건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
   },
   "philosophy": {
     "headline": "시스템적 완벽성",
