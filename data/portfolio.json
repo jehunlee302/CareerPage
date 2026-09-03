@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "lastUpdated": "2026-05-27",
+=======
+  "lastUpdated": "2026-09-02",
+>>>>>>> origin/fix/dev-loop-r5-data
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
@@ -17,7 +21,7 @@
     "location": "Yongin, Gyeonggi-do, South Korea",
     "googleSite": "",
     "resume": "data/resume-en.pdf",
-    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 25 projects (PM 12)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
+    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 26 projects (PM 13)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
   },
   "philosophy": {
     "headline": "Systemic Excellence",
