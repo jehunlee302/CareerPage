@@ -46,14 +46,9 @@ node scripts/yaml-to-json.js --lang ko  # Korean
 | `scripts/yaml-to-latex.js` | YAML → LaTeX for PDF | Resume rebuild |
 | `scripts/build-resume.bat` | LaTeX → en/ko PDFs | Resume rebuild |
 
-## Legacy Scripts (do not use for new work)
+## Legacy Scripts (removed 2026-10-04)
 
-| Script | Original Purpose | Status |
-|--------|-----------------|--------|
-| `scripts/sync-sheets.js` | Google Sheets → JSON | Superseded by YAML pipeline |
-| `scripts/json-to-yaml.js` | JSON → YAML migration | One-time use, completed |
-| `scripts/split-yaml.js` | Split projects/pubs by year | One-time use, completed |
-| `scripts/fill-ko.js` | Korean translation helper | One-time use |
+`sync-sheets.js` (Sheets → JSON, bypassed the YAML source of truth), `json-to-yaml.js` (one-time migration; re-running blanked Korean translations), `split-yaml.js`, `fill-ko.js` — no references from deploy.yml / deploy.bat, so deleted. Restore from git history if ever needed.
 
 ---
 

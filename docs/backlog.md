@@ -39,6 +39,3 @@ Pending items. Move to history/ on completion.
 - **Page number direct navigation** (2026-04-24)
   Current pager only supports prev/next. Add page number buttons for 3+ pages.
 
-- **Legacy script cleanup** (2026-04-24)
-  `sync-sheets.js`, `json-to-yaml.js`, `split-yaml.js`, `fill-ko.js` are tracked in git.
-  Consider removing from repo or archiving to a legacy branch.
