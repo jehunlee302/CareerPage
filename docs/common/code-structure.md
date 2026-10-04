@@ -181,6 +181,19 @@
 
 ---
 
+
+<!-- AUTO:deps (gen-code-map.py --write) -->
+### 모듈 의존 도식 (자동 생성 — 손으로 고치지 말 것)
+> 노드=모듈 폴더(파일 수), 화살표=import 방향(건수). 역방향(engine→ui 등)이 보이면 계층 위반 신호.
+
+```mermaid
+flowchart LR
+  n0["assets/js<br/>2 files"]
+  n1["scripts<br/>6 files"]
+  n2["workers/analytics-collector/src<br/>1 files"]
+```
+<!-- /AUTO:deps -->
+
 ## 아키타입 E 감사 (C1~C7)
 
 | 항목 | 상태 | 비고 |
