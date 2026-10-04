@@ -5,6 +5,24 @@
 > 아키타입 E (정적 사이트). 실트리 기반 — 추측 없음. 파일 추가 시 갱신.
 > 빌드 없음 · 프레임워크 없음 · GitHub Pages 직배포.
 
+## 작업 → 어디를 여나
+
+| 작업 | 여는 파일 |
+|------|-----------|
+| 경력·학력·수상 등 콘텐츠 수정 | `data/career/*.yaml` 편집 → `node scripts/yaml-to-json.js` |
+| 이력서 PDF 재생성 | `scripts/yaml-to-latex.js` → `scripts/build-resume.bat` |
+| 웹 렌더링·인터랙션 로직 수정 | `assets/js/main.js` |
+| 스타일/디자인 토큰 수정 | `assets/css/style.css` |
+| 전체 배포(빌드+커밋+푸시) | `deploy.bat` |
+| 방문자 체류·스크롤 계측(클라이언트) | `assets/js/analytics.js` |
+| 체류 계측 수집 서버(Cloudflare Worker) | `workers/analytics-collector/src/index.js` |
+| 수집 Worker 배포 설정 | `workers/analytics-collector/wrangler.toml` |
+| Google Sheets 동기화(레거시) | `scripts/sync-sheets.js` |
+| portfolio.json → YAML 역변환(일회성, 재실행 금지) | `scripts/json-to-yaml.js` |
+| YAML 스키마 확인 | `docs/data/schema.md` |
+| GitHub Pages 자동배포 워크플로 수정 | `.github/workflows/deploy.yml` |
+| 프로필·히어로 이미지 교체 | `assets/img/jehun.jpg` / `assets/img/background.jpg` |
+
 ## 파일 위치맵
 
 ### 페이지 (root)
@@ -30,6 +48,7 @@
 | 경로 | 역할 |
 |------|------|
 | `assets/js/main.js` | 런타임 SSOT. 데이터 fetch·i18n·전 섹션 렌더·테마·언어 토글·네비·모달·페이저. 단일 파일 정책. |
+| `assets/js/analytics.js` | 방문 체류시간(활성 시간만)·최대 스크롤 깊이 계측 → `navigator.sendBeacon`으로 `workers/analytics-collector`에 전송. PII 미수집, `WORKER_URL` 미설정 시 no-op. |
 
 내부 함수 맵 (main.js):
 
@@ -124,9 +143,18 @@
 | `scripts/yaml-to-latex.js` | YAML → latex/resume.tex + sections/*.tex | 활성 (이력서 재빌드) |
 | `scripts/build-resume.bat` | LaTeX → en/ko PDF 생성 | 활성 (이력서 재빌드) |
 | `scripts/sync-sheets.js` | Google Sheets → portfolio.json | 레거시 (YAML 파이프라인으로 대체) |
-| `scripts/json-to-yaml.js` | portfolio.json → data/career/*.yaml | 레거시 (1회성 마이그레이션 완료) |
+| `scripts/json-to-yaml.js` | portfolio.json → data/career/*.yaml | **일회성·재실행 시 번역 소실 위험**(1회성 마이그레이션 완료 — 재실행 금지, 삭제·sync-sheets.js 변경은 별도 결정) |
 | `scripts/split-yaml.js` | projects/publications YAML 연도별 분할 | 레거시 (1회성 완료) |
 | `scripts/fill-ko.js` | YAML KO 번역 자동완성 | 레거시 (1회성 완료) |
+
+---
+
+### workers/analytics-collector (Cloudflare Worker — 체류 계측 수집)
+
+| 경로 | 역할 |
+|------|------|
+| `workers/analytics-collector/src/index.js` | `assets/js/analytics.js`의 sendBeacon(POST) 수신 → Analytics Engine에 `path`·`dwell_ms`·`scroll_pct` 기록. PII·IP 미저장, CORS는 사이트 출처만 허용. |
+| `workers/analytics-collector/wrangler.toml` | Worker 배포 설정(Cloudflare). |
 
 ---
 
@@ -168,3 +196,4 @@
 | `data/portfolio.en.json` | site가 직접 fetch하지 않음 (`portfolio.json` + `portfolio.ko.json`만 사용). deploy.bat이 생성하는 중간산출. 불필요하면 gitignore 추가 가능 — 판단은 owner. |
 | `scripts/` 중복 헬퍼 | `yaml-to-json.js`와 `yaml-to-latex.js`가 `load`, `loadMerged`, `extractLang`, `locDegree`, `locRegion`, `locPeriod`를 각자 정의. 공통 추출 시 별도 파일 필요 — 지금은 각 스크립트가 독립 실행이므로 YAGNI. |
 | `debug/` 폴더 | 빈 폴더(git 미추적). 잔존 이유 불명 — 불필요하면 삭제 가능. |
+| `docs/review/personas/target.md` | **미처리**: main에 커밋된 적 없는 작업트리 전용 파일(단일자식 래퍼, project-structure §1 평탄화 대상 — `docs/review/target.md`로). git-safety(사용자 작업트리 비접촉) 때문에 이 재구성 브랜치(main 기준 worktree)에는 없어 손대지 않음. 커밋된 뒤 별도 패스에서 평탄화. |
