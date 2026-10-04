@@ -46,10 +46,6 @@
 - **페이지 번호 직접 이동** (2026-04-24)
   현재 페이저는 prev/next만 지원. 3+ 페이지에 페이지 번호 버튼 추가.
 
-- **레거시 스크립트 정리** (2026-04-24)
-  `sync-sheets.js`, `json-to-yaml.js`, `split-yaml.js`, `fill-ko.js`가 git에 추적됨.
-  repo에서 제거하거나 legacy 브랜치로 아카이브 검토.
-
 - **dev-history 카테고리 재편** (flat → {ui}/) — ✅ 이관 완료 2026-07-18, summary는 root 정위치 확인 (docs/dev-history/ — 카테고리 폴더 완비, 루트 flat은 README+월별 summary뿐).
 
 ## 유저분석·성장 계측 (출처 analytics-2026-08 · 전역 rules/analytics.md)
