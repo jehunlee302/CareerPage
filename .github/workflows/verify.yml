@@ -1,0 +1,26 @@
+# 검증 CI (WS/agent-ops/templates/ci/verify.yml · enforcement.md §6)
+# 배포는 deploy.yml(main push → 빌드·commit-back·Pages) — 이 파일은 검증만, 배포 job과 분리.
+# 로컬 = CI: `npm run verify` 1개. PR이면 test_guard(테스트 기대값 변경·skip 추가 감지).
+name: verify
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - name: verify (단일 진입점)
+        run: npm run verify
+      - name: test-guard (테스트 기대값 변경·skip 추가 감지)
+        if: github.event_name == 'pull_request'
+        run: python scripts/ci/test_guard.py origin/${{ github.base_ref }}
