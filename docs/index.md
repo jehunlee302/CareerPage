@@ -18,6 +18,35 @@ Start at `CLAUDE.md` for quick start, then drill into specific topics below.
 |------|---------|----------|
 | [contributing.md](contributing.md) | Static-site file map, source-file rules, YAML split (doc governance inherits global doc.md) | All |
 | [coding.md](common/coding.md) | Vanilla JS/HTML/CSS specifics: esc(), no external JS, performance (general rules inherit global code.md) | Frontend |
+| [common/code-structure.md](common/code-structure.md) | File location map: task → file, main.js helpers | All |
+| [common/gotchas.md](common/gotchas.md) | Pitfalls actually hit (symptom → cause → fix) | All |
+| [common/analytics.md](common/analytics.md) | Visit analytics delta (Cloudflare Web Analytics + same-origin dwell beacon) | Frontend, Deploy |
+
+## QA & Backlog
+
+| File | Content | Audience |
+|------|---------|----------|
+| [qa/user-scenarios.md](qa/user-scenarios.md) | User scenarios (given → action → expect) | QA |
+| [ui/screen-contracts.md](ui/screen-contracts.md) | Screen acceptance contracts (regression baseline) | UI, QA |
+| [inbox/user-actions.md](inbox/user-actions.md) | Things only the human can do (accounts, deploy, settings) | All |
+| `backlog/` | Dated audit / conformance / merge leaves (`ls docs/backlog/`) | All |
+
+## 공통 개념 → 이 프로젝트 위치 (전역 가이드의 `<proj>/…` 기본 경로보다 이 표가 우선)
+> 칸은 자유 서술, **행 이름은 고정**(훅·검사가 읽음).
+
+| 개념 | 이 프로젝트 위치 |
+|---|---|
+| 기능 spec | `docs/prod.md` · `docs/data/schema.md` · `docs/ui/screen-contracts.md` |
+| 리뷰 기준 | 없음 (전역 `~/.claude/docs/review/*` 상속) |
+| 검증 명령 | `npm run verify` (`scripts/verify.js` — `scripts/check-invariants.js` + `tests/main-render.test.js` + YAML→JSON en/ko 임시 경로 빌드. CI `.github/workflows/verify.yml`) |
+| 코드 지도 | `docs/common/code-structure.md` · `docs/contributing.md` |
+| 불변식·금지(why) | `CLAUDE.md` 고유 규칙 · `docs/common/coding.md` Sanitization |
+| 코딩 규칙 | `docs/common/coding.md` |
+| 함정(gotchas) | `docs/common/gotchas.md` |
+| 사용자 시나리오 | `docs/qa/user-scenarios.md` |
+| 배포 분류·절차 | `docs/deploy.md` · 단독/공동 분류 = 단독 |
+| 결정·이력 | `docs/dev-history/` · `docs/backlog.md` |
+| 에이전트별 추가(스킬·가이드) | 없음 (같은 작업이 2회+ 반복되면 `.claude/skills/<이름>/SKILL.md` 만들고 `에이전트: 스킬·가이드` 형식으로 여기 등록) |
 
 ## UI & Design
 

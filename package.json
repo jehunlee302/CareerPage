@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test tests/main-render.test.js",
+    "verify": "node scripts/verify.js"
   },
   "repository": {
     "type": "git",

@@ -230,12 +230,11 @@ function setupTitleTypewriter(titles) {
 /* ─── Impact Strip ─── */
 function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip'); if (!el) return;
-  el.innerHTML = '';
   const pm = (data.projects||[]).filter(p => p.isPM).length;
   const prizes = (data.honors||[]).filter(h => /prize|first|second|third|등상/i.test(h.title||'')).length;
   const verifiablePubs = (data.publications||[]).filter(p => p.link && /^https?:\/\//.test(p.link)).length;
-  [{v:(data.projects||[]).length,l:t('impact.projects')},{v:pm,l:t('impact.pm')},{v:verifiablePubs,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:(data.patents||[]).length,l:t('impact.patent')}]
-    .forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
+  el.innerHTML = [{v:(data.projects||[]).length,l:t('impact.projects')},{v:pm,l:t('impact.pm')},{v:verifiablePubs,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:(data.patents||[]).length,l:t('impact.patent')}]
+    .map(it => `<div class="impact-item"><span class="impact-num">${esc(it.v)}</span><span class="impact-label">${esc(it.l)}</span></div>`).join('');
 }
 
 /* ─── Philosophy ─── */
@@ -245,14 +244,14 @@ function renderPhilosophy(p) {
   const b = document.getElementById('philosophyBody');
   if (b) b.innerHTML = p.body.split('\n\n').map(para => `<p>${esc(para)}</p>`).join('');
   const pl = document.getElementById('philosophyPillars');
-  if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-head"><div class="pillar-icon">${x.icon}</div><h3>${esc(x.title)}</h3></div><p>${esc(x.desc)}</p></div>`).join('');
+  if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-head"><div class="pillar-icon">${esc(x.icon)}</div><h3>${esc(x.title)}</h3></div><p>${esc(x.desc)}</p></div>`).join('');
 }
 
 /* ─── Research ─── */
 function renderResearchFocus() {
   const el = document.getElementById('researchGrid'); if (!el) return;
   const items = RESEARCH_INTERESTS[LANG] || RESEARCH_INTERESTS.en;
-  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-head"><div class="rc-icon">${r.icon}</div><div class="rc-title">${esc(r.title)}</div></div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
+  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-head"><div class="rc-icon">${esc(r.icon)}</div><div class="rc-title">${esc(r.title)}</div></div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
 }
 
 /* ─── Education ─── */
@@ -306,7 +305,8 @@ function parseAdvisor(r) {
   const name = m[1].trim();
   const label = LANG === 'ko' ? '지도교수' : 'Advisor';
   const prof = name.startsWith('Prof.') ? name : `Prof. ${name}`;
-  return `${label}: ${esc(prof)} — <a href="${m[2].trim()}" target="_blank" rel="noopener noreferrer" class="tl-link">Homepage ↗</a>`;
+  const href = safeHref(m[2]);
+  return href ? `${label}: ${esc(prof)} — <a href="${href}" target="_blank" rel="noopener noreferrer" class="tl-link">Homepage ↗</a>` : `${label}: ${esc(prof)}`;
 }
 
 /* ─── Experience ─── */
@@ -357,8 +357,8 @@ function renderFeaturedProjects(projects) {
   const el = document.getElementById('featuredGrid'); if (!el || !projects) return;
   const featured = FEATURED_PROJECT_INDICES.map(i => projects.find(p => p.index === i)).filter(Boolean);
   el.innerHTML = featured.map(p => `
-    <div class="featured-card reveal" data-proj-index="${p.index}">
-      <div class="fc-badge">${p.isPM ? '👑 PM · ' : ''}#${p.index}</div>
+    <div class="featured-card reveal" data-proj-index="${esc(p.index)}">
+      <div class="fc-badge">${p.isPM ? '👑 PM · ' : ''}#${esc(p.index)}</div>
       <div class="fc-client"><span class="fc-client-name">${esc(p.client)}</span>${p.affiliatedInstitution ? ` <span class="fc-sep">|</span> <span class="fc-affil">${esc(p.affiliatedInstitution)}</span>` : ''}</div>
       <div class="fc-title">${esc(p.title)}</div>
       ${p.remarks ? `<div class="fc-period">${esc(p.remarks)}</div>` : ''}
@@ -397,8 +397,8 @@ function renderProjects(items) {
     `<button class="filter-btn active" data-proj-filter="all">${t('ui.all')}</button>`,
     `<button class="filter-btn" data-proj-filter="pm">${t('ui.pmLead')}</button>`,
     `<button class="filter-btn" data-proj-filter="gov">${t('ui.govt')}</button>`,
-    ...[...methodSet].sort().map(m => `<button class="filter-btn" data-proj-filter="method:${m}">${m}</button>`),
-    ...[...domainSet].sort().map(d => `<button class="filter-btn" data-proj-filter="domain:${d}">${d}</button>`)
+    ...[...methodSet].sort().map(m => `<button class="filter-btn" data-proj-filter="method:${esc(m)}">${esc(m)}</button>`),
+    ...[...domainSet].sort().map(d => `<button class="filter-btn" data-proj-filter="domain:${esc(d)}">${esc(d)}</button>`)
   ].join('');
 
   /* Cards */
@@ -410,12 +410,12 @@ function renderProjects(items) {
     const affilRow = (p.affiliatedInstitution || hasPartners) ? `
       <div class="project-affil-row">
         ${p.affiliatedInstitution ? `<span class="project-affil">${esc(p.affiliatedInstitution)}</span>` : ''}
-        ${hasPartners ? `<span class="project-partners">${LANG === 'ko' ? '협력: ' : 'with '}${p.partners.map(esc).join(' · ')}</span>` : ''}
+        ${hasPartners ? `<span class="project-partners">${LANG === 'ko' ? '협력: ' : 'with '}${esc(p.partners.join(' · '))}</span>` : ''}
       </div>` : '';
     return `
-    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${tags.methods.join(',')}" data-proj-domains="${tags.domains.join(',')}">
+    <div class="project-card reveal" data-paged data-proj-index="${esc(p.index)}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${esc(tags.methods.join(','))}" data-proj-domains="${esc(tags.domains.join(','))}">
       <div class="project-meta">
-        <div><span class="project-index">#${p.index}</span></div>
+        <div><span class="project-index">#${esc(p.index)}</span></div>
         <span class="project-popup-hint">${t('ui.detailsHint')}</span>
       </div>
       ${affilRow}
@@ -424,8 +424,8 @@ function renderProjects(items) {
       <div class="project-footer">
         ${p.isPM?'<span class="tag pm">PM</span>':''}
         ${gov?'<span class="tag gov">Gov\'t</span>':''}
-        ${tags.methods.map(m=>`<span class="tag method">${m}</span>`).join('')}
-        ${tags.domains.map(d=>`<span class="tag domain">${d}</span>`).join('')}
+        ${tags.methods.map(m=>`<span class="tag method">${esc(m)}</span>`).join('')}
+        ${tags.domains.map(d=>`<span class="tag domain">${esc(d)}</span>`).join('')}
       </div>
     </div>`;
   }).join('');
@@ -466,9 +466,10 @@ function renderPublications(items) {
     else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">${t('ui.intlConfBadge')}</span>`:`<span class="badge badge-conf badge-domestic">${t('ui.domConfBadge')}</span>`; }
     const fb = pub.role==='1st Author'?`<span class="badge badge-1st">${t('ui.firstAuthor')}</span>`:'';
     const venue = [pub.venue,pub.year,pub.remarks].filter(Boolean).join(' · ');
-    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-link">${t('ui.viewPaper')}</a>`:'';
+    const href = safeHref(pub.link);
+    const link = href?`<a href="${href}" target="_blank" rel="noopener noreferrer" class="pub-link">${t('ui.viewPaper')}</a>`:'';
     return `<div class="pub-item reveal" data-paged data-type="${dt}">
-      <span class="pub-num">[${pub.index}]</span>
+      <span class="pub-num">[${esc(pub.index)}]</span>
       <div class="pub-body">
         <div class="pub-main">
           <div class="pub-authors">${esc(pub.authors)}</div>
@@ -566,12 +567,12 @@ function renderNarrative(projects) {
       const phaseLabel = isMulti ? `<span class="nv-phase">${LANG === 'ko' ? `${idx + 1}단계` : `Phase ${idx + 1}`}</span>` : '';
       const partnersStr = p.partners && p.partners.length ? p.partners.join(' · ') : '';
       return `
-        <article class="nv-project reveal" data-proj-index="${p.index}">
+        <article class="nv-project reveal" data-proj-index="${esc(p.index)}">
           <header class="nv-project-header">
             <div class="nv-project-title-row">
               ${phaseLabel}
               <h3 class="nv-project-title">${esc(p.title)}</h3>
-              <span class="nv-project-index">#${p.index}</span>
+              <span class="nv-project-index">#${esc(p.index)}</span>
             </div>
             <div class="nv-project-meta">
               <span class="nv-period">${esc(locPeriod(p.period))}${p.duration ? ' · ' + esc(p.duration) : ''}</span>
@@ -692,7 +693,7 @@ function formatOrg(s) {
 function renderActivities(items) {
   const el = document.getElementById('activitiesGrid'); if (!el || !items) return;
   el.innerHTML = items.map(a => {
-    const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
+    const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${esc(i)}</span>`).join('');
     return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
   _activityPager = createPager(el, ACTIVITY_PER_PAGE, 'activitiesPager');
@@ -708,8 +709,9 @@ function renderContact(basic) {
   if (basic.googleSite) cs.push({i:'🌐',l:'Google Site',v:'sites.google.com/view/jehun-lee',h:basic.googleSite});
   if (basic.location) cs.push({i:'📍',l:t('ui.location'),v:basic.location,h:null});
   el.innerHTML = cs.map(c => {
-    const inn = `<div class="contact-icon">${c.i}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
-    return c.h ? `<a href="${c.h}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
+    const inn = `<div class="contact-icon">${esc(c.i)}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
+    const href = safeHref(c.h);
+    return href ? `<a href="${href}" target="${/^mailto:/i.test(href)?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
   }).join('');
 }
 
@@ -763,9 +765,9 @@ function openProjectModal(p) {
   ].filter(Boolean);
 
   body.innerHTML = `
-    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${LANG === 'ko' ? `프로젝트 #${p.index}` : `Project #${p.index}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
+    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${LANG === 'ko' ? `프로젝트 #${esc(p.index)}` : `Project #${esc(p.index)}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
     <div class="modal-title">${esc(p.title)}</div>
-    ${(tags.methods.length||tags.domains.length) ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${tags.methods.map(m => `<span class="tag method">${m}</span>`).join('')}${tags.domains.map(dm => `<span class="tag domain">${dm}</span>`).join('')}</div>` : ''}
+    ${(tags.methods.length||tags.domains.length) ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`).join('')}${tags.domains.map(dm => `<span class="tag domain">${esc(dm)}</span>`).join('')}</div>` : ''}
     ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}
     ${d.situation ? `<div class="modal-section"><div class="modal-section-label">${t('ui.situation')}</div><p class="modal-section-text">${esc(d.situation)}</p></div>` : ''}
     ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">${t('ui.purpose')}</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
@@ -801,6 +803,10 @@ function setupScrollReveal() {
 
 /* ─── Helpers ─── */
 function setText(id, val) { const e = document.getElementById(id); if (e) e.textContent = val || ''; }
-function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+/* esc: null/undefined만 빈 문자열(0·false는 문자열화). 모든 innerHTML 보간의 단일 이스케이프 경로 */
+function esc(s) { if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+/* safeHref: href 허용목록(http·https·mailto)만 통과, 그 외(javascript:·data:·상대경로)는 '' — 반환값은 esc 완료된 속성값 */
+function safeHref(u) { const s = String(u ?? '').trim(); return /^(?:https?:|mailto:)/i.test(s) ? esc(s) : ''; }
 
 document.addEventListener('DOMContentLoaded', init);

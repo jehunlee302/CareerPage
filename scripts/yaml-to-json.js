@@ -8,6 +8,7 @@
  * Usage:
  *   node scripts/yaml-to-json.js          # English (default)
  *   node scripts/yaml-to-json.js --lang ko # Korean
+ *   node scripts/yaml-to-json.js --out <file> # write elsewhere (verify: data/ untouched)
  */
 
 const yaml = require('js-yaml');
@@ -15,7 +16,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const CAREER  = path.join(__dirname, '..', 'data', 'career');
-const OUT     = path.join(__dirname, '..', 'data', 'portfolio.json');
+const OUT     = process.argv.includes('--out') ? path.resolve(process.argv[process.argv.indexOf('--out') + 1]) : path.join(__dirname, '..', 'data', 'portfolio.json');
 const LANG    = process.argv.includes('--lang') ? process.argv[process.argv.indexOf('--lang') + 1] : 'en';
 
 // ── Helpers ───────────────────────────────────────────────
@@ -304,7 +305,7 @@ function main() {
   console.log(`  honors              ${portfolio.honors.length}`);
   console.log(`  patents             ${portfolio.patents.length}`);
   console.log(`  activities          ${portfolio.activities.length}`);
-  console.log(`\n✅ data/portfolio.json written (${(fs.statSync(OUT).size / 1024).toFixed(1)} KB)\n`);
+  console.log(`\n✅ ${path.relative(process.cwd(), OUT)} written (${(fs.statSync(OUT).size / 1024).toFixed(1)} KB)\n`);
 }
 
 main();

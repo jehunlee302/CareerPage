@@ -6,7 +6,11 @@
 
 - 🔀 **병합 고려**: 미머지 브랜치 6개 · 권장 조치 → [backlog/merge-2026-10.md](backlog/merge-2026-10.md)
 
-- 🩺 **감사(2026-10-04)**: 🔴0 🟡2 🟢1 → [backlog/audit-2026-10.md](backlog/audit-2026-10.md)
+- 🩺 **감사(2026-10-05)**: 🔴0 🟡3 🟢1 → [backlog/audit-2026-10.md](backlog/audit-2026-10.md)
+
+- 🔀 **병합 대기(2026-10-05)**: `integration/r6`(r5-data 수치 정합 + r6b PDF 재생성 포함, 충돌 없음) — 작업트리 미커밋 19파일 때문에 보류. 커밋/정리 후 `git merge --no-ff integration/r6` → `node scripts/yaml-to-json.js` 확인
+
+- 🧭 **문서↔코드 정합(2026-10-05)**: 🔴1 🟡6 🟢1 → [backlog/conformance-2026-10.md](backlog/conformance-2026-10.md)
 
 ## 높음 우선순위
 

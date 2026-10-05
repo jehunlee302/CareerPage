@@ -26,13 +26,13 @@ See `CLAUDE.md` for full file map. Key files for frontend development:
 - Each render function is pure: receives data, writes HTML
 
 ### Sanitization (mandatory)
-All user-sourced strings must pass through `esc()`:
+🔒 All user-sourced strings in `innerHTML` templates must pass through `esc()`; every `href` value must come from `safeHref()` (allowlist `http:`/`https:`/`mailto:`, anything else → `''` = no link) — 집행: `scripts/check-invariants.js` (bare `${obj.prop}`·map-param `${x}`·non-safeHref `href="${`·`innerHTML +=` → FAIL) + `tests/main-render.test.js` (malicious data on every field) via `npm run verify`
 ```js
-function esc(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
+function esc(s) { if (s == null) return ''; /* 0·false are stringified */
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function safeHref(u) { const s = String(u ?? '').trim(); return /^(?:https?:|mailto:)/i.test(s) ? esc(s) : ''; }
 ```
+Exempt from wrapping: `t('…')` (fixed I18N strings), numeric loop counters, and local variables that already hold HTML built from escaped parts.
 
 ### DOM
 - Use `innerHTML` only with `esc()` sanitizer
