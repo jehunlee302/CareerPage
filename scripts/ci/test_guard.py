@@ -6,7 +6,7 @@
 프로젝트 CI에는 이 파일을 scripts/ci/test_guard.py로 복사해 쓴다(동일성은 check-routes가 검사)."""
 import re, subprocess, sys
 
-TEST_PATH = re.compile(r"(^|/)(tests?|__tests__|spec)(/|$)|[._-](test|spec)\.[a-z]+$|_test\.(go|py|rs)$|Tests?\.cs$", re.I)
+TEST_PATH = re.compile(r"(^|/)(tests?|__tests__|spec)(/|$)|[._-](test|spec)\.[a-z]+$|_test\.(go|py|rs)$|Tests?\.cs$|(^|/)qa/check_[^/]*\.py$", re.I)  # qa/check_*.py = PwC_Crawling 테스트 관례
 ASSERT = re.compile(r"\b(assert\w*|expect\s*\(|should\b|toBe|toEqual|toMatch\w*|toThrow|rejects|resolves|Assert\.\w+|assert_eq!|assert_ne!|assert!|require\.\w+|t\.(Error|Fatal)|self\.assert\w+)")
 SKIP = re.compile(r"(\.skip\s*\(|\bxit\s*\(|\bxdescribe\b|\.only\s*\(|@pytest\.mark\.(skip|xfail)|pytest\.skip\(|#\[ignore\]|\[Ignore|\[Fact\(Skip|@Disabled|t\.Skip\()")
 

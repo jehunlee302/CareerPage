@@ -711,7 +711,7 @@ function renderContact(basic) {
   el.innerHTML = cs.map(c => {
     const inn = `<div class="contact-icon">${esc(c.i)}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
     const href = safeHref(c.h);
-    return href ? `<a href="${href}" target="${href.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
+    return href ? `<a href="${href}" target="${/^mailto:/i.test(href)?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
   }).join('');
 }
 
@@ -804,7 +804,7 @@ function setupScrollReveal() {
 /* ─── Helpers ─── */
 function setText(id, val) { const e = document.getElementById(id); if (e) e.textContent = val || ''; }
 /* esc: null/undefined만 빈 문자열(0·false는 문자열화). 모든 innerHTML 보간의 단일 이스케이프 경로 */
-function esc(s) { if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function esc(s) { if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
 /* safeHref: href 허용목록(http·https·mailto)만 통과, 그 외(javascript:·data:·상대경로)는 '' — 반환값은 esc 완료된 속성값 */
 function safeHref(u) { const s = String(u ?? '').trim(); return /^(?:https?:|mailto:)/i.test(s) ? esc(s) : ''; }
