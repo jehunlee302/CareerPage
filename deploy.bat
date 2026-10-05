@@ -69,7 +69,7 @@ if %errorlevel% == 0 (
 :: Step 2: Git 커밋
 echo.
 echo [2/3] GitHub에 업로드 중...
-git add data/portfolio.json data/portfolio.en.json data/portfolio.ko.json data/resume-en.pdf data/resume-ko.pdf data/resume-en-brief.pdf data/resume-ko-brief.pdf assets/js/main.js assets/css/style.css index.html
+git add data/portfolio.json data/portfolio.en.json data/portfolio.ko.json data/resume-en.pdf data/resume-ko.pdf data/resume-en-brief.pdf data/resume-ko-brief.pdf assets/js/main.js assets/js/analytics.js assets/css/style.css index.html
 git diff --cached --quiet
 if %errorlevel% == 0 (
   echo 변경사항 없음.

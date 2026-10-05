@@ -5,18 +5,18 @@
 
 ## 고유 규칙 (전역과 다른 것만)
 - 도메인: 포트폴리오 정적사이트. Vanilla HTML/CSS/JS + GitHub Pages, **빌드 스텝·프레임워크 없음**.
-- **모든 사용자 문자열은 `esc()` 새니타이저 통과 필수**(XSS 방지, 인라인 렌더 금지).
+- 🔒 **모든 사용자 문자열은 `esc()` 새니타이저 통과 필수**(XSS 방지, 인라인 렌더 금지). href 값은 `safeHref()`(http·https·mailto만) — 집행: `scripts/check-invariants.js` + `tests/main-render.test.js` (`npm run verify`)
 - **외부 JS/CSS 라이브러리 금지** (Google Fonts만 허용).
 - **generated 파일 직접 수정 금지**: `data/portfolio.json`·`latex/sections/*.tex` 는 YAML 편집 후 빌드로만 생성.
-- 데이터 변경 후 커밋 전 `deploy.bat` 또는 `node scripts/yaml-to-json.js` 실행.
+- 데이터 변경 후 커밋 전 `deploy.bat` 또는 `node scripts/yaml-to-json.js` 실행. 검증 = `npm run verify` 1개(CI `.github/workflows/verify.yml`).
 - 문서거버넌스(2파일규칙·약어금지·SSOT·동기화표)는 전역 rules/doc.md 상속.
 
 ## 데이터 파이프라인 (SSOT = `data/career/*.yaml`)
 - 흐름·빌드 명령·업데이트 규칙: docs/pipeline.md.
 - 편집 가능: `data/career/*.yaml`·`assets/js/main.js`·`assets/css/style.css`·`index.html`·`scripts/*.js`.
 
-## 주 lead / 하위
-- ui-lead: 화면·디자인 시스템(fe-dev·fe-qa). dev-lead: 파이프라인 스크립트(js-yaml)·main.js 렌더.
+## 담당 (메인 세션 + 작업 에이전트)
+- 화면·디자인 시스템·main.js 렌더: fe-dev·fe-qa. 파이프라인 스크립트(js-yaml): engine-dev·engine-qa. 렌더 XSS 경계: security.
 
 ## 사용 스킬
 - write-report · code-review · qa(브라우저) · design-taste-frontend. (발동 주체·상황은 전역 skill-routing)

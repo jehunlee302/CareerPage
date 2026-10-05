@@ -71,6 +71,7 @@ Follow these rules whenever modifying YAML data.
 5. **Verify locally** — Open `index.html` in browser, check affected sections
 6. **Build Korean** — Run `node scripts/yaml-to-json.js --lang ko`
 7. **Toggle EN/KO** — Verify both languages render correctly
+   - Automated check: `npm run verify` (invariant grep + render XSS test + EN/KO build to a temp dir — does not touch `data/`)
 8. **Commit** — `git add data/portfolio.json data/portfolio.ko.json`
 
 ### YAML Editing Rules

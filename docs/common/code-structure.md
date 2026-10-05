@@ -57,7 +57,8 @@
 | `init()` | 부트스트랩: fetch → render → setup 체인. fetch 실패 시 `<main>`에 에러 메시지 표시 |
 | `render(data)` | 전 섹션 렌더 디스패처 |
 | `t(key)` | i18n 조회 (`I18N[LANG]` 경로 탐색) |
-| `esc(s)` | XSS 방지 HTML 이스케이프 (모든 사용자 문자열 필수 경유) |
+| `esc(s)` | XSS 방지 HTML 이스케이프 (모든 사용자 문자열 필수 경유, null/undefined만 빈 문자열) |
+| `safeHref(u)` | href 허용목록(http·https·mailto) — 그 외 `''`. 반환값은 esc 완료 |
 | `setText(id, val)` | getElementById + textContent 단축 |
 | `applyTheme(theme)` / `setupThemeToggle()` | 다크/라이트 토글 |
 | `applyLangUI()` / `setupLangToggle()` | EN/KO 언어 전환 |
@@ -139,7 +140,11 @@
 
 | 경로 | 역할 | 상태 |
 |------|------|------|
-| `scripts/yaml-to-json.js` | YAML → portfolio.json (EN 또는 KO) | 활성 (매 배포) |
+| `scripts/yaml-to-json.js` | YAML → portfolio.json (EN 또는 KO, `--out`으로 다른 경로) | 활성 (매 배포) |
+| `scripts/verify.js` | 검증 단일 진입점(`npm run verify`) — check-invariants + 렌더 XSS 테스트 + 임시 경로 빌드 | 활성 (커밋 전·CI) |
+| `scripts/check-invariants.js` | main.js 금지 패턴 grep(esc 없는 보간·safeHref 아닌 href·`innerHTML +=`), 셀프체크 내장 | 활성 (verify) |
+| `tests/main-render.test.js` | main.js를 vm+DOM 스텁으로 악성 데이터 렌더 → 이스케이프·href 허용목록 확인 | 활성 (verify) |
+| `scripts/ci/test_guard.py` | PR에서 테스트 기대값 변경·skip 추가 감지(agent-ops 사본, 수정 금지) | 활성 (CI verify.yml) |
 | `scripts/yaml-to-latex.js` | YAML → latex/resume.tex + sections/*.tex | 활성 (이력서 재빌드) |
 | `scripts/build-resume.bat` | LaTeX → en/ko PDF 생성 | 활성 (이력서 재빌드) |
 | `scripts/sync-sheets.js` | Google Sheets → portfolio.json | 레거시 (YAML 파이프라인으로 대체) |
