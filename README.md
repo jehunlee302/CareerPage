@@ -1,4 +1,10 @@
-# careerpage-do05
+# CareerPage
+
+이제훈(Jehun Lee) 포트폴리오 정적 사이트 — https://jehun-lee.work
+
+- 요구사항·진행 상황: [docs/PRD.md](docs/PRD.md)
+- 문서 지도: [docs/INDEX.md](docs/INDEX.md)
+- 데이터 정본: `data/career/*.yaml` → `node scripts/yaml-to-json.js` → `data/portfolio.json`
 
 <!-- AUTO:status (gen-status.py --readme) -->
 ### 구조 한눈에 (자동 생성 — 손으로 고치지 말 것)
