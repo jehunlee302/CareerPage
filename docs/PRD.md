@@ -22,7 +22,7 @@
 
 | 묶음 (L4) | 상태 | 단계 (L5) | ID |
 |---|---|---|---|
-| YAML 파이프라인 v2 | done | `data/career/*.yaml` SSOT · 연도별 분할 · `yaml-to-json.js --lang en/ko`\|ko` · `deploy.bat` 연결 | [data-01](prd/data.md#data-01) |
+| YAML 파이프라인 v2 | done | `data/career/*.yaml` SSOT · 연도별 분할 · `yaml-to-json.js --lang en/ko` · `deploy.bat` 연결 | [data-01](prd/data.md#data-01) |
 | YAML 한국어 번역 | todo | 비어 있는 `ko: ""` 채우기 · 프로젝트 제목 · 경력 직위 · 수상 | [data-02](prd/data.md#data-02) |
 | 연구 관심사·Hero 태그 → YAML | todo | `RESEARCH_INTERESTS`·`HERO_TAGS`를 YAML로 · main.js 하드코딩 제거 | [data-03](prd/data.md#data-03) |
 | 대표 프로젝트 번호 → YAML | todo | `FEATURED_PROJECT_INDICES` 설정화 · basic.yaml 또는 config.yaml | [data-04](prd/data.md#data-04) |
