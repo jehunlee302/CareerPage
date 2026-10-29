@@ -6,7 +6,7 @@
 
 ## 1) 방문 수·페이지·유입 — Cloudflare Web Analytics (코드 0)
 - 쿠키리스·PII 없음·동의 배너 불필요. 방문수·고유방문·페이지뷰·top 페이지·referrer 제공.
-- **전제**: 도메인 `jehun-lee.work`를 Cloudflare로 프론팅(무료) → 대시보드에서 Web Analytics 활성화(사이트가 CF 프록시면 스니펫 불필요, 서버측). 사람 작업(`docs/inbox/user-actions.md`).
+- **전제**: 도메인 `jehun-lee.work`를 Cloudflare로 프론팅(무료) → 대시보드에서 Web Analytics 활성화(사이트가 CF 프록시면 스니펫 불필요, 서버측). 사람 작업(`docs/user-actions.md`).
 
 ## 2) 페이지별 체류시간·스크롤 — 자체 비콘 (우리 코드=규칙 준수)
 - `assets/js/analytics.js`(같은 출처 로컬 스크립트, 외부 라이브러리 아님): **활성 체류시간**(탭 숨김 시 일시정지)+**최대 스크롤 깊이**를 측정 → `navigator.sendBeacon`으로 CF Worker에 1회 전송. 쿠키·식별자·PII 없음.

@@ -1,4 +1,4 @@
-↑ [문서 인덱스](../index.md)
+↑ [문서 인덱스](../INDEX.md)
 
 > **사용자 시나리오 (QA 수용 기준 — browser MCP 자동 assert 대상).** 현행 구현(`index.html`·`assets/js/main.js`)에서 추출한 정본 — 신규 설계 아님. 근거: `~/.claude/docs/agents/qa-process.md`(§7 시나리오)·`../ui/screen-contracts.md`(화면계약)·`../ui/sections.md`(섹션맵). 각 유스케이스(UC-n) → 원자 동작(S-n.m)은 `given(상태) → action(조작) → expect(관측가능한 기대결과)` 형식. expect는 요소 존재·텍스트·URL 해시·display 상태 등 **관측·assert 가능**하게 기술.
 >
