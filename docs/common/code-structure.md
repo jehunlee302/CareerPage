@@ -1,4 +1,4 @@
-↑ [문서 인덱스](../index.md)
+↑ [문서 인덱스](../INDEX.md)
 
 # code-structure.md — CareerPage 파일 위치맵
 

@@ -83,17 +83,17 @@ CareerPage/
 
 ```
 CLAUDE.md          ← 진입점. "무엇을 읽어야 하는지" 안내
-  └── docs/index.md  ← 전체 문서 지도. 각 문서의 목적과 대상 독자
+  └── docs/INDEX.md  ← 전체 문서 지도. 각 문서의 목적과 대상 독자
         └── 개별 문서    ← 실제 규칙/스펙 상세
 ```
 
 - **CLAUDE.md**: 5분 안에 프로젝트 파악 가능해야 함. 세부 규칙은 docs/ 링크로
-- **docs/index.md**: 모든 문서의 목록 + 한 줄 설명. 새 문서 추가 시 여기도 갱신
+- **docs/INDEX.md**: 모든 문서의 목록 + 한 줄 설명. 새 문서 추가 시 여기도 갱신
 - **개별 문서**: 하나의 주제에 집중. 다른 주제는 링크로 연결
 
 ### 새 문서 추가 시 체크리스트
 
-1. [ ] `docs/index.md`에 항목 추가
+1. [ ] `docs/INDEX.md`에 항목 추가
 2. [ ] `CLAUDE.md` Rules 테이블에 해당 시 추가
 3. [ ] Document Hierarchy 트리에 반영
 4. [ ] 기존 문서와 내용 중복 없는지 확인
@@ -156,7 +156,7 @@ CLAUDE.md          ← 진입점. "무엇을 읽어야 하는지" 안내
 | 빌드 스크립트 변경 | `data/converter.md` |
 | 배포 프로세스 변경 | `deploy.md` |
 | 반응형 breakpoint 변경 | `ui/design-system.md` Responsive 섹션 |
-| 새 파일 추가 | `CLAUDE.md` File Map + `docs/index.md` |
+| 새 파일 추가 | `CLAUDE.md` File Map + `docs/INDEX.md` |
 
 ---
 
@@ -207,7 +207,7 @@ refactor/split-render-functions
 ### PR 규칙
 
 - 코드 변경 PR에는 관련 문서 변경도 포함
-- `docs/backlog.md`에서 해당 항목 제거 (완료 시 `history/`로 이동)
+- `docs/PRD.md` 해당 행 상태 갱신 (완료 시 `done`, 상세 앵커에 `- Status: done`)
 
 ---
 
@@ -216,5 +216,5 @@ refactor/split-render-functions
 이 문서(`contributing.md`) 자체를 수정할 때:
 
 1. 변경 이유를 커밋 메시지에 명시
-2. `docs/history/summary-YYYY-MM.md`에 변경 사항 기록
-3. 관련된 다른 문서(`CLAUDE.md`, `docs/index.md`)의 정합성 확인
+2. 변경 사항은 커밋 메시지와 `docs/PRD.md` 해당 행에 기록 (이력 문서는 `docs/_old/`에 보관)
+3. 관련된 다른 문서(`CLAUDE.md`, `docs/INDEX.md`)의 정합성 확인

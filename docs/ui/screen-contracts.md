@@ -1,4 +1,4 @@
-↑ [문서 인덱스](../index.md)
+↑ [문서 인덱스](../INDEX.md)
 
 > **UI 화면계약 (수용 기준 — 회귀·범위이탈 판정 baseline).** 핵심 화면만, 각 필수 요소 1줄. 변경 후 이 요소가 살아있는지가 회귀 판정 기준(design-workflow §2). 근거: `~/.claude/docs/agents/design-workflow.md`(§2 화면계약)·`~/.claude/docs/rules/ui.md`. 현행 정본화(신규 설계 아님) — 대상은 단일 페이지 `index.html` 섹션·모달. 전 섹션(15개)은 `sections.md` 참조.
 
