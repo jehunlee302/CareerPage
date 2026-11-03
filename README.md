@@ -8,7 +8,7 @@
 
 <!-- AUTO:status (gen-status.py --readme) -->
 ### 구조 한눈에 (자동 생성 — 손으로 고치지 말 것)
-> 모듈 3개 · 그룹 3개. 레벨별 그림(코드 구조·로직 구조)·현황: `docs/status.html`(로컬 생성) · 가이드 `agent-ops/docs/status-report-guide.md`
+> 모듈 3개 · 그룹 3개. 레벨별 그림(코드 구조·로직 구조)·현황: `docs/status.html`(로컬 생성) · 가이드 `agent-ops/guides/status-report-guide.md`
 
 ```mermaid
 flowchart LR
