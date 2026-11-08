@@ -11,13 +11,14 @@ CareerPage 프로젝트의 파일 지도. 먼저 [CLAUDE.md](../CLAUDE.md)와 [P
 | [prd/data.md](prd/data.md) | YAML 파이프라인, 번역, 하드코딩 → YAML, 스키마 검증 | Engine |
 | [prd/ux.md](prd/ux.md) | 에셋 예산, 검색, 페이지 이동, 회귀 기록 | Frontend |
 | [prd/ops.md](prd/ops.md) | 방문 분석, 스크립트·브랜치 정리, dev-loop, 문서 이전 | 전체 |
+| [prd/product.md](prd/product.md) | 제품 배경 · 사용자 · 규모 · 도메인 규칙 · 품질 조건 · 읽을 때: 제품 방향이나 대상 사용자를 판단할 때 | 전체 |
+| [prd/tech.md](prd/tech.md) | 기술 스택 표(고른 이유 · 대안) · 연동 · 보안 · 설정 · 배포 링크 · 읽을 때: 스택을 바꾸거나 새 의존성을 검토할 때 | 전체 |
 | [user-actions.md](user-actions.md) | 사람이 직접 해야 할 일 (계정·배포·설정) | 사람 |
 
 ## 구조·스택
 
 | 파일 | 내용 | 대상 |
 |------|------|------|
-| [common/stack.md](common/stack.md) | 기술 스택: 런타임, 빌드 도구, 의존성, SSOT | 전체 |
 | [common/code-structure.md](common/code-structure.md) | 코드 구조 | 전체 |
 | [pipeline.md](pipeline.md) | 데이터 파이프라인: YAML → JSON → Web, 갱신 규칙 | Engine, Deploy |
 
@@ -70,9 +71,8 @@ CareerPage 프로젝트의 파일 지도. 먼저 [CLAUDE.md](../CLAUDE.md)와 [P
 ```
 CLAUDE.md (진입점: 규칙 + PRD/INDEX 링크)
   └── docs/PRD.md (목표 + 진행 중 + 묶음 표)
-        └── prd/{site,data,ux,ops}.md (묶음 상세)
+        └── prd/{site,data,ux,ops}.md (묶음 상세) · prd/{product,tech}.md (제품 · 기술 사실)
   └── docs/INDEX.md (이 파일: 전체 문서 지도)
-        ├── common/stack.md (기술 스택 + 의존성)
         ├── contributing.md (정적 사이트 파일 지도 + 소스/YAML 규칙)
         ├── pipeline.md (데이터 흐름 + 갱신 규칙)
         ├── common/coding.md (코드 작성법)

@@ -1,4 +1,5 @@
 # ops — 운영·분석 (L2)
+목차: [ops-01](#ops-01) 방문 분석 · [ops-02](#ops-02) 레거시 스크립트 정리 · [ops-03](#ops-03) 미머지 브랜치 정리 · [ops-04](#ops-04) dev-history 카테고리 재편 · [ops-05](#ops-05) dev-loop 1회전 · [ops-06](#ops-06) 문서 구조 이전 (do-03/do-05)
 
 예전 백로그·감사·병합 보고서 원문은 [_old/backlog.md](../_old/backlog.md), [_old/backlog/](../_old/backlog/merge-2026-10.md).
 
