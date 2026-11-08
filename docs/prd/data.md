@@ -1,4 +1,5 @@
 # data — 데이터·파이프라인 (L2)
+목차: [data-01](#data-01) YAML 파이프라인 v2 · [data-02](#data-02) YAML 한국어 번역 · [data-03](#data-03) 연구 관심사·Hero 태그 → YAML · [data-04](#data-04) 대표 프로젝트 번호 → YAML · [data-05](#data-05) YAML 스키마 검증 · [data-06](#data-06) 한국어 홈페이지 토글 · [data-07](#data-07) 데이터 수치 불일치
 
 정본(SSOT) = `data/career/*.yaml`. 생성 파일 (`data/portfolio.json`, `latex/sections/*.tex`)은 직접 고치지 않는다. 흐름은 [pipeline.md](../pipeline.md), 스키마는 [data/schema.md](../data/schema.md).
 
