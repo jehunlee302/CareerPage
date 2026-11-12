@@ -70,11 +70,6 @@ const INST_ALT_SERVICE = {
   'VMS Solutions Inc.':  '2025.02 - 2026.02',
 };
 
-const ALT_SERVICE_LABEL = {
-  en: { label: 'Alternative Military Service - Technical Research Personnel', mod: 'concurrent affiliation with Ministry of National Defense' },
-  ko: { label: '병역 대체 복무 - 전문연구요원', mod: '국방부 동시 소속' },
-};
-
 const DEGREE_KO = { 'Ph.D.': '공학박사 (Ph.D.)', 'M.S.': '석사', 'B.S.': '학사', 'High School': '고등학교' };
 const REGION_KO = {
   'Yongin, South Korea': '경기 용인',
@@ -160,7 +155,7 @@ function generateMain(basic) {
   const nameKo = typeof raw.name === 'object' ? (raw.name.ko || '') : '';
   const titles = (raw.titles || []).map(t => typeof t === 'object' ? (t[LANG] || t.en || '') : t);
   const location = typeof raw.location === 'object' ? (raw.location[LANG] || raw.location.en) : (raw.location || '');
-  const emails = (raw.email || []).filter(e => e !== 'jehun.lee@vms-solutions.com').join(', ');
+  const emails = (raw.email || []).join(', ');
 
   let nameCmd, footerName, footerLabel;
   if (LANG === 'ko') {
@@ -230,7 +225,7 @@ function generateMain(basic) {
 ${nameCmd}
 \\position{${position}}
 \\address{${tex(location)}}
-\\mobile{(+82) 10-8244-5376}
+${raw.phone ? `\\mobile{${tex(raw.phone)}}` : ''}
 \\homepage{https://jehun-lee.work}
 \\email{${emails}}
 \\linkedin{https://www.linkedin.com/in/jehun-lee/}
@@ -315,9 +310,8 @@ function generateExperience(work) {
     const div = extractLang(w.division);
     let inst = div ? `${tex(org)} | ${tex(div)}` : tex(org);
     if (w.alt_service) {
-      const mnd = LANG === 'ko' ? '국방부' : 'Ministry of National Defense';
-      const role = LANG === 'ko' ? '전문연구요원' : 'Tech. Research Personnel';
-      inst += ` \\\\[0.4mm] \\textit{\\small ${tex(mnd)} | ${tex(role)} [${tex(w.alt_service)}]}`;
+      const role = LANG === 'ko' ? '전문연구요원 (병역 대체 복무)' : 'Alternative military service (technical research personnel)';
+      inst += ` \\\\[0.4mm] \\textit{\\small ${tex(role)} [${tex(w.alt_service)}]}`;
     }
     const roles = tex(extractLang(w.roles));
 
@@ -370,7 +364,7 @@ function generateProjects(projects) {
     const title = extractLang(p.title);
     const period = p.period || '';
     const duration = p.duration || '';
-    const client = p.client || '';
+    const client = extractLang(p.client);
     const partners = p.partners || [];
     const affiliated = p.affiliated_institution || '';
 
@@ -509,6 +503,8 @@ ${entries}
 function generatePatents(patents) {
   if (!Array.isArray(patents) || !patents.length) return '';
   const applicantLabel = LANG === 'ko' ? '출원인' : 'Applicants';
+  const inventorsText = n => LANG === 'ko' ? `발명자 ${n}명` : `${n} inventors`;
+  const grantedLabel = LANG === 'ko' ? '등록' : 'Granted';
   const entries = patents.map(p => {
     const title = tex(extractLang(p.title));
     const desc = tex(extractLang(p.description));
@@ -517,8 +513,10 @@ function generatePatents(patents) {
     const applicant = tex(p.applicant || '');
     const date = p.application_date || '';
     // desc + applicant on the middle column; authority + No. on right column
-    const descLine = [desc, applicant ? `{\\footnotesize\\itshape ${tex(applicantLabel)}: ${applicant}}` : ''].filter(Boolean).join(' \\\\[0.2mm] ');
-    const orgLine = [authority, num].filter(Boolean).join(' \\\\[0.2mm] ');
+    const people = [applicant ? `${tex(applicantLabel)}: ${applicant}` : '', p.inventors ? tex(inventorsText(p.inventors)) : ''].filter(Boolean).join(' · ');
+    const descLine = [desc, people ? `{\\footnotesize\\itshape ${people}}` : ''].filter(Boolean).join(' \\\\[0.2mm] ');
+    const status = p.status === 'granted' ? tex(grantedLabel) : '';
+    const orgLine = [[authority, status].filter(Boolean).join(' · '), num].filter(Boolean).join(' \\\\[0.2mm] ');
     return `  \\cvpatent
     {${title}}
     {${descLine}}
@@ -632,13 +630,15 @@ function generateNarrative(projects) {
     const title = tex(extractLang(p.title));
     const period = locPeriod(p.period || '');
     const duration = p.duration || '';
-    const client = tex(p.client || '');
+    const client = tex(extractLang(p.client));
     const partners = (p.partners || []).map(s => tex(s)).join(' · ');
-    const pmTag = p.is_pm ? `~{\\footnotesize\\textbf{\\color{awesome}\\faStar~PM}}` : '';
+    const pmTag = ['PM', 'PL'].filter(r => p[`is_${r.toLowerCase()}`])
+      .map(r => `~{\\footnotesize\\textbf{\\color{awesome}\\faStar~${r}}}`).join('');
 
     const metaParts = [];
     if (period) metaParts.push(tex(period) + (duration ? `~(${tex(duration)})` : ''));
     if (client) metaParts.push(client);
+    if (p.team_size) metaParts.push(tex(LANG === 'ko' ? `${p.team_size}명` : `${p.team_size} people`));
     if (partners) metaParts.push(`{\\footnotesize with ${partners}}`);
     const metaLine = metaParts.join(' \\enspace|\\enspace ');
 

@@ -1,23 +1,30 @@
 {
-  "lastUpdated": "2026-11-08",
+  "lastUpdated": "2026-11-12",
+  "counts": {
+    "projects": 27,
+    "pm": 13,
+    "journals": 5,
+    "journals_first": 2,
+    "intl_conf": 9,
+    "intl_conf_first": 6,
+    "patents": 1
+  },
   "basic": {
     "name": "이제훈",
     "nameKr": "이제훈",
     "titles": [
       "산업및시스템공학 박사",
-      "시뮬레이션 솔루션 컨설턴트",
+      "PwC 클라우드·AI 컨설턴트",
       "AI 솔루션 아키텍트"
     ],
     "email": [
-      "jehun.lee302@gmail.com",
-      "jehun.lee@vms-solutions.com",
-      "jehun.lee@kaist.ac.kr"
+      "jehun.lee302@gmail.com"
     ],
     "website": "jehun-lee.work",
     "location": "경기도 용인시",
     "googleSite": "",
     "resume": "data/resume-ko.pdf",
-    "summary": "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 26건 프로젝트 (PM 13건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
+    "summary": "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 27건 프로젝트 (PM 13건)\n저널 논문 5편 (1저자 2편) · 국제 학회 논문 9편 (1저자 6편)\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
   },
   "philosophy": {
     "headline": "시스템적 완벽성",
@@ -41,24 +48,6 @@
       }
     ]
   },
-  "stats": [
-    {
-      "value": "24+",
-      "label": "주요 프로젝트"
-    },
-    {
-      "value": "26+",
-      "label": "논문"
-    },
-    {
-      "value": "4+",
-      "label": "KAIST 재학"
-    },
-    {
-      "value": "1",
-      "label": "특허"
-    }
-  ],
   "education": [
     {
       "degree": "Ph.D.",
@@ -111,10 +100,23 @@
   ],
   "workExperience": [
     {
+      "position": "컨설턴트",
+      "organization": "PwC컨설팅",
+      "division": "Cloud & AI 사업부",
+      "period": "2026.09 - Present",
+      "roles": "AI Agent 서비스 기획 및 개발",
+      "performance": "",
+      "region": "Seoul, South Korea",
+      "responsibilities": [
+        "바이오 제조사 (고객사 비공개, 협력사 참여): 영업센터 업무 지원 AI Agent 서비스 개발",
+        "데이터 정제 및 RAG(검색 증강 생성) 시스템 구축"
+      ]
+    },
+    {
       "position": "생산계획 솔루션 컨설턴트",
       "organization": "브이엠에스솔루션스",
       "division": "솔루션사업부 | 솔루션 컨설턴트 파트",
-      "period": "2025.08 - Present",
+      "period": "2025.08 - 2026.09",
       "roles": "시스템 설계 및 PMO: 디지털 트윈 플랫폼, 생산-물류 통합 시뮬레이터, 시뮬레이션 기반 AI 스케줄러, SaaS 제품",
       "performance": "",
       "region": "Yongin, South Korea",
@@ -188,14 +190,40 @@
   ],
   "projects": [
     {
+      "index": 27,
+      "period": "2026.09 - Present",
+      "duration": "3m",
+      "title": "영업센터 업무 지원 AI Agent 서비스 개발",
+      "client": "바이오 제조사 (고객사 비공개)",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "PwC Consulting",
+      "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
+      "remarks": "",
+      "details": {
+        "situation": "",
+        "purpose": "영업센터 업무를 지원하는 AI Agent 서비스 기획 및 개발",
+        "role": "AI Agent 서비스 기획 및 개발 (협력사)",
+        "tasks": [
+          "에이전트 활용 데이터 정제",
+          "RAG(검색 증강 생성) 시스템 구축"
+        ]
+      }
+    },
+    {
       "index": 26,
-      "period": "2026.02 - Present",
-      "duration": "4m",
+      "period": "2026.02 - 2026.08",
+      "duration": "7m",
       "title": "디지털 트윈 플랫폼 구축: 반도체 팹 생산-물류 시뮬레이션 기반 운영 트윈",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "partners": [
         "SKT",
@@ -226,6 +254,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "partners": [
         "SKT",
@@ -248,13 +279,16 @@
     },
     {
       "index": 24,
-      "period": "2025.03 - Present",
-      "duration": "16m",
+      "period": "2025.03 - 2026.09",
+      "duration": "1y7m",
       "title": "소프트웨어 제품 기획/개발: 반도체 제조 시뮬레이션 기반 스케줄링",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "",
@@ -276,6 +310,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "Micron 글로벌 반도체 팹에 차세대 실시간 APS 스케줄러가 필요했으나, 기존 로직이 특정 공정 제약에 밀결합되어 다양한 팹 구성에 대한 제품 범용성이 제한됨",
@@ -298,6 +335,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "기존 AI 기반 스케줄러는 새로운 제조 환경마다 재학습이 필요했음. 환경 변화에 자율 적응하는 스케줄링 기술 개발을 위해 10개년 NRF 한우물 과제가 기획됨",
@@ -320,6 +360,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "삼성전자는 생산계획 최적화를 위해 반도체 제품의 정확한 수요 예측이 필요했으나, 기존 방법은 다양한 제품 카테고리에서 정밀도가 부족했음",
@@ -344,6 +387,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "2단계 — 반도체 공정 특화 제약 UPM 환경",
       "details": {
         "situation": "실제 반도체 공정의 설비별 공정 자격(Machine Eligibility) 및 순서 종속 셋업 시간 동시 존재; 기존 RL 기반 스케줄링 연구의 비관련 병렬 기계(UPM) 환경에서 두 제약 동시 처리 사례 부족",
@@ -368,6 +414,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "LG전자 냉장고 몸체 조립라인에서 수작업 기반 생산계획으로 인한 과도한 셋업 변경과 낮은 정시 생산율 문제 발생",
@@ -392,6 +441,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "강화학습 활용 실시간 디스패칭 Agent 개발",
       "details": {
         "situation": "실시간 Job Shop 스케줄링의 변화하는 공정 상태에 대한 그래프 형태 표현 및 짧은 의사결정 시간 안에서 행동 결정 가능한 RL 방법론 필요",
@@ -416,6 +468,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "Job Shop 생산 시뮬레이터 고도화 및 방법론 개발",
       "details": {
         "situation": "기존 Job Shop 스케줄링 연구의 단편적 시뮬레이터 기반 평가 및 AI 기반 디스패칭 응용성 제한",
@@ -440,6 +495,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "기판 전극 위치 기반 최적 배선 도출 알고리즘 기획",
       "details": {
         "situation": "반도체 메모리 셀 설계 단계의 X-DEC Slim Layout 와이어링이 조합 최적화 관점에서 복잡한 제약을 안고 있었으나, 정형화된 분석 방법론 부재",
@@ -451,7 +509,7 @@
           "조합 최적화 관점 방법론 논의 및 기술 검토 결과 전달"
         ],
         "achievements": "반도체 메모리 셀 설계 단계의 레이아웃 최적화 문제에 대한 조합 최적화 관점 분석 경험 축적",
-        "notes": "단기(1개월) Feasibility study 성격의 과제 — SK Hynix와의 향후 협업 방향성 도출"
+        "notes": "단기(1개월) 참여"
       }
     },
     {
@@ -463,6 +521,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "박사학위 논문의 이론적 토대 — 메타 스케줄링 방법론",
       "details": {
         "situation": "기존 RL 기반 스케줄링 연구의 단일 문제 세팅(고정된 규모·제약·목적함수) 종속 한계; 환경 변화 시 처음부터 재학습 필요한 구조가 범용 스케줄링 에이전트 구현의 근본 장벽",
@@ -487,6 +548,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "삼성중공업의 6개월 선박건조 스케줄에서 일별 인력 편차가 심해 자원 활용 비효율과 인건비 증가 문제 발생",
@@ -512,6 +576,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "1단계 — 선박 화물창(Cargo Hold) 부하 균등화",
       "details": {
         "situation": "삼성중공업 선박 화물창(Cargo Hold) 생산이 정량적 균등화 로직 없이 수기 일정 확정으로 운영되어, 일별 manpower 부하가 특정 일자에 몰리거나 비는 불균형 누적",
@@ -536,6 +603,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "AI 예측모델 기반 최적 설비 할당 알고리즘 개발 및 구현",
       "details": {
         "situation": "디스패칭 룰 기반 스케줄링의 한계 도달; 특히 설비 setup change 패턴 예측에 머신러닝 기반 보완 필요",
@@ -560,6 +630,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "EUREKA 국제 공동연구(한국-스웨덴)에서 반자동 조립라인의 작업자 숙련도 차이로 인한 사이클 타임 비효율을 해결하기 위해 실시간 작업자 할당 최적화가 필요",
@@ -572,7 +645,7 @@
           "반자동 조립 공정을 위한 컨베이어 벨트 속도 결정 알고리즘 개발",
           "사용자 시나리오 정의 및 프로그램 화면 정의"
         ],
-        "achievements": "Cycle time 감소: 5.6% (실제 현장 운영 데이터) / 2~5% (vs meta-heuristic); 특허 등록: [공정 최적화 방법] KR1020210070359; SCI 논문 1건 (2저자); 학회 2건"
+        "achievements": "Cycle time 감소: 5.6% (실제 현장 운영 데이터) / 2~5% (vs meta-heuristic); 특허 등록: [공정 최적화 방법] (출원번호 10-2021-0070359); SCI 논문 1건 (2저자); 학회 2건"
       }
     },
     {
@@ -584,6 +657,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "다중 KPI 고려 FAB 자동화 시스템 최적 파라미터 도출 프레임워크 설계/개발",
       "details": {
         "situation": "디스패칭 룰 기반 스케줄링이 단일 KPI 중심으로 평가되어 왔으나, 실제 운영에서는 makespan·tardiness·setup 횟수 등 다중 KPI 동시 고려 필요",
@@ -608,6 +684,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "배터리 공정 이상상황 예측 및 스케줄링 프레임워크 제안",
       "details": {
         "situation": "삼성SDI 배터리 생산 공정의 대용량·Noisy 운영 데이터에 대해 실시간 스케줄링 의사결정을 지원할 시뮬레이션 기반 프레임워크 부재",
@@ -632,6 +711,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "생산 시스템용 강화학습 알고리즘 개발 및 성능 검토",
       "details": {
         "situation": "제조 시스템 스케줄링에 대한 RL 적용 연구의 활성화에도, Job Shop 환경을 충실히 반영한 고충실도 시뮬레이터 및 체계적 학습 프레임워크 부족",
@@ -656,6 +738,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "반도체 FAB 생산라인 최적 파라미터 도출 방법론 적용 및 현장 검증",
       "details": {
         "situation": "SK Hynix 반도체 FAB 생산라인의 다수 디스패칭 룰 복합 작용으로, 단일 KPI 기준 최적 파라미터 도출의 현장 비실용적 구조",
@@ -680,6 +765,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "머신러닝 기반 최적 파라미터 도출 알고리즘 설계/개발",
       "details": {
         "situation": "기존 디스패칭 룰 기반 스케줄링이 단일 KPI 중심으로 평가되어 다양한 운영 지표의 균형 있는 최적화 어려움",
@@ -704,6 +792,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "파라미터에 따른 성능 변화 분석 프레임워크 설계/개발 및 WSC 2018 1저자 논문",
       "details": {
         "situation": "LCD 제조 공정의 다수 디스패칭 룰 복합 적용에도, 가중치 변화의 KPI 영향에 대한 정량적 분석 부족",
@@ -726,6 +817,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "가상공장 시뮬레이터 구축 및 운영 효율성 분석",
       "details": {
         "situation": "MSIP 정부 과제 일환으로 구축된 스마트 팩토리 테스트베드의 운영 효율성 정량 검증 시뮬레이션 환경 부재",
@@ -749,6 +843,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "유연 생산 자동화 이슈 정의 및 대응 알고리즘 설계/개발",
       "details": {
         "situation": "3D 프린터 기반 유연 생산 시스템(FMS)이 개인맞춤형 생산의 핵심 인프라이나, 설비 고장·주문 취소·긴급 주문 등 이상 상황 실시간 대응 리스케줄링 메커니즘 부재",
@@ -773,6 +870,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "기존 스케줄 개선을 위한 휴리스틱 알고리즘 설계/개발",
       "details": {
         "situation": "VMS Solutions LCD 공정 운영 데이터의 비효율 스케줄 패턴 누적에도 자동화된 탐지·개선 메커니즘 부재",
@@ -795,6 +895,9 @@
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "유연 생산 자동화용 스케줄링/리스케줄링 알고리즘 설계/개발",
       "details": {
         "situation": "개인맞춤형 생산(Mass Personalization) 환경에서 3D 프린터·로봇 핸들러·IoT 센서로 구성된 분산 이기종 설비의 통합 제어 플랫폼 부재",
@@ -978,7 +1081,7 @@
       "role": "Co-Author",
       "remarks": "Online",
       "year": 2021,
-      "global": true,
+      "global": false,
       "venue": "the Summer Conference of Korea CDE"
     },
     {
@@ -1017,7 +1120,7 @@
       "role": "Co-Author",
       "remarks": "Online",
       "year": 2020,
-      "global": true,
+      "global": false,
       "venue": "the Winter Conference of Korea CDE"
     },
     {
@@ -1152,7 +1255,7 @@
     }
   ],
   "skills": {
-    "프로그래밍": [
+    "프로그래밍 언어": [
       "Python",
       "C#",
       "SQL",
@@ -1195,7 +1298,7 @@
     ],
     "언어": [
       "Korean (Native)",
-      "English (Professional)"
+      "English (Business)"
     ]
   },
   "honors": [
@@ -1318,7 +1421,9 @@
       "description": "반자동 조립 공정에서의 실시간 작업자 할당 최적화 방법",
       "applicationDate": "2021.05.31",
       "applicationNumber": "KR1020210070359",
-      "applicant": "KAIST, Yura (entire 12 people)",
+      "status": "granted",
+      "applicant": "KAIST, Yura",
+      "inventors": 12,
       "authority": "대한민국"
     }
   ],

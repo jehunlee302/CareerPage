@@ -2,7 +2,7 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20260520d';
+const DATA_VER = '20261113a';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
@@ -34,16 +34,16 @@ const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling 
 /* ─── i18n UI Strings ─── */
 const I18N = {
   en: {
-    nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', narrative:'Narrative', contact:'Contact' },
-    label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.', narrative:'Career Narrative', narrativeSub:'Detailed view of major projects — background, role, key activities, and outcomes.' },
-    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative Military Service - Technical Research Personnel', altServiceMod:'concurrent affiliation with Ministry of National Defense', nvBackground:'Background', nvObjective:'Objective', nvRole:'Role', nvActivities:'Key Activities', nvOutcomes:'Outcomes', nvNotes:'Notes', nvPartners:'Partners', nvClient:'Client', nvPm:'PM', nvSeries:'Continuous Series' },
-    impact: { projects:'Major Projects', pm:'PM Roles', pubs:'Publications', honors:'Honors & Prizes', patent:'Patent' },
+    nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
+    label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
+    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', planning:'Planning', teamSize:'Team Size', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative military service (technical research personnel)', patStatus:'Status', granted:'Granted', patInventors:'Inventors' },
+    impact: { projects:'Major Projects', pm:'PM Roles', journals:'Journal Papers', intlConf:'Intl. Conf. Papers', patent:'Granted Patent' },
   },
   ko: {
-    nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', narrative:'경력기술서', contact:'연락처' },
-    label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.', narrative:'경력기술서', narrativeSub:'주요 프로젝트의 배경·역할·수행 내용·성과를 단락 형태로 깊이 있게 기술한 섹션입니다.' },
-    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'병역 대체 복무 - 전문연구요원', altServiceMod:'국방부 동시 소속', nvBackground:'배경', nvObjective:'목표', nvRole:'역할', nvActivities:'수행 내용', nvOutcomes:'성과', nvNotes:'비고', nvPartners:'협력사', nvClient:'고객사', nvPm:'PM', nvSeries:'연속 과제' },
-    impact: { projects:'주요 프로젝트', pm:'PM 수행', pubs:'논문', honors:'수상', patent:'특허' },
+    nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
+    label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
+    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', planning:'기획', teamSize:'규모', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'전문연구요원 (병역 대체 복무)', patStatus:'상태', granted:'등록', patInventors:'발명자' },
+    impact: { projects:'주요 프로젝트', pm:'PM 수행', journals:'저널 논문', intlConf:'국제 학회 논문', patent:'등록 특허' },
   },
 };
 function t(key) { const parts = key.split('.'); let obj = I18N[LANG]; for (const p of parts) { obj = obj?.[p]; } return obj || key; }
@@ -89,15 +89,8 @@ function getProjectTags(p) {
 
   return { methods, domains };
 }
-/* Back-compat: legacy callers expecting flat array */
-function getTopics(p) {
-  if (typeof p === 'string') {
-    const t = getProjectTags({ title: p });
-    return [...t.methods, ...t.domains];
-  }
-  const t = getProjectTags(p);
-  return [...t.methods, ...t.domains];
-}
+/* team_size is a bucket like "5+"; client staff are not counted */
+function teamLabel(size) { return LANG === 'ko' ? `${size}명` : `${size} people`; }
 function isGov(client) { return /NRF|MOTIE|MSIP|Ministry/i.test(client || ''); }
 
 /* ─── Bootstrap ─── */
@@ -112,7 +105,11 @@ async function init() {
     setupTitleTypewriter(data.basic?.titles || []);
     setupLangToggle();
     setupThemeToggle();
-  } catch (err) { console.error('Portfolio load error:', err); }
+  } catch (err) {
+    console.error('Portfolio load error:', err);
+    const main = document.querySelector('main');
+    if (main) main.innerHTML = '<p style="padding:4rem 2rem;text-align:center;color:var(--text-muted)">Failed to load portfolio data. Please refresh the page.</p>';
+  }
 }
 
 /* ─── Theme Toggle ─── */
@@ -196,7 +193,7 @@ function renderHero(data) {
   const heroBtn = document.getElementById('heroContactBtn');
   if (heroBtn) heroBtn.textContent = t('ui.contactMe');
   const locEl = document.getElementById('heroLocationText');
-  if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
+  if (locEl && data.basic?.location) locEl.textContent = [data.basic.location, data.workExperience?.[0]?.organization].filter(Boolean).join(' · ');
   const sumEl = document.getElementById('heroSummary');
   if (sumEl) {
     const lines = (data.basic?.summary || '').split('\n').filter(Boolean);
@@ -231,11 +228,9 @@ function setupTitleTypewriter(titles) {
 function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip'); if (!el) return;
   el.innerHTML = '';
-  const pm = (data.projects||[]).filter(p => p.isPM).length;
-  const prizes = (data.honors||[]).filter(h => /prize|first|second|third|등상/i.test(h.title||'')).length;
-  const verifiablePubs = (data.publications||[]).filter(p => p.link && /^https?:\/\//.test(p.link)).length;
-  [{v:(data.projects||[]).length,l:t('impact.projects')},{v:pm,l:t('impact.pm')},{v:verifiablePubs,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:(data.patents||[]).length,l:t('impact.patent')}]
-    .forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
+  const c = data.counts || {};
+  [{v:c.projects,l:t('impact.projects')},{v:c.pm,l:t('impact.pm')},{v:c.journals,l:t('impact.journals')},{v:c.intl_conf,l:t('impact.intlConf')},{v:c.patents,l:t('impact.patent')}]
+    .filter(it => it.v != null).forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
 }
 
 /* ─── Philosophy ─── */
@@ -306,7 +301,7 @@ function parseAdvisor(r) {
   const name = m[1].trim();
   const label = LANG === 'ko' ? '지도교수' : 'Advisor';
   const prof = name.startsWith('Prof.') ? name : `Prof. ${name}`;
-  return `${label}: ${esc(prof)} — <a href="${m[2].trim()}" target="_blank" rel="noopener noreferrer" class="tl-link">Homepage ↗</a>`;
+  return `${label}: ${esc(prof)} — <a href="${safeUrl(m[2].trim())}" target="_blank" rel="noopener noreferrer" class="tl-link">Homepage ↗</a>`;
 }
 
 /* ─── Experience ─── */
@@ -329,7 +324,7 @@ function renderExperience(items) {
         </div>
       </div>
       <div class="tl-roles">${esc(item.roles)}</div>
-      ${item.alt_service ? `<div class="tl-alt-service">${esc(t('ui.altServiceLabel'))} (${esc(t('ui.altServiceMod'))}, ${esc(item.alt_service)})</div>` : ''}
+      ${item.alt_service ? `<div class="tl-alt-service">${esc(t('ui.altServiceLabel'))}: ${esc(item.alt_service)}</div>` : ''}
       ${hasDetails ? `<div class="exp-expand-btn" tabindex="0" role="button"><span class="exp-expand-hint">${t('ui.details')}</span></div>` : ''}
       ${hasDetails ? `<div class="exp-details" style="display:none">
         ${hasResp ? `<ul class="tl-responsibilities">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
@@ -423,6 +418,9 @@ function renderProjects(items) {
       ${p.client?`<div class="project-client">${esc(p.client)}</div>`:''}
       <div class="project-footer">
         ${p.isPM?'<span class="tag pm">PM</span>':''}
+        ${p.isPL?'<span class="tag pm">PL</span>':''}
+        ${p.isPlanning?`<span class="tag plan">${t('ui.planning')}</span>`:''}
+        ${p.teamSize?`<span class="tag">${esc(teamLabel(p.teamSize))}</span>`:''}
         ${gov?'<span class="tag gov">Gov\'t</span>':''}
         ${tags.methods.map(m=>`<span class="tag method">${m}</span>`).join('')}
         ${tags.domains.map(d=>`<span class="tag domain">${d}</span>`).join('')}
@@ -466,7 +464,7 @@ function renderPublications(items) {
     else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">${t('ui.intlConfBadge')}</span>`:`<span class="badge badge-conf badge-domestic">${t('ui.domConfBadge')}</span>`; }
     const fb = pub.role==='1st Author'?`<span class="badge badge-1st">${t('ui.firstAuthor')}</span>`:'';
     const venue = [pub.venue,pub.year,pub.remarks].filter(Boolean).join(' · ');
-    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-link">${t('ui.viewPaper')}</a>`:'';
+    const href = safeUrl(pub.link), link = href?`<a href="${href}" target="_blank" rel="noopener noreferrer" class="pub-link">${t('ui.viewPaper')}</a>`:'';
     return `<div class="pub-item reveal" data-paged data-type="${dt}">
       <span class="pub-num">[${pub.index}]</span>
       <div class="pub-body">
@@ -510,97 +508,6 @@ function renderAwards(items) {
     </div>`;
   }).join('');
   _awardPager = createPager(el, AWARD_PER_PAGE, 'awardsPager');
-}
-
-/* ─── Narrative (Project Deep Dives) ─── */
-function nvParsePeriodStart(period) {
-  if (!period) return null;
-  const m = String(period).match(/(\d{4})\.(\d{1,2})/);
-  return m ? new Date(parseInt(m[1]), parseInt(m[2]) - 1, 1) : null;
-}
-function nvParsePeriodEnd(period) {
-  if (!period) return null;
-  const matches = String(period).match(/(\d{4})\.(\d{1,2})/g);
-  if (!matches || matches.length === 0) return null;
-  if (matches.length === 1) return nvParsePeriodStart(period);
-  const [y, mm] = matches[matches.length - 1].split('.');
-  return new Date(parseInt(y), parseInt(mm) - 1, 1);
-}
-function renderNarrative(projects) {
-  const el = document.getElementById('narrativeList'); if (!el || !projects) return;
-  const withDetails = projects.filter(p => p.details && (p.details.situation || p.details.purpose || (p.details.tasks && p.details.tasks.length) || p.details.achievements));
-  if (!withDetails.length) { el.innerHTML = ''; return; }
-
-  /* Sort ascending by start date for grouping */
-  const sorted = [...withDetails].sort((a, b) => {
-    const aD = nvParsePeriodStart(a.period); const bD = nvParsePeriodStart(b.period);
-    return (aD?.getTime() || 0) - (bD?.getTime() || 0);
-  });
-
-  /* Group continuous projects: same client + affiliated + period gap < 6 months */
-  const groups = [];
-  for (const p of sorted) {
-    const prev = groups.length ? groups[groups.length - 1] : null;
-    const prevLast = prev?.projects[prev.projects.length - 1];
-    const prevEnd = prevLast ? nvParsePeriodEnd(prevLast.period) : null;
-    const thisStart = nvParsePeriodStart(p.period);
-    const gapMonths = (prevEnd && thisStart) ? (thisStart - prevEnd) / (1000 * 60 * 60 * 24 * 30) : Infinity;
-    if (prev && prev.client === p.client && prev.affiliated === p.affiliatedInstitution && gapMonths < 6) {
-      prev.projects.push(p);
-    } else {
-      groups.push({ client: p.client, affiliated: p.affiliatedInstitution, projects: [p] });
-    }
-  }
-  groups.reverse(); /* newest groups first */
-
-  el.innerHTML = groups.map(g => {
-    const isMulti = g.projects.length > 1;
-    const firstP = g.projects[0]; const lastP = g.projects[g.projects.length - 1];
-    const spanStart = (firstP.period || '').split(/[-~]/)[0].trim();
-    const lastParts = (lastP.period || '').split(/[-~]/);
-    const spanEnd = (lastParts[1] || '').trim() || lastParts[0].trim();
-    const groupSpan = `${spanStart} – ${spanEnd}`;
-
-    const projectsHTML = g.projects.map((p, idx) => {
-      const d = p.details || {};
-      const phaseLabel = isMulti ? `<span class="nv-phase">${LANG === 'ko' ? `${idx + 1}단계` : `Phase ${idx + 1}`}</span>` : '';
-      const partnersStr = p.partners && p.partners.length ? p.partners.join(' · ') : '';
-      return `
-        <article class="nv-project reveal" data-proj-index="${p.index}">
-          <header class="nv-project-header">
-            <div class="nv-project-title-row">
-              ${phaseLabel}
-              <h3 class="nv-project-title">${esc(p.title)}</h3>
-              <span class="nv-project-index">#${p.index}</span>
-            </div>
-            <div class="nv-project-meta">
-              <span class="nv-period">${esc(locPeriod(p.period))}${p.duration ? ' · ' + esc(p.duration) : ''}</span>
-              ${p.isPM ? `<span class="nv-pm-badge">${t('ui.nvPm')}</span>` : ''}
-              ${p.client ? `<span class="nv-meta-item"><span class="nv-meta-label">${t('ui.nvClient')}</span> ${esc(p.client)}</span>` : ''}
-              ${p.affiliatedInstitution ? `<span class="nv-meta-item nv-affil">${esc(p.affiliatedInstitution)}</span>` : ''}
-              ${partnersStr ? `<span class="nv-meta-item"><span class="nv-meta-label">${t('ui.nvPartners')}</span> ${esc(partnersStr)}</span>` : ''}
-            </div>
-          </header>
-          ${d.situation ? `<section class="nv-section"><span class="nv-label">${t('ui.nvBackground')}</span><p class="nv-text">${esc(d.situation)}</p></section>` : ''}
-          ${d.purpose ? `<section class="nv-section"><span class="nv-label">${t('ui.nvObjective')}</span><p class="nv-text">${esc(d.purpose)}</p></section>` : ''}
-          ${d.role ? `<section class="nv-section"><span class="nv-label">${t('ui.nvRole')}</span><p class="nv-text">${esc(d.role)}</p></section>` : ''}
-          ${d.tasks && d.tasks.length ? `<section class="nv-section"><span class="nv-label">${t('ui.nvActivities')}</span><ul class="nv-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul></section>` : ''}
-          ${d.achievements ? `<section class="nv-section"><span class="nv-label">${t('ui.nvOutcomes')}</span><p class="nv-text">${esc(d.achievements)}</p></section>` : ''}
-          ${d.notes ? `<section class="nv-section nv-section-notes"><span class="nv-label">${t('ui.nvNotes')}</span><p class="nv-text">${esc(d.notes)}</p></section>` : ''}
-        </article>`;
-    }).join('');
-
-    return `
-      <div class="nv-group${isMulti ? ' nv-group-multi' : ''}">
-        ${isMulti ? `
-          <header class="nv-group-header">
-            <span class="nv-series-label">${t('ui.nvSeries')}</span>
-            <span class="nv-group-title">${esc(g.client || '')}${g.affiliated ? ` · ${esc(g.affiliated)}` : ''}</span>
-            <span class="nv-group-span">${esc(groupSpan)}</span>
-          </header>` : ''}
-        ${projectsHTML}
-      </div>`;
-  }).join('');
 }
 
 /* ─── Reusable Pager (top + bottom) ─── */
@@ -664,7 +571,7 @@ function renderSkills(skills) {
 /* ─── Patents ─── */
 function renderPatents(items) {
   const el = document.getElementById('patentsList'); if (!el || !items) return;
-  el.innerHTML = items.map(p => `<div class="patent-card reveal"><div class="patent-title">${esc(p.title)}</div><div class="patent-desc">${esc(p.description)}</div><div class="patent-meta"><span><strong>${t('ui.patNo')}</strong> ${esc(p.applicationNumber)}</span><span><strong>${t('ui.patFiled')}</strong> ${esc(p.applicationDate)}</span><span><strong>${t('ui.patApplicant')}</strong> ${esc(p.applicant)}</span><span><strong>${t('ui.patAuthority')}</strong> ${esc(p.authority)}</span></div></div>`).join('');
+  el.innerHTML = items.map(p => `<div class="patent-card reveal"><div class="patent-title">${esc(p.title)}</div><div class="patent-desc">${esc(p.description)}</div><div class="patent-meta">${p.status === 'granted' ? `<span><strong>${t('ui.patStatus')}</strong> ${t('ui.granted')}</span>` : ''}<span><strong>${t('ui.patNo')}</strong> ${esc(p.applicationNumber)}</span><span><strong>${t('ui.patFiled')}</strong> ${esc(p.applicationDate)}</span><span><strong>${t('ui.patApplicant')}</strong> ${esc(p.applicant)}</span>${p.inventors ? `<span><strong>${t('ui.patInventors')}</strong> ${esc(String(p.inventors))}</span>` : ''}<span><strong>${t('ui.patAuthority')}</strong> ${esc(p.authority)}</span></div></div>`).join('');
 }
 
 /* ─── Activities ─── */
@@ -709,7 +616,7 @@ function renderContact(basic) {
   if (basic.location) cs.push({i:'📍',l:t('ui.location'),v:basic.location,h:null});
   el.innerHTML = cs.map(c => {
     const inn = `<div class="contact-icon">${c.i}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
-    return c.h ? `<a href="${c.h}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
+    return safeUrl(c.h) ? `<a href="${safeUrl(c.h)}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
   }).join('');
 }
 
@@ -756,6 +663,7 @@ function openProjectModal(p) {
   const fields = [
     [t('ui.period'), `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
     d.role && [t('ui.role'), d.role],
+    p.teamSize && [t('ui.teamSize'), teamLabel(p.teamSize)],
     p.client && [t('ui.client'), p.client],
     p.partners && p.partners.length && [t('ui.partners'), p.partners.join(', ')],
     p.partnerInstitution && [t('ui.partner'), p.partnerInstitution],
@@ -801,6 +709,8 @@ function setupScrollReveal() {
 
 /* ─── Helpers ─── */
 function setText(id, val) { const e = document.getElementById(id); if (e) e.textContent = val || ''; }
+// Escaped URL for href attributes; anything but http(s) or mailto becomes empty.
+function safeUrl(u) { return /^(https?:|mailto:)/i.test(u || '') ? esc(u) : ''; }
 function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 document.addEventListener('DOMContentLoaded', init);

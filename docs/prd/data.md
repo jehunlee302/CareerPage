@@ -47,10 +47,19 @@
 - QA: UC-4 언어 토글 통과, ko 화면에 빈 문자열 없음.
 
 <a id="data-07"></a>
-## data-07 · 데이터 수치 불일치
-이유: dev-loop 1회전 (2026-09-03) 경미 발견.
-- `data/career/basic.yaml` 수정 후 `node scripts/yaml-to-json.js` 재빌드 (generated 직접 수정 금지).
-  1. Hero 요약 "25 projects(PM 12)" → 실제 26(PM 13).
-  2. meta description·stats "24+" → 26.
-  3. "Intl. conf 6" vs 실제 11 — 의도적 선별인지 사용자 확인.
-- QA: 화면 수치가 `portfolio.json` 집계와 같다.
+## data-07 · 수치 한 곳에서 계산
+이유: 화면·이력서·메타에 손으로 쓴 수치가 서로 달랐다 (2026-09-03 발견, 2026-11-12 페르소나 리뷰 재확인).
+- `scripts/counts.js`가 YAML에서 프로젝트·PM·저널·국제 학회·특허 수를 센다. 국제 학회 = `type: Conference` + `global: true`.
+- `basic.yaml` 요약문은 `{projects}` 같은 자리 표시를 쓰고, `yaml-to-json.js`가 채운다. 모르는 이름이면 빌드 실패.
+- 화면 Impact Strip은 `portfolio.json`의 `counts`를 쓴다. `philosophy.yaml`의 `stats`는 삭제.
+- `index.html` 메타 설명의 수치는 손으로 쓰되 `npm test`(`scripts/check-data.js`)가 집계와 비교한다. CI 배포 전에 실행.
+- QA: `npm test` 통과. 메타 숫자를 바꾸면 실패한다.
+
+## data-08 · 노출 위험 정리
+이유: 2026-11-12 HR·채용 담당 페르소나 리뷰에서 지적.
+- 진행 중 고객사 이름은 "바이오 제조사 (고객사 비공개)"로 표기 (#27, `work.yaml`).
+- 사이트 연락처 이메일은 1개. 전화번호는 `basic.yaml`의 `phone`에 두고 이력서에만 출력.
+- 병역은 "전문연구요원 (병역 대체 복무)"으로 표기, 소속 기관 문구 삭제.
+- 국내 학회(Korea CDE)는 `global: false`. `npm test`가 국내 학회의 국제 표시를 막는다.
+- 특허는 `status: granted`면 "등록"·발명자 수를 표시.
+- QA: 화면·이력서 PDF에 고객사 이름, 두 번째 이메일, 국방부 문구가 없다.

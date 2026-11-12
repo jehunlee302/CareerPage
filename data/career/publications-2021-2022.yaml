@@ -96,7 +96,7 @@
 - index: 14
   year: 2021
   type: Conference
-  global: true
+  global: false
   role: Co-Author
   authors: H. Yang, J.-H. Lee, and H.-J. Kim
   title: Operation and optimization of the automotive parts assembly line considering worker skill levels

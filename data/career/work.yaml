@@ -1,13 +1,33 @@
 - position:
+    en: Consultant
+    ko: 컨설턴트
+  organization:
+    en: PwC Consulting
+    ko: PwC컨설팅
+  division:
+    en: Cloud & AI Division
+    ko: Cloud & AI 사업부
+  period: 2026.09 - Present
+  roles:
+    en: "AI Agent service planning & development"
+    ko: "AI Agent 서비스 기획 및 개발"
+  responsibilities:
+    - en: "Bio-pharma manufacturer (client undisclosed; as a partner firm): AI Agent service supporting sales center operations"
+      ko: "바이오 제조사 (고객사 비공개, 협력사 참여): 영업센터 업무 지원 AI Agent 서비스 개발"
+    - en: Data cleansing and RAG (retrieval-augmented generation) system construction
+      ko: 데이터 정제 및 RAG(검색 증강 생성) 시스템 구축
+  performance: ""
+  region: Seoul, South Korea
+- position:
     en: Planning & Scheduling Solution Consultant
     ko: 생산계획 솔루션 컨설턴트
   organization:
-    en: VMS Solutions Inc. 
+    en: VMS Solutions Inc.
     ko: 브이엠에스솔루션스
   division:
     en: Solution Division | Consultant Part
     ko: 솔루션사업부 | 솔루션 컨설턴트 파트
-  period: 2025.08 - Present
+  period: 2025.08 - 2026.09
   alt_service: 2025.08 - 2026.02
   roles:
     en: "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product"

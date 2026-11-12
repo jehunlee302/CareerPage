@@ -4,14 +4,14 @@ name:
 titles:
   - en: Industrial & Systems Engineer (Ph.D.)
     ko: 산업및시스템공학 박사
-  - en: Simulation Solution Consultant
-    ko: 시뮬레이션 솔루션 컨설턴트
+  - en: Consultant, PwC Cloud & AI
+    ko: PwC 클라우드·AI 컨설턴트
   - en: AI Solution Architect
     ko: AI 솔루션 아키텍트
 email:
   - jehun.lee302@gmail.com
-  - jehun.lee@vms-solutions.com
-  - jehun.lee@kaist.ac.kr
+# Resume header only; the website does not show it
+phone: (+82) 10-8244-5376
 website: jehun-lee.work
 location:
   en: Yongin, Gyeonggi-do, South Korea
@@ -43,6 +43,6 @@ resume:
 #     ko: "1억원"
 
 summary:
-  # Intl. conferences 6=주요 indexed 학회 선별 여부 사용자 확인 대기
-  en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 26 projects (PM 13)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
-  ko: "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 26건 프로젝트 (PM 13건)\nSCI 저널 4편 (1저자 2편) · 국제 학회 6건\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"
+  # {name} placeholders are filled from the data by scripts/yaml-to-json.js; an unknown name fails the build.
+  en: "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — {projects} projects (PM {pm})\nJournal papers {journals} (1st author {journals_first}) · Intl. conference papers {intl_conf} (1st author {intl_conf_first})\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
+  ko: "KAIST 산업및시스템공학 박사\nSK하이닉스 · Micron · 삼성전자 · LG전자 등 {projects}건 프로젝트 (PM {pm}건)\n저널 논문 {journals}편 (1저자 {journals_first}편) · 국제 학회 논문 {intl_conf}편 (1저자 {intl_conf_first}편)\nAI 스케줄러 · AI 에이전트 · 디지털 트윈 · 시뮬레이션 기반 최적화 · 자율 제조"

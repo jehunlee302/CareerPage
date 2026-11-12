@@ -13,6 +13,7 @@
 const yaml = require('js-yaml');
 const fs   = require('fs');
 const path = require('path');
+const { countCareer, fillCounts } = require('./counts');
 
 const CAREER  = path.join(__dirname, '..', 'data', 'career');
 const OUT     = path.join(__dirname, '..', 'data', 'portfolio.json');
@@ -70,7 +71,7 @@ function extractLang(obj) {
 
 // ── Section Builders ──────────────────────────────────────
 
-function buildBasic(raw) {
+function buildBasic(raw, counts) {
   if (!raw) return {};
   const b = extractLang(raw);
   return {
@@ -82,7 +83,7 @@ function buildBasic(raw) {
     location:   typeof raw.location === 'object' ? (raw.location[LANG] || raw.location.en) : (raw.location || ''),
     googleSite: raw.google_site || '',
     resume:     typeof raw.resume === 'object' ? (raw.resume[LANG] || raw.resume.en || '') : (raw.resume || ''),
-    summary:    extractLang(raw.summary),
+    summary:    fillCounts(extractLang(raw.summary), counts),
   };
 }
 
@@ -98,14 +99,6 @@ function buildPhilosophy(raw) {
       desc:  extractLang(p.desc),
     })),
   };
-}
-
-function buildStats(raw) {
-  if (!raw || !raw.stats) return [];
-  return raw.stats.map(s => ({
-    value: s.value,
-    label: extractLang(s.label),
-  }));
 }
 
 function buildEducation(raw) {
@@ -171,10 +164,13 @@ function buildProjects(raw) {
       period:               p.period || '',
       duration:             p.duration || '',
       title:                extractLang(p.title),
-      client:               p.client || '',
+      client:               extractLang(p.client),
       partnerInstitution:   p.partner_institution || '',
       affiliatedInstitution: p.affiliated_institution || '',
       isPM:                 !!p.is_pm,
+      isPL:                 !!p.is_pl,
+      isPlanning:           !!p.is_planning,
+      teamSize:             p.team_size ? String(p.team_size) : '',
       remarks:              extractLang(p.remarks),
     };
     if (p.partners) item.partners = p.partners;
@@ -246,7 +242,9 @@ function buildPatents(raw) {
     description:       extractLang(p.description),
     applicationDate:   p.application_date || '',
     applicationNumber: p.application_number || '',
+    status:            p.status || '',
     applicant:         p.applicant || '',
+    inventors:         p.inventors || '',
     authority:         extractLang(p.authority) || '',
   }));
 }
@@ -276,12 +274,13 @@ function main() {
   const honors     = load('honors.yaml');
   const patents    = load('patents.yaml');
   const activities = load('activities.yaml');
+  const counts     = countCareer({ projects, pubs, patents: patents || [] });
 
   const portfolio = {
     lastUpdated:    new Date().toISOString().slice(0, 10),
-    basic:          buildBasic(basic),
+    counts,
+    basic:          buildBasic(basic, counts),
     philosophy:     buildPhilosophy(philosophy),
-    stats:          buildStats(philosophy),
     education:      buildEducation(education),
     workExperience: buildWork(work),
     projects:       buildProjects(projects),

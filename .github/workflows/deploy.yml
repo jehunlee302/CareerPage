@@ -40,6 +40,9 @@ jobs:
           cp data/portfolio.json data/portfolio.ko.json
           cp data/portfolio.en.json data/portfolio.json
 
+      - name: Check data consistency
+        run: npm test
+
       # ── Resume PDF Build (EN) ──
       - name: Generate LaTeX (EN)
         run: node scripts/yaml-to-latex.js --lang en

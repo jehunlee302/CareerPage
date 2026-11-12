@@ -28,7 +28,7 @@
 - index: 11
   year: 2020
   type: Conference
-  global: true
+  global: false
   role: Co-Author
   authors: H. Yang, J.-H. Lee, and H.-J. Kim
   title: Workforce assignment for automotive parts assembly lines

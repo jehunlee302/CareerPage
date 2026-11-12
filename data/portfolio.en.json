@@ -1,23 +1,30 @@
 {
-  "lastUpdated": "2026-11-08",
+  "lastUpdated": "2026-11-12",
+  "counts": {
+    "projects": 27,
+    "pm": 13,
+    "journals": 5,
+    "journals_first": 2,
+    "intl_conf": 9,
+    "intl_conf_first": 6,
+    "patents": 1
+  },
   "basic": {
     "name": "Jehun Lee",
     "nameKr": "이제훈",
     "titles": [
       "Industrial & Systems Engineer (Ph.D.)",
-      "Simulation Solution Consultant",
+      "Consultant, PwC Cloud & AI",
       "AI Solution Architect"
     ],
     "email": [
-      "jehun.lee302@gmail.com",
-      "jehun.lee@vms-solutions.com",
-      "jehun.lee@kaist.ac.kr"
+      "jehun.lee302@gmail.com"
     ],
     "website": "jehun-lee.work",
     "location": "Yongin, Gyeonggi-do, South Korea",
     "googleSite": "",
     "resume": "data/resume-en.pdf",
-    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 26 projects (PM 13)\nSCI journals 4 (1st author 2) · Intl. conferences 6\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
+    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 27 projects (PM 13)\nJournal papers 5 (1st author 2) · Intl. conference papers 9 (1st author 6)\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
   },
   "philosophy": {
     "headline": "Systemic Excellence",
@@ -41,24 +48,6 @@
       }
     ]
   },
-  "stats": [
-    {
-      "value": "24+",
-      "label": "Major Projects"
-    },
-    {
-      "value": "26+",
-      "label": "Publications"
-    },
-    {
-      "value": "4+",
-      "label": "Years at KAIST"
-    },
-    {
-      "value": "1",
-      "label": "Patent"
-    }
-  ],
   "education": [
     {
       "degree": "Ph.D.",
@@ -111,10 +100,23 @@
   ],
   "workExperience": [
     {
+      "position": "Consultant",
+      "organization": "PwC Consulting",
+      "division": "Cloud & AI Division",
+      "period": "2026.09 - Present",
+      "roles": "AI Agent service planning & development",
+      "performance": "",
+      "region": "Seoul, South Korea",
+      "responsibilities": [
+        "Bio-pharma manufacturer (client undisclosed; as a partner firm): AI Agent service supporting sales center operations",
+        "Data cleansing and RAG (retrieval-augmented generation) system construction"
+      ]
+    },
+    {
       "position": "Planning & Scheduling Solution Consultant",
       "organization": "VMS Solutions Inc.",
       "division": "Solution Division | Consultant Part",
-      "period": "2025.08 - Present",
+      "period": "2025.08 - 2026.09",
       "roles": "System designer & PMO: digital twin platform, production-logistics integrated simulator, simulation-based AI scheduler, SaaS product",
       "performance": "",
       "region": "Yongin, South Korea",
@@ -188,14 +190,40 @@
   ],
   "projects": [
     {
+      "index": 27,
+      "period": "2026.09 - Present",
+      "duration": "3m",
+      "title": "AI Agent service for sales center operations",
+      "client": "Bio-pharma manufacturer (client undisclosed)",
+      "partnerInstitution": "",
+      "affiliatedInstitution": "PwC Consulting",
+      "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
+      "remarks": "",
+      "details": {
+        "situation": "",
+        "purpose": "Plan and develop an AI Agent service that supports sales center operations",
+        "role": "AI Agent service planning & development (partner firm)",
+        "tasks": [
+          "Data cleansing of source documents for the agent",
+          "RAG (retrieval-augmented generation) system construction"
+        ]
+      }
+    },
+    {
       "index": 26,
-      "period": "2026.02 - Present",
-      "duration": "4m",
+      "period": "2026.02 - 2026.08",
+      "duration": "7m",
       "title": "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab",
       "client": "SK Hynix",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "partners": [
         "SKT",
@@ -226,6 +254,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "partners": [
         "SKT",
@@ -248,13 +279,16 @@
     },
     {
       "index": 24,
-      "period": "2025.03 - Present",
-      "duration": "16m",
+      "period": "2025.03 - 2026.09",
+      "duration": "1y7m",
       "title": "Software product design/development: simulation-based scheduling for semiconductor manufacturing",
       "client": "VMS Solutions",
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "",
@@ -276,6 +310,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "VMS Solutions Inc.",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "Micron's global semiconductor fabs required a next-generation real-time APS scheduler, but existing logic was tightly coupled to specific process constraints, limiting product generality across different fab configurations",
@@ -298,6 +335,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "Existing AI-based schedulers required retraining for each new manufacturing environment. A 10-year NRF initiative was needed to develop autonomous scheduling that adapts to dynamic environments without environment-specific retraining",
@@ -320,6 +360,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "Samsung Electronics needed accurate demand forecasts for semiconductor products to optimize production planning, but existing methods lacked precision across diverse product categories",
@@ -344,6 +387,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "Phase 2 — UPM with semiconductor-specific constraints",
       "details": {
         "situation": "Real semiconductor manufacturing rarely matches clean academic scheduling assumptions — machines have eligibility restrictions, and setup times depend on operation order. Existing RL-based research had not directly tackled both constraints together on unrelated parallel machines (UPM).",
@@ -368,6 +414,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "LG Electronics' refrigerator body assembly line suffered from excessive setup changes and low on-time production rates due to manual planning based on planner experience",
@@ -392,6 +441,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "Real-time dispatching agent based on RL",
       "details": {
         "situation": "Real-time Job Shop scheduling requires graph-form representations of the changing process state and an RL methodology capable of making decisions under tight time budgets.",
@@ -416,6 +468,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "Job Shop simulator enhancement and methodology development",
       "details": {
         "situation": "Existing Job Shop scheduling research used fragmented simulator-based evaluation, and the applicability of AI-based dispatching was limited.",
@@ -440,6 +495,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Algorithm planning for optimal wiring based on substrate electrode positions",
       "details": {
         "situation": "Wiring at the X-DEC Slim Layout stage of semiconductor memory cell design involves complex combinatorial constraints, but no formalized analytical methodology existed.",
@@ -451,7 +509,7 @@
           "Reviewed combinatorial-optimization-based methodologies and delivered technical recommendations"
         ],
         "achievements": "Accumulated experience analyzing semiconductor memory-cell layout optimization through a combinatorial-optimization lens.",
-        "notes": "Short (1-month) feasibility study — established future collaboration directions with SK Hynix."
+        "notes": "Short (1-month) participated"
       }
     },
     {
@@ -463,6 +521,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Foundation of doctoral thesis — meta-scheduling methodology",
       "details": {
         "situation": "Prior RL-based scheduling research locked each agent to a single problem setting — fixed plant size, fixed constraints, fixed objective. Reusing it under changing manufacturing environments required retraining from scratch.",
@@ -487,6 +548,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "Samsung Heavy Industries' 6-month shipbuilding schedule suffered from severe daily manpower fluctuations, causing inefficient resource utilization and increased labor costs",
@@ -512,6 +576,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "Phase 1 — Cargo Hold workload balancing",
       "details": {
         "situation": "Samsung Heavy Industries' ship cargo-hold production was scheduled manually by yard planners, with no quantitative load-balancing logic. Daily manpower demand swung between overloaded and idle days as a result.",
@@ -536,6 +603,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "AI-prediction-based optimal machine assignment algorithm",
       "details": {
         "situation": "Pure dispatching-rule-based scheduling reached a ceiling — machine-learning-based prediction was needed to supplement decision quality, particularly around setup-change behavior.",
@@ -560,6 +630,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "KAIST",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "",
       "details": {
         "situation": "In a EUREKA international collaboration (Korea-Sweden), automotive parts assembly required real-time worker allocation optimization to reduce cycle time in semi-automated production lines with varying worker skill levels",
@@ -572,7 +645,7 @@
           "Developed conveyor belt speed determination algorithm for semi-automated assembly processes",
           "Defined user scenarios and program screen specifications"
         ],
-        "achievements": "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent registered: KR1020210070359; 1 SCI journal paper (2nd author); 2 conference papers"
+        "achievements": "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent granted (application no. 10-2021-0070359); 1 SCI journal paper (2nd author); 2 conference papers"
       }
     },
     {
@@ -584,6 +657,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Multi-KPI parameter-derivation framework for FAB automation",
       "details": {
         "situation": "Dispatching-rule-based scheduling was typically evaluated against a single KPI, yet real operations demand simultaneous consideration of makespan, tardiness, and setup count.",
@@ -608,6 +684,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Battery process anomaly prediction and scheduling framework",
       "details": {
         "situation": "Samsung SDI battery production generated large volumes of noisy operational data, but lacked a simulation-based framework for real-time scheduling decisions.",
@@ -632,6 +711,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": true,
+      "teamSize": "",
       "remarks": "RL algorithm development and performance review for production systems",
       "details": {
         "situation": "Research on applying RL to manufacturing scheduling was growing, but the field lacked a high-fidelity Job Shop simulator and a systematic training framework.",
@@ -656,6 +738,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Validation of dispatching-weight methodology on a real semiconductor FAB",
       "details": {
         "situation": "SK Hynix's semiconductor FAB lines operate with multiple dispatching rules acting in combination, making single-KPI optimization of weights impractical in field conditions.",
@@ -680,6 +765,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": true,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "ML-based optimal parameter derivation algorithm",
       "details": {
         "situation": "Dispatching-rule-based scheduling was typically evaluated against a single KPI, making it hard to optimize across multiple operational indicators simultaneously.",
@@ -704,6 +792,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Performance analysis framework for parameter-induced KPI changes and WSC 2018 1st-author paper.",
       "details": {
         "situation": "LCD manufacturing applied multiple dispatching rules in combination, yet no quantitative analysis existed on how weight changes propagated into KPIs.",
@@ -726,6 +817,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Virtual factory simulator construction and operational efficiency analysis",
       "details": {
         "situation": "A government-funded smart factory testbed had been built, but lacked a simulation environment to quantitatively validate operational efficiency under varying scenarios.",
@@ -749,6 +843,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Disruption-response algorithms for flexible production automation",
       "details": {
         "situation": "3D-printer-based flexible manufacturing systems (FMS) are central to mass personalization, yet lacked real-time rescheduling mechanisms to handle disruptions like machine failure, order cancellation, and rush orders.",
@@ -773,6 +870,9 @@
       "partnerInstitution": "",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Heuristic algorithm for improving existing schedules",
       "details": {
         "situation": "Inefficient schedule patterns were accumulating in VMS Solutions' LCD operational data, yet no automated detection or improvement mechanism existed.",
@@ -795,6 +895,9 @@
       "partnerInstitution": "ETRI,",
       "affiliatedInstitution": "SKKU",
       "isPM": false,
+      "isPL": false,
+      "isPlanning": false,
+      "teamSize": "",
       "remarks": "Scheduling/rescheduling algorithms for flexible production automation",
       "details": {
         "situation": "Mass-personalization production requires integrated control of distributed, heterogeneous equipment — 3D printers, robotic handlers, IoT sensors — but no unified platform existed for such an environment.",
@@ -978,7 +1081,7 @@
       "role": "Co-Author",
       "remarks": "Online",
       "year": 2021,
-      "global": true,
+      "global": false,
       "venue": "the Summer Conference of Korea CDE"
     },
     {
@@ -1017,7 +1120,7 @@
       "role": "Co-Author",
       "remarks": "Online",
       "year": 2020,
-      "global": true,
+      "global": false,
       "venue": "the Winter Conference of Korea CDE"
     },
     {
@@ -1152,7 +1255,7 @@
     }
   ],
   "skills": {
-    "Programming": [
+    "Programming Languages": [
       "Python",
       "C#",
       "SQL",
@@ -1195,7 +1298,7 @@
     ],
     "Languages": [
       "Korean (Native)",
-      "English (Professional)"
+      "English (Business)"
     ]
   },
   "honors": [
@@ -1318,7 +1421,9 @@
       "description": "A real-time optimization method for worker allocation in semi-automated assembly processes",
       "applicationDate": "2021.05.31",
       "applicationNumber": "KR1020210070359",
-      "applicant": "KAIST, Yura (entire 12 people)",
+      "status": "granted",
+      "applicant": "KAIST, Yura",
+      "inventors": 12,
       "authority": "South Korea"
     }
   ],

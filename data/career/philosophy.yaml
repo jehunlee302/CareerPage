@@ -39,20 +39,3 @@ pillars:
     desc:
       en: Always exploring, always applying. Insight compounds into mastery.
       ko: 끊임없이 탐구하고 적용합니다. 누적된 통찰이 숙련을 만듭니다.
-stats:
-  - value: 24+
-    label:
-      en: Major Projects
-      ko: 주요 프로젝트
-  - value: 26+
-    label:
-      en: Publications
-      ko: 논문
-  - value: 4+
-    label:
-      en: Years at KAIST
-      ko: KAIST 재학
-  - value: "1"
-    label:
-      en: Patent
-      ko: 특허

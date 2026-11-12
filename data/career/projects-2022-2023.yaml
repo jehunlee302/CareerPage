@@ -7,6 +7,7 @@
   client: NRF of Korea
   affiliated_institution: KAIST
   is_pm: true
+  is_planning: true
   details:
     situation:
       en: Real-time Job Shop scheduling requires graph-form representations of the changing process state and an RL methodology capable of making decisions under tight time budgets.
@@ -35,6 +36,7 @@
   remarks:
     en: Real-time dispatching agent based on RL
     ko: 강화학습 활용 실시간 디스패칭 Agent 개발
+    
 - index: 17
   period: 2022.04 - 2023.03
   duration: 1y
@@ -44,6 +46,7 @@
   client: VMS Solutions
   affiliated_institution: KAIST
   is_pm: true
+  is_planning: true
   details:
     situation:
       en: Existing Job Shop scheduling research used fragmented simulator-based evaluation, and the applicability of AI-based dispatching was limited.
@@ -72,6 +75,7 @@
   remarks:
     en: Job Shop simulator enhancement and methodology development
     ko: Job Shop 생산 시뮬레이터 고도화 및 방법론 개발
+
 - index: 16
   period: 2022.03 - 2022.03
   duration: 1m (7m)
@@ -102,11 +106,12 @@
       en: Accumulated experience analyzing semiconductor memory-cell layout optimization through a combinatorial-optimization lens.
       ko: 반도체 메모리 셀 설계 단계의 레이아웃 최적화 문제에 대한 조합 최적화 관점 분석 경험 축적
     notes:
-      en: Short (1-month) feasibility study — established future collaboration directions with SK Hynix.
-      ko: 단기(1개월) Feasibility study 성격의 과제 — SK Hynix와의 향후 협업 방향성 도출
+      en: Short (1-month) participated
+      ko: 단기(1개월) 참여
   remarks:
     en: Algorithm planning for optimal wiring based on substrate electrode positions
     ko: 기판 전극 위치 기반 최적 배선 도출 알고리즘 기획
+
 - index: 15
   period: 2022.03 - 2025.02
   duration: 3y
@@ -144,6 +149,7 @@
   remarks:
     en: Foundation of doctoral thesis — meta-scheduling methodology
     ko: 박사학위 논문의 이론적 토대 — 메타 스케줄링 방법론
+
 - index: 14
   period: 2022.03 - 2023.07
   duration: 1y5m (2y)
@@ -153,6 +159,7 @@
   client: Samsung Heavy Industries
   affiliated_institution: KAIST
   is_pm: false
+  is_planning: true
   details:
     situation:
       en: "Samsung Heavy Industries' 6-month shipbuilding schedule suffered from severe daily manpower fluctuations, causing inefficient resource utilization and increased labor costs"
@@ -179,6 +186,7 @@
     achievements:
       en: "Year 1 schedule adjustment: daily manpower std. dev. reduced by 41.60% (RL, 20.27s), 44.53% (greedy, 49.86s), 47.69% (greedy+RL) vs. existing 6-month schedule"
       ko: "1차년도 스케줄 조정: daily manpower 표준편차 기준 41.60% (RL, 20.27초), 44.53% (greedy, 49.86초), 47.69% (greedy+RL) 감소 (vs 기존 6개월 스케줄)"
+
 - index: 11
   period: 2019.06 - 2022.05
   duration: 3y
@@ -188,6 +196,7 @@
   client: MOTIE of Korea, Yura
   affiliated_institution: KAIST
   is_pm: true
+  is_planning: true
   details:
     situation:
       en: "In a EUREKA international collaboration (Korea-Sweden), automotive parts assembly required real-time worker allocation optimization to reduce cycle time in semi-automated production lines with varying worker skill levels"
@@ -210,8 +219,9 @@
       - en: Defined user scenarios and program screen specifications
         ko: 사용자 시나리오 정의 및 프로그램 화면 정의
     achievements:
-      en: "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent registered: KR1020210070359; 1 SCI journal paper (2nd author); 2 conference papers"
-      ko: "Cycle time 감소: 5.6% (실제 현장 운영 데이터) / 2~5% (vs meta-heuristic); 특허 등록: [공정 최적화 방법] KR1020210070359; SCI 논문 1건 (2저자); 학회 2건"
+      en: "Cycle time reduced 5.6% (real on-site data, actual operation method) / 2-5% (vs. meta-heuristic algorithm); Patent granted (application no. 10-2021-0070359); 1 SCI journal paper (2nd author); 2 conference papers"
+      ko: "Cycle time 감소: 5.6% (실제 현장 운영 데이터) / 2~5% (vs meta-heuristic); 특허 등록: [공정 최적화 방법] (출원번호 10-2021-0070359); SCI 논문 1건 (2저자); 학회 2건"
+
 - index: 8
   period: 2019.03 - 2022.02
   duration: 3y
@@ -221,6 +231,7 @@
   client: NRF of Korea
   affiliated_institution: SKKU
   is_pm: false
+  is_planning: true
   details:
     situation:
       en: Research on applying RL to manufacturing scheduling was growing, but the field lacked a high-fidelity Job Shop simulator and a systematic training framework.

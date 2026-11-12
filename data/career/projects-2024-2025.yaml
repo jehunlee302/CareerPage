@@ -1,6 +1,6 @@
 - index: 26
-  period: 2026.02 - Present
-  duration: 4m
+  period: 2026.02 - 2026.08
+  duration: 7m
   title:
     en: "Digital twin platform construction: production-logistics simulation-based operation twin for semiconductor fab"
     ko: "디지털 트윈 플랫폼 구축: 반도체 팹 생산-물류 시뮬레이션 기반 운영 트윈"
@@ -77,14 +77,15 @@
       ko: Use-case 발굴, KPI 정의, 정합성 지표 정의, 자동 연산 파이프라인 구축
 
 - index: 24
-  period: 2025.03 - Present
-  duration: "16m"
+  period: 2025.03 - 2026.09
+  duration: 1y7m
   title:
     en: "Software product design/development: simulation-based scheduling for semiconductor manufacturing"
     ko: "소프트웨어 제품 기획/개발: 반도체 제조 시뮬레이션 기반 스케줄링"
   client: VMS Solutions
   affiliated_institution: VMS Solutions Inc.
   is_pm: false
+  is_planning: true
   details:
     purpose:
       en: Design and develop simulation-based scheduling product for semiconductor manufacturing
@@ -139,6 +140,7 @@
   client: NRF of Korea
   affiliated_institution: KAIST
   is_pm: true
+  is_planning: true
   details:
     situation:
       en: "Existing AI-based schedulers required retraining for each new manufacturing environment. A 10-year NRF initiative was needed to develop autonomous scheduling that adapts to dynamic environments without environment-specific retraining"
@@ -203,6 +205,7 @@
   client: VMS Solutions
   affiliated_institution: KAIST
   is_pm: false
+  is_planning: true
   details:
     situation:
       en: Real semiconductor manufacturing rarely matches clean academic scheduling assumptions — machines have eligibility restrictions, and setup times depend on operation order. Existing RL-based research had not directly tackled both constraints together on unrelated parallel machines (UPM).
@@ -241,6 +244,7 @@
   client: LG Electronics
   affiliated_institution: KAIST
   is_pm: true
+  is_planning: true
   details:
     situation:
       en: "LG Electronics' refrigerator body assembly line suffered from excessive setup changes and low on-time production rates due to manual planning based on planner experience"
