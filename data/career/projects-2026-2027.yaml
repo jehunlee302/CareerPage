@@ -5,8 +5,8 @@
     en: "AI Agent service for sales center operations"
     ko: "영업센터 업무 지원 AI Agent 서비스 개발"
   client:
-    en: Bio-pharma manufacturer (client undisclosed)
-    ko: 바이오 제조사 (고객사 비공개)
+    en: Samsung Biologics
+    ko: 삼성바이오로직스
   affiliated_institution: PwC Consulting
   is_pm: false
   is_planning: true

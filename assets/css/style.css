@@ -979,7 +979,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .research-grid {
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: repeat(4, 1fr);
    gap: 1.25rem;
    margin-top: 2rem
 }
@@ -1648,14 +1648,23 @@ html[data-theme="dark"] .tag.domain,
    SKILLS
    ════════════════════════════════════════ */
 .skills-grid {
-   columns: 4 220px;
-   column-gap: 1.1rem;
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   gap: 1.1rem;
+   align-items: start;
    margin-top: 2rem
 }
 
-.skills-grid .skill-card {
-   break-inside: avoid;
-   margin-bottom: 1.1rem
+@media(max-width:960px) {
+   .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+   }
+}
+
+@media(max-width:600px) {
+   .skills-grid {
+      grid-template-columns: 1fr
+   }
 }
 
 .skill-card {
@@ -2433,50 +2442,80 @@ footer {
 }
 
 .carousel {
-   display: grid;
-   grid-auto-flow: column;
-   grid-template-columns: none;
-   grid-auto-columns: calc((100% - 2rem) / 3);
+   display: flex;
+   flex-direction: row;
+   gap: 0;
    overflow-x: auto;
    scroll-snap-type: x mandatory;
-   scrollbar-width: none;
-   padding: 4px 2px 12px
+   scrollbar-width: none
+}
+
+.carousel-page {
+   flex: 0 0 100%;
+   display: grid;
+   gap: 1rem;
+   align-content: start;
+   padding: 4px 2px 8px;
+   scroll-snap-align: start
+}
+
+.carousel-hidden {
+   display: none
+}
+
+.paged-dots {
+   display: flex;
+   justify-content: center;
+   gap: .45rem;
+   margin-top: .6rem
+}
+
+.paged-dots button {
+   width: 8px;
+   height: 8px;
+   padding: 0;
+   border: 0;
+   border-radius: 50%;
+   background: var(--border);
+   cursor: pointer
+}
+
+.paged-dots button.on {
+   width: 20px;
+   border-radius: 4px;
+   background: var(--blue)
+}
+
+.paged-nav-inline .paged-info {
+   min-width: 3.2em;
+   text-align: center;
+   font-size: .8rem;
+   font-weight: 600;
+   color: var(--text-muted)
+}
+
+/* Publications in a carousel: badges under the text */
+.carousel .pub-body {
+   flex-direction: column
+}
+
+.carousel .pub-side {
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between
+}
+
+/* Skills: explicit columns */
+.skill-col {
+   display: flex;
+   flex-direction: column;
+   gap: 1.1rem
 }
 
 .carousel::-webkit-scrollbar,
 .proj-filter-bar::-webkit-scrollbar,
 .pub-filter-bar::-webkit-scrollbar {
    display: none
-}
-
-.carousel > * {
-   scroll-snap-align: start
-}
-
-.carousel > [data-filtered="1"] {
-   display: none
-}
-
-.show-more {
-   display: block;
-   margin: 1.2rem auto 0;
-   padding: .5rem 1.2rem;
-   border: 1px solid var(--border);
-   border-radius: var(--r);
-   background: var(--card-bg);
-   color: var(--blue);
-   font: inherit;
-   font-size: .85rem;
-   font-weight: 600;
-   cursor: pointer
-}
-
-.show-more[hidden] {
-   display: none
-}
-
-.show-more:hover {
-   border-color: var(--blue)
 }
 
 /* ════════════════════════════════════════
@@ -2525,10 +2564,6 @@ html[lang="en"] #heroResumeBtnKo {
 }
 
 @media(max-width:768px) {
-   .carousel {
-      grid-auto-columns: 85%
-   }
-
    .proj-filter-bar,
    .pub-filter-bar {
       flex-wrap: nowrap;
@@ -2548,4 +2583,18 @@ html[lang="en"] #heroResumeBtnKo {
       width: 150px;
       height: 150px
    }
+}
+
+/* Korean: break lines between words, not inside them */
+html[lang="ko"] body {
+   word-break: keep-all;
+   overflow-wrap: break-word
+}
+
+.project-meta {
+   flex-wrap: nowrap
+}
+
+.project-period {
+   min-width: 0
 }

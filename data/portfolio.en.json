@@ -108,7 +108,7 @@
       "performance": "",
       "region": "Seoul, South Korea",
       "responsibilities": [
-        "Bio-pharma manufacturer (client undisclosed; as a partner firm): AI Agent service supporting sales center operations",
+        "Samsung Biologics (as a partner firm): AI Agent service supporting sales center operations",
         "Data cleansing and RAG (retrieval-augmented generation) system construction"
       ]
     },
@@ -194,7 +194,7 @@
       "period": "2026.09 - Present",
       "duration": "3m",
       "title": "AI Agent service for sales center operations",
-      "client": "Bio-pharma manufacturer (client undisclosed)",
+      "client": "Samsung Biologics",
       "partnerInstitution": "",
       "affiliatedInstitution": "PwC Consulting",
       "isPM": false,
@@ -1254,53 +1254,82 @@
       "venue": "the Winter Conference of Korea CDE"
     }
   ],
-  "skills": {
-    "Programming Languages": [
-      "Python",
-      "C#",
-      "SQL",
-      "LaTeX",
-      "R"
-    ],
-    "AI Methods": [
-      "Reinforcement Learning (RL)",
-      "Imitation Learning (IL)",
-      "Behavior Cloning (BC)",
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Graph Neural Networks (GNN)"
-    ],
-    "Frameworks & Libraries": [
-      "PyTorch",
-      "Matplotlib",
-      "Pandas",
-      "NumPy"
-    ],
-    "Optimization": [
-      "Combinatorial Optimization",
-      "Meta-heuristics",
-      "Gurobi",
-      "CPLEX",
-      "OR-Tools"
-    ],
-    "Simulation & Tools": [
-      "VMS Mozart (APS)",
-      "Plant Sim",
-      "MS Office",
-      "Photoshop"
-    ],
-    "DevOps & Productivity": [
-      "Git / GitHub",
-      "Docker",
-      "Claude Code",
-      "n8n",
-      "Notion"
-    ],
-    "Languages": [
-      "Korean (Native)",
-      "English (Business)"
-    ]
-  },
+  "skills": [
+    {
+      "label": "AI Methods",
+      "items": [
+        "Reinforcement Learning (RL)",
+        "Imitation Learning (IL)",
+        "Behavior Cloning (BC)",
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Graph Neural Networks (GNN)"
+      ],
+      "column": 1
+    },
+    {
+      "label": "DevOps & Productivity",
+      "items": [
+        "VS Code",
+        "Git / GitHub",
+        "Docker",
+        "Claude Code",
+        "n8n",
+        "Notion"
+      ],
+      "column": 2
+    },
+    {
+      "label": "Programming Languages",
+      "items": [
+        "Python",
+        "C#",
+        "SQL",
+        "LaTeX",
+        "R"
+      ],
+      "column": 2
+    },
+    {
+      "label": "Optimization",
+      "items": [
+        "Combinatorial Optimization",
+        "Meta-heuristics",
+        "Gurobi",
+        "CPLEX",
+        "OR-Tools"
+      ],
+      "column": 3
+    },
+    {
+      "label": "Languages",
+      "items": [
+        "Korean (Native)",
+        "English (Business)"
+      ],
+      "column": 3
+    },
+    {
+      "label": "Frameworks & Libraries",
+      "items": [
+        "PyTorch",
+        "Matplotlib",
+        "Pandas",
+        "NumPy"
+      ],
+      "column": 4
+    },
+    {
+      "label": "Simulation & Tools",
+      "items": [
+        "VMS Mozart (APS)",
+        "Plant Sim",
+        "MS Office",
+        "Photoshop"
+      ],
+      "column": 4
+    }
+  ],
   "honors": [
     {
       "date": "2025.11",

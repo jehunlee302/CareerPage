@@ -12,8 +12,8 @@
     en: "AI Agent service planning & development"
     ko: "AI Agent 서비스 기획 및 개발"
   responsibilities:
-    - en: "Bio-pharma manufacturer (client undisclosed; as a partner firm): AI Agent service supporting sales center operations"
-      ko: "바이오 제조사 (고객사 비공개, 협력사 참여): 영업센터 업무 지원 AI Agent 서비스 개발"
+    - en: "Samsung Biologics (as a partner firm): AI Agent service supporting sales center operations"
+      ko: "삼성바이오로직스 (협력사 참여): 영업센터 업무 지원 AI Agent 서비스 개발"
     - en: Data cleansing and RAG (retrieval-augmented generation) system construction
       ko: 데이터 정제 및 RAG(검색 증강 생성) 시스템 구축
   performance: ""

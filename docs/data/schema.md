@@ -97,6 +97,7 @@ google_site: string
 #### skills.yaml
 ```yaml
 category_key:
+  column: 1-4        # desktop column on the website; cards stack in file order
   label: { en, ko }
   items: [string]
 ```
@@ -158,7 +159,7 @@ stats:
   "workExperience": [],
   "projects": [],
   "publications": [],
-  "skills": {},
+  "skills": [ { "label", "items", "column" } ],
   "honors": [],
   "patents": [],
   "activities": []

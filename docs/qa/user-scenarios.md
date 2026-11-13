@@ -59,10 +59,10 @@
 
 ## UC-9 All Projects — 필터 · 가로 넘기기 · 상세 모달
 
-- **S-9.1** given(`#projectsGrid` 렌더) → action(초기 확인) → expect(`#projectsGrid` 에 `carousel` 클래스; 카드 위 `.project-period` 에 기간 표시(예 `참여 5개월 / 전체 5년`); `#projectsPager .paged-prev` `disabled`; `#projFilterBar .filter-btn[data-proj-filter="all"]` 에 `active`).
-- **S-9.2** given(맨 앞) → action(`#projectsPager .paged-next` 클릭) → expect(`#projectsGrid.scrollLeft` 증가; `.paged-prev` `disabled` 해제).
-- **S-9.3** given(맨 끝까지 넘김) → action(`.paged-next` 상태 확인) → expect(`.paged-next` `disabled` = true).
-- **S-9.4** given(`all` 필터) → action(`data-proj-filter="pm"` 버튼 클릭) → expect(해당 버튼에 `active`; 보이는 카드 전부 `.tag.pm` 포함; `scrollLeft` = 0).
+- **S-9.1** given(`#projectsGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 카드 8개(4×2); `#projectsPager .paged-info` = `1 / N`; `.paged-dots` 점 N개; 카드 위 `.project-period` 에 기간(예 `5개월 (전체 5년)`)).
+- **S-9.2** given(1페이지) → action(`#projectsPager .paged-next` 클릭 또는 점 클릭) → expect(`.paged-info` = `2 / N`; `.paged-prev` 활성).
+- **S-9.3** given(마지막 페이지) → action(`.paged-next` 상태 확인) → expect(`.paged-next` `disabled` = true).
+- **S-9.4** given(`all` 필터) → action(`data-proj-filter="pm"` 클릭) → expect(해당 버튼 `active`; 보이는 카드 전부 `.tag.pm` 포함; `.paged-info` = `1 / M`).
 - **S-9.5** given(`pm` 필터) → action(`data-proj-filter="gov"` 클릭) → expect(표시 카드 전부 `.tag.gov` 포함; 그 외 카드 `display:none`).
 - **S-9.6** given(method/domain 필터 버튼 존재) → action(예 `data-proj-filter="method:AI(RL)"` 클릭) → expect(표시 카드의 `data-proj-methods` 에 `AI(RL)` 포함).
 - **S-9.7** given(프로젝트 그리드) → action(임의 `.project-card` 클릭) → expect(`#projectModal` 에 `open` 클래스; `#modalBody .modal-title` 텍스트 비어있지 않음; `body` `overflow` = `hidden`).
@@ -75,17 +75,17 @@
 - **S-10.1** given(`#featuredGrid` 렌더) → action(초기 확인) → expect(`#featuredGrid .project-card` 개수 = 3(`FEATURED_PROJECT_INDICES`); 카드마다 `.project-result` 성과 한 줄).
 - **S-10.2** given(featured 카드) → action(임의 `#featuredGrid .project-card` 클릭) → expect(`#projectModal` `open`; `.modal-title` 이 해당 프로젝트 제목).
 
-## UC-11 Publications — 유형 필터 · 더 보기
+## UC-11 Publications — 유형 필터 · 가로 넘기기
 
-- **S-11.1** given(`#pubList` 렌더) → action(초기 확인) → expect(`.pub-item` 표시 ≤ 6(`PUB_PER_PAGE`); `.pub-num` 숨김; `.show-more` 텍스트 = `Show more (6 / N)`).
-- **S-11.2** given(`all` 필터) → action(`data-filter="Journal-International"` 클릭) → expect(해당 버튼 `active`; 표시 항목 전부 `data-type="Journal-International"`; 항목이 6개 이하이면 `.show-more` 숨김).
-- **S-11.3** given(`all` 필터) → action(`.show-more` 클릭) → expect(표시 항목 6개 증가; 링크 있는 항목의 `.pub-link` href = `pub.link`, `target="_blank"`).
+- **S-11.1** given(`#pubList` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 6개(2×3); `.pub-num` 숨김; `#pubPager .paged-info` = `1 / N`).
+- **S-11.2** given(`all` 필터) → action(`data-filter="Journal-International"` 클릭) → expect(해당 버튼 `active`; 보이는 항목 전부 `data-type="Journal-International"`; `.paged-info` = `1 / 1`).
+- **S-11.3** given(링크 있는 논문) → action(`.pub-link` 확인) → expect(href = `pub.link`, `target="_blank"`).
 
 ## UC-12 Awards / Activities — 가로 넘기기
 
-- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더) → action(초기 확인) → expect(둘 다 `carousel` 클래스; 모든 카드가 DOM 에 있음).
-- **S-12.2** given(맨 앞) → action(`#awardsPager .paged-next` 클릭) → expect(`scrollLeft` 증가).
-- **S-12.3** given(창 너비를 768px 아래로 줄임) → action(화살표 상태 확인) → expect(넘칠 내용이 있으면 `.paged-next` 활성).
+- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 4개; `.paged-info` = `1 / N`).
+- **S-12.2** given(맨 앞) → action(`#awardsPager .paged-next` 클릭) → expect(`.paged-info` = `2 / N`).
+- **S-12.3** given(창 너비 390px) → action(초기 확인) → expect(페이지당 카드 1개; 가로 스크롤바 없음; 페이지 수 증가).
 
 ## UC-13 Contact — 연락 링크
 
@@ -96,7 +96,7 @@
 
 - **S-14.1** given(프로필 이미지 로드 실패) → action(`#profileImg` error 발생) → expect(`#profileImg` `display:none`; `#photoFallback` `display:flex`, 텍스트 = `JH`).
 - **S-14.2** given(데이터 fetch 실패(`portfolio.json` 5xx/누락)) → action(초기 로드) → expect(`<main>` innerHTML 이 오류 메시지 `Failed to load portfolio data. Please refresh the page.` 로 대체; 콘솔에 `Portfolio load error` 기록).
-- **S-14.3** given(필터 결과 0건 가정) → action(해당 없는 필터 선택) → expect(카드 0개; `.paged-prev`·`.paged-next` 모두 `disabled`, 논문은 `.show-more` 숨김).
+- **S-14.3** given(필터 결과 0건 가정) → action(해당 없는 필터 선택) → expect(카드 0개; `.paged-info` = `0 / 0`; `.paged-prev`·`.paged-next` 모두 `disabled`).
 - **S-14.4** given(모든 사용자 문자열 렌더) → action(제목·저자 등에 `<`, `&`, `"` 포함 데이터) → expect(DOM 텍스트가 이스케이프되어 표시(`esc()` 통과) — 스크립트 실행/HTML 주입 없음, XSS 방지).
 
 ---

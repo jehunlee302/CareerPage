@@ -214,13 +214,12 @@ function buildPublications(raw) {
 }
 
 function buildSkills(raw) {
-  if (!raw) return {};
-  const result = {};
-  for (const [key, val] of Object.entries(raw)) {
-    const label = typeof val.label === 'object' ? (val.label[LANG] || val.label.en || key) : key;
-    result[label] = val.items || [];
-  }
-  return result;
+  if (!raw) return [];
+  return Object.entries(raw).map(([key, val]) => ({
+    label:  typeof val.label === 'object' ? (val.label[LANG] || val.label.en || key) : key,
+    items:  val.items || [],
+    column: val.column || 1,
+  }));
 }
 
 function buildHonors(raw) {

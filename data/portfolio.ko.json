@@ -108,7 +108,7 @@
       "performance": "",
       "region": "Seoul, South Korea",
       "responsibilities": [
-        "바이오 제조사 (고객사 비공개, 협력사 참여): 영업센터 업무 지원 AI Agent 서비스 개발",
+        "삼성바이오로직스 (협력사 참여): 영업센터 업무 지원 AI Agent 서비스 개발",
         "데이터 정제 및 RAG(검색 증강 생성) 시스템 구축"
       ]
     },
@@ -194,7 +194,7 @@
       "period": "2026.09 - Present",
       "duration": "3m",
       "title": "영업센터 업무 지원 AI Agent 서비스 개발",
-      "client": "바이오 제조사 (고객사 비공개)",
+      "client": "삼성바이오로직스",
       "partnerInstitution": "",
       "affiliatedInstitution": "PwC Consulting",
       "isPM": false,
@@ -1254,53 +1254,82 @@
       "venue": "the Winter Conference of Korea CDE"
     }
   ],
-  "skills": {
-    "프로그래밍 언어": [
-      "Python",
-      "C#",
-      "SQL",
-      "LaTeX",
-      "R"
-    ],
-    "AI·학습 방법론": [
-      "Reinforcement Learning (RL)",
-      "Imitation Learning (IL)",
-      "Behavior Cloning (BC)",
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Graph Neural Networks (GNN)"
-    ],
-    "프레임워크 & 라이브러리": [
-      "PyTorch",
-      "Matplotlib",
-      "Pandas",
-      "NumPy"
-    ],
-    "최적화 방법론·솔버": [
-      "Combinatorial Optimization",
-      "Meta-heuristics",
-      "Gurobi",
-      "CPLEX",
-      "OR-Tools"
-    ],
-    "시뮬레이션 & 도구": [
-      "VMS Mozart (APS)",
-      "Plant Sim",
-      "MS Office",
-      "Photoshop"
-    ],
-    "개발 환경 & 생산성": [
-      "Git / GitHub",
-      "Docker",
-      "Claude Code",
-      "n8n",
-      "Notion"
-    ],
-    "언어": [
-      "Korean (Native)",
-      "English (Business)"
-    ]
-  },
+  "skills": [
+    {
+      "label": "AI·학습 방법론",
+      "items": [
+        "Reinforcement Learning (RL)",
+        "Imitation Learning (IL)",
+        "Behavior Cloning (BC)",
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Graph Neural Networks (GNN)"
+      ],
+      "column": 1
+    },
+    {
+      "label": "개발 환경 & 생산성",
+      "items": [
+        "VS Code",
+        "Git / GitHub",
+        "Docker",
+        "Claude Code",
+        "n8n",
+        "Notion"
+      ],
+      "column": 2
+    },
+    {
+      "label": "프로그래밍 언어",
+      "items": [
+        "Python",
+        "C#",
+        "SQL",
+        "LaTeX",
+        "R"
+      ],
+      "column": 2
+    },
+    {
+      "label": "최적화 방법론·솔버",
+      "items": [
+        "Combinatorial Optimization",
+        "Meta-heuristics",
+        "Gurobi",
+        "CPLEX",
+        "OR-Tools"
+      ],
+      "column": 3
+    },
+    {
+      "label": "언어",
+      "items": [
+        "Korean (Native)",
+        "English (Business)"
+      ],
+      "column": 3
+    },
+    {
+      "label": "프레임워크 & 라이브러리",
+      "items": [
+        "PyTorch",
+        "Matplotlib",
+        "Pandas",
+        "NumPy"
+      ],
+      "column": 4
+    },
+    {
+      "label": "시뮬레이션 & 도구",
+      "items": [
+        "VMS Mozart (APS)",
+        "Plant Sim",
+        "MS Office",
+        "Photoshop"
+      ],
+      "column": 4
+    }
+  ],
   "honors": [
     {
       "date": "2025.11",
