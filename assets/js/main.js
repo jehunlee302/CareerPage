@@ -2,7 +2,7 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20261114a';
+const DATA_VER = '20261114b';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
@@ -476,7 +476,7 @@ function renderAwards(items) {
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
     </div>`;
   }).join('');
-  _awardPager = createCarousel(el, 'awardsPager', 4, 2);
+  _awardPager = createCarousel(el, 'awardsPager', 2, 3);
 }
 
 /* ─── Carousel: cards split into pages of cols × rows; swipe or arrows, page number above and below ─── */
@@ -587,7 +587,7 @@ function renderActivities(items) {
     const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
     return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
-  _activityPager = createCarousel(el, 'activitiesPager', 4, 2);
+  _activityPager = createCarousel(el, 'activitiesPager', 2, 3);
 }
 
 /* ─── Contact ─── */

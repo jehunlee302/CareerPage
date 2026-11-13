@@ -83,7 +83,7 @@
 
 ## UC-12 Awards / Activities — 가로 넘기기
 
-- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 8개(4×2); `.paged-info` = `1 / N`).
+- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 6개(2×3); `.paged-info` = `1 / N`).
 - **S-12.2** given(맨 앞) → action(`#awardsPager .paged-next` 클릭) → expect(`.paged-info` = `2 / N`).
 - **S-12.3** given(창 너비 390px) → action(초기 확인) → expect(페이지당 카드 1개; 가로 스크롤바 없음; 페이지 수 증가).
 
