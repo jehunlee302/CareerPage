@@ -17,7 +17,7 @@
   </script>
   <link rel="preload" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" /></noscript>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261113a" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20261113e" />
 </head>
 <body>
 
@@ -70,7 +70,6 @@
             <span id="heroLocationText">Yongin, Gyeonggi-do, South Korea</span>
           </p>
           <p class="hero-summary" id="heroSummary"></p>
-          <div class="hero-tags" id="heroTags"></div>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary" id="heroContactBtn">Contact Me</a>
             <a href="data/resume-en.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white" id="heroResumeBtnEn">
@@ -124,7 +123,7 @@
       <div class="container">
         <h2 class="philosophy-headline" id="philosophyHeadline"></h2>
         <p class="philosophy-lead" id="philosophyLead"></p>
-        <div class="philosophy-body" id="philosophyBody"></div>
+        <details class="fold philosophy-fold"><summary data-i18n="ui.readMore">Read more</summary><div class="philosophy-body" id="philosophyBody"></div></details>
         <div class="philosophy-pillars" id="philosophyPillars"></div>
       </div>
     </section>
@@ -180,7 +179,6 @@
       <div class="container">
         <div class="section-head">
           <div><h2 class="section-title" data-i18n="label.academicWorks">Academic Works</h2></div>
-          <div id="pubPager"></div>
         </div>
         <div class="pub-filter-bar">
           <button class="filter-btn active" data-filter="all" data-i18n="ui.all">All</button>
@@ -261,7 +259,7 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20261113a"></script>
+  <script src="assets/js/main.js?v=20261113e"></script>
   <script src="assets/js/analytics.js?v=20260815" defer></script>
 </body>
 </html>

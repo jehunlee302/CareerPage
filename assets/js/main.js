@@ -2,33 +2,29 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20261113a';
+const DATA_VER = '20261113e';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
-    { icon: '🚦', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
+    { icon: '📅', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
     { icon: '🧠', title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
     { icon: '📈', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
-    { icon: '🖥️', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
-    { icon: '🏛️', title: 'Meta-Architecture for Scheduling', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
+    { icon: '🏭', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
+    { icon: '🧩', title: 'Meta-Architecture for Scheduling', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
     { icon: '🤖', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
   ],
   ko: [
-    { icon: '🚦', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
+    { icon: '📅', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
     { icon: '🧠', title: '강화학습 & 모방학습', desc: '실시간 산업 의사결정을 위한 그래프 기반 RL/IL 알고리즘' },
     { icon: '📈', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
-    { icon: '🖥️', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
-    { icon: '🏛️', title: '스케줄링 메타 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
+    { icon: '🏭', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
+    { icon: '🧩', title: '스케줄링 메타 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
     { icon: '🤖', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
   ],
 };
 const FEATURED_PROJECT_INDICES = [25, 23, 21];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
 const RESUME_URLS = { en: 'data/resume-en.pdf', ko: 'data/resume-ko.pdf' };
-const HERO_TAGS = {
-  en: ['Autonomous Scheduling','Digital Twin','Reinforcement Learning','Semiconductor Fab','AI-Native Manufacturing','KAIST Ph.D.'],
-  ko: ['자율 스케줄링','디지털 트윈','강화학습','반도체 팹','AI 네이티브 제조','KAIST 박사'],
-};
 const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
 
 /* ─── i18n UI Strings ─── */
@@ -36,13 +32,13 @@ const I18N = {
   en: {
     nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
     label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
-    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', planning:'Planning', teamSize:'Team Size', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative military service (technical research personnel)', patStatus:'Status', granted:'Granted', patInventors:'Inventors' },
+    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', planning:'Planning', teamSize:'Team Size', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'Details', readMore:'Read more', showMore:'Show more', prev:'Previous', next:'Next', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative military service (technical research personnel)', patStatus:'Status', granted:'Granted', patInventors:'Inventors' },
     impact: { projects:'Major Projects', pm:'PM Roles', journals:'Journal Papers', intlConf:'Intl. Conf. Papers', patent:'Granted Patent' },
   },
   ko: {
     nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
     label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
-    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', planning:'기획', teamSize:'규모', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'전문연구요원 (병역 대체 복무)', patStatus:'상태', granted:'등록', patInventors:'발명자' },
+    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', planning:'기획', teamSize:'규모', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'상세', readMore:'더 읽기', showMore:'더 보기', prev:'이전', next:'다음', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'전문연구요원 (병역 대체 복무)', patStatus:'상태', granted:'등록', patInventors:'발명자' },
     impact: { projects:'주요 프로젝트', pm:'PM 수행', journals:'저널 논문', intlConf:'국제 학회 논문', patent:'등록 특허' },
   },
 };
@@ -59,10 +55,7 @@ const REGION_KO = {
 function locDegree(d) { return LANG === 'ko' ? (DEGREE_KO[d] || d) : d; }
 function locRegion(r) { return LANG === 'ko' ? (REGION_KO[r] || r) : r; }
 function locPeriod(p) { return (LANG === 'ko' && typeof p === 'string') ? p.replace(/\bPresent\b/i, '현재') : p; }
-const PROJ_PER_PAGE = 9;
 const PUB_PER_PAGE = 6;
-const AWARD_PER_PAGE = 6;
-const ACTIVITY_PER_PAGE = 6;
 
 let _allProjects = [];
 let _projPager, _pubPager, _awardPager, _activityPager;
@@ -91,6 +84,13 @@ function getProjectTags(p) {
 }
 /* team_size is a bucket like "5+"; client staff are not counted */
 function teamLabel(size) { return LANG === 'ko' ? `${size}명` : `${size} people`; }
+/* "5m (5y)" = took part 5 months of a 5-year project */
+function durLabel(d) {
+  const unit = s => s.replace(/(\d+)y/g, LANG === 'ko' ? '$1년 ' : '$1 yr ').replace(/(\d+)m/g, LANG === 'ko' ? '$1개월' : '$1 mo').replace(/\s+/g, ' ').trim();
+  const m = String(d || '').match(/^(.+?)\s*\((.+)\)$/);
+  if (!m) return unit(String(d || ''));
+  return LANG === 'ko' ? `참여 ${unit(m[1])} / 전체 ${unit(m[2])}` : `${unit(m[1])} of ${unit(m[2])} project`;
+}
 function isGov(client) { return /NRF|MOTIE|MSIP|Ministry/i.test(client || ''); }
 
 /* ─── Bootstrap ─── */
@@ -188,8 +188,6 @@ function render(data) {
 
 /* ─── Hero ─── */
 function renderHero(data) {
-  const el = document.getElementById('heroTags');
-  if (el) el.innerHTML = (HERO_TAGS[LANG]||HERO_TAGS.en).map(tag => `<span class="hero-tag">${esc(tag)}</span>`).join('');
   const heroBtn = document.getElementById('heroContactBtn');
   if (heroBtn) heroBtn.textContent = t('ui.contactMe');
   const locEl = document.getElementById('heroLocationText');
@@ -229,8 +227,8 @@ function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip'); if (!el) return;
   el.innerHTML = '';
   const c = data.counts || {};
-  [{v:c.projects,l:t('impact.projects')},{v:c.pm,l:t('impact.pm')},{v:c.journals,l:t('impact.journals')},{v:c.intl_conf,l:t('impact.intlConf')},{v:c.patents,l:t('impact.patent')}]
-    .filter(it => it.v != null).forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
+  [{v:c.projects,l:t('impact.projects'),h:'projects'},{v:c.pm,l:t('impact.pm'),h:'projects'},{v:c.journals,l:t('impact.journals'),h:'publications'},{v:c.intl_conf,l:t('impact.intlConf'),h:'publications'},{v:c.patents,l:t('impact.patent'),h:'patents'}]
+    .filter(it => it.v != null).forEach(it => el.innerHTML += `<a class="impact-item" href="#${it.h}"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></a>`);
 }
 
 /* ─── Philosophy ─── */
@@ -238,7 +236,8 @@ function renderPhilosophy(p) {
   if (!p) return;
   setText('philosophyHeadline', p.headline); setText('philosophyLead', p.lead);
   const b = document.getElementById('philosophyBody');
-  if (b) b.innerHTML = p.body.split('\n\n').map(para => `<p>${esc(para)}</p>`).join('');
+  if (b) b.innerHTML = (p.body || '').split('\n\n').filter(Boolean).map(para => `<p>${esc(para)}</p>`).join('');
+  b?.closest('details')?.toggleAttribute('hidden', !b.innerHTML);
   const pl = document.getElementById('philosophyPillars');
   if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-head"><div class="pillar-icon">${x.icon}</div><h3>${esc(x.title)}</h3></div><p>${esc(x.desc)}</p></div>`).join('');
 }
@@ -253,7 +252,7 @@ function renderResearchFocus() {
 /* ─── Education ─── */
 function renderEducation(items) {
   const el = document.getElementById('educationTimeline'); if (!el || !items) return;
-  el.innerHTML = items.map(item => {
+  el.innerHTML = items.filter(item => item.degree !== 'High School').map(item => {
     const thesisTitle = item.thesis?.title || THESIS_FALLBACK[item.degree] || '';
     const hasDetails = item.thesis?.topic || item.thesis?.methodology || item.thesis?.performance;
     const advisorHtml = item.advisor ? parseAdvisor(item.advisor) : (item.remarks ? parseAdvisor(item.remarks) : '');
@@ -261,30 +260,15 @@ function renderEducation(items) {
       <div class="tl-header"><span class="tl-title">${esc(locDegree(item.degree))} — ${esc(item.major)}</span><span class="tl-period">${esc(locPeriod(item.period))}</span></div>
       <div class="tl-org"><span class="org-name">${esc(item.institution)}</span></div>
       ${advisorHtml ? `<div class="tl-remarks">${advisorHtml}</div>` : ''}
-      ${thesisTitle ? `<div class="edu-thesis${hasDetails ? ' edu-thesis-expandable' : ''}"${hasDetails ? ' tabindex="0" role="button"' : ''}>
-        <span class="edu-thesis-label">${t('ui.thesis')}</span> ${esc(thesisTitle)}${hasDetails ? ` <span class="edu-expand-hint">${t('ui.details')}</span>` : ''}
-      </div>` : ''}
-      ${hasDetails ? `<div class="edu-thesis-details" style="display:none">
+      ${thesisTitle ? `<div class="edu-thesis"><span class="edu-thesis-label">${t('ui.thesis')}</span> ${esc(thesisTitle)}</div>` : ''}
+      ${hasDetails ? `<details class="fold"><summary>${t('ui.details')}</summary><div class="edu-thesis-details">
         ${item.thesis.topic ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.topic')}</span><p>${esc(item.thesis.topic)}</p></div>` : ''}
         ${item.thesis.priorLimitations ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.priorLimitations')}</span><p>${esc(item.thesis.priorLimitations)}</p></div>` : ''}
         ${item.thesis.methodology ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.methodology')}</span><div class="edu-methodology">${formatMethodology(item.thesis.methodology)}</div></div>` : ''}
         ${item.thesis.performance ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.performance')}</span><p>${esc(item.thesis.performance)}</p></div>` : ''}
-      </div>` : ''}
+      </div></details>` : ''}
     </div>`;
   }).join('');
-
-  /* Thesis expand/collapse */
-  el.querySelectorAll('.edu-thesis-expandable').forEach(btn => {
-    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
-    btn.addEventListener('click', () => {
-      const details = btn.nextElementSibling;
-      const hint = btn.querySelector('.edu-expand-hint');
-      if (!details) return;
-      const open = details.style.display !== 'none';
-      details.style.display = open ? 'none' : 'block';
-      if (hint) hint.textContent = open ? t('ui.details') : t('ui.collapse');
-    });
-  });
 }
 function formatMethodology(text) {
   if (!text) return '';
@@ -324,55 +308,67 @@ function renderExperience(items) {
         </div>
       </div>
       <div class="tl-roles">${esc(item.roles)}</div>
-      ${item.alt_service ? `<div class="tl-alt-service">${esc(t('ui.altServiceLabel'))}: ${esc(item.alt_service)}</div>` : ''}
-      ${hasDetails ? `<div class="exp-expand-btn" tabindex="0" role="button"><span class="exp-expand-hint">${t('ui.details')}</span></div>` : ''}
-      ${hasDetails ? `<div class="exp-details" style="display:none">
+      ${item.alt_service ? `<div class="tl-alt-service"><span class="alt-badge">${esc(t('ui.altServiceLabel'))} · ${esc(item.alt_service)}</span></div>` : ''}
+      ${hasDetails ? `<details class="fold"><summary>${t('ui.details')}</summary><div class="exp-details">
         ${hasResp ? `<ul class="tl-responsibilities">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
         ${hasHighlights ? `<div class="tl-highlights">${item.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : ''}
-      </div>` : ''}
+      </div></details>` : ''}
     </div>`;
   }).join('');
-
-  /* Expand/collapse */
-  el.querySelectorAll('.exp-expand-btn').forEach(btn => {
-    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
-    btn.addEventListener('click', () => {
-      const details = btn.nextElementSibling;
-      const hint = btn.querySelector('.exp-expand-hint');
-      if (!details) return;
-      const open = details.style.display !== 'none';
-      details.style.display = open ? 'none' : 'block';
-      if (hint) hint.textContent = open ? t('ui.details') : t('ui.collapse');
-    });
-  });
 }
 
 /* ─── Featured Projects ─── */
 function renderFeaturedProjects(projects) {
   const el = document.getElementById('featuredGrid'); if (!el || !projects) return;
   const featured = FEATURED_PROJECT_INDICES.map(i => projects.find(p => p.index === i)).filter(Boolean);
-  el.innerHTML = featured.map(p => `
-    <div class="featured-card reveal" data-proj-index="${p.index}">
-      <div class="fc-badge">${p.isPM ? '👑 PM · ' : ''}#${p.index}</div>
-      <div class="fc-client"><span class="fc-client-name">${esc(p.client)}</span>${p.affiliatedInstitution ? ` <span class="fc-sep">|</span> <span class="fc-affil">${esc(p.affiliatedInstitution)}</span>` : ''}</div>
-      <div class="fc-title">${esc(p.title)}</div>
-      ${p.remarks ? `<div class="fc-period">${esc(p.remarks)}</div>` : ''}
-      <div class="fc-tags"><span class="fc-tag">${esc(p.period)}</span>${p.duration ? `<span class="fc-tag">${esc(p.duration)}</span>` : ''}</div>
-    </div>`).join('');
+  el.innerHTML = featured.map(p => projectCard(p, p.details?.achievements)).join('');
 
   const sub = document.getElementById('projectSubtitle');
   if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건` : `${projects.length} projects · ${projects.filter(p => p.isPM).length} PM roles`;
 
   /* featured click → modal (delegated, safe to rebind) */
   el.onclick = e => {
-    const card = e.target.closest('.featured-card');
+    const card = e.target.closest('.project-card');
     if (!card) return;
     const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
     if (p) openProjectModal(p);
   };
 }
 
-/* ─── All Projects (paged + topic filter) ─── */
+/* ─── Project card (Featured + All Projects) ─── */
+function projectCard(p, result) {
+  const tags = getProjectTags(p);
+  const gov = isGov(p.client);
+  const hasPartners = p.partners && p.partners.length > 0;
+  const affilRow = (p.affiliatedInstitution || hasPartners) ? `
+      <div class="project-affil-row">
+        ${p.affiliatedInstitution ? `<span class="project-affil">${esc(p.affiliatedInstitution)}</span>` : ''}
+        ${hasPartners ? `<span class="project-partners">${LANG === 'ko' ? '협력: ' : 'with '}${p.partners.map(esc).join(' · ')}</span>` : ''}
+      </div>` : '';
+  const when = [locPeriod(p.period), durLabel(p.duration)].filter(Boolean).join(' · ');
+  return `
+    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${esc(tags.methods.join(','))}" data-proj-domains="${esc(tags.domains.join(','))}">
+      <div class="project-meta">
+        <span class="project-period">${esc(when)}</span>
+        <span class="project-popup-hint">${t('ui.detailsHint')}</span>
+      </div>
+      ${affilRow}
+      <div class="project-title${(p.title || '').length > 60 ? ' long' : ''}">${esc(p.title)}</div>
+      ${p.client?`<div class="project-client">${esc(p.client)}</div>`:''}
+      ${result?`<div class="project-result">${esc(result)}</div>`:''}
+      <div class="project-footer">
+        ${p.isPM?'<span class="tag pm">PM</span>':''}
+        ${p.isPL?'<span class="tag pm">PL</span>':''}
+        ${p.isPlanning?`<span class="tag plan">${t('ui.planning')}</span>`:''}
+        ${p.teamSize?`<span class="tag">${esc(teamLabel(p.teamSize))}</span>`:''}
+        ${gov?'<span class="tag gov">Gov\'t</span>':''}
+        ${tags.methods.map(m=>`<span class="tag method">${esc(m)}</span>`).join('')}
+        ${tags.domains.map(d=>`<span class="tag domain">${esc(d)}</span>`).join('')}
+      </div>
+    </div>`;
+}
+
+/* ─── All Projects (carousel + topic filter) ─── */
 function renderProjects(items) {
   _allProjects = items || [];
   const el = document.getElementById('projectsGrid'); if (!el || !items) return;
@@ -396,39 +392,9 @@ function renderProjects(items) {
     ...[...domainSet].sort().map(d => `<button class="filter-btn" data-proj-filter="domain:${d}">${d}</button>`)
   ].join('');
 
-  /* Cards */
-  el.innerHTML = sorted.map(p => {
-    const tags = getProjectTags(p);
-    const allTags = [...tags.methods, ...tags.domains];
-    const gov = isGov(p.client);
-    const hasPartners = p.partners && p.partners.length > 0;
-    const affilRow = (p.affiliatedInstitution || hasPartners) ? `
-      <div class="project-affil-row">
-        ${p.affiliatedInstitution ? `<span class="project-affil">${esc(p.affiliatedInstitution)}</span>` : ''}
-        ${hasPartners ? `<span class="project-partners">${LANG === 'ko' ? '협력: ' : 'with '}${p.partners.map(esc).join(' · ')}</span>` : ''}
-      </div>` : '';
-    return `
-    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${tags.methods.join(',')}" data-proj-domains="${tags.domains.join(',')}">
-      <div class="project-meta">
-        <div><span class="project-index">#${p.index}</span></div>
-        <span class="project-popup-hint">${t('ui.detailsHint')}</span>
-      </div>
-      ${affilRow}
-      <div class="project-title">${esc(p.title)}</div>
-      ${p.client?`<div class="project-client">${esc(p.client)}</div>`:''}
-      <div class="project-footer">
-        ${p.isPM?'<span class="tag pm">PM</span>':''}
-        ${p.isPL?'<span class="tag pm">PL</span>':''}
-        ${p.isPlanning?`<span class="tag plan">${t('ui.planning')}</span>`:''}
-        ${p.teamSize?`<span class="tag">${esc(teamLabel(p.teamSize))}</span>`:''}
-        ${gov?'<span class="tag gov">Gov\'t</span>':''}
-        ${tags.methods.map(m=>`<span class="tag method">${m}</span>`).join('')}
-        ${tags.domains.map(d=>`<span class="tag domain">${d}</span>`).join('')}
-      </div>
-    </div>`;
-  }).join('');
+  el.innerHTML = sorted.map(p => projectCard(p)).join('');
 
-  _projPager = createPager(el, PROJ_PER_PAGE, 'projectsPager');
+  _projPager = createCarousel(el, 'projectsPager');
   setupProjectModal();
 
   /* filter click */
@@ -478,7 +444,7 @@ function renderPublications(items) {
     </div>`;
   }).join('');
 
-  _pubPager = createPager(el, PUB_PER_PAGE, 'pubPager');
+  _pubPager = createShowMore(el, PUB_PER_PAGE);
 
   const pubFilterBar = document.querySelector('.pub-filter-bar');
   if (pubFilterBar) pubFilterBar.onclick = e => {
@@ -507,56 +473,51 @@ function renderAwards(items) {
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
     </div>`;
   }).join('');
-  _awardPager = createPager(el, AWARD_PER_PAGE, 'awardsPager');
+  _awardPager = createCarousel(el, 'awardsPager');
 }
 
-/* ─── Reusable Pager (top + bottom) ─── */
-function createPager(gridEl, perPage, navId) {
-  let page = 0;
+/* ─── Carousel: one swipeable row of cards, arrows scroll one view ─── */
+function createCarousel(gridEl, navId) {
+  gridEl.classList.add('carousel');
   const nav = document.getElementById(navId);
-  if (!nav) return { show(){}, reset(){} };
-
-  const pagerHtml = `<button class="paged-btn paged-prev" disabled>←</button><span class="paged-info"></span><button class="paged-btn paged-next">→</button>`;
+  if (!nav) return { reset(){} };
   nav.className = 'paged-nav-inline';
-  nav.innerHTML = pagerHtml;
+  nav.innerHTML = `<button class="paged-btn paged-prev" aria-label="${t('ui.prev')}">←</button><button class="paged-btn paged-next" aria-label="${t('ui.next')}">→</button>`;
+  const [prev, next] = nav.querySelectorAll('button');
+  const update = () => {
+    prev.disabled = gridEl.scrollLeft <= 1;
+    next.disabled = gridEl.scrollLeft + gridEl.clientWidth >= gridEl.scrollWidth - 1;
+  };
+  prev.onclick = () => gridEl.scrollBy({ left: -gridEl.clientWidth, behavior: 'smooth' });
+  next.onclick = () => gridEl.scrollBy({ left: gridEl.clientWidth, behavior: 'smooth' });
+  gridEl.onscroll = update;
+  new ResizeObserver(update).observe(gridEl);
+  update();
+  reReveal(gridEl);
+  return { reset() { gridEl.scrollLeft = 0; update(); reReveal(gridEl); } };
+}
 
-  /* Bottom pager */
-  let navBot = document.getElementById(navId + 'Bot');
-  if (!navBot) {
-    navBot = document.createElement('div');
-    navBot.id = navId + 'Bot';
-    gridEl.parentNode.insertBefore(navBot, gridEl.nextSibling);
-  }
-  navBot.className = 'paged-nav-inline paged-nav-bottom';
-  navBot.innerHTML = pagerHtml;
-
-  const navs = [nav, navBot];
-
-  navs.forEach(n => {
-    n.querySelector('.paged-prev').addEventListener('click', () => { page--; show(); });
-    n.querySelector('.paged-next').addEventListener('click', () => { page++; show(); });
-  });
-
+/* ─── Show more: list grows by perPage per click ─── */
+function createShowMore(listEl, perPage) {
+  let shown = perPage;
+  let btn = listEl.nextElementSibling?.classList.contains('show-more') ? listEl.nextElementSibling : null;
+  if (!btn) { btn = document.createElement('button'); btn.className = 'show-more'; listEl.after(btn); }
+  btn.onclick = () => { shown += perPage; show(); };
   function show() {
-    const all = [...gridEl.querySelectorAll('[data-paged]')];
-    const vis = all.filter(el => !el.dataset.filtered);
-    const total = Math.ceil(vis.length / perPage) || 1;
-    page = Math.max(0, Math.min(page, total - 1));
-    all.forEach(el => el.style.display = 'none');
-    vis.slice(page * perPage, (page + 1) * perPage).forEach(el => el.style.display = '');
-    navs.forEach(n => {
-      n.querySelector('.paged-info').textContent = `${page+1} / ${total}`;
-      n.querySelector('.paged-prev').disabled = page === 0;
-      n.querySelector('.paged-next').disabled = page >= total - 1;
-    });
-    reReveal(gridEl);
+    const vis = [...listEl.querySelectorAll('[data-paged]')].filter(el => !el.dataset.filtered);
+    listEl.querySelectorAll('[data-paged]').forEach(el => el.style.display = 'none');
+    vis.slice(0, shown).forEach(el => el.style.display = '');
+    btn.hidden = shown >= vis.length;
+    btn.textContent = `${t('ui.showMore')} (${Math.min(shown, vis.length)} / ${vis.length})`;
+    reReveal(listEl);
   }
   show();
-  return { show, reset() { page = 0; show(); } };
+  return { reset() { shown = perPage; show(); } };
 }
 
 function reReveal(container) {
-  container.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+  container.querySelectorAll('.reveal:not(.visible):not([data-observed])').forEach(el => {
+    el.dataset.observed = '1';
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.05 });
     io.observe(el);
   });
@@ -602,7 +563,7 @@ function renderActivities(items) {
     const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
     return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
-  _activityPager = createPager(el, ACTIVITY_PER_PAGE, 'activitiesPager');
+  _activityPager = createCarousel(el, 'activitiesPager');
 }
 
 /* ─── Contact ─── */
@@ -661,7 +622,7 @@ function openProjectModal(p) {
 
   /* Basic fields */
   const fields = [
-    [t('ui.period'), `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
+    [t('ui.period'), `${locPeriod(p.period)}${p.duration ? ' · ' + durLabel(p.duration) : ''}`],
     d.role && [t('ui.role'), d.role],
     p.teamSize && [t('ui.teamSize'), teamLabel(p.teamSize)],
     p.client && [t('ui.client'), p.client],

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12",
+  "lastUpdated": "2026-11-13",
   "counts": {
     "projects": 27,
     "pm": 13,
@@ -37,7 +37,7 @@
         "desc": "이해관계 파악, 목표와 우선순위 설정, 사람의 의지와 필요성에서 출발하는 문제 정의."
       },
       {
-        "icon": "👥",
+        "icon": "🤖",
         "title": "AI 에이전트 고용",
         "desc": "에이전트가 잡무·검토를 실행. 사람은 판단·전략·의미에 집중합니다."
       },
@@ -1262,15 +1262,13 @@
       "LaTeX",
       "R"
     ],
-    "방법론": [
+    "AI·학습 방법론": [
       "Reinforcement Learning (RL)",
       "Imitation Learning (IL)",
       "Behavior Cloning (BC)",
       "Supervised Learning",
       "Unsupervised Learning",
-      "Meta-heuristics",
-      "Graph Neural Networks (GNN)",
-      "Combinatorial Optimization"
+      "Graph Neural Networks (GNN)"
     ],
     "프레임워크 & 라이브러리": [
       "PyTorch",
@@ -1278,7 +1276,9 @@
       "Pandas",
       "NumPy"
     ],
-    "최적화 솔버": [
+    "최적화 방법론·솔버": [
+      "Combinatorial Optimization",
+      "Meta-heuristics",
       "Gurobi",
       "CPLEX",
       "OR-Tools"

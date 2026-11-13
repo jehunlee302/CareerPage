@@ -86,7 +86,9 @@
 | `setupProjectModal()` / `openProjectModal(p)` / `closeModal()` | 프로젝트 상세 모달 |
 | `setupNav()` / `highlightNav()` | 네비바 스크롤·활성 링크 |
 | `setupScrollReveal()` / `reReveal(container)` | IntersectionObserver 스크롤 리빌 |
-| `createPager(gridEl, perPage, navId)` | 범용 페이저 (상하 네비 포함) |
+| `createCarousel(gridEl, navId)` | 카드 한 줄 가로 넘기기 (화살표는 한 화면씩 이동) |
+| `createShowMore(listEl, perPage)` | 목록 "더 보기" (논문) |
+| `projectCard(p, result)` | 주요·전체 프로젝트 공통 카드 |
 | `setupPhotoFallback()` | 프로필 이미지 에러 폴백 |
 
 ---

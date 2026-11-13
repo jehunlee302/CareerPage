@@ -25,7 +25,7 @@ pillars:
     desc:
       en: Mapping stakeholders, setting goals and priorities, defining problems shaped by human will and necessity.
       ko: 이해관계 파악, 목표와 우선순위 설정, 사람의 의지와 필요성에서 출발하는 문제 정의.
-  - icon: 👥
+  - icon: 🤖
     title:
       en: Hiring AI Agents
       ko: AI 에이전트 고용

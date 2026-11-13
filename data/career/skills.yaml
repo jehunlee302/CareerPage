@@ -11,17 +11,15 @@ programming:
 
 methodologies:
   label:
-    en: "Methodologies"
-    ko: "방법론"
+    en: "AI Methods"
+    ko: "AI·학습 방법론"
   items:
     - "Reinforcement Learning (RL)"
     - "Imitation Learning (IL)"
     - "Behavior Cloning (BC)"
     - "Supervised Learning"
     - "Unsupervised Learning"
-    - "Meta-heuristics"
     - "Graph Neural Networks (GNN)"
-    - "Combinatorial Optimization"
 
 frameworks_and_libraries:
   label:
@@ -35,9 +33,11 @@ frameworks_and_libraries:
 
 optimization_solvers:
   label:
-    en: "Optimization Solvers"
-    ko: "최적화 솔버"
+    en: "Optimization"
+    ko: "최적화 방법론·솔버"
   items:
+    - "Combinatorial Optimization"
+    - "Meta-heuristics"
     - Gurobi
     - CPLEX
     - OR-Tools

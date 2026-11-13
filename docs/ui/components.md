@@ -21,11 +21,9 @@ Hover: `border-color: var(--blue)` + `translateY(-2px to -4px)` + subtle shadow.
 
 ### Featured Card (dark surface)
 
-- Class: `.featured-card`
-- Background: `rgba(255,255,255,.04)` on navy
-- Text: white
+- Same `.project-card` as All Projects (`projectCard()`), plus a `.project-result` line (max 3 lines)
+- `#featured` always uses the dark theme variables
 - Click opens project modal
-- Badge: PM indicator + project index
 - Grid: 3-col (`.featured-grid`)
 
 ### Project Card

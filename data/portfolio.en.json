@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12",
+  "lastUpdated": "2026-11-13",
   "counts": {
     "projects": 27,
     "pm": 13,
@@ -37,7 +37,7 @@
         "desc": "Mapping stakeholders, setting goals and priorities, defining problems shaped by human will and necessity."
       },
       {
-        "icon": "👥",
+        "icon": "🤖",
         "title": "Hiring AI Agents",
         "desc": "Agents execute chores and reviews. Humans focus on judgment, strategy, meaning."
       },
@@ -1262,15 +1262,13 @@
       "LaTeX",
       "R"
     ],
-    "Methodologies": [
+    "AI Methods": [
       "Reinforcement Learning (RL)",
       "Imitation Learning (IL)",
       "Behavior Cloning (BC)",
       "Supervised Learning",
       "Unsupervised Learning",
-      "Meta-heuristics",
-      "Graph Neural Networks (GNN)",
-      "Combinatorial Optimization"
+      "Graph Neural Networks (GNN)"
     ],
     "Frameworks & Libraries": [
       "PyTorch",
@@ -1278,7 +1276,9 @@
       "Pandas",
       "NumPy"
     ],
-    "Optimization Solvers": [
+    "Optimization": [
+      "Combinatorial Optimization",
+      "Meta-heuristics",
       "Gurobi",
       "CPLEX",
       "OR-Tools"
