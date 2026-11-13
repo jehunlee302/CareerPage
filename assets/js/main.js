@@ -2,7 +2,7 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20261113i';
+const DATA_VER = '20261114a';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
@@ -12,8 +12,8 @@ const RESEARCH_INTERESTS = {
     { icon: '🏭', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
     { icon: '🧩', title: 'Meta-Architecture for Scheduling', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
     { icon: '🤖', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
-    { icon: '🕸️', title: 'AI Agent Systems', desc: 'Efficient architectures for multi-agent AI systems' },
-    { icon: '🚀', title: 'AI Agent Services', desc: 'AI agents built and deployed as real services' },
+    { icon: '🕸️', title: 'AI Agent Systems', desc: 'Efficient agent architectures built on AI-ready data, LLM wikis and ontologies' },
+    { icon: '🚀', title: 'AI Agent Services', desc: 'Production AI agents: backend, operational stability and deployment' },
   ],
   ko: [
     { icon: '📅', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
@@ -22,8 +22,8 @@ const RESEARCH_INTERESTS = {
     { icon: '🏭', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
     { icon: '🧩', title: '스케줄링 메타 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
     { icon: '🤖', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
-    { icon: '🕸️', title: 'AI 에이전트 시스템', desc: '효율적인 AI 에이전트 구조 설계' },
-    { icon: '🚀', title: 'AI 에이전트 서비스', desc: '실제 서비스로 배포하는 AI 에이전트' },
+    { icon: '🕸️', title: 'AI 에이전트 시스템', desc: 'AI-ready 데이터, LLM 위키, 온톨로지를 바탕으로 한 효율적인 에이전트 구조' },
+    { icon: '🚀', title: 'AI 에이전트 서비스', desc: '백엔드, 운영 안정성, 배포까지 갖춘 실서비스 AI 에이전트' },
   ],
 };
 const FEATURED_PROJECT_INDICES = [25, 23, 21];
@@ -476,20 +476,20 @@ function renderAwards(items) {
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
     </div>`;
   }).join('');
-  _awardPager = createCarousel(el, 'awardsPager', 4, 1);
+  _awardPager = createCarousel(el, 'awardsPager', 4, 2);
 }
 
-/* ─── Carousel: cards split into pages of cols × rows; swipe or arrows, page number and dots ─── */
+/* ─── Carousel: cards split into pages of cols × rows; swipe or arrows, page number above and below ─── */
 function createCarousel(gridEl, navId, cols, rows) {
   gridEl.classList.add('carousel');
-  const nav = document.getElementById(navId);
-  if (!nav) return { reset(){} };
-  nav.className = 'paged-nav-inline';
-  nav.innerHTML = `<button class="paged-btn paged-prev" aria-label="${t('ui.prev')}">←</button><span class="paged-info"></span><button class="paged-btn paged-next" aria-label="${t('ui.next')}">→</button>`;
-  const [prev, next] = nav.querySelectorAll('button');
-  const info = nav.querySelector('.paged-info');
-  let dots = gridEl.nextElementSibling?.classList.contains('paged-dots') ? gridEl.nextElementSibling : null;
-  if (!dots) { dots = document.createElement('div'); dots.className = 'paged-dots'; gridEl.after(dots); }
+  const top = document.getElementById(navId);
+  if (!top) return { reset(){} };
+  let bottom = gridEl.nextElementSibling?.classList.contains('paged-nav-bottom') ? gridEl.nextElementSibling : null;
+  if (!bottom) { bottom = document.createElement('div'); gridEl.after(bottom); }
+  top.className = 'paged-nav-inline';
+  bottom.className = 'paged-nav-inline paged-nav-bottom';
+  const navs = [top, bottom];
+  navs.forEach(n => n.innerHTML = `<button class="paged-btn paged-prev" aria-label="${t('ui.prev')}">←</button><span class="paged-info"></span><button class="paged-btn paged-next" aria-label="${t('ui.next')}">→</button>`);
   const cards = [...gridEl.querySelectorAll('[data-paged]')];
   const hidden = document.createElement('div');
   hidden.className = 'carousel-hidden';
@@ -501,10 +501,11 @@ function createCarousel(gridEl, navId, cols, rows) {
 
   function update() {
     const n = pages().length, i = Math.min(current(), Math.max(n - 1, 0));
-    info.textContent = n ? `${i + 1} / ${n}` : '0 / 0';
-    prev.disabled = i <= 0;
-    next.disabled = i >= n - 1;
-    dots.querySelectorAll('button').forEach((d, k) => d.classList.toggle('on', k === i));
+    navs.forEach(nav => {
+      nav.querySelector('.paged-info').textContent = n ? `${i + 1} / ${n}` : '0 / 0';
+      nav.querySelector('.paged-prev').disabled = i <= 0;
+      nav.querySelector('.paged-next').disabled = i >= n - 1;
+    });
   }
   function layout() {
     shownCols = colsNow();
@@ -520,14 +521,14 @@ function createCarousel(gridEl, navId, cols, rows) {
       pageEls.push(pg);
     }
     gridEl.replaceChildren(...pageEls, hidden);
-    dots.innerHTML = pageEls.length > 1 ? pageEls.map((_, k) => `<button aria-label="${k + 1}"></button>`).join('') : '';
-    dots.querySelectorAll('button').forEach((d, k) => d.onclick = () => go(k));
     gridEl.scrollLeft = 0;
     update();
     reReveal(gridEl);
   }
-  prev.onclick = () => go(current() - 1);
-  next.onclick = () => go(current() + 1);
+  navs.forEach(nav => {
+    nav.querySelector('.paged-prev').onclick = () => go(current() - 1);
+    nav.querySelector('.paged-next').onclick = () => go(current() + 1);
+  });
   gridEl.onscroll = update;
   removeEventListener('resize', gridEl._onResize);
   gridEl._onResize = () => { if (colsNow() !== shownCols) layout(); };
@@ -586,7 +587,7 @@ function renderActivities(items) {
     const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
     return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
-  _activityPager = createCarousel(el, 'activitiesPager', 4, 1);
+  _activityPager = createCarousel(el, 'activitiesPager', 4, 2);
 }
 
 /* ─── Contact ─── */

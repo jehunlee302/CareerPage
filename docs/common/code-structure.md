@@ -86,7 +86,7 @@
 | `setupProjectModal()` / `openProjectModal(p)` / `closeModal()` | 프로젝트 상세 모달 |
 | `setupNav()` / `highlightNav()` | 네비바 스크롤·활성 링크 |
 | `setupScrollReveal()` / `reReveal(container)` | IntersectionObserver 스크롤 리빌 |
-| `createCarousel(gridEl, navId, cols, rows)` | 카드를 cols×rows 페이지로 나눠 가로 넘기기 · 페이지 번호와 점 표시 (화면 폭에 따라 열 수 1·2·cols) |
+| `createCarousel(gridEl, navId, cols, rows)` | 카드를 cols×rows 페이지로 나눠 가로 넘기기 · 위(navId)와 목록 아래에 같은 넘기기(← n / N →) (화면 폭에 따라 열 수 1·2·cols) |
 | `projectCard(p, result)` | 주요·전체 프로젝트 공통 카드 |
 | `setupPhotoFallback()` | 프로필 이미지 에러 폴백 |
 

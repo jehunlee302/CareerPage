@@ -2370,13 +2370,15 @@ footer {
    }
 
    .hero-actions {
-      flex-direction: column;
-      align-items: center
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem
    }
 
    .hero-actions .btn {
-      width: 100%;
-      justify-content: center
+      justify-content: center;
+      padding: .5rem .6rem;
+      font-size: .8rem
    }
 
    .pub-item {
@@ -2463,27 +2465,9 @@ footer {
    display: none
 }
 
-.paged-dots {
-   display: flex;
-   justify-content: center;
-   gap: .45rem;
+.paged-nav-bottom {
+   justify-content: flex-end;
    margin-top: .6rem
-}
-
-.paged-dots button {
-   width: 8px;
-   height: 8px;
-   padding: 0;
-   border: 0;
-   border-radius: 50%;
-   background: var(--border);
-   cursor: pointer
-}
-
-.paged-dots button.on {
-   width: 20px;
-   border-radius: 4px;
-   background: var(--blue)
 }
 
 .paged-nav-inline .paged-info {

@@ -59,8 +59,8 @@
 
 ## UC-9 All Projects — 필터 · 가로 넘기기 · 상세 모달
 
-- **S-9.1** given(`#projectsGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 카드 8개(4×2); `#projectsPager .paged-info` = `1 / N`; `.paged-dots` 점 N개; 카드 위 `.project-period` 에 기간(예 `5개월 (전체 5년)`)).
-- **S-9.2** given(1페이지) → action(`#projectsPager .paged-next` 클릭 또는 점 클릭) → expect(`.paged-info` = `2 / N`; `.paged-prev` 활성).
+- **S-9.1** given(`#projectsGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 카드 8개(4×2); `#projectsPager .paged-info` = `1 / N`; 목록 아래 `.paged-nav-bottom .paged-info` 도 `1 / N`; 카드 위 `.project-period` 에 기간(예 `5개월 (전체 5년)`)).
+- **S-9.2** given(1페이지) → action(`#projectsPager .paged-next` 또는 아래 `.paged-nav-bottom .paged-next` 클릭) → expect(위·아래 `.paged-info` 모두 `2 / N`; `.paged-prev` 활성).
 - **S-9.3** given(마지막 페이지) → action(`.paged-next` 상태 확인) → expect(`.paged-next` `disabled` = true).
 - **S-9.4** given(`all` 필터) → action(`data-proj-filter="pm"` 클릭) → expect(해당 버튼 `active`; 보이는 카드 전부 `.tag.pm` 포함; `.paged-info` = `1 / M`).
 - **S-9.5** given(`pm` 필터) → action(`data-proj-filter="gov"` 클릭) → expect(표시 카드 전부 `.tag.gov` 포함; 그 외 카드 `display:none`).
@@ -83,7 +83,7 @@
 
 ## UC-12 Awards / Activities — 가로 넘기기
 
-- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 4개; `.paged-info` = `1 / N`).
+- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 8개(4×2); `.paged-info` = `1 / N`).
 - **S-12.2** given(맨 앞) → action(`#awardsPager .paged-next` 클릭) → expect(`.paged-info` = `2 / N`).
 - **S-12.3** given(창 너비 390px) → action(초기 확인) → expect(페이지당 카드 1개; 가로 스크롤바 없음; 페이지 수 증가).
 
