@@ -1056,9 +1056,8 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .tl-header-right {
    display: flex;
-   flex-direction: column;
-   align-items: flex-end;
-   gap: .15rem;
+   align-items: center;
+   gap: .6rem;
    flex-shrink: 0
 }
 
@@ -1069,7 +1068,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 }
 
 .tl-period {
-   font-size: .68rem;
+   font-size: .72rem;
    font-weight: 700;
    color: var(--blue);
    background: rgba(0, 122, 255, .22);
@@ -1236,7 +1235,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 }
 
 .project-title {
-   font-size: .95rem;
+   font-size: .9rem;
    font-weight: 700;
    color: var(--text);
    line-height: 1.3;
@@ -1273,14 +1272,18 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 
 .project-footer {
    display: flex;
-   flex-wrap: wrap;
    gap: .3rem;
    margin-top: auto;
    padding-top: .5rem;
-   border-top: 1px solid var(--border)
+   border-top: 1px solid var(--border);
+   overflow: hidden;
+   -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
+   mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent)
 }
 
 .tag {
+   flex-shrink: 0;
+   white-space: nowrap;
    font-size: .7rem;
    font-weight: 600;
    padding: .18rem .55rem;
@@ -1574,7 +1577,7 @@ html[data-theme="dark"] .tag.domain,
 .award-date,
 .award-date-range {
    display: inline-block;
-   font-size: .68rem;
+   font-size: .72rem;
    font-weight: 700;
    color: var(--blue);
    background: rgba(0, 122, 255, .22);
@@ -1621,7 +1624,7 @@ html[data-theme="dark"] .tag.domain,
    position: absolute;
    top: 1.15rem;
    right: 1.1rem;
-   font-size: .66rem;
+   font-size: .72rem;
    font-weight: 600;
    color: var(--text-muted);
    opacity: .85;
@@ -1769,7 +1772,7 @@ html[data-theme="dark"] .tag.domain,
 
 .activity-period {
    display: inline-block;
-   font-size: .68rem;
+   font-size: .72rem;
    font-weight: 700;
    color: var(--blue);
    background: rgba(0, 122, 255, .22);
@@ -2364,21 +2367,6 @@ footer {
    font-size: .72rem;
    font-weight: 600;
    color: var(--text-muted)
-}
-
-.project-title.long {
-   font-size: .85rem
-}
-
-.project-result {
-   font-size: .8rem;
-   line-height: 1.5;
-   color: var(--text-mid);
-   margin-bottom: .4rem;
-   display: -webkit-box;
-   -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
-   overflow: hidden
 }
 
 a.impact-item {

@@ -21,7 +21,7 @@ Hover: `border-color: var(--blue)` + `translateY(-2px to -4px)` + subtle shadow.
 
 ### Featured Card (dark surface)
 
-- Same `.project-card` as All Projects (`projectCard()`), plus a `.project-result` line (max 3 lines)
+- Same `.project-card` as All Projects (`projectCard()`), no result line (achievements live in the popup)
 - `#featured` always uses the dark theme variables
 - Click opens project modal
 - Grid: 3-col (`.featured-grid`)
@@ -30,8 +30,8 @@ Hover: `border-color: var(--blue)` + `translateY(-2px to -4px)` + subtle shadow.
 
 - Class: `.project-card`
 - Background: `var(--bg)` (light)
-- Grid: 3-col (`.projects-grid`), 9 per page
-- Footer: PM/Gov't/Topic tags + client
+- Grid: 3-col (`.projects-grid`), 3×2 = 6 per page
+- Footer: one line of tags (PM/PL/Gov't/methods/domains first), overflow clipped with a right-edge fade
 - Click opens project modal
 - Meta: `#index` + period + "Details ↗" hint
 

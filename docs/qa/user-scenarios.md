@@ -59,7 +59,7 @@
 
 ## UC-9 All Projects — 필터 · 가로 넘기기 · 상세 모달
 
-- **S-9.1** given(`#projectsGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 카드 8개(4×2); `#projectsPager .paged-info` = `1 / N`; 목록 아래 `.paged-nav-bottom .paged-info` 도 `1 / N`; 카드 위 `.project-period` 에 기간(예 `5개월 (전체 5년)`)).
+- **S-9.1** given(`#projectsGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 카드 6개(3×2); `#projectsPager .paged-info` = `1 / N`; 목록 아래 `.paged-nav-bottom .paged-info` 도 `1 / N`; 카드 위 `.project-period` 에 기간(예 `5개월 (전체 5년)`)).
 - **S-9.2** given(1페이지) → action(`#projectsPager .paged-next` 또는 아래 `.paged-nav-bottom .paged-next` 클릭) → expect(위·아래 `.paged-info` 모두 `2 / N`; `.paged-prev` 활성).
 - **S-9.3** given(마지막 페이지) → action(`.paged-next` 상태 확인) → expect(`.paged-next` `disabled` = true).
 - **S-9.4** given(`all` 필터) → action(`data-proj-filter="pm"` 클릭) → expect(해당 버튼 `active`; 보이는 카드 전부 `.tag.pm` 포함; `.paged-info` = `1 / M`).
@@ -72,7 +72,7 @@
 
 ## UC-10 Featured Projects — 하이라이트 카드 → 모달
 
-- **S-10.1** given(`#featuredGrid` 렌더) → action(초기 확인) → expect(`#featuredGrid .project-card` 개수 = 3(`FEATURED_PROJECT_INDICES`); 카드마다 `.project-result` 성과 한 줄).
+- **S-10.1** given(`#featuredGrid` 렌더) → action(초기 확인) → expect(`#featuredGrid .project-card` 개수 = 3(`FEATURED_PROJECT_INDICES`); 카드에 성과 문장 없음(`.project-result` 0개); 카드를 누르면 팝업에 성과 표시).
 - **S-10.2** given(featured 카드) → action(임의 `#featuredGrid .project-card` 클릭) → expect(`#projectModal` `open`; `.modal-title` 이 해당 프로젝트 제목).
 
 ## UC-11 Publications — 유형 필터 · 가로 넘기기

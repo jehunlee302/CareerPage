@@ -2,7 +2,7 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20261114c';
+const DATA_VER = '20261115a';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
@@ -302,29 +302,42 @@ function parseAdvisor(r) {
 /* ─── Experience ─── */
 function renderExperience(items) {
   const el = document.getElementById('experienceTimeline'); if (!el || !items) return;
+  /* Consecutive stints with the same organization and position share one card (newest first) */
+  const groups = [];
+  items.forEach(it => {
+    const g = groups.at(-1);
+    if (g && g[0].organization === it.organization && g[0].position === it.position) g.push(it);
+    else groups.push([it]);
+  });
   const bodies = [];
-  el.innerHTML = items.map(item => {
-    const hasResp = item.responsibilities && item.responsibilities.length > 0;
-    const hasHighlights = item.highlights && item.highlights.length > 0;
-    const di = hasResp || hasHighlights ? bodies.push(`<div class="modal-title" id="modalTitle">${esc(item.position)}</div>
-      <div class="modal-field"><span class="modal-field-label">${esc(item.organization)}${item.division ? ` · ${esc(item.division)}` : ''}</span><span class="modal-field-value">${esc(locPeriod(item.period))}</span></div>
-      ${hasResp ? `<ul class="modal-task-list">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
-      ${hasHighlights ? `<div class="tl-highlights">${item.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : ''}`) - 1 : -1;
+  el.innerHTML = groups.map(parts => {
+    const item = parts[0], merged = parts.length > 1;
+    const period = merged ? `${parts.at(-1).period.split(' - ')[0]} - ${item.period.split(' - ')[1]}` : item.period;
+    const alt = parts.map(p => p.alt_service).filter(Boolean).reverse().join(', ');
+    const partBody = p => {
+      const tasks = p.responsibilities?.length ? `<ul class="modal-task-list">${p.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
+      const hl = p.highlights?.length ? `<div class="tl-highlights">${p.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : '';
+      if (!merged) return tasks + hl;
+      return `<div class="modal-section"><div class="modal-section-label">${esc(p.division)} · ${esc(locPeriod(p.period))}</div><p class="modal-section-text">${esc(p.roles)}</p>${tasks}${hl}</div>`;
+    };
+    const content = parts.map(partBody).join('');
+    const di = content ? bodies.push(`<div class="modal-title" id="modalTitle">${esc(item.position)}</div>
+      <div class="modal-field"><span class="modal-field-label">${esc(item.organization)}${!merged && item.division ? ` · ${esc(item.division)}` : ''}</span><span class="modal-field-value">${esc(locPeriod(period))}</span></div>
+      ${content}`) - 1 : -1;
     return `
     <div class="timeline-item reveal"${di >= 0 ? ` data-detail="${di}"` : ''}>
       <div class="tl-header">
         <div class="tl-header-left">
           <span class="tl-title">${esc(item.position)}</span>
-          <span class="tl-org"><span class="org-name">${esc(item.organization)}</span>${item.division ? ` <span class="tl-sep">|</span> <span class="tl-division">${esc(item.division)}</span>` : ''}</span>
+          <span class="tl-org"><span class="org-name">${esc(item.organization)}</span>${!merged && item.division ? ` <span class="tl-sep">|</span> <span class="tl-division">${esc(item.division)}</span>` : ''}${item.region ? ` <span class="tl-region-sm">· ${esc(locRegion(item.region))}</span>` : ''}</span>
         </div>
         <div class="tl-header-right">
-          <span class="tl-period">${esc(locPeriod(item.period))}</span>
-          <span class="tl-region-sm">${esc(locRegion(item.region))}</span>
+          <span class="tl-period">${esc(locPeriod(period))}</span>
           ${di >= 0 ? detailHint(item.position) : ''}
         </div>
       </div>
       <div class="tl-roles">${esc(item.roles)}</div>
-      ${item.alt_service ? `<div class="tl-alt-service"><span class="alt-badge">${esc(t('ui.altServiceLabel'))} · ${esc(item.alt_service)}</span></div>` : ''}
+      ${alt ? `<div class="tl-alt-service"><span class="alt-badge">${esc(t('ui.altServiceLabel'))} · ${esc(alt)}</span></div>` : ''}
     </div>`;
   }).join('');
   bindDetails(el, bodies);
@@ -334,7 +347,7 @@ function renderExperience(items) {
 function renderFeaturedProjects(projects) {
   const el = document.getElementById('featuredGrid'); if (!el || !projects) return;
   const featured = FEATURED_PROJECT_INDICES.map(i => projects.find(p => p.index === i)).filter(Boolean);
-  el.innerHTML = featured.map(p => projectCard(p, p.details?.achievements)).join('');
+  el.innerHTML = featured.map(p => projectCard(p)).join('');
 
   const sub = document.getElementById('projectSubtitle');
   if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건` : `${projects.length} projects · ${projects.filter(p => p.isPM).length} PM roles`;
@@ -349,7 +362,7 @@ function renderFeaturedProjects(projects) {
 }
 
 /* ─── Project card (Featured + All Projects) ─── */
-function projectCard(p, result) {
+function projectCard(p) {
   const tags = getProjectTags(p);
   const gov = isGov(p.client);
   const orgs = [
@@ -359,24 +372,25 @@ function projectCard(p, result) {
   ].filter(([, v]) => v);
   const orgList = orgs.length ? `<dl class="project-org">${orgs.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>` : '';
   const when = [locPeriod(p.period), durLabel(p.duration)].filter(Boolean).join(' · ');
+  /* Filterable tags first: the footer is one line and clips the end */
+  const footer = [
+    p.isPM && '<span class="tag pm">PM</span>',
+    p.isPL && '<span class="tag pm">PL</span>',
+    gov && '<span class="tag gov">Gov\'t</span>',
+    ...tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`),
+    ...tags.domains.map(d => `<span class="tag domain">${esc(d)}</span>`),
+    p.isPlanning && `<span class="tag plan">${t('ui.planning')}</span>`,
+    p.teamSize && `<span class="tag">${esc(teamLabel(p.teamSize))}</span>`,
+  ].filter(Boolean).join('');
   return `
     <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${esc(tags.methods.join(','))}" data-proj-domains="${esc(tags.domains.join(','))}">
       <div class="project-meta">
         <span class="project-period"><span class="project-num">[${p.index}]</span>${esc(when)}</span>
         ${detailHint(p.title)}
       </div>
-      <div class="project-title${(p.title || '').length > 60 ? ' long' : ''}">${esc(p.title)}</div>
+      <div class="project-title">${esc(p.title)}</div>
       ${orgList}
-      ${result?`<div class="project-result">${esc(result)}</div>`:''}
-      <div class="project-footer">
-        ${p.isPM?'<span class="tag pm">PM</span>':''}
-        ${p.isPL?'<span class="tag pm">PL</span>':''}
-        ${p.isPlanning?`<span class="tag plan">${t('ui.planning')}</span>`:''}
-        ${p.teamSize?`<span class="tag">${esc(teamLabel(p.teamSize))}</span>`:''}
-        ${gov?'<span class="tag gov">Gov\'t</span>':''}
-        ${tags.methods.map(m=>`<span class="tag method">${esc(m)}</span>`).join('')}
-        ${tags.domains.map(d=>`<span class="tag domain">${esc(d)}</span>`).join('')}
-      </div>
+      ${footer ? `<div class="project-footer">${footer}</div>` : ''}
     </div>`;
 }
 
@@ -406,7 +420,7 @@ function renderProjects(items) {
 
   el.innerHTML = sorted.map(p => projectCard(p)).join('');
 
-  _projPager = createCarousel(el, 'projectsPager', 4, 2);
+  _projPager = createCarousel(el, 'projectsPager', 3, 2);
   setupProjectModal();
 
   /* filter click */
@@ -570,20 +584,13 @@ function renderPatents(items) {
 }
 
 /* ─── Activities ─── */
-function activityIcons(role, org) {
+function activityIcon(role, org) {
   const r = (role || '').toLowerCase();
-  const o = (org || '').toLowerCase();
-  const icons = [];
-  // Primary by role
-  if (/teaching assistant|\bta\b|조교|mentor|멘토/.test(r)) icons.push('🎓');
-  else if (/president|회장|부회장|representative|대표|working group|운영위원|member/.test(r)) icons.push('👥');
-  else icons.push('⭐');
-  // Secondary by context (role/org keywords)
-  if (/researcher representative|연구실 대표/.test(r)) icons.push('🔬');
-  if (/teaching assistant|\bta\b|조교/.test(r)) icons.push('🏫');
-  if (/student council|학생회/.test(o)) icons.push('🏫');
-  if (/basketball|농구/.test(o)) icons.push('🏀');
-  return icons;
+  if (/researcher representative|연구실 대표/.test(r)) return '🔬';
+  if (/teaching assistant|\(ta\)|조교/.test(r)) return '🎓';
+  if (/mentor|멘토/.test(r)) return '👥';
+  if (/basketball|농구/.test((org || '').toLowerCase())) return '🏀';
+  return '🏫';
 }
 function formatOrg(s) {
   if (!s) return '';
@@ -594,8 +601,7 @@ function formatOrg(s) {
 function renderActivities(items) {
   const el = document.getElementById('activitiesGrid'); if (!el || !items) return;
   el.innerHTML = items.map(a => {
-    const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
-    return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
+    return `<div class="activity-card reveal" data-paged><div class="activity-head"><span class="activity-icon" aria-hidden="true">${activityIcon(a.role, a.organization)}</span><span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
   _activityPager = createCarousel(el, 'activitiesPager', 3, 2);
 }
