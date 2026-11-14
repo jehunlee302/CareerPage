@@ -56,7 +56,7 @@
     var dwellMs = Math.min(Math.max(activeMs, 0), 86400000);
     var payload = { path: String(path).slice(0, 200), dwell_ms: dwellMs, scroll_pct: maxScroll };
     try {
-      var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+      var blob = new Blob([JSON.stringify(payload)], { type: 'text/plain' });
       if (navigator.sendBeacon(WORKER_URL, blob)) sent = true;
     } catch (e) { /* 계측 실패는 페이지에 영향 없음 */ }
   }

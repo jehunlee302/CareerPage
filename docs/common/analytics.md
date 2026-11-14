@@ -10,13 +10,13 @@
 
 ## 2) 페이지별 체류시간·스크롤 — 자체 비콘 (우리 코드=규칙 준수)
 - `assets/js/analytics.js`(같은 출처 로컬 스크립트, 외부 라이브러리 아님): **활성 체류시간**(탭 숨김 시 일시정지)+**최대 스크롤 깊이**를 측정 → `navigator.sendBeacon`으로 CF Worker에 1회 전송. 쿠키·식별자·PII 없음.
-- 수집처 `workers/analytics-collector/`(CF Worker): POST 검증(출처 CORS·크기·클램프) 후 **Analytics Engine**(`careerpage_dwell`)에 데이터포인트(path·dwell_ms·scroll_pct) 기록. IP·식별자 저장 안 함.
+- 수집처 `workers/analytics-collector/`(CF Worker, Rust — [ops-07](../prd/ops.md#ops-07)): POST 검증(출처 CORS·크기·클램프) 후 **Analytics Engine**(`careerpage_dwell`)에 데이터포인트(path·dwell_ms·scroll_pct) 기록. IP·식별자 저장 안 함.
 - **OFF 안전**: `analytics.js`의 `WORKER_URL`이 비어 있으면 no-op(아무것도 전송 안 함). 배포 후 Worker URL을 채우면 활성화.
 - 두 HTML(`index.html`·`korea-economy-dashboard.html`)에 `<script src="assets/js/analytics.js" defer>` 배선 완료.
 
 ## 배포 (사람 — inbox)
 1. `jehun-lee.work` Cloudflare 프론팅 + Web Analytics 활성화.
-2. `cd workers/analytics-collector && npx wrangler deploy` → Worker URL 획득.
+2. Rust와 `rustup target add wasm32-unknown-unknown`이 깔린 PC에서 `cd workers/analytics-collector && npx wrangler deploy` → Worker URL 획득.
 3. `assets/js/analytics.js`의 `WORKER_URL`에 그 URL 기입(빌드 없음 → 커밋·푸시로 반영).
 - 조회: 방문/페이지=CF Web Analytics 대시보드, 체류/스크롤=Analytics Engine(GraphQL/wrangler).
 

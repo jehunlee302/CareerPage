@@ -15,7 +15,7 @@
 | 스타일/디자인 토큰 수정 | `assets/css/style.css` |
 | 전체 배포(빌드+커밋+푸시) | `deploy.bat` |
 | 방문자 체류·스크롤 계측(클라이언트) | `assets/js/analytics.js` |
-| 체류 계측 수집 서버(Cloudflare Worker) | `workers/analytics-collector/src/index.js` |
+| 체류 계측 수집 서버(Cloudflare Worker) | `workers/analytics-collector/src/lib.rs` |
 | 수집 Worker 배포 설정 | `workers/analytics-collector/wrangler.toml` |
 | Google Sheets 동기화(레거시) | `scripts/sync-sheets.js` |
 | portfolio.json → YAML 역변환(일회성, 재실행 금지) | `scripts/json-to-yaml.js` |
@@ -153,7 +153,8 @@
 
 | 경로 | 역할 |
 |------|------|
-| `workers/analytics-collector/src/index.js` | `assets/js/analytics.js`의 sendBeacon(POST) 수신 → Analytics Engine에 `path`·`dwell_ms`·`scroll_pct` 기록. PII·IP 미저장, CORS는 사이트 출처만 허용. |
+| `workers/analytics-collector/src/lib.rs` | Rust. `decide()`가 상태 코드·기록할 값을 정하고(`cargo test` 표), 진입점은 본문을 513바이트까지만 읽어 Analytics Engine에 `path`·`dwell_ms`·`scroll_pct` 기록. PII·IP 미저장. |
+| `workers/analytics-collector/Cargo.toml` | Rust 의존성(`worker` 0.9.0 고정). |
 | `workers/analytics-collector/wrangler.toml` | Worker 배포 설정(Cloudflare). |
 
 ---

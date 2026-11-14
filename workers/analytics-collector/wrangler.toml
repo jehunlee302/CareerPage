@@ -1,12 +1,13 @@
-# CareerPage 체류 분석 수집 Worker.
-# 배포: cd workers/analytics-collector && npx wrangler deploy
-# 배포 후 나오는 URL(https://cp-analytics.<계정>.workers.dev)을
-#   assets/js/analytics.js 의 WORKER_URL 에 채운다.
+# CareerPage dwell-time collector Worker (Rust).
+# Needs: Rust, `rustup target add wasm32-unknown-unknown`. Deploy: cd workers/analytics-collector && npx wrangler deploy
+# Put the deployed URL (https://cp-analytics.<account>.workers.dev) into WORKER_URL in assets/js/analytics.js.
 name = "cp-analytics"
-main = "src/index.js"
+main = "build/worker/shim.mjs"
 compatibility_date = "2026-08-01"
 
-# 체류 데이터 저장소(무료 티어). 조회는 CF 대시보드 GraphQL/Analytics Engine.
+[build]
+command = "cargo install -q worker-build@0.9.0 && worker-build --release"
+
 [[analytics_engine_datasets]]
 binding = "AE"
 dataset = "careerpage_dwell"

@@ -49,3 +49,4 @@
 | dev-history 카테고리 재편 | done | flat → `{ui}/` · 월별 summary 루트 유지 | [ops-04](prd/ops.md#ops-04) |
 | dev-loop 1회전 | done | 페르소나 리뷰 · 시나리오 자동 검증 · 갭 → 백로그 · verdict PASS | [ops-05](prd/ops.md#ops-05) |
 | 문서 구조 이전 (do-03/do-05) | dev | index.md → INDEX.md · prod·backlog → PRD + 상세 · 이력·보고서 → `_old/` · `gen-status --check` | [ops-06](prd/ops.md#ops-06) |
+| 방문 수집 Worker Rust 전환 | dev | `workers/analytics-collector` JS → Rust(`worker` 크레이트) · 동작 그대로 · `cargo test` 표 + `wrangler dev` 확인 | [ops-07](prd/ops.md#ops-07) |

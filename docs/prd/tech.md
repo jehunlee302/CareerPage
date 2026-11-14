@@ -10,7 +10,7 @@
 | GitHub Pages + GitHub Actions | 서비스 기준 배포 형태 "공개 웹 정적 사이트" · 한계 "월 전송량 100 GB" · 판단표 배포 "정적 · ISR 위주 → Cloudflare Pages"와 다르다 — 저장소 · 빌드(Actions) · 호스팅이 한곳이라 `main` 푸시 하나로 배포된다 (추정). 판단표 백그라운드 작업 "필요 없음" | 배포 · `.github/workflows/deploy.yml` | 한계(월 전송량)를 넘으면 판단표 기본 Cloudflare Pages, 서버 기능이 늘 필요하면 Vercel · `deploy.yml` · `CNAME` · DNS 레코드 |
 | GoDaddy DNS | 서비스 기준 배포 형태 "공개 웹, https://jehun-lee.work" · 판단표 층 없음 — 도메인을 산 곳에서 관리한다 (추정) | 주소 · `CNAME` | Cloudflare DNS(방문 분석 [ops-01](ops.md#ops-01)이 앞에 둔다) · DNS 레코드 |
 | Pretendard 글꼴(jsdelivr CDN) | 서비스 기준 사용 환경 "영·한 두 언어 브라우저" · 판단표 화면 정적 행 안의 글꼴. [site-02](site.md#site-02)는 외부 의존을 Google Fonts로 적지만 실제는 jsdelivr의 Pretendard — 한글 글꼴이 필요해서 (추정) | `index.html` `<link>` | 다른 웹 글꼴 · `index.html` · `assets/css/style.css` |
-| Cloudflare Web Analytics · Worker · Analytics Engine | 서비스 기준 지금 · 목표 방문 수 "[ops-01](ops.md#ops-01) 전이라 못 잼"을 잰다 · 판단표 서버 "서버 없음" 행과 다르게 수집용 Worker 하나를 둔다 — 쿠키 · 개인정보 없이, 외부 JS 라이브러리 없이 체류를 잰다 | 방문 분석 · `assets/js/analytics.js` · `workers/analytics-collector/` | 다른 분석 수집처 · `assets/js/analytics.js`(Worker를 부르는 유일한 파일) · `workers/analytics-collector/` |
+| Cloudflare Web Analytics · Worker · Analytics Engine | 서비스 기준 지금 · 목표 방문 수 "[ops-01](ops.md#ops-01) 전이라 못 잼"을 잰다 · 판단표 서버 "서버 없음" 행과 다르게 수집용 Worker 하나를 둔다 — 쿠키 · 개인정보 없이, 외부 JS 라이브러리 없이 체류를 잰다 | 방문 분석 · `assets/js/analytics.js` · `workers/analytics-collector/`(Rust `worker` 크레이트, 전역 기본 서버 언어, [ops-07](ops.md#ops-07)) | 다른 분석 수집처 · `assets/js/analytics.js`(Worker를 부르는 유일한 파일) · `workers/analytics-collector/` |
 | `deploy.bat` (Windows 배치) | 서비스 기준 사용 환경 "주인이 Windows PC에서 고친다"(product.md `## 제품`) · 판단표 층 없음 — 명령 하나로 빌드 · 푸시 | 개발 PC 배포 | 셸 스크립트 · `deploy.bat` |
 
 - 대상 플랫폼: ES2020+를 돌리는 데스크톱 · 모바일 브라우저. 최소 버전: [미정].

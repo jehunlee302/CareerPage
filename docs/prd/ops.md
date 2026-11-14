@@ -1,5 +1,5 @@
 # ops — 운영·분석 (L2)
-목차: [ops-01](#ops-01) 방문 분석 · [ops-02](#ops-02) 레거시 스크립트 정리 · [ops-03](#ops-03) 미머지 브랜치 정리 · [ops-04](#ops-04) dev-history 카테고리 재편 · [ops-05](#ops-05) dev-loop 1회전 · [ops-06](#ops-06) 문서 구조 이전 (do-03/do-05)
+목차: [ops-01](#ops-01) 방문 분석 · [ops-02](#ops-02) 레거시 스크립트 정리 · [ops-03](#ops-03) 미머지 브랜치 정리 · [ops-04](#ops-04) dev-history 카테고리 재편 · [ops-05](#ops-05) dev-loop 1회전 · [ops-06](#ops-06) 문서 구조 이전 (do-03/do-05) · [ops-07](#ops-07) 방문 수집 Worker를 Rust로
 
 예전 백로그·감사·병합 보고서 원문은 [_old/backlog.md](../_old/backlog.md), [_old/backlog/](../_old/backlog/merge-2026-10.md).
 
@@ -12,6 +12,25 @@
 - 쿠키·PII 없음 → 동의 불필요. OFF 안전 (`WORKER_URL` 미설정 = no-op; 현재 비어 있음).
 - 상세 [common/analytics.md](../common/analytics.md). 배포(도메인 CF 프론팅·Web Analytics 활성화·Worker deploy·`WORKER_URL` 기입)는 사람 → [user-actions.md](../user-actions.md).
 - QA: 배포 후 CF 대시보드에 방문이 보이고, Analytics Engine `careerpage_dwell`에 데이터포인트가 쌓인다.
+
+<a id="ops-07"></a>
+## ops-07 · 방문 수집 Worker를 Rust로
+이유 (2026-11-14, 사용자 요청 "그것은 rust로"): 서버 코드는 전역 기본(Rust)에 맞춘다. Worker는 아직 배포 전이라 옮기는 비용이 가장 낮을 때다.
+- 범위: `workers/analytics-collector/`의 JS(`src/index.js`)를 Rust(`worker` 크레이트 0.9.0, `worker-build` 0.9.0 고정, WebAssembly)로 바꾼다. 데이터셋 이름·바인딩(`AE`)은 그대로. 비콘은 Blob 형식만 `text/plain`으로 바꾼다 (`application/json` Blob은 일부 Chrome에서 `sendBeacon`이 막힌다).
+- 동작은 지금 JS와 같다:
+  - `OPTIONS` → 204, `POST` 외 → 405.
+  - `Content-Length` 헤더가 512바이트 넘으면 413. 본문은 513바이트까지만 읽고, 512바이트를 넘으면 413 (헤더 없는 분할 전송도 막는다).
+  - JSON이 아니거나 비어 있으면 400. JSON이지만 객체가 아니면(`null`·배열) 기본값으로 204.
+  - `path`는 문자열일 때 앞 200자, 아니면 `/`. `dwell_ms`는 0~86 400 000, `scroll_pct`는 0~100으로 자르고, 숫자가 아니거나 유한하지 않으면 0.
+  - Analytics Engine에 데이터포인트 1개(index·blob = path, double = dwell_ms·scroll_pct). 바인딩이 없으면 쓰지 않고 넘어간다.
+  - 응답은 204. CORS 허용 출처는 언제나 `https://jehun-lee.work`(요청의 `Origin`은 읽지 않는다). CORS는 인증이 아니라서 누구나 가짜 점을 보낼 수 있다 (분석용이라 받아들임).
+  - JS와 다른 점: `null` 본문(JS는 500) → 204, 범위 밖 숫자 `1e400`(JS는 0으로 204) → 400, 기록 실패(JS는 500) → 204, `path`는 UTF-16 단위가 아니라 글자 단위로 자른다.
+- 판단(상태 코드·값 자르기)은 순수 함수 하나로 두고, Worker 진입점은 그 결과를 응답과 기록으로만 옮긴다.
+- QA:
+  - `cargo test`: 위 규칙을 표 한 개의 케이스로 확인한다 (메서드, 헤더 길이, 본문, 기대 상태·값).
+  - `wrangler dev`로 띄워 `curl`로 204·405(CORS 헤더 포함)·413(헤더 초과, 헤더 없는 분할 전송)·400을 확인한다.
+  - 배포 뒤 실제 브라우저에서 비콘이 전송되는지 본다 ([ops-01](#ops-01) QA).
+  - IP·쿠키·식별자를 저장하지 않는다 (코드에서 읽지 않음).
 
 <a id="ops-02"></a>
 ## ops-02 · 레거시 스크립트 정리
