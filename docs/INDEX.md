@@ -14,7 +14,6 @@ CareerPage 프로젝트의 파일 지도. 먼저 [CLAUDE.md](../CLAUDE.md)와 [P
 | [prd/product.md](prd/product.md) | 제품 배경 · 사용자 · 규모 · 도메인 규칙 · 품질 조건 · 읽을 때: 제품 방향이나 대상 사용자를 판단할 때 | 전체 |
 | [prd/tech.md](prd/tech.md) | 기술 스택 표(고른 이유 · 대안) · 연동 · 보안 · 설정 · 배포 링크 · 읽을 때: 스택을 바꾸거나 새 의존성을 검토할 때 | 전체 |
 | [user-actions.md](user-actions.md) | 사람이 직접 해야 할 일 (계정·배포·설정) | 사람 |
-| [ideas.md](ideas.md) | 아직 정하지 않은 아이디어 (왜 · 목적 · 열린 질문) | 사람·에이전트 |
 
 ## 구조·스택
 
