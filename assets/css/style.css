@@ -2505,6 +2505,14 @@ footer {
 /* ════════════════════════════════════════
    PROJECT CARD DETAILS
    ════════════════════════════════════════ */
+.project-num {
+   font-size: .72rem;
+   font-weight: 700;
+   color: var(--blue);
+   opacity: .65;
+   margin-right: .35rem
+}
+
 .project-period {
    font-size: .72rem;
    font-weight: 600;
@@ -2535,10 +2543,6 @@ a.impact-item {
 
 a.impact-item:hover {
    background: rgba(255, 255, 255, .06)
-}
-
-.pub-num {
-   display: none
 }
 
 /* One resume button: the one for the page language */

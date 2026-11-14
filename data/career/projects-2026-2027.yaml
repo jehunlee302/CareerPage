@@ -15,8 +15,8 @@
       en: Plan and develop an AI Agent service that supports sales center operations
       ko: 영업센터 업무를 지원하는 AI Agent 서비스 기획 및 개발
     role:
-      en: AI Agent service planning & development (partner firm)
-      ko: AI Agent 서비스 기획 및 개발 (협력사)
+      en: AI Agent service planning & development
+      ko: AI Agent 서비스 기획 및 개발
     tasks:
       - en: Data cleansing of source documents for the agent
         ko: 에이전트 활용 데이터 정제

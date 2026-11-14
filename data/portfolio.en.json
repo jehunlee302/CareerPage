@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-13",
+  "lastUpdated": "2026-11-14",
   "counts": {
     "projects": 27,
     "pm": 13,
@@ -14,7 +14,7 @@
     "nameKr": "이제훈",
     "titles": [
       "Industrial & Systems Engineer (Ph.D.)",
-      "Consultant, PwC Cloud & AI",
+      "Simulation Solution Consultant",
       "AI Solution Architect"
     ],
     "email": [
@@ -24,7 +24,7 @@
     "location": "Yongin, Gyeonggi-do, South Korea",
     "googleSite": "",
     "resume": "data/resume-en.pdf",
-    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 27 projects (PM 13)\nJournal papers 5 (1st author 2) · Intl. conference papers 9 (1st author 6)\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
+    "summary": "KAIST Ph.D. in Industrial & Systems Engineering\nSK Hynix · Micron · Samsung Electronics · LG Electronics — 27 projects (PM 13)\nSCI journal papers 5 (1st author 2) · Intl. conference papers 9 (1st author 6)\nAI scheduler · AI agent · Simulation-based optimization · Digital twin · Autonomous manufacturing"
   },
   "philosophy": {
     "headline": "Systemic Excellence",
@@ -108,7 +108,7 @@
       "performance": "",
       "region": "Seoul, South Korea",
       "responsibilities": [
-        "Samsung Biologics (as a partner firm): AI Agent service supporting sales center operations",
+        "Samsung Biologics: AI Agent service supporting sales center operations",
         "Data cleansing and RAG (retrieval-augmented generation) system construction"
       ]
     },
@@ -205,7 +205,7 @@
       "details": {
         "situation": "",
         "purpose": "Plan and develop an AI Agent service that supports sales center operations",
-        "role": "AI Agent service planning & development (partner firm)",
+        "role": "AI Agent service planning & development",
         "tasks": [
           "Data cleansing of source documents for the agent",
           "RAG (retrieval-augmented generation) system construction"
