@@ -1245,6 +1245,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
 .project-org {
    display: grid;
    grid-template-columns: auto 1fr;
+   align-content: start;
    gap: .1rem .6rem;
    margin: 0 0 .5rem;
    font-size: .76rem;
@@ -2145,10 +2146,6 @@ footer {
       grid-template-columns: repeat(2, 1fr)
    }
 
-   .featured-grid {
-      grid-template-columns: repeat(2, 1fr)
-   }
-
    .awards-list {
       grid-template-columns: repeat(2, 1fr)
    }
@@ -2215,10 +2212,6 @@ footer {
 
    .pub-item {
       flex-direction: column
-   }
-
-   .featured-grid {
-      grid-template-columns: 1fr
    }
 
    .research-grid {
@@ -2303,6 +2296,56 @@ footer {
 
 .carousel-hidden {
    display: none
+}
+
+/* Fields line up across cards in one row; a missing field keeps its slot */
+@supports (grid-template-rows: subgrid) {
+   .project-card,
+   .award-card,
+   .activity-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      row-gap: 0
+   }
+
+   .project-card,
+   .award-card {
+      grid-row: span 4
+   }
+
+   .activity-card {
+      grid-row: span 3;
+      row-gap: .25rem
+   }
+
+   .award-date,
+   .award-date-range,
+   .award-date-unknown {
+      justify-self: start
+   }
+}
+
+.award-desc:empty,
+.project-org:empty {
+   margin: 0
+}
+
+.project-footer:empty {
+   border-top: 0;
+   padding-top: 0
+}
+
+/* Same column switch points as createCarousel */
+@media(max-width:879px) {
+   .featured-grid {
+      grid-template-columns: repeat(2, 1fr)
+   }
+}
+
+@media(max-width:599px) {
+   .featured-grid {
+      grid-template-columns: 1fr
+   }
 }
 
 .paged-nav-bottom {

@@ -141,7 +141,9 @@ Most content sections use a 3-column grid on desktop.
 | Breakpoint | Grid Columns | Applies To |
 |------------|-------------|------------|
 | Desktop (>= 960px) | 3 columns | All grids |
-| Tablet (< 768px) | 2 columns | Projects, awards, activities, research, featured |
+| < 880px | 2 columns | 프로젝트·논문·수상·활동 넘기기 목록(`createCarousel`), 주요 프로젝트 |
+| < 600px | 1 column | 위와 같은 목록 |
+| Tablet (< 768px) | 2 columns | Research |
 | Small (< 480px) | 1 column | Everything stacks vertically |
 
 ### Grid Rules for New Components

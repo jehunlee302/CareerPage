@@ -36,13 +36,13 @@ const I18N = {
   en: {
     nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
     label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
-    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', planning:'Planning', teamSize:'Team Size', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', prev:'Previous', next:'Next', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative military service (technical research personnel)', patStatus:'Status', granted:'Granted', patInventors:'Inventors' },
+    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', planning:'Planning', teamSize:'Team Size', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', prev:'Previous', next:'Next', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative military service (technical research personnel)', patStatus:'Status', granted:'Granted', patInventors:'Inventors' },
     impact: { projects:'Major Projects', pm:'PM Roles', journals:'SCI Journal Papers', intlConf:'Intl. Conf. Papers', patent:'Granted Patent' },
   },
   ko: {
     nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
     label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
-    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', planning:'기획', teamSize:'규모', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', prev:'이전', next:'다음', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'전문연구요원 (병역 대체 복무)', patStatus:'상태', granted:'등록', patInventors:'발명자' },
+    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', planning:'기획', teamSize:'규모', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', prev:'이전', next:'다음', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'전문연구요원 (병역 대체 복무)', patStatus:'상태', granted:'등록', patInventors:'발명자' },
     impact: { projects:'주요 프로젝트', pm:'PM 수행', journals:'SCI 저널 논문', intlConf:'국제 학회 논문', patent:'등록 특허' },
   },
 };
@@ -370,7 +370,7 @@ function projectCard(p) {
     [t('ui.partners'), (p.partners || []).join(' · ')],
     [t('ui.client'), p.client],
   ].filter(([, v]) => v);
-  const orgList = orgs.length ? `<dl class="project-org">${orgs.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>` : '';
+  const orgList = `<dl class="project-org">${orgs.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`;
   const when = [locPeriod(p.period), durLabel(p.duration)].filter(Boolean).join(' · ');
   /* Filterable tags first: the footer is one line and clips the end */
   const footer = [
@@ -383,14 +383,14 @@ function projectCard(p) {
     p.teamSize && `<span class="tag">${esc(teamLabel(p.teamSize))}</span>`,
   ].filter(Boolean).join('');
   return `
-    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${esc(tags.methods.join(','))}" data-proj-domains="${esc(tags.domains.join(','))}">
+    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-pl="${p.isPL?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${esc(tags.methods.join(','))}" data-proj-domains="${esc(tags.domains.join(','))}">
       <div class="project-meta">
         <span class="project-period"><span class="project-num">[${p.index}]</span>${esc(when)}</span>
         ${detailHint(p.title)}
       </div>
       <div class="project-title">${esc(p.title)}</div>
       ${orgList}
-      ${footer ? `<div class="project-footer">${footer}</div>` : ''}
+      <div class="project-footer">${footer}</div>
     </div>`;
 }
 
@@ -412,7 +412,8 @@ function renderProjects(items) {
   const fb = document.getElementById('projFilterBar');
   if (fb) fb.innerHTML = [
     `<button class="filter-btn active" data-proj-filter="all">${t('ui.all')}</button>`,
-    `<button class="filter-btn" data-proj-filter="pm">${t('ui.pmLead')}</button>`,
+    `<button class="filter-btn" data-proj-filter="pm">PM</button>`,
+    ...(sorted.some(p => p.isPL) ? ['<button class="filter-btn" data-proj-filter="pl">PL</button>'] : []),
     `<button class="filter-btn" data-proj-filter="gov">${t('ui.govt')}</button>`,
     ...[...methodSet].sort().map(m => `<button class="filter-btn" data-proj-filter="method:${esc(m)}">${esc(m)}</button>`),
     ...[...domainSet].sort().map(d => `<button class="filter-btn" data-proj-filter="domain:${esc(d)}">${esc(d)}</button>`)
@@ -432,6 +433,7 @@ function renderProjects(items) {
     el.querySelectorAll('[data-paged]').forEach(c => {
       let show = true;
       if (f === 'pm') show = c.dataset.projPm === '1';
+      else if (f === 'pl') show = c.dataset.projPl === '1';
       else if (f === 'gov') show = c.dataset.projGov === '1';
       else if (f.startsWith('method:')) show = (c.dataset.projMethods||'').split(',').includes(f.slice(7));
       else if (f.startsWith('domain:')) show = (c.dataset.projDomains||'').split(',').includes(f.slice(7));
@@ -495,7 +497,7 @@ function renderAwards(items) {
     <div class="award-card reveal" data-paged>
       <div class="${dateCls}">${dateText}</div>
       <div class="award-title">${esc(a.title)}</div>
-      ${a.description?`<div class="award-desc">${esc(a.description)}</div>`:''}
+      <div class="award-desc">${esc(a.description || '')}</div>
       <div class="award-org">${esc(a.organization)}</div>
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
     </div>`;
@@ -517,7 +519,7 @@ function createCarousel(gridEl, navId, cols, rows) {
   const cards = [...gridEl.querySelectorAll('[data-paged]')];
   const hidden = document.createElement('div');
   hidden.className = 'carousel-hidden';
-  const colsNow = () => innerWidth < 768 ? 1 : innerWidth < 1024 ? Math.min(cols, 2) : cols;
+  const colsNow = () => innerWidth < 600 ? 1 : innerWidth < 880 ? Math.min(cols, 2) : cols;
   let shownCols = 0;
   const pages = () => gridEl.querySelectorAll('.carousel-page');
   const current = () => Math.round(gridEl.scrollLeft / (gridEl.clientWidth || 1));
@@ -664,7 +666,7 @@ function openProjectModal(p) {
   ].filter(Boolean);
 
   openModal(`
-    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${LANG === 'ko' ? `프로젝트 #${p.index}` : `Project #${p.index}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
+    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${p.isPL ? 'PL · ' : ''}${LANG === 'ko' ? `프로젝트 #${p.index}` : `Project #${p.index}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
     <div class="modal-title" id="modalTitle">${esc(p.title)}</div>
     ${(tags.methods.length||tags.domains.length) ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`).join('')}${tags.domains.map(dm => `<span class="tag domain">${esc(dm)}</span>`).join('')}</div>` : ''}
     ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}

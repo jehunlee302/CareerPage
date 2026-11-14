@@ -35,5 +35,6 @@ Nav bar: `Philosophy → Education → Experience → Projects → Publications 
 | Breakpoint | Grid Layout | Notes |
 |------------|------------|-------|
 | Desktop (>= 960px) | 3 columns | Default for all card grids |
-| Tablet (< 768px) | 2 columns | Projects, awards, activities, research, featured |
+| Tablet (< 768px) | 2 columns | Research (프로젝트·논문·수상·활동·주요 프로젝트의 열 전환 폭은 design-system.md 표) |
 | Small (< 480px) | 1 column | Everything stacks vertically |
+
