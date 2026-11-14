@@ -17,7 +17,7 @@
   </script>
   <link rel="preload" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" /></noscript>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261114c" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20261114d" />
 </head>
 <body>
 
@@ -123,7 +123,7 @@
       <div class="container">
         <h2 class="philosophy-headline" id="philosophyHeadline"></h2>
         <p class="philosophy-lead" id="philosophyLead"></p>
-        <details class="fold philosophy-fold"><summary data-i18n="ui.readMore">Read more</summary><div class="philosophy-body" id="philosophyBody"></div></details>
+        <button type="button" class="detail-hint philosophy-more" id="philosophyMore" hidden></button>
         <div class="philosophy-pillars" id="philosophyPillars"></div>
       </div>
     </section>
@@ -253,14 +253,14 @@
   </footer>
 
   <!-- ═══ PROJECT DETAIL MODAL ═══ -->
-  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalBody">
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
       <div id="modalBody"></div>
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20261114c"></script>
+  <script src="assets/js/main.js?v=20261114d"></script>
   <script src="assets/js/analytics.js?v=20260815" defer></script>
 </body>
 </html>

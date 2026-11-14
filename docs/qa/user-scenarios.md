@@ -47,15 +47,15 @@
 
 - **S-6.1** given(하단 `.reveal` 요소가 아직 뷰포트 밖) → action(요소가 뷰포트 진입하도록 스크롤) → expect(해당 `.reveal` 요소에 `visible` 클래스 부여).
 
-## UC-7 Education — 논문 상세 접기
+## UC-7 Education — 논문 상세 팝업
 
-- **S-7.1** given(`#educationTimeline` 렌더, thesis 상세 있는 항목) → action(초기 상태 확인) → expect(`details.fold` 닫힘; `summary` 텍스트 = `Details`(EN) / `상세`(KO); 고등학교 항목 없음).
-- **S-7.2** given(닫힘) → action(`summary` 클릭 또는 포커스 후 Enter) → expect(`details` 에 `open`; `.edu-thesis-details` 표시).
+- **S-7.1** given(`#educationTimeline` 렌더, 논문이 있는 항목) → action(초기 상태 확인) → expect(카드 오른쪽 위 `.detail-hint` 텍스트 = `Details ↗`(EN) / `상세 ↗`(KO); 카드에 논문 제목 없음; 지도교수 링크는 `🔗`(`aria-label` 있음); 고등학교 항목 없음).
+- **S-7.2** given(팝업 닫힘) → action(카드 또는 `.detail-hint` 클릭) → expect(`#projectModal.open`; `#modalTitle` = 학위 — 전공; 논문 제목 표시; Esc·바깥 클릭으로 닫히고 포커스가 버튼으로 돌아옴).
 
-## UC-8 Experience — 상세(책임/성과) 접기
+## UC-8 Experience — 상세(책임/성과) 팝업
 
-- **S-8.1** given(`#experienceTimeline` 렌더, responsibilities/highlights 있는 항목) → action(초기 확인) → expect(`details.fold` 닫힘; 전문연구요원 항목은 `.alt-badge` 표시).
-- **S-8.2** given(닫힘) → action(`summary` 클릭) → expect(`details` 에 `open`; `.tl-responsibilities li` 개수 ≥ 1).
+- **S-8.1** given(`#experienceTimeline` 렌더, responsibilities/highlights 있는 항목) → action(초기 확인) → expect(`.detail-hint` 표시; 전문연구요원 항목은 `.alt-badge` 표시).
+- **S-8.2** given(팝업 닫힘) → action(카드 클릭) → expect(`#projectModal.open`; `.modal-task-list li` 개수 ≥ 1).
 
 ## UC-9 All Projects — 필터 · 가로 넘기기 · 상세 모달
 
@@ -79,7 +79,7 @@
 
 - **S-11.1** given(`#pubList` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 6개(2×3); `.pub-num` 숨김; `#pubPager .paged-info` = `1 / N`).
 - **S-11.2** given(`all` 필터) → action(`data-filter="Journal-International"` 클릭) → expect(해당 버튼 `active`; 보이는 항목 전부 `data-type="Journal-International"`; `.paged-info` = `1 / 1`).
-- **S-11.3** given(링크 있는 논문) → action(`.pub-link` 확인) → expect(href = `pub.link`, `target="_blank"`).
+- **S-11.3** given(링크 있는 논문) → action(`.pub-link` 확인) → expect(카드 오른쪽 위; href = `pub.link`, `target="_blank"`).
 
 ## UC-12 Awards / Activities — 가로 넘기기
 
