@@ -26,7 +26,7 @@ const RESEARCH_INTERESTS = {
     { title: 'AI 에이전트 서비스', desc: '백엔드, 운영 안정성, 배포까지 갖춘 실서비스 AI 에이전트' },
   ],
 };
-const FEATURED_PROJECT_INDICES = [25, 23, 21];
+const FEATURED_PROJECT_INDICES = [27, 25, 23];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
 const RESUME_URLS = { en: 'data/resume-en.pdf', ko: 'data/resume-ko.pdf' };
 const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
@@ -473,7 +473,7 @@ function renderPublications(items) {
     </div>`;
   }).join('');
 
-  _pubPager = createCarousel(el, 'pubPager', 2, 3);
+  _pubPager = createCarousel(el, 'pubPager', 2, 3, 1024);
 
   const pubFilterBar = document.querySelector('.pub-filter-bar');
   if (pubFilterBar) pubFilterBar.onclick = e => {
@@ -506,7 +506,7 @@ function renderAwards(items) {
 }
 
 /* ─── Carousel: cards split into pages of cols × rows; swipe or arrows, page number above and below ─── */
-function createCarousel(gridEl, navId, cols, rows) {
+function createCarousel(gridEl, navId, cols, rows, oneColBelow = 600) {
   gridEl.classList.add('carousel');
   const top = document.getElementById(navId);
   if (!top) return { reset(){} };
@@ -519,7 +519,7 @@ function createCarousel(gridEl, navId, cols, rows) {
   const cards = [...gridEl.querySelectorAll('[data-paged]')];
   const hidden = document.createElement('div');
   hidden.className = 'carousel-hidden';
-  const colsNow = () => innerWidth < 600 ? 1 : innerWidth < 880 ? Math.min(cols, 2) : cols;
+  const colsNow = () => innerWidth < oneColBelow ? 1 : innerWidth < 880 ? Math.min(cols, 2) : cols;
   let shownCols = 0;
   const pages = () => gridEl.querySelectorAll('.carousel-page');
   const current = () => Math.round(gridEl.scrollLeft / (gridEl.clientWidth || 1));

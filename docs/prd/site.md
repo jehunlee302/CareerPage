@@ -17,7 +17,7 @@
 | Research Focus | main.js 하드코딩 | 연구 관심사 카드 6개 |
 | Education | education.yaml | 타임라인 + 펼치는 학위논문 상세 |
 | Experience | work.yaml | 타임라인 + 책임 목록 |
-| Featured Projects | projects-*.yaml (번호 25, 23, 21) | 카드 3개 그리드, 클릭 → 모달 |
+| Featured Projects | projects-*.yaml (번호 27, 25, 23) | 카드 3개 그리드, 클릭 → 모달 |
 | All Projects | projects-*.yaml | 페이지 그리드, 주제/PM/정부과제 필터 |
 | Publications | publications-*.yaml | 페이지 목록, 유형 필터, 논문 링크 |
 | Awards | honors.yaml | 페이지 3열 그리드 |

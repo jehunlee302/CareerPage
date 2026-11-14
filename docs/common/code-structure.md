@@ -70,7 +70,7 @@
 | `formatMethodology(text)` | 논문 방법론 ol/p 포매터 |
 | `parseAdvisor(r)` | 지도교수 링크 파서 |
 | `renderExperience(items)` | 경력 타임라인 + 상세 확장/축소 |
-| `renderFeaturedProjects(projects)` | 주요 프로젝트 카드 (인덱스 고정: 25·23·21) |
+| `renderFeaturedProjects(projects)` | 주요 프로젝트 카드 (인덱스 고정: 27·25·23) |
 | `renderProjects(items)` | 전체 프로젝트 그리드 + 필터 + 페이저 |
 | `getProjectTags(p)` | 프로젝트 분류 태그 추출 (methodology·domain) |
 | `isGov(client)` | 정부과제 여부 판별 |

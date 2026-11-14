@@ -143,6 +143,7 @@ Most content sections use a 3-column grid on desktop.
 | Desktop (>= 960px) | 3 columns | All grids |
 | < 880px | 2 columns | 프로젝트·논문·수상·활동 넘기기 목록(`createCarousel`), 주요 프로젝트 |
 | < 600px | 1 column | 위와 같은 목록 |
+| < 1024px | 1 column | 논문 목록(카드가 넓어야 읽기 쉬움) |
 | Tablet (< 768px) | 2 columns | Research |
 | Small (< 480px) | 1 column | Everything stacks vertically |
 

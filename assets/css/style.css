@@ -1330,6 +1330,12 @@ html[data-theme="dark"] .tag.domain,
    color: #CBD5E1
 }
 
+html[data-theme="dark"] .tag.plan,
+#featured .tag.plan {
+   background: rgba(16, 185, 129, .15);
+   color: #6EE7B7
+}
+
 /* ════════════════════════════════════════
    PUBLICATIONS
    ════════════════════════════════════════ */
