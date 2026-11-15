@@ -17,7 +17,7 @@
 - **S-2.1** given(테마·언어 미저장의 새 브라우저) → action(`/` 방문) → expect(`<html data-theme>` = `light`, `<html lang>` = `en`; `#navbar .nav-logo` 텍스트 = `JH`).
 - **S-2.2** given(페이지 로드 완료) → action(대기) → expect(`#hero .hero-name` 에 `Jehun Lee` 와 `이제훈` 포함; `#profileImg` 요소 존재).
 - **S-2.3** given(로드 후 ~1초 경과) → action(타이핑 애니메이션 관찰) → expect(`#heroTitleText` 텍스트 길이 > 0, 시간에 따라 변함 — 타이프라이터 동작).
-- **S-2.4** given(Hero 렌더) → action(태그·요약 확인) → expect(`#heroTags .hero-tag` 개수 ≥ 6; `#heroSummary` 텍스트 비어있지 않음).
+- **S-2.4** given(Hero 렌더) → action(태그·요약 확인) → expect(태그 줄 없음(`#heroTags .hero-tag` 0개); `#heroSummary` 텍스트 비어있지 않음).
 - **S-2.5** given(Hero CTA) → action(요소 확인) → expect(`#heroContactBtn` href = `#contact`; `#heroResumeBtnEn` href = `data/resume-en.pdf`; `#heroResumeBtnKo` href = `data/resume-ko.pdf`; LinkedIn/Scholar 링크 `target="_blank"`).
 - **S-2.6** given(정적 임팩트 스트립) → action(`#impactStrip` 확인) → expect(`.impact-item` 개수 = 5; 각 `.impact-num` 텍스트가 숫자 문자열).
 
@@ -77,15 +77,15 @@
 
 ## UC-11 Publications — 유형 필터 · 가로 넘기기
 
-- **S-11.1** given(`#pubList` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 6개(2×3); `.pub-num` 숨김; `#pubPager .paged-info` = `1 / N`).
+- **S-11.1** given(`#pubList` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 6개(2×3, 1024px 미만은 1열); `[번호]` 표시; `#pubPager .paged-info` = `1 / N`).
 - **S-11.2** given(`all` 필터) → action(`data-filter="Journal-International"` 클릭) → expect(해당 버튼 `active`; 보이는 항목 전부 `data-type="Journal-International"`; `.paged-info` = `1 / 1`).
 - **S-11.3** given(링크 있는 논문) → action(`.pub-link` 확인) → expect(카드 오른쪽 위; href = `pub.link`, `target="_blank"`).
 
 ## UC-12 Awards / Activities — 가로 넘기기
 
-- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 6개(2×3); `.paged-info` = `1 / N`).
+- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 6개(3×2); `.paged-info` = `1 / N`).
 - **S-12.2** given(맨 앞) → action(`#awardsPager .paged-next` 클릭) → expect(`.paged-info` = `2 / N`).
-- **S-12.3** given(창 너비 390px) → action(초기 확인) → expect(페이지당 카드 1개; 가로 스크롤바 없음; 페이지 수 증가).
+- **S-12.3** given(창 너비 390px) → action(초기 확인) → expect(1열 × 2행(페이지당 카드 2개); 가로 스크롤바 없음; 페이지 수 증가).
 
 ## UC-13 Contact — 연락 링크
 
