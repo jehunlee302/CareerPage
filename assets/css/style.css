@@ -2412,9 +2412,7 @@ footer {
    gap: 1.1rem
 }
 
-.carousel::-webkit-scrollbar,
-.proj-filter-bar::-webkit-scrollbar,
-.pub-filter-bar::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
    display: none
 }
 
@@ -2450,21 +2448,6 @@ a.impact-item:hover {
 html[lang="ko"] #heroResumeBtnEn,
 html[lang="en"] #heroResumeBtnKo {
    display: none
-}
-
-@media(max-width:768px) {
-   .proj-filter-bar,
-   .pub-filter-bar {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding-bottom: 6px
-   }
-
-   .proj-filter-bar > *,
-   .pub-filter-bar > * {
-      flex: none
-   }
 }
 
 @media(max-width:600px) {

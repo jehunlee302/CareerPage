@@ -592,7 +592,7 @@ function activityIcon(role, org) {
   const r = (role || '').toLowerCase();
   if (/researcher representative|연구실 대표/.test(r)) return '🔬';
   if (/teaching assistant|\(ta\)|조교/.test(r)) return '🎓';
-  if (/mentor|멘토/.test(r)) return '🧑‍🤝‍🧑';
+  if (/mentor|멘토/.test(r)) return '💬';
   if (/basketball|농구/.test((org || '').toLowerCase())) return '🏀';
   return '🏫';
 }
