@@ -632,7 +632,7 @@ function generateNarrative(projects) {
     const duration = p.duration || '';
     const client = tex(extractLang(p.client));
     const partners = (p.partners || []).map(s => tex(s)).join(' · ');
-    const pmTag = ['PM', 'PL'].filter(r => p[`is_${r.toLowerCase()}`])
+    const pmTag = [p.is_pm && 'PM', p.is_pl && 'PL'].filter(Boolean)
       .map(r => `~{\\footnotesize\\textbf{\\color{awesome}\\faStar~${r}}}`).join('');
 
     const metaParts = [];

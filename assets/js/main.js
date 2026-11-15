@@ -61,7 +61,7 @@ function locRegion(r) { return LANG === 'ko' ? (REGION_KO[r] || r) : r; }
 function locPeriod(p) { return (LANG === 'ko' && typeof p === 'string') ? p.replace(/\bPresent\b/i, '현재') : p; }
 
 let _allProjects = [];
-let _projPager, _pubPager, _awardPager, _activityPager;
+let _projPager, _pubPager;
 let _typewriterTimer = null;
 
 /* ─── Project Classification (methodology + domain) ─── */
@@ -228,10 +228,9 @@ function setupTitleTypewriter(titles) {
 /* ─── Impact Strip ─── */
 function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip'); if (!el) return;
-  el.innerHTML = '';
   const c = data.counts || {};
-  [{v:c.projects,l:t('impact.projects'),h:'projects'},{v:c.pm,l:t('impact.pm'),h:'projects'},{v:c.journals,l:t('impact.journals'),h:'publications'},{v:c.intl_conf,l:t('impact.intlConf'),h:'publications'},{v:c.patents,l:t('impact.patent'),h:'patents'}]
-    .filter(it => it.v != null).forEach(it => el.innerHTML += `<a class="impact-item" href="#${it.h}"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></a>`);
+  el.innerHTML = [{v:c.projects,l:t('impact.projects'),h:'projects'},{v:c.pm,l:t('impact.pm'),h:'projects'},{v:c.journals,l:t('impact.journals'),h:'publications'},{v:c.intl_conf,l:t('impact.intlConf'),h:'publications'},{v:c.patents,l:t('impact.patent'),h:'patents'}]
+    .filter(it => it.v != null).map(it => `<a class="impact-item" href="#${it.h}"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></a>`).join('');
 }
 
 /* ─── Philosophy ─── */
@@ -264,8 +263,6 @@ function renderEducation(items) {
     const thesisTitle = th.title || THESIS_FALLBACK[item.degree] || '';
     const title = `${esc(locDegree(item.degree))} — ${esc(item.major)}`;
     const advisorHtml = item.advisor ? parseAdvisor(item.advisor) : (item.remarks ? parseAdvisor(item.remarks) : '');
-    const section = (label, html) => html ? `<div class="modal-section"><div class="modal-section-label">${label}</div>${html}</div>` : '';
-    const para = v => v ? `<p class="modal-section-text">${esc(v)}</p>` : '';
     const di = thesisTitle ? bodies.push(`<div class="modal-title" id="modalTitle">${title}</div>
       <div class="modal-field"><span class="modal-field-label">${esc(item.institution)}</span></div>
       ${section(t('ui.thesis'), para(thesisTitle))}
@@ -313,14 +310,13 @@ function renderExperience(items) {
   const bodies = [];
   el.innerHTML = groups.map(parts => {
     const item = parts[0], merged = parts.length > 1;
-    const period = merged ? `${parts.at(-1).period.split(' - ')[0]} - ${item.period.split(' - ')[1]}` : item.period;
-    const alts = parts.map(p => p.alt_service).filter(Boolean);
-    const alt = alts.length ? `${alts.at(-1).split(' - ')[0]} - ${alts[0].split(' - ').at(-1)}` : '';
+    const period = merged ? spanOf(parts.map(p => p.period)) : item.period;
+    const alt = spanOf(parts.map(p => p.alt_service).filter(Boolean));
     const partBody = p => {
       const tasks = p.responsibilities?.length ? `<ul class="modal-task-list">${p.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
       const hl = p.highlights?.length ? `<div class="tl-highlights">${p.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : '';
       if (!merged) return tasks + hl;
-      return `<div class="modal-section"><div class="modal-section-label">${esc(p.division)} · ${esc(locPeriod(p.period))}</div><p class="modal-section-text">${esc(p.roles)}</p>${tasks}${hl}</div>`;
+      return section(`${esc(p.division)} · ${esc(locPeriod(p.period))}`, para(p.roles) + tasks + hl);
     };
     const content = parts.map(partBody).join('');
     const di = content ? bodies.push(`<div class="modal-title" id="modalTitle">${esc(item.position)}</div>
@@ -354,13 +350,7 @@ function renderFeaturedProjects(projects) {
   const sub = document.getElementById('projectSubtitle');
   if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건` : `${projects.length} projects · ${projects.filter(p => p.isPM).length} PM roles`;
 
-  /* featured click → modal (delegated, safe to rebind) */
-  el.onclick = e => {
-    const card = e.target.closest('.project-card');
-    if (!card) return;
-    const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
-    if (p) openProjectModal(p);
-  };
+  el.onclick = onProjectCardClick;
 }
 
 /* ─── Project card (Featured + All Projects) ─── */
@@ -378,7 +368,7 @@ function projectCard(p) {
   const footer = [
     p.isPM && '<span class="tag pm">PM</span>',
     p.isPL && '<span class="tag pm">PL</span>',
-    gov && '<span class="tag gov">Gov\'t</span>',
+    gov && `<span class="tag gov">${t('ui.govt')}</span>`,
     ...tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`),
     ...tags.domains.map(d => `<span class="tag domain">${esc(d)}</span>`),
     p.isPlanning && `<span class="tag plan">${t('ui.planning')}</span>`,
@@ -504,7 +494,7 @@ function renderAwards(items) {
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
     </div>`;
   }).join('');
-  _awardPager = createCarousel(el, 'awardsPager', 3, 2);
+  createCarousel(el, 'awardsPager', 3, 2);
 }
 
 /* ─── Carousel: cards split into pages of cols × rows; swipe or arrows, page number above and below ─── */
@@ -607,7 +597,7 @@ function renderActivities(items) {
   el.innerHTML = items.map(a => {
     return `<div class="activity-card reveal" data-paged><div class="activity-head"><span class="activity-icon" aria-hidden="true">${activityIcon(a.role, a.organization)}</span><span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
-  _activityPager = createCarousel(el, 'activitiesPager', 3, 2);
+  createCarousel(el, 'activitiesPager', 3, 2);
 }
 
 /* ─── Contact ─── */
@@ -621,7 +611,8 @@ function renderContact(basic) {
   if (basic.location) cs.push({i:'📍',l:t('ui.location'),v:basic.location,h:null});
   el.innerHTML = cs.map(c => {
     const inn = `<div class="contact-icon">${c.i}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
-    return safeUrl(c.h) ? `<a href="${safeUrl(c.h)}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
+    const href = safeUrl(c.h);
+    return href ? `<a href="${href}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
   }).join('');
 }
 
@@ -646,11 +637,12 @@ function setupProjectModal() {
   const grid = document.getElementById('projectsGrid'), modal = document.getElementById('projectModal');
   if (!grid || !modal) return;
   /* Use onclick to prevent listener accumulation on re-renders */
-  grid.onclick = e => {
-    const card = e.target.closest('.project-card'); if (!card) return;
-    const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
-    if (p) openProjectModal(p);
-  };
+  grid.onclick = onProjectCardClick;
+}
+function onProjectCardClick(e) {
+  const card = e.target.closest('.project-card'); if (!card) return;
+  const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
+  if (p) openProjectModal(p);
 }
 function openProjectModal(p) {
   const tags = getProjectTags(p);
@@ -672,11 +664,11 @@ function openProjectModal(p) {
     <div class="modal-title" id="modalTitle">${esc(p.title)}</div>
     ${(tags.methods.length||tags.domains.length) ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`).join('')}${tags.domains.map(dm => `<span class="tag domain">${esc(dm)}</span>`).join('')}</div>` : ''}
     ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}
-    ${d.situation ? `<div class="modal-section"><div class="modal-section-label">${t('ui.situation')}</div><p class="modal-section-text">${esc(d.situation)}</p></div>` : ''}
-    ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">${t('ui.purpose')}</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
-    ${d.tasks && d.tasks.length ? `<div class="modal-section"><div class="modal-section-label">${t('ui.keyTasks')}</div><ul class="modal-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul></div>` : ''}
-    ${d.achievements ? `<div class="modal-section"><div class="modal-section-label">${t('ui.achievements')}</div><p class="modal-section-text modal-achievement">${esc(d.achievements)}</p></div>` : ''}
-    ${d.notes ? `<div class="modal-section"><div class="modal-section-label">${t('ui.notes')}</div><p class="modal-section-text">${esc(d.notes)}</p></div>` : ''}
+    ${section(t('ui.situation'), para(d.situation))}
+    ${section(t('ui.purpose'), para(d.purpose))}
+    ${section(t('ui.keyTasks'), d.tasks?.length ? `<ul class="modal-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul>` : '')}
+    ${section(t('ui.achievements'), d.achievements ? `<p class="modal-section-text modal-achievement">${esc(d.achievements)}</p>` : '')}
+    ${section(t('ui.notes'), para(d.notes))}
     ${!d.purpose && p.remarks ? `<div class="modal-field"><span class="modal-field-label">${t('ui.remarks')}</span><span class="modal-field-value">${esc(p.remarks)}</span></div>` : ''}`);
 }
 
@@ -707,6 +699,10 @@ function closeModal() {
   modal.classList.remove('open'); document.body.style.overflow = '';
   _modalReturnFocus?.focus?.();
 }
+function section(label, html) { return html ? `<div class="modal-section"><div class="modal-section-label">${label}</div>${html}</div>` : ''; }
+function para(v) { return v ? `<p class="modal-section-text">${esc(v)}</p>` : ''; }
+/* "Start of the oldest - end of the newest" over newest-first period strings */
+function spanOf(periods) { return periods.length ? `${periods.at(-1).split(' - ')[0]} - ${periods[0].split(' - ').at(-1)}` : ''; }
 function detailHint(name) { return `<button type="button" class="detail-hint" aria-label="${t('ui.detailsHint')}: ${esc(name)}">${t('ui.detailsHint')}</button>`; }
 /* Card click (or its Details button) opens bodies[data-detail]; links inside the card keep working */
 function bindDetails(el, bodies) {

@@ -1231,7 +1231,7 @@ html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline }
    align-items: center;
    gap: .5rem;
    margin-bottom: .4rem;
-   flex-wrap: wrap
+   flex-wrap: nowrap
 }
 
 .project-title {
@@ -2177,12 +2177,6 @@ footer {
       gap: .3rem
    }
 
-   .tl-header-right {
-      align-items: flex-start;
-      flex-direction: row;
-      gap: .5rem
-   }
-
    .activities-grid {
       grid-template-columns: repeat(2, 1fr)
    }
@@ -2428,6 +2422,7 @@ footer {
 }
 
 .project-period {
+   min-width: 0;
    font-size: .72rem;
    font-weight: 600;
    color: var(--text-muted)
@@ -2450,6 +2445,7 @@ html[lang="en"] #heroResumeBtnKo {
    display: none
 }
 
+/* After the 900px block so the phone size wins */
 @media(max-width:600px) {
    .photo-ring-outer {
       width: 150px;
@@ -2463,10 +2459,3 @@ html[lang="ko"] body {
    overflow-wrap: break-word
 }
 
-.project-meta {
-   flex-wrap: nowrap
-}
-
-.project-period {
-   min-width: 0
-}
