@@ -7,6 +7,7 @@
   client: Samsung Heavy Industries
   affiliated_institution: KAIST
   is_pm: true
+  is_planning: true
   details:
     situation:
       en: Samsung Heavy Industries' ship cargo-hold production was scheduled manually by yard planners, with no quantitative load-balancing logic. Daily manpower demand swung between overloaded and idle days as a result.

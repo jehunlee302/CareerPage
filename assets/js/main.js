@@ -2,48 +2,48 @@
  * Jehun Lee Portfolio — main.js v4.0 (i18n)
  */
 let LANG = localStorage.getItem('lang') || 'en';
-const DATA_VER = '20260520d';
+const DATA_VER = '20261115a';
 const DATA_URLS = { en: `data/portfolio.json?v=${DATA_VER}`, ko: `data/portfolio.ko.json?v=${DATA_VER}` };
 const RESEARCH_INTERESTS = {
   en: [
-    { icon: '🚦', title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
-    { icon: '🧠', title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
-    { icon: '📈', title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
-    { icon: '🖥️', title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
-    { icon: '🏛️', title: 'Meta-Architecture for Scheduling', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
-    { icon: '🤖', title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
+    { title: 'Autonomous Scheduling', desc: 'AI-driven dynamic scheduling for real-time manufacturing environments' },
+    { title: 'Reinforcement & Imitation Learning', desc: 'Graph-based RL/IL algorithms for real-time industrial decision-making' },
+    { title: 'Digital Twin & Simulation', desc: 'Production-logistics simulation platforms for semiconductor fabs' },
+    { title: 'Semiconductor Fab Optimization', desc: 'Real-time scheduling and operation planning for advanced semiconductor manufacturing' },
+    { title: 'Meta-Architecture for Scheduling', desc: 'Generalizable agent architectures adaptable to diverse manufacturing environments' },
+    { title: 'AI-Native Manufacturing', desc: 'End-to-end AI integration in smart factory systems and SaaS platforms' },
+    { title: 'AI Agent Systems', desc: 'Efficient agent architectures built on AI-ready data, LLM wikis and ontologies' },
+    { title: 'AI Agent Services', desc: 'Production AI agents: backend, operational stability and deployment' },
   ],
   ko: [
-    { icon: '🚦', title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
-    { icon: '🧠', title: '강화학습 & 모방학습', desc: '실시간 산업 의사결정을 위한 그래프 기반 RL/IL 알고리즘' },
-    { icon: '📈', title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
-    { icon: '🖥️', title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
-    { icon: '🏛️', title: '스케줄링 메타 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
-    { icon: '🤖', title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
+    { title: '자율 스케줄링', desc: '실시간 제조 환경을 위한 AI 기반 동적 스케줄링' },
+    { title: '강화학습 & 모방학습', desc: '실시간 산업 의사결정을 위한 그래프 기반 RL/IL 알고리즘' },
+    { title: '디지털 트윈 & 시뮬레이션', desc: '반도체 팹 생산-물류 시뮬레이션 플랫폼' },
+    { title: '반도체 팹 최적화', desc: '첨단 반도체 제조의 실시간 스케줄링 및 운영 계획' },
+    { title: '스케줄링 메타 아키텍처', desc: '다양한 제조 환경에 적응 가능한 범용 에이전트 아키텍처' },
+    { title: 'AI 네이티브 제조', desc: '스마트 팩토리 시스템 및 SaaS 플랫폼의 End-to-End AI 통합' },
+    { title: 'AI 에이전트 시스템', desc: 'AI-ready 데이터, LLM 위키, 온톨로지를 바탕으로 한 효율적인 에이전트 구조' },
+    { title: 'AI 에이전트 서비스', desc: '백엔드, 운영 안정성, 배포까지 갖춘 실서비스 AI 에이전트' },
   ],
 };
-const FEATURED_PROJECT_INDICES = [25, 23, 21];
+const FEATURED_PROJECT_INDICES = [27, 26, 23];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
 const RESUME_URLS = { en: 'data/resume-en.pdf', ko: 'data/resume-ko.pdf' };
-const HERO_TAGS = {
-  en: ['Autonomous Scheduling','Digital Twin','Reinforcement Learning','Semiconductor Fab','AI-Native Manufacturing','KAIST Ph.D.'],
-  ko: ['자율 스케줄링','디지털 트윈','강화학습','반도체 팹','AI 네이티브 제조','KAIST 박사'],
-};
 const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
 
 /* ─── i18n UI Strings ─── */
 const I18N = {
   en: {
-    nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', narrative:'Narrative', contact:'Contact' },
-    label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.', narrative:'Career Narrative', narrativeSub:'Detailed view of major projects — background, role, key activities, and outcomes.' },
-    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', pmLead:'PM Lead', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', details:'▸ Details', collapse:'▾ Collapse', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative Military Service - Technical Research Personnel', altServiceMod:'concurrent affiliation with Ministry of National Defense', nvBackground:'Background', nvObjective:'Objective', nvRole:'Role', nvActivities:'Key Activities', nvOutcomes:'Outcomes', nvNotes:'Notes', nvPartners:'Partners', nvClient:'Client', nvPm:'PM', nvSeries:'Continuous Series' },
-    impact: { projects:'Major Projects', pm:'PM Roles', pubs:'Publications', honors:'Honors & Prizes', patent:'Patent' },
+    nav: { philosophy:'Philosophy', education:'Education', experience:'Experience', projects:'Projects', publications:'Publications', awards:'Awards', contact:'Contact' },
+    label: { corePhilosophy:'Core Philosophy', expertise:'Expertise', researchFocus:'Research Focus', academicBg:'Academic Background', education:'Education', career:'Career', workExp:'Work Experience', highlights:'Highlights', featuredProj:'Featured Projects', featuredSub:'Industry-defining programs across semiconductor & smart manufacturing', portfolio:'Portfolio', allProjects:'All Projects', researchOutput:'Research Output', academicWorks:'Academic Works', recognition:'Recognition', honorsAwards:'Honors & Awards', ip:'Intellectual Property', patents:'Patents', leadership:'Leadership & Service', activities:'Activities & Leadership', capabilities:'Capabilities', skills:'Skills', connect:'Let\'s Connect', getInTouch:'Get in Touch', contactIntro:'Open to AI research partnerships, industry consulting engagements, and strategic collaborations in intelligent manufacturing.' },
+    ui: { contactMe:'Contact Me', resumeEn:'Resume (EN)', resumeKo:'Resume (KO)', all:'All', planning:'Planning', teamSize:'Team Size', govt:"Gov't", detailsHint:'Details ↗', viewPaper:'View Paper ↗', thesis:'Thesis:', prev:'Previous', next:'Next', period:'Period', role:'Role', client:'Client', partners:'Partners', partner:'Partner', affiliated:'Affiliated', situation:'Situation', purpose:'Objective', keyTasks:'Actions', achievements:'Results', notes:'Notes', remarks:'Remarks', intlJournal:'Intl. Journal', domJournal:'Dom. Journal', intlConf:'Intl. Conference', domConf:'Dom. Conference', poster:'Poster', allRights:'All rights reserved', updated:'Updated:', topic:'Topic', priorLimitations:'Prior Limitations', methodology:'Methodology', performance:'Performance', patNo:'No.', patFiled:'Filed', patApplicant:'Applicant', patAuthority:'Authority', email:'Email', location:'Location', intlJournalBadge:'Intl. Journal', domJournalBadge:'Dom. Journal', intlConfBadge:'Intl. Conf.', domConfBadge:'Dom. Conf.', firstAuthor:'1st Author', altServiceLabel:'Alternative military service (technical research personnel)', patStatus:'Status', granted:'Granted', patInventors:'Inventors' },
+    impact: { projects:'Major Projects', pm:'PM Roles', journals:'SCI Journal Papers', intlConf:'Intl. Conf. Papers', patent:'Granted Patent' },
   },
   ko: {
-    nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', narrative:'경력기술서', contact:'연락처' },
-    label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.', narrative:'경력기술서', narrativeSub:'주요 프로젝트의 배경·역할·수행 내용·성과를 단락 형태로 깊이 있게 기술한 섹션입니다.' },
-    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', pmLead:'PM 수행', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', details:'▸ 상세', collapse:'▾ 접기', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'병역 대체 복무 - 전문연구요원', altServiceMod:'국방부 동시 소속', nvBackground:'배경', nvObjective:'목표', nvRole:'역할', nvActivities:'수행 내용', nvOutcomes:'성과', nvNotes:'비고', nvPartners:'협력사', nvClient:'고객사', nvPm:'PM', nvSeries:'연속 과제' },
-    impact: { projects:'주요 프로젝트', pm:'PM 수행', pubs:'논문', honors:'수상', patent:'특허' },
+    nav: { philosophy:'철학', education:'교육', experience:'경력', projects:'프로젝트', publications:'논문', awards:'수상', contact:'연락처' },
+    label: { corePhilosophy:'핵심 철학', expertise:'전문성', researchFocus:'연구 분야', academicBg:'학력', education:'학력', career:'경력', workExp:'경력 사항', highlights:'하이라이트', featuredProj:'주요 프로젝트', featuredSub:'반도체 & 스마트 제조 분야의 대표 프로그램', portfolio:'포트폴리오', allProjects:'전체 프로젝트', researchOutput:'연구 성과', academicWorks:'학술 논문', recognition:'수상 내역', honorsAwards:'수상 및 성과', ip:'지식재산', patents:'특허', leadership:'리더십 & 봉사', activities:'활동 및 리더십', capabilities:'역량', skills:'기술', connect:'연락하기', getInTouch:'연락처', contactIntro:'AI 연구 파트너십, 산업 컨설팅, 지능형 제조 분야의 전략적 협업에 열려 있습니다.' },
+    ui: { contactMe:'연락하기', resumeEn:'이력서 (EN)', resumeKo:'이력서 (KO)', all:'전체', planning:'기획', teamSize:'규모', govt:'정부과제', detailsHint:'상세 ↗', viewPaper:'논문 보기 ↗', thesis:'논문:', prev:'이전', next:'다음', period:'기간', role:'역할', client:'고객사', partners:'협력사', partner:'협력기관', affiliated:'소속기관', situation:'상황', purpose:'목표', keyTasks:'수행 내용', achievements:'성과', notes:'비고', remarks:'비고', intlJournal:'국제 저널', domJournal:'국내 저널', intlConf:'국제 학회', domConf:'국내 학회', poster:'포스터', allRights:'All rights reserved', updated:'업데이트:', topic:'주제', priorLimitations:'기존 연구 한계', methodology:'방법론', performance:'성능', patNo:'출원번호', patFiled:'출원일', patApplicant:'출원인', patAuthority:'출원국', email:'이메일', location:'위치', intlJournalBadge:'국제 저널', domJournalBadge:'국내 저널', intlConfBadge:'국제 학회', domConfBadge:'국내 학회', firstAuthor:'1저자', altServiceLabel:'전문연구요원 (병역 대체 복무)', patStatus:'상태', granted:'등록', patInventors:'발명자' },
+    impact: { projects:'주요 프로젝트', pm:'PM 수행', journals:'SCI 저널 논문', intlConf:'국제 학회 논문', patent:'등록 특허' },
   },
 };
 function t(key) { const parts = key.split('.'); let obj = I18N[LANG]; for (const p of parts) { obj = obj?.[p]; } return obj || key; }
@@ -59,13 +59,9 @@ const REGION_KO = {
 function locDegree(d) { return LANG === 'ko' ? (DEGREE_KO[d] || d) : d; }
 function locRegion(r) { return LANG === 'ko' ? (REGION_KO[r] || r) : r; }
 function locPeriod(p) { return (LANG === 'ko' && typeof p === 'string') ? p.replace(/\bPresent\b/i, '현재') : p; }
-const PROJ_PER_PAGE = 9;
-const PUB_PER_PAGE = 6;
-const AWARD_PER_PAGE = 6;
-const ACTIVITY_PER_PAGE = 6;
 
 let _allProjects = [];
-let _projPager, _pubPager, _awardPager, _activityPager;
+let _projPager, _pubPager;
 let _typewriterTimer = null;
 
 /* ─── Project Classification (methodology + domain) ─── */
@@ -89,14 +85,14 @@ function getProjectTags(p) {
 
   return { methods, domains };
 }
-/* Back-compat: legacy callers expecting flat array */
-function getTopics(p) {
-  if (typeof p === 'string') {
-    const t = getProjectTags({ title: p });
-    return [...t.methods, ...t.domains];
-  }
-  const t = getProjectTags(p);
-  return [...t.methods, ...t.domains];
+/* team_size is a bucket like "5+"; client staff are not counted */
+function teamLabel(size) { return LANG === 'ko' ? `${size}명` : `${size} people`; }
+/* "5m (5y)" = took part 5 months of a 5-year project → "5개월 (전체 5년)" */
+function durLabel(d) {
+  const unit = s => s.replace(/(\d+)y/g, LANG === 'ko' ? '$1년 ' : '$1 yr ').replace(/(\d+)m/g, LANG === 'ko' ? '$1개월' : '$1 mo').replace(/\s+/g, ' ').trim();
+  const m = String(d || '').match(/^(.+?)\s*\((.+)\)$/);
+  if (!m) return unit(String(d || ''));
+  return LANG === 'ko' ? `${unit(m[1])} (전체 ${unit(m[2])})` : `${unit(m[1])} (of ${unit(m[2])})`;
 }
 function isGov(client) { return /NRF|MOTIE|MSIP|Ministry/i.test(client || ''); }
 
@@ -112,7 +108,11 @@ async function init() {
     setupTitleTypewriter(data.basic?.titles || []);
     setupLangToggle();
     setupThemeToggle();
-  } catch (err) { console.error('Portfolio load error:', err); }
+  } catch (err) {
+    console.error('Portfolio load error:', err);
+    const main = document.querySelector('main');
+    if (main) main.innerHTML = '<p style="padding:4rem 2rem;text-align:center;color:var(--text-muted)">Failed to load portfolio data. Please refresh the page.</p>';
+  }
 }
 
 /* ─── Theme Toggle ─── */
@@ -191,12 +191,10 @@ function render(data) {
 
 /* ─── Hero ─── */
 function renderHero(data) {
-  const el = document.getElementById('heroTags');
-  if (el) el.innerHTML = (HERO_TAGS[LANG]||HERO_TAGS.en).map(tag => `<span class="hero-tag">${esc(tag)}</span>`).join('');
   const heroBtn = document.getElementById('heroContactBtn');
   if (heroBtn) heroBtn.textContent = t('ui.contactMe');
   const locEl = document.getElementById('heroLocationText');
-  if (locEl && data.basic?.location) locEl.textContent = `${data.basic.location} · VMS Solutions Inc.`;
+  if (locEl && data.basic?.location) locEl.textContent = [data.basic.location, data.workExperience?.[0]?.organization].filter(Boolean).join(' · ');
   const sumEl = document.getElementById('heroSummary');
   if (sumEl) {
     const lines = (data.basic?.summary || '').split('\n').filter(Boolean);
@@ -230,66 +228,56 @@ function setupTitleTypewriter(titles) {
 /* ─── Impact Strip ─── */
 function renderImpactStrip(data) {
   const el = document.getElementById('impactStrip'); if (!el) return;
-  el.innerHTML = '';
-  const pm = (data.projects||[]).filter(p => p.isPM).length;
-  const prizes = (data.honors||[]).filter(h => /prize|first|second|third|등상/i.test(h.title||'')).length;
-  const verifiablePubs = (data.publications||[]).filter(p => p.link && /^https?:\/\//.test(p.link)).length;
-  [{v:(data.projects||[]).length,l:t('impact.projects')},{v:pm,l:t('impact.pm')},{v:verifiablePubs,l:t('impact.pubs')},{v:prizes,l:t('impact.honors')},{v:(data.patents||[]).length,l:t('impact.patent')}]
-    .forEach(it => el.innerHTML += `<div class="impact-item"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></div>`);
+  const c = data.counts || {};
+  el.innerHTML = [{v:c.projects,l:t('impact.projects'),h:'projects'},{v:c.pm,l:t('impact.pm'),h:'projects'},{v:c.journals,l:t('impact.journals'),h:'publications'},{v:c.intl_conf,l:t('impact.intlConf'),h:'publications'},{v:c.patents,l:t('impact.patent'),h:'patents'}]
+    .filter(it => it.v != null).map(it => `<a class="impact-item" href="#${it.h}"><span class="impact-num">${esc(String(it.v))}</span><span class="impact-label">${esc(it.l)}</span></a>`).join('');
 }
 
 /* ─── Philosophy ─── */
 function renderPhilosophy(p) {
   if (!p) return;
   setText('philosophyHeadline', p.headline); setText('philosophyLead', p.lead);
-  const b = document.getElementById('philosophyBody');
-  if (b) b.innerHTML = p.body.split('\n\n').map(para => `<p>${esc(para)}</p>`).join('');
+  const btn = document.getElementById('philosophyMore');
+  if (btn) {
+    btn.textContent = t('ui.detailsHint');
+    btn.hidden = !p.body;
+    btn.onclick = () => openModal(`<div class="modal-title" id="modalTitle">${esc(p.headline)}</div>${p.body.split('\n\n').filter(Boolean).map(para => `<p class="modal-section-text">${esc(para)}</p>`).join('')}`);
+  }
   const pl = document.getElementById('philosophyPillars');
-  if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-head"><div class="pillar-icon">${x.icon}</div><h3>${esc(x.title)}</h3></div><p>${esc(x.desc)}</p></div>`).join('');
+  if (pl && p.pillars) pl.innerHTML = p.pillars.map(x => `<div class="pillar reveal"><div class="pillar-head"><div class="pillar-icon">${esc(x.icon)}</div><h3>${esc(x.title)}</h3></div><p>${esc(x.desc)}</p></div>`).join('');
 }
 
 /* ─── Research ─── */
 function renderResearchFocus() {
   const el = document.getElementById('researchGrid'); if (!el) return;
   const items = RESEARCH_INTERESTS[LANG] || RESEARCH_INTERESTS.en;
-  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-head"><div class="rc-icon">${r.icon}</div><div class="rc-title">${esc(r.title)}</div></div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
+  el.innerHTML = items.map(r => `<div class="research-card reveal"><div class="rc-title">${esc(r.title)}</div><div class="rc-desc">${esc(r.desc)}</div></div>`).join('');
 }
 
 /* ─── Education ─── */
 function renderEducation(items) {
   const el = document.getElementById('educationTimeline'); if (!el || !items) return;
-  el.innerHTML = items.map(item => {
-    const thesisTitle = item.thesis?.title || THESIS_FALLBACK[item.degree] || '';
-    const hasDetails = item.thesis?.topic || item.thesis?.methodology || item.thesis?.performance;
+  const bodies = [];
+  el.innerHTML = items.filter(item => item.degree !== 'High School').map(item => {
+    const th = item.thesis || {};
+    const thesisTitle = th.title || THESIS_FALLBACK[item.degree] || '';
+    const title = `${esc(locDegree(item.degree))} — ${esc(item.major)}`;
     const advisorHtml = item.advisor ? parseAdvisor(item.advisor) : (item.remarks ? parseAdvisor(item.remarks) : '');
-    return `<div class="timeline-item reveal">
-      <div class="tl-header"><span class="tl-title">${esc(locDegree(item.degree))} — ${esc(item.major)}</span><span class="tl-period">${esc(locPeriod(item.period))}</span></div>
+    const di = thesisTitle ? bodies.push(`<div class="modal-title" id="modalTitle">${title}</div>
+      <div class="modal-field"><span class="modal-field-label">${esc(item.institution)}</span></div>
+      ${section(t('ui.thesis'), para(thesisTitle))}
+      ${section(t('ui.topic'), para(th.topic))}
+      ${section(t('ui.priorLimitations'), para(th.priorLimitations))}
+      ${section(t('ui.methodology'), th.methodology ? `<div class="edu-methodology">${formatMethodology(th.methodology)}</div>` : '')}
+      ${section(t('ui.performance'), para(th.performance))}`) - 1 : -1;
+    return `<div class="timeline-item reveal"${di >= 0 ? ` data-detail="${di}"` : ''}>
+      <div class="tl-header"><span class="tl-title">${title}</span><div class="tl-header-right"><span class="tl-period">${esc(locPeriod(item.period))}</span></div></div>
+      ${di >= 0 ? detailHint(`${locDegree(item.degree)} — ${item.major}`) : ''}
       <div class="tl-org"><span class="org-name">${esc(item.institution)}</span></div>
       ${advisorHtml ? `<div class="tl-remarks">${advisorHtml}</div>` : ''}
-      ${thesisTitle ? `<div class="edu-thesis${hasDetails ? ' edu-thesis-expandable' : ''}"${hasDetails ? ' tabindex="0" role="button"' : ''}>
-        <span class="edu-thesis-label">${t('ui.thesis')}</span> ${esc(thesisTitle)}${hasDetails ? ` <span class="edu-expand-hint">${t('ui.details')}</span>` : ''}
-      </div>` : ''}
-      ${hasDetails ? `<div class="edu-thesis-details" style="display:none">
-        ${item.thesis.topic ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.topic')}</span><p>${esc(item.thesis.topic)}</p></div>` : ''}
-        ${item.thesis.priorLimitations ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.priorLimitations')}</span><p>${esc(item.thesis.priorLimitations)}</p></div>` : ''}
-        ${item.thesis.methodology ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.methodology')}</span><div class="edu-methodology">${formatMethodology(item.thesis.methodology)}</div></div>` : ''}
-        ${item.thesis.performance ? `<div class="edu-detail-section"><span class="edu-detail-label">${t('ui.performance')}</span><p>${esc(item.thesis.performance)}</p></div>` : ''}
-      </div>` : ''}
     </div>`;
   }).join('');
-
-  /* Thesis expand/collapse */
-  el.querySelectorAll('.edu-thesis-expandable').forEach(btn => {
-    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
-    btn.addEventListener('click', () => {
-      const details = btn.nextElementSibling;
-      const hint = btn.querySelector('.edu-expand-hint');
-      if (!details) return;
-      const open = details.style.display !== 'none';
-      details.style.display = open ? 'none' : 'block';
-      if (hint) hint.textContent = open ? t('ui.details') : t('ui.collapse');
-    });
-  });
+  bindDetails(el, bodies);
 }
 function formatMethodology(text) {
   if (!text) return '';
@@ -306,78 +294,99 @@ function parseAdvisor(r) {
   const name = m[1].trim();
   const label = LANG === 'ko' ? '지도교수' : 'Advisor';
   const prof = name.startsWith('Prof.') ? name : `Prof. ${name}`;
-  return `${label}: ${esc(prof)} — <a href="${m[2].trim()}" target="_blank" rel="noopener noreferrer" class="tl-link">Homepage ↗</a>`;
+  return `${label}: ${esc(prof)} <a href="${safeUrl(m[2].trim())}" target="_blank" rel="noopener noreferrer" class="tl-link" aria-label="${LANG === 'ko' ? '지도교수 홈페이지' : 'Advisor homepage'}">🔗</a>`;
 }
 
 /* ─── Experience ─── */
 function renderExperience(items) {
   const el = document.getElementById('experienceTimeline'); if (!el || !items) return;
-  el.innerHTML = items.map(item => {
-    const hasResp = item.responsibilities && item.responsibilities.length > 0;
-    const hasHighlights = item.highlights && item.highlights.length > 0;
-    const hasDetails = hasResp || hasHighlights;
+  /* Consecutive stints with the same organization and position share one card (newest first) */
+  const groups = [];
+  items.forEach(it => {
+    const g = groups.at(-1);
+    if (g && g[0].organization === it.organization && g[0].position === it.position) g.push(it);
+    else groups.push([it]);
+  });
+  const bodies = [];
+  el.innerHTML = groups.map(parts => {
+    const item = parts[0], merged = parts.length > 1;
+    const period = merged ? spanOf(parts.map(p => p.period)) : item.period;
+    const alt = spanOf(parts.map(p => p.alt_service).filter(Boolean));
+    const partBody = p => {
+      const tasks = p.responsibilities?.length ? `<ul class="modal-task-list">${p.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
+      const hl = p.highlights?.length ? `<div class="tl-highlights">${p.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : '';
+      if (!merged) return tasks + hl;
+      return section(`${esc(p.division)} · ${esc(locPeriod(p.period))}`, para(p.roles) + tasks + hl);
+    };
+    const content = parts.map(partBody).join('');
+    const di = content ? bodies.push(`<div class="modal-title" id="modalTitle">${esc(item.position)}</div>
+      <div class="modal-field"><span class="modal-field-label">${esc(item.organization)}${!merged && item.division ? ` · ${esc(item.division)}` : ''}</span><span class="modal-field-value">${esc(locPeriod(period))}</span></div>
+      ${content}`) - 1 : -1;
     return `
-    <div class="timeline-item reveal">
+    <div class="timeline-item reveal"${di >= 0 ? ` data-detail="${di}"` : ''}>
       <div class="tl-header">
         <div class="tl-header-left">
           <span class="tl-title">${esc(item.position)}</span>
-          <span class="tl-org"><span class="org-name">${esc(item.organization)}</span>${item.division ? ` <span class="tl-sep">|</span> <span class="tl-division">${esc(item.division)}</span>` : ''}</span>
+          <span class="tl-org"><span class="org-name">${esc(item.organization)}</span>${!merged && item.division ? ` <span class="tl-sep">|</span> <span class="tl-division">${esc(item.division)}</span>` : ''}${item.region ? ` <span class="tl-region-sm">· ${esc(locRegion(item.region))}</span>` : ''}</span>
         </div>
         <div class="tl-header-right">
-          <span class="tl-period">${esc(locPeriod(item.period))}</span>
-          <span class="tl-region-sm">${esc(locRegion(item.region))}</span>
+          <span class="tl-period">${esc(locPeriod(period))}</span>
         </div>
       </div>
+      ${di >= 0 ? detailHint(item.position) : ''}
       <div class="tl-roles">${esc(item.roles)}</div>
-      ${item.alt_service ? `<div class="tl-alt-service">${esc(t('ui.altServiceLabel'))} (${esc(t('ui.altServiceMod'))}, ${esc(item.alt_service)})</div>` : ''}
-      ${hasDetails ? `<div class="exp-expand-btn" tabindex="0" role="button"><span class="exp-expand-hint">${t('ui.details')}</span></div>` : ''}
-      ${hasDetails ? `<div class="exp-details" style="display:none">
-        ${hasResp ? `<ul class="tl-responsibilities">${item.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
-        ${hasHighlights ? `<div class="tl-highlights">${item.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : ''}
-      </div>` : ''}
+      ${alt ? `<div class="tl-alt-service"><span class="alt-badge">${esc(t('ui.altServiceLabel'))} · ${esc(alt)}</span></div>` : ''}
     </div>`;
   }).join('');
-
-  /* Expand/collapse */
-  el.querySelectorAll('.exp-expand-btn').forEach(btn => {
-    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
-    btn.addEventListener('click', () => {
-      const details = btn.nextElementSibling;
-      const hint = btn.querySelector('.exp-expand-hint');
-      if (!details) return;
-      const open = details.style.display !== 'none';
-      details.style.display = open ? 'none' : 'block';
-      if (hint) hint.textContent = open ? t('ui.details') : t('ui.collapse');
-    });
-  });
+  bindDetails(el, bodies);
 }
 
 /* ─── Featured Projects ─── */
 function renderFeaturedProjects(projects) {
   const el = document.getElementById('featuredGrid'); if (!el || !projects) return;
   const featured = FEATURED_PROJECT_INDICES.map(i => projects.find(p => p.index === i)).filter(Boolean);
-  el.innerHTML = featured.map(p => `
-    <div class="featured-card reveal" data-proj-index="${p.index}">
-      <div class="fc-badge">${p.isPM ? '👑 PM · ' : ''}#${p.index}</div>
-      <div class="fc-client"><span class="fc-client-name">${esc(p.client)}</span>${p.affiliatedInstitution ? ` <span class="fc-sep">|</span> <span class="fc-affil">${esc(p.affiliatedInstitution)}</span>` : ''}</div>
-      <div class="fc-title">${esc(p.title)}</div>
-      ${p.remarks ? `<div class="fc-period">${esc(p.remarks)}</div>` : ''}
-      <div class="fc-tags"><span class="fc-tag">${esc(p.period)}</span>${p.duration ? `<span class="fc-tag">${esc(p.duration)}</span>` : ''}</div>
-    </div>`).join('');
+  el.innerHTML = featured.map(p => projectCard(p)).join('');
 
   const sub = document.getElementById('projectSubtitle');
   if (sub) sub.textContent = LANG === 'ko' ? `${projects.length}개 프로젝트 · PM ${projects.filter(p => p.isPM).length}건` : `${projects.length} projects · ${projects.filter(p => p.isPM).length} PM roles`;
 
-  /* featured click → modal (delegated, safe to rebind) */
-  el.onclick = e => {
-    const card = e.target.closest('.featured-card');
-    if (!card) return;
-    const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
-    if (p) openProjectModal(p);
-  };
+  el.onclick = onProjectCardClick;
 }
 
-/* ─── All Projects (paged + topic filter) ─── */
+/* ─── Project card (Featured + All Projects) ─── */
+function projectCard(p) {
+  const tags = getProjectTags(p);
+  const gov = isGov(p.client);
+  const orgs = [
+    [t('ui.affiliated'), p.affiliatedInstitution],
+    [t('ui.partners'), (p.partners || []).join(' · ')],
+    [t('ui.client'), p.client],
+  ].filter(([, v]) => v);
+  const orgList = `<dl class="project-org">${orgs.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`;
+  const when = [locPeriod(p.period), durLabel(p.duration)].filter(Boolean).join(' · ');
+  /* Filterable tags first: the footer is one line and clips the end */
+  const footer = [
+    p.isPM && '<span class="tag pm">PM</span>',
+    p.isPL && '<span class="tag pm">PL</span>',
+    gov && `<span class="tag gov">${t('ui.govt')}</span>`,
+    ...tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`),
+    ...tags.domains.map(d => `<span class="tag domain">${esc(d)}</span>`),
+    p.isPlanning && `<span class="tag plan">${t('ui.planning')}</span>`,
+    p.teamSize && `<span class="tag">${esc(teamLabel(p.teamSize))}</span>`,
+  ].filter(Boolean).join('');
+  return `
+    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-pl="${p.isPL?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${esc(tags.methods.join(','))}" data-proj-domains="${esc(tags.domains.join(','))}">
+      <div class="project-meta">
+        <span class="project-period"><span class="project-num">[${p.index}]</span>${esc(when)}</span>
+        ${detailHint(p.title)}
+      </div>
+      <div class="project-title">${esc(p.title)}</div>
+      ${orgList}
+      <div class="project-footer">${footer}</div>
+    </div>`;
+}
+
+/* ─── All Projects (carousel + topic filter) ─── */
 function renderProjects(items) {
   _allProjects = items || [];
   const el = document.getElementById('projectsGrid'); if (!el || !items) return;
@@ -395,42 +404,16 @@ function renderProjects(items) {
   const fb = document.getElementById('projFilterBar');
   if (fb) fb.innerHTML = [
     `<button class="filter-btn active" data-proj-filter="all">${t('ui.all')}</button>`,
-    `<button class="filter-btn" data-proj-filter="pm">${t('ui.pmLead')}</button>`,
+    `<button class="filter-btn" data-proj-filter="pm">PM</button>`,
+    ...(sorted.some(p => p.isPL) ? ['<button class="filter-btn" data-proj-filter="pl">PL</button>'] : []),
     `<button class="filter-btn" data-proj-filter="gov">${t('ui.govt')}</button>`,
-    ...[...methodSet].sort().map(m => `<button class="filter-btn" data-proj-filter="method:${m}">${m}</button>`),
-    ...[...domainSet].sort().map(d => `<button class="filter-btn" data-proj-filter="domain:${d}">${d}</button>`)
+    ...[...methodSet].sort().map(m => `<button class="filter-btn" data-proj-filter="method:${esc(m)}">${esc(m)}</button>`),
+    ...[...domainSet].sort().map(d => `<button class="filter-btn" data-proj-filter="domain:${esc(d)}">${esc(d)}</button>`)
   ].join('');
 
-  /* Cards */
-  el.innerHTML = sorted.map(p => {
-    const tags = getProjectTags(p);
-    const allTags = [...tags.methods, ...tags.domains];
-    const gov = isGov(p.client);
-    const hasPartners = p.partners && p.partners.length > 0;
-    const affilRow = (p.affiliatedInstitution || hasPartners) ? `
-      <div class="project-affil-row">
-        ${p.affiliatedInstitution ? `<span class="project-affil">${esc(p.affiliatedInstitution)}</span>` : ''}
-        ${hasPartners ? `<span class="project-partners">${LANG === 'ko' ? '협력: ' : 'with '}${p.partners.map(esc).join(' · ')}</span>` : ''}
-      </div>` : '';
-    return `
-    <div class="project-card reveal" data-paged data-proj-index="${p.index}" data-proj-pm="${p.isPM?'1':'0'}" data-proj-gov="${gov?'1':'0'}" data-proj-methods="${tags.methods.join(',')}" data-proj-domains="${tags.domains.join(',')}">
-      <div class="project-meta">
-        <div><span class="project-index">#${p.index}</span></div>
-        <span class="project-popup-hint">${t('ui.detailsHint')}</span>
-      </div>
-      ${affilRow}
-      <div class="project-title">${esc(p.title)}</div>
-      ${p.client?`<div class="project-client">${esc(p.client)}</div>`:''}
-      <div class="project-footer">
-        ${p.isPM?'<span class="tag pm">PM</span>':''}
-        ${gov?'<span class="tag gov">Gov\'t</span>':''}
-        ${tags.methods.map(m=>`<span class="tag method">${m}</span>`).join('')}
-        ${tags.domains.map(d=>`<span class="tag domain">${d}</span>`).join('')}
-      </div>
-    </div>`;
-  }).join('');
+  el.innerHTML = sorted.map(p => projectCard(p)).join('');
 
-  _projPager = createPager(el, PROJ_PER_PAGE, 'projectsPager');
+  _projPager = createCarousel(el, 'projectsPager', 3, 2);
   setupProjectModal();
 
   /* filter click */
@@ -442,6 +425,7 @@ function renderProjects(items) {
     el.querySelectorAll('[data-paged]').forEach(c => {
       let show = true;
       if (f === 'pm') show = c.dataset.projPm === '1';
+      else if (f === 'pl') show = c.dataset.projPl === '1';
       else if (f === 'gov') show = c.dataset.projGov === '1';
       else if (f.startsWith('method:')) show = (c.dataset.projMethods||'').split(',').includes(f.slice(7));
       else if (f.startsWith('domain:')) show = (c.dataset.projDomains||'').split(',').includes(f.slice(7));
@@ -466,8 +450,9 @@ function renderPublications(items) {
     else { dt=isIntl?'Conference-International':'Conference-Domestic'; tb=isIntl?`<span class="badge badge-conf">${t('ui.intlConfBadge')}</span>`:`<span class="badge badge-conf badge-domestic">${t('ui.domConfBadge')}</span>`; }
     const fb = pub.role==='1st Author'?`<span class="badge badge-1st">${t('ui.firstAuthor')}</span>`:'';
     const venue = [pub.venue,pub.year,pub.remarks].filter(Boolean).join(' · ');
-    const link = pub.link?`<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-link">${t('ui.viewPaper')}</a>`:'';
+    const href = safeUrl(pub.link), link = href?`<a href="${href}" target="_blank" rel="noopener noreferrer" class="pub-link detail-hint">${t('ui.viewPaper')}</a>`:'';
     return `<div class="pub-item reveal" data-paged data-type="${dt}">
+      ${link}
       <span class="pub-num">[${pub.index}]</span>
       <div class="pub-body">
         <div class="pub-main">
@@ -475,12 +460,12 @@ function renderPublications(items) {
           <div class="pub-title">"${esc(pub.title)}"</div>
           <div class="pub-venue">${esc(venue)}</div>
         </div>
-        <div class="pub-side">${link}<div class="pub-badges">${fb}${tb}</div></div>
+        <div class="pub-side"><div class="pub-badges">${fb}${tb}</div></div>
       </div>
     </div>`;
   }).join('');
 
-  _pubPager = createPager(el, PUB_PER_PAGE, 'pubPager');
+  _pubPager = createCarousel(el, 'pubPager', 2, 3, 1024);
 
   const pubFilterBar = document.querySelector('.pub-filter-bar');
   if (pubFilterBar) pubFilterBar.onclick = e => {
@@ -504,152 +489,75 @@ function renderAwards(items) {
     <div class="award-card reveal" data-paged>
       <div class="${dateCls}">${dateText}</div>
       <div class="award-title">${esc(a.title)}</div>
-      ${a.description?`<div class="award-desc">${esc(a.description)}</div>`:''}
+      <div class="award-desc">${esc(a.description || '')}</div>
       <div class="award-org">${esc(a.organization)}</div>
       ${a.remarks?`<span class="award-remarks">${esc(a.remarks)}</span>`:''}
     </div>`;
   }).join('');
-  _awardPager = createPager(el, AWARD_PER_PAGE, 'awardsPager');
+  createCarousel(el, 'awardsPager', 3, 2);
 }
 
-/* ─── Narrative (Project Deep Dives) ─── */
-function nvParsePeriodStart(period) {
-  if (!period) return null;
-  const m = String(period).match(/(\d{4})\.(\d{1,2})/);
-  return m ? new Date(parseInt(m[1]), parseInt(m[2]) - 1, 1) : null;
-}
-function nvParsePeriodEnd(period) {
-  if (!period) return null;
-  const matches = String(period).match(/(\d{4})\.(\d{1,2})/g);
-  if (!matches || matches.length === 0) return null;
-  if (matches.length === 1) return nvParsePeriodStart(period);
-  const [y, mm] = matches[matches.length - 1].split('.');
-  return new Date(parseInt(y), parseInt(mm) - 1, 1);
-}
-function renderNarrative(projects) {
-  const el = document.getElementById('narrativeList'); if (!el || !projects) return;
-  const withDetails = projects.filter(p => p.details && (p.details.situation || p.details.purpose || (p.details.tasks && p.details.tasks.length) || p.details.achievements));
-  if (!withDetails.length) { el.innerHTML = ''; return; }
+/* ─── Carousel: cards split into pages of cols × rows; swipe or arrows, page number above and below ─── */
+function createCarousel(gridEl, navId, cols, rows, oneColBelow = 600) {
+  gridEl.classList.add('carousel');
+  const top = document.getElementById(navId);
+  if (!top) return { reset(){} };
+  let bottom = gridEl.nextElementSibling?.classList.contains('paged-nav-bottom') ? gridEl.nextElementSibling : null;
+  if (!bottom) { bottom = document.createElement('div'); gridEl.after(bottom); }
+  top.className = 'paged-nav-inline';
+  bottom.className = 'paged-nav-inline paged-nav-bottom';
+  const navs = [top, bottom];
+  navs.forEach(n => n.innerHTML = `<button class="paged-btn paged-prev" aria-label="${t('ui.prev')}">←</button><span class="paged-info"></span><button class="paged-btn paged-next" aria-label="${t('ui.next')}">→</button>`);
+  const cards = [...gridEl.querySelectorAll('[data-paged]')];
+  const hidden = document.createElement('div');
+  hidden.className = 'carousel-hidden';
+  const colsNow = () => innerWidth < oneColBelow ? 1 : innerWidth < 880 ? Math.min(cols, 2) : cols;
+  let shownCols = 0;
+  const pages = () => gridEl.querySelectorAll('.carousel-page');
+  const current = () => Math.round(gridEl.scrollLeft / (gridEl.clientWidth || 1));
+  const go = i => gridEl.scrollTo({ left: i * gridEl.clientWidth, behavior: 'smooth' });
 
-  /* Sort ascending by start date for grouping */
-  const sorted = [...withDetails].sort((a, b) => {
-    const aD = nvParsePeriodStart(a.period); const bD = nvParsePeriodStart(b.period);
-    return (aD?.getTime() || 0) - (bD?.getTime() || 0);
-  });
-
-  /* Group continuous projects: same client + affiliated + period gap < 6 months */
-  const groups = [];
-  for (const p of sorted) {
-    const prev = groups.length ? groups[groups.length - 1] : null;
-    const prevLast = prev?.projects[prev.projects.length - 1];
-    const prevEnd = prevLast ? nvParsePeriodEnd(prevLast.period) : null;
-    const thisStart = nvParsePeriodStart(p.period);
-    const gapMonths = (prevEnd && thisStart) ? (thisStart - prevEnd) / (1000 * 60 * 60 * 24 * 30) : Infinity;
-    if (prev && prev.client === p.client && prev.affiliated === p.affiliatedInstitution && gapMonths < 6) {
-      prev.projects.push(p);
-    } else {
-      groups.push({ client: p.client, affiliated: p.affiliatedInstitution, projects: [p] });
-    }
-  }
-  groups.reverse(); /* newest groups first */
-
-  el.innerHTML = groups.map(g => {
-    const isMulti = g.projects.length > 1;
-    const firstP = g.projects[0]; const lastP = g.projects[g.projects.length - 1];
-    const spanStart = (firstP.period || '').split(/[-~]/)[0].trim();
-    const lastParts = (lastP.period || '').split(/[-~]/);
-    const spanEnd = (lastParts[1] || '').trim() || lastParts[0].trim();
-    const groupSpan = `${spanStart} – ${spanEnd}`;
-
-    const projectsHTML = g.projects.map((p, idx) => {
-      const d = p.details || {};
-      const phaseLabel = isMulti ? `<span class="nv-phase">${LANG === 'ko' ? `${idx + 1}단계` : `Phase ${idx + 1}`}</span>` : '';
-      const partnersStr = p.partners && p.partners.length ? p.partners.join(' · ') : '';
-      return `
-        <article class="nv-project reveal" data-proj-index="${p.index}">
-          <header class="nv-project-header">
-            <div class="nv-project-title-row">
-              ${phaseLabel}
-              <h3 class="nv-project-title">${esc(p.title)}</h3>
-              <span class="nv-project-index">#${p.index}</span>
-            </div>
-            <div class="nv-project-meta">
-              <span class="nv-period">${esc(locPeriod(p.period))}${p.duration ? ' · ' + esc(p.duration) : ''}</span>
-              ${p.isPM ? `<span class="nv-pm-badge">${t('ui.nvPm')}</span>` : ''}
-              ${p.client ? `<span class="nv-meta-item"><span class="nv-meta-label">${t('ui.nvClient')}</span> ${esc(p.client)}</span>` : ''}
-              ${p.affiliatedInstitution ? `<span class="nv-meta-item nv-affil">${esc(p.affiliatedInstitution)}</span>` : ''}
-              ${partnersStr ? `<span class="nv-meta-item"><span class="nv-meta-label">${t('ui.nvPartners')}</span> ${esc(partnersStr)}</span>` : ''}
-            </div>
-          </header>
-          ${d.situation ? `<section class="nv-section"><span class="nv-label">${t('ui.nvBackground')}</span><p class="nv-text">${esc(d.situation)}</p></section>` : ''}
-          ${d.purpose ? `<section class="nv-section"><span class="nv-label">${t('ui.nvObjective')}</span><p class="nv-text">${esc(d.purpose)}</p></section>` : ''}
-          ${d.role ? `<section class="nv-section"><span class="nv-label">${t('ui.nvRole')}</span><p class="nv-text">${esc(d.role)}</p></section>` : ''}
-          ${d.tasks && d.tasks.length ? `<section class="nv-section"><span class="nv-label">${t('ui.nvActivities')}</span><ul class="nv-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul></section>` : ''}
-          ${d.achievements ? `<section class="nv-section"><span class="nv-label">${t('ui.nvOutcomes')}</span><p class="nv-text">${esc(d.achievements)}</p></section>` : ''}
-          ${d.notes ? `<section class="nv-section nv-section-notes"><span class="nv-label">${t('ui.nvNotes')}</span><p class="nv-text">${esc(d.notes)}</p></section>` : ''}
-        </article>`;
-    }).join('');
-
-    return `
-      <div class="nv-group${isMulti ? ' nv-group-multi' : ''}">
-        ${isMulti ? `
-          <header class="nv-group-header">
-            <span class="nv-series-label">${t('ui.nvSeries')}</span>
-            <span class="nv-group-title">${esc(g.client || '')}${g.affiliated ? ` · ${esc(g.affiliated)}` : ''}</span>
-            <span class="nv-group-span">${esc(groupSpan)}</span>
-          </header>` : ''}
-        ${projectsHTML}
-      </div>`;
-  }).join('');
-}
-
-/* ─── Reusable Pager (top + bottom) ─── */
-function createPager(gridEl, perPage, navId) {
-  let page = 0;
-  const nav = document.getElementById(navId);
-  if (!nav) return { show(){}, reset(){} };
-
-  const pagerHtml = `<button class="paged-btn paged-prev" disabled>←</button><span class="paged-info"></span><button class="paged-btn paged-next">→</button>`;
-  nav.className = 'paged-nav-inline';
-  nav.innerHTML = pagerHtml;
-
-  /* Bottom pager */
-  let navBot = document.getElementById(navId + 'Bot');
-  if (!navBot) {
-    navBot = document.createElement('div');
-    navBot.id = navId + 'Bot';
-    gridEl.parentNode.insertBefore(navBot, gridEl.nextSibling);
-  }
-  navBot.className = 'paged-nav-inline paged-nav-bottom';
-  navBot.innerHTML = pagerHtml;
-
-  const navs = [nav, navBot];
-
-  navs.forEach(n => {
-    n.querySelector('.paged-prev').addEventListener('click', () => { page--; show(); });
-    n.querySelector('.paged-next').addEventListener('click', () => { page++; show(); });
-  });
-
-  function show() {
-    const all = [...gridEl.querySelectorAll('[data-paged]')];
-    const vis = all.filter(el => !el.dataset.filtered);
-    const total = Math.ceil(vis.length / perPage) || 1;
-    page = Math.max(0, Math.min(page, total - 1));
-    all.forEach(el => el.style.display = 'none');
-    vis.slice(page * perPage, (page + 1) * perPage).forEach(el => el.style.display = '');
-    navs.forEach(n => {
-      n.querySelector('.paged-info').textContent = `${page+1} / ${total}`;
-      n.querySelector('.paged-prev').disabled = page === 0;
-      n.querySelector('.paged-next').disabled = page >= total - 1;
+  function update() {
+    const n = pages().length, i = Math.min(current(), Math.max(n - 1, 0));
+    navs.forEach(nav => {
+      nav.querySelector('.paged-info').textContent = n ? `${i + 1} / ${n}` : '0 / 0';
+      nav.querySelector('.paged-prev').disabled = i <= 0;
+      nav.querySelector('.paged-next').disabled = i >= n - 1;
     });
+  }
+  function layout() {
+    shownCols = colsNow();
+    const per = shownCols * rows;
+    const vis = cards.filter(c => !c.dataset.filtered);
+    hidden.replaceChildren(...cards.filter(c => c.dataset.filtered));
+    const pageEls = [];
+    for (let i = 0; i < vis.length; i += per) {
+      const pg = document.createElement('div');
+      pg.className = 'carousel-page';
+      pg.style.gridTemplateColumns = `repeat(${shownCols}, minmax(0, 1fr))`;
+      pg.append(...vis.slice(i, i + per));
+      pageEls.push(pg);
+    }
+    gridEl.replaceChildren(...pageEls, hidden);
+    gridEl.scrollLeft = 0;
+    update();
     reReveal(gridEl);
   }
-  show();
-  return { show, reset() { page = 0; show(); } };
+  navs.forEach(nav => {
+    nav.querySelector('.paged-prev').onclick = () => go(current() - 1);
+    nav.querySelector('.paged-next').onclick = () => go(current() + 1);
+  });
+  gridEl.onscroll = update;
+  removeEventListener('resize', gridEl._onResize);
+  gridEl._onResize = () => { if (colsNow() !== shownCols) layout(); };
+  addEventListener('resize', gridEl._onResize);
+  layout();
+  return { reset: layout };
 }
 
 function reReveal(container) {
-  container.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+  container.querySelectorAll('.reveal:not(.visible):not([data-observed])').forEach(el => {
+    el.dataset.observed = '1';
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.05 });
     io.observe(el);
   });
@@ -658,30 +566,25 @@ function reReveal(container) {
 /* ─── Skills ─── */
 function renderSkills(skills) {
   const el = document.getElementById('skillsGrid'); if (!el || !skills) return;
-  el.innerHTML = Object.entries(skills).map(([c,items]) => `<div class="skill-card reveal"><div class="skill-category">${esc(c)}</div><div class="skill-tags">${items.map(x=>`<span class="skill-tag">${esc(x)}</span>`).join('')}</div></div>`).join('');
+  const card = s => `<div class="skill-card reveal"><div class="skill-category">${esc(s.label)}</div><div class="skill-tags">${s.items.map(x=>`<span class="skill-tag">${esc(x)}</span>`).join('')}</div></div>`;
+  const cols = [...new Set(skills.map(s => +s.column))].sort((a, b) => a - b);
+  el.innerHTML = cols.map(c => `<div class="skill-col">${skills.filter(s => +s.column === c).map(card).join('')}</div>`).join('');
 }
 
 /* ─── Patents ─── */
 function renderPatents(items) {
   const el = document.getElementById('patentsList'); if (!el || !items) return;
-  el.innerHTML = items.map(p => `<div class="patent-card reveal"><div class="patent-title">${esc(p.title)}</div><div class="patent-desc">${esc(p.description)}</div><div class="patent-meta"><span><strong>${t('ui.patNo')}</strong> ${esc(p.applicationNumber)}</span><span><strong>${t('ui.patFiled')}</strong> ${esc(p.applicationDate)}</span><span><strong>${t('ui.patApplicant')}</strong> ${esc(p.applicant)}</span><span><strong>${t('ui.patAuthority')}</strong> ${esc(p.authority)}</span></div></div>`).join('');
+  el.innerHTML = items.map(p => `<div class="patent-card reveal"><div class="patent-title">${esc(p.title)}</div><div class="patent-desc">${esc(p.description)}</div><div class="patent-meta">${p.status === 'granted' ? `<span><strong>${t('ui.patStatus')}</strong> ${t('ui.granted')}</span>` : ''}<span><strong>${t('ui.patNo')}</strong> ${esc(p.applicationNumber)}</span><span><strong>${t('ui.patFiled')}</strong> ${esc(p.applicationDate)}</span><span><strong>${t('ui.patApplicant')}</strong> ${esc(p.applicant)}</span>${p.inventors ? `<span><strong>${t('ui.patInventors')}</strong> ${esc(String(p.inventors))}</span>` : ''}<span><strong>${t('ui.patAuthority')}</strong> ${esc(p.authority)}</span></div></div>`).join('');
 }
 
 /* ─── Activities ─── */
-function activityIcons(role, org) {
+function activityIcon(role, org) {
   const r = (role || '').toLowerCase();
-  const o = (org || '').toLowerCase();
-  const icons = [];
-  // Primary by role
-  if (/teaching assistant|\bta\b|조교|mentor|멘토/.test(r)) icons.push('🎓');
-  else if (/president|회장|부회장|representative|대표|working group|운영위원|member/.test(r)) icons.push('👥');
-  else icons.push('⭐');
-  // Secondary by context (role/org keywords)
-  if (/researcher representative|연구실 대표/.test(r)) icons.push('🔬');
-  if (/teaching assistant|\bta\b|조교/.test(r)) icons.push('🏫');
-  if (/student council|학생회/.test(o)) icons.push('🏫');
-  if (/basketball|농구/.test(o)) icons.push('🏀');
-  return icons;
+  if (/researcher representative|연구실 대표/.test(r)) return '🔬';
+  if (/teaching assistant|\(ta\)|조교/.test(r)) return '🎓';
+  if (/mentor|멘토/.test(r)) return '💬';
+  if (/basketball|농구/.test((org || '').toLowerCase())) return '🏀';
+  return '🏫';
 }
 function formatOrg(s) {
   if (!s) return '';
@@ -692,10 +595,9 @@ function formatOrg(s) {
 function renderActivities(items) {
   const el = document.getElementById('activitiesGrid'); if (!el || !items) return;
   el.innerHTML = items.map(a => {
-    const icons = activityIcons(a.role, a.organization).map(i => `<span class="activity-icon">${i}</span>`).join('');
-    return `<div class="activity-card reveal" data-paged><div class="activity-head">${icons}<span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
+    return `<div class="activity-card reveal" data-paged><div class="activity-head"><span class="activity-icon" aria-hidden="true">${activityIcon(a.role, a.organization)}</span><span class="activity-role">${esc(a.role)}</span></div><span class="activity-org">${formatOrg(a.organization)}</span><div class="activity-meta"><span class="activity-period">${esc(a.period)}</span><span class="activity-location">${esc(a.location)}</span></div></div>`;
   }).join('');
-  _activityPager = createPager(el, ACTIVITY_PER_PAGE, 'activitiesPager');
+  createCarousel(el, 'activitiesPager', 3, 2);
 }
 
 /* ─── Contact ─── */
@@ -709,7 +611,8 @@ function renderContact(basic) {
   if (basic.location) cs.push({i:'📍',l:t('ui.location'),v:basic.location,h:null});
   el.innerHTML = cs.map(c => {
     const inn = `<div class="contact-icon">${c.i}</div><div class="contact-info"><span class="contact-label">${esc(c.l)}</span><span class="contact-value">${esc(c.v)}</span></div>`;
-    return c.h ? `<a href="${c.h}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
+    const href = safeUrl(c.h);
+    return href ? `<a href="${href}" target="${c.h.startsWith('mailto')?'_self':'_blank'}" rel="noopener noreferrer" class="contact-card">${inn}</a>` : `<div class="contact-card">${inn}</div>`;
   }).join('');
 }
 
@@ -734,48 +637,81 @@ function setupProjectModal() {
   const grid = document.getElementById('projectsGrid'), modal = document.getElementById('projectModal');
   if (!grid || !modal) return;
   /* Use onclick to prevent listener accumulation on re-renders */
-  grid.onclick = e => {
-    const card = e.target.closest('.project-card'); if (!card) return;
-    const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
-    if (p) openProjectModal(p);
-  };
-  if (!modal.dataset.ready) {
-    modal.dataset.ready = '1';
-    document.getElementById('modalClose')?.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  }
+  grid.onclick = onProjectCardClick;
+}
+function onProjectCardClick(e) {
+  const card = e.target.closest('.project-card'); if (!card) return;
+  const p = _allProjects.find(x => x.index === parseInt(card.dataset.projIndex));
+  if (p) openProjectModal(p);
 }
 function openProjectModal(p) {
-  const body = document.getElementById('modalBody'), modal = document.getElementById('projectModal');
-  if (!body || !modal) return;
   const tags = getProjectTags(p);
   const d = p.details || {};
 
   /* Basic fields */
   const fields = [
-    [t('ui.period'), `${p.period}${p.duration ? ' · ' + p.duration : ''}`],
+    [t('ui.period'), `${locPeriod(p.period)}${p.duration ? ' · ' + durLabel(p.duration) : ''}`],
     d.role && [t('ui.role'), d.role],
+    p.teamSize && [t('ui.teamSize'), teamLabel(p.teamSize)],
     p.client && [t('ui.client'), p.client],
     p.partners && p.partners.length && [t('ui.partners'), p.partners.join(', ')],
     p.partnerInstitution && [t('ui.partner'), p.partnerInstitution],
     p.affiliatedInstitution && [t('ui.affiliated'), p.affiliatedInstitution],
   ].filter(Boolean);
 
-  body.innerHTML = `
-    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${LANG === 'ko' ? `프로젝트 #${p.index}` : `Project #${p.index}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
-    <div class="modal-title">${esc(p.title)}</div>
-    ${(tags.methods.length||tags.domains.length) ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${tags.methods.map(m => `<span class="tag method">${m}</span>`).join('')}${tags.domains.map(dm => `<span class="tag domain">${dm}</span>`).join('')}</div>` : ''}
+  openModal(`
+    <div class="modal-badge">${p.isPM ? '👑 PM · ' : ''}${p.isPL ? 'PL · ' : ''}${LANG === 'ko' ? `프로젝트 #${p.index}` : `Project #${p.index}`}${isGov(p.client) ? ` · ${t('ui.govt')}` : ''}</div>
+    <div class="modal-title" id="modalTitle">${esc(p.title)}</div>
+    ${(tags.methods.length||tags.domains.length) ? `<div style="display:flex;gap:.3rem;margin-bottom:.8rem;flex-wrap:wrap">${tags.methods.map(m => `<span class="tag method">${esc(m)}</span>`).join('')}${tags.domains.map(dm => `<span class="tag domain">${esc(dm)}</span>`).join('')}</div>` : ''}
     ${fields.map(([l, v]) => `<div class="modal-field"><span class="modal-field-label">${esc(l)}</span><span class="modal-field-value">${esc(v)}</span></div>`).join('')}
-    ${d.situation ? `<div class="modal-section"><div class="modal-section-label">${t('ui.situation')}</div><p class="modal-section-text">${esc(d.situation)}</p></div>` : ''}
-    ${d.purpose ? `<div class="modal-section"><div class="modal-section-label">${t('ui.purpose')}</div><p class="modal-section-text">${esc(d.purpose)}</p></div>` : ''}
-    ${d.tasks && d.tasks.length ? `<div class="modal-section"><div class="modal-section-label">${t('ui.keyTasks')}</div><ul class="modal-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul></div>` : ''}
-    ${d.achievements ? `<div class="modal-section"><div class="modal-section-label">${t('ui.achievements')}</div><p class="modal-section-text modal-achievement">${esc(d.achievements)}</p></div>` : ''}
-    ${d.notes ? `<div class="modal-section"><div class="modal-section-label">${t('ui.notes')}</div><p class="modal-section-text">${esc(d.notes)}</p></div>` : ''}
-    ${!d.purpose && p.remarks ? `<div class="modal-field"><span class="modal-field-label">${t('ui.remarks')}</span><span class="modal-field-value">${esc(p.remarks)}</span></div>` : ''}`;
-  modal.classList.add('open'); document.body.style.overflow = 'hidden';
+    ${section(t('ui.situation'), para(d.situation))}
+    ${section(t('ui.purpose'), para(d.purpose))}
+    ${section(t('ui.keyTasks'), d.tasks?.length ? `<ul class="modal-task-list">${d.tasks.map(tk => `<li>${esc(tk)}</li>`).join('')}</ul>` : '')}
+    ${section(t('ui.achievements'), d.achievements ? `<p class="modal-section-text modal-achievement">${esc(d.achievements)}</p>` : '')}
+    ${section(t('ui.notes'), para(d.notes))}
+    ${!d.purpose && p.remarks ? `<div class="modal-field"><span class="modal-field-label">${t('ui.remarks')}</span><span class="modal-field-value">${esc(p.remarks)}</span></div>` : ''}`);
 }
-function closeModal() { document.getElementById('projectModal')?.classList.remove('open'); document.body.style.overflow=''; }
+
+/* ─── Details popup (shared by philosophy, education, experience, projects) ─── */
+let _modalReturnFocus = null;
+function openModal(html) {
+  const body = document.getElementById('modalBody'), modal = document.getElementById('projectModal');
+  if (!body || !modal) return;
+  if (!modal.dataset.ready) {
+    modal.dataset.ready = '1';
+    document.getElementById('modalClose')?.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeModal();
+      /* The close button is the popup's only focusable element, so Tab stays on it */
+      if (e.key === 'Tab') { e.preventDefault(); document.getElementById('modalClose')?.focus(); }
+    });
+  }
+  body.innerHTML = html;
+  _modalReturnFocus = document.activeElement;
+  modal.classList.add('open'); document.body.style.overflow = 'hidden';
+  document.getElementById('modalClose')?.focus();
+}
+function closeModal() {
+  const modal = document.getElementById('projectModal');
+  if (!modal?.classList.contains('open')) return;
+  modal.classList.remove('open'); document.body.style.overflow = '';
+  _modalReturnFocus?.focus?.();
+}
+function section(label, html) { return html ? `<div class="modal-section"><div class="modal-section-label">${label}</div>${html}</div>` : ''; }
+function para(v) { return v ? `<p class="modal-section-text">${esc(v)}</p>` : ''; }
+/* "Start of the oldest - end of the newest" over newest-first period strings */
+function spanOf(periods) { return periods.length ? `${periods.at(-1).split(' - ')[0]} - ${periods[0].split(' - ').at(-1)}` : ''; }
+function detailHint(name) { return `<button type="button" class="detail-hint" aria-label="${t('ui.detailsHint')}: ${esc(name)}">${t('ui.detailsHint')}</button>`; }
+/* Card click (or its Details button) opens bodies[data-detail]; links inside the card keep working */
+function bindDetails(el, bodies) {
+  el.onclick = e => {
+    if (e.target.closest('a') || String(getSelection())) return;
+    const item = e.target.closest('[data-detail]');
+    if (item) openModal(bodies[item.dataset.detail]);
+  };
+}
 
 /* ─── Navigation ─── */
 function setupNav() {
@@ -801,6 +737,8 @@ function setupScrollReveal() {
 
 /* ─── Helpers ─── */
 function setText(id, val) { const e = document.getElementById(id); if (e) e.textContent = val || ''; }
+// Escaped URL for href attributes; anything but http(s) or mailto becomes empty.
+function safeUrl(u) { return /^(https?:|mailto:)/i.test(u || '') ? esc(u) : ''; }
 function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -70,7 +70,7 @@
 | `formatMethodology(text)` | 논문 방법론 ol/p 포매터 |
 | `parseAdvisor(r)` | 지도교수 링크 파서 |
 | `renderExperience(items)` | 경력 타임라인 + 상세 확장/축소 |
-| `renderFeaturedProjects(projects)` | 주요 프로젝트 카드 (인덱스 고정: 25·23·21) |
+| `renderFeaturedProjects(projects)` | 주요 프로젝트 카드 (인덱스 고정: 27·26·23) |
 | `renderProjects(items)` | 전체 프로젝트 그리드 + 필터 + 페이저 |
 | `getProjectTags(p)` | 프로젝트 분류 태그 추출 (methodology·domain) |
 | `isGov(client)` | 정부과제 여부 판별 |
@@ -86,7 +86,8 @@
 | `setupProjectModal()` / `openProjectModal(p)` / `closeModal()` | 프로젝트 상세 모달 |
 | `setupNav()` / `highlightNav()` | 네비바 스크롤·활성 링크 |
 | `setupScrollReveal()` / `reReveal(container)` | IntersectionObserver 스크롤 리빌 |
-| `createPager(gridEl, perPage, navId)` | 범용 페이저 (상하 네비 포함) |
+| `createCarousel(gridEl, navId, cols, rows)` | 카드를 cols×rows 페이지로 나눠 가로 넘기기 · 위(navId)와 목록 아래에 같은 넘기기(← n / N →) (화면 폭에 따라 열 수 1·2·cols) |
+| `projectCard(p, result)` | 주요·전체 프로젝트 공통 카드 |
 | `setupPhotoFallback()` | 프로필 이미지 에러 폴백 |
 
 ---

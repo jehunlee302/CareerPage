@@ -45,3 +45,4 @@ latex/*.pdf
 # Secrets (never commit)
 .env
 *.key
+.playwright-mcp/

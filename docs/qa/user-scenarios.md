@@ -17,7 +17,7 @@
 - **S-2.1** given(테마·언어 미저장의 새 브라우저) → action(`/` 방문) → expect(`<html data-theme>` = `light`, `<html lang>` = `en`; `#navbar .nav-logo` 텍스트 = `JH`).
 - **S-2.2** given(페이지 로드 완료) → action(대기) → expect(`#hero .hero-name` 에 `Jehun Lee` 와 `이제훈` 포함; `#profileImg` 요소 존재).
 - **S-2.3** given(로드 후 ~1초 경과) → action(타이핑 애니메이션 관찰) → expect(`#heroTitleText` 텍스트 길이 > 0, 시간에 따라 변함 — 타이프라이터 동작).
-- **S-2.4** given(Hero 렌더) → action(태그·요약 확인) → expect(`#heroTags .hero-tag` 개수 ≥ 6; `#heroSummary` 텍스트 비어있지 않음).
+- **S-2.4** given(Hero 렌더) → action(태그·요약 확인) → expect(태그 줄 없음(`#heroTags .hero-tag` 0개); `#heroSummary` 텍스트 비어있지 않음).
 - **S-2.5** given(Hero CTA) → action(요소 확인) → expect(`#heroContactBtn` href = `#contact`; `#heroResumeBtnEn` href = `data/resume-en.pdf`; `#heroResumeBtnKo` href = `data/resume-ko.pdf`; LinkedIn/Scholar 링크 `target="_blank"`).
 - **S-2.6** given(정적 임팩트 스트립) → action(`#impactStrip` 확인) → expect(`.impact-item` 개수 = 5; 각 `.impact-num` 텍스트가 숫자 문자열).
 
@@ -47,26 +47,22 @@
 
 - **S-6.1** given(하단 `.reveal` 요소가 아직 뷰포트 밖) → action(요소가 뷰포트 진입하도록 스크롤) → expect(해당 `.reveal` 요소에 `visible` 클래스 부여).
 
-## UC-7 Education — 논문 상세 확장/접기
+## UC-7 Education — 논문 상세 팝업
 
-- **S-7.1** given(`#educationTimeline` 렌더, thesis 상세 있는 항목) → action(초기 상태 확인) → expect(`.edu-thesis-details` 의 `display` = `none`; `.edu-expand-hint` 텍스트 = `▸ Details`(EN)).
-- **S-7.2** given(접힘 상태) → action(`.edu-thesis-expandable` 클릭) → expect(`.edu-thesis-details` `display` = `block`; hint 텍스트 = `▾ Collapse`).
-- **S-7.3** given(펼침 상태) → action(재클릭) → expect(`display` = `none`; hint = `▸ Details`).
-- **S-7.4** given(`.edu-thesis-expandable` 포커스) → action(Enter 또는 Space 키) → expect(클릭과 동일하게 상세 토글 — 키보드 접근성).
+- **S-7.1** given(`#educationTimeline` 렌더, 논문이 있는 항목) → action(초기 상태 확인) → expect(카드 오른쪽 위 `.detail-hint` 텍스트 = `Details ↗`(EN) / `상세 ↗`(KO); 카드에 논문 제목 없음; 지도교수 링크는 `🔗`(`aria-label` 있음); 고등학교 항목 없음).
+- **S-7.2** given(팝업 닫힘) → action(카드 또는 `.detail-hint` 클릭) → expect(`#projectModal.open`; `#modalTitle` = 학위 — 전공; 논문 제목 표시; Esc·바깥 클릭으로 닫히고 포커스가 버튼으로 돌아옴).
 
-## UC-8 Experience — 상세(책임/성과) 확장/접기
+## UC-8 Experience — 상세(책임/성과) 팝업
 
-- **S-8.1** given(`#experienceTimeline` 렌더, responsibilities/highlights 있는 항목) → action(초기 확인) → expect(`.exp-details` `display` = `none`; `.exp-expand-hint` = `▸ Details`).
-- **S-8.2** given(접힘) → action(`.exp-expand-btn` 클릭) → expect(`.exp-details` `display` = `block`; hint = `▾ Collapse`; `.tl-responsibilities li` 개수 ≥ 1).
-- **S-8.3** given(펼침) → action(재클릭) → expect(`display` = `none`; hint = `▸ Details`).
-- **S-8.4** given(`.exp-expand-btn` 포커스) → action(Enter/Space) → expect(상세 토글 — 키보드 접근성).
+- **S-8.1** given(`#experienceTimeline` 렌더, responsibilities/highlights 있는 항목) → action(초기 확인) → expect(`.detail-hint` 표시; 전문연구요원 항목은 `.alt-badge` 표시).
+- **S-8.2** given(팝업 닫힘) → action(카드 클릭) → expect(`#projectModal.open`; `.modal-task-list li` 개수 ≥ 1).
 
-## UC-9 All Projects — 필터 · 페이지네이션 · 상세 모달
+## UC-9 All Projects — 필터 · 가로 넘기기 · 상세 모달
 
-- **S-9.1** given(`#projectsGrid` 렌더) → action(초기 확인) → expect(`.project-card` 표시 개수 ≤ 9(`PROJ_PER_PAGE`); `#projectsPager .paged-info` 텍스트 = `1 / N` 형식; `#projFilterBar .filter-btn[data-proj-filter="all"]` 에 `active` 클래스).
-- **S-9.2** given(1페이지) → action(`#projectsPager .paged-next` 클릭) → expect(`.paged-info` = `2 / N`; 표시 카드 세트 변경; `.paged-prev` `disabled` 해제).
+- **S-9.1** given(`#projectsGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 카드 6개(3×2); `#projectsPager .paged-info` = `1 / N`; 목록 아래 `.paged-nav-bottom .paged-info` 도 `1 / N`; 카드 위 `.project-period` 에 기간(예 `5개월 (전체 5년)`)).
+- **S-9.2** given(1페이지) → action(`#projectsPager .paged-next` 또는 아래 `.paged-nav-bottom .paged-next` 클릭) → expect(위·아래 `.paged-info` 모두 `2 / N`; `.paged-prev` 활성).
 - **S-9.3** given(마지막 페이지) → action(`.paged-next` 상태 확인) → expect(`.paged-next` `disabled` = true).
-- **S-9.4** given(`all` 필터) → action(`data-proj-filter="pm"` 버튼 클릭) → expect(해당 버튼에 `active`; 표시 카드 전부 `.tag.pm` 포함; 페이저 `1 / M`으로 리셋).
+- **S-9.4** given(`all` 필터) → action(`data-proj-filter="pm"` 클릭) → expect(해당 버튼 `active`; 보이는 카드 전부 `.tag.pm` 포함; `.paged-info` = `1 / M`).
 - **S-9.5** given(`pm` 필터) → action(`data-proj-filter="gov"` 클릭) → expect(표시 카드 전부 `.tag.gov` 포함; 그 외 카드 `display:none`).
 - **S-9.6** given(method/domain 필터 버튼 존재) → action(예 `data-proj-filter="method:AI(RL)"` 클릭) → expect(표시 카드의 `data-proj-methods` 에 `AI(RL)` 포함).
 - **S-9.7** given(프로젝트 그리드) → action(임의 `.project-card` 클릭) → expect(`#projectModal` 에 `open` 클래스; `#modalBody .modal-title` 텍스트 비어있지 않음; `body` `overflow` = `hidden`).
@@ -76,22 +72,20 @@
 
 ## UC-10 Featured Projects — 하이라이트 카드 → 모달
 
-- **S-10.1** given(`#featuredGrid` 렌더) → action(초기 확인) → expect(`.featured-card` 개수 = 3(`FEATURED_PROJECT_INDICES`)).
-- **S-10.2** given(featured 카드) → action(임의 `.featured-card` 클릭) → expect(`#projectModal` `open`; `.modal-title` 이 해당 프로젝트 제목).
+- **S-10.1** given(`#featuredGrid` 렌더) → action(초기 확인) → expect(`#featuredGrid .project-card` 개수 = 3(`FEATURED_PROJECT_INDICES`); 카드에 성과 문장 없음(`.project-result` 0개); 카드를 누르면 팝업에 성과 표시).
+- **S-10.2** given(featured 카드) → action(임의 `#featuredGrid .project-card` 클릭) → expect(`#projectModal` `open`; `.modal-title` 이 해당 프로젝트 제목).
 
-## UC-11 Publications — 유형 필터 · 페이지네이션
+## UC-11 Publications — 유형 필터 · 가로 넘기기
 
-- **S-11.1** given(`#pubList` 렌더) → action(초기 확인) → expect(`.pub-item` 표시 ≤ 6(`PUB_PER_PAGE`); `.pub-filter-bar .filter-btn[data-filter="all"]` 에 `active`; `#pubPager .paged-info` = `1 / N`).
-- **S-11.2** given(`all` 필터) → action(`data-filter="Journal-International"` 클릭) → expect(해당 버튼 `active`; 표시 항목 전부 `data-type="Journal-International"`; 페이저 리셋 `1 / M`).
-- **S-11.3** given(`all` 필터) → action(`data-filter="Poster"` 클릭) → expect(표시 항목 전부 `data-type="Poster"`).
-- **S-11.4** given(필터 적용 목록) → action(`#pubPager .paged-next` 클릭) → expect(`.paged-info` 페이지 증가; 링크 있는 항목의 `.pub-link` href = `pub.link`, `target="_blank"`).
+- **S-11.1** given(`#pubList` 렌더, 데스크톱) → action(초기 확인) → expect(첫 `.carousel-page` 에 6개(2×3, 1024px 미만은 1열); `[번호]` 표시; `#pubPager .paged-info` = `1 / N`).
+- **S-11.2** given(`all` 필터) → action(`data-filter="Journal-International"` 클릭) → expect(해당 버튼 `active`; 보이는 항목 전부 `data-type="Journal-International"`; `.paged-info` = `1 / 1`).
+- **S-11.3** given(링크 있는 논문) → action(`.pub-link` 확인) → expect(카드 오른쪽 위; href = `pub.link`, `target="_blank"`).
 
-## UC-12 Awards / Activities — 페이지네이션
+## UC-12 Awards / Activities — 가로 넘기기
 
-- **S-12.1** given(`#awardsList` 렌더) → action(초기 확인) → expect(`.award-card` 표시 ≤ 6(`AWARD_PER_PAGE`); `#awardsPager .paged-info` = `1 / N`).
-- **S-12.2** given(1페이지) → action(`#awardsPager .paged-next` 클릭) → expect(`.paged-info` 페이지 증가; 표시 카드 세트 변경).
-- **S-12.3** given(`#activitiesGrid` 렌더) → action(초기 확인) → expect(`.activity-card` 표시 ≤ 6(`ACTIVITY_PER_PAGE`); `#activitiesPager .paged-info` = `1 / N`).
-- **S-12.4** given(activities 1페이지) → action(`#activitiesPager .paged-next` 클릭) → expect(`.paged-info` 페이지 증가).
+- **S-12.1** given(`#awardsList`·`#activitiesGrid` 렌더, 데스크톱) → action(초기 확인) → expect(첫 페이지에 카드 6개(3×2); `.paged-info` = `1 / N`).
+- **S-12.2** given(맨 앞) → action(`#awardsPager .paged-next` 클릭) → expect(`.paged-info` = `2 / N`).
+- **S-12.3** given(창 너비 390px) → action(초기 확인) → expect(1열 × 2행(페이지당 카드 2개); 가로 스크롤바 없음; 페이지 수 증가).
 
 ## UC-13 Contact — 연락 링크
 
@@ -102,7 +96,7 @@
 
 - **S-14.1** given(프로필 이미지 로드 실패) → action(`#profileImg` error 발생) → expect(`#profileImg` `display:none`; `#photoFallback` `display:flex`, 텍스트 = `JH`).
 - **S-14.2** given(데이터 fetch 실패(`portfolio.json` 5xx/누락)) → action(초기 로드) → expect(`<main>` innerHTML 이 오류 메시지 `Failed to load portfolio data. Please refresh the page.` 로 대체; 콘솔에 `Portfolio load error` 기록).
-- **S-14.3** given(필터 결과 0건 가정) → action(해당 없는 필터 선택) → expect(페이저 `.paged-info` = `1 / 1`; `.paged-prev`·`.paged-next` 모두 `disabled` — 빈 목록 안정 처리).
+- **S-14.3** given(필터 결과 0건 가정) → action(해당 없는 필터 선택) → expect(카드 0개; `.paged-info` = `0 / 0`; `.paged-prev`·`.paged-next` 모두 `disabled`).
 - **S-14.4** given(모든 사용자 문자열 렌더) → action(제목·저자 등에 `<`, `&`, `"` 포함 데이터) → expect(DOM 텍스트가 이스케이프되어 표시(`esc()` 통과) — 스크립트 실행/HTML 주입 없음, XSS 방지).
 
 ---

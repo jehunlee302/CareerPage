@@ -13,7 +13,7 @@
 ```mermaid
 flowchart LR
   n0["<b>assets/js</b><br/><small>2 files</small>"]
-  n1["<b>scripts</b><br/><small>6 files</small>"]
+  n1["<b>scripts</b><br/><small>8 files</small>"]
   n2["<b>workers/analytics-collector/src</b><br/><small>1 files</small>"]
   classDef ext stroke-dasharray:4 3,fill:transparent
   classDef link stroke-width:3px

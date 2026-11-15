@@ -1,7 +1,35 @@
-programming:
+# column: desktop column (1-4) on the website; cards stack top to bottom in file order
+methodologies:
+  column: 1
   label:
-    en: Programming
-    ko: "프로그래밍"
+    en: "AI Methods"
+    ko: "AI·학습 방법론"
+  items:
+    - "Reinforcement Learning (RL)"
+    - "Imitation Learning (IL)"
+    - "Behavior Cloning (BC)"
+    - "Supervised Learning"
+    - "Unsupervised Learning"
+    - "Graph Neural Networks (GNN)"
+
+devops_and_productivity:
+  column: 2
+  label:
+    en: "DevOps & Productivity"
+    ko: "개발 환경 & 생산성"
+  items:
+    - VS Code
+    - Git / GitHub
+    - Docker
+    - Claude Code
+    - n8n
+    - Notion
+
+programming:
+  column: 2
+  label:
+    en: "Programming Languages"
+    ko: "프로그래밍 언어"
   items:
     - Python
     - C#
@@ -9,21 +37,29 @@ programming:
     - LaTeX
     - R
 
-methodologies:
+optimization_solvers:
+  column: 3
   label:
-    en: "Methodologies"
-    ko: "방법론"
+    en: "Optimization"
+    ko: "최적화 방법론·솔버"
   items:
-    - "Reinforcement Learning (RL)"
-    - "Imitation Learning (IL)"
-    - "Behavior Cloning (BC)"
-    - "Supervised Learning"
-    - "Unsupervised Learning"
-    - "Meta-heuristics"
-    - "Graph Neural Networks (GNN)"
     - "Combinatorial Optimization"
+    - "Meta-heuristics"
+    - Gurobi
+    - CPLEX
+    - OR-Tools
+
+languages:
+  column: 3
+  label:
+    en: Languages
+    ko: "언어"
+  items:
+    - "Korean (Native)"
+    - "English (Business)"
 
 frameworks_and_libraries:
+  column: 4
   label:
     en: "Frameworks & Libraries"
     ko: "프레임워크 & 라이브러리"
@@ -33,16 +69,8 @@ frameworks_and_libraries:
     - Pandas
     - NumPy
 
-optimization_solvers:
-  label:
-    en: "Optimization Solvers"
-    ko: "최적화 솔버"
-  items:
-    - Gurobi
-    - CPLEX
-    - OR-Tools
-
 simulation_and_tools:
+  column: 4
   label:
     en: "Simulation & Tools"
     ko: "시뮬레이션 & 도구"
@@ -51,22 +79,3 @@ simulation_and_tools:
     - Plant Sim
     - MS Office
     - Photoshop
-
-devops_and_productivity:
-  label:
-    en: "DevOps & Productivity"
-    ko: "개발 환경 & 생산성"
-  items:
-    - Git / GitHub
-    - Docker
-    - Claude Code
-    - n8n
-    - Notion
-
-languages:
-  label:
-    en: Languages
-    ko: "언어"
-  items:
-    - "Korean (Native)"
-    - "English (Professional)"

@@ -28,7 +28,8 @@
 | 대표 프로젝트 번호 → YAML | todo | `FEATURED_PROJECT_INDICES` 설정화 · basic.yaml 또는 config.yaml | [data-04](prd/data.md#data-04) |
 | YAML 스키마 검증 | todo | 필수 필드 검사 · 명확한 오류 메시지 · 조용한 실패 제거 | [data-05](prd/data.md#data-05) |
 | 한국어 홈페이지 토글 | todo | ko 필드 채움 확인 · `portfolio.ko.json` 확인 · 한국어 방문자 기본값 | [data-06](prd/data.md#data-06) |
-| 데이터 수치 불일치 | todo | 프로젝트 수 26(PM 13) · 메타 "24+" → 26 · 국제학회 6 vs 11 사용자 확인 · YAML 수정 후 재빌드 | [data-07](prd/data.md#data-07) |
+| 수치 한 곳에서 계산 | dev | `scripts/counts.js` 집계 · 요약문 `{이름}` 자리 채움 · 화면·이력서·메타가 같은 수치 · `npm test` 검사 | [data-07](prd/data.md#data-07) |
+| 노출 위험 정리 | dev | 연락처 이메일 1개 · 병역 문구 · 국내 학회 국제 표시 해제 · 특허 등록 표시 | [data-08](prd/data.md#data-08) |
 
 ## 화면·사용성 (ux)
 
@@ -38,6 +39,7 @@
 | 검색 기능 | todo | `portfolio.json` 대상 클라이언트 검색 · 프로젝트·논문 키워드 | [ux-02](prd/ux.md#ux-02) |
 | 페이지 번호 직접 이동 | todo | 3페이지 이상에 번호 버튼 · 이전/다음 유지 | [ux-03](prd/ux.md#ux-03) |
 | 핵심 인터랙션 회귀 기록 | todo | 언어 전환 · 논문 필터 · 모달 · user-scenarios 경량 기록 | [ux-04](prd/ux.md#ux-04) |
+| 요소별 화면 개선 | dev | 섹션 순서 유지 · 접기는 `<details>` · 카드 형식 통일 · 페이지 단위 가로 넘기기(번호·점) · 높이 축소 | [ux-05](prd/ux.md#ux-05) |
 
 ## 운영·분석 (ops)
 
