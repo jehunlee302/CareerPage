@@ -26,7 +26,7 @@ const RESEARCH_INTERESTS = {
     { title: 'AI 에이전트 서비스', desc: '백엔드, 운영 안정성, 배포까지 갖춘 실서비스 AI 에이전트' },
   ],
 };
-const FEATURED_PROJECT_INDICES = [27, 25, 23];
+const FEATURED_PROJECT_INDICES = [27, 26, 23];
 const SOCIAL = { linkedin: 'https://www.linkedin.com/in/jehun-lee/', scholar: 'https://scholar.google.com/citations?user=C7ekyjEAAAAJ' };
 const RESUME_URLS = { en: 'data/resume-en.pdf', ko: 'data/resume-ko.pdf' };
 const THESIS_FALLBACK = { 'Ph.D.': 'Learning Schedulers for Job Shop Scheduling Problems', 'M.S.': '' };
@@ -274,7 +274,8 @@ function renderEducation(items) {
       ${section(t('ui.methodology'), th.methodology ? `<div class="edu-methodology">${formatMethodology(th.methodology)}</div>` : '')}
       ${section(t('ui.performance'), para(th.performance))}`) - 1 : -1;
     return `<div class="timeline-item reveal"${di >= 0 ? ` data-detail="${di}"` : ''}>
-      <div class="tl-header"><span class="tl-title">${title}</span><div class="tl-header-right"><span class="tl-period">${esc(locPeriod(item.period))}</span>${di >= 0 ? detailHint(`${locDegree(item.degree)} — ${item.major}`) : ''}</div></div>
+      <div class="tl-header"><span class="tl-title">${title}</span><div class="tl-header-right"><span class="tl-period">${esc(locPeriod(item.period))}</span></div></div>
+      ${di >= 0 ? detailHint(`${locDegree(item.degree)} — ${item.major}`) : ''}
       <div class="tl-org"><span class="org-name">${esc(item.institution)}</span></div>
       ${advisorHtml ? `<div class="tl-remarks">${advisorHtml}</div>` : ''}
     </div>`;
@@ -313,7 +314,8 @@ function renderExperience(items) {
   el.innerHTML = groups.map(parts => {
     const item = parts[0], merged = parts.length > 1;
     const period = merged ? `${parts.at(-1).period.split(' - ')[0]} - ${item.period.split(' - ')[1]}` : item.period;
-    const alt = parts.map(p => p.alt_service).filter(Boolean).reverse().join(', ');
+    const alts = parts.map(p => p.alt_service).filter(Boolean);
+    const alt = alts.length ? `${alts.at(-1).split(' - ')[0]} - ${alts[0].split(' - ').at(-1)}` : '';
     const partBody = p => {
       const tasks = p.responsibilities?.length ? `<ul class="modal-task-list">${p.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
       const hl = p.highlights?.length ? `<div class="tl-highlights">${p.highlights.map(h => `<div class="tl-highlight-item">${esc(h)}</div>`).join('')}</div>` : '';
@@ -333,9 +335,9 @@ function renderExperience(items) {
         </div>
         <div class="tl-header-right">
           <span class="tl-period">${esc(locPeriod(period))}</span>
-          ${di >= 0 ? detailHint(item.position) : ''}
         </div>
       </div>
+      ${di >= 0 ? detailHint(item.position) : ''}
       <div class="tl-roles">${esc(item.roles)}</div>
       ${alt ? `<div class="tl-alt-service"><span class="alt-badge">${esc(t('ui.altServiceLabel'))} · ${esc(alt)}</span></div>` : ''}
     </div>`;
@@ -590,7 +592,7 @@ function activityIcon(role, org) {
   const r = (role || '').toLowerCase();
   if (/researcher representative|연구실 대표/.test(r)) return '🔬';
   if (/teaching assistant|\(ta\)|조교/.test(r)) return '🎓';
-  if (/mentor|멘토/.test(r)) return '👥';
+  if (/mentor|멘토/.test(r)) return '🧑‍🤝‍🧑';
   if (/basketball|농구/.test((org || '').toLowerCase())) return '🏀';
   return '🏫';
 }
