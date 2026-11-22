@@ -1,14 +1,4 @@
-/**
- * yaml-to-latex.js
- * Pipeline: data/career/*.yaml → latex/resume.tex + latex/sections/*.tex
- *
- * Reads all YAML career files, extracts the specified language,
- * and generates LaTeX files that xelatex can compile into a PDF.
- *
- * Usage:
- *   node scripts/yaml-to-latex.js          # English (default)
- *   node scripts/yaml-to-latex.js --lang ko # Korean
- */
+// Builds latex/resume.tex and latex/sections/*.tex from data/career/*.yaml (--lang en|ko; --brief omits the Career Narrative).
 
 const yaml = require('js-yaml');
 const fs   = require('fs');
@@ -54,9 +44,8 @@ const NV_LABELS = {
   ko: { background: '배경', objective: '목표', role: '역할', activities: '수행 내용', outcomes: '성과', notes: '비고', series: '연속 과제', phase: '단계' },
 };
 
-// Canonical affiliation periods — used in Career Narrative group headers.
-// Mirrors work.yaml timeline. Update here if affiliation changes.
-// {{PRESENT}} is replaced with locale-appropriate "Present" / "현재".
+// Affiliation periods for Career Narrative group headers; must match work.yaml.
+// {{PRESENT}} becomes the localized "Present".
 const INST_PERIODS = {
   'SKKU':                '2016.04 - 2021.02',
   'KAIST':               '2021.03 - 2025.02',
@@ -129,7 +118,6 @@ function tex(s) {
     .replace(/\^/g, '\\textasciicircum{}');
 }
 
-/** Write file and log */
 function writeFile(fp, content) {
   fs.writeFileSync(fp, content, 'utf8');
   const rel = path.relative(path.join(__dirname, '..'), fp);
@@ -186,7 +174,6 @@ function generateMain(basic) {
     const labelBase    = LANG === 'ko' ? '기본급' : 'Base';
     const labelBonus   = LANG === 'ko' ? '성과급' : 'Bonus';
 
-    // Format current — supports {base, bonus, total} split or plain string
     let currentRendered = '';
     const cur = comp.current;
     if (cur && typeof cur === 'object' && (cur.base || cur.bonus || cur.total)) {
@@ -326,7 +313,6 @@ function generateExperience(work) {
       return tex(text);
     });
 
-    // Cap responsibilities, then append highlights
     const cappedResps = resps.slice(0, MAX_RESP_LINES);
     const BULLET = '\\textendash{}~';
     const extra = [...cappedResps, ...highlights].map(s => BULLET + s).join('\n    \\\\ ');
@@ -353,7 +339,6 @@ ${entries}
 function generateProjects(projects) {
   if (!Array.isArray(projects) || !projects.length) return '';
 
-  // Filter out projects with empty titles
   const valid = projects.filter(p => {
     const title = typeof p.title === 'object' ? (p.title[LANG] || p.title.en || '') : (p.title || '');
     return title.trim().length > 0;
@@ -380,38 +365,10 @@ function generateProjects(projects) {
     }
     const instLine = instParts.join('');
 
-    // Build task lines: details.tasks > details.purpose > remarks
-    let tasks = [];
-    if (p.details && p.details.tasks && p.details.tasks.length) {
-      tasks = p.details.tasks.map(t => {
-        const text = typeof t === 'object' ? (t[LANG] || t.en || '') : t;
-        return tex(text);
-      }).filter(Boolean);
-    } else if (p.details && p.details.purpose) {
-      const purpose = typeof p.details.purpose === 'object'
-        ? (p.details.purpose[LANG] || p.details.purpose.en || '')
-        : (p.details.purpose || '');
-      if (purpose) tasks.push(tex(purpose));
-    }
-    // Fallback to remarks if no tasks
-    if (!tasks.length) {
-      const rem = typeof p.remarks === 'object' ? (p.remarks[LANG] || p.remarks.en || '') : (p.remarks || '');
-      if (rem) tasks.push(tex(rem));
-    }
-
-    // Achievements line
-    if (p.details && p.details.achievements) {
-      const ach = typeof p.details.achievements === 'object'
-        ? (p.details.achievements[LANG] || p.details.achievements.en || '')
-        : (p.details.achievements || '');
-      if (ach) tasks.push(tex(ach));
-    }
-
     // Projects in resume: compact list — only show institution info (affiliated + partners + client).
     // Full task details live in the Narrative section (full version) or are omitted (brief).
     const taskStr = '';
 
-    // Year comment
     const year = period.slice(0, 4);
     let yearComment = '';
     if (year !== currentYear) {
@@ -444,7 +401,6 @@ function generatePublications(pubs) {
     const year = String(p.year || '');
     const title = tex(p.title || '');
     const venue = tex(p.venue || '');
-    // Normalize role: "1st Author" stays, everything else → "Co-Author"
     const rawRole = p.role || '';
     const role = /1st/i.test(rawRole) ? '1st Author' : (rawRole ? 'Co-Author' : '');
     const link = p.link || '';
@@ -603,7 +559,6 @@ function generateNarrative(projects) {
   const withDetails = projects.filter(p => p.details && (p.details.situation || p.details.purpose || (p.details.tasks && p.details.tasks.length) || p.details.achievements));
   if (!withDetails.length) return '';
 
-  // Group by affiliated_institution
   const byInst = new Map();
   for (const p of withDetails) {
     const key = p.affiliated_institution || (LANG === 'ko' ? '기타' : 'Other');
@@ -611,7 +566,6 @@ function generateNarrative(projects) {
     byInst.get(key).push(p);
   }
 
-  // Build group meta — period range, projects sorted newest-first within group
   const groups = [...byInst.entries()].map(([inst, projs]) => {
     const starts = projs.map(p => nvParseStart(p.period)).filter(Boolean);
     const ends = projs.map(p => nvParseEnd(p.period)).filter(Boolean);
@@ -622,7 +576,6 @@ function generateNarrative(projects) {
     return { inst, projects: projs, start: minStart, end: open ? null : maxEnd, open };
   });
 
-  // Most recent affiliation first
   groups.sort((a, b) => (b.start?.getTime() || 0) - (a.start?.getTime() || 0));
 
   function renderProject(p) {
@@ -700,10 +653,8 @@ ${sections}
 function main() {
   console.log(`\n📄 Generating LaTeX resume (lang=${LANG}${BRIEF ? ', brief' : ''}) from data/career/*.yaml\n`);
 
-  // Ensure output directories exist
   if (!fs.existsSync(SECTIONS)) fs.mkdirSync(SECTIONS, { recursive: true });
 
-  // Load data
   const basic      = load('basic.yaml');
   const philosophy  = load('philosophy.yaml');
   const education  = load('education.yaml');
@@ -715,7 +666,6 @@ function main() {
   const patents    = load('patents.yaml');
   const activities = load('activities.yaml');
 
-  // Generate and write files
   writeFile(path.join(RESUME_DIR, 'resume.tex'), generateMain(basic));
   writeFile(path.join(SECTIONS, 'summary.tex'), generateSummary(philosophy));
   writeFile(path.join(SECTIONS, 'education.tex'), generateEducation(education));

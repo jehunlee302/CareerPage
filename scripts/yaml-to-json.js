@@ -1,14 +1,4 @@
-/**
- * yaml-to-json.js
- * Pipeline: data/career/*.yaml → data/portfolio.json
- *
- * Reads all YAML career files, extracts the specified language (default: en),
- * and assembles the portfolio.json the website consumes.
- *
- * Usage:
- *   node scripts/yaml-to-json.js          # English (default)
- *   node scripts/yaml-to-json.js --lang ko # Korean
- */
+// Builds data/portfolio.json from data/career/*.yaml in one language (--lang en|ko, default en).
 
 const yaml = require('js-yaml');
 const fs   = require('fs');
@@ -21,14 +11,13 @@ const LANG    = process.argv.includes('--lang') ? process.argv[process.argv.inde
 
 // ── Helpers ───────────────────────────────────────────────
 
-/** Load and parse a YAML file */
 function load(filename) {
   const fp = path.join(CAREER, filename);
   if (!fs.existsSync(fp)) { console.warn(`  ⚠ ${filename} not found, skipping`); return null; }
   return yaml.load(fs.readFileSync(fp, 'utf8'));
 }
 
-/** Load all files matching a prefix, merge arrays, sort by index desc */
+/** Concatenates every <prefix>*.yaml array, sorted by sortKey descending. */
 function loadMerged(prefix, sortKey = 'index') {
   const files = fs.readdirSync(CAREER)
     .filter(f => f.startsWith(prefix) && f.endsWith('.yaml'))
@@ -42,26 +31,19 @@ function loadMerged(prefix, sortKey = 'index') {
   return all;
 }
 
-/**
- * Extract a single language from bilingual fields.
- * { en: "hello", ko: "안녕" } → "hello" (if lang=en)
- * Plain strings pass through as-is.
- */
+/** Replaces every { en, ko } field with its LANG value (falling back to en), recursively. */
 function extractLang(obj) {
   if (obj === null || obj === undefined) return '';
   if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean') return obj;
 
-  // Bilingual object: { en: ..., ko: ... }
   if (typeof obj === 'object' && !Array.isArray(obj) && ('en' in obj || 'ko' in obj)) {
     return obj[LANG] || obj['en'] || '';
   }
 
-  // Array
   if (Array.isArray(obj)) {
     return obj.map(item => extractLang(item));
   }
 
-  // Regular object: recurse
   const result = {};
   for (const [key, val] of Object.entries(obj)) {
     result[key] = extractLang(val);
@@ -292,7 +274,6 @@ function main() {
 
   fs.writeFileSync(OUT, JSON.stringify(portfolio, null, 2), 'utf8');
 
-  // Summary
   console.log('  Section             Items');
   console.log('  ──────────────────  ─────');
   console.log(`  education           ${portfolio.education.length}`);
