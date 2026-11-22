@@ -1,26 +1,16 @@
 {
   "name": "careerpage",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "node scripts/check-data.js"
-  },
+  "private": true,
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jehunlee302/CareerPage.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jehunlee302/CareerPage/issues"
+  "scripts": {
+    "test": "node scripts/check-data.js"
   },
-  "homepage": "https://github.com/jehunlee302/CareerPage#readme",
-  "dependencies": {
+  "devDependencies": {
     "js-yaml": "^4.1.1"
   }
 }
