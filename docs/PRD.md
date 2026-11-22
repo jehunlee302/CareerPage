@@ -51,3 +51,4 @@
 | dev-history 카테고리 재편 | done | flat → `{ui}/` · 월별 summary 루트 유지 | [ops-04](prd/ops.md#ops-04) |
 | dev-loop 1회전 | done | 페르소나 리뷰 · 시나리오 자동 검증 · 갭 → 백로그 · verdict PASS | [ops-05](prd/ops.md#ops-05) |
 | 문서 구조 이전 (do-03/do-05) | dev | index.md → INDEX.md · prod·backlog → PRD + 상세 · 이력·보고서 → `_old/` · `gen-status --check` | [ops-06](prd/ops.md#ops-06) |
+| 코드 위생 (설정·경로·비밀·주석) | dev | 설정 값 한 곳 · 절대 경로 없음 · 비밀은 env 파일만 · `.env.*` 무시 · 주석·함수 규칙 · 문서에 이력 없음 | [ops-08](prd/ops.md#ops-08) |
