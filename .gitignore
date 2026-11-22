@@ -44,5 +44,7 @@ latex/*.pdf
 
 # Secrets (never commit)
 .env
+.env.*
+!.env.example
 *.key
 .playwright-mcp/
