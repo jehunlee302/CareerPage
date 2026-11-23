@@ -213,10 +213,10 @@ ${nameCmd}
 \\position{${position}}
 \\address{${tex(location)}}
 ${raw.phone ? `\\mobile{${tex(raw.phone)}}` : ''}
-\\homepage{https://jehun-lee.work}
+\\homepage{https://${raw.website}}
 \\email{${emails}}
-\\linkedin{https://www.linkedin.com/in/jehun-lee/}
-\\scholar{https://scholar.google.com/citations?user=C7ekyjEAAAAJ}
+\\linkedin{${raw.linkedin}}
+\\scholar{${raw.scholar}}
 ${compensationCmd}
 
 \\begin{document}
